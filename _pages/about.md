@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "This is my new website"
+title: "academicpages is a ready-to-fork GitHub Pages template for academic personal websites"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -8,4 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-This is the beginning of my new website.
+This is the front page of Hans' website.
+
+
+
