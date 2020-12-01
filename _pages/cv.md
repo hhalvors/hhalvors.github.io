@@ -11,8 +11,8 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
+* B.A. in Philosophy, Calvin College, 1995
+* M.A. in Philosophy, University of Pittsburgh, 1997
 * Ph.D in Version Control Theory, GitHub University, 2018 (expected)
 
 Work experience
