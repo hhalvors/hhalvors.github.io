@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-This is the front page of Hans' website.
+Repository for Hans Halvorson's works in philosophy, mathematics, and physics.
 
 
 
