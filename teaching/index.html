@@ -1,57 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses</title>
+    <title>Courses Taught by Hans Halvorson</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 40px;
         }
-        h1 {
-            color: #333366;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 20px;
-        }
         .course {
-            background-color: #f9f9f9;
-            border-left: 4px solid #333366;
-            padding: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
-        .link {
-            color: #333366;
+        .course h2 {
+            margin-top: 0;
+        }
+        .course-link {
+            background-color: #f4f4f4;
+            color: #333;
             text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .course-link:hover {
+            background-color: #e9e9e9;
         }
     </style>
 </head>
 <body>
-    <h1>Courses</h1>
-    <ul>
-        <li class="course">
-            <strong>Title:</strong> Introductory Logic<br>
-            <strong>Number:</strong> PHI 201<br>
-            <strong>Term:</strong> Spring 2024<br>
-            <a href="https://hhalvors.github.io/phi201_s2024/" class="link">Link to PHI 201 - Spring 2024</a>
-        </li>
-        <li class="course">
-            <strong>Title:</strong> Kierkegaard in Copenhagen<br>
-            <strong>Number:</strong> PHI 367<br>
-            <strong>Term:</strong> Spring 2019<br>
-            <a href="https://hhalvors.github.io/phi367_s2019/" class="link">Link to PHI 367 - Spring 2019</a>
-        </li>
-	<li class="course">
-            <strong>Title:</strong> Religion and Scientific Objectivity<br>
-            <strong>Number:</strong> PHI 363<br>
-            <strong>Term:</strong> Fall 2020<br>
-            <a href="https://hhalvors.github.io/phi363_f2020/" class="link">Link to PHI 363 - Fall 2020</a>
-        </li>
-    </ul>
+    <h1>Courses Taught by Hans Halvorson</h1>
+
+    <div class="course">
+        <h2>Introductory Logic</h2>
+        <p>Spring 2024</p>
+        <a href="hhalvors.github.io/phi201_s2024" class="course-link">Go to Course Folder</a>
+    </div>
+    
+    <div class="course">
+        <h2>Kierkegaard in Copenhagen</h2>
+        <p>Summer 2019</p>
+        <a href="hhalvors.github.io/phi367_s2019" class="course-link">Go to Course Folder</a>
+    </div>
+    
+    <div class="course">
+        <h2>Religion and Scientific Objectivity</h2>
+        <p>Fall 2020</p>
+        <a href="hhalvors.github.io/phi363_f2020" class="course-link">Go to Course Folder</a>
+    </div>
+    
 </body>
 </html>
