@@ -2,7 +2,6 @@
 title: "Home"
 author: Hans Halvorson
 lang: en
-css: ['https://cdn.simplecss.org/simple.css', 'minimal.css']
 ---
 
 I currently have three main projects that give focus to my research.
@@ -35,7 +34,7 @@ structure), and equivalence (of theories).
 But some philosophers complain about this methodology, saying that the
 notion of equivalence is "not formal", or even more extremely, that
 it's a bad idea to talk about *theories* in the first place -- rather
-than about more solid things such as *facts*. I remain convinced that
+	than about more solid things such as *facts*. I remain convinced that
 meta-theoretic concepts (i.e. concepts about our thinking and how it
 relates to the world) are useful, and that explication is a valuable
 practice. But it's important to clarify what we attend to achieve via
