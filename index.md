@@ -21,10 +21,10 @@ Jacobsen)
 
 # Philosophical Lessons of the Theory of Relativity
 
-Relativity theory might seem far less philosophically exciting than
-quantum physics, and far easier to read literally, i.e. as a story
-about how things are (in themselves). In fact, one might say that
-there is something of a consensus among philosophers about how to read
+Relativity theory might seem less philosophically provocative than
+quantum physics, and easier to read literally, i.e. as telling us how
+things are (in themselves). In fact, one might say that there is
+something of a consensus among philosophers about how to read
 relativity theory. But that has not always been the case --- and I'm
 convinced that if there is a consensus now, then it rests on some
 indefensible presuppositions.
@@ -42,10 +42,10 @@ structure), and equivalence (of theories).
 But some philosophers complain about this methodology, saying that the
 notion of equivalence is "not formal", or even more extremely, that
 it's a bad idea to talk about *theories* in the first place -- rather
-	than about more solid things such as *facts*. I remain convinced that
-meta-theoretic concepts (i.e. concepts about our thinking and how it
-relates to the world) are useful, and that explication is a valuable
-practice. But it's important to clarify what we attend to achieve via
-this methodology.
+than about more solid things such as *facts*. I remain convinced that
+meta-theoretic concepts (i.e. concepts about our representations and
+how they relates to the world) are useful, and that explication of
+such concepts is a valuable practice. But it's important to clarify
+what we attend to achieve via this methodology.
 
 
