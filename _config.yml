@@ -1,15 +1,8 @@
-title: Ideas # name of the site
-author: Hans Halvorson # name of site's author
-email: hhalvors@princeton.edu # email of site's author
+title: Hans Halvorson
+baseurl: "" # the subpath of your site, e.g., "/blog"
 
-theme: riggraz/no-style-please
+# Optional settings
+author: Hans Halvorson
+email: hhalvors@princeton.edu
 
-theme_config:
-  appearance: "auto" # can be "light", "dark" or "auto"
-  back_home_text: ".." # customize text for homepage link in post layout
-  date_format: "%Y-%m-%d" # customize how date is formatted
-  show_description: false # show blog description in home page
-
-sass:
-  style: :compressed
 
