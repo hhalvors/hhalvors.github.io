@@ -2,13 +2,9 @@ title: Hans Halvorson
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 
-theme: minima
+theme: primer
 
-# Navigation links
-nav:
-  - title: "Home"
-    url: "/"
-  - title: "teaching"
-    url: "/teaching/"
-  - title: "publications"
-    url: "/publications/"
+header_pages:
+  - teaching.md
+  - publications.md
+
