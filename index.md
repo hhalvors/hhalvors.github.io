@@ -35,8 +35,8 @@ notion of equivalence is "not formal", or even more extremely, that
 it's a bad idea to talk about *theories* in the first place -- rather
 than about more solid things such as *facts*. I remain convinced that
 meta-theoretic concepts (i.e. concepts about our representations and
-how they relates to the world) are useful, and that explication of
-such concepts is a valuable practice. But it's important to clarify
-what we attend to achieve via this methodology.
+how they relate to the world) are useful, and that explication of such
+concepts is a valuable practice. But it's important to clarify what we
+attend to achieve via this methodology.
 
 
