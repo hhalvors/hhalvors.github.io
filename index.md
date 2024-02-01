@@ -1,7 +1,6 @@
 ---
-title: "Home"
-author: Hans Halvorson
-lang: en
+layout: default
+title: Current Research
 ---
 
 I currently have three main projects that give focus to my research.

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hans Halvorson</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+        }
+        .menu-bar {
+            background-color: #f2f2f2;
+            width: 200px;
+            height: 100vh;
+            overflow: auto;
+        }
+        .menu-bar a {
+            display: block;
+            color: black;
+            padding: 16px;
+            text-decoration: none;
+        }
+        .menu-bar a:hover {
+            background-color: #ddd;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .header {
+            font-size: 24px;
+            text-align: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="menu-bar">
+    <div class="header">Hans Halvorson</div>
+    <a href="#teaching">Teaching</a>
+    <a href="#publications">Publications</a>
+    <a href="#talks">Talks</a>
+    <a href="#cv">CV</a>
+</div>
+
+<div class="content">
+    <h1>Current Research</h1>
+        {{ content }} 
+
+</div>
+
+</body>
+</html>
+
