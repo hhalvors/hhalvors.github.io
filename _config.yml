@@ -2,7 +2,7 @@ title: Hans Halvorson
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 
-theme: jekyll-theme-cayman
+theme: jekyll-theme-dinky
 
 header_pages:
   - teaching.md
