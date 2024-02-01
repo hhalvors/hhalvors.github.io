@@ -12,30 +12,25 @@
         }
 	.menu-bar {
 	    background-color: #f2f2f2;
-	    min-width: 250px; /* Adjust as needed */
+	    min-width: 200px; /* Adjust as needed */
 	    height: 100vh;
 	}
 
 	.header {
 	    font-size: 24px; /* Adjust as needed */
-	    text-align: center;
-	    padding: 10px; /* Adjust as needed */
 	    border-bottom: 1px solid #ddd;
 	}
-        .menu-bar a {
-            display: block;
-            color: black;
-            padding: 16px;
-            text-decoration: none;
-        }
+	.menu-bar .header, .menu-bar a {
+	    display: block;
+	    color: black;
+	    padding: 10px;
+	    text-decoration: none;
+	    margin: 0; /* Resets any default margin */
+	    border: none; /* Resets any default border */
+	    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+	    }
         .menu-bar a:hover {
             background-color: #ddd;
-        }
-        .header {
-            font-size: 24px;
-            text-align: center;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
         }
 	.content {
 	    padding: 20px; /* Adjust this value as needed */
@@ -46,11 +41,11 @@
 <body>
 
 <div class="menu-bar">
-    <div class="header">Hans Halvorson</div>
-    <a href="teaching.html">Teaching</a>
-    <a href="publications.html">Publications</a>
-    <a href="talks.html">Talks</a>
-    <a href="#cv">CV</a>
+  <div class="header">Hans Halvorson</div>
+  <a href="publications.html">Publications</a>
+  <a href="talks.html">Talks</a>
+  <a href="teaching.html">Teaching</a>
+  <a href="#cv">CV</a>
 </div>
 
 <div class="content">
