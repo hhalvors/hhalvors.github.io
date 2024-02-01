@@ -4,14 +4,6 @@ author: Hans Halvorson
 lang: en
 ---
 
-<nav>
-  <ul>
-    <li><a href="teaching">teaching</a></li>
-    <li><a href="publications">publications</a></li>
-    <!-- Add more list items for additional sections -->
-  </ul>
-</nav>
-
 I currently have three main projects that give focus to my research.
 
 # Niels Bohr: Philosopher in Action
