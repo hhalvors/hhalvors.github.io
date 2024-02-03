@@ -1,0 +1,968 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usetheme[]{Copenhagen}
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\newif\ifbibliography
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{tikz-cd}
+\usepackage{adjustbox}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Was Rasmus Nielsen a Windbag?},
+  pdfauthor={Hans Halvorson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Was Rasmus Nielsen a Windbag?}
+\author{Hans Halvorson}
+\date{November 24, 2023}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Introduction}
+\protect\hypertarget{introduction}{}
+\begin{block}{Introduction}
+\protect\hypertarget{introduction-1}{}
+\begin{figure}
+\centering
+\includegraphics{nielsen-small.jpg}
+\caption{alt}
+\end{figure}
+\end{block}
+
+\begin{block}{Introduction}
+\protect\hypertarget{introduction-2}{}
+\begin{itemize}
+\item
+  Rasmus Nielsen was a 19th century philosopher from Copenhagen whose
+  work has been completely forgotten.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    If you've heard of him, that's probably because he's mentioned in
+    some Kierkegaard biographies.
+  \end{itemize}
+\item
+  Not a single page of thousands that Nielsen wrote has been translated
+  to another language.
+\item
+  I will begin by explaining reasons to be interested in Nielsen --- not
+  just for historians, but also for contemporary philosophers.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Nielsen's relevance}
+\protect\hypertarget{nielsens-relevance}{}
+\begin{block}{Four reasons to be interested in Nielsen}
+\protect\hypertarget{four-reasons-to-be-interested-in-nielsen}{}
+\begin{enumerate}
+\item
+  Kierkegaard
+\item
+  Niels Bohr
+\item
+  Nielsen upsets standard narratives about the origins of analytic
+  philosophy
+\item
+  Nielsen has an interesting view about faith and reason
+\end{enumerate}
+\end{block}
+
+\begin{block}{Kierkegaard}
+\protect\hypertarget{kierkegaard}{}
+\begin{itemize}
+\item
+  Nielsen's relevance for Kierkegaard studies is described well in Jon
+  Stewart, ``Rasmus Nielsen: From the object of `prodigious concern' to
+  a `windbag'\,''
+\item
+  Nielsen deserves most credit for transmitting SK's ideas to subsequent
+  generations (Brandes, Høffding, etc.)
+\item
+  Nielsen is ``patient zero'' for reception and transformation of SK's
+  ideas
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Both Brandes and Høffding got to know about Kierkegaard from
+    Nielsen's lectures
+  \end{itemize}
+\item
+  Nielsen's career runs parallel with H.L. Martensen's
+
+  \begin{itemize}
+  \tightlist
+  \item
+    If Martensen was between SK and Hegel, then Nielsen was between SK
+    and Martensen
+  \end{itemize}
+\end{itemize}
+\end{block}
+
+\begin{block}{Bohr}
+\protect\hypertarget{bohr}{}
+\begin{itemize}
+\item
+  My project began with wanting to make sense, philosophically, of
+  contemporary physics. What do all of these new discoveries mean for
+  us?
+\item
+  Niels Bohr had wrestled with such questions more than anyone else
+\item
+  But contemporary philosophers are either uninterested in Bohr, or say
+  that they cannot make sense of him, or say that he was obviously wrong
+\end{itemize}
+\end{block}
+
+\begin{block}{Bohr did have one defender}
+\protect\hypertarget{bohr-did-have-one-defender}{}
+\begin{figure}
+\centering
+\includegraphics{filosoffen.jpg}
+\caption{alt}
+\end{figure}
+\end{block}
+
+\begin{block}{Favrholdt makes explicit what Bohr left implicit}
+\protect\hypertarget{favrholdt-makes-explicit-what-bohr-left-implicit}{}
+\begin{figure}
+\centering
+\includegraphics{indhold.jpg}
+\caption{alt}
+\end{figure}
+\end{block}
+
+\begin{block}{Niels Bohr in context}
+\protect\hypertarget{niels-bohr-in-context}{}
+\begin{itemize}
+\item
+  Contemporary philosophers accuse Bohr of being a logical positivst
+\item
+  Others have claimed that he is Kantian
+\item
+  But Denmark has its own philosophical tradition that doesn't fit
+  neatly into the ``world historic'' classification scheme
+\item
+  I was struck by thematic similarities between Bohr's philosophy and
+  Kierkegaard's
+
+  \begin{itemize}
+  \tightlist
+  \item
+    But no \emph{direct} influence from Kierkegaard to Bohr
+  \end{itemize}
+\end{itemize}
+\end{block}
+
+\begin{block}{Niels Bohr in context}
+\protect\hypertarget{niels-bohr-in-context-1}{}
+\begin{tikzcd}[ampersand replacement = \&]
+    \&\&\&\& \text{H. Høffding} \\
+        \text{Kierkegaard} \&\& \text{Nielsen} \&\&\&\& \text{N. Bohr} \\
+    \&\&\&\& \text{Ch. Bohr}
+    \arrow[from=2-1, to=2-3]
+    \arrow[from=2-3, to=1-5]
+    \arrow[from=2-3, to=3-5]
+    \arrow[from=1-5, to=2-7]
+    \arrow[from=3-5, to=2-7]
+\end{tikzcd}
+\end{block}
+
+\begin{block}{Challenging the dominant narrative}
+\protect\hypertarget{challenging-the-dominant-narrative}{}
+\begin{itemize}
+\item
+  At a given moment in history, philosophers from prevailing cultures
+  tend to see the history of philosophy as leading up to them
+
+  \begin{itemize}
+  \item
+    Hegel
+  \item
+    Reichenbach. \emph{The Rise of Scientific Philosophy}
+  \item
+    Anglo-american philosophy
+  \end{itemize}
+\item
+  Specific example: W.v.O. Quine as finally dismantling the
+  analytic-synthetic distinction
+\end{itemize}
+
+0 Hume \(\to\) Carnap \(\to\) W.v.O. Quine
+
+1 Hume \(\to\) Kant \(\to\) Carnap \(\to\) Quine
+
+1.1 Hume \(\to\) Kant \(\to\) Cassirer \(\to\) Carnap \(\to\) Quine
+
+1.1.1 \(\cdots \to\) Hegel \(\to\) Cassirer \(\to\) Carnap \(\to\) Quine
+
+1.1.1.1 \(\cdots \to\) Hegel \(\to\) Russell \(\to\) Carnap \(\to\)
+Quine
+\end{block}
+
+\begin{block}{Challenging the dominant narratives}
+\protect\hypertarget{challenging-the-dominant-narratives}{}
+\begin{itemize}
+\item
+  These narratives portray the development as linear. E.g. the
+  positivists make philosophy scientific, and then Quine shows that is
+  not quite scientific enough
+\item
+  Compare and contrast the Danish \emph{opgør} with Hegel with the
+  English (Russell and Moore), which gave birth to analytic philosophy
+
+  \begin{itemize}
+  \item
+    The English response doesn't have much religion in it
+  \item
+    Both reject monism in favor of pluralism
+  \item
+    The Danish response leads more quickly to a new kind of philosophy
+    of nature
+  \end{itemize}
+\item
+  Nielsen's philosophy has several things in common with neo-kantianism
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The relativized apriori
+  \end{itemize}
+\item
+  Nielsen offers a distinctly modern conception of the relationship
+  between philosophy and the natural sciences
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Timeline}
+\protect\hypertarget{timeline}{}
+\begin{block}{Early life}
+\protect\hypertarget{early-life}{}
+1809 \emph{bondefødt} i Roerslev, Middelfart
+
+1820s intellectual talents recognized by local priest
+
+\begin{quote}
+1830 SK begins at KU
+\end{quote}
+
+1832 graduated Viborg katedralskole
+
+1837 passed teologisk embedseksamen
+\end{block}
+
+\begin{block}{University years}
+\protect\hypertarget{university-years}{}
+\begin{quote}
+1839 SK remarks satirically about RN in his journal
+\end{quote}
+
+1840 defended PhD thesis: De speculativa historiæ sacræ tractandæ
+methodo
+
+\begin{quote}
+1841 SK submits \emph{Begrebet Ironi}
+\end{quote}
+
+1841 appointed chair of moral philosophy (Poul Møller's chair)
+
+1842 SK remarks satirically about RN's unfinished system in
+\emph{Fædrelandet}
+\end{block}
+
+\begin{block}{Relationship with Kierkegaard}
+\protect\hypertarget{relationship-with-kierkegaard}{}
+1846 \emph{Afsluttende Uvidenskabelig Efterskrift}
+
+1848 SK and RN begin taking regular walks together. Brøchner reports SK
+as saying that RN is the only one of the younger thinkers in Denmark who
+``may amount to something''
+
+1849 RN. \emph{Evangelietroen og den moderne Bevidsthed}
+
+\begin{quote}
+SK: ``The writings are plundered in many ways \ldots{} And then my
+conversations!''
+\end{quote}
+\end{block}
+
+\begin{block}{Relationship with Kierkegaard}
+\protect\hypertarget{relationship-with-kierkegaard-1}{}
+1849 Martensen. \emph{Den Christelige Dogmatik}
+
+1849 RN. \emph{Mag. S. Kierkegaards ``Johannes Climacus'' og Dr.~H.
+Martensens ``Christelige Dogmatik.'' En undersøgende Anmeldelse.}
+
+1850 RN. \emph{Evangelietroen og Theologien}
+\end{block}
+
+\begin{block}{The scientific turn}
+\protect\hypertarget{the-scientific-turn}{}
+1855 \emph{Om Theologiens Naturbegreb med særligt Hensyn til
+Malebranche: De la recherche de la vérité}
+
+\begin{itemize}
+\item
+  I haven't been able to study this closely enough to tell if it shows
+  signs of Nielsen's scientific turn
+\item
+  By 1857, he had self-studied mathematics enough to write a little book
+
+  \emph{Philosophie og Mathematik. En propædeutisk Afhandling}
+\item
+  This book was criticized for being dilettantish
+\end{itemize}
+\end{block}
+
+\begin{block}{The scientific turn}
+\protect\hypertarget{the-scientific-turn-1}{}
+\begin{itemize}
+\tightlist
+\item
+  By 1860, Nielsen had self-studied some chemistry, physics, and
+  physiology
+\end{itemize}
+
+\begin{quote}
+{[}1{]} As my recent writings show, it has been my goal, for a number of
+years, to clarify and demonstrate the relationship between philosophy
+and the separate sciences as comprehensively as possible. The future of
+philosophy depends in an essential way on a thorough understanding and
+accurate determination of this relationship. (1864, p 18)
+\end{quote}
+\end{block}
+
+\begin{block}{The second battle about faith and reason}
+\protect\hypertarget{the-second-battle-about-faith-and-reason}{}
+\begin{itemize}
+\item
+  The first battle between faith and reason: the flareup between
+  Martensen and Nielsen at the beginning of the 1850s
+\item
+  The younger generation was decidedly less religious: Brøchner,
+  Brandes, etc.
+\item
+  In \emph{Grundideernes Logik} (1864), Nielsen had declared that
+  ``Faith and Reason are different kinds of principles'' (``Tro og Viden
+  er uensartede Principper'')
+\end{itemize}
+
+\begin{quote}
+{[}2{]} But the assumption of duæ veritates ceases to denote a dispute
+between Reason and Revelation, or between Philosophy and Religion, when
+it is realized that the two different truths belong to two such
+different spheres, that what is decided in the one must be left
+undecided in the other. (1864, p 23)
+\end{quote}
+\end{block}
+
+\begin{block}{The (second) battle about faith and reason}
+\protect\hypertarget{the-second-battle-about-faith-and-reason-1}{}
+1866 Brandes. \emph{Dualismen i vor nyeste Philosophie}
+
+Høffding
+
+TO DO: Look in Koch
+\end{block}
+
+\begin{block}{The teacher}
+\protect\hypertarget{the-teacher}{}
+\begin{itemize}
+\item
+  Nielsen and Sibbern alternated teaching ``det indledende filosofikum''
+  (introductory philosophy course) for many years
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This course was mandatory for all first-year students at the
+    university, in any subject
+  \end{itemize}
+\item
+  Circa 1860, students complaining that Nielsen demanded too much
+  knowledge of math and science.
+\end{itemize}
+
+\begin{quote}
+At first it was Rasmus Nielsen, whose enthusiastic references to
+Kierkegaard and whose rousing eloquence had the greatest influence on
+me. (Høffding 1909)
+\end{quote}
+
+\begin{quote}
+No one who studies the life of the mind in nineteenth-century Denmark,
+will be able to skip over {[}Nielsen's{]} great philosophical writings,
+and everyone who got to hear his lectures at the university will
+remember him as a great awakener and a rare personality. (Brandes 1899)
+\end{quote}
+\end{block}
+
+\begin{block}{The teacher}
+\protect\hypertarget{the-teacher-1}{}
+\includegraphics{heegaard.jpg} \includegraphics{brandes.jpg}
+\includegraphics{høffding.jpg}
+
+\includegraphics{kroman.jpg} \includegraphics{christian.jpg}
+\end{block}
+
+\begin{block}{The teacher}
+\protect\hypertarget{the-teacher-2}{}
+\begin{figure}
+\centering
+\includegraphics{prop1.jpg}
+\caption{propædeutik}
+\end{figure}
+\end{block}
+
+\begin{block}{The teacher}
+\protect\hypertarget{the-teacher-3}{}
+\begin{figure}
+\centering
+\includegraphics{prop2.jpg}
+\caption{propædeutik}
+\end{figure}
+\end{block}
+
+\begin{block}{The teacher}
+\protect\hypertarget{the-teacher-4}{}
+\begin{figure}
+\centering
+\includegraphics{prop3.jpg}
+\caption{propædeutik}
+\end{figure}
+\end{block}
+
+\begin{block}{The teacher}
+\protect\hypertarget{the-teacher-5}{}
+\begin{figure}
+\centering
+\includegraphics{høffding1.jpg}
+\caption{grundideernes}
+\end{figure}
+\end{block}
+
+\begin{block}{The teacher}
+\protect\hypertarget{the-teacher-6}{}
+\begin{figure}
+\centering
+\includegraphics{høffding2.jpg}
+\caption{grundideernes}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}{Philosophical themes}
+\protect\hypertarget{philosophical-themes}{}
+\begin{block}{Hegel refresher}
+\protect\hypertarget{hegel-refresher}{}
+\begin{itemize}
+\item
+  Elimination of distinction between subject and object (solution to
+  post-kantian skepticism)
+\item
+  Elimination of distinction between reality (\emph{virkelighed}) and
+  concept (\emph{begreb})
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The real is the rational, and the rational is the real
+  \end{itemize}
+\item
+  Elimination of distinction between reason and cause
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Insofar as science is rational, it is subsumed by philosophy
+  \end{itemize}
+\end{itemize}
+\end{block}
+
+\begin{block}{Kierkegaard's critique of (Hegelian) objectivity}
+\protect\hypertarget{kierkegaards-critique-of-hegelian-objectivity}{}
+\begin{itemize}
+\item
+  No decision without subjectivity
+\item
+  No god's eye view (for humans)
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Nielsen's Theistic Logic Program}
+\protect\hypertarget{nielsens-theistic-logic-program}{}
+Nielsen: Only Theism prevents collapse to idealism or dogmatism
+
+\begin{quote}
+Saalænge Forholdet imellem den reflecterende Subjectvitet og den
+objective Verden eensidig fastholdes under Endelighedens Synspunkt, vil
+al vor Begriben og Erkjendelse idelig vakle imellem a) en kritisk
+Idealisme paa den ene og b) en mystisk Realisme paa den anden Side.
+(1845, p 205)
+\end{quote}
+
+\begin{block}{Empiricism}
+\protect\hypertarget{empiricism}{}
+\begin{itemize}
+\item
+  Both by example and in word, Nielsen supported the empirical sciences
+\item
+  The anti-logical
+\end{itemize}
+\end{block}
+
+\begin{block}{Objectivity}
+\protect\hypertarget{objectivity}{}
+Nielsen rejects the Hegelian aspiration for presupposition-free
+knowledge
+
+\begin{quote}
+From subjective presuppositions proceed objective consequences, and from
+objective consequences, objective knowledge. (1880, p 44-45)
+\end{quote}
+\end{block}
+
+\begin{block}{Subject and Object}
+\protect\hypertarget{subject-and-object}{}
+\begin{itemize}
+\item
+  Puzzlement: Bell and Mermin
+\item
+  Koch
+\item
+  Rosenberg
+\item
+  Nielsen citations?
+\item
+  Favrholdt on subject-object?
+\item
+  Møller citation
+\end{itemize}
+\end{block}
+
+\begin{block}{Subject and Object}
+\protect\hypertarget{subject-and-object-1}{}
+\begin{figure}
+\centering
+\includegraphics{mermin.jpg}
+\caption{alt}
+\end{figure}
+\end{block}
+
+\begin{block}{Subject and Object}
+\protect\hypertarget{subject-and-object-2}{}
+\begin{quote}
+Every unambiguous communication about the state and activity of our mind
+implies of course a separation between the content of our consciousness
+and the background loosely referred to as ``ourselves'', but any attempt
+at exhaustive description of the richness of conscious life demands in
+various situations a different placing of the section between subject
+and object.
+
+In order to illustrate this important point, I shall quote a Danish poet
+and philosopher, Poul Martin Møller, who lived about a hundred years ago
+and left behind an unfinished novel called ``The Adventures of a Danish
+Student'', in which the author gives a remarkably vivid and suggestive
+account of the interplay between the various aspects of our position
+\ldots{} (Bohr 1960, p 65)
+\end{quote}
+\end{block}
+
+\begin{block}{Subject and Object}
+\protect\hypertarget{subject-and-object-3}{}
+\begin{figure}
+\centering
+\includegraphics{licentiate.jpg}
+\caption{alt}
+\end{figure}
+\end{block}
+
+\begin{block}{Subject and Object}
+\protect\hypertarget{subject-and-object-4}{}
+\begin{quote}
+Actually, ordinary language, by its use of such words as thoughts and
+sentiments, admits typical complementary relation between conscious
+experiences implying a different placing of the section line between the
+observing subject and the object on which attention is focussed. We are
+here presented with a close analogy to the relationship between atomic
+phenomena appearing under different experimental conditions and
+described by different physical concepts, according to the role played
+by the measuring instruments. In fact, the varying separation line
+between subject and object, characteristic of different conscious
+experiences, is the clue to the consistent logical use of such
+contrasting notions as will, conscience and aspirations, each referring
+to equally important aspects of the human personality. (Bohr 1953, pp
+389-390)
+\end{quote}
+\end{block}
+
+\begin{block}{Subject and Object}
+\protect\hypertarget{subject-and-object-5}{}
+\begin{quote}
+In emphasizing the necessity of paying proper attention to the plac- ing
+of the object-subject separation in unambiguous communication, the
+modern development of science has created a new basis for the use of
+such words as knowledge and belief. (Bohr 1955, p 61)
+\end{quote}
+\end{block}
+
+\begin{block}{Subject and Object}
+\protect\hypertarget{subject-and-object-6}{}
+Nielsen claims that the boundary between apriori and aposteriori is
+moveable.
+
+\begin{quote}
+But when the boundary between apriori and empirical is supposed to be
+conceived of as definite and exact, then troubles arise. (1880, p 30)
+\end{quote}
+
+\begin{quote}
+A fixed, unmovable boundary line between the apriori and aposteriori
+cannot be set. (1880, p 37)
+\end{quote}
+\end{block}
+
+\begin{block}{Subject and Object}
+\protect\hypertarget{subject-and-object-7}{}
+\textbf{Objectiveringslov}
+
+\begin{quote}
+{[}3{]} No Object without a corresponding Objectification; it is an a
+priori law that underwrites all empiricism, a basic law that in science
+is, if possible, even more unshakable than Newton's law of gravity. From
+this it can be seen, that a critical boundary, a boundary line, on whose
+one side we have the objectivizing subjectivity, while the object is
+standing on the other side, is confusing and meaningless. (1880, p 41)
+\end{quote}
+\end{block}
+
+\begin{block}{Subject and Object}
+\protect\hypertarget{subject-and-object-8}{}
+\begin{quote}
+Her fremsætter Nielsen den «Objektiveringslov», som senere blev et saa
+betydningsfuldt Led i hans Metafysik: Objekterne kan ikke objektivere
+sig selv, og da Objekter uden Objektivering er umulige, forudsætter
+Objektiviteten en objektiverende Subjektivitet. Paa den anden Side kan
+Subjektiviteten ikke undvære Objektiviteten, eftersom dens Selvbegriben
+og Selvmagt saa vilde blive uden Indhold. Opfatter vi Forholdet
+udialektisk faar vi en kriiisk Adskillelse som hos Kant, der ganske
+fornagler Problemet om Subjektets og Objektets indbyrdes Forhold, eller
+en mystisk Realisme som hos Schelling, der fortoner Problemet i Taage.
+Men naar Objektiviteten og den bærende Subjektivitet paa ethvert Punkt
+dialektisk ses at forudsætte hianden, da forstaas «Naturens aandrige
+Aandløshed», og man øjner Muligheden af Problemets Løsning --- saavidt
+muligt er paa menneskelige Vilkaar. (Rosenberg p 13)
+\end{quote}
+\end{block}
+
+\begin{block}{Subject and Object}
+\protect\hypertarget{subject-and-object-9}{}
+\begin{quote}
+{[}4{]} Nielsen imagined that to describe the interrelationship between
+the subjective and the objective, or as he calls it, knowledge and
+power, an infinite analysis would be needed, since every subject
+presupposes an object, and every object in turn a subject. When one does
+not want to conclude in a speculative and theological way, it becomes a
+duel without end.
+\end{quote}
+\end{block}
+\end{frame}
+
+\begin{frame}{Subject and Object}
+\protect\hypertarget{subject-and-object-10}{}
+\begin{quote}
+\ldots{} Nielsen did not perceive the matter in this way. His way of
+thinking was that since every object must be objectified,
+i.e.~presupposes a subject, and since the human subject cannot perceive
+(objectify) everything, there must, if the reality of objects is to be
+asserted, be an absolute (`ontological') subject for whom the absolute
+reality exists.
+\end{quote}
+
+\begin{block}{Subject and Object}
+\protect\hypertarget{subject-and-object-11}{}
+\begin{quote}
+He overlooks the fact that the game must begin again here; even a God
+would be bound to the Law of the Relation between Subject and Subject
+and Object. The attempt to justify an abstract theism through
+\emph{Grundideernes Logik} has therefore not succeeded. We could not get
+further than to determine and describe a subject in relation to which
+certain phenomena (objects) apply, just as the astronomer must determine
+a point (on the earth, on the sun, or wherever) from which the positions
+and movements of the celestial bodies could be described as if they were
+absolute. (Høffding 1909, p 189-190)
+\end{quote}
+\end{block}
+
+\begin{block}{Viden og Magt}
+\protect\hypertarget{viden-og-magt}{}
+\begin{itemize}
+\tightlist
+\item
+  Even in his early work, Nielsen argued that creation was an act of
+  will (demonstration of power) by God
+\end{itemize}
+
+A being with complete knowledge must also have complete power.
+
+\begin{quote}
+If there is a complete knowledge, then it cannot be sensory; it must get
+a grip on the realities in a completely unique way, namely by the fact
+that it originally brings them forth. (1880, p 60)
+\end{quote}
+\end{block}
+
+\begin{block}{Mechanism versus Vitalism}
+\protect\hypertarget{mechanism-versus-vitalism}{}
+Nielsen denies the existence of a special life substance
+
+\begin{quote}
+A scientifically conducted physiology must necessarily lead to the
+result that there is no ``life force'' distinct from nature's ordinary
+forces. (1862, p 187)
+\end{quote}
+
+Nielsen endorses methodological naturalism
+
+\begin{quote}
+The deeper science penetrates into some state of affairs, all the more
+clear it becomes that these challenges in their parts as on the whole,
+in the smallest as in the largest, are solved in a natural way and by
+natural means. (1862, p 187)
+\end{quote}
+\end{block}
+
+\begin{block}{Faith and Reason}
+\protect\hypertarget{faith-and-reason}{}
+\begin{itemize}
+\item
+  Nielsen refers to Darwin's \emph{Origin of Species} in his 1861
+  lectures --- the first reference in the Danish literature
+\item
+  ``Et synspunkt for Darwinisme'' (1873). Nielsen argues that accepting
+  Darwinian evolution is fully consistent with Christian doctrines of
+  creation, fall, etc.
+\end{itemize}
+\end{block}
+
+\begin{block}{Philosophy of Science}
+\protect\hypertarget{philosophy-of-science}{}
+Nielsen rejects the idea of a single absolute science.
+
+\begin{quote}
+What Schelling calls ``science itself'' cannot possibly survive ``the
+sciences'' (1880, p 72)
+\end{quote}
+
+\begin{quote}
+That each distinct science must have its distinct starting point,
+conditional upon substance on topic, follows from the nature of the
+matter. (1880, p 89)
+\end{quote}
+\end{block}
+
+\begin{block}{Was Rasmus Nielsen the first analytic philosopher?}
+\protect\hypertarget{was-rasmus-nielsen-the-first-analytic-philosopher}{}
+\begin{itemize}
+\item
+  circa 1900: Bertrand Russell and G.E. Moore reject Cambridge
+  Hegelianism
+\item
+  circa 1915: Wittgenstein reads Kierkegaard
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ``language on holiday''
+  \end{itemize}
+\item
+  The logical positivists argue that philosophy has no content of its
+  own; instead, it is to be the logic of science
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Conclusion}
+\protect\hypertarget{conclusion}{}
+\begin{block}{Open questions: backward}
+\protect\hypertarget{open-questions-backward}{}
+\begin{itemize}
+\item
+  Low-hanging fruit in research on 19th century Danish philosophers
+
+  \begin{itemize}
+  \item
+    Reading and interpreting Nielsen's books is a big job: Danish,
+    fraktur, mathematics, etc.
+  \item
+    Nielsen's handwritten papers in KB
+  \item
+    Notes by students in KB
+  \end{itemize}
+\item
+  Can we say something more specific about what triggered Nielsen's turn
+  to \emph{fagvidenskaberne}?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The timeline between 1853 and 1860 is a bit hazy
+  \end{itemize}
+\end{itemize}
+\end{block}
+
+\begin{block}{Open questions: backward}
+\protect\hypertarget{open-questions-backward-1}{}
+\begin{itemize}
+\item
+  What role does the concept of power (\emph{Magt}) play for Martensen
+  and Nielsen?
+\item
+  The notion of ``objectivering'' appears in \emph{Den Propædeutiske
+  Logik} (1845). Does it appear elsewhere before that?
+\item
+  Did Nielsen know about non-euclidean geometry, and did that influence
+  his view about the moveable apriori?
+\end{itemize}
+\end{block}
+
+\begin{block}{Open questions: forward}
+\protect\hypertarget{open-questions-forward}{}
+\begin{itemize}
+\item
+  Does RN represent a betrayal of SK's ideas, or an innovative
+  application of these ideas to a life with more typically modern
+  concerns?
+\item
+  Does RN provide a positive development of SK's conception of the role
+  of objective knowledge in a good human life?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A competitor to the views of Spinoza and Hegel
+  \end{itemize}
+\item
+  Does RN have some good ideas about the relationship between theology,
+  philosophy, and science?
+\end{itemize}
+\end{block}
+
+\begin{block}{Further reading}
+\protect\hypertarget{further-reading}{}
+\begin{itemize}
+\item
+  Jon Stewart. ``Rasmus Nielsen: From the object of `prodigious concern'
+  to a `windbag'\,'' (The only thing in English!?)
+\item
+  Carl Henrik Koch. \emph{Den Danske Idealisme} {[}chapter on Nielsen{]}
+\item
+  Harald Høffding. \emph{Danske Filosoffer} {[}chapter on Nielsen{]}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\end{document}
