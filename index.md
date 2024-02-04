@@ -43,18 +43,15 @@ attend to achieve via this methodology.
 
 # About me
 
-<p> <a href="https://orcid.org/0000-0003-3022-2344"
-                            target="orcid.widget" rel="noopener
-                            noreferrer" style="vertical-align:top;">
-                            <img
-                            src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-                            style="width:1em;margin-right:.5em;"
-                            alt="ORCID iD icon"> 0000-0003-3022-2344
-                            </a> on <a
-                            href="https://orcid.org">orcid.org</a>
-                            </p>
-							
-<div id="philpeople-component-follow_btn"></div>
-<script type="text/javascript" src="https://philpeople.org/components/follow_btn?props%5B%3Aprofile_id_prop%5D=8358&amp;props%5Bcontext%5D=external"></script>							
-
-
+<ul>
+        <li>
+            <a href="https://orcid.org/0000-0003-3022-2344" target="_blank">
+                <img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" class="inl" alt="Orcid logo"/>0000-0003-3022-2344</a>
+        </li>
+        <li>
+            <a href="https://scholar.google.com/citations?hl=en&amp;user=yBknLPkAAAAJ" target="_blank">Google Scholar</a>
+        </li>
+        <li>
+            <a href="https://philpeople.org/profiles/hans-halvorson" target="_blank">PhilPeople</a>
+        </li>
+</ul>
