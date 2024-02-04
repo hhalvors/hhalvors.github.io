@@ -1,16 +1,18 @@
 ---
 layout: default
-title: Current Research
+title: Hans Halvorson's personal page 
 ---
+
+# Current research
 
 I currently have three main projects that give focus to my research.
 
-# Niels Bohr: Philosopher in Action
+## Niels Bohr: Philosopher in Action
 
 An intellectual biography of Niels Bohr (Joint work with Anja Skaar
 Jacobsen)
 
-# Philosophical Lessons of the Theory of Relativity
+## Philosophical Lessons of the Theory of Relativity
 
 Relativity theory might seem less philosophically provocative than
 quantum physics, and easier to read literally, i.e. as telling us how
@@ -20,7 +22,7 @@ relativity theory. But that has not always been the case --- and I'm
 convinced that if there is a consensus now, then it rests on some
 indefensible presuppositions.
    
-# Meta-Philosophy and Theoretical Equivalence
+## Meta-Philosophy and Theoretical Equivalence
 
 It's possible to make up some precise (mathematically rigorous)
 versions of familiar concepts. For example, in the 19th century,
@@ -38,5 +40,18 @@ meta-theoretic concepts (i.e. concepts about our representations and
 how they relate to the world) are useful, and that explication of such
 concepts is a valuable practice. But it's important to clarify what we
 attend to achieve via this methodology.
+
+# About me
+
+<p> <a href="https://orcid.org/0000-0003-3022-2344"
+                            target="orcid.widget" rel="noopener
+                            noreferrer" style="vertical-align:top;">
+                            <img
+                            src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
+                            style="width:1em;margin-right:.5em;"
+                            alt="ORCID iD icon"> 0000-0003-3022-2344
+                            </a> on <a
+                            href="https://orcid.org">orcid.org</a>
+                            </p>
 
 
