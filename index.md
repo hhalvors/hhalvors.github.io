@@ -53,5 +53,8 @@ attend to achieve via this methodology.
                             </a> on <a
                             href="https://orcid.org">orcid.org</a>
                             </p>
+							
+<div id="philpeople-component-follow_btn"></div>
+<script type="text/javascript" src="https://philpeople.org/components/follow_btn?props%5B%3Aprofile_id_prop%5D=8358&amp;props%5Bcontext%5D=external"></script>							
 
 
