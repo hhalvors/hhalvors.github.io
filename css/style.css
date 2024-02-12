@@ -34,13 +34,6 @@
     box-sizing:border-box
 }
 
-html {
-    font-family: sans-serif;
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color:transparent
-}
-
 body {
     margin: 0;
     font-family: Lato, helvetica neue, Arial, noto sans, sans-serif, apple color emoji, segoe ui, segoe ui emoji, segoe ui symbol, noto color emoji;
