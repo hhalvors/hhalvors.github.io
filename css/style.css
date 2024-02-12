@@ -49,3 +49,26 @@ h3 {
     max-width: 1200px; /* Or your preferred maximum width */
 }
 
+.year-container {
+  display: flex;
+  align-items: flex-start; /* Keeps items aligned at the top; adjust if necessary */
+}
+
+.year-container h2 {
+  margin-right: 20px; /* Increase space between the year and the list */
+  margin-bottom: 0; /* Removes the default bottom margin from h2 */
+}
+
+.year-container ul {
+  padding: 0;
+  margin: -0.5em;
+  margin-top: 3em; /* Adjusts the vertical positioning */
+  /* The calc() function above is an example; adjust the values based on your exact needs */
+}
+
+.year-container ul li {
+  /* Additional styling for list items if necessary */
+}
+
+
+
