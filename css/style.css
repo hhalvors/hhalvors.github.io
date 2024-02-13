@@ -203,6 +203,27 @@ div.container {
   white-space: pre-wrap; /* Ensures that whitespace and line breaks are preserved */
 }
 
+@media screen and (max-width: 600px) {
+  .navbar a.icon {
+    display: block;
+    float: none; /* Changed from 'right' to 'none' */
+    position: relative; /* Ensure the icon is positioned relative to its parent */
+    right: 0; /* Keep if you want the icon to align to the right edge */
+    top: 0;
+  }
+}
+
+.navbar {
+  width: 100%; /* This ensures the navbar matches the viewport width */
+}
+
+.navbar.responsive {
+  position: absolute; /* or 'fixed' if you want it to stay in place on scroll */
+  right: 0; /* Aligns the menu to the right edge */
+  top: 0;
+  width: 100%; /* Ensure it doesn't extend beyond the viewport */
+}
+
 
 
 
