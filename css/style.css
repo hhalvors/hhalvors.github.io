@@ -30,51 +30,6 @@
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
 }
 
-*, * ::before, * ::after {
-    box-sizing:border-box
-}
-
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  color: white;
-  padding: 10px 20px;
-}
-
-.top-bar .name {
-  font-size: 20px;
-}
-
-.navbar ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-}
-
-.navbar ul li a {
-  text-decoration: none;
-  color: white;
-  padding: 10px;
-  display: block;
-}
-
-.navbar a.icon {
-  display: none;
-}
-
-@media screen and (max-width: 600px) {
-  .navbar ul {
-    display: none;
-  }
-  .navbar a.icon {
-    display: block;
-    float: right;
-  }
-}
 
 body {
     margin: 0;
@@ -175,55 +130,80 @@ div.container {
   /* Additional styling for list items if necessary */
 }
 
-.navbar.responsive .icon {
-  position: absolute;
-  right: 0;
-  top: 0;
+
+
+
+/* Reset some basic elements to ensure consistency across browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.navbar.responsive ul {
-  display: block;
-  position: absolute;
-  background-color: #333;
-  width: 100%;
-  top: 40px;
-  left: 0;
+/* Styling for the top menu bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333; /* Dark background for the bar */
+  color: white; /* White text color */
+  padding: 10px 20px; /* Padding around the bar */
 }
 
-.navbar.responsive ul li {
-  float: none;
+/* Styling for the name on the left */
+.top-bar .name {
+  font-size: 20px;
 }
 
-.navbar.responsive ul li a {
-  display: block;
-  text-align: left;
+/* Container for the navigation menu items */
+.navbar {
+  display: flex;
+  align-items: center;
 }
 
-.card.card-body {
-  white-space: pre-wrap; /* Ensures that whitespace and line breaks are preserved */
+/* Styling for individual navigation links */
+.navbar a {
+  text-decoration: none;
+  color: white; /* White text color for links */
+  padding: 10px; /* Space around the link text */
+  margin-left: 10px; /* Space between links */
 }
 
-@media screen and (max-width: 600px) {
-  .navbar a.icon {
-    display: block;
-    float: none; /* Changed from 'right' to 'none' */
-    position: relative; /* Ensure the icon is positioned relative to its parent */
-    right: 0; /* Keep if you want the icon to align to the right edge */
-    top: 0;
+/* Ensure the navbar links are lined up horizontally */
+.navbar ul {
+  display: flex;
+  list-style: none; /* Remove bullet points from list */
+}
+
+
+
+/* Hide the hamburger menu icon on larger screens */
+.icon {
+  display: none;
+}
+
+/* Example media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .icon {
+    display: block; /* Show the icon on smaller screens */
+    float: right; /* Position it to the right */
+    font-size: 30px; /* Adjust size as needed */
+    color: white; /* Match the color scheme */
+  }
+
+  /* Hide the menu items in smaller screens initially */
+  .navbar ul {
+    display: none;
+  }
+
+  /* Additional styles for when the menu is toggled open could go here */
+  .navbar.responsive ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Full width */
+    /* Other styles to ensure a vertical layout and proper spacing */
   }
 }
-
-.navbar {
-  width: 100%; /* This ensures the navbar matches the viewport width */
-}
-
-.navbar.responsive {
-  position: absolute; /* or 'fixed' if you want it to stay in place on scroll */
-  right: 0; /* Aligns the menu to the right edge */
-  top: 0;
-  width: 100%; /* Ensure it doesn't extend beyond the viewport */
-}
-
 
 
 
