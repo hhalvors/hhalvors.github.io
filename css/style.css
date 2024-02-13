@@ -87,9 +87,16 @@ body {
     background-color: #fff
 }
 
-h3 {
-    margin-left: -20px; /* Adjust as necessary to position the year to the left */
+h1, h3 {
+    margin-left: 0; /* Removes any default margin */
+    padding-left: 0; /* Ensures padding is consistent */
 }
+
+/* If there are specific container elements around your h1 or h3, you might need to adjust their paddings as well */
+.container, .publications-container {
+    padding-left: 20px; /* Adjust this value so it aligns with the text of your h3 elements */
+}
+
 
 .yeartable {
     border-collapse: collapse;
