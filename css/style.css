@@ -144,18 +144,17 @@ div.container {
 .top-bar {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Align items to the start */
+  align-items: center; /* Align items to the start */
   background-color: #333; /* Dark background for the bar */
   color: white; /* White text color */
   padding: 10px 20px; /* Padding around the bar */
+  position: relative;
 }
 
-/* Ensure the navbar does not force other items to shift */
 .navbar {
-  display: flex;
-  flex-direction: column; /* Stack vertically */
-  align-items: flex-start; /* Align to the start, under the name */
+  display: flex; /* This will be toggled by JavaScript */
 }
+
 
 /* Styling for the name on the left */
 .top-bar .name {
@@ -176,11 +175,11 @@ div.container {
   list-style: none; /* Remove bullet points from list */
 }
 
-
-
-/* Hide the hamburger menu icon on larger screens */
 .icon {
-  display: none;
+  position: absolute;
+  right: 10px;
+  top: 10px; /* Adjust as needed */
+  display: none; /* Hidden by default, shown in media query */
 }
 
 /* Example media query for smaller screens */
