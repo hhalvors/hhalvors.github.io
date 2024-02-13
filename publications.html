@@ -3,19 +3,27 @@
 <head>
   <title>Publications of Hans Halvorson</title>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-  <body>
+<body>
 
-  <div class="menu-bar">
-  <div class="header">Hans Halvorson</div>
-  <a href="/publications/">Publications</a>
-  <a href="/talks.html">Talks</a>
-  <a href="/teaching/index.html">Teaching</a>
-  <a href="#cv">CV</a>
-  </div>
+<div class="top-bar">
+  <div class="name">Hans Halvorson</div>
+  <nav class="navbar" id="navbar">
+    <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+      &#9776;
+    </a>
+    <ul>
+      <li><a href="/">Main Page</a></li>
+      <li><a href="/publications.html">Publications</a></li>
+      <li><a href="/talks.html">Talks</a></li>
+      <li><a href="/courses.html">Courses</a></li>
+    </ul>
+  </nav>
+</div>
 
 <div class="publications-container">
 
@@ -32,7 +40,7 @@
      <a class="button" style="cursor: pointer;"
      onClick="showBibHere(this);">bibtex</a>
      </span>
-     <pre class="bibhidden">
+     <pre class="bibhidden">  
 @incollection{halvorson2023carnap,
   author       = {Hans Halvorson},
   booktitle    = {Rudolf {C}arnap {H}andbuch},
@@ -1333,5 +1341,15 @@
 </div>
 </div>
 
+<script>
+function toggleMenu() {
+  var navbar = document.getElementById("navbar");
+  if (navbar.className === "navbar") {
+    navbar.className += " responsive";
+  } else {
+    navbar.className = "navbar";
+  }
+}
+</script>
 </body>
 </html>
