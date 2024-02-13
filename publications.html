@@ -4,11 +4,17 @@
   <title>Publications of Hans Halvorson</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
+
+  
 
 <div class="top-bar">
   <div class="name">Hans Halvorson</div>
@@ -17,7 +23,7 @@
       &#9776;
     </a>
     <ul>
-      <li><a href="/">Main Page</a></li>
+      <li><a href="index.html">Current Research</a></li>
       <li><a href="publications.html">Publications</a></li>
       <li><a href="talks.html">Talks</a></li>
       <li><a href="courses.html">Courses</a></li>
@@ -39,19 +45,18 @@
      <span class="venueline">In: <i>Rudolf Carnap Handbuch</i></span>
      <br>
      <span class="buttonline">
-     <a class="button" style="cursor: pointer;"
-     onClick="showBibHere(this);">bibtex</a>
-     </span>
-     <pre class="bibhidden">  
-@incollection{halvorson2023carnap,
-  author       = {Hans Halvorson},
-  booktitle    = {Rudolf {C}arnap {H}andbuch},
-  editor       = {Christian Damb\"{o}ck and Georg Schiemer},
-  publisher    = {Metzler Verlag},
-  title        = {Carnap's formal philosophy of science},
-  year         = 2023,
-}</pre>
-    </li> 
+<a class="badge badge-light" role="button" data-toggle="collapse" href="#halvorson2023carnap" aria-expanded="false" aria-controls="halvorson2023carnap" style="vertical-align:text-bottom">BibTeX</a>
+
+<div class="collapse" id="halvorson2023carnap">
+  <div class="card card-body">@incollection{halvorson2023carnap,
+                                 author    = {Hans Halvorson},
+                                 booktitle = {Rudolf {C}arnap {H}andbuch},
+                                 editor    = {Christian Damb\"{o}ck and Georg Schiemer},
+                                 publisher = {Metzler Verlag},
+                                 title     = {Carnap's formal philosophy of science},
+                                 year      = 2023,}
+    </div>
+</div></li> 
             
 
 <li><span class="title"><a href="https://dx.doi.org/10.1007/s10838-021-09594-y">John Bell on
@@ -1353,5 +1358,10 @@ function toggleMenu() {
   }
 }
 </script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>

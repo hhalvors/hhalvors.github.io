@@ -87,6 +87,9 @@ body {
     background-color: #fff
 }
 
+<a class="badge badge-light" role="button" data-toggle="collapse" href="#bollmann-etal-2023-two-decades" aria-expanded="false" aria-controls="collapseExample" style="vertical-align:text-bottom">BibTeX
+</a>
+
 h1, h3 {
     margin-left: 0; /* Removes any default margin */
     padding-left: 0; /* Ensures padding is consistent */
@@ -95,6 +98,12 @@ h1, h3 {
 /* If there are specific container elements around your h1 or h3, you might need to adjust their paddings as well */
 .container, .publications-container {
     padding-left: 20px; /* Adjust this value so it aligns with the text of your h3 elements */
+}
+
+div.container {
+  max-width: 960px; /* Adjust this value as needed */
+  margin: 0 auto; /* This centers the container */
+  padding: 20px 20px 0; /* This adds padding inside the container */
 }
 
 
@@ -189,6 +198,11 @@ h1, h3 {
   display: block;
   text-align: left;
 }
+
+.card.card-body {
+  white-space: pre-wrap; /* Ensures that whitespace and line breaks are preserved */
+}
+
 
 
 
