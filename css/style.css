@@ -130,6 +130,8 @@ div.container {
   /* Additional styling for list items if necessary */
 }
 
+
+
 ul.topnav {
   list-style-type: none;
   margin: 0;
@@ -158,4 +160,26 @@ ul.topnav li.right {float: right;}
   ul.topnav li.right, 
   ul.topnav li {float: none;}
 }
+
+        .course {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .course h2 {
+            margin-top: 0;
+        }
+        .course-link {
+            background-color: #f4f4f4;
+            color: #333;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .course-link:hover {
+            background-color: #e9e9e9;
+        }
 
