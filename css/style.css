@@ -190,3 +190,9 @@ ul.topnav li.right {float: right;}
     white-space: pre-wrap; /* or white-space: pre; depending on your need */
     font-family: 'Menlo', monospace;
 }
+
+.no-style {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}

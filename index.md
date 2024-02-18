@@ -44,14 +44,13 @@ attend to achieve via this methodology.
 # About me
 
 <ul>
-        <li>
-            <a href="https://orcid.org/0000-0003-3022-2344" target="_blank">
-                <img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" class="inl" alt="Orcid logo"/> 0000-0003-3022-2344</a>
-        </li>
-        <li>
-            <a href="https://scholar.google.com/citations?hl=en&amp;user=yBknLPkAAAAJ" target="_blank">Google Scholar</a>
-        </li>
-        <li>
-            <a href="https://philpeople.org/profiles/hans-halvorson" target="_blank">PhilPeople</a>
-        </li>
-</ul>
+<li>
+	<a href="https://orcid.org/0000-0003-3022-2344" target="_blank">
+<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" class="inl" alt="Orcid logo"/>0000-0003-3022-2344</a>
+</li>
+	<li><a href="https://scholar.google.com/citations?hl=en&amp;user=yBknLPkAAAAJ" target="_blank">Google Scholar</a>
+	</li>
+	<li>
+	<a href="https://philpeople.org/profiles/hans-halvorson" target="_blank">PhilPeople</a>
+		</li>
+		</ul>
