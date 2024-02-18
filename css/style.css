@@ -186,3 +186,7 @@ ul.topnav li.right {float: right;}
             background-color: #e9e9e9;
         }
 
+.card.card-body {
+    white-space: pre-wrap; /* or white-space: pre; depending on your need */
+    font-family: 'Menlo', monospace;
+}
