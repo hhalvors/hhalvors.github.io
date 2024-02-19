@@ -42,9 +42,6 @@ body {
     background-color: #fff
 }
 
-<a class="badge badge-light" role="button" data-toggle="collapse" href="#bollmann-etal-2023-two-decades" aria-expanded="false" aria-controls="collapseExample" style="vertical-align:text-bottom">BibTeX
-</a>
-
 h1, h3 {
     margin-left: 0; /* Removes any default margin */
     padding-left: 0; /* Ensures padding is consistent */
