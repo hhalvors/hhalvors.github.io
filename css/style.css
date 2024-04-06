@@ -52,10 +52,11 @@ h1, h3 {
     padding-left: 20px; /* Adjust this value so it aligns with the text of your h3 elements */
 }
 
-div.container {
-  max-width: 960px; /* Adjust this value as needed */
+div.container, div.publications-container {
+  max-width: 1100px; /* Adjust this value as needed */
   margin: 0 auto; /* This centers the container */
   padding: 20px 20px 0; /* This adds padding inside the container */
+  padding-bottom: 40px; /* Adjust this value as needed */
 }
 
 
@@ -109,6 +110,7 @@ div.container {
 .year-container {
   display: flex;
   align-items: flex-start; /* Keeps items aligned at the top; adjust if necessary */
+  padding-bottom: 30px;
 }
 
 .year-container h2 {
@@ -117,27 +119,33 @@ div.container {
 }
 
 .year-container ul {
-  padding: 0;
+    padding: 0px;
+    padding-left: -5px;
   margin: -0.5em;
   margin-top: 3em; /* Adjusts the vertical positioning */
-  /* The calc() function above is an example; adjust the values based on your exact needs */
-}
-
-.year-container ul li {
-  /* Additional styling for list items if necessary */
 }
 
 
 
-ul.topnav {
+/* ul.topnav {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #333;
-}
+} */
 
-ul.topnav li {float: left;}
+/* Update to your topnav to match the container width and use Flexbox */
+ul.topnav {
+  list-style-type: none;
+  margin: 0 auto; /* Center the nav */
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  display: flex;
+  justify-content: space-between; /* Adjust space as needed */
+  max-width: 1100px; /* Match the container's width */
+}
 
 ul.topnav li a {
   display: block;
@@ -147,15 +155,34 @@ ul.topnav li a {
   text-decoration: none;
 }
 
-ul.topnav li a:hover:not(.active) {background-color: #111;}
+/* Special styling for "Hans Halvorson" if it's the first item */
+ul.topnav li:first-child a {
+  text-align: left;
+}
 
-ul.topnav li a.active {background-color: #04AA6D;}
+/* Or if using a specific class for "Hans Halvorson" */
+ul.topnav li.hans a {
+  text-align: left;
+}
 
-ul.topnav li.right {float: right;}
+/* CSS for right-aligned items */
+ul.topnav li:not(:first-child) {
+  margin-left: auto;
+}
 
-@media screen and (max-width: 600px) {
-  ul.topnav li.right, 
-  ul.topnav li {float: none;}
+/* Responsive adjustments */
+@media screen and (max-width: 1100px) {
+  ul.topnav {
+    flex-direction: column;
+  }
+
+  ul.topnav li {
+    width: 100%; /* Ensure list items fill the container */
+  }
+
+  ul.topnav li:not(:first-child) {
+    margin-left: 0; /* Reset margin on smaller screens */
+  }
 }
 
 .course {
@@ -195,3 +222,23 @@ ul.topnav li.right {float: right;}
   padding-left: 0;
   margin-left: 0;
 }
+
+ul.topnav li a {
+  font-size: 20px; /* Example size, adjust as needed */
+}
+
+body ul {
+  padding-left: 20px; /* Decrease this value to reduce indentation */
+  margin-left: 0; /* Adjust this value as needed */
+}
+
+/* Target ul or ol that directly follow h2 elements */
+h2 + ul, h2 + ol {
+  padding-left: 40px; /* Adjust this value to increase indentation */
+}
+
+h3 {
+  font-size: 1.2em; /* Adjust this value as needed */
+}
+
+
