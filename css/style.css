@@ -241,4 +241,30 @@ h3 {
   font-size: 1.2em; /* Adjust this value as needed */
 }
 
+.current-research-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start; /* Align items at the start, allowing different heights */
+}
 
+
+.card {
+  background: #FFFFFF; /* Card background */
+  border: 1px solid #ddd; /* A light border */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px;
+  width: 300px; /* Fixed width, but you can make it responsive */
+  margin-bottom: 20px; /* Spacing between cards vertically */
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #333; /* Title color */
+}
+
+.card p {
+  color: #666; /* Text color */
+}

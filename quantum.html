@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Hans Halvorson" />
+  <title>Is quantum mechanics irrational?</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Is quantum mechanics irrational?</h1>
+<p class="author">Hans Halvorson</p>
+</header>
+<p>The following is my reading guide for students who want to get
+started thinking about the philosophical issues that arise in quantum
+mechanics.</p>
+<p>It was claimed from the very start (1910s and 20s) that the attempt
+to push physical theory into the subatomic realm met up with some
+challenging philosophical issues. These issues engaged the early
+pioneers of quantum mechanics for two decades – until the European
+scientific community was decimated by a hateful political movement. When
+the balance of power in physics moved to North America, these more
+conceptual discussions were all but forgotten. So, whatever conceptual
+innovations were made in the 1920s and 30s, these were unknown to
+physicists in the latter half of the 20th century.</p>
+<p>Thankfully, though, the fact that quantum physics isn’t just “physics
+as usual” was clearly realized by John Bell, David Bohm, Hugh Everett,
+etc. (Unfortunately these revolutionaries never got to discuss with
+Niels Bohr and the other conceptually minded physicists of the earlier
+generation.) In the third decade of the 21st century, there is now a
+small minority of physicists who think actively about the foundations of
+quantum physics, along side a small community of philosophers of
+science. Unfortunately, disciplinary boundaries sometimes get in the way
+of conceptual progress, and I hope that this document will be of some
+small help in overcoming those problems.</p>
+<h2 id="wake-up-call">Wake up call</h2>
+<p>If you want to get a “wake-up call” for why there is a serious
+problem with textbook quantum mechanics, then read <span
+class="citation" data-cites="albert">Albert (1994)</span> . Albert’s
+book is a locus classicus for the quantum <strong>measurement
+problem</strong>, and he also describes some of the main ways of
+attempting to solve this problem – i.e. interpretations of quantum
+mechanics.</p>
+<p>There are quite a few things in Albert’s book that are tendentious —
+but that’s why it’s exciting! I would say that it’s a bit uncharitable
+to treat QM as a “statistical algorithm” that only makes predictions.
+Perhaps that is the way that some, or even many, physicists use QM. But
+perhaps others manage to use it in a way that leads them to make true
+descriptions of things that happen before or after measurements, or more
+generally, of things that cannot be seen by the human eye. So to say
+that QM is <em>only</em> a statistical algorithm seems a bit
+uncharitable.</p>
+<p>For an even more clear statement of what the measurement problem is
+supposed to be, see <span class="citation"
+data-cites="maudlin-three">(Maudlin 1995)</span>. Maudlin’s
+demonstration of the measurement problem gives a convenient way of
+classifying interpretations of QM based on which assumption they give
+up:</p>
+<ol type="1">
+<li><p>Measurements have outcomes</p></li>
+<li><p>Linear dynamics</p></li>
+<li><p>The wavefunction is complete</p></li>
+</ol>
+<p>The work by Albert, Maudlin, et al. develops themes that occur
+already in the collection of articles by John Bell <span
+class="citation" data-cites="speakable">(2004)</span>. But I don’t buy
+into the narrative that John Bell uncovered problems in QM that were
+shoved aside by the pioneers of the field – i.e. the narrative the Bohr
+et al. ignored these problems, and silenced those who raised them. (This
+narrative can be found in books by <span class="citation"
+data-cites="beller">Beller (1999)</span> and <span class="citation"
+data-cites="becker">Becker (2018)</span>, and is presupposed in rather a
+lot of the journal articles published by philosophers.) Every bit of
+historical evidence suggests that Bohr, in particular, spent his entire
+life thinking about the philosophical issues at stake in quantum
+physics.</p>
+<h2
+id="does-quantum-mechanics-break-the-rules-of-logic-or-probability-theory">Does
+quantum mechanics break the rules of logic (or probability theory)?</h2>
+<p>In the early days of quantum theory it did surely seem like the laws
+of logic were in danger of being broken. There were experiments that
+seemed to indicate that the underlying material was wavelike, and other
+experiments that seemed to indicate that the underlying material was
+particulate. But waves are not particles, so it looked like the world
+simply didn’t make sense to human logic. (Heisenberg’s “solution” was to
+stop trying to say what the world is like.)</p>
+<p>There are other ways in which the quantum world seemed to defy
+standard laws of rationality. Take, for example, the idea that every
+event must have a cause. Well, quantum theory said that an electron
+might spontaneously transition from one energy level to another with no
+antecedent cause. So that seems like yet another sense in which quantum
+mechanics defies the laws of rationality.</p>
+<p>Or take more recent experiments that indicate that two things that
+are distant in space from each other can be “entangled” in a way that
+simply doesn’t make sense according to common sense intuitions. One can
+even sometimes here people say things like “a particle can be in two
+places at one time”. But that kind of claim really goes beyond what the
+theory actually says. It doesn’t say that one thing can be in two places
+at a single time. It only says that two things can behave in a way that
+is hard to explain by treating them as separate individuals.</p>
+<p>For a student who has actually learned some real formal logic, there
+is a more precise question to be asked, viz. whether quantum mechanics
+tells us that some of the rules of formal logic are simply wrong. That
+is a real live debate, and people have some quite strong opinions about
+it. I would say that the recent consensus is that quantum mechanics
+doesn’t say anything that directly impinges on the laws of classical
+formal logic. But that wasn’t always the favored opinion. In a famous
+article, the philosopher Hilary Putnam argued that QM demands a revision
+of logic <span class="citation" data-cites="putnam">Putnam
+(1968)</span>. If you look (e.g. on Google scholar) at all the responses
+to that article, then you will see not only that many people have argued
+against it, but that even Putnam himself gave up this idea.</p>
+<p>There has been a bit of a recent flareup in discussions about quantum
+logic. See <span class="citation"
+data-cites="maudlin-logic kripke williamson">(Maudlin 2005; Kripke 2023;
+Williamson 2018)</span></p>
+<p>For an elegant formal approach to quantum logic, without much
+philosophical drama, see <span class="citation"
+data-cites="gibbins">(Gibbins 1987)</span>. There are interesting
+mathematical questions here as well – in particular, about the
+relationship of quantum logic to other substructural logics.</p>
+<h2 id="adopting-an-interpretation">Adopting an interpretation</h2>
+<p>If one starts to get serious about a particular interpretation of QM,
+then the question is: what to do with it? At risk of grossly
+caricaturing, Bohmians have a scientific task: develop extensions of
+Bohmian mechanics to capture more real physical situations. (David
+Wallace is not optimistic about their chances <span class="citation"
+data-cites="wallace-sky">(Wallace 2023)</span>.) In contrast,
+Everettians have a philosophical task: explain how we can get our heads
+around this metaphysical picture that is so alien to common sense.</p>
+<h2 id="hot-topics">Hot topics</h2>
+<h3 id="everett-many-worlds">Everett (Many Worlds)</h3>
+<p>To call Everett a “hot topic” is about 15 years behind the times. The
+topic got hot again in the early 2000s, thanks to (among others) David
+Wallace. It has now moved into a more stable development and
+articulation phase, I would say. There are lots of problems and
+sub-problems still to be worked out. My sense is that of all the
+interpretations on offer, Everett is the closest to a “worldview”.</p>
+<h3 id="wavefunction-realism">Wavefunction realism</h3>
+<p>The idea is simple: the quantum wavefunction is a real thing. This
+view has been developed by Alyssa Ney, and defended in some places by
+Sean Carroll. I myself have criticized the view in print <span
+class="citation" data-cites="tobe">(Halvorson 2019)</span>.</p>
+<h3 id="qbism">QBism</h3>
+<p>A radical, and potentially interesting idea, propelled forward by the
+growth of quantum computing and information theory. What if the whole
+point of the quantum revolution is that physics should no longer try to
+say how things are? I haven’t been following the latest in QBism, but if
+you google it, and also keyword “Chris Fuchs”, you’ll find plenty to
+read. One very interesting thing about QBism is that it makes you
+thinker harder about the interpretation of probability – i.e. when you
+say that an event has a 50% chance of occuring, what exactly are you
+saying (if anything) about the world?</p>
+<h3 id="relational-quantum-mechanics">Relational quantum mechanics</h3>
+<p>This is the bespoke interpretation of Carlo Rovelli. There is much
+more to say about it, both in terms of why it’s so well motivated
+(i.e. it’s a beautiful idea) and in terms of skepticism about whether it
+works.</p>
+<h3 id="healeys-pragmatic-turn">Healey’s pragmatic turn</h3>
+<p>Richard Healey has been doing some creative thinking about what
+quantum physics means. For a start, see his book <span class="citation"
+data-cites="healey">(Healey 2017)</span>.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<p>You can read many articles about the philosophy of quantum mechanics
+in the <a
+href="https://plato.stanford.edu/search/searcher.py?query=quantum">Stanford
+Online Encyclopedia of Philosophy</a>. These articles are written by
+reputable authors, and are reviewed by professional editors. They are
+trustworthy, and can be cited in academic work.</p>
+<h2 class="unnumbered" id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent"
+role="doc-bibliography">
+<div id="ref-albert" class="csl-entry" role="doc-biblioentry">
+Albert, David Z. 1994. <em>Quantum Mechanics and Experience</em>.
+Harvard University Press.
+</div>
+<div id="ref-becker" class="csl-entry" role="doc-biblioentry">
+Becker, Adam. 2018. <em>What Is Real?: The Unfinished Quest for the
+Meaning of Quantum Physics</em>.
+</div>
+<div id="ref-speakable" class="csl-entry" role="doc-biblioentry">
+Bell, John Stewart. 2004. <em>Speakable and Unspeakable in Quantum
+Mechanics: Collected Papers on Quantum Philosophy</em>. Cambridge
+university press.
+</div>
+<div id="ref-beller" class="csl-entry" role="doc-biblioentry">
+Beller, Mara. 1999. <em>Quantum Dialogue: The Making of a
+Revolution</em>. University of Chicago Press.
+</div>
+<div id="ref-gibbins" class="csl-entry" role="doc-biblioentry">
+Gibbins, Peter. 1987. <em>Particles and Paradoxes: The Limits of Quantum
+Logic</em>. Cambridge University Press.
+</div>
+<div id="ref-tobe" class="csl-entry" role="doc-biblioentry">
+Halvorson, Hans. 2019. <span>“To Be a Realist about Quantum
+Theory.”</span> In <em>Quantum Worlds: Perspectives on the Ontology of
+Quantum Mechanics</em>, 133–63. Cambridge University Press.
+</div>
+<div id="ref-healey" class="csl-entry" role="doc-biblioentry">
+Healey, Richard. 2017. <em>The Quantum Revolution in Philosophy</em>.
+Oxford University Press.
+</div>
+<div id="ref-kripke" class="csl-entry" role="doc-biblioentry">
+Kripke, Saul A. 2023. <span>“The Question of Logic.”</span>
+<em>Mind</em> 133 (529): 1–36. <a
+href="https://doi.org/10.1093/mind/fzad008">https://doi.org/10.1093/mind/fzad008</a>.
+</div>
+<div id="ref-maudlin-three" class="csl-entry" role="doc-biblioentry">
+Maudlin, Tim. 1995. <span>“Three Measurement Problems.”</span>
+<em>Topoi</em> 14 (1): 7–15.
+</div>
+<div id="ref-maudlin-logic" class="csl-entry" role="doc-biblioentry">
+———. 2005. <span>“The Tale of Quantum Logic.”</span> In <em>Hilary
+Putnam</em>, 156–87. Cambridge University Press.
+</div>
+<div id="ref-putnam" class="csl-entry" role="doc-biblioentry">
+Putnam, Hilary. 1968. <span>“Is Logic Empirical?”</span> <em>Boston
+Studies in the Philosophy of Science</em> 5.
+</div>
+<div id="ref-wallace-sky" class="csl-entry" role="doc-biblioentry">
+Wallace, David. 2023. <span>“The Sky Is Blue, and Other Reasons Quantum
+Mechanics Is Not Underdetermined by Evidence.”</span> <em>European
+Journal for Philosophy of Science</em> 13 (4): 54.
+</div>
+<div id="ref-williamson" class="csl-entry" role="doc-biblioentry">
+Williamson, Timothy. 2018. <span>“Alternative Logics and Applied
+Mathematics.”</span> <em>Philosophical Issues</em> 28 (1): 399–424.
+</div>
+</div>
+</body>
+</html>
