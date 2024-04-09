@@ -446,5 +446,49 @@ and v is contained in w.</p>
 [0,1]</p>
 <p>∃x(0≤x≤1 ∧ ∀y((0≤y≤1)→(f(y)≤f(x))))</p></li>
 </ol>
+<p><strong>Exercise 7.4</strong></p>
+<p>∀xLxb∧∀x(Lbx↔︎x=a)</p>
+<p>By the first conjunct, Lbb. By the second conjunct, Lbb↔︎(b=a).
+Therefore, b=a.</p>
+<p><strong>Exercise 7.5</strong></p>
+<p>Let a,b be given. By the total axiom, either a≤b or b≤a. Assume
+without loss of generality that a≤b. Since also b≤b by reflexivity,
+there is an x such that a≤x and b≤x. Therefore, the relation ≤ is
+directed.</p>
+<p><strong>Exercise 7.6</strong></p>
+<p>This claim is incorrect unless the relation R is also assumed to be
+serial. For example, in the structure <span
+class="math inline">{<em>a</em>}</span>, where the extension of R is
+empty, the reflexivity and transitivity axioms are satisfied, whereas
+the reflexivity axiom is not satisfied. If, however, R is also serial,
+then the result can be proven as follows: given a, there is some b such
+that Rab. By symmetry, Rba. Thus, Rab∧Rba, and by transitivity, Raa.
+Since a was an arbitrary element, we have ∀xRxx.</p>
+<p><strong>Exercise 7.7</strong></p>
+<p>The following sentence is true in the integers, but false in the
+rational numbers: “There are x and y such that x&lt;y, but there is no z
+such that x&lt;z and z&lt;y.” Clearly that sentence can be formalized in
+quantifier logic.</p>
+<p><strong>Exercise 7.8</strong></p>
+<p>Let a and b be given such that f(a)=f(b). Then a=g(f(a))=g(f(b))=b,
+hence a=b. Therefore f is one-to-one.</p>
+<p>Notice that in the second step, we use the fact that if c=d then
+g(c)=g(d). That can be proven as follows:</p>
+<pre><code>1  (1) c=d              A
+   (2) g(c)=g(c)        =I
+1  (2) g(c)=g(d)        1,2 =E</code></pre>
+<p><strong>Exercise 7.9</strong></p>
+<p>The fact that f is one-to-one follows from the previous exercise. To
+see that f is onto, suppose that b is an arbitrary element in the
+domain. Then from f(f(b))=b it follows that ∃x(f(x)=b). Therefore, f is
+onto.</p>
+<p><strong>Exercise 7.11</strong></p>
+<p>If f is not onto then ∃y∀x(f(x)≠y). Take an instance ∀x(f(x)≠a), and
+instantiate once as f(a)≠a and a second time as f(f(a))≠a. Since f is
+one-to-one and f(a)≠a, it follows that f(f(a))≠f(a). Putting the pieces
+together, we have</p>
+<p>(a≠f(a))∧(a≠f(f(a)))∧(f(a)≠f(f(a)))</p>
+<p>and thus</p>
+<p>∃x∃y∃z((x≠y)∧(x≠z)∧(y≠z)).</p>
 </body>
 </html>
