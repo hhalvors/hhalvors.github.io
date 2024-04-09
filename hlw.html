@@ -167,7 +167,83 @@
 <header id="title-block-header">
 <h1 class="title">How Logic Works</h1>
 </header>
+<style>
+.table-of-contents {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.table-of-contents h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.table-of-contents ul {
+    list-style: none;
+    padding: 0;
+}
+
+.table-of-contents li {
+    margin-bottom: 10px;
+}
+
+.table-of-contents a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.table-of-contents a:hover {
+    color: #0056b3;
+}
+</style>
 <p><img src="hlw.jpg" /></p>
+<div class="table-of-contents">
+<h2>
+Table of Contents
+</h2>
+<ul>
+<li>
+<a href="#chapter1">1 Logic for Humans</a>
+</li>
+<li>
+<a href="#deducing">2 Deducing</a>
+</li>
+<li>
+<a href="#chapter3">3 Supposing</a>
+</li>
+<li>
+<a href="#chapter4">4 New Proofs from Old</a>
+</li>
+<li>
+<a href="#chapter5">5 Truth</a>
+</li>
+<li>
+<a href="#chapter6">6 Quantifying</a>
+</li>
+<li>
+<a href="#theories">7 Theories</a>
+</li>
+<li>
+<a href="#chapter8">8 Models</a>
+</li>
+<li>
+<a href="#chapter9">9 A Theory about Propositional Logic</a>
+</li>
+<li>
+<a href="#chapter10">10 A Theory about Predicate Logic</a>
+</li>
+<li>
+<a href="#chapter11">11 Beyond Logic</a>
+</li>
+</ul>
+</div>
 <p>In the solutions that follow, we give specific examples of proofs.
 But there is never just one correct proof. The best way to check the
 correctness of (formal) proofs is not by comparing them to someone
@@ -175,6 +251,7 @@ else’s proofs, but by running them through a proof checker. It is fairly
 easy to write a proof checker for these kinds of proofs, but more
 difficult to make decisions about how to transform proofs written by
 humans into data structures that can be processed by a machine.</p>
+<h2 id="deducing">2 Deducing</h2>
 <p><strong>Exercise 2.1</strong></p>
 <ol type="1">
 <li><p>Prove that q∧p follows from p∧q. That is, write p∧q on line (1),
@@ -312,5 +389,62 @@ flourish.</p></li>
 </ol>
 <p><strong>Exercise 2.7</strong></p>
 <p><strong>Exercise 2.8</strong></p>
+<h2 id="theories">7 Theories</h2>
+<p><strong>Exercise 7.2</strong></p>
+<pre><code>1   (1) Fa∧∀x(Fx→(x=a))     A
+2   (2) Fb                  A
+1   (3) ∀x(Fx→(x=a))        1 ∧E
+1   (4) Fb→(b=a)            3 UE
+1,2 (5) b=a                 4,2 MP
+1   (6) Fb→(b=a)            2,5 CP
+7   (7) b=a                 A
+1   (8) Fa                  1 ∧E
+7   (9) a=b                 7 cut (symmetry of =)
+1,7 (10) Fb                 9,8 =E
+1   (11) (b=a)→Fb           7,10 CP
+1   (12) Fb↔(b=a)           6,11 cut (↔ intro)
+1   (13) ∀x(Fx↔(x=a))       12 UI</code></pre>
+<p>To prove the converse, note that the premise ∀x(Fx↔︎(x=a)) yields
+Fa↔︎(a=a). But we have a=a by =I, and so we can conclude Fa.</p>
+<p><strong>Exercise 7.3</strong></p>
+<ol type="1">
+<li><p>Maren is the only student who didn’t miss any questions on the
+exam.</p>
+<p>∀x(¬Mx↔︎(x=m))</p>
+<p>Here I’m using Mx for “x missed a question on the exam”. That phrase
+is actually quantificationally complex, and could be further cashed out
+in terms of “questions” and “being on an exam” and “x getting y
+wrong”.</p></li>
+<li><p>All professors except Aldous are boring.</p>
+<p>∀x((Px∧¬Bx)↔︎(x=a))</p></li>
+<li><p>a is the best of all possible worlds.</p>
+<p>∀xRax</p>
+<p>This implicitly assumes that “R” represents a relation that has
+features like “better than”. I would say that R must satisfy the axioms
+of a partial order.</p></li>
+<li><p>There is no greatest prime number.</p>
+<p>¬∃y(Py∧∀x((Px∧¬(x=y))→(x&lt;y)))</p>
+<p>Or: ∀x(Px→∃y(Py∧(x&lt;y)))</p>
+<p>To check: Are these two sentences always equivalent? Or does it
+depend on the fact that &lt; is a total order?</p></li>
+</ol>
+<!-- 5. The smallest prime number is even.
+
+   ∃x(Px∧∀y((Py∧(y≠x))→(x<y))∧Ex) -->
+<ol start="6" type="1">
+<li><p>For each integer, there is a unique next-greatest integer.</p>
+<p>∀x∃y((x&lt;y)∧¬∃z((x&lt;z)∧(z&lt;y)))</p></li>
+<li><p>There are at least two Ivy League universities in New York.</p>
+<p>∃x∃y((Ix∧Nx)∧(x≠y))</p></li>
+<li><p>For any two sets u and v, there is a largest set w that is
+contained in both of them.</p>
+<p>We represent this sentence as saying that there is a set w that is
+contained in both u and v, and any other set that is contained in both u
+and v is contained in w.</p>
+<p>∀u∀v∃w(w⊆u∧w⊆v∧∀x((x⊆u∧x⊆v)→x⊆w))</p></li>
+<li><p>The function f achieves its least upper bound on the domain
+[0,1]</p>
+<p>∃x(0≤x≤1 ∧ ∀y((0≤y≤1)→(f(y)≤f(x))))</p></li>
+</ol>
 </body>
 </html>
