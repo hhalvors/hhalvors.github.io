@@ -74,7 +74,7 @@ teaching:
   - courseName: Intermediate Logic
     courseTerm: Fall 2016
     courseNumber: PHI312
-    urlCode: phi312_f2016
+    urlCode: https://www.princeton.edu/~hhalvors/teaching/phi312_f2016
   - courseName: Intermediate Logic
     courseTerm: Fall 2019
     courseNumber: PHI312
@@ -82,7 +82,7 @@ teaching:
   - courseName: Philosophy of Mathematics
     courseTerm: Spring 2014
     courseNumber: PHI314
-    urlCode: phi314_s2014
+    urlCode: https://www.princeton.edu/~hhalvors/teaching/phi314_s2014
   - courseName: Philosophy of Science
     courseTerm: Spring 2015
     courseNumber: PHI321
@@ -90,7 +90,7 @@ teaching:
   - courseName: Category Theory
     courseTerm: Fall 2009
     courseNumber: PHI323
-    urlCode: phi323_f2009
+    urlCode: https://www.princeton.edu/~hhalvors/teaching/phi323_f2009
   - courseName: Category Theory
     courseTerm: Spring 2012
     courseNumber: PHI323 
