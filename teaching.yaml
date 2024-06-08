@@ -1,0 +1,215 @@
+teaching:
+  - courseName: Philosophical Logic
+    courseTerm: Fall 2007
+    courseNumber: PHI340
+    urlCode: https://www.princeton.edu/~hhalvors/teaching/phi340_f2007
+  - courseName: Introductory Logic
+    courseTerm: Fall 2001
+    courseNumber: PHI201
+    urlCode: https://www.princeton.edu/~hhalvors/teaching/phi201_f2001
+  - courseName: Religion and Scientific Objectivity 
+    courseTerm: Fall 2024
+    courseNumber: PHI363
+    urlCode: phi363_f2024/index.html
+  - courseName: Religion and Scientific Objectivity 
+    courseTerm: Fall 2020
+    courseNumber: PHI363
+    urlCode: phi363_f2020
+  - courseName: Religion and Scientific Objectivity 
+    courseTerm: Fall 2018
+    courseNumber: PHI363
+    urlCode: phi363_f2018  
+  - courseName: Introductory Logic
+    courseTerm: Spring 2024
+    courseNumber: PHI201
+    urlCode: phi201_s2024
+  - courseName: "Philosophy of Physics: Quantum Mechanics"
+    courseTerm: Fall 2023
+    courseNumber: PHI538
+    urlCode: phi538_f2023
+  - courseName: "Philosophy of Physics: Space and Time"
+    courseTerm: Fall 2024
+    courseNumber: PHI538
+    urlCode: phi538_f2024  
+  - courseName: "Philosophy of Physics: Space and Time"
+    courseTerm: Spring 2023
+    courseNumber: PHI538
+    urlCode: phi538_s2023  
+  - courseName: Introductory Logic
+    courseTerm: Fall 2002
+    courseNumber: PHI201
+    urlCode: phi201_f2002
+  - courseName: Introductory Logic
+    courseTerm: Spring 2004
+    courseNumber: PHI201
+    urlCode: phi201_s2004
+  - courseName: Introductory Logic
+    courseTerm: Spring 2005
+    courseNumber: PHI201
+    urlCode: phi201_s2005
+  - courseName: Introductory Logic
+    courseTerm: Spring 2006
+    courseNumber: PHI201
+    urlCode: phi201_s2006
+  - courseName: Introductory Logic
+    courseTerm: Spring 2016
+    courseNumber: PHI201
+    urlCode: phi201_s2016
+  - courseName: Introductory Logic
+    courseTerm: Spring 2018
+    courseNumber: PHI201
+    urlCode: phi201_s2018
+  - courseName: Introductory Logic
+    courseTerm: Spring 2019
+    courseNumber: PHI201
+    urlCode: phi201_s2019
+  - courseName: Introductory Logic
+    courseTerm: Spring 2021
+    courseNumber: PHI201
+    urlCode: phi201_s2021
+  - courseName: Intermediate Logic
+    courseTerm: Spring 2013
+    courseNumber: PHI312
+    urlCode: phi312_s2013
+  - courseName: Intermediate Logic
+    courseTerm: Fall 2016
+    courseNumber: PHI312
+    urlCode: phi312_f2016
+  - courseName: Intermediate Logic
+    courseTerm: Fall 2019
+    courseNumber: PHI312
+    urlCode: phi312_f2019  
+  - courseName: Philosophy of Mathematics
+    courseTerm: Spring 2014
+    courseNumber: PHI314
+    urlCode: phi314_s2014
+  - courseName: Philosophy of Science
+    courseTerm: Spring 2015
+    courseNumber: PHI321
+    urlCode: phi321_s2015
+  - courseName: Category Theory
+    courseTerm: Fall 2009
+    courseNumber: PHI323
+    urlCode: phi323_f2009
+  - courseName: Category Theory
+    courseTerm: Spring 2012
+    courseNumber: PHI323 
+    urlCode: phi323_s2012
+  - courseName: Category Theory
+    courseTerm: Spring 2014
+    courseNumber: PHI323 
+    urlCode: phi323_s2014  
+  - courseName: "History of Analytic Philosophy: 1900-1950"
+    courseTerm: Fall 2014
+    courseNumber: PHI338
+    urlCode: phi338_f2014
+  - courseName: "History of Analytic Philosophy: 1900-1950"
+    courseTerm: Fall 2015
+    courseNumber: PHI338
+    urlCode: phi338_f2015
+  - courseName: Philosophical Logic
+    urlCode: phi340_f2004
+    courseTerm: Fall 2004
+    courseNumber: PHI340
+  - courseName: Philosophical Logic
+    urlCode: phi340_f2005
+    courseTerm: Fall 2005
+    courseNumber: PHI340
+  - courseName: Philosophy of Physics
+    urlCode: phi327_s2020
+    courseTerm: Spring 2020
+    courseNumber: PHI327
+  - courseName: Philosophy of Physics
+    urlCode: phi327_f2022
+    courseTerm: Fall 2022
+    courseNumber: PHI327  
+  - courseName: Philosophy of Physics
+    urlCode: phi327_f2016
+    courseTerm: Fall 2016
+    courseNumber: PHI327
+  - courseName: Philosophy of Physics
+    urlCode: phi327_s2002
+    courseTerm: Spring 2002
+    courseNumber: PHI327
+  - courseName: Philosophy of Physics
+    urlCode: phi327_s2003
+    courseTerm: Spring 2003
+    courseNumber: PHI327
+  - courseName: Philosophy of Religion
+    urlCode: phi325_s2010
+    courseTerm: Spring 2010
+    courseNumber: PHI325
+  - urlCode: phi513_f2018
+    courseTerm: Fall 2018
+    courseNumber: PHI513
+    courseName: "Philosophy of Religion: Kierkegaard"
+  - urlCode: phi514_f2001
+    courseName: Recent and Contemporary Philosophy
+    courseTerm: Fall 2001
+    courseNumber: PHI514
+  - urlCode: phi514_f2002
+    courseName: Recent and Contemporary Philosophy
+    courseTerm: Fall 2002
+    courseNumber: PHI514
+  - urlCode: phi520_f2012
+    courseTerm: Fall 2012
+    courseNumber: PHI520
+    courseName: Logic
+  - urlCode: phi520_s2015
+    courseTerm: Spring 2015
+    courseNumber: PHI520
+    courseName: Logic
+  - urlCode: phi531_f2002
+    courseName: Philosophy of Science
+    courseNumber: PHI531
+    courseTerm: Fall 2002
+  - urlCode: phi536_s2011
+    courseName: Philosophy of Mathematics
+    courseNumber: PHI536
+    courseTerm: Spring 2011
+  - urlCode: phi538_f2004
+    courseName: Philosophy of Physics
+    courseNumber: PHI538
+    courseTerm: Fall 2004
+  - urlCode: phi538_f2005
+    courseName: Philosophy of Physics
+    courseNumber: PHI538
+    courseTerm: Fall 2005
+  - urlCode: phi540_f2019
+    courseNumber: PHI540
+    courseTerm: Fall 2019
+    courseName: Metaphysics
+  - urlCode: phi367_s2023
+    courseNumber: PHI367
+    courseTerm: Summer 2023
+    courseName: Kierkegaard in Copenhagen
+  - urlCode: phi367_s2021
+    courseNumber: PHI367
+    courseTerm: Summer 2021
+    courseName: Kierkegaard in Copenhagen
+  - urlCode: phi367_s2020
+    courseNumber: PHI367
+    courseTerm: Summer 2020
+    courseName: Kierkegaard in Copenhagen
+  - urlCode: phi367_s2019
+    courseNumber: PHI367
+    courseTerm: Summer 2019
+    courseName: Kierkegaard in Copenhagen
+  - urlCode: vtfys_2024
+    courseNumber: VtFys
+    courseName: Fysikkens Videnskabsteori
+    courseTerm: Summer 2024
+  - courseNumber: VtFys
+    courseName: Fysikkens Videnskabsteori
+    courseTerm: Summer 2023
+  - courseNumber: VtFys
+    courseName: Fysikkens Videnskabsteori
+    courseTerm: Summer 2022  
+    
+
+
+    
+    
+    
+
+  
