@@ -62,15 +62,20 @@ entryYear (Cons _ _ fields) = maybe 0 read (lookup "year" fields)
 entryDOI :: T -> Maybe String
 entryDOI (Cons _ _ fields) = lookup "doi" fields
 
--- Function to render an entry with a possible DOI hyperlink
+-- Helper function to extract the URL from a BibTeX entry
+entryURL :: T -> Maybe String
+entryURL (Cons _ _ fields) = lookup "url" fields
+
+-- Function to render an entry with a possible DOI or URL hyperlink
 renderEntry :: T -> H.Html
 renderEntry entry = do
     let title = entryTitle entry
     let maybeDOI = entryDOI entry
-    H.toHtml title
-    case maybeDOI of
-      Just doi -> H.span $ H.a H.! A.href (H.toValue $ "https://doi.org/" ++ doi) $ H.toHtml (" doi:" ++ doi)
-      Nothing -> return ()
+    let maybeURL = entryURL entry
+    case (maybeDOI, maybeURL) of
+      (Just doi, _) -> H.span $ H.a H.! A.href (H.toValue $ "https://doi.org/" ++ doi) $ H.toHtml title
+      (Nothing, Just url) -> H.span $ H.a H.! A.href (H.toValue url) $ H.toHtml title
+      (Nothing, Nothing) -> H.toHtml title
 
 -- Function to write HTML to a file
 writeHtmlToFile :: FilePath -> String -> IO ()
