@@ -3,6 +3,8 @@ title: "Talks"
 author: Hans Halvorson
 ---
 
+- The roots of Niels Bohr's thought [pdf](talks/bohr-roots.pdf)
+
 - Was Rasmus Nielsen a windbag (as Kierkegaard said)? [pdf](talks/windbag.pdf) [tex](talks/windbag.tex)
 
 - What models say [pdf](talks/irvine2023.pdf) [tex](talks/irvine2023.tex)
