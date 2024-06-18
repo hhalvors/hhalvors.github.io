@@ -3,6 +3,8 @@ title: "Talks"
 author: Hans Halvorson
 ---
 
+- Niels Bohr on the knowing subject [pdf](talks/shifty.pdf) [tex](talks/shifty.tex)
+
 - The roots of Niels Bohr's thought [pdf](talks/bohr-roots.pdf)
 
 - Was Rasmus Nielsen a windbag (as Kierkegaard said)? [pdf](talks/windbag.pdf) [tex](talks/windbag.tex)
