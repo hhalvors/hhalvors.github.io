@@ -66,7 +66,7 @@ courses =
     Course { courseTerm = "Summer 2020",
             courseNumber = "PHI367",
             courseName = "Kierkegaard in Copenhagen",
-            courseUrl = "phi367_s2020" },
+            courseUrl = "https://docs.google.com/document/d/1e88fnzC4Hy-33ilo6c4jH18lsLOYRL6cj2UGX7zy_F4/edit?usp=sharing" },
     Course { courseTerm = "Spring 2020",
             courseNumber = "PHI327",
             courseName = "Philosophy of Physics",
