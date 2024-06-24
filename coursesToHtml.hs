@@ -10,16 +10,6 @@ import Data.List (sortBy)
 import Data.Ord (comparing)
 import Courses (Course(..), courses) -- Import Course and courses from the Courses module
 
-termToShort :: Text -> Text
-termToShort term
-    | "fall" `elem` termWords = "f" <> year
-    | "spring" `elem` termWords = "s" <> year
-    | "summer" `elem` termWords = "su" <> year
-    | otherwise = year
-  where
-    termWords = words $ map toLower $ unpack term
-    year = pack $ last termWords
-
 -- Extract year and season from courseTerm
 parseTerm :: Text -> (Int, String)
 parseTerm term =
@@ -38,7 +28,15 @@ compareCourseTerm c1 c2 =
 
 -- Comparison function for seasons
 compareSeason :: String -> String -> Ordering
-compareSeason s1 s2 = compare s1 s2
+compareSeason s1 s2 = compare (seasonOrder s2) (seasonOrder s1)
+
+-- Helper function to assign numeric values to seasons
+seasonOrder :: String -> Int
+seasonOrder season = case map toLower season of
+    "spring" -> 1
+    "summer" -> 2
+    "fall"   -> 3
+    _        -> 4  -- fallback for any unknown season
 
 -- Main function to sort courses and generate HTML
 main :: IO ()
@@ -77,8 +75,8 @@ renderCourse :: Course -> Html
 renderCourse course = H.tr $ do
     H.td $ toHtml $ courseName course
     H.td ! A.class_ "column2" $ 
-        case courseUrl course of
-            url | not (null url) -> H.a ! A.href (toValue url) $ toHtml $ courseNumber course
-            _ -> toHtml $ courseNumber course
+        if not (null (courseUrl course))
+            then H.a ! A.href (toValue (courseUrl course)) $ toHtml $ courseNumber course
+            else toHtml $ courseNumber course
     H.td $ toHtml $ courseTerm course
 
