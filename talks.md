@@ -3,8 +3,8 @@ title: "Talks"
 author: Hans Halvorson
 ---
 
-- Equivalence in foundations (under construction)
-  [pdf](talks/equivalence-foundations.pdf)
+- Equivalence in foundations [pdf](talks/equivalence-foundations.pdf)
+  [tex](talks/equivalence-foundations.tex)
 
 - Niels Bohr on the knowing subject [pdf](talks/shifty.pdf) [tex](talks/shifty.tex)
 
