@@ -158,10 +158,11 @@ main = hakyllWith config $ do
                 >>= relativizeUrls
 
     -- .nojekyll
-    match ".nojekyll" $ do
+    create [".nojekyll"] $ do
         route idRoute
         compile copyFileCompiler
-                
+
+          
 -- Rule to generate publications.html
 --    create ["publications.html"] $ do 
 --      route idRoute
