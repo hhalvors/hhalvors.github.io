@@ -144,6 +144,11 @@ main = hakyllWith config $ do
           >>= relativizeUrls
 
     -- Talks
+    match "talks/**" $ do
+        route idRoute
+        compile copyFileCompiler      
+
+    -- Talks
     match "talks.md" $ do
         route $ customRoute (const "talks.html")
         compile $ do

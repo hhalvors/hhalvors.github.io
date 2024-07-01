@@ -1,0 +1,844 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{andreka}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=27a999378a4c59ef140b70771ddf5146}{%
+           family={Andréka},
+           familyi={A\bibinitperiod},
+           given={Hajnal},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2cd051b3889d0ce6c20c8b72350ff778}{%
+           family={Madarasz},
+           familyi={M\bibinitperiod},
+           given={Judit},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e78b7fe929f2c357fa988b940c0fce39}{%
+           family={Németi},
+           familyi={N\bibinitperiod},
+           given={István},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{5e3d0557c8d491bb5ec7dcb5dcc1e646}
+      \strng{fullhash}{5e3d0557c8d491bb5ec7dcb5dcc1e646}
+      \strng{bibnamehash}{5e3d0557c8d491bb5ec7dcb5dcc1e646}
+      \strng{authorbibnamehash}{5e3d0557c8d491bb5ec7dcb5dcc1e646}
+      \strng{authornamehash}{5e3d0557c8d491bb5ec7dcb5dcc1e646}
+      \strng{authorfullhash}{5e3d0557c8d491bb5ec7dcb5dcc1e646}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Studia Logica}
+      \field{number}{3}
+      \field{title}{Mutual definability does not imply bi-interpretability}
+      \field{volume}{53}
+      \field{year}{1994}
+      \field{pages}{353\bibrangedash 378}
+      \range{pages}{26}
+      \verb{doi}
+      \verb 10.1002/malq.200410051
+      \endverb
+    \endentry
+    \entry{awodey}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b8171e993b0288bf0b7716cdcc9aa013}{%
+           family={Awodey},
+           familyi={A\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{b8171e993b0288bf0b7716cdcc9aa013}
+      \strng{fullhash}{b8171e993b0288bf0b7716cdcc9aa013}
+      \strng{bibnamehash}{b8171e993b0288bf0b7716cdcc9aa013}
+      \strng{authorbibnamehash}{b8171e993b0288bf0b7716cdcc9aa013}
+      \strng{authornamehash}{b8171e993b0288bf0b7716cdcc9aa013}
+      \strng{authorfullhash}{b8171e993b0288bf0b7716cdcc9aa013}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Philosophical Explorations}
+      \field{title}{From sets to types to categories to sets}
+      \field{year}{2009}
+      \verb{doi}
+      \verb 10.1007/978-94-007-0431-2_5
+      \endverb
+    \endentry
+    \entry{morita}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=4fe2b8534b4729d5138446cdffa43576}{%
+           family={Barrett},
+           familyi={B\bibinitperiod},
+           given={Thomas\bibnamedelima William},
+           giveni={T\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7011ab7d0817261372091b909f883d02}{%
+           family={Halvorson},
+           familyi={H\bibinitperiod},
+           given={Hans},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{3dc0f6c6f24870f231b6c72202572f7c}
+      \strng{fullhash}{3dc0f6c6f24870f231b6c72202572f7c}
+      \strng{bibnamehash}{3dc0f6c6f24870f231b6c72202572f7c}
+      \strng{authorbibnamehash}{3dc0f6c6f24870f231b6c72202572f7c}
+      \strng{authornamehash}{3dc0f6c6f24870f231b6c72202572f7c}
+      \strng{authorfullhash}{3dc0f6c6f24870f231b6c72202572f7c}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Review of Symbolic Logic}
+      \field{number}{3}
+      \field{title}{Morita equivalence}
+      \field{volume}{9}
+      \field{year}{2016}
+      \field{pages}{556\bibrangedash 582}
+      \range{pages}{27}
+    \endentry
+    \entry{feferman1969}{incollection}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4882f9cf8c157580b3191115697f529b}{%
+           family={Feferman},
+           familyi={F\bibinitperiod},
+           given={Solomon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{fullhash}{4882f9cf8c157580b3191115697f529b}
+      \strng{bibnamehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authorbibnamehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authornamehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authorfullhash}{4882f9cf8c157580b3191115697f529b}
+      \field{extraname}{1}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Reports of the Midwest Category Seminar III}
+      \field{note}{with an appendix by G. Kreisel}
+      \field{series}{Lecture Notes in Mathematics}
+      \field{title}{Set-theoretical foundations for category theory}
+      \field{volume}{106}
+      \field{year}{1969}
+      \field{pages}{201\bibrangedash 247}
+      \range{pages}{47}
+    \endentry
+    \entry{feferman1977}{incollection}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4882f9cf8c157580b3191115697f529b}{%
+           family={Feferman},
+           familyi={F\bibinitperiod},
+           given={Solomon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=be9795eb18baf33ac70cdda42fe956c8}{%
+           family={Butts},
+           familyi={B\bibinitperiod},
+           given={Robert\bibnamedelima E.},
+           giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=257a1bb9e271078512e6dc9debe5d424}{%
+           family={Hintikka},
+           familyi={H\bibinitperiod},
+           given={Jaakko},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Dordrecht}%
+      }
+      \list{publisher}{1}{%
+        {Reidel}%
+      }
+      \strng{namehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{fullhash}{4882f9cf8c157580b3191115697f529b}
+      \strng{bibnamehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authorbibnamehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authornamehash}{4882f9cf8c157580b3191115697f529b}
+      \strng{authorfullhash}{4882f9cf8c157580b3191115697f529b}
+      \strng{editorbibnamehash}{1babe5a37de09a3f6c0c40ea2512399d}
+      \strng{editornamehash}{1babe5a37de09a3f6c0c40ea2512399d}
+      \strng{editorfullhash}{1babe5a37de09a3f6c0c40ea2512399d}
+      \field{extraname}{2}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Logic, Foundations of Mathematics, and Computability Theory}
+      \field{title}{Categorical foundations and foundations of category theory}
+      \field{year}{1977}
+      \field{pages}{149\bibrangedash 169}
+      \range{pages}{21}
+    \endentry
+    \entry{freire}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=d4e569195fc3ffa9f6f15a65ef7e64dc}{%
+           family={Freire},
+           familyi={F\bibinitperiod},
+           given={Alfredo\bibnamedelima Roque},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d6e139e04e1ed1547b7e0315915d6822}{%
+           family={Hamkins},
+           familyi={H\bibinitperiod},
+           given={Joel\bibnamedelima David},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{898cfb5301013ebbecc2e255b93fb652}
+      \strng{fullhash}{898cfb5301013ebbecc2e255b93fb652}
+      \strng{bibnamehash}{898cfb5301013ebbecc2e255b93fb652}
+      \strng{authorbibnamehash}{898cfb5301013ebbecc2e255b93fb652}
+      \strng{authornamehash}{898cfb5301013ebbecc2e255b93fb652}
+      \strng{authorfullhash}{898cfb5301013ebbecc2e255b93fb652}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Symbolic Logic}
+      \field{number}{2}
+      \field{title}{Bi-interpretation in weak set theories}
+      \field{volume}{86}
+      \field{year}{2021}
+      \field{pages}{609\bibrangedash 634}
+      \range{pages}{26}
+    \endentry
+    \entry{friedman2014bi}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=a93bf4d54ec72efb012c40b89c86ba6c}{%
+           family={Friedman},
+           familyi={F\bibinitperiod},
+           given={Harvey\bibnamedelima M},
+           giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b18b77c95e3c304a3c6e1d7ff611dd7f}{%
+           family={Visser},
+           familyi={V\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Department of Philosophy of Utrecht University}%
+      }
+      \strng{namehash}{e8f1135808f04d7f674d79274247ed16}
+      \strng{fullhash}{e8f1135808f04d7f674d79274247ed16}
+      \strng{bibnamehash}{e8f1135808f04d7f674d79274247ed16}
+      \strng{authorbibnamehash}{e8f1135808f04d7f674d79274247ed16}
+      \strng{authornamehash}{e8f1135808f04d7f674d79274247ed16}
+      \strng{authorfullhash}{e8f1135808f04d7f674d79274247ed16}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Logic Group preprint series}
+      \field{title}{When bi-interpretability implies synonymy}
+      \field{volume}{320}
+      \field{year}{2014}
+      \field{pages}{1\bibrangedash 19}
+      \range{pages}{19}
+    \endentry
+    \entry{gajda}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=b129ae00180da6f98d8452e74db68809}{%
+           family={Gajda},
+           familyi={G\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=302394fa3489aad56fa8babf05805d87}{%
+           family={Krynicki},
+           familyi={K\bibinitperiod},
+           given={Michal},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3be58b5342a3453bace7979950aefc4b}{%
+           family={Szczerba},
+           familyi={S\bibinitperiod},
+           given={Les{ł}aw},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{fc631baff7478378f0767218b786cd2c}
+      \strng{fullhash}{fc631baff7478378f0767218b786cd2c}
+      \strng{bibnamehash}{fc631baff7478378f0767218b786cd2c}
+      \strng{authorbibnamehash}{fc631baff7478378f0767218b786cd2c}
+      \strng{authornamehash}{fc631baff7478378f0767218b786cd2c}
+      \strng{authorfullhash}{fc631baff7478378f0767218b786cd2c}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Studia Logica}
+      \field{number}{2}
+      \field{title}{A note on syntactical and semantical functions}
+      \field{volume}{46}
+      \field{year}{1987}
+      \field{pages}{177\bibrangedash 185}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1007/bf00370379
+      \endverb
+    \endentry
+    \entry{halvorson}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7011ab7d0817261372091b909f883d02}{%
+           family={Halvorson},
+           familyi={H\bibinitperiod},
+           given={Hans},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{7011ab7d0817261372091b909f883d02}
+      \strng{fullhash}{7011ab7d0817261372091b909f883d02}
+      \strng{bibnamehash}{7011ab7d0817261372091b909f883d02}
+      \strng{authorbibnamehash}{7011ab7d0817261372091b909f883d02}
+      \strng{authornamehash}{7011ab7d0817261372091b909f883d02}
+      \strng{authorfullhash}{7011ab7d0817261372091b909f883d02}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9781107527744}
+      \field{title}{The Logic in Philosophy of Science}
+      \field{year}{2019}
+      \verb{doi}
+      \verb 10.1017/9781108596855
+      \endverb
+    \endentry
+    \entry{kemeny}{thesis}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=81c94acbb81ad1ea12fce7d1702f0621}{%
+           family={Kemeny},
+           familyi={K\bibinitperiod},
+           given={John\bibnamedelima George},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Princeton University}%
+      }
+      \strng{namehash}{81c94acbb81ad1ea12fce7d1702f0621}
+      \strng{fullhash}{81c94acbb81ad1ea12fce7d1702f0621}
+      \strng{bibnamehash}{81c94acbb81ad1ea12fce7d1702f0621}
+      \strng{authorbibnamehash}{81c94acbb81ad1ea12fce7d1702f0621}
+      \strng{authornamehash}{81c94acbb81ad1ea12fce7d1702f0621}
+      \strng{authorfullhash}{81c94acbb81ad1ea12fce7d1702f0621}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Type-theory vs. set-theory}
+      \field{type}{phdthesis}
+      \field{year}{1949}
+    \endentry
+    \entry{lewis-worlds}{book}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e6ac7ef507481ae342fadc087c53c37d}{%
+           family={Lewis},
+           familyi={L\bibinitperiod},
+           given={David\bibnamedelima K},
+           giveni={D\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Blackwell Oxford}%
+      }
+      \strng{namehash}{e6d41d5715e9031f1c967b7d950bfb2c}
+      \strng{fullhash}{e6d41d5715e9031f1c967b7d950bfb2c}
+      \strng{bibnamehash}{e6d41d5715e9031f1c967b7d950bfb2c}
+      \strng{authorbibnamehash}{e6d41d5715e9031f1c967b7d950bfb2c}
+      \strng{authornamehash}{e6d41d5715e9031f1c967b7d950bfb2c}
+      \strng{authorfullhash}{e6d41d5715e9031f1c967b7d950bfb2c}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{On the plurality of worlds}
+      \field{year}{1986}
+    \endentry
+    \entry{linnebo}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=76f6829aa41f2149f3af3a1ff1064959}{%
+           family={Linnebo},
+           familyi={L\bibinitperiod},
+           given={Øystein},
+           giveni={Ø\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c390d9175ed22d21cb91d0b2fed2d75f}{%
+           family={Rayo},
+           familyi={R\bibinitperiod},
+           given={Agustín},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford Journals}%
+      }
+      \strng{namehash}{948ccaac8603b7e49a837da3f1dfba09}
+      \strng{fullhash}{948ccaac8603b7e49a837da3f1dfba09}
+      \strng{bibnamehash}{948ccaac8603b7e49a837da3f1dfba09}
+      \strng{authorbibnamehash}{948ccaac8603b7e49a837da3f1dfba09}
+      \strng{authornamehash}{948ccaac8603b7e49a837da3f1dfba09}
+      \strng{authorfullhash}{948ccaac8603b7e49a837da3f1dfba09}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mind}
+      \field{number}{482}
+      \field{title}{Hierarchies Ontological and Ideological}
+      \field{volume}{121}
+      \field{year}{2012}
+      \field{pages}{269\bibrangedash 308}
+      \range{pages}{40}
+      \verb{doi}
+      \verb 10.1093/mind/fzs050
+      \endverb
+    \endentry
+    \entry{maclane}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=d35756c9f39a938d9533376dfaa5ad43}{%
+           family={Mac\bibnamedelima Lane},
+           familyi={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+           given={Saunders},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1fc4bc57ad663c84359227240f5bc42f}{%
+           family={Moerdijk},
+           familyi={M\bibinitperiod},
+           given={Ieke},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {New York, NY}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{5ddd5fc6ef7aceb84cfa1296eb79bdb9}
+      \strng{fullhash}{5ddd5fc6ef7aceb84cfa1296eb79bdb9}
+      \strng{bibnamehash}{5ddd5fc6ef7aceb84cfa1296eb79bdb9}
+      \strng{authorbibnamehash}{5ddd5fc6ef7aceb84cfa1296eb79bdb9}
+      \strng{authornamehash}{5ddd5fc6ef7aceb84cfa1296eb79bdb9}
+      \strng{authorfullhash}{5ddd5fc6ef7aceb84cfa1296eb79bdb9}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0387977102}
+      \field{series}{Universitext}
+      \field{title}{Sheaves in Geometry and Logic: A First Introduction to Topos Theory}
+      \field{year}{1992}
+      \verb{doi}
+      \verb 10.1007/978-1-4612-0927-0
+      \endverb
+    \endentry
+    \entry{makkai}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9fe9b07a6d2433e2262dfdddd43177fb}{%
+           family={Makkai},
+           familyi={M\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9fe9b07a6d2433e2262dfdddd43177fb}
+      \strng{fullhash}{9fe9b07a6d2433e2262dfdddd43177fb}
+      \strng{bibnamehash}{9fe9b07a6d2433e2262dfdddd43177fb}
+      \strng{authorbibnamehash}{9fe9b07a6d2433e2262dfdddd43177fb}
+      \strng{authornamehash}{9fe9b07a6d2433e2262dfdddd43177fb}
+      \strng{authorfullhash}{9fe9b07a6d2433e2262dfdddd43177fb}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Preprint: http://www.math.mcgill.ca/makkai}
+      \field{title}{First order logic with dependent sorts, with applications to category theory}
+      \field{year}{1995}
+      \field{pages}{136}
+      \range{pages}{1}
+    \endentry
+    \entry{makkai2006}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=9fe9b07a6d2433e2262dfdddd43177fb}{%
+           family={Makkai},
+           familyi={M\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d36ee7db4f3786477083ecd5d16e4707}{%
+           family={Reyes},
+           familyi={R\bibinitperiod},
+           given={Gonzalo\bibnamedelima E},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{8010eb533f19735d30ba339c22bd05ac}
+      \strng{fullhash}{8010eb533f19735d30ba339c22bd05ac}
+      \strng{bibnamehash}{8010eb533f19735d30ba339c22bd05ac}
+      \strng{authorbibnamehash}{8010eb533f19735d30ba339c22bd05ac}
+      \strng{authornamehash}{8010eb533f19735d30ba339c22bd05ac}
+      \strng{authorfullhash}{8010eb533f19735d30ba339c22bd05ac}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{First order categorical logic: model-theoretical methods in the theory of topoi and related categories}
+      \field{year}{2006}
+      \verb{doi}
+      \verb 10.1007/BFb0066201​
+      \endverb
+    \endentry
+    \entry{mathias}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=da1cb41cb2f8c4504f5382d331ab9b24}{%
+           family={Mathias},
+           familyi={M\bibinitperiod},
+           given={Adrian\bibnamedelimb R.\bibnamedelimi D.},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{da1cb41cb2f8c4504f5382d331ab9b24}
+      \strng{fullhash}{da1cb41cb2f8c4504f5382d331ab9b24}
+      \strng{bibnamehash}{da1cb41cb2f8c4504f5382d331ab9b24}
+      \strng{authorbibnamehash}{da1cb41cb2f8c4504f5382d331ab9b24}
+      \strng{authornamehash}{da1cb41cb2f8c4504f5382d331ab9b24}
+      \strng{authorfullhash}{da1cb41cb2f8c4504f5382d331ab9b24}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of Pure and Applied Logic}
+      \field{number}{1-3}
+      \field{title}{The strength of Mac Lane set theory}
+      \field{volume}{110}
+      \field{year}{2001}
+      \field{pages}{107\bibrangedash 234}
+      \range{pages}{128}
+      \verb{doi}
+      \verb 10.1016/S0168-0072(00)00031-2
+      \endverb
+    \endentry
+    \entry{mclarty2004}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=bfd18cdba587608eac8588f66ecb15ce}{%
+           family={McLarty},
+           familyi={M\bibinitperiod},
+           given={Colin},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {OUP}%
+      }
+      \strng{namehash}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{fullhash}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{bibnamehash}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{authorbibnamehash}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{authornamehash}{bfd18cdba587608eac8588f66ecb15ce}
+      \strng{authorfullhash}{bfd18cdba587608eac8588f66ecb15ce}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Philosophia Mathematica}
+      \field{number}{1}
+      \field{title}{Exploring categorical structuralism}
+      \field{volume}{12}
+      \field{year}{2004}
+      \field{pages}{37\bibrangedash 53}
+      \range{pages}{17}
+    \endentry
+    \entry{mitchell}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7a62448bced0a16663924ce84ab69388}{%
+           family={Mitchell},
+           familyi={M\bibinitperiod},
+           given={Barry},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Academic Press}%
+      }
+      \strng{namehash}{7a62448bced0a16663924ce84ab69388}
+      \strng{fullhash}{7a62448bced0a16663924ce84ab69388}
+      \strng{bibnamehash}{7a62448bced0a16663924ce84ab69388}
+      \strng{authorbibnamehash}{7a62448bced0a16663924ce84ab69388}
+      \strng{authornamehash}{7a62448bced0a16663924ce84ab69388}
+      \strng{authorfullhash}{7a62448bced0a16663924ce84ab69388}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Theory of categories}
+      \field{year}{1965}
+    \endentry
+    \entry{pinter}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ffe310efe7726e6ce5455107cac1e721}{%
+           family={Pinter},
+           familyi={P\bibinitperiod},
+           given={Charles\bibnamedelima C.},
+           giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{ffe310efe7726e6ce5455107cac1e721}
+      \strng{fullhash}{ffe310efe7726e6ce5455107cac1e721}
+      \strng{bibnamehash}{ffe310efe7726e6ce5455107cac1e721}
+      \strng{authorbibnamehash}{ffe310efe7726e6ce5455107cac1e721}
+      \strng{authornamehash}{ffe310efe7726e6ce5455107cac1e721}
+      \strng{authorfullhash}{ffe310efe7726e6ce5455107cac1e721}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Zeitschrift für mathematische Logik und Grundlagen der Mathematik}
+      \field{number}{10}
+      \field{title}{Properties preserved under definitional equivalence and interpretations}
+      \field{volume}{24}
+      \field{year}{1978}
+      \field{pages}{481\bibrangedash 488}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1002/malq.19780241004
+      \endverb
+    \endentry
+    \entry{shulman}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a49cc4742950659ae680e1c40f2295a9}{%
+           family={Shulman},
+           familyi={S\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{a49cc4742950659ae680e1c40f2295a9}
+      \strng{fullhash}{a49cc4742950659ae680e1c40f2295a9}
+      \strng{bibnamehash}{a49cc4742950659ae680e1c40f2295a9}
+      \strng{authorbibnamehash}{a49cc4742950659ae680e1c40f2295a9}
+      \strng{authornamehash}{a49cc4742950659ae680e1c40f2295a9}
+      \strng{authorfullhash}{a49cc4742950659ae680e1c40f2295a9}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of Pure and Applied Logic}
+      \field{number}{4}
+      \field{title}{Comparing material and structural set theories}
+      \field{volume}{170}
+      \field{year}{2019}
+      \field{pages}{465\bibrangedash 504}
+      \range{pages}{40}
+      \verb{doi}
+      \verb 10.1016/j.apal.2018.11.002
+      \endverb
+    \endentry
+    \entry{szczerba}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3be58b5342a3453bace7979950aefc4b}{%
+           family={Szczerba},
+           familyi={S\bibinitperiod},
+           given={Les{ł}aw},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{3be58b5342a3453bace7979950aefc4b}
+      \strng{fullhash}{3be58b5342a3453bace7979950aefc4b}
+      \strng{bibnamehash}{3be58b5342a3453bace7979950aefc4b}
+      \strng{authorbibnamehash}{3be58b5342a3453bace7979950aefc4b}
+      \strng{authornamehash}{3be58b5342a3453bace7979950aefc4b}
+      \strng{authorfullhash}{3be58b5342a3453bace7979950aefc4b}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Logic, Foundations of Mathematics, and Computability Theory: Part One of the Proceedings of the Fifth International Congress of Logic, Methodology and Philosophy of Science, London, Ontario, Canada-1975}
+      \field{title}{Interpretability of elementary theories}
+      \field{year}{1977}
+      \field{pages}{129\bibrangedash 145}
+      \range{pages}{17}
+    \endentry
+    \entry{benthem}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=5124f849336f0fee940c0f9baf3e2da2}{%
+           family={Van\bibnamedelima Benthem},
+           familyi={V\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Johan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e9417b08be82023bb151ef9055cb7d73}{%
+           family={Pearce},
+           familyi={P\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6f10e24039ab1608b4b78b650047e317}
+      \strng{fullhash}{6f10e24039ab1608b4b78b650047e317}
+      \strng{bibnamehash}{6f10e24039ab1608b4b78b650047e317}
+      \strng{authorbibnamehash}{6f10e24039ab1608b4b78b650047e317}
+      \strng{authornamehash}{6f10e24039ab1608b4b78b650047e317}
+      \strng{authorfullhash}{6f10e24039ab1608b4b78b650047e317}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Studia Logica}
+      \field{title}{A mathematical characterization of interpretation between theories}
+      \field{volume}{43}
+      \field{year}{1984}
+      \field{pages}{295\bibrangedash 303}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1007/BF02103292
+      \endverb
+    \endentry
+    \entry{visser2006}{incollection}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b18b77c95e3c304a3c6e1d7ff611dd7f}{%
+           family={Visser},
+           familyi={V\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Association for Symbolic Logic}%
+      }
+      \strng{namehash}{b18b77c95e3c304a3c6e1d7ff611dd7f}
+      \strng{fullhash}{b18b77c95e3c304a3c6e1d7ff611dd7f}
+      \strng{bibnamehash}{b18b77c95e3c304a3c6e1d7ff611dd7f}
+      \strng{authorbibnamehash}{b18b77c95e3c304a3c6e1d7ff611dd7f}
+      \strng{authornamehash}{b18b77c95e3c304a3c6e1d7ff611dd7f}
+      \strng{authorfullhash}{b18b77c95e3c304a3c6e1d7ff611dd7f}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Logic in Tehran}
+      \field{title}{Categories of theories and interpretations}
+      \field{volume}{26}
+      \field{year}{2006}
+      \field{pages}{284\bibrangedash 341}
+      \range{pages}{58}
+      \verb{doi}
+      \verb 10.1017/CBO9780511712068.012
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
