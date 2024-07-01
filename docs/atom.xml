@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Physics, Logic, and Philosophy</title>
+    <link href="https://hanshalvorson.dk/atom.xml" rel="self" />
+    <link href="https://hanshalvorson.dk" />
+    <id>https://hanshalvorson.dk/atom.xml</id>
+    <author>
+        <name>Hans Halvorson</name>
+        
+        <email>hhalvors@princeton.edu</email>
+        
+    </author>
+    <updated>Unknown</updated>
+    
+</feed>
