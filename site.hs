@@ -155,8 +155,13 @@ main = hakyllWith config $ do
             pandocCompiler
                 >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Talks" `mappend` siteCtx)
                 >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
-                >>= relativizeUrls         
+                >>= relativizeUrls
 
+    -- .nojekyll
+    match ".nojekyll" $ do
+        route idRoute
+        compile copyFileCompiler
+                
 -- Rule to generate publications.html
 --    create ["publications.html"] $ do 
 --      route idRoute
