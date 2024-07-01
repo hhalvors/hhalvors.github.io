@@ -141,7 +141,16 @@ main = hakyllWith config $ do
         getResourceBody
           >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Courses" `mappend` siteCtx)
           >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
-          >>= relativizeUrls       
+          >>= relativizeUrls
+
+    -- Talks
+    match "talks.md" $ do
+        route $ customRoute (const "talks.html")
+        compile $ do
+            pandocCompiler
+                >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Talks" `mappend` siteCtx)
+                >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+                >>= relativizeUrls         
 
 -- Rule to generate publications.html
 --    create ["publications.html"] $ do 
