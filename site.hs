@@ -162,7 +162,10 @@ main = hakyllWith config $ do
         route idRoute
         compile copyFileCompiler
 
-          
+    match "/Users/hhalvors/teaching/phi201_s2021/pset*.pdf" $ do
+      route $ gsubRoute "/Users/hhalvors/teaching/phi201_s2021/" (const "docs/phi201_s2021/")
+      compile copyFileCompiler
+
 -- Rule to generate publications.html
 --    create ["publications.html"] $ do 
 --      route idRoute
