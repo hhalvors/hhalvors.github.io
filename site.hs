@@ -129,13 +129,13 @@ main = hakyllWith config $ do
     match "temp.html" $ do
       route $ customRoute (const "publications.html")
       compile $ do
+        let titleCtx = constField "title" "Publications" `mappend` siteCtx
         getResourceBody
-          >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Publications" `mappend` siteCtx)
-          >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+          >>= loadAndApplyTemplate "templates/page.html" titleCtx
+          >>= loadAndApplyTemplate "templates/default.html" (titleCtx `mappend` baseSidebarCtx)
           >>= relativizeUrls
-          
-
-    -- Rule to process courses-temp.html and output it as publications.html
+  
+    -- Rule to process courses-temp.html and output it as courses.html
     match "courses-temp.html" $ do
       route $ customRoute (const "courses.html")
       compile $ do
