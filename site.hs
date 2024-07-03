@@ -5,7 +5,7 @@ import           Data.List                     (sortBy)
 import           Data.Ord                      (comparing)
 import           Hakyll
 import           Control.Monad                 (liftM, forM_)
-import           System.FilePath               (takeBaseName)
+import           System.FilePath               (takeBaseName, takeFileName)
 import           BibTeXParser                  (parseBibTeX, generateHTML, transformEntry) 
 
 --------------------------------------------------------------------------------
@@ -162,9 +162,9 @@ main = hakyllWith config $ do
         route idRoute
         compile copyFileCompiler
 
-    match "/Users/hhalvors/teaching/phi201_s2021/pset*.pdf" $ do
-      route $ gsubRoute "/Users/hhalvors/teaching/phi201_s2021/" (const "docs/phi201_s2021/")
-      compile copyFileCompiler
+    match "phi201_s2021_link/pset*.pdf" $ do
+        route $ customRoute (\ident -> "phi201_s2021/" ++ takeFileName (toFilePath ident))
+        compile copyFileCompiler    
 
 -- Rule to generate publications.html
 --    create ["publications.html"] $ do 
