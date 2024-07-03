@@ -133,6 +133,7 @@ main = hakyllWith config $ do
           >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Publications" `mappend` siteCtx)
           >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
           >>= relativizeUrls
+          
 
     -- Rule to process courses-temp.html and output it as publications.html
     match "courses-temp.html" $ do
