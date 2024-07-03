@@ -164,7 +164,12 @@ main = hakyllWith config $ do
             pandocCompiler
                 >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Talks" `mappend` siteCtx)
                 >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
-                >>= relativizeUrls            
+                >>= relativizeUrls
+
+    -- Rule to copy PDF files
+    match "phi201_s2021_link/*.pdf" $ do
+        route $ gsubRoute "phi201_s2021_link/" (const "phi201_s2021/")
+        compile copyFileCompiler                
 
     -- .nojekyll
     create [".nojekyll"] $ do
