@@ -157,14 +157,20 @@ main = hakyllWith config $ do
                 >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
                 >>= relativizeUrls
 
+    -- Ad Hoc: phi201_s2021
+    match "phi201_s2021.md" $ do
+        route $ customRoute (const "phi201_s2021.html")
+        compile $ do
+            pandocCompiler
+                >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Talks" `mappend` siteCtx)
+                >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+                >>= relativizeUrls            
+
     -- .nojekyll
     create [".nojekyll"] $ do
         route idRoute
         compile copyFileCompiler
 
-    match "phi201_s2021_link/pset*.pdf" $ do
-        route $ customRoute (\ident -> "phi201_s2021/" ++ takeFileName (toFilePath ident))
-        compile copyFileCompiler    
 
 -- Rule to generate publications.html
 --    create ["publications.html"] $ do 
