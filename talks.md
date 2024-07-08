@@ -18,6 +18,9 @@ author: Hans Halvorson
 
 - Niels Bohr's values [pdf](talks/bohr-values.pdf)
 
+- Mind independence and invariance
+  [pdf](https://www.dropbox.com/scl/fi/ofujng5fgzafued49sxwg/mind.pdf?rlkey=lqcnebnd56161g0e01dz7lmnt&dl=0)
+
 - The goal of formal analysis [pdf](talks/formal-outline.pdf)
 
 - The concept of a reference frame [pdf](talks/vienna2023.pdf)
