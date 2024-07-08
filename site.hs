@@ -158,6 +158,15 @@ main = hakyllWith config $ do
                 >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
                 >>= relativizeUrls
 
+    -- Drafts
+    match "drafts.md" $ do
+        route $ customRoute (const "drafts.html")
+        compile $ do
+            pandocCompiler
+                >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Drafts" `mappend` siteCtx)
+                >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+                >>= relativizeUrls                
+
     -- Ad Hoc: phi201_s2021
     match "phi201_s2021.md" $ do
         route $ customRoute (const "phi201_s2021.html")
