@@ -144,6 +144,11 @@ main = hakyllWith config $ do
           >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
           >>= relativizeUrls
 
+    -- Rule to process bohr-causality-quotes.html without applying templates or relativizing URLs
+    match "bohr-causality-quotes.html" $ do
+      route idRoute
+      compile getResourceBody      
+
     -- Talks
     match "talks/**" $ do
         route idRoute
@@ -157,6 +162,15 @@ main = hakyllWith config $ do
                 >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Talks" `mappend` siteCtx)
                 >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
                 >>= relativizeUrls
+
+    -- Bohr
+    match "bohr.md" $ do
+        route $ customRoute (const "bohr.html")
+        compile $ do
+            pandocCompiler
+                >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Talks" `mappend` siteCtx)
+                >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+                >>= relativizeUrls                
 
     -- Drafts
     match "drafts.md" $ do
