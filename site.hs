@@ -168,7 +168,7 @@ main = hakyllWith config $ do
         route $ customRoute (const "bohr.html")
         compile $ do
             pandocCompiler
-                >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Talks" `mappend` siteCtx)
+                >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Niels Bohr: Philosopher in Action" `mappend` siteCtx)
                 >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
                 >>= relativizeUrls                
 
