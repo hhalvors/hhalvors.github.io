@@ -183,8 +183,6 @@ main = hakyllWith config $ do
         myPandocBiblioCompiler
             >>= loadAndApplyTemplate "templates/page.html" (defaultContext `mappend` siteCtx)
             >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
-            >>= relativizeUrls
-            
 
     -- Drafts
     match "drafts.md" $ do
