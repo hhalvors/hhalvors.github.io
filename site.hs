@@ -24,6 +24,10 @@ main = hakyllWith config $ do
         route   idRoute
         compile compressCssCompiler
 
+    match "bib/style.csl"        $ compile cslCompiler
+
+    match "bib/bibliography.bib" $ compile biblioCompiler    
+
     match "CNAME" $ do 
         route   idRoute
         compile copyFileCompiler    
@@ -167,7 +171,7 @@ main = hakyllWith config $ do
     match "bohr.md" $ do
         route $ customRoute (const "bohr.html")
         compile $ do
-            pandocCompiler
+            myPandocBiblioCompiler
                 >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Niels Bohr: Philosopher in Action" `mappend` siteCtx)
                 >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
                 >>= relativizeUrls                
@@ -224,7 +228,13 @@ main = hakyllWith config $ do
         let feedCtx = postCtx `mappend` bodyField "description"
         posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots ("posts/*" .&&. hasNoVersion) "content"
         renderAtom feedConfig feedCtx posts
-  
+
+-----
+
+myPandocBiblioCompiler :: Compiler (Item String)
+myPandocBiblioCompiler =
+  pandocBiblioCompiler "bib/style.csl" "bib/bibliography.bib"
+
 --------------------------------------------------------------------------------
 
 postsGrouper :: (MonadMetadata m, MonadFail m) => [Identifier] -> m [[Identifier]]
