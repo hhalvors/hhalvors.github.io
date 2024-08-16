@@ -6,7 +6,7 @@ import           Data.Ord                      (comparing)
 import           Hakyll
 import           Control.Monad                 (liftM, forM_)
 import           System.FilePath               (takeBaseName, takeFileName)
-import           BibTeXParser                  (parseBibTeX, generateHTML, transformEntry) 
+import           BibTeXParser                  (parseBibTeX, generateHTML, transformEntry)
 
 --------------------------------------------------------------------------------
 config :: Configuration
