@@ -140,13 +140,23 @@ main = hakyllWith config $ do
           >>= relativizeUrls
   
     -- Rule to process courses-temp.html and output it as courses.html
+--    match "courses-temp.html" $ do
+--      route $ customRoute (const "courses.html")
+--      compile $ do
+--        getResourceBody
+--          >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Courses" `mappend` siteCtx)
+--          >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+--          >>= relativizeUrls
+
+    -- Rule to process courses-temp.html and output it as courses/index.html
     match "courses-temp.html" $ do
-      route $ customRoute (const "courses.html")
+      route $ customRoute (const "courses/index.html")
       compile $ do
         getResourceBody
           >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Courses" `mappend` siteCtx)
           >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
           >>= relativizeUrls
+       
 
     -- Rule to process bohr-causality-quotes.html without applying templates or relativizing URLs
     match "bohr/causality-quotes.html" $ do
@@ -183,6 +193,16 @@ main = hakyllWith config $ do
         myPandocBiblioCompiler
             >>= loadAndApplyTemplate "templates/page.html" (defaultContext `mappend` siteCtx)
             >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+
+    -- Courses: Process all .md files in the "courses" folder, including subfolders
+    match "courses/**.md" $ do
+      route $ setExtension "html"
+      compile $ do
+        myPandocBiblioCompiler
+            >>= loadAndApplyTemplate "templates/page.html" (defaultContext `mappend` siteCtx)
+            >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+            >>= relativizeUrls
+            
 
     -- Drafts
     match "drafts.md" $ do
