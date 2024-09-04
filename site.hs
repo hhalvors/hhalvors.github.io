@@ -7,6 +7,8 @@ import           Hakyll
 import           Control.Monad                 (liftM, forM_)
 import           System.FilePath               (takeBaseName, takeFileName)
 import           BibTeXParser                  (parseBibTeX, generateHTML, transformEntry)
+import           Data.Maybe                    (fromMaybe)
+import           Text.Pandoc.Walk              (walkM)
 
 --------------------------------------------------------------------------------
 config :: Configuration
