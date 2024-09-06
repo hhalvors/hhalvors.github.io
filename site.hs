@@ -196,6 +196,14 @@ main = hakyllWith config $ do
             >>= loadAndApplyTemplate "templates/page.html" (defaultContext `mappend` siteCtx)
             >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
 
+        -- Bohr: Process all .md files in the "bohr" folder
+    match "logic/*.md" $ do
+      route $ setExtension "html"
+      compile $ do
+        myPandocBiblioCompiler
+            >>= loadAndApplyTemplate "templates/page.html" (defaultContext `mappend` siteCtx)
+            >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)        
+
     -- Courses: Process all .md files in the "courses" folder, including subfolders
     match "courses/**.md" $ do
       route $ setExtension "html"
