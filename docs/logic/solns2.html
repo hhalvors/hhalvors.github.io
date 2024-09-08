@@ -152,30 +152,30 @@ introduction and elimination) repeatedly until you obtain <span class="math inli
 <li><p><span class="math inline"><em>P</em> ∧ <em>Q</em> ⊢ <em>Q</em> ∨ <em>R</em></span></p>
 <pre><code>(1) P∧Q	     A
 (2) Q	     1 ∧E
-(3) Q|R	     2 |I</code></pre></li>
+(3) Q∨R	     2 ∨I</code></pre></li>
 <li><p><span class="math inline"><em>P</em> ∧ <em>Q</em>  ⊢ (<em>P</em> ∨ <em>R</em>) ∧ (<em>Q</em> ∨ <em>R</em>)</span></p>
 <pre><code>(1) P∧Q	     	       A
 (2) P	     	       1 ∧E
 (3) Q	     	       1 ∧E
-(4) P|R	     	       2 |I
-(5) Q|R	     	       3 |I
-(6) (P|R)∧(Q|R)	       4,5 ∧I</code></pre></li>
+(4) P∨R	     	       2 ∨I
+(5) Q∨R	     	       3 ∨I
+(6) (P∨R)∧(Q∨R)	       4,5 ∧I</code></pre></li>
 <li><p><span class="math inline"><em>P</em> ⊢ <em>Q</em> ∨ (<em>P</em> ∨ <em>Q</em>)</span></p>
 <pre><code>(1) P		      A
-(2) P|Q		      1 |I
-(3) Q|(P|Q)	      2 |I</code></pre></li>
+(2) P∨Q		      1 ∨I
+(3) Q∨(P∨Q)	      2 ∨I</code></pre></li>
 <li><p><span class="math inline"><em>P</em> ⊢ (<em>P</em> ∨ <em>R</em>) ∧ (<em>P</em> ∨ <em>Q</em>)</span></p>
 <pre><code>(1) P		 A
-(2) P|R		 1 |I
-(3) P|Q		 1 |I
-(4) (P|R)∧(P|Q)	 2,3 ∧I</code></pre></li>
+(2) P∨R		 1 ∨I
+(3) P∨Q		 1 ∨I
+(4) (P∨R)∧(P∨Q)	 2,3 ∧I</code></pre></li>
 <li><p><span class="math inline"><em>Q</em> ⊢ ¬<em>P</em> ∨ <em>Q</em></span></p>
 <pre><code>(1) Q		A
-(2) ~P|Q	1 |I</code></pre></li>
+(2) ~P∨Q	1 ∨I</code></pre></li>
 <li><p><span class="math inline"><em>P</em> ⊢ <em>P</em> ∧ (<em>P</em> ∨ <em>Q</em>)</span></p>
 <pre><code>(1) P		A
-(2) P|Q		1 |I
-(3) P∧(P|Q)	1,2 ∧I</code></pre></li>
+(2) P∨Q		1 ∨I
+(3) P∧(P∨Q)	1,2 ∧I</code></pre></li>
 <li><p><span class="math inline"><em>P</em> ⊢ <em>P</em> ∧ (<em>P</em> ∧ <em>P</em>)</span></p>
 <pre><code>(1) P		A
 (2) P∧P		1,1 ∧I
@@ -188,19 +188,19 @@ introduction and elimination) repeatedly until you obtain <span class="math inli
 <h2 id="exercise-2.3">Exercise 2.3</h2>
 <ol type="1">
 <li><p><span class="math inline"><em>P</em> → (<em>Q</em> → <em>R</em>), <em>P</em> → <em>Q</em>, <em>P</em> ⊢ <em>R</em></span></p>
-<pre><code>(1) P&gt;(Q&gt;R)    A
-(2) P&gt;Q	       A
+<pre><code>(1) P→(Q→R)    A
+(2) P→Q	       A
 (3) P	       A
-(4) Q&gt;R	       1,3 MP
+(4) Q→R	       1,3 MP
 (5) Q	       2,3 MP
 (6) R	       4,5 MP</code></pre></li>
 <li><p><span class="math inline">(<em>A</em> ∨ <em>B</em>) → <em>T</em>, <em>Z</em> → <em>A</em>, <em>T</em> → <em>W</em>, <em>Z</em> ⊢ <em>W</em></span></p>
-<pre><code>(1) (A|B)&gt;T	 A
-(2) Z&gt;A		 A
-(3) T&gt;W		 A
+<pre><code>(1) (A∨B)→T	 A
+(2) Z→A		 A
+(3) T→W		 A
 (4) Z		 A
 (5) A		 2,4 MP
-(6) A|B		 5 |I
+(6) A∨B		 5 ∨I
 (7) T		 1,6 MP
 (8) W		 3,7 MP</code></pre></li>
 <li><p><span class="math inline">(<em>A</em> → <em>B</em>) ∧ (<em>C</em> → <em>A</em>), (<em>C</em> ∧ (<em>W</em> → <em>Z</em>)) ∧ <em>W</em> ⊢ (<em>B</em> ∨ <em>D</em>) ∧ (<em>Z</em> ∨ <em>E</em>)</span></p></li>
