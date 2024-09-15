@@ -130,12 +130,23 @@
           <div class="page">
   <h1 class="page-title">HLW: Code</h1>
      <p>In progress: a pandoc Haskell filter that parses code blocks with
-Lemmon-style proofs and turns them into objects of type <code>Proof</code>
-(defined in this code). Optional proof checking during the conversion
-process, and rendering either to html or latex. (Perhaps someone else
-would like to add rendering to docx.)</p>
+Lemmon-style proofs and turns them into objects of type
+<code>Proof</code>. Optional proof checking during the conversion process, and
+rendering either to html or latex. (Perhaps someone else would like to
+work on rendering to docx.)</p>
+<p>To enter a Lemmon proof, just make a code block tagged with
+“lemmon”. It’s assumed that there is it least one whitespace between
+each column, but it’s not assumed that they are aligned (although that
+helps readability for humans).</p>
+<pre><code>```lemmon
+1    (1) ¬P                       A
+2    (2) Q                        A
+1,2  (3) ¬P∧Q                     1,2 ∧I
+4    (4) (¬P∧(Q∨R))→¬(S∧(¬T∨U))   A
+```</code></pre>
 <h2 id="wish-list">Wish list</h2>
 <ul>
+<li><p>Emacs minor mode for navigating proof columns</p></li>
 <li><p>Define a Haskell data type for Fitch style proofs</p></li>
 <li><p>Transform between Lemmon and Fitch style proofs</p></li>
 </ul>
