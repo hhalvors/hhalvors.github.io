@@ -1,5 +1,7 @@
---------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
+
+module Main where
+
 import           Data.Monoid                   (mappend)
 import           Data.List                     (sortBy)
 import           Data.Ord                      (comparing)
@@ -9,8 +11,10 @@ import           System.FilePath               (takeBaseName, takeFileName)
 import           BibTeXParser                  (parseBibTeX, generateHTML, transformEntry)
 import           Data.Maybe                    (fromMaybe)
 import           Text.Pandoc.Walk              (walkM)
+import           LemmonFilter                  (applyLemmonFilter)
 
 --------------------------------------------------------------------------------
+
 config :: Configuration
 config = defaultConfiguration
   { destinationDirectory = "docs"
@@ -196,7 +200,7 @@ main = hakyllWith config $ do
             >>= loadAndApplyTemplate "templates/page.html" (defaultContext `mappend` siteCtx)
             >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
 
-        -- Bohr: Process all .md files in the "bohr" folder
+        -- Logic: Process all .md files in the "logic" folder
     match "logic/*.md" $ do
       route $ setExtension "html"
       compile $ do
@@ -270,8 +274,21 @@ main = hakyllWith config $ do
 -----
 
 myPandocBiblioCompiler :: Compiler (Item String)
-myPandocBiblioCompiler =
-  pandocBiblioCompiler "bib/style.csl" "bib/bibliography.bib"
+myPandocBiblioCompiler = do
+  let csl = "bib/style.csl"
+      bib = "bib/bibliography.bib"
+  
+  pandocCompilerWithTransformM
+    defaultHakyllReaderOptions
+    defaultHakyllWriterOptions  -- Use default writer options
+    (return . applyLemmonFilter)  -- Apply the Lemmon filter
+--    >>= loadAndApplyTemplate "templates/page.html" (defaultContext `mappend` siteCtx)
+--    >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+  
+--- old one 
+--- myPandocBiblioCompiler :: Compiler (Item String)
+-- myPandocBiblioCompiler =
+--   pandocBiblioCompiler "bib/style.csl" "bib/bibliography.bib"
 
 --------------------------------------------------------------------------------
 
