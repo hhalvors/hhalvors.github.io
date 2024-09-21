@@ -61,7 +61,7 @@
   </div>
 
   <nav class="sidebar-nav">
-    <a class="sidebar-nav-item" href="index.html">Home</a>
+    <a class="sidebar-nav-item" href="/index.html">Home</a>
 
     <!--- The code below dynamically generates a sidebar nav of the files in the folder /pages 
 
@@ -120,7 +120,7 @@
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="https://hanshalvorson.dk" title="Home">Hans Halvorson</a>
+            <a href="/" title="Home">Hans Halvorson</a>
             <small>Physics, Logic, Philosophy</small>
           </h3>
         </div>
@@ -129,19 +129,22 @@
       <div class="container content">
           <div class="page">
   <h1 class="page-title">HLW: Code</h1>
-     <p>In progress: a pandoc Haskell filter that parses code blocks with
-Lemmon-style proofs, transforms them to objects of type <code>Proof</code>, and
-then renders — either to html or latex.</p>
-<p>To enter a Lemmon proof, just make a code block tagged with
-“lemmon”. It’s assumed that there is it least one whitespace between
-each column, but it’s not assumed that they are aligned (although that
-helps make the proof legible to humans).</p>
+     <p>These pages use a Haskell filter for pandoc that parses code blocks
+with Lemmon-style proofs and transforms them to objects of type
+<code>Proof</code> (which I made up for this purpose). By default, it renders
+them as html tables, which I so-far have not styled.</p>
+<p>The input is expected to look something like this:</p>
 <pre><code>```lemmon
 1    (1) ¬P                       A
 2    (2) Q                        A
 1,2  (3) ¬P∧Q                     1,2 ∧I
 4    (4) (¬P∧(Q∨R))→¬(S∧(¬T∨U))   A
 ```</code></pre>
+<p>At present, the parser expects whitespaces between the three columns,
+and it tries to guess that the second column is by looking for the
+line number in parentheses.</p>
+<p>One benefit of the parsing is that it would be trivially easy now to
+write a script that checks the proofs in a document.</p>
 <h2 id="wish-list">Wish list</h2>
 <ul>
 <li>Patch for emacs markdown mode that makes it easy to input Lemmon
