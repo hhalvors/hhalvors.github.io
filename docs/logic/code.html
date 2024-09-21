@@ -129,24 +129,28 @@
       <div class="container content">
           <div class="page">
   <h1 class="page-title">HLW: Code</h1>
-     <p>These pages use a Haskell filter for pandoc that parses code blocks
-with Lemmon-style proofs and transforms them to objects of type
-<code>Proof</code> (which I made up for this purpose). By default, it renders
-them as html tables, which I so-far have not styled.</p>
-<p>The input is expected to look something like this:</p>
+     <p>This site is built with Hakyll, and it uses pandoc to convert markdown
+documents to html. One nice thing about pandoc is the ability to make
+your own filters (<code>Pandoc to Pandoc</code> transformations that pass through
+any other interesting Haskell-definable structures). So I wrote a
+little filter that takes code blocks labelled <code>lemmon</code> and creates
+proof structure out of them (a list of proof lines). The input is
+expected to look like a manually typed proof in Lemmon-Suppes format:</p>
 <pre><code>```lemmon
 1    (1) ¬P                       A
 2    (2) Q                        A
 1,2  (3) ¬P∧Q                     1,2 ∧I
 4    (4) (¬P∧(Q∨R))→¬(S∧(¬T∨U))   A
 ```</code></pre>
-<p>At present, the parser expects whitespaces between the three columns,
-and it tries to guess that the second column is by looking for the
-line number in parentheses.</p>
-<p>One benefit of the parsing is that it would be trivially easy now to
-write a script that checks the proofs in a document.</p>
+<p>The simple parser expects whitespaces between the three columns, and
+it tries to guess that the second column is by looking for the line
+number in parentheses. If the formula after the line number is
+well-formed, it converts it to a Haskell data type.</p>
+<p>Note: it would be rather easy now to write a script that checks all
+the Lemmon proofs in a markdown document.</p>
 <h2 id="wish-list">Wish list</h2>
 <ul>
+<li>Extend parsing to quantified formulas</li>
 <li>Patch for emacs markdown mode that makes it easy to input Lemmon
 proofs</li>
 <li>Proof checker that operates on objects of type <code>Proof</code></li>
