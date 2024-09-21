@@ -12,6 +12,9 @@ import           BibTeXParser                  (parseBibTeX, generateHTML, trans
 import           Data.Maybe                    (fromMaybe)
 import           Text.Pandoc.Walk              (walkM)
 import           LemmonFilter                  (applyLemmonFilter)
+import           Text.Pandoc.Definition        (Pandoc)
+import           Control.Monad                 ((<=<)) 
+
 
 --------------------------------------------------------------------------------
 
@@ -275,15 +278,30 @@ main = hakyllWith config $ do
 
 myPandocBiblioCompiler :: Compiler (Item String)
 myPandocBiblioCompiler = do
-  let csl = "bib/style.csl"
-      bib = "bib/bibliography.bib"
-  
+  csl <- load "bib/style.csl"
+  bib <- load "bib/bibliography.bib"
+
   pandocCompilerWithTransformM
     defaultHakyllReaderOptions
-    defaultHakyllWriterOptions  -- Use default writer options
-    (return . applyLemmonFilter)  -- Apply the Lemmon filter
---    >>= loadAndApplyTemplate "templates/page.html" (defaultContext `mappend` siteCtx)
---    >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+    defaultHakyllWriterOptions
+    (\pandoc -> do
+        -- Apply bibliography processing
+        processed <- processPandocBiblio csl bib (Item "" pandoc)
+        -- Apply Lemmon filter to the processed result
+        return $ applyLemmonFilter (itemBody processed)
+    )
+
+
+-- myPandocBiblioCompiler :: Compiler (Item String)
+-- myPandocBiblioCompiler = do
+--   let csl = "bib/style.csl"
+--       bib = "bib/bibliography.bib"
+  
+--   pandocCompilerWithTransformM
+--     defaultHakyllReaderOptions
+--     defaultHakyllWriterOptions  -- Use default writer options
+--     (return . applyLemmonFilter)  -- Apply the Lemmon filter
+
   
 --- old one 
 --- myPandocBiblioCompiler :: Compiler (Item String)
