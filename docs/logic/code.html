@@ -129,10 +129,10 @@
       <div class="container content">
           <div class="page">
   <h1 class="page-title">HLW: Code</h1>
-     <p>This site is built with <a href="https://jaspervdj.be/hakyll/">Hakyll</a>, and it
+     <p>This site is built with <a href="https://jaspervdj.be/hakyll/">Hakyll</a>, which
 uses <a href="https://pandoc.org">pandoc</a> to convert markdown documents to
 html. One nice thing about pandoc is the ability to make your own
-filters, i.e. (<code>Pandoc → Pandoc</code> transformations that can pass through
+filters, i.e. <code>Pandoc → Pandoc</code> transformations that can pass through
 other interesting Haskell-definable structures. In other words, we can
 convert the strings in the document into structured data! So I wrote a
 little filter that takes blocks labelled <code>lemmon</code> and creates proof
@@ -150,9 +150,12 @@ Lemmon-Suppes format:</p>
 <p>The parser expects whitespaces between the three columns, and it tries
 to guess that the second column is by looking for the line number in
 parentheses. If the formula after the line number is well-formed, it
-converts it to a Haskell data type.</p>
-<p>Note: it would be easy now to include proof-checking in the markdown
-to html conversion process.</p>
+converts it into type <code>PropFormula</code>. (Yes, I still need to extend
+parsing to quantifier logic.)</p>
+<p>There is all sorts of interesting things one could do now. For
+example, one could ask what the main connective is of the formulas on
+the lines. Or one could write a little script to check if a lemmon
+block represents a valid proof.</p>
 <h2 id="wish-list">Wish list</h2>
 <ul>
 <li>Extend parsing to quantified formulas</li>
