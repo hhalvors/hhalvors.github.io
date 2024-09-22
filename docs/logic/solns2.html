@@ -239,7 +239,24 @@ introduction and elimination) repeatedly until you obtain <span class="math inli
 <tr><td></td><td>(8) W</td><td>3,7 MP</td></tr>
 </table>
 </li>
-<li><p><span class="math inline">(<em>A</em> → <em>B</em>) ∧ (<em>C</em> → <em>A</em>), (<em>C</em> ∧ (<em>W</em> → <em>Z</em>)) ∧ <em>W</em> ⊢ (<em>B</em> ∨ <em>D</em>) ∧ (<em>Z</em> ∨ <em>E</em>)</span></p></li>
+<li><p><span class="math inline">(<em>A</em> → <em>B</em>) ∧ (<em>C</em> → <em>A</em>), (<em>C</em> ∧ (<em>W</em> → <em>Z</em>)) ∧ <em>W</em> ⊢ (<em>B</em> ∨ <em>D</em>) ∧ (<em>Z</em> ∨ <em>E</em>)</span></p>
+<table class="proof-table">
+<tr><td></td><td>(1) (A → B) ∧ (C → A)</td><td>A</td></tr>
+<tr><td></td><td>(2) (C ∧ (W → Z)) ∧ W</td><td>A</td></tr>
+<tr><td></td><td>(3) C ∧ (W → Z)</td><td>2 ∧E</td></tr>
+<tr><td></td><td>(4) C</td><td>3 ∧E</td></tr>
+<tr><td></td><td>(5) C → A</td><td>1 ∧E</td></tr>
+<tr><td></td><td>(6) A → B</td><td>1 ∧E</td></tr>
+<tr><td></td><td>(7) A</td><td>5,4 MP</td></tr>
+<tr><td></td><td>(8) B</td><td>6,7 MP</td></tr>
+<tr><td></td><td>(9) B ∨ D</td><td>8 ∨I</td></tr>
+<tr><td></td><td>(10) W</td><td>2 ∧E</td></tr>
+<tr><td></td><td>(11) W → Z</td><td>3 ∧E</td></tr>
+<tr><td></td><td>(12) Z</td><td>11,10 MP</td></tr>
+<tr><td></td><td>(13) Z ∨ E</td><td>12 ∨I</td></tr>
+<tr><td></td><td>(14) (B ∨ D) ∧ (Z ∨ E)</td><td>9,13 ∧I</td></tr>
+</table>
+</li>
 <li><p><span class="math inline"><em>P</em> → (<em>P</em> → <em>Q</em>), <em>P</em> ⊢ <em>Q</em></span></p></li>
 <li><p><span class="math inline"><em>P</em> ∧ (<em>P</em> → <em>Q</em>) ⊢ <em>P</em> ∧ <em>Q</em></span></p></li>
 <li><p><span class="math inline"><em>P</em> → (<em>Q</em> → <em>R</em>), <em>P</em> ∧ <em>Q</em> ⊢ <em>R</em></span></p></li>
