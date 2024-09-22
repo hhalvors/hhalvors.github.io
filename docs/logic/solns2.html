@@ -257,12 +257,29 @@ introduction and elimination) repeatedly until you obtain <span class="math inli
 <tr><td></td><td>(14) (B ∨ D) ∧ (Z ∨ E)</td><td>9,13 ∧I</td></tr>
 </table>
 </li>
-<li><p><span class="math inline"><em>P</em> → (<em>P</em> → <em>Q</em>), <em>P</em> ⊢ <em>Q</em></span></p></li>
-<li><p><span class="math inline"><em>P</em> ∧ (<em>P</em> → <em>Q</em>) ⊢ <em>P</em> ∧ <em>Q</em></span></p></li>
+<li><p><span class="math inline"><em>P</em> → (<em>P</em> → <em>Q</em>), <em>P</em> ⊢ <em>Q</em></span></p>
+<table class="proof-table">
+<tr><td></td><td>(1) P → (P → Q)</td><td>A</td></tr>
+<tr><td></td><td>(2) P</td><td>A</td></tr>
+<tr><td></td><td>(3) P → Q</td><td>1,2 MP</td></tr>
+<tr><td></td><td>(4) Q</td><td>3,2 MP</td></tr>
+</table>
+</li>
+<li><p><span class="math inline"><em>P</em> ∧ (<em>P</em> → <em>Q</em>) ⊢ <em>P</em> ∧ <em>Q</em></span></p>
+<table class="proof-table">
+<tr><td></td><td>(1) P ∧ (P → Q)</td><td>A</td></tr>
+<tr><td></td><td>(2) P</td><td>1 ∧E</td></tr>
+<tr><td></td><td>(3) P → Q</td><td>1 ∧E</td></tr>
+<tr><td></td><td>(4) Q</td><td>3,2 MP</td></tr>
+<tr><td></td><td>(5) P ∧ Q</td><td>2,4 ∧I</td></tr>
+</table>
+</li>
+</ol>
+<ol start="6" type="1">
 <li><p><span class="math inline"><em>P</em> → (<em>Q</em> → <em>R</em>), <em>P</em> ∧ <em>Q</em> ⊢ <em>R</em></span></p></li>
 <li><p><span class="math inline"><em>P</em> → <em>Q</em>, (<em>P</em> ∧ <em>Q</em>) → <em>R</em>, <em>P</em> ⊢ <em>R</em></span></p></li>
 <li><p><span class="math inline"><em>P</em> → (<em>Q</em> ∧ <em>R</em>), (<em>Q</em> ∨ <em>A</em>) → <em>B</em>, <em>P</em> ⊢ <em>B</em></span></p></li>
-<li><p><span class="math inline">(<em>P</em> ∨ <em>Q</em>) → (<em>A</em> ∧ <em>B</em>), <em>P</em> ⊢ <em>A</em></span></p></li>
+<li><p><span class="math inline">(<em>P</em> ∨ <em>Q</em>) → (<em>A</em> ∧ <em>B</em>), <em>P</em> ⊢ <em>A</em></span> )</p></li>
 </ol>
 <h2 id="exercise-2.4">Exercise 2.4</h2>
 <ol type="1">
