@@ -130,15 +130,16 @@
           <div class="page">
   <h1 class="page-title">HLW: Code</h1>
      <p>This site is built with <a href="https://jaspervdj.be/hakyll/">Hakyll</a>, which
-uses <a href="https://pandoc.org">pandoc</a> to convert markdown documents to
-html. One nice thing about pandoc is the ability to make your own
-filters, i.e. <code>Pandoc → Pandoc</code> transformations that can pass through
-other interesting Haskell-definable structures.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> In other words, we
-can convert the strings in the document into structured data! So I
-wrote a little filter that takes blocks labelled <code>lemmon</code> and creates
-a proof structure out of them, i.e. a list of proof lines, where each
-proof line is a triple consisting of reference numbers, formula, and
-justification.</p>
+uses <a href="https://pandoc.org">Pandoc</a> to convert markdown documents to
+html. One nice thing about Pandoc is that you can write your own
+filters, i.e. <code>Pandoc → Pandoc</code> transformations that make use of
+arbitrarily interesting Haskell functions.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> So, we can convert the
+strings in the document into structured data and operate on that data
+before producing the output document.</p>
+<p>I wrote a filter <code>lemmonFilter.hs</code> that takes blocks labelled <code>lemmon</code>
+and creates a proof structure out of them, i.e. a list of proof lines,
+where each proof line is a triple consisting of reference numbers,
+formula, and justification.</p>
 <p>The input is expected to look like a manually typed proof in Lemmon<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>
 format:</p>
 <pre><code>```lemmon
@@ -147,12 +148,14 @@ format:</p>
 1,2  (3) ¬P∧Q                     1,2 ∧I
 4    (4) (¬P∧(Q∨R))→¬(S∧(¬T∨U))   A
 ```</code></pre>
-<p>The parser expects whitespaces between the three columns, that the
-first column has a comma separated list of integers, and that the
-second column has an integer in parentheses. If the formula after the
-line number is well-formed, the parser transforms it into an object of
-type <code>PropFormula</code>. (I still need to extend parsing to quantified
-formulas.)</p>
+<p>(It’s relatively pain-free to write such proofs by hand. It’s less
+pleasant to deal with adding whitespace or setting tab stops to create
+a nice-looking text document.) The parser expects whitespaces between
+the three columns, that the first column has a comma separated list of
+integers, and that the second column has an integer in parentheses. If
+the formula after the line number is well-formed, the parser
+transforms it into an object of type <code>PropFormula</code>. (I still need to
+extend parsing to quantified formulas.)</p>
 <p>There are many sorts of interesting operations we could do on <code>Proof</code>
 objects. For example, we could ask what the main connectives are of
 the formulas on the lines. Or we could ask if the proof is
