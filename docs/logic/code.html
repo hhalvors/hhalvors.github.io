@@ -133,11 +133,11 @@
 uses <a href="https://pandoc.org">pandoc</a> to convert markdown documents to
 html. One nice thing about pandoc is the ability to make your own
 filters, i.e. <code>Pandoc → Pandoc</code> transformations that can pass through
-other interesting Haskell-definable structures.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> In other words, we can
-convert the strings in the document into structured data! So I wrote a
-little filter that takes blocks labelled <code>lemmon</code> and creates proof
-structure out of them, i.e. a list of proof lines, where each proof
-line is a triple consisting of reference numbers, formula, and
+other interesting Haskell-definable structures.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> In other words, we
+can convert the strings in the document into structured data! So I
+wrote a little filter that takes blocks labelled <code>lemmon</code> and creates
+a proof structure out of them, i.e. a list of proof lines, where each
+proof line is a triple consisting of reference numbers, formula, and
 justification.</p>
 <p>The input is expected to look like a manually typed proof in Lemmon<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>
 format:</p>
@@ -159,7 +159,7 @@ the formulas on the lines. Or we could ask if the proof is
 (syntactically) valid. We could also ask if a line is semantically
 valid, i.e. if the truth of the formulas on the reference lines
 entails the truth of the formula on the line.</p>
-<h2 id="wish-list">Wish list</h2>
+<h2 id="to-do">To Do</h2>
 <ul>
 <li>Extend parsing to quantified formulas</li>
 <li>Patch for emacs markdown mode that makes it easy to input Lemmon
@@ -178,7 +178,12 @@ object is a format-neutral representation of the content of a
 document.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>This kind of proof format appears in E.J. Lemmon <em>Beginning
 Logic</em>, published 1965. A similar format appeared simultaneously
-in works by Patrick Suppes.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+in works by Patrick Suppes. This format has a much steeper
+learning curve than proof trees, and even than Fitch
+proofs. Personally, I find writing Fitch proofs to be a more
+pleasant and intuitive experience. However, the Fitch proof system
+has some meta-theoretic disadvantages in comparison to the Lemmon
+system.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 </div>
