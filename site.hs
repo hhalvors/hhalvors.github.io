@@ -13,7 +13,9 @@ import           Data.Maybe                    (fromMaybe)
 import           Text.Pandoc.Walk              (walkM)
 import           LemmonFilter                  (applyLemmonFilter)
 import           Text.Pandoc.Definition        (Pandoc)
-import           Control.Monad                 ((<=<)) 
+import           Control.Monad                 ((<=<))
+import           TruthTableFilter              (applyTruthTableFilter)
+
 
 
 --------------------------------------------------------------------------------
@@ -76,8 +78,18 @@ main = hakyllWith config $ do
         compile biblioCompiler
 
     match "pandoc/elsevier.csl" $
-        compile cslCompiler            
+        compile cslCompiler
 
+    match "truth.md" $ do
+      route $ setExtension "html"
+      compile $ pandocCompilerWithTransformM
+        defaultHakyllReaderOptions
+        defaultHakyllWriterOptions
+        (\pandoc -> return $ applyTruthTableFilter pandoc)
+        >>= loadAndApplyTemplate "templates/page.html" siteCtx
+        >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+        >>= relativizeUrls
+       
     tags <- buildTags "posts/*" (fromCapture "tags/*.html")
 
     -- match "posts/*" $ version "meta" $ do
