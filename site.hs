@@ -14,9 +14,6 @@ import           Text.Pandoc.Walk              (walkM)
 import           LemmonFilter                  (applyLemmonFilter)
 import           Text.Pandoc.Definition        (Pandoc)
 import           Control.Monad                 ((<=<))
-import           TruthTableFilter              (applyTruthTableFilter)
-
-
 
 --------------------------------------------------------------------------------
 
@@ -80,16 +77,6 @@ main = hakyllWith config $ do
     match "pandoc/elsevier.csl" $
         compile cslCompiler
 
-    match "truth.md" $ do
-      route $ setExtension "html"
-      compile $ pandocCompilerWithTransformM
-        defaultHakyllReaderOptions
-        defaultHakyllWriterOptions
-        (\pandoc -> return $ applyTruthTableFilter pandoc)
-        >>= loadAndApplyTemplate "templates/page.html" siteCtx
-        >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
-        >>= relativizeUrls
-       
     tags <- buildTags "posts/*" (fromCapture "tags/*.html")
 
     -- match "posts/*" $ version "meta" $ do
@@ -214,6 +201,14 @@ main = hakyllWith config $ do
         myPandocBiblioCompiler
             >>= loadAndApplyTemplate "templates/page.html" (defaultContext `mappend` siteCtx)
             >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+
+    -- Bohr: Process all .md files in the "bohr" folder
+    match "spacetime/*.md" $ do
+      route $ setExtension "html"
+      compile $ do
+        myPandocBiblioCompiler
+            >>= loadAndApplyTemplate "templates/page.html" (defaultContext `mappend` siteCtx)
+            >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)            
 
         -- Logic: Process all .md files in the "logic" folder
     match "logic/*.md" $ do
