@@ -26,6 +26,10 @@
   <link rel="stylesheet" href="/css/lanyon.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 
+  <!-- MathJax configuration -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
   <!---
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ '/public/apple-touch-icon-precomposed.png' | absolute_url }}">
   <link rel="shortcut icon" href="{{ '/public/favicon.ico' | absolute_url }}">
@@ -141,29 +145,29 @@
 <h2 id="exercise-6.5">Exercise 6.5</h2>
 <ol start="9" type="1">
 <li><table class="proof-table">
-<tr><td>1</td><td>(1) ∀x∀yRxy</td><td>A</td></tr>
-<tr><td>1</td><td>(2) ∀yRay</td><td>1 UE</td></tr>
-<tr><td>1</td><td>(3) Raa</td><td>2 UE</td></tr>
-<tr><td>1</td><td>(4) ∀xRxx</td><td>3 UI</td></tr>
+<tr><td>1</td><td>(1)&nbsp;\( ∀x∀yRxy \)</td><td>A</td></tr>
+<tr><td>1</td><td>(2)&nbsp;\( ∀yRay \)</td><td>1 UE</td></tr>
+<tr><td>1</td><td>(3)&nbsp;\( Raa \)</td><td>2 UE</td></tr>
+<tr><td>1</td><td>(4)&nbsp;\( ∀xRxx \)</td><td>3 UI</td></tr>
 </table>
 </li>
 </ol>
 <h2 id="exercise-6.13">Exercise 6.13</h2>
 <ol type="1">
 <li><table class="proof-table">
-<tr><td>1</td><td>(1) P → ∃xFx</td><td>A</td></tr>
-<tr><td></td><td>(2) P ∨ ¬P</td><td>lem</td></tr>
-<tr><td>3</td><td>(3) P</td><td>A</td></tr>
-<tr><td>1,3</td><td>(4) ∃xFx</td><td>1,3 MP</td></tr>
-<tr><td>5</td><td>(5) Fa</td><td>A</td></tr>
-<tr><td>3,5</td><td>(6) P → Fa</td><td>3,5 CP</td></tr>
-<tr><td>1,3,5</td><td>(7) ∃x(P → Fx)</td><td>6 EI</td></tr>
-<tr><td>1,3</td><td>(8) ∃x(P → Fx)</td><td>4,5,7 EE</td></tr>
-<tr><td>9</td><td>(9) ¬P</td><td>A</td></tr>
-<tr><td>9</td><td>(10) P → Fa</td><td>9 npar</td></tr>
-<tr><td>9</td><td>(11) ∃x(P → Fx)</td><td>10 EI</td></tr>
-<tr><td>1</td><td>(12) ∃x(P → Fx)</td><td>2,3,8,9,11 ∨E</td></tr>
-<tr><td>13</td><td>(13) ¬P ∨ Q</td><td>test</td></tr>
+<tr><td>1</td><td>(1)&nbsp;\( P → ∃xFx \)</td><td>A</td></tr>
+<tr><td></td><td>(2)&nbsp;\( P ∨ ¬P \)</td><td>lem</td></tr>
+<tr><td>3</td><td>(3)&nbsp;\( P \)</td><td>A</td></tr>
+<tr><td>1,3</td><td>(4)&nbsp;\( ∃xFx \)</td><td>1,3 MP</td></tr>
+<tr><td>5</td><td>(5)&nbsp;\( Fa \)</td><td>A</td></tr>
+<tr><td>3,5</td><td>(6)&nbsp;\( P → Fa \)</td><td>3,5 CP</td></tr>
+<tr><td>1,3,5</td><td>(7)&nbsp;\( ∃x(P → Fx) \)</td><td>6 EI</td></tr>
+<tr><td>1,3</td><td>(8)&nbsp;\( ∃x(P → Fx) \)</td><td>4,5,7 EE</td></tr>
+<tr><td>9</td><td>(9)&nbsp;\( ¬P \)</td><td>A</td></tr>
+<tr><td>9</td><td>(10)&nbsp;\( P → Fa \)</td><td>9 npar</td></tr>
+<tr><td>9</td><td>(11)&nbsp;\( ∃x(P → Fx) \)</td><td>10 EI</td></tr>
+<tr><td>1</td><td>(12)&nbsp;\( ∃x(P → Fx) \)</td><td>2,3,8,9,11 ∨E</td></tr>
+<tr><td>13</td><td>(13)&nbsp;\( ¬P ∨ Q \)</td><td>test</td></tr>
 </table>
 </li>
 </ol>

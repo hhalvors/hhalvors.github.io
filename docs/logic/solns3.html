@@ -26,6 +26,10 @@
   <link rel="stylesheet" href="/css/lanyon.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 
+  <!-- MathJax configuration -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
   <!---
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ '/public/apple-touch-icon-precomposed.png' | absolute_url }}">
   <link rel="shortcut icon" href="{{ '/public/favicon.ico' | absolute_url }}">
@@ -136,59 +140,80 @@
      <h2 id="exercise-3.1">Exercise 3.1</h2>
 <ol type="1">
 <li><table class="proof-table">
-<tr><td>1</td><td>(1) P</td><td>A</td></tr>
-<tr><td>2</td><td>(2) Q</td><td>A</td></tr>
-<tr><td>1,2</td><td>(3) P ∧ Q</td><td>1,2 ∧I</td></tr>
-<tr><td>1</td><td>(4) Q → (P ∧ Q)</td><td>2,3 CP</td></tr>
+<tr><td>1</td><td>(1)&nbsp;\( P \)</td><td>A</td></tr>
+<tr><td>2</td><td>(2)&nbsp;\( Q \)</td><td>A</td></tr>
+<tr><td>1,2</td><td>(3)&nbsp;\( P ∧ Q \)</td><td>1,2 ∧I</td></tr>
+<tr><td>1</td><td>(4)&nbsp;\( Q → (P ∧ Q) \)</td><td>2,3 CP</td></tr>
 </table>
 </li>
 <li><table class="proof-table">
-<tr><td>1</td><td>(1) (P → Q) ∧ (P → R)</td><td>A</td></tr>
-<tr><td>2</td><td>(2) P</td><td>A</td></tr>
-<tr><td>1</td><td>(3) P → Q</td><td>1 ∧E</td></tr>
-<tr><td>1</td><td>(4) P → R</td><td>1 ∧E</td></tr>
-<tr><td>1,2</td><td>(5) Q</td><td>3,2 MP</td></tr>
-<tr><td>1,2</td><td>(6) R</td><td>4,2 MP</td></tr>
-<tr><td>1,2</td><td>(7) Q ∧ R</td><td>5,6 ∧I</td></tr>
-<tr><td>1</td><td>(8) P → (Q ∧ R)</td><td>2,7 CP</td></tr>
+<tr><td>1</td><td>(1)&nbsp;\( (P → Q) ∧ (P → R) \)</td><td>A</td></tr>
+<tr><td>2</td><td>(2)&nbsp;\( P \)</td><td>A</td></tr>
+<tr><td>1</td><td>(3)&nbsp;\( P → Q \)</td><td>1 ∧E</td></tr>
+<tr><td>1</td><td>(4)&nbsp;\( P → R \)</td><td>1 ∧E</td></tr>
+<tr><td>1,2</td><td>(5)&nbsp;\( Q \)</td><td>3,2 MP</td></tr>
+<tr><td>1,2</td><td>(6)&nbsp;\( R \)</td><td>4,2 MP</td></tr>
+<tr><td>1,2</td><td>(7)&nbsp;\( Q ∧ R \)</td><td>5,6 ∧I</td></tr>
+<tr><td>1</td><td>(8)&nbsp;\( P → (Q ∧ R) \)</td><td>2,7 CP</td></tr>
 </table>
 </li>
 <li><table class="proof-table">
-<tr><td>1</td><td>(1) P → (Q → R)</td><td>A</td></tr>
-<tr><td>2</td><td>(2) Q</td><td>A</td></tr>
-<tr><td>3</td><td>(3) P</td><td>A</td></tr>
-<tr><td>1,3</td><td>(4) Q → R</td><td>3,1 MP</td></tr>
-<tr><td>1,2,3</td><td>(5) R</td><td>4,2 MP</td></tr>
-<tr><td>1,2</td><td>(6) P → R</td><td>3,5 CP</td></tr>
-<tr><td>1</td><td>(7) Q → (P → R)</td><td>2,6 CP</td></tr>
+<tr><td>1</td><td>(1)&nbsp;\( P → (Q → R) \)</td><td>A</td></tr>
+<tr><td>2</td><td>(2)&nbsp;\( Q \)</td><td>A</td></tr>
+<tr><td>3</td><td>(3)&nbsp;\( P \)</td><td>A</td></tr>
+<tr><td>1,3</td><td>(4)&nbsp;\( Q → R \)</td><td>3,1 MP</td></tr>
+<tr><td>1,2,3</td><td>(5)&nbsp;\( R \)</td><td>4,2 MP</td></tr>
+<tr><td>1,2</td><td>(6)&nbsp;\( P → R \)</td><td>3,5 CP</td></tr>
+<tr><td>1</td><td>(7)&nbsp;\( Q → (P → R) \)</td><td>2,6 CP</td></tr>
 </table>
 </li>
 <li><table class="proof-table">
-<tr><td>1</td><td>(1) P → Q</td><td>A</td></tr>
-<tr><td>2</td><td>(2) Q → R</td><td>A</td></tr>
-<tr><td>3</td><td>(3) P</td><td>A</td></tr>
-<tr><td>1,3</td><td>(4) Q</td><td>1,3 MP</td></tr>
-<tr><td>1,2,3</td><td>(5) R</td><td>2,4 MP</td></tr>
-<tr><td>1,2</td><td>(6) P → R</td><td>3,5 CP</td></tr>
-<tr><td>1</td><td>(7) (Q → R) → (P → R)</td><td>2,6 CP</td></tr>
+<tr><td>1</td><td>(1)&nbsp;\( P → Q \)</td><td>A</td></tr>
+<tr><td>2</td><td>(2)&nbsp;\( Q → R \)</td><td>A</td></tr>
+<tr><td>3</td><td>(3)&nbsp;\( P \)</td><td>A</td></tr>
+<tr><td>1,3</td><td>(4)&nbsp;\( Q \)</td><td>1,3 MP</td></tr>
+<tr><td>1,2,3</td><td>(5)&nbsp;\( R \)</td><td>2,4 MP</td></tr>
+<tr><td>1,2</td><td>(6)&nbsp;\( P → R \)</td><td>3,5 CP</td></tr>
+<tr><td>1</td><td>(7)&nbsp;\( (Q → R) → (P → R) \)</td><td>2,6 CP</td></tr>
 </table>
 </li>
 <li><table class="proof-table">
-<tr><td>1</td><td>(1) P → (P → Q)</td><td>A</td></tr>
-<tr><td>2</td><td>(2) P</td><td>A</td></tr>
-<tr><td>1,2</td><td>(3) P → Q</td><td>1,2 MP </td></tr>
-<tr><td>1,2</td><td>(4) Q</td><td>3,2 MP </td></tr>
-<tr><td>1</td><td>(5) P → Q</td><td>2,4 MP </td></tr>
+<tr><td>1</td><td>(1)&nbsp;\( P → (P → Q) \)</td><td>A</td></tr>
+<tr><td>2</td><td>(2)&nbsp;\( P \)</td><td>A</td></tr>
+<tr><td>1,2</td><td>(3)&nbsp;\( P → Q \)</td><td>1,2 MP </td></tr>
+<tr><td>1,2</td><td>(4)&nbsp;\( Q \)</td><td>3,2 MP </td></tr>
+<tr><td>1</td><td>(5)&nbsp;\( P → Q \)</td><td>2,4 MP </td></tr>
 </table>
 </li>
 <li><table class="proof-table">
-<tr><td>1</td><td>(1) P → (Q → R)</td><td>A</td></tr>
-<tr><td>2</td><td>(2) P ∧ Q</td><td>A</td></tr>
-<tr><td>2</td><td>(3) P</td><td>2 ∧E</td></tr>
-<tr><td>2</td><td>(4) Q</td><td>2 ∧E</td></tr>
-<tr><td>1,2</td><td>(5) Q → R</td><td>1,3 MP</td></tr>
-<tr><td>1,2</td><td>(6) R</td><td>5,4 MP</td></tr>
-<tr><td>1</td><td>(7) (P ∧ Q) → R</td><td>2,6 CP</td></tr>
+<tr><td>1</td><td>(1)&nbsp;\( P → (Q → R) \)</td><td>A</td></tr>
+<tr><td>2</td><td>(2)&nbsp;\( P ∧ Q \)</td><td>A</td></tr>
+<tr><td>2</td><td>(3)&nbsp;\( P \)</td><td>2 ∧E</td></tr>
+<tr><td>2</td><td>(4)&nbsp;\( Q \)</td><td>2 ∧E</td></tr>
+<tr><td>1,2</td><td>(5)&nbsp;\( Q → R \)</td><td>1,3 MP</td></tr>
+<tr><td>1,2</td><td>(6)&nbsp;\( R \)</td><td>5,4 MP</td></tr>
+<tr><td>1</td><td>(7)&nbsp;\( (P ∧ Q) → R \)</td><td>2,6 CP</td></tr>
+</table>
+</li>
+<li><table class="proof-table">
+<tr><td>1</td><td>(1)&nbsp;\( ¬P \)</td><td>A</td></tr>
+<tr><td>2</td><td>(2)&nbsp;\( P ∧ Q \)</td><td>A</td></tr>
+<tr><td>2</td><td>(3)&nbsp;\( P \)</td><td>2 ∧E</td></tr>
+<tr><td></td><td>(4)&nbsp;\( (P ∧ Q) → P \)</td><td>2,3 CP</td></tr>
+<tr><td>1</td><td>(5)&nbsp;\( ¬(P ∧ Q) \)</td><td>4,1 MT</td></tr>
+</table>
+</li>
+<li><table class="proof-table">
+<tr><td>1</td><td>(1)&nbsp;\( ¬(P ∨ Q) \)</td><td>A</td></tr>
+<tr><td>2</td><td>(2)&nbsp;\( P \)</td><td>A</td></tr>
+<tr><td>2</td><td>(3)&nbsp;\( P ∨ Q \)</td><td>2 ∨I</td></tr>
+<tr><td></td><td>(4)&nbsp;\( P → (P ∨ Q) \)</td><td>2,3 CP</td></tr>
+<tr><td>1</td><td>(5)&nbsp;\( ¬P \)</td><td>4,1 MT</td></tr>
+<tr><td>6</td><td>(6)&nbsp;\( Q \)</td><td>A</td></tr>
+<tr><td>6</td><td>(7)&nbsp;\( P ∨ Q \)</td><td>6 ∨I</td></tr>
+<tr><td></td><td>(8)&nbsp;\( Q → (P ∨ Q) \)</td><td>6,7 CP</td></tr>
+<tr><td>1</td><td>(9)&nbsp;\( ¬Q \)</td><td>8,1 MT</td></tr>
+<tr><td>1</td><td>(10)&nbsp;\( ¬P ∧ ¬Q \)</td><td>5,9 ∧I</td></tr>
 </table>
 </li>
 </ol>

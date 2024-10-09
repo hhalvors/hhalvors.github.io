@@ -26,6 +26,10 @@
   <link rel="stylesheet" href="/css/lanyon.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 
+  <!-- MathJax configuration -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
   <!---
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ '/public/apple-touch-icon-precomposed.png' | absolute_url }}">
   <link rel="shortcut icon" href="{{ '/public/favicon.ico' | absolute_url }}">
@@ -153,7 +157,43 @@ physical (determined by one’s current state) and semantic (a tool for
 describing and sharing information). (There’s a very interesting
 analogy here with a choice of basis in quantum theory. But we won’t
 pursue that analogy right now.)</p>
+<h3 id="the-physical-notion-of-reference-frame-relationalism">The physical notion of reference frame: relationalism</h3>
+<h3 id="the-semantic-notion-of-reference-frame-contextualism">The semantic notion of reference frame: contextualism</h3>
 <h2 id="the-mathematics-of-reference-frames">The mathematics of reference frames</h2>
+<p>The notion of a frame of reference has played an important role in
+physics. However, the very power and richness of the notion makes it
+subject to abuse. For example, it is very common for people to impose
+a sort of criterion of reality on objects that they should be
+“independent of reference frame”. But what in the world is that even
+supposed to mean?</p>
+<p>In the tradition of 20th century analytic philosophy, we can try to
+improve conceptual clarity by means of <em>explication</em>. To explicate a
+concept means something like providing a good mathematical
+(structural) representative of that concept. For example, we have an
+intuitive notion of infinity, and an explication of that concept is
+provided by the mathematical notion of injective and surjective
+functions: a set <span class="math inline"><em>S</em></span> is infinite just in case there if a function
+<span class="math inline"><em>f</em> : <em>S</em> → <em>S</em></span> that is injective but not surjective.</p>
+<p>So what then are some mathematical things that seem to play roughly
+the same role as our intuitive concept of a reference frame? There are
+several inter-related candidates, and only some of these candidates
+generalize to the contemporary setting (where we can’t always depend
+on having global coordinate charts).</p>
+<ul>
+<li>In Galilean relativity and special relativity, a pair <span class="math inline">(<em>p</em>, <em>v⃗</em> ∈ <em>T</em><sub><em>p</em></sub>)</span> is sufficient to pick out a unique reference frame. Here <span class="math inline"><em>p</em></span>
+is the location (a point in the spacetime manifold) and <span class="math inline"><em>v⃗</em></span> is
+the <span class="math inline">4</span>-velocity.</li>
+<li>In Galilean and special relativity, an instantaneous state
+<span class="math inline">(<em>p</em>, <em>v⃗</em> ∈ <em>T</em><sub><em>p</em></sub>)</span> also picks out a “preferred” coordinate
+system. The mathematics here is straightforward. What is not
+straightforward is what “preferred” is supposed to mean.</li>
+<li>So long as our spacetime theory uses a manifold <span class="math inline"><em>M</em></span> and a notion of
+permitted trajectories of material objects, then we can say that a
+reference frame is a family of such lines that fill space.<br />
+</li>
+<li>In GTR, a pair <span class="math inline">(<em>p</em>, <em>v⃗</em> ∈ <em>T</em><sub><em>p</em></sub>)</span> could also be said to be a
+reference frame. But now the notion is being stretched, because …</li>
+</ul>
 <h3 id="reference-frames-and-coordinates">Reference frames and coordinates</h3>
 </div>
 
