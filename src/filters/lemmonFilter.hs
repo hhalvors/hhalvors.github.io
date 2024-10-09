@@ -111,12 +111,18 @@ renderTerm :: Term -> String
 renderTerm (Var v) = [v]
 renderTerm (Const c) = [c]
 
--- | Render a single proof line in HTML.
+-- | Render a single proof line in HTML with MathJax.
 renderLineHTML :: ProofLine -> String
 renderLineHTML (ProofLine refs ln formula justification) =
-  "<tr><td>" ++ showRefs refs ++ "</td><td>(" ++ show ln ++ ") " ++ renderFormulaHTML formula ++
+  "<tr><td>" ++ showRefs refs ++ "</td><td>(" ++ show ln ++ ")&nbsp;" ++
+  renderFormulaWithMathJax formula ++
   "</td><td>" ++ justification ++ "</td></tr>\n"
 
+-- | Render a formula in MathJax inline math mode.
+renderFormulaWithMathJax :: PredFormula -> String
+renderFormulaWithMathJax formula =
+  "\\( " ++ renderFormulaHTML formula ++ " \\)"
+  
 -- | Render references in HTML with commas between them and no spaces.
 showRefs :: [Int] -> String
 showRefs refs = intercalate "," (map show refs)  
