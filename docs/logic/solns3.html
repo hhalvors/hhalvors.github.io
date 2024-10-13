@@ -216,7 +216,19 @@
 <tr><td>1</td><td>(10)&nbsp;\( ¬P ∧ ¬Q \)</td><td>5,9 ∧I</td></tr>
 </table>
 </li>
-<li><code>lemmon     1   (1) P           A     2   (2) P→¬P        A     1,2 (3) ¬P          2,1 MP     1   (4) (P→¬P)→¬P   2,3 CP     1   (5) ¬¬P         1 DN     1   (6) ¬(P→¬P)     4,5 MT         (7) P→¬(P→¬P)   1,6 CP     2   (8) ¬¬(P→¬P)    2 DN     2   (9) ¬P          7,8 MT</code></li>
+<li><!-- separator -->
+<table class="proof-table">
+<tr><td>1</td><td>(1)&nbsp;\( P \)</td><td>A</td></tr>
+<tr><td>2</td><td>(2)&nbsp;\( P → ¬P \)</td><td>A</td></tr>
+<tr><td>1,2</td><td>(3)&nbsp;\( ¬P \)</td><td>2,1 MP</td></tr>
+<tr><td>1</td><td>(4)&nbsp;\( (P → ¬P) → ¬P \)</td><td>2,3 CP</td></tr>
+<tr><td>1</td><td>(5)&nbsp;\( ¬¬P \)</td><td>1 DN</td></tr>
+<tr><td>1</td><td>(6)&nbsp;\( ¬(P → ¬P) \)</td><td>4,5 MT</td></tr>
+<tr><td></td><td>(7)&nbsp;\( P → ¬(P → ¬P) \)</td><td>1,6 CP</td></tr>
+<tr><td>2</td><td>(8)&nbsp;\( ¬¬(P → ¬P) \)</td><td>2 DN</td></tr>
+<tr><td>2</td><td>(9)&nbsp;\( ¬P \)</td><td>7,8 MT</td></tr>
+</table>
+</li>
 </ol>
 </div>
 
