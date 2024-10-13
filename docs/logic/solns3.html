@@ -216,12 +216,8 @@
 <tr><td>1</td><td>(10)&nbsp;\( ¬P ∧ ¬Q \)</td><td>5,9 ∧I</td></tr>
 </table>
 </li>
-<li>This result can be proved by the following string of derivations:</li>
+<li><code>lemmon     1   (1) P           A     2   (2) P→¬P        A     1,2 (3) ¬P          2,1 MP     1   (4) (P→¬P)→¬P   2,3 CP     1   (5) ¬¬P         1 DN     1   (6) ¬(P→¬P)     4,5 MT         (7) P→¬(P→¬P)   1,6 CP     2   (8) ¬¬(P→¬P)    2 DN     2   (9) ¬P          7,8 MT</code></li>
 </ol>
-<pre><code>   P ⊢ (P→¬P)→¬P
-   P ⊢ P→¬(P→¬P)
-   P ⊢ ¬(P→¬P)
-P→¬P ⊢ ¬P</code></pre>
 </div>
 
       </div>
