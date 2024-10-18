@@ -28,7 +28,23 @@
 
   <!-- MathJax configuration -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script type="text/javascript">
+  MathJax = {
+    chtml: {
+      styles: {
+        ".mjx-math .mjx-rel > .mjx-char[data-c='22A2']": {
+          "padding-left": "0.3em",
+          "padding-right": "0.3em"
+        }
+      }
+    }
+  };
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+  <script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <!---
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ '/public/apple-touch-icon-precomposed.png' | absolute_url }}">
@@ -178,8 +194,8 @@ concept means something like providing a good mathematical
 (structural) representative of that concept. For example, we have an
 intuitive notion of infinity, and an explication of that concept is
 provided by the mathematical notion of injective and surjective
-functions: a set <span class="math inline"><em>S</em></span> is infinite just in case there if a function
-<span class="math inline"><em>f</em> : <em>S</em> → <em>S</em></span> that is injective but not surjective.</p>
+functions: a set <span class="math inline">\(S\)</span> is infinite just in case there if a function
+<span class="math inline">\(f:S\to S\)</span> that is injective but not surjective.</p>
 <p>So what then are some mathematical things that play the role of the
 intuitive concept of a reference frame? There are several
 inter-related candidates, and only some of these candidates generalize
@@ -189,28 +205,28 @@ global coordinate charts).</p>
 <li><p>In Galilean relativity and special relativity, we can represent a
 reference frames as an (equivalence classes of) pairs consisting of
 a position (element of the manifold) and velocity (element of the
-tangent space at that point). In this case, <span class="math inline">(<em>p</em>, <em>v⃗</em>)</span> uniquely
+tangent space at that point). In this case, <span class="math inline">\((p,\vec{v})\)</span> uniquely
 determines a timelike line (geodesic) in the relevant spacetime. And
 each single timelike geodesic uniquely determines an entire family
 of parallel geodesics. In the case of Galilean spacetime, the
 spatial hypersurfaces are already determined, and do not depend on
 the frame of reference. But in Minkowski spacetime, there is a
-unique spatial hypersurface orthogonal to <span class="math inline"><em>v⃗</em></span>.</p></li>
+unique spatial hypersurface orthogonal to <span class="math inline">\(\vec{v}\)</span>.</p></li>
 <li><p>In Galilean and special relativity, an instantaneous state
-<span class="math inline">(<em>p</em>, <em>v⃗</em> ∈ <em>T</em><sub><em>p</em></sub>)</span> also picks out a “preferred” coordinate
+<span class="math inline">\((p,\vec{v}\in T_p)\)</span> also picks out a “preferred” coordinate
 system. The mathematics here is straightforward. What is not
 straightforward is what “preferred” is supposed to mean.</p></li>
-<li><p>So long as our spacetime theory uses a manifold <span class="math inline"><em>M</em></span> and a notion of
+<li><p>So long as our spacetime theory uses a manifold <span class="math inline">\(M\)</span> and a notion of
 permitted trajectories of material objects, then we can say that a
 reference frame is a family of such lines that fill space.</p></li>
-<li><p>In GTR, a pair <span class="math inline">(<em>p</em>, <em>v⃗</em> ∈ <em>T</em><sub><em>p</em></sub>)</span> could also be said to be a
+<li><p>In GTR, a pair <span class="math inline">\((p,\vec{v}\in T_p)\)</span> could also be said to be a
 reference frame. But now the notion is being stretched, because …</p></li>
 <li><p>There’s another mathematical idea that is (indirectly) related to
 reference-frame dependence: basis-dependent representations of
-tensorial objects. For example, lqet <span class="math inline"><em>v</em></span> be a vector in an
-<span class="math inline"><em>n</em></span>-dimensional vector space <span class="math inline"><em>V</em></span> over <span class="math inline">ℝ</span>. Relative to a
-basis, <span class="math inline"><em>v</em></span> is represented as an <span class="math inline"><em>n</em></span>-tuple of real numbers. This well
-known fact generalizes to all tensors over <span class="math inline"><em>v</em></span>, and it seems to have
+tensorial objects. For example, lqet <span class="math inline">\(v\)</span> be a vector in an
+<span class="math inline">\(n\)</span>-dimensional vector space <span class="math inline">\(V\)</span> over <span class="math inline">\(\mathbb{R}\)</span>. Relative to a
+basis, <span class="math inline">\(v\)</span> is represented as an <span class="math inline">\(n\)</span>-tuple of real numbers. This well
+known fact generalizes to all tensors over <span class="math inline">\(v\)</span>, and it seems to have
 led to quite a bit of confusion about how differential geometry
 functions. In particular, it is not uncommon to hear talk about
 “non-tensorial quantities”, as if there were some kind of space of
@@ -219,9 +235,9 @@ not. But in most such cases, the so called non-tensorial quantities
 are simply basis-dependent representations of tensors.</p></li>
 <li><p>Basis-dependent representations of tensors are closely related to
 coordinate-dependent representations of tensor fields. In
-particular, let <span class="math inline"><em>p</em> ∈ <em>M</em></span>, and let <span class="math inline">(<em>U</em>, <em>φ</em>)</span> be a coordinate
-chart such that <span class="math inline"><em>p</em> ∈ <em>U</em></span>. This chart then defines a basis on <span class="math inline"><em>T</em><sub><em>p</em></sub></span>
-relative to which tensors over <span class="math inline"><em>T</em><sub><em>p</em></sub></span> have a numerical
+particular, let <span class="math inline">\(p\in M\)</span>, and let <span class="math inline">\((U,\varphi )\)</span> be a coordinate
+chart such that <span class="math inline">\(p\in U\)</span>. This chart then defines a basis on <span class="math inline">\(T_p\)</span>
+relative to which tensors over <span class="math inline">\(T_p\)</span> have a numerical
 representation. However, this numerical representation doesn’t have
 any immediate ontological or epistemological significance — at
 least not until one says something more.</p></li>

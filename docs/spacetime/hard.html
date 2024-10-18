@@ -28,7 +28,23 @@
 
   <!-- MathJax configuration -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script type="text/javascript">
+  MathJax = {
+    chtml: {
+      styles: {
+        ".mjx-math .mjx-rel > .mjx-char[data-c='22A2']": {
+          "padding-left": "0.3em",
+          "padding-right": "0.3em"
+        }
+      }
+    }
+  };
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+  <script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <!---
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ '/public/apple-touch-icon-precomposed.png' | absolute_url }}">
@@ -140,11 +156,11 @@
      <p>Soon to figure out how to write theorem environments in
 markdown. Until then…</p>
 <p>Theorem
-: Let <span class="math inline"><strong>F</strong><strong>M</strong><strong>a</strong><strong>n</strong></span> be the category whose objects are simply
+: Let <span class="math inline">\(\mathbf{FMan}\)</span> be the category whose objects are simply
 connected smooth manifolds with flat connection, and whose
 arrows are diffeomorphisms that preserve the connection. Let
-<span class="math inline"><strong>A</strong><strong>f</strong><strong>f</strong></span> be the category of affine spaces and affine
-maps. Then <span class="math inline"><strong>F</strong><strong>l</strong><strong>M</strong><strong>a</strong><strong>n</strong></span> and <span class="math inline"><strong>A</strong><strong>f</strong><strong>f</strong></span> are equivalent
+<span class="math inline">\(\mathbf{Aff}\)</span> be the category of affine spaces and affine
+maps. Then <span class="math inline">\(\mathbf{FlMan}\)</span> and <span class="math inline">\(\mathbf{Aff}\)</span> are equivalent
 categories.</p>
 </div>
 
