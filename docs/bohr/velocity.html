@@ -28,7 +28,23 @@
 
   <!-- MathJax configuration -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script type="text/javascript">
+  MathJax = {
+    chtml: {
+      styles: {
+        ".mjx-math .mjx-rel > .mjx-char[data-c='22A2']": {
+          "padding-left": "0.3em",
+          "padding-right": "0.3em"
+        }
+      }
+    }
+  };
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+  <script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <!---
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ '/public/apple-touch-icon-precomposed.png' | absolute_url }}">
@@ -175,10 +191,10 @@ places at different times. To see this clearly, consider the case of
 “Galilean spacetime”, which is all the spacetime structure we need to
 do Newtonian particle mechanics: Galilean
 spacetime is assumed to be composed of an infinite number of copies of
-a three-dimensional Euclidean space <span class="math inline"><em>E</em><sub><em>t</em></sub></span>, indexed by a time parameter
-<span class="math inline"><em>t</em> ∈ ℝ</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Most importantly, there is no sense to be made of
-writing “<span class="math inline"><em>a</em> = <em>b</em></span>” or “<span class="math inline"><em>a</em> ≠ <em>b</em></span>” when <span class="math inline"><em>a</em></span> is a point in <span class="math inline"><em>E</em><sub><em>t</em></sub></span> and <span class="math inline"><em>b</em></span> is
-a point in <span class="math inline"><em>E</em><sub><em>t</em>′</sub></span> for <span class="math inline"><em>t</em> ≠ <em>t</em>′</span>. Since Galilean spacetime “washes
+a three-dimensional Euclidean space <span class="math inline">\(E_t\)</span>, indexed by a time parameter
+<span class="math inline">\(t\in\mathbb{R}\)</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Most importantly, there is no sense to be made of
+writing “<span class="math inline">\(a=b\)</span>” or “<span class="math inline">\(a\neq b\)</span>” when <span class="math inline">\(a\)</span> is a point in <span class="math inline">\(E_t\)</span> and <span class="math inline">\(b\)</span> is
+a point in <span class="math inline">\(E_{t&#39;}\)</span> for <span class="math inline">\(t\neq t&#39;\)</span>. Since Galilean spacetime “washes
 out” the identity of points at different times, there is no sense in
 which an object can be at the same (or at a different) place at
 different times.</p>

@@ -14,6 +14,8 @@ import           Text.Pandoc.Walk              (walkM)
 import           LemmonFilter                  (applyLemmonFilter)
 import           Text.Pandoc.Definition        (Pandoc)
 import           Control.Monad                 ((<=<))
+import Text.Pandoc.Options (HTMLMathMethod(..), writerExtensions, writerHTMLMathMethod, WriterOptions, Extension(..), enableExtension)
+import Text.Pandoc (pandocExtensions)
 
 --------------------------------------------------------------------------------
 
@@ -288,15 +290,23 @@ myPandocBiblioCompiler = do
   csl <- load "bib/style.csl"
   bib <- load "bib/bibliography.bib"
 
+  let mathExtensions = [ Ext_tex_math_dollars, Ext_tex_math_double_backslash, Ext_latex_macros, Ext_raw_tex, Ext_raw_html ]
+      newExtensions = foldr enableExtension (writerExtensions defaultHakyllWriterOptions) mathExtensions
+      writerOptions = defaultHakyllWriterOptions
+        { writerExtensions = newExtensions
+        , writerHTMLMathMethod = MathJax ""  -- Use MathJax for math rendering
+        }
+
   pandocCompilerWithTransformM
     defaultHakyllReaderOptions
-    defaultHakyllWriterOptions
+    writerOptions
     (\pandoc -> do
         -- Apply bibliography processing
         processed <- processPandocBiblio csl bib (Item "" pandoc)
         -- Apply Lemmon filter to the processed result
         return $ applyLemmonFilter (itemBody processed)
     )
+
 
 
 -- myPandocBiblioCompiler :: Compiler (Item String)

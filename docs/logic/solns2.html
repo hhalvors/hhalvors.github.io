@@ -28,7 +28,23 @@
 
   <!-- MathJax configuration -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script type="text/javascript">
+  MathJax = {
+    chtml: {
+      styles: {
+        ".mjx-math .mjx-rel > .mjx-char[data-c='22A2']": {
+          "padding-left": "0.3em",
+          "padding-right": "0.3em"
+        }
+      }
+    }
+  };
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+  <script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   <!---
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ '/public/apple-touch-icon-precomposed.png' | absolute_url }}">
@@ -139,9 +155,10 @@
   <h1 class="page-title">Deducing: Solutions to Problems</h1>
      <h2 id="exercise-2.1">Exercise 2.1</h2>
 <ol type="1">
-<li><p>Prove that <span class="math inline"><em>Q</em> ∧ <em>P</em></span> follows from <span class="math inline"><em>P</em> ∧ <em>Q</em></span>. That is, write
-<span class="math inline"><em>P</em> ∧ <em>Q</em></span> on line <span class="math inline">(1)</span>, then use the rules (<span class="math inline">∧</span>
-introduction and elimination) repeatedly until you obtain <span class="math inline"><em>Q</em> ∧ <em>P</em></span>.</p>
+<li><p>Prove that <span class="math inline">\(Q\wedge P\)</span> follows from <span class="math inline">\(P\wedge Q\)</span>. That is, write
+<span class="math inline">\(P\wedge Q\)</span> on line <span class="math inline">\((1)\)</span>, then use the rules (<span class="math inline">\(\wedge\)</span>
+introduction and elimination) repeatedly until you obtain <span class="math inline">\(Q\wedge
+P\)</span>.</p>
 <table class="proof-table">
 <tr><td></td><td>(1)&nbsp;\( P ∧ Q \)</td><td>A</td></tr>
 <tr><td></td><td>(2)&nbsp;\( P \)</td><td>1 ∧E</td></tr>
@@ -149,7 +166,7 @@ introduction and elimination) repeatedly until you obtain <span class="math inli
 <tr><td></td><td>(4)&nbsp;\( Q ∧ P \)</td><td>2,3 ∧I</td></tr>
 </table>
 </li>
-<li><p>Prove that <span class="math inline"><em>P</em> ∧ (<em>Q</em> ∧ <em>R</em>)</span> follows from <span class="math inline">(<em>P</em> ∧ <em>Q</em>) ∧ <em>R</em></span>.</p>
+<li><p>Prove that <span class="math inline">\(P\wedge (Q\wedge R)\)</span> follows from <span class="math inline">\((P\wedge Q)\wedge R\)</span>.</p>
 <table class="proof-table">
 <tr><td></td><td>(1)&nbsp;\( (P ∧ Q) ∧ R \)</td><td>A</td></tr>
 <tr><td></td><td>(2)&nbsp;\( R \)</td><td>1 ∧E</td></tr>
@@ -163,14 +180,14 @@ introduction and elimination) repeatedly until you obtain <span class="math inli
 </ol>
 <h2 id="exercise-2.2">Exercise 2.2</h2>
 <ol type="1">
-<li><p><span class="math inline"><em>P</em> ∧ <em>Q</em> ⊢ <em>Q</em> ∨ <em>R</em></span></p>
+<li><p><span class="math inline">\(P\wedge Q\:\vdash\:Q\vee R\)</span></p>
 <table class="proof-table">
 <tr><td></td><td>(1)&nbsp;\( P ∧ Q \)</td><td>A</td></tr>
 <tr><td></td><td>(2)&nbsp;\( Q \)</td><td>1 ∧E</td></tr>
 <tr><td></td><td>(3)&nbsp;\( Q ∨ R \)</td><td>2 ∨I</td></tr>
 </table>
 </li>
-<li><p><span class="math inline"><em>P</em> ∧ <em>Q</em>  ⊢ (<em>P</em> ∨ <em>R</em>) ∧ (<em>Q</em> ∨ <em>R</em>)</span></p>
+<li><p><span class="math inline">\(P\wedge Q\:\vdash (P\vee R)\wedge (Q\vee R)\)</span></p>
 <table class="proof-table">
 <tr><td></td><td>(1)&nbsp;\( P ∧ Q \)</td><td>	       A</td></tr>
 <tr><td></td><td>(2)&nbsp;\( P \)</td><td>	       1 ∧E</td></tr>
@@ -180,14 +197,14 @@ introduction and elimination) repeatedly until you obtain <span class="math inli
 <tr><td></td><td>(6)&nbsp;\( (P ∨ R) ∧ (Q ∨ R) \)</td><td>4,5 ∧I</td></tr>
 </table>
 </li>
-<li><p><span class="math inline"><em>P</em> ⊢ <em>Q</em> ∨ (<em>P</em> ∨ <em>Q</em>)</span></p>
+<li><p><span class="math inline">\(P\:\vdash\:Q\vee (P\vee Q)\)</span></p>
 <table class="proof-table">
 <tr><td></td><td>(1)&nbsp;\( P \)</td><td>A</td></tr>
 <tr><td></td><td>(2)&nbsp;\( P ∨ Q \)</td><td>1 ∨I</td></tr>
 <tr><td></td><td>(3)&nbsp;\( Q ∨ (P ∨ Q) \)</td><td>2 ∨I</td></tr>
 </table>
 </li>
-<li><p><span class="math inline"><em>P</em> ⊢ (<em>P</em> ∨ <em>R</em>) ∧ (<em>P</em> ∨ <em>Q</em>)</span></p>
+<li><p><span class="math inline">\(P\:\vdash\: (P\vee R)\wedge (P\vee Q)\)</span></p>
 <table class="proof-table">
 <tr><td></td><td>(1)&nbsp;\( P \)</td><td>A</td></tr>
 <tr><td></td><td>(2)&nbsp;\( P ∨ R \)</td><td>1 ∨I</td></tr>
@@ -195,27 +212,27 @@ introduction and elimination) repeatedly until you obtain <span class="math inli
 <tr><td></td><td>(4)&nbsp;\( (P ∨ R) ∧ (P ∨ Q) \)</td><td>2,3 ∧I</td></tr>
 </table>
 </li>
-<li><p><span class="math inline"><em>Q</em> ⊢ ¬<em>P</em> ∨ <em>Q</em></span></p>
+<li><p><span class="math inline">\(Q\:\vdash\: \neg P\vee Q\)</span></p>
 <table class="proof-table">
 <tr><td></td><td>(1)&nbsp;\( Q \)</td><td>A</td></tr>
 <tr><td></td><td>(2)&nbsp;\( ¬P ∨ Q \)</td><td>1 ∨I</td></tr>
 </table>
 </li>
-<li><p><span class="math inline"><em>P</em> ⊢ <em>P</em> ∧ (<em>P</em> ∨ <em>Q</em>)</span></p>
+<li><p><span class="math inline">\(P\:\vdash\: P\wedge (P\vee Q)\)</span></p>
 <table class="proof-table">
 <tr><td></td><td>(1)&nbsp;\( P \)</td><td>A</td></tr>
 <tr><td></td><td>(2)&nbsp;\( P ∨ Q \)</td><td>1 ∨I</td></tr>
 <tr><td></td><td>(3)&nbsp;\( P ∧ (P ∨ Q) \)</td><td>1,2 ∧I</td></tr>
 </table>
 </li>
-<li><p><span class="math inline"><em>P</em> ⊢ <em>P</em> ∧ (<em>P</em> ∧ <em>P</em>)</span></p>
+<li><p><span class="math inline">\(P\:\vdash\: P\wedge (P\wedge P)\)</span></p>
 <table class="proof-table">
 <tr><td></td><td>(1)&nbsp;\( P \)</td><td>A</td></tr>
 <tr><td></td><td>(2)&nbsp;\( P ∧ P \)</td><td>1,1 ∧I</td></tr>
 <tr><td></td><td>(3)&nbsp;\( P ∧ (P ∧ P) \)</td><td>1,2 ∧I</td></tr>
 </table>
 </li>
-<li><p><span class="math inline"><em>P</em> ⊢ (<em>P</em> ∧ <em>P</em>) ∧ (<em>P</em> ∧ <em>P</em>)</span></p>
+<li><p><span class="math inline">\(P\:\vdash\: (P\wedge P)\wedge (P\wedge P)\)</span></p>
 <table class="proof-table">
 <tr><td></td><td>(1)&nbsp;\( P \)</td><td>A</td></tr>
 <tr><td></td><td>(2)&nbsp;\( P ∧ P \)</td><td>1,1 ∧I</td></tr>
@@ -225,7 +242,7 @@ introduction and elimination) repeatedly until you obtain <span class="math inli
 </ol>
 <h2 id="exercise-2.3">Exercise 2.3</h2>
 <ol type="1">
-<li><p><span class="math inline"><em>P</em> → (<em>Q</em> → <em>R</em>), <em>P</em> → <em>Q</em>, <em>P</em> ⊢ <em>R</em></span></p>
+<li><p><span class="math inline">\(P\to (Q\to R),\,P\to Q,\,P\:\vdash\: R\)</span></p>
 <table class="proof-table">
 <tr><td></td><td>(1)&nbsp;\( P → (Q → R) \)</td><td>A</td></tr>
 <tr><td></td><td>(2)&nbsp;\( P → Q \)</td><td>A</td></tr>
@@ -235,7 +252,7 @@ introduction and elimination) repeatedly until you obtain <span class="math inli
 <tr><td></td><td>(6)&nbsp;\( R \)</td><td>4,5 MP</td></tr>
 </table>
 </li>
-<li><p><span class="math inline">(<em>A</em> ∨ <em>B</em>) → <em>T</em>, <em>Z</em> → <em>A</em>, <em>T</em> → <em>W</em>, <em>Z</em> ⊢ <em>W</em></span></p>
+<li><p><span class="math inline">\((A\vee B)\to T,\,Z\to A,\,T\to W,\,Z\:\vdash\:W\)</span></p>
 <table class="proof-table">
 <tr><td></td><td>(1)&nbsp;\( (A ∨ B) → T \)</td><td>A</td></tr>
 <tr><td></td><td>(2)&nbsp;\( Z → A \)</td><td>A</td></tr>
@@ -247,7 +264,7 @@ introduction and elimination) repeatedly until you obtain <span class="math inli
 <tr><td></td><td>(8)&nbsp;\( W \)</td><td>3,7 MP</td></tr>
 </table>
 </li>
-<li><p><span class="math inline">(<em>A</em> → <em>B</em>) ∧ (<em>C</em> → <em>A</em>), (<em>C</em> ∧ (<em>W</em> → <em>Z</em>)) ∧ <em>W</em> ⊢ (<em>B</em> ∨ <em>D</em>) ∧ (<em>Z</em> ∨ <em>E</em>)</span></p>
+<li><p><span class="math inline">\((A\to B)\wedge (C\to A),\,(C\wedge (W\to Z))\wedge W\:\vdash\:(B\vee D)\wedge (Z\vee E)\)</span></p>
 <table class="proof-table">
 <tr><td></td><td>(1)&nbsp;\( (A → B) ∧ (C → A) \)</td><td>A</td></tr>
 <tr><td></td><td>(2)&nbsp;\( (C ∧ (W → Z)) ∧ W \)</td><td>A</td></tr>
@@ -265,7 +282,7 @@ introduction and elimination) repeatedly until you obtain <span class="math inli
 <tr><td></td><td>(14)&nbsp;\( (B ∨ D) ∧ (Z ∨ E) \)</td><td>9,13 ∧I</td></tr>
 </table>
 </li>
-<li><p><span class="math inline"><em>P</em> → (<em>P</em> → <em>Q</em>), <em>P</em> ⊢ <em>Q</em></span></p>
+<li><p><span class="math inline">\(P\to (P\to Q),\,P\:\vdash\: Q\)</span></p>
 <table class="proof-table">
 <tr><td></td><td>(1)&nbsp;\( P → (P → Q) \)</td><td>A</td></tr>
 <tr><td></td><td>(2)&nbsp;\( P \)</td><td>A</td></tr>
@@ -273,7 +290,7 @@ introduction and elimination) repeatedly until you obtain <span class="math inli
 <tr><td></td><td>(4)&nbsp;\( Q \)</td><td>3,2 MP</td></tr>
 </table>
 </li>
-<li><p><span class="math inline"><em>P</em> ∧ (<em>P</em> → <em>Q</em>) ⊢ <em>P</em> ∧ <em>Q</em></span></p>
+<li><p><span class="math inline">\(P\wedge (P\to Q)\:\vdash\: P\wedge Q\)</span></p>
 <table class="proof-table">
 <tr><td></td><td>(1)&nbsp;\( P ∧ (P → Q) \)</td><td>A</td></tr>
 <tr><td></td><td>(2)&nbsp;\( P \)</td><td>1 ∧E</td></tr>
@@ -285,21 +302,21 @@ introduction and elimination) repeatedly until you obtain <span class="math inli
 </ol>
 <h2 id="exercise-2.4">Exercise 2.4</h2>
 <ol type="1">
-<li><p><span class="math inline"><em>Q</em> → (<em>P</em> → <em>R</em>), ¬<em>R</em> ∧ <em>Q</em> ⊢ ¬<em>P</em></span></p></li>
-<li><p><span class="math inline"><em>P</em> → <em>Q</em>, ¬<em>Q</em> ⊢ ¬<em>P</em> ∧ ¬<em>Q</em></span></p></li>
-<li><p><span class="math inline"><em>P</em> → <em>Q</em>, <em>Q</em> → <em>R</em>, ¬<em>R</em> ⊢ ¬<em>P</em></span></p></li>
-<li><p><span class="math inline"><em>P</em> → <em>Q</em>, ¬<em>P</em> → <em>R</em>, ¬<em>R</em> ⊢ <em>Q</em></span></p></li>
+<li><p><span class="math inline">\(Q\to (P\to R),\neg R\wedge Q\:\vdash\: \neg P\)</span></p></li>
+<li><p><span class="math inline">\(P\to Q,\neg Q\:\vdash\: \neg P\wedge \neg Q\)</span></p></li>
+<li><p><span class="math inline">\(P\to Q,Q\to R,\neg R\:\vdash\: \neg P\)</span></p></li>
+<li><p><span class="math inline">\(P\to Q,\neg P\to R,\neg R\:\vdash \: Q\)</span></p></li>
 </ol>
 <h2 id="exercise-2.5">Exercise 2.5</h2>
 <ol type="1">
-<li><p><span class="math inline"><em>P</em> ∧ (<em>Q</em> ∧ <em>R</em>)  ⊣ ⊢ (<em>P</em> ∧ <em>Q</em>) ∧ <em>R</em></span></p></li>
-<li><p><span class="math inline"><em>P</em>  ⊣ ⊢ <em>P</em> ∧ <em>P</em></span></p></li>
-<li><p><span class="math inline"><em>P</em> → ¬<em>Q</em>, <em>Q</em> ⊢ ¬<em>P</em></span></p></li>
-<li><p><span class="math inline">¬¬<em>P</em> ⊢ ¬¬<em>P</em> ∧ (<em>P</em> ∨ <em>Q</em>)</span></p></li>
-<li><p><span class="math inline">¬(<em>P</em> ∧ <em>Q</em>) → <em>R</em>, ¬<em>R</em> ⊢ <em>P</em></span></p></li>
-<li><p><span class="math inline"><em>P</em> → (<em>Q</em> ∧ <em>R</em>), <em>A</em> → ¬<em>R</em>, <em>P</em> ⊢ ¬<em>A</em></span></p></li>
-<li><p><span class="math inline">¬<em>P</em> → ¬<em>Q</em>, <em>Q</em> ⊢ <em>P</em></span></p></li>
-<li><p><span class="math inline"><em>P</em> ⊢ ¬¬(<em>P</em> ∨ <em>Q</em>)</span></p></li>
+<li><p><span class="math inline">\(P\wedge (Q\wedge R)\:\dashv\vdash\: (P\wedge Q)\wedge R\)</span></p></li>
+<li><p><span class="math inline">\(P\:\dashv\vdash\: P\wedge P\)</span></p></li>
+<li><p><span class="math inline">\(P\to \neg Q,Q\: \vdash \: \neg P\)</span></p></li>
+<li><p><span class="math inline">\(\neg \neg P\: \vdash \: \neg \neg P\wedge (P\vee Q)\)</span></p></li>
+<li><p><span class="math inline">\(\neg (P\wedge Q)\to R,\neg R\:\vdash \: P\)</span></p></li>
+<li><p><span class="math inline">\(P\to (Q\wedge R),A\to \neg R,P\:\vdash\: \neg A\)</span></p></li>
+<li><p><span class="math inline">\(\neg P\to\neg Q,Q\:\vdash \: P\)</span></p></li>
+<li><p><span class="math inline">\(P\:\vdash \: \neg \neg (P\vee Q)\)</span></p></li>
 </ol>
 <!--- Pospesel and Marans have many translation problems http://humbox.edshare.ac.uk/id/eprint/5509 -->
 <h2 id="exercise-2.6">Exercise 2.6</h2>
@@ -312,59 +329,60 @@ other sentences? Does it assert the disjunction of two other
 sentences? Etc.</p>
 <p>For example, the sentence, “The cat is on the mat,” is atomic. In this
 case, the best we can do is to represent it with a single letter such
-as <span class="math inline"><em>P</em></span>. On the other hand, “The cat is on the mat, and the dog is in
+as <span class="math inline">\(P\)</span>. On the other hand, “The cat is on the mat, and the dog is in
 the kennel,” asserts a conjunction of two atomic sentences. Thus, it’s
-best represented as something like <span class="math inline"><em>P</em> ∧ <em>Q</em></span>.</p>
+best represented as something like <span class="math inline">\(P\wedge Q\)</span>.</p>
 <p>For the following sentences, give the most perspicuous representation
 you can of their inner logical form. First identify the component
 atomic sentences, and abbreviate each with a (distinct) letter. Then
-translate the original sentence using the symbols <span class="math inline">∨, ∧, ¬,→</span> for the logical words “or”, “and”, “not”, “if…then…”. (We
+translate the original sentence using the symbols <span class="math inline">\(\vee ,\wedge ,\neg
+,\to\)</span> for the logical words “or”, “and”, “not”, “if…then…”. (We
 have suggested letters for the atomic sentences at the end of each
 sentence.)</p>
 <ol type="1">
 <li><p>It’s not true that if Ron doesn’t do his homework then Hermione will
-finish it for him. <span class="math inline"><em>R</em>, <em>H</em></span></p></li>
+finish it for him. <span class="math inline">\(R,H\)</span></p></li>
 <li><p>Harry will be singed unless he evades the dragon’s fiery breath.
-<span class="math inline"><em>S</em>, <em>E</em></span></p></li>
+<span class="math inline">\(S,E\)</span></p></li>
 <li><p>Aristotle was neither a great philosopher nor a great scientist.
-<span class="math inline"><em>P</em>, <em>S</em></span></p></li>
+<span class="math inline">\(P,S\)</span></p></li>
 <li><p>Mark will get an A in logic only if he does the homework or bribes
-the professor. <span class="math inline"><em>A</em>, <em>H</em>, <em>B</em></span></p></li>
+the professor. <span class="math inline">\(A,H,B\)</span></p></li>
 <li><p>Dumbledore will be killed, and either McGonagal will become
 headmistress and Hogwarts will flourish, or else it won’t flourish.
-<span class="math inline"><em>K</em>, <em>M</em>, <em>F</em></span></p></li>
+<span class="math inline">\(K,M,F\)</span></p></li>
 <li><p>Harry and Dumbledore are not both right about the moral status of
-Professor Snape. <span class="math inline"><em>H</em>, <em>D</em></span></p></li>
+Professor Snape. <span class="math inline">\(H,D\)</span></p></li>
 <li><p>The spell will work only if Hermione concentrates and Ron doesn’t
-interrupt. (<span class="math inline"><em>W</em>, <em>C</em>, <em>I</em></span>)</p></li>
+interrupt. (<span class="math inline">\(W,C,I\)</span>)</p></li>
 <li><p>Draco will apologize or not get dessert, but he won’t do
-both. (<span class="math inline"><em>A</em>, <em>D</em></span>)</p></li>
+both. (<span class="math inline">\(A,D\)</span>)</p></li>
 <li><p>The Quidditch match will be canceled if it rains, unless the field
-can be magically dried. (<span class="math inline"><em>C</em>, <em>R</em>, <em>M</em></span>)</p></li>
+can be magically dried. (<span class="math inline">\(C,R,M\)</span>)</p></li>
 <li><p>If Taylor Swift expresses support for environmental policies, then
 she will also advocate for renewable energy, unless she
-prioritizes economic concerns. (<span class="math inline"><em>E</em>, <em>A</em>, <em>P</em></span>)</p></li>
+prioritizes economic concerns. (<span class="math inline">\(E,A,P\)</span>)</p></li>
 <li><p>If Elon Musk innovates in electric car technology or develops new
 space exploration methods, then he will be recognized as a pioneer
 in technology. However, if he fails to achieve progress in either
-field, he will not be recognized as such. (<span class="math inline"><em>I</em>, <em>D</em>, <em>R</em></span>)</p></li>
-<li><p>If it is not sunny then we will not go to the beach. (<span class="math inline"><em>S</em>, <em>B</em></span>)</p></li>
-<li><p>Either it’s sunny or we will not go to the beach. (<span class="math inline"><em>S</em>, <em>B</em></span>)</p></li>
-<li><p>We will not go to the beach if it’s not sunny. (<span class="math inline"><em>S</em>, <em>B</em></span>)</p></li>
-<li><p>We will go to the beach only if it’s sunny. (<span class="math inline"><em>S</em>, <em>B</em></span>)</p></li>
+field, he will not be recognized as such. (<span class="math inline">\(I,D,R\)</span>)</p></li>
+<li><p>If it is not sunny then we will not go to the beach. (<span class="math inline">\(S,B\)</span>)</p></li>
+<li><p>Either it’s sunny or we will not go to the beach. (<span class="math inline">\(S,B\)</span>)</p></li>
+<li><p>We will not go to the beach if it’s not sunny. (<span class="math inline">\(S,B\)</span>)</p></li>
+<li><p>We will go to the beach only if it’s sunny. (<span class="math inline">\(S,B\)</span>)</p></li>
 <li><p>It’s being sunny is a necessary but not sufficient condition for
-our going to the beach. (<span class="math inline"><em>S</em>, <em>B</em></span>)</p></li>
+our going to the beach. (<span class="math inline">\(S,B\)</span>)</p></li>
 <li><p>A society does not have free speech unless it allows peaceful
-protests. (<span class="math inline"><em>F</em>, <em>P</em></span>)</p></li>
+protests. (<span class="math inline">\(F,P\)</span>)</p></li>
 <li><p>Professor Plum is the murderer unless the weapon was a candlestick
-or the crime occurred in the library. (<span class="math inline"><em>P</em>, <em>C</em>, <em>L</em></span>)</p></li>
+or the crime occurred in the library. (<span class="math inline">\(P,C,L\)</span>)</p></li>
 <li><p>Professor Plum is the murderer only if the weapon was the
 candlestick and the crime occurred in the library, or the weapon
 was the dagger and the crime didn’t occur in the
-library. (<span class="math inline"><em>P</em>, <em>C</em>, <em>L</em>, <em>D</em></span>)</p></li>
+library. (<span class="math inline">\(P,C,L,D\)</span>)</p></li>
 <li><p>Provided, but only provided, that the French Fleet is sailed
 forthwith for British harbors, His Majesty’s Government give their
-full consent to an armistice for France. (<span class="math inline"><em>S</em>, <em>C</em></span>)</p></li>
+full consent to an armistice for France. (<span class="math inline">\(S,C\)</span>)</p></li>
 <li><p>For the tenability of the thesis that mathematics is logic it is
 not only sufficient but also necessary that all mathematical
 expressions be capable of definition on the basis solely of
@@ -394,25 +412,25 @@ vehicles with Tesla, and neural technology with Neuralink.</p>
 <p>Conclusion: Therefore, Elon Musk is the greatest genius of our time.</p>
 <h2 id="exercise-2.7">Exercise 2.7</h2>
 <ol type="1">
-<li><p><span class="math inline">¬¬<em>Q</em> → <em>P</em>, ¬<em>P</em> ⊢ ¬<em>Q</em></span></p></li>
-<li><p><span class="math inline"><em>P</em> → (<em>P</em> → <em>Q</em>), <em>P</em> ⊢ <em>Q</em></span></p></li>
-<li><p><span class="math inline">(<em>P</em> ∧ <em>P</em>) → <em>Q</em>, <em>P</em> ⊢ <em>Q</em></span></p></li>
-<li><p><span class="math inline"><em>P</em> ⊢ <em>Q</em> ∨ (¬¬<em>P</em> ∨ <em>R</em>)</span></p></li>
-<li><p><span class="math inline">¬<em>P</em> → ¬<em>Q</em>, <em>Q</em> ⊢ <em>P</em> ∧ <em>Q</em></span></p></li>
-<li><p><span class="math inline"><em>P</em> → ¬(<em>Q</em> ∨ <em>R</em>), <em>Q</em> ⊢ ¬<em>P</em></span></p></li>
-<li><p><span class="math inline"><em>P</em> → (<em>Q</em> → ¬<em>P</em>), <em>P</em> ⊢ ¬<em>Q</em></span></p></li>
-<li><p><span class="math inline">(<em>P</em> ∧ ¬¬<em>P</em>) → <em>Q</em>, <em>P</em> ⊢ <em>Q</em></span></p></li>
+<li><p><span class="math inline">\(\neg \neg Q\to P,\,\neg P\:\vdash\:\neg Q\)</span></p></li>
+<li><p><span class="math inline">\(P\to (P\to Q),\,P\:\vdash\: Q\)</span></p></li>
+<li><p><span class="math inline">\((P\wedge P)\to Q,\, P\:\vdash\: Q\)</span></p></li>
+<li><p><span class="math inline">\(P\:\vdash\: Q\vee (\neg\neg P\vee R)\)</span></p></li>
+<li><p><span class="math inline">\(\neg P\to \neg Q,Q\:\vdash\: P\wedge Q\)</span></p></li>
+<li><p><span class="math inline">\(P\to \neg (Q\vee R),Q\:\vdash \: \neg P\)</span></p></li>
+<li><p><span class="math inline">\(P\to (Q\to \neg P),P\:\vdash\: \neg Q\)</span></p></li>
+<li><p><span class="math inline">\((P\wedge \neg\neg P)\to Q,\, P\:\vdash\: Q\)</span></p></li>
 </ol>
 <h2 id="exercise-2.8">Exercise 2.8</h2>
 <p>Demonstrate that the following argument forms are <em>invalid</em> by
-providing a counterexample, i.e. give English sentences for <span class="math inline"><em>P</em>, <em>Q</em>, <em>R</em></span>
+providing a counterexample, i.e. give English sentences for <span class="math inline">\(P,Q,R\)</span>
 such that the premises are obviously true but the conclusion is
 obviously false.</p>
 <ol type="1">
-<li><p><span class="math inline"><em>P</em> → ¬<em>Q</em>, ¬<em>P</em> ⊢ <em>Q</em></span></p></li>
-<li><p><span class="math inline"><em>P</em> → <em>R</em> ⊢ (<em>P</em> ∨ <em>Q</em>) → <em>R</em></span></p></li>
-<li><p><span class="math inline"><em>P</em> → <em>Q</em> ⊢ <em>Q</em> → <em>P</em></span></p></li>
-<li><p><span class="math inline"><em>P</em> → <em>Q</em> ⊢ <em>P</em> → (<em>Q</em> ∧ <em>R</em>)</span></p></li>
+<li><p><span class="math inline">\(P\to \neg Q,\neg P \: \vdash \: Q\)</span></p></li>
+<li><p><span class="math inline">\(P\to R\:\vdash \: (P\vee Q)\to R\)</span></p></li>
+<li><p><span class="math inline">\(P\to Q\:\vdash \: Q\to P\)</span></p></li>
+<li><p><span class="math inline">\(P\to Q\: \vdash \: P\to (Q\wedge R)\)</span></p></li>
 </ol>
 </div>
 
