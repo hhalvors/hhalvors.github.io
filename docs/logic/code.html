@@ -11,7 +11,7 @@
 
   <title>
     
-      HLW: Code &middot; Hans Halvorson
+      Logic code &middot; Hans Halvorson
     
   </title>
 
@@ -147,26 +147,31 @@
 
       <div class="container content">
           <div class="page">
-  <h1 class="page-title">HLW: Code</h1>
-     <p>Computers are really good at some logical tasks; but they speak a
+  <h1 class="page-title">Logic code</h1>
+     <p>Computers are very good at some logical tasks; but they speak a
 different language than humans, and they use different
-representational conventions. So if we want computers to help us with
-logic, then we need some ways to translate between our language and
-theirs. The code here aims to convert from human representations (of
-formulas, proofs, etc) to computer representations, and back again.</p>
+representational conventions. So if we want computers to help us think
+logically, then we need some ways to translate between our language
+and theirs. The code here aims to convert from human representations
+(of formulas, proofs, etc) to computer representations, and then back
+again.</p>
 <p>This site is built with <a href="https://jaspervdj.be/hakyll/">Hakyll</a>, which
-uses <a href="https://pandoc.org">Pandoc</a> to convert markdown documents to
-html. One nice thing about Pandoc is that you can write your own
-filters, i.e. <code>Pandoc → Pandoc</code> transformations that make use of
-arbitrarily interesting Haskell functions.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> So, we can convert the
-strings in the document into structured data and operate on that data
-before producing the output document.</p>
-<p>I wrote a filter <code>lemmonFilter.hs</code> that takes blocks labelled <code>lemmon</code>
-and creates a proof structure out of them, i.e. a list of proof lines,
+is built on <a href="https://pandoc.org">Pandoc</a>, and both are written in
+<a href="https://www.haskell.org">Haskell</a>. The concept of Pandoc is that it
+parses a document in some standard format (e.g. markdown, docx, latex)
+into its own internal format, i.e. an object of type <code>Pandoc</code>, and it
+can then write that object out again in one of those standard
+formats. One also has the option of transforming the intermediate
+<code>Pandoc</code> object before writing it out again. That sounds interesting
+from the point of view of symbolic logic, which is all about
+structured data (e.g. formulas, mappings from formulas to
+truth-values, etc.).</p>
+<h2 id="reading-and-writing-proofs">Reading and writing proofs</h2>
+<p>The script <code>lemmonFilter.hs</code> takes code blocks labelled <code>lemmon</code> and
+creates a proof structure out of them, i.e. a list of proof lines,
 where each proof line is a triple consisting of reference numbers,
-formula, and justification.</p>
-<p>The input is expected to look like a manually typed proof in Lemmon<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>
-format:</p>
+formula, and justification. The input is expected to look like a
+manually typed proof in Lemmon<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> format:</p>
 <pre><code>```lemmon
 1    (1) ¬P                       A
 2    (2) Q                        A
@@ -179,15 +184,22 @@ a nice-looking text document.) The parser expects whitespaces between
 the three columns, that the first column has a comma separated list of
 integers, and that the second column has an integer in parentheses. If
 the formula after the line number is well-formed, the parser
-transforms it into an object of type <code>PropFormula</code>. (I still need to
-extend parsing to quantified formulas.)</p>
-<p>There are many sorts of interesting operations we could do on <code>Proof</code>
-objects. For example, we could ask what the main connectives are of
-the formulas on the lines. Or we could ask if the proof is
-(syntactically) valid. We could also ask if a line is semantically
-valid, i.e. if the truth of the formulas on the reference lines
-entails the truth of the formula on the line.</p>
-<h2 id="to-do">To Do</h2>
+transforms it into an object of type <code>PropFormula</code>.</p>
+<p>There are many sorts of interesting operations one could do on
+<code>Formula</code> and <code>Proof</code> objects. For example, we could ask what the main
+connectives are of the formulas on the lines. Or we could ask if the
+proof is (syntactically) valid. We could also ask if a line is
+semantically valid, i.e. if the truth of the formulas on the
+reference lines entails the truth of the formula on the line.</p>
+<h2 id="writing-truth-tables">Writing truth tables</h2>
+<p>Since we can parse a formula into an object of type <code>Formula</code>, we can
+also do computations on this object. For example, we can construct all
+of the relevant valuations (i.e. rows in a truth table), and we can
+ask whether the formula is a tautology, inconsistency, or contingency.
+If it is a contingency, we can ask for valuations in which it is true
+and in which it is false. Or we could write a script to return a
+string representing the entire truth table of the formula.</p>
+<h2 id="to-do">To do</h2>
 <ul>
 <li>Extend parsing to quantified formulas</li>
 <li>Patch for emacs markdown mode that makes it easy to input Lemmon
@@ -195,22 +207,19 @@ proofs</li>
 <li>Proof checker that operates on objects of type <code>Proof</code></li>
 <li>Rendering to docx</li>
 <li>Define a Haskell data type for Fitch style proofs</li>
-<li>Transform between Lemmon and Fitch style proofs</li>
+<li>Transform between Lemmon and Fitch-style proofs</li>
 <li>Collaborate with these guys <a href="https://carnap.io">carnap.io</a></li>
 </ul>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>The philosophical idea here is (or seems to be) that a Pandoc
-object is a format-neutral representation of the content of a
-document.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>This kind of proof format appears in E.J. Lemmon <em>Beginning
+<li id="fn1"><p>This kind of proof format appears in E.J. Lemmon <em>Beginning
 Logic</em>, published 1965. A similar format appeared simultaneously
 in works by Patrick Suppes. This format has a much steeper
 learning curve than proof trees, and even than Fitch
 proofs. Personally, I find writing Fitch proofs to be a more
 pleasant and intuitive experience. However, the Lemmon system has
-some marked meta-theoretic advantages over the Fitch system.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+some marked meta-theoretic advantages over the Fitch system.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 </div>
