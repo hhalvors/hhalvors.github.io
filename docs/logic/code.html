@@ -88,6 +88,10 @@
       
         <a class="sidebar-nav-item" href="/index.html">index</a>
       
+    
+      
+        <a class="sidebar-nav-item" href="/john.html">john</a>
+      
      -->
 
 
@@ -196,14 +200,11 @@ proof is (syntactically) valid. We could also ask if a line is
 semantically valid, i.e. if the truth of the formulas on the
 reference lines entails the truth of the formula on the line.</p>
 <h2 id="writing-truth-tables">Writing truth tables</h2>
-<p>We can also write functions on objects of <code>Formula</code> type. For example,
-we can construct all of the relevant valuations (i.e. rows in a truth
-table), and we can ask whether the formula is a tautology,
-inconsistency, or contingency. If it is a contingency, we can ask for
-valuations in which it is true and in which it is false. Or we could
-write a script to return a string (in plain text, or html, or
-whatever) with the entire truth table of the formula. That’s how I
-produced the truth tables in <a href="solns5.html">solns5</a>.</p>
+<p>Given a <code>Formula</code>, we can construct all of the relevant valuations
+(i.e. rows in a truth table), and we can ask whether the formula is a
+tautology, inconsistency, or contingency. We can also write a script
+to return a printed truth table of the formula. That’s how I produced
+the truth tables in <a href="solns5.html">solns5</a>.</p>
 <h2 id="to-do">To do</h2>
 <ul>
 <li>Extend parsing to quantified formulas</li>
