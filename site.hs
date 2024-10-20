@@ -58,6 +58,16 @@ main = hakyllWith config $ do
           >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> indexCtx)
           >>= relativizeUrls
 
+    match "pages/john.md" $ do
+      route $ constRoute "john.html"
+      compile $ do
+        let indexCtx = constField "title" "Home" `mappend` siteCtx
+        pandocCompiler
+          >>= saveSnapshot "page-content"
+          >>= loadAndApplyTemplate "templates/page.html" siteCtx
+          >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> indexCtx)
+          >>= relativizeUrls      
+
     match "pages/*" $ do
       route $ setExtension "html"
       compile $ do
