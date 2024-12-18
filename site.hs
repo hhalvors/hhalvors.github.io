@@ -16,6 +16,7 @@ import           Text.Pandoc.Definition        (Pandoc)
 import           Control.Monad                 ((<=<))
 import Text.Pandoc.Options (HTMLMathMethod(..), writerExtensions, writerHTMLMathMethod, WriterOptions, Extension(..), enableExtension)
 import Text.Pandoc (pandocExtensions)
+import Text.Pandoc.SideNote (usingSideNotes)
 
 --------------------------------------------------------------------------------
 
@@ -24,6 +25,9 @@ config = defaultConfiguration
   { destinationDirectory = "docs"
   }
 
+myWriter :: WriterOptions
+myWriter = defaultHakyllWriterOptions
+      
 main :: IO ()
 main = hakyllWith config $ do
     match ("images/*" .||. "js/*") $ do
@@ -214,7 +218,27 @@ main = hakyllWith config $ do
             >>= loadAndApplyTemplate "templates/page.html" (defaultContext `mappend` siteCtx)
             >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
 
-    -- Bohr: Process all .md files in the "bohr" folder
+
+    match "bohr/bohr1960unity.tex" $ do
+      route $ setExtension "html"
+      compile $
+        pandocCompilerWithTransformM
+          defaultHakyllReaderOptions
+          myWriter
+          (pure . usingSideNotes)   -- Apply the sidenote transformation here
+        >>= loadAndApplyTemplate "templates/page.html"
+            ( mconcat
+              [ constField "title" "The Unity of Human Knowledge"
+              , constField "author" "Niels Bohr (with commentary by Hans Halvorson)"
+              , constField "extraStylesheet" "css/sidenotes.css"
+              , defaultContext
+              , siteCtx
+              ]
+            )
+        >>= loadAndApplyTemplate "templates/default.html"
+        ( baseSidebarCtx <> siteCtx )
+        >>= relativizeUrls
+
     match "spacetime/*.md" $ do
       route $ setExtension "html"
       compile $ do
