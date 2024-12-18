@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <!---
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  -->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      bohr1960unity &middot; Hans Halvorson
+    
+  </title>
+
+  
+      
+  <link rel="canonical" href="https://hanshalvorson.dk/bohr/bohr1960unity.html">
+      
+  
+
+  <link rel="stylesheet" href="../css/poole.css">
+  <link rel="stylesheet" href="../css/syntax.css">
+  <link rel="stylesheet" href="../css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  
+
+  <!-- MathJax configuration -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript">
+  MathJax = {
+    tex: {
+      macros: {
+        // Map ⊢ to a version with space before and after
+        "⊢": "\\mathrel{\\;\\vdash\\;}"
+      }
+    }
+  };
+</script>
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!---
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ '/public/apple-touch-icon-precomposed.png' | absolute_url }}">
+  <link rel="shortcut icon" href="{{ '/public/favicon.ico' | absolute_url }}">
+  -->
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="atom.xml">
+
+  <!--- deactivate google analytics
+  {% if site.google_analytics_id %}
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{{ site.google_analytics_id }}', 'auto');
+    ga('send', 'pageview');
+  </script>
+  {% endif %}
+  -->
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Personligheden er Sandheden</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="../index.html">Home</a>
+
+    <!--- The code below dynamically generates a sidebar nav of the files in the folder /pages 
+
+    
+      
+        <a class="sidebar-nav-item" href="/pages/About.html">About</a>
+      
+    
+      
+        <a class="sidebar-nav-item" href="/index.html">index</a>
+      
+    
+      
+        <a class="sidebar-nav-item" href="/john.html">john</a>
+      
+     -->
+
+
+	
+   <!-- Add the new Publications link -->
+	<a class="sidebar-nav-item" href="../publications.html">Publications</a>
+
+        <a class="sidebar-nav-item" href="../bohr/">Bohr</a>
+
+	<a class="sidebar-nav-item" href="../spacetime/">Spacetime</a>
+
+	<a class="sidebar-nav-item" href="../drafts.html">Drafts</a>
+
+	<a class="sidebar-nav-item" href="../talks.html">Talks</a>
+
+	<a class="sidebar-nav-item" href="../courses/">Courses</a>
+
+	<a class="sidebar-nav-item" href="../logic/">Logic</a>
+
+
+
+	<a class="sidebar-nav-item" href="https://www.dropbox.com/scl/fi/xs0ssqnvi6zvstxnehgpd/cv.pdf?rlkey=qgwhhw1tiaspqbrlnkbnwcpt2&dl=0">CV</a>
+
+	<a class="sidebar-nav-item" href="https://github.com/hhalvors">GitHub project</a>
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2024. All rights reserved.
+    </p>
+    <p>
+        <img src="../images/haskell-logo.png" class="logo" style="display: inline;" />
+        Site created with
+        <a href="https://jaspervdj.be/hakyll">Hakyll</a>.
+        <br>
+        Modified theme
+        <a href="https://github.com/hahey/lanyon-hakyll">lanyon-hakyll</a>
+        based on
+        <a href="https://lanyon.getpoole.com/">Lanyon</a>.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="../" title="Home">Hans Halvorson</a>
+            <small>Physics, Logic, Philosophy</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+          <div class="page">
+  <h1 class="page-title">The Unity of Human Knowledge</h1>
+     <p>The question alluded to in the title for this address is as old as
+civilization itself, but has acquired renewed attention in our days
+with the increasing specialization of studies and social
+activities. From various sides concern has been expressed with the
+widespread confusion arising from the apparently divergent approaches
+taken by humanists and scientists to human problems, and in this
+connection there has even been talk about a cultural rift in modern
+society. We must, however, not forget that we are living in times of
+rapid developments in many fields of knowledge, reminiscent in such
+respect of the age of European Renaissance.</p>
+<p>However great the difficulties of liberation from the medieval world
+view were felt at that time, the fruits of the so-called Scientific
+Revolution are certainly now a part of the common cultural
+background. In our century the immense progress of the sciences has
+not only greatly advanced technology and medicine, but has at the same
+time given us an unsuspected lesson about our position as observers of
+that nature of which we are part ourselves.<span class="sidenote-wrapper"><label for="sn-0" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-0" class="margin-toggle" /><span class="sidenote">Bohr’s view here is
+essentially the opposite of what is usually attributed to the
+Copenhagen interpretation, as invoking an external observer. For
+Bohr the problem is how one part of nature can separate itself as
+“subject” and treat another part as “object”.<br />
+<br />
+</span></span> Far from implying
+a schism between humanism and physical science, this development
+entails a message of importance for our attitude to common human
+problems, which — as I shall try to show — has given the old
+question of the unity of knowledge new perspective.<span class="sidenote-wrapper"><label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle" /><span class="sidenote">The
+lesson from QM can help us get a more nuanced understanding of how
+knowledge from different domains can be related and
+integrated.<br />
+<br />
+</span></span><span class="sidenote-wrapper"><label for="sn-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-2" class="margin-toggle" /><span class="sidenote">Bohr speaks as if this is an old question —
+about the unity of knowledge. What is he thinking of? The theme of
+diversity and unity in knowledge had been central for Høffding,
+tracing back to his participation in the Viden/Tro debate of the
+1860s. The unity of science theme was also central for the logical
+positivists.<br />
+<br />
+</span></span> The pursuit of scientific inquiry with the aim of
+augmenting and ordering our experience of the world around us has
+through the ages proved fertile, not least for the continual progress
+of technology which to so great an extent has changed the frame of our
+daily life. While early developments of astronomy, geodesy and
+metallurgy in Egypt, Mesopotamia, India and China were primarily
+directed to serve requirements of the community, it is in ancient
+Greece that we first meet with systematic endeavours to clarify the
+basic principles for the description and ordering of knowledge.</p>
+<p>In particular, we admire the Greek mathematicians, who in many
+respects laid the firm foundation on which later generations have
+built. For our theme it is important to realize that the definition
+of mathematical symbols and operations is based on simple logical use
+of <mark>common language</mark>. Mathematics is therefore not to be regarded
+as a special branch of knowledge based on the accumulation of
+experience, but rather as a refinement of general language,
+supplementing it with appropriate tools to represent relations for
+which ordinary verbal expression is imprecise or too
+cumbersome.<span class="sidenote-wrapper"><label for="sn-3" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-3" class="margin-toggle" /><span class="sidenote">Mathematics is just more language!<br />
+<br />
+</span></span></p>
+<p>In view of the apparent remoteness of mathematical abstractions, often
+frightening wider circles, it may be noted that even elementary
+mathematical training allows school disciples to see through the
+famous paradox of the race between Achilles and the
+tortoise.<span class="sidenote-wrapper"><label for="sn-4" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-4" class="margin-toggle" /><span class="sidenote">Bohr always liked the idea that mathematics can
+help us get out of muddles that we are prone to fall into. Here he
+talks about how calculus can help us avoid the trap of Zeno’s
+paradoxes of motion. Elsewhere he talks about Riemann surfaces as a
+model for disambiguation, and of matrix mechanics as a tool for
+avoiding paradox in atomic physics.<br />
+<br />
+</span></span> How could the fleet-footed
+hero ever catch up with and pass the slow reptile if it were given
+even the smallest handicap? Indeed, at his arrival at the starting
+point of the turtle, Achilles would find that it had moved to some
+further point along the race track, and this situation would be
+repeated in an infinite sequence. I need hardly remind you that the
+logical analysis of situations of this type was to play an important
+role in the development of mathematical concepts and methods.</p>
+<p>From the beginning, the use of mathematics has been essential for the
+progress of the physical sciences. While Euclidean geometry sufficed
+for Archimedes’ elucidation of fundamental problems of static
+equilibrium, the detailed description of the motion of material bodies
+demanded the development of the infinitesimal calculus on which the
+imposing edifice of Newtonian mechanics rests. Above all, the
+explanation of the orbital motion of the planets in our solar system,
+based on simple mechanical principles and the law of universal
+gravitation, deeply influenced the general philosophical attitude in
+the following centuries and strengthened the view that space and time
+as well as cause and effect had to be taken as a priori categories for
+the comprehension of all knowledge.<span class="sidenote-wrapper"><label for="sn-5" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-5" class="margin-toggle" /><span class="sidenote">Bohr mixes up the forms
+of intuition and the categories of cognition, but these subtleties
+don’t matter for him. His point is that there are two different
+kinds of cognitive tools that are foundational to physics: spacetime
+coordination and cause-effect reasoning. He thinks that in contexts
+where the quantum of action makes an appreciable difference,
+application of one of these tools excludes application of the
+other.<br />
+<br />
+</span></span></p>
+<p>The extension of physical experience in our days has, however,
+necessitated a radical revision of the foundation for the
+<mark>unambiguous</mark> use of our most elementary concepts, and has changed
+our attitude to the aim of physical science.<span class="sidenote-wrapper"><label for="sn-6" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-6" class="margin-toggle" /><span class="sidenote">Elimination of
+ambiguity is an essential goal for Bohr. In English, we have to use
+the negative ‘unambiguous’, whereas German has the positive
+<em>eindeutig</em>, and Danish has <em>entydig</em>.<br />
+<br />
+</span></span> Indeed, from our
+present standpoint, physics is to be regarded not so much as the study
+of something a priori given, but rather as the development of methods
+for ordering and surveying human experience.<span class="sidenote-wrapper"><label for="sn-7" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-7" class="margin-toggle" /><span class="sidenote">Some people
+might take this as Bohr’s announcement of an anti-realist view of
+physics, i.e. that its aim is prediction rather than description of
+reality. But note that his emphasis is on action: physics isn’t just
+about describing the data we already have, it’s about gathering and
+understanding new data. Physics is an active pursuit of interacting
+with the natural world.<br />
+<br />
+</span></span> In this respect our task must be to account
+for such experience in a manner independent of individual subjective
+judgment and therefore objective in the sense that it can be
+<mark>unambiguously</mark> communicated in the <mark>common human
+language</mark>.<span class="sidenote-wrapper"><label for="sn-8" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-8" class="margin-toggle" /><span class="sidenote">The task of physics is to provide objective
+descriptions of reality, by which Bohr means unambiguous
+descriptions.<br />
+<br />
+</span></span></p>
+<p>As regards the very concepts of space and time reflected in the
+primitive use of words as here and there, and before and after, it is
+to be remembered how essential the immense speed of light propagation,
+compared with the velocities of the bodies in our neighbourhood, is
+for our ordinary orientation. However, the surprise that it proved
+impossible even by the most refined measurements to ascertain, in
+laboratory experiments, any effect of the orbital motion of the earth
+around the sun, revealed that the shape of rigid bodies and their
+mutual distances would be differently perceived by observers swiftly
+moving relative to each other, and that even events, which by one
+observer would be judged as simultaneous, by another could be reckoned
+as occurring at different moments. Far from giving rise to confusing
+complications, the recognition of <mark>the extent to which the account
+of physical experience depends on the standpoint of the observer</mark>
+proved most fertile in tracing fundamental laws valid for all
+observers.<span class="sidenote-wrapper"><label for="sn-9" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-9" class="margin-toggle" /><span class="sidenote">Bohr doesn’t think that relativity theory provides
+a context-independent description of the facts. To the contrary, it
+makes clear that the facts must be relativized to ‘the standpoint of
+the observer’, i.e. a frame of reference. Nonetheless, the
+<em>laws</em> hold in all reference frames.<br />
+<br />
+</span></span></p>
+<p>Indeed, the general theory of relativity, by which Einstein in
+renouncing all ideas of absolute space and time gave our world picture
+a unity and harmony surpassing any previous dreams, offered an
+instructive lesson as regards the consistency and scope of <mark>plain
+language</mark>. Although the convenient formulation of the theory
+involves mathematical abstractions as four-dimensional non-Euclidean
+geometry, its physical interpretation rests fundamentally on every
+observer’s possibility of maintaining a sharp separation between space
+and time and of surveying how any other observer, in his frame, will
+describe and co-ordinate experience by means of the <mark>common
+language</mark>.<span class="sidenote-wrapper"><label for="sn-10" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-10" class="margin-toggle" /><span class="sidenote">According to Bohr, the mathematical formalism
+(four-dimensional manifold) does not represent spacetime
+directly. Rather, its physical meaning comes about through its use
+by an observer/describer, who knows how to distinguish between space
+and time. That is, the ‘new vocabulary’ of GTR gains meaning from
+its connection to the manifest image vocabulary of ‘here or there’
+and ‘before or after’.<br />
+<br />
+</span></span></p>
+<p>New fundamental aspects of <mark>the observational
+problem</mark><span class="sidenote-wrapper"><label for="sn-11" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-11" class="margin-toggle" /><span class="sidenote">Bohr is probably thinking here of the Danish word
+<em>måleproblemet</em>, which is most literally translated as
+<em>the measurement problem</em>. This phrase is used somewhat
+differently in the contemporary literature.<br />
+<br />
+</span></span> entailing a revision of
+the very foundation for the analysis of phenomena in terms of cause
+and effect, were to be uncovered by the development initiated by
+Planck’s discovery of the universal quantum of action in the first
+year of this century. In fact, this discovery proved that the wide
+applicability of so-called classical physics rests entirely on the
+circumstance that the action involved in any phenomena on the ordinary
+scale is so large that the quantum can be completely neglected. In
+atomic processes, however, we meet with regularities of a novel kind,
+defying causal pictorial description but nevertheless responsible for
+the peculiar stability of atomic systems on which all properties of
+matter ultimately depend.</p>
+<p>In this new field of experience, opened by modern refinements of the
+art of physical experimentation, we have met with many great surprises
+and even been faced with the problem of what kind of answers we can
+receive by putting questions to nature in the form of
+experiments. Indeed, in the account of ordinary experience it is taken
+for granted that the objects under investigation are not interfered
+with by the observation.<span class="sidenote-wrapper"><label for="sn-12" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-12" class="margin-toggle" /><span class="sidenote">Bohr suggests that ‘observation
+without (appreciable) interference’ is a presupposition of our
+practice of communicating our experiences to other people. But it’s
+not completely clear what he means by absence of interference. One
+possibility is that he simply means that there are objects that have
+properties of their own. That is, if I say that there are some
+objects that stand in some configuration, then I don’t normally mean
+to add the qualification ‘relative to me’.<br />
+<br />
+</span></span> It is true that when we
+look at the moon through a telescope we receive light from the sun
+reflected from the moon-surface, but the recoil from this reflection
+is far too small to have any effect on the position and velocity of a
+body as heavy as the moon. If, however, we have to do with atomic
+systems, whose constitution and reactions to external influence are
+fundamentally determined by the quantum of action, we are in a quite
+different position.</p>
+<p>Faced with the question of <mark>how under such circumstances we can
+achieve an objective description</mark>, it is decisive to realize that
+however far the phenomena transcend the range of ordinary experience,
+the description of the experimental arrangement and the recording of
+observations must be based on common language. In actual
+experimentation this demand is amply satisfied with the specification
+of the experimental conditions through the use of heavy bodies such as
+diaphragms and photographic plates, the manipulation of which is
+accounted for in terms of classical physics. Just this circumstance,
+however, excludes any separate account of the interaction between the
+measuring instruments and the atomic objects under
+investigation.<span class="sidenote-wrapper"><label for="sn-13" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-13" class="margin-toggle" /><span class="sidenote">This passage suggests a complementarity
+between description of the measuring device in classical terms and a
+precise account of the interaction between the measuring instruments
+and the measured object. Is Bohr thinking here of application of the
+law of conservation of momentum to the joint system of measuring
+device and atomic object?<br />
+<br />
+</span></span></p>
+<p>Especially this situation prevents the unlimited combination of
+space-time coordination and the conservation laws of momentum and
+energy on which the causal pictorial description of classical physics
+rests. Thus, an experimental arrangement aiming at ascertaining where
+an atomic particle, whose position at a given time has been
+controlled, will be located at a later moment implies a transfer,
+uncontrollable in principle, of momentum and energy to the fixed
+scales and regulated clocks necessary for the <mark>definition</mark> of the
+reference frame.<span class="sidenote-wrapper"><label for="sn-14" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-14" class="margin-toggle" /><span class="sidenote">Sameness of position over time is definable
+only relative to fixed reference frame. (It doesn’t help to add
+absolute space, because that then serves as a fixed reference
+frame.) However, if there is a physical reference frame, then the
+object is not a closed system. What’s more, you are precluded from
+speaking of momentum-energy transfer between the object and the
+reference frame, because you stipulated that the reference frame is
+unmoving.<br />
+<br />
+</span></span><span class="sidenote-wrapper"><label for="sn-15" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-15" class="margin-toggle" /><span class="sidenote">Bohr talks of physical objects, e.g. clocks and
+rods, as ‘defining’ a reference frame. This notion deserves closer
+study.<br />
+<br />
+</span></span> Conversely, the use of any arrangement suited to study
+momentum and energy balance — decisive for the account of essential
+properties of atomic systems — implies a renunciation of detailed
+space-time coordination of their constituent particles.<span class="sidenote-wrapper"><label for="sn-16" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-16" class="margin-toggle" /><span class="sidenote">Here
+Bohr stresses that the momentum picture provides an explanation of
+essential properties of atomic systems. Hence, an interpretation
+that neglects the momentum picture (e.g. Bohmian mechanics) will be
+explanatorily defective.<br />
+<br />
+</span></span></p>
+<p>Under these circumstances it is not surprising that with one and the
+same experimental arrangement we may obtain different recordings
+corresponding to various individual quantum processes for the
+occurrence of which only statistical account can be
+given.<span class="sidenote-wrapper"><label for="sn-17" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-17" class="margin-toggle" /><span class="sidenote">There is a sort of explanation here for the
+probabilistic nature of quantum mechanics. But the explanation is a
+bit opaque.<br />
+<br />
+</span></span> Likewise we must be prepared that evidence, obtained by
+different, mutually exclusive experimental arrangements, may exhibit
+unprecedented contrast and even at first sight appear contradictory.</p>
+<p>It is in this situation that the notion of complementarity is called
+for to provide a frame wide enough to embrace the account of
+fundamental regularities of nature which cannot be comprehended within
+a single picture. Indeed, evidence obtained under <mark>well-defined
+experimental conditions</mark> — and expressed by adequate use of
+elementary physical concepts — exhausts in its entirety all
+information, about the atomic objects which can be communicated in
+<mark>common language</mark>.<span class="sidenote-wrapper"><label for="sn-18" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-18" class="margin-toggle" /><span class="sidenote">All that can be said about the atomic
+objects is relative to a well-defined context, i.e. the
+experimental conditions.<br />
+<br />
+</span></span></p>
+<p>A detailed account on complementary lines of a new wide domain of
+experience has been possible by the gradual establishment of a
+mathematical formalism, known as quantum mechanics, in which the
+elementary physical quantities are replaced by symbolic operators
+subject to an algorism, involving the quantum of action and reflecting
+the non-commutativity of the corresponding measuring operations. Just
+by treating the quantum of action as an element evading customary
+explanation — similar to the role of the velocity of light in
+relativity theory as a maximal speed of signals — this formalism can
+be regarded as a rational generalization of the conceptual framework
+of classical physics. For our theme, however, the decisive point is
+that the physical content of quantum mechanics is exhausted by its
+power to formulate statistical laws governing observations obtained
+<mark>under conditions specified in plain language</mark>.<span class="sidenote-wrapper"><label for="sn-19" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-19" class="margin-toggle" /><span class="sidenote">For
+unambiguous communication, the context of a description must be
+rendered in the shared human language, i.e. the language of the
+manifest image.<br />
+<br />
+</span></span></p>
+<p>The fact that in atomic physics, where we are concerned with
+regularities of unsurpassed exactness, <mark>objective description can
+be achieved only by including in the account of the phenomena
+explicit reference to the experimental
+conditions</mark>,<span class="sidenote-wrapper"><label for="sn-20" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-20" class="margin-toggle" /><span class="sidenote">Objective description calls for specifying the
+state of the subject, not pretending that s/he has disappeared.<br />
+<br />
+</span></span>
+emphasizes in a novel manner the inseparability of knowledge and our
+possibilities of inquiry. We are here concerned with <mark>a general
+epistemological lesson</mark> illuminating our position in many other
+fields of human interest.</p>
+<p>In particular, the conditions of analysis and synthesis of so-called
+psychic experiences have always been an important problem in
+philosophy.<span class="sidenote-wrapper"><label for="sn-21" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-21" class="margin-toggle" /><span class="sidenote">Most likely a nod to Høffding, who was much
+concerned with the description of psychological experience.<br />
+<br />
+</span></span> It is
+evident that words like thoughts and sentiments, referring to mutually
+exclusive experiences, have been used in a typical complementary
+manner since the very origin of language. In this context, however,
+<mark>the subject-object separation</mark> demands special attention. Every
+<mark>unambiguous communication</mark> about the state and activity of our
+mind implies, of course, a separation between the content of our
+consciousness and the background loosely referred to as
+“ourselves”,<span class="sidenote-wrapper"><label for="sn-22" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-22" class="margin-toggle" /><span class="sidenote">Objective description demands a clear
+demarcation of who is describing (subject) and what is being
+described (object).<br />
+<br />
+</span></span> but any attempt at exhaustive description of
+the richness of conscious life demands in various situations a
+different placing of the section between subject and
+object.<span class="sidenote-wrapper"><label for="sn-23" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-23" class="margin-toggle" /><span class="sidenote">The subject-object split can be moved around in order
+to achieve objective description of different subject matters.<br />
+<br />
+</span></span></p>
+<p>In order to illustrate this important point, I shall allow myself to
+quote a Danish poet and philosopher, Poul Martin M<span>ø</span>ller, who lived
+about a hundred years ago and left behind an unfinished novel still
+read with delight by the older as well as the younger generation in
+this country.<span class="sidenote-wrapper"><label for="sn-24" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-24" class="margin-toggle" /><span class="sidenote">The Danish philosophers Sibbern and M<span>ø</span>ller
+rejected Hegel’s claim that he had overcome the subject-object
+distinction. M<span>ø</span>ller’s most famous student, S<span>ø</span>ren Kierkegaard,
+continued his critique of Hegel.<br />
+<br />
+</span></span> In his novel, called <em>The
+Adventures of a Danish Student</em>, the author gives a remarkably vivid
+and suggestive account of the interplay between the various aspects of
+our position, illuminated by discussions within a circle of students
+with different characters and divergent attitudes to life.</p>
+<p>Especially I shall refer to a conversation between two cousins, one of
+whom is very soberly efficient in practical affairs, of the type which
+then, and even now, is known among students as a philistine, whereas
+the other, called the licentiate, is addicted to remote philosophical
+meditations detrimental to his social activities. When the philistine
+reproaches the licentiate for not having made up his mind to use the
+opportunities for finding a practical job, offered him by the kindness
+of his friends, the poor licentiate apologizes most sincerely, but
+explains the difficulties into which his reflections have brought him.</p>
+<p>Thus he says:</p>
+<p>My endless enquiries make it impossible for me to achieve
+anything.<span class="sidenote-wrapper"><label for="sn-25" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-25" class="margin-toggle" /><span class="sidenote">M<span>ø</span>ller portrays the licentiate as a one-sided
+person who knows how to reflect (<em>at overveje</em>) but not how to
+act (<em>at handle</em>). The are strong similarities here with the
+“postponement argument” in Kierkegaard’s <em>Concluding
+Unscientific Postscript</em>.<br />
+<br />
+</span></span> Furthermore, I get to think about my
+own thoughts of the situation in which I find myself. I even think
+that I think of it, and divide myself into an infinite retrogressive
+sequence of “I”s who consider each other. I do not know at which
+“I” to stop as the actual, and in the moment I stop at one, there is
+indeed again an “I” which stops at it.<span class="sidenote-wrapper"><label for="sn-26" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-26" class="margin-toggle" /><span class="sidenote">M<span>ø</span>ller is poking
+fun at the licentiate, who seems to think like a German idealist
+philosopher. The licentiate’s creation of a new subject seems to be
+a version of Hegelian reflection, where one critically considers
+one’s former presuppositions. Recall that Kierkegaard believes that
+the solution to this infinite regress of reflection is ‘double
+reflection’, brought about by a subjective act of will.<br />
+<br />
+</span></span> I become
+confused and feel a dizziness as if I were looking down into a
+bottomless abyss, and my ponderings result finally in a terrible
+headache.</p>
+<p>In his reply the cousin says:</p>
+<p>I cannot in any way help you in sorting your many “I”s. It is quite
+outside my sphere of action, and I should either be or become as mad
+as you if I let myself in for your superhuman reveries. My line is to
+stick to palpable things and walk along the broad highway of common
+sense; therefore my “I”s never get tangled up.</p>
+<p>Quite apart from the fine humour with which the story is told, it is
+certainly not easy to give a more pertinent account of essential
+aspects of the situation with which we all are faced. Fortunately, the
+risk of falling into the deplorable situation of the licentiate is
+small in normal life, where we become gradually accustomed to coping
+with practical necessities and learn to communicate in <mark>common
+language</mark> what we need and what is on our mind. In such adjustment
+the balance between seriousness and humour, conspicuous in children’s
+play and equally appreciated in mature life, plays no small part.</p>
+<p>The complementary way in which words like contemplation and volition
+are used has especially to be taken into account when turning to the
+problem of the freedom of will, discussed by philosophers through the
+ages.<span class="sidenote-wrapper"><label for="sn-27" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-27" class="margin-toggle" /><span class="sidenote">Bohr uses the English ‘contemplation’ where he uses the
+Danish <em>overvejelse</em>. He could just as well have used
+‘consideration’, but in any case, the state of mind is detached and
+tending in the direction of objectivity.<br />
+<br />
+The idea that <em>overvejelse</em> is a complementary state of mind to
+willing (deciding, believing, and acting) goes back to at least
+Kierkegaard, although the word ‘complementarity’ is unique to
+Bohr. In the <em>Postscript</em>, Kierkegaard argues that making any
+decision requires subjectivity, and so is strictly incompatible with
+the state of indifferent contemplation.<br />
+<br />
+</span></span> Even if we cannot say
+whether we want to do something because we gather that we can, or we
+can only do it because we will, the feeling of, so to speak, being
+able to make the best out of circumstances is a common human
+experience. Indeed, the notion of volition plays an indispensable part
+in human communication similar to words like hope and responsibility,
+in themselves equally <mark>undefinable outside the context in which
+they are used</mark>.<span class="sidenote-wrapper"><label for="sn-28" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-28" class="margin-toggle" /><span class="sidenote">Sometimes a concept only makes sense within
+a certain context.<br />
+<br />
+</span></span></p>
+<p><mark>The flexibility of the subject-object separation in the account of
+conscious life</mark> corresponds to a richness of experience so
+multifarious that it involves a variety of
+approaches.<span class="sidenote-wrapper"><label for="sn-29" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-29" class="margin-toggle" /><span class="sidenote">Introspection is a clear case where the line
+between subject and object can be moved around.<br />
+<br />
+</span></span> As regards our
+knowledge of fellow beings, we witness, of course, only their
+behaviour, but we must realize that the word consciousness is
+unavoidable when such behaviour is so complex that its account in
+common language entails reference to self-awareness.<span class="sidenote-wrapper"><label for="sn-30" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-30" class="margin-toggle" /><span class="sidenote">Bohr is
+no behaviorist. An adequate description of another person requires
+reference to the same concepts we use to understand ourselves.<br />
+<br />
+</span></span> It
+is evident, however, that all search for an <mark>ultimate
+subject</mark><span class="sidenote-wrapper"><label for="sn-31" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-31" class="margin-toggle" /><span class="sidenote">Elsewhere Bohr uses “final subject”.<br />
+<br />
+</span></span> is at
+variance with the aim of objective description, which demands the
+contraposition of subject and object.<span class="sidenote-wrapper"><label for="sn-32" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-32" class="margin-toggle" /><span class="sidenote">Here Bohr is working
+against the background of the German idealist tradition, where the
+subject’s finitude was seen as an impediment to objective
+knowledge. Hegel thought the solution was infinite reflection; but
+Kierkegaard argued that such a process cannot be completed by a
+human being existing in time. Here Bohr agrees with Kierkegaard,
+(Rasmus) Nielsen, and (Harald) Høffding in maintaining that humans
+shouldn’t aim for a god’s eye view of reality.<br />
+<br />
+</span></span></p>
+<p>Such considerations involve no lack of appreciation of the inspiration
+which the great creations of art offer us by pointing to features of
+harmonious wholeness in our position. Indeed, in renouncing logical
+analysis to an increasing degree and in turn allowing the play on all
+strings of emotion, poetry, painting and music contain possibilities
+of bridging between extreme modes as those characterized as pragmatic
+and mystic. Conversely, already ancient Indian thinkers understood the
+logical difficulties in giving exhaustive expression for such
+wholeness. In particular, they found escape from apparent disharmonies
+in life by stressing the futility of demanding an answer to the
+question of the meaning of existence, realizing that any use of the
+word “meaning” implies comparison; and with what can we compare the
+whole existence?<span class="sidenote-wrapper"><label for="sn-33" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-33" class="margin-toggle" /><span class="sidenote">This claim sounds strange at first. But it’s
+true that “meaning of” is a binary relation, and hence involves
+comparison.<br />
+<br />
+</span></span></p>
+<p>The aim of our argumentation is to emphasize that all experience,
+whether in science, philosophy or art, which may be helpful to
+mankind, must be capable of being communicated by human means of
+expression, and it is on this basis that we shall approach the
+question of unity of knowledge. Confronted with the great diversity of
+cultural developments, we may therefore search for those features in
+all civilizations which have their roots in the common human
+situation. Especially we recognize that the position of the
+individual within the community exhibits in itself multifarious, often
+mutually exclusive, When approaching the age-old problem of the
+foundation of so-called ethical values we shall in the first place ask
+about the scope of such concepts as justice and charity, the closest
+possible combination of which is attempted in all human
+societies. Still it is evident that a situation permitting unambiguous
+use of accepted judicial rules leaves no room for the free display of
+charity. But, as stressed especially by the famous Greek tragedians,
+it is equally clear that compassion can bring everyone in conflict
+with any concisely formulated idea of justice. We are here confronted
+with complementary relationships inherent in the human position, and
+unforgettably expressed in old Chinese philosophy, reminding us that
+in the great drama of existence <mark>we are ourselves both actors and
+spectators</mark>.<span class="sidenote-wrapper"><label for="sn-34" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-34" class="margin-toggle" /><span class="sidenote">The actor/spectator duality can be related
+directly to the action/contemplation duality.<br />
+<br />
+</span></span></p>
+<p>In comparing different national cultures we meet with the special
+difficulty of appreciating the culture of one nation in terms of the
+traditions of another. In fact, the element of complacency inherent in
+every culture corresponds closely to the instinct of self-preservation
+characteristic of any species among the living organisms. In such
+context it is, however, important to realize that the mutually
+exclusive characteristics of cultures, resting on traditions fostered
+by historical events, cannot be immediately compared to those met with
+in physics, psychology and ethics, where we are dealing with intrinsic
+features of the common human situation.<span class="sidenote-wrapper"><label for="sn-35" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-35" class="margin-toggle" /><span class="sidenote">If we are to speak of
+‘complementarity’ between cultures, it’s only by analogy. We meet
+complementarity in the strict sense in physics, psychology and
+ethics. Bohr has given examples of all three in this article:
+position/momentum, contemplation/action, and justice/charity.<br />
+<br />
+</span></span></p>
+<p>In fact, as is not least conspicuous in European history, contact
+between nations has often resulted in the fusion of cultures retaining
+valuable elements of the original national traditions. The question of
+how to ameliorate the so-called cultural rift in modern societies,
+which has attracted so much attention at this meeting, is after all a
+more restricted educational problem, the attitude to which would seem
+to call not only for information but, as I think everyone will agree,
+also for some humour. A most serious task is, however, to promote
+mutual understanding between nations with very different cultural
+backgrounds.</p>
+<p>Indeed, the rapid progress of science and technology in our days,
+which entails unique promises for the promotion of human welfare, and
+at the same time imminent menaces to universal security, presents our
+whole civilization with a veritable challenge. Certainly, every
+increase in knowledge and potentialities has always implied a greater
+responsibility, but at the present moment, when the fate of all
+peoples is inseparably connected, a collaboration in mutual
+confidence, based on appreciation of every aspect of the common human
+position, is more necessary than ever before in the history of
+mankind.</p>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="https://hanshalvorson.dk/public/js/script.js"></script>
+
+  </body>
+
+</html>
