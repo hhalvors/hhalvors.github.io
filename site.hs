@@ -218,7 +218,6 @@ main = hakyllWith config $ do
             >>= loadAndApplyTemplate "templates/page.html" (defaultContext `mappend` siteCtx)
             >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
 
-
     match "bohr/bohr1960unity.tex" $ do
       route $ setExtension "html"
       compile $
@@ -230,14 +229,13 @@ main = hakyllWith config $ do
             ( mconcat
               [ constField "title" "The Unity of Human Knowledge"
               , constField "author" "Niels Bohr (with commentary by Hans Halvorson)"
-              , constField "extraStylesheet" "css/sidenotes.css"
               , defaultContext
               , siteCtx
               ]
             )
         >>= loadAndApplyTemplate "templates/default.html"
-        ( baseSidebarCtx <> siteCtx )
-        >>= relativizeUrls
+        ( baseSidebarCtx <> siteCtx <> constField "extraStylesheet" "../css/sidenotes.css" )    
+        >>= relativizeUrls 
 
     match "spacetime/*.md" $ do
       route $ setExtension "html"
