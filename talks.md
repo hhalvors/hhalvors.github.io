@@ -3,6 +3,7 @@ title: "Talks"
 author: Hans Halvorson
 ---
 
+- What is a deterministic theory? [pdf](talks/determinism.pdf)
 - Equivalence in foundations [pdf](talks/equivalence-foundations.pdf)
   [tex](talks/equivalence-foundations.tex)
 - Niels Bohr on the knowing subject [pdf](talks/shifty.pdf) [tex](talks/shifty.tex)
