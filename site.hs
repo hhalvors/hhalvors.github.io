@@ -6,7 +6,7 @@ import           Data.Monoid                   (mappend)
 import           Data.List                     (sortBy)
 import           Data.Ord                      (comparing)
 import           Hakyll
-import           Control.Monad                 (liftM, forM_)
+import           Control.Monad                 (liftM, forM_, when)
 import           System.FilePath               (takeBaseName, takeFileName)
 import           BibTeXParser                  (parseBibTeX, generateHTML, transformEntry)
 import           Data.Maybe                    (fromMaybe)
@@ -17,6 +17,7 @@ import           Control.Monad                 ((<=<))
 import Text.Pandoc.Options (HTMLMathMethod(..), writerExtensions, writerHTMLMathMethod, WriterOptions, Extension(..), enableExtension)
 import Text.Pandoc (pandocExtensions)
 import Text.Pandoc.SideNote (usingSideNotes)
+ 
 
 --------------------------------------------------------------------------------
 
@@ -27,7 +28,7 @@ config = defaultConfiguration
 
 myWriter :: WriterOptions
 myWriter = defaultHakyllWriterOptions
-      
+    
 main :: IO ()
 main = hakyllWith config $ do
     match ("images/*" .||. "js/*") $ do
@@ -153,7 +154,7 @@ main = hakyllWith config $ do
     match "hh.bib" $ do
       compile getResourceBody
 
-    -- Rule to process temp.html and output it as publications.html
+-- Rule to process temp.html and output it as publications.html
     match "temp.html" $ do
       route $ customRoute (const "publications.html")
       compile $ do
