@@ -1,9 +1,7 @@
 ---
-title: "Philosophy of Science Syllabus"
+title: "PHI 321: Philosophy of Science"
 date: "2015"
 ---
-
-# Philosophy of Science
 
 ## Course Schedule
 
