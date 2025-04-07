@@ -1,0 +1,539 @@
+%% TO DO
+
+%% Read Mark Johnston
+
+%% Unity of science -- not willing to give up on reduction!
+
+%% Nagelian reduction - Frigg Hartmann
+
+%% relation of "more or less real" ... maybe some relation to recent
+%% metaphysics, Shaffer sort of view that everything exists
+
+%% is there a reduction relation for physical theories that is
+%% different in kind than that for mathematical theories?
+
+%% n. what is wrong with reducibility? 
+
+
+
+\documentclass[fleqn]{beamer}
+\usetheme{metropolis}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\title{Reduction Redux}
+\subtitle{}
+\author{Hans Halvorson}
+\institute{Princeton University}
+\date{April 4, 2025}
+
+\usepackage[style=authoryear, backend=biber, natbib=true, doi=true]{biblatex} % Chicago style with Biber backend
+\addbibresource{redux.bib}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+
+\begin{document}
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Postscript}
+
+  \small 
+
+  This topic is too big to be dealt with in a one hour lecture,
+  especially because I intend to cause trouble for the dominant
+  picture, and to replace it with something quite different. The
+  dominant picture is that reality (or our description of it) is like
+  a tower, with microphysics at the bottom, and where ``reduction''
+  breaks the symmetry of the spatial metaphor. (If $B$ reduces to $A$,
+  it's as if $A$ bears weight of $B$.)
+
+  The first stage of this project is to try to find an explication of
+  ``$B$ reduces to $A$''. In this talk, I point out that ``$B$ is a
+  Morita extension of $A$'' is a useful generalization of classical,
+  Nagelian reduction.
+
+  We could go on and do lots of other fancy formal work, e.g.\ with
+  category theory. But I don't think it will help the dominant
+  picture. Scientific theories form an eco-system, not a tower.
+  
+\end{frame}
+
+% Add your content frames here
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+% Example section
+
+
+
+\section{Reducible or not: Who cares?}
+
+\begin{frame}{Reduction as religious stance}
+
+  \begin{enumerate}
+  \item The church of reduction
+    \begin{itemize}
+    \item Lewis (Albert, Loewer, Butterfield)
+    \item Dennett (Wallace)
+    \end{itemize}
+  \item The church of anti-reduction
+    \begin{itemize}
+    \item Chalmers
+    \item Thomas Nagel  
+    \item Ellis, Drossel, Koons, Simpson
+    \end{itemize}
+  \item Non-practicing reductionists
+    \begin{itemize}
+    \item Davidson 
+    \end{itemize}
+  \end{enumerate}
+
+\end{frame}
+
+%% Quantum -- more generally, state of play in physics
+
+\begin{frame}{Where reduction pops up}
+
+  \begin{itemize}
+  \item within physics
+    \begin{itemize}
+    \item thermodyanmics to statistical mechanics
+    \item classical world from quantum 
+    \end{itemize}
+  \item between (empirical) sciences
+  \item manifest image to scientific image
+    \begin{itemize}
+    \item mind to brain
+    \end{itemize}
+  \item within mathematics
+  \end{itemize}
+
+\end{frame}  
+
+
+\section{The forward march of physics?}
+
+\begin{frame}{Success?}
+
+  \begin{itemize}
+  \item The mechanical worldview: Galileo, Descartes, etc.
+    \begin{itemize}
+    \item Primary and secondary qualities
+    \end{itemize}
+  \item Spacetime
+  \item Reduction of thermodynamics to statistical mechanics?
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Trouble on the horizon?}
+
+  \begin{itemize}
+  \item The reversibility problem in thermodynamics  
+  \item It is \emph{not} as if the \emph{user} of quantum mechanics
+    has any immediate reason to believe that he has run up against a
+    non-material element of reality.
+  \item So if QM poses a problem for physicalism, it is a different
+    sort of problem then the one encountered in psychology or biology.
+  \item It is the \emph{meta-theory} of QM that causes trouble: it
+    doesn't seem possible to use QM to describe someone using QM to
+    describe reality.
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+  This last problem is often called ``the measurement problem''. But I
+  prefer to frame it as ``the description problem'', as it crosses
+  over into the space of reasons.
+
+  The problem only arises if one thinks of the first theorist as able
+  to stand in ``aboutness'' relations to a state of affairs.
+
+\end{frame}
+
+\begin{frame}{Two kinds of solutions}
+
+  \begin{itemize}
+  \item Mono solutions
+    \begin{itemize}
+    \item Bohm
+    \item Everett
+    \end{itemize}  
+  \item Duo solutions
+  \begin{itemize}  
+  \item Heisenberg cut --- old and much derided, e.g.\ by Bell
+  \item Quantum hylomorphism --- new
+  \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{The religion in reduction}
+
+  \begin{itemize}
+  \item This debate reminds me of philosophy of religion with its
+    countless arguments for and against God's existence.
+  \item After surveying a dozen or so of these (inconclusive and
+    conflicting) arguments, the returns start to diminish (for me at
+    least).
+  \item Let's seek insight rather than an existential archimedean
+    point. \end{itemize}
+
+\end{frame}
+
+
+\section{Explications of reduction}
+%% Logic
+
+\begin{frame}{From emotion to analysis}
+
+  \begin{itemize}
+  \item The previous one-hundred years in philosophy have been
+    genuinely different --- because of its connection with symbolic
+    logic and mathematics.
+  \item Carnapian explication: where we take a vague concept or thesis
+    and provide a (mathematically) precise counterpart
+  \item Example: inference rules for classical predicate
+    calculus
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Preliminaries}
+
+  \begin{itemize}
+  \item What kinds of things stand in the ``reduction'' relation?
+  \item I will take the relata to be \textbf{theories}, and I will
+    take theories to be represented by pairs $L,T$, where $L$ is a
+    language and $T$ is a set of $L$-sentences.
+  \item I do \emph{not} assume that ``same theory'' means $L=L'$ and
+    $T=T'$.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{What reduction could not be?}
+
+  \begin{itemize}
+  \item Just as some have complained that equivalence (of theories) is
+    not a purely formal matter, they might also complain that
+    reduction is not a purely formal matter.
+  \item Is reduction a ``worldly relation''?
+  \end{itemize}  
+\end{frame}
+
+\begin{frame}{Criteria for success}
+
+  \begin{itemize}
+  \item What kind of understanding will such an account give?
+  \item What kind of answers will such an account give?
+  \item Is it a factual question whether one theory is reducible to
+    another?
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Classical reduction}
+
+  \textbf{Definition:} $T$ explicitly defines $R$ in terms of
+  $\Sigma _0$ just in case:
+  \[ T\:\vdash \: \forall x(R(x)\leftrightarrow \theta (x)) \]
+
+  \textbf{Proposition:} For every $\Sigma$-formula $\varphi (x)$,
+  there is a $\Sigma _0$-formula $\varphi ^*(x)$ such that
+  $T\vdash \forall x(\varphi (x)\leftrightarrow \varphi ^* (x))$.
+
+\end{frame}
+
+\begin{frame}{Identity theory}
+
+  \begin{itemize}
+  \item The \textbf{identity theory} is stronger than explicit
+    definition.
+  \item Hence, if explicit definition is too restrictive, so is the
+    identity theory.
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Challenges to explicit definability}
+
+  \begin{itemize}
+  \item Ramsey: ``[I]f we proceed by explicit definition we cannot add
+    to our theory without changing the definitions, and so the meaning
+    of the whole.''
+  \item Carnap: ``It is, in general, not possible to give explicit
+    definitions for theoretical terms on the basis of $\Sigma _0$.''
+    \citeyearpar[p 42]{carnap}
+  \item Putnam: Multiple realizability
+  \item Fodor: The special sciences
+  \item Jackson: Explanatory gap
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+  \begin{itemize}
+  \item I'm not primarily interested in whether mind is reducible to
+    brain.
+  \item I want to know what kind of thing \emph{reduction} is, and
+    whether \emph{classical reduction} admits of fruitful
+    generalization.
+  \end{itemize}
+
+\end{frame}
+
+
+
+
+\begin{frame}{Open the semantic floodgates!}
+
+  %% Canberra plan
+
+  \begin{itemize}
+  \item 1970s: Buzzwords about relations binding the mental to the
+    physical: determination, supervenience, functionalism, etc.
+  \item ca.  1965--2020 common wisdom: you want some kind of root in
+    the physicalist basis (determination, supervenience, emergence,
+    \dots ), but \emph{not} reducibility.
+  \item These philosophers \textbf{failed} to enable interdisciplinary
+    discussion
+  \item \textbf{Functional definition} is one of the more promising
+    ideas. (See especially \cite{lewis1970,lewis1972})
+    \begin{itemize}
+    \item Popular in recent philosophy of science, e.g.\ spacetime
+      functionalism \citep[see][]{butterfield2023}
+    \end{itemize}
+  \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}
+
+  ``Accounts of inter-theoretic reduction differ between the
+  language-first and math-first views of theories in quite similar
+  ways to their respective accounts of theoretical equivalence.''
+  \citep[p 356]{lang}
+
+  ``On the math-first view, reduction is something like instantiation:
+  the realizing by some sub-structure of the low-level theory's models
+  of the structure of the higher-level theory's models.'' \citep[p
+  357]{lang}
+
+\end{frame}  
+
+\begin{frame}{Semantic strategies}
+
+  \begin{itemize}
+  \item After the invention of model theory, formal philosophy fell
+    into confusion about what could be achieved by semantic methods.
+  \item Many philosophers claimed that old problems were artifacts of
+    the syntactic approach.
+  \item The confusion was increased by an ambiguity about whether
+    semantics is about mathematical models or about concrete
+    existents.
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+  \begin{itemize}
+  \item Supervenience: No change to the new objects without a change
+    in the old objects.
+  \item Any elementary embedding $h:M|_{\Sigma _0}\to N|_{\Sigma _0}$
+    lifts uniquely to an elementary embedding $\overline{h}:M\to N$.
+  \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{From semantics to syntax}
+
+  \begin{itemize}
+  \item \citet{hellman} point out that supervenience (determination)
+    is just implicit definition, and it implies (via Beth's theorem)
+    explicit definition. But they claim that the result is irrelevant
+    since they aren't talking about models of a theory!
+  \item \citet{bealer} argues that functional definition is just
+    implicit definition and so implies explicit definition.
+  \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{Formalizing functionalism}
+
+  \[ t = \iota x \phi (x)  \]
+
+  Lewis: ``This is what I have called \textbf{functional
+    definition}. The $\Sigma$-terms have been defined as the occupants
+  of the causal roles specified by the theory $T$; as \emph{the}
+  entities, whatever those may be, that bear certain causal relations
+  to one another and to the referents of the $\Sigma _0$-terms.''
+  \citeyearpar[p 254]{lewis1972}
+  
+\end{frame}
+
+
+\begin{frame}{Reduction of domains}
+
+  \begin{itemize}
+  \item Classical reduction only permits relations (on a fixed domain)
+    to be reduced to relations (on that same domain).
+  \item If reduction is inverse to definition, then what we need is a
+    method of defining new domains out of old ones.
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Sort Constructions in First-Order Logic}
+\centering
+\begin{tikzpicture}[scale=1, every node/.style={font=\small}]
+  % Product (bottom-left)
+  \node at (-2,-1) {\textbf{Product}};
+  \node (prod) at (-2,-1.75) {$\sigma_0 \times \sigma_1$};
+  \node (s0) at (-3,-3) {$\sigma_0$};
+  \node (s1) at (-1,-3) {$\sigma_1$};
+  \draw[->] (prod) -- (s0);
+  \draw[->] (prod) -- (s1);
+
+    % Coproduct (bottom-right)
+  \node at (3,-1) {\textbf{Coproduct}};
+  \node (s0cop) at (2,-3) {$\sigma_0$};
+  \node (s1cop) at (4,-3) {$\sigma_1$};
+  \node (cop) at (3,-1.75) {$\sigma_0 \coprod \sigma_1$};
+  \draw[->] (s0cop) -- (cop);
+  \draw[->] (s1cop) -- (cop);
+
+
+  % Quotient (top-left)
+  \node at (-2,2.5) {\textbf{Quotient}};
+  \node (sigma) at (-2,2) {$\sigma$};
+  \node (sigmaq) at (-2,1) {$\sigma'$};
+  \draw[->] (sigma) -- node[right] {$e$} (sigmaq);
+
+  % Subsort (top-right)
+  \node at (3,2.5) {\textbf{Subsort}};
+  \node (sigmap) at (3,1) {$\sigma'$};
+  \node (sigma2) at (3,2) {$\sigma$};
+  \draw[->] (sigmap) -- node[right] {$i$} (sigma2);
+
+\end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}
+
+  \begin{itemize}
+  \item \textbf{Definition:} $T^+$ is a \textbf{Morita extension} of
+    $T$ just in case $T^+$ is at the end of a finite chain of
+    extensions by the sort constructions and explicit definitions on
+    $T$.
+  \item \textbf{Proposition:} If $T^+$ is a Morita extension of $T$,
+    then there is reduction map $G:T^+\to T$.
+  \end{itemize}
+
+\end{frame}  
+
+
+\begin{frame}{Example: The reducibility of universalism to atomism}
+
+  \begin{itemize}
+  \item The nihilist theory $T$ defines a domain of mereological
+    $n$-sums (product, quotient by permutation symmetry) and so a
+    universalist theory $T'$.
+  \item For each formula $\phi (x)$ in $T'$, there is a corresponding
+    formula $\phi ^*(y_1,y_2)$ in $T$.
+  \item $T'\vdash\phi$ iff $T\vdash \phi ^*$
+  \end{itemize}
+
+
+\end{frame}
+
+
+
+\begin{frame}{Nota bene}
+
+  The previous two theories are actually equivalent.
+
+  A more natural example might be:
+
+  \begin{itemize}
+  \item $T$ is the theory of the integers.
+  \item $T'$ is the theory of the rational numbers.
+  \end{itemize}
+
+
+
+\end{frame}
+
+
+
+
+\section{Conclusion}
+
+
+
+
+\begin{frame}{The fundamental dilemma for reduction}
+
+  \begin{itemize}
+  \item If the $N$ to $O$ relation is too close, then $N$ seems like
+    another name for $O$.
+  \item If the $N$ to $O$ relation is too far apart, then $N$ seems
+    ``ontologically problematic''.
+  \end{itemize}
+
+
+\end{frame}
+
+
+\begin{frame}{Manifesto}
+
+  \begin{itemize}
+  \item Carnap the existentialist: freedom to develop new theoretical
+    concepts.
+  \item Reduction should give ``inference tickets'' in both
+    directions.
+  \item Compare (HH view of theoretical equivalence): if two theories
+    are equivalent, you can switch between them.
+  \item Against absolutism
+  \end{itemize}
+
+
+
+\end{frame}
+
+\section{References}
+
+
+\begin{frame}[allowframebreaks]{References}
+
+\printbibliography[heading=none]
+
+\end{frame}
+
+
+% End of document
+\end{document}
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

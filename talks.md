@@ -3,6 +3,7 @@ title: "Talks"
 author: Hans Halvorson
 ---
 
+- Reduction redux [pdf](talks/reduction.pdf) [tex](talks/reduction.tex)
 - What is a deterministic theory? [pdf](talks/determinism.pdf)
 - Equivalence in foundations [pdf](talks/equivalence-foundations.pdf)
   [tex](talks/equivalence-foundations.tex)
