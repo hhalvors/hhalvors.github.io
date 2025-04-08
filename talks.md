@@ -3,6 +3,7 @@ title: "Talks"
 author: Hans Halvorson
 ---
 
+- Equivalence -- state of play [pdf](talks/equivalence.pdf) [tex](talks/equivalence.tex)
 - Reduction redux [pdf](talks/reduction.pdf) [tex](talks/reduction.tex)
 - What is a deterministic theory? [pdf](talks/determinism.pdf)
 - Equivalence in foundations [pdf](talks/equivalence-foundations.pdf)
