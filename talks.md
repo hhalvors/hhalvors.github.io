@@ -3,6 +3,7 @@ title: "Talks"
 author: Hans Halvorson
 ---
 
+- Defining determinism [pdf](talks/venice-determinism.pdf) [tex](talks/venice-determinism.tex)
 - Equivalence -- state of play [pdf](talks/equivalence.pdf) [tex](talks/equivalence.tex)
 - Reduction redux [pdf](talks/reduction.pdf) [tex](talks/reduction.tex)
 - What is a deterministic theory? [pdf](talks/determinism.pdf)
