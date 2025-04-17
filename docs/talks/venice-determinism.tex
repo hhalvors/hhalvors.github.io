@@ -16,15 +16,14 @@
 \usepackage{tikz}
 \usetikzlibrary{decorations.pathreplacing, arrows.meta, positioning}
 
+\usepackage{minted}
+\usemintedstyle{tango} 
+
 \title{Defining Determinism}
 \subtitle{}
 \author{Hans Halvorson}
 \institute{Princeton University}
 \date{April 11, 2025}
-
-%% maybe Visser on 2-cat of theories
-
-%% Sider's worries about our approach
 
 \usepackage[style=authoryear, backend=biber, natbib=true, doi=true]{biblatex} % Chicago style with Biber backend
 \addbibresource{~/research/determinism/det.bib}
@@ -54,6 +53,23 @@
 %% but wait: what is determinism? Is this a failure of determinism?  
 
 \end{frame}
+
+\begin{frame}[fragile]{Deformation Function $\varphi$}
+\begin{minted}[fontsize=\small]{haskell}
+-- Deformation phi: identity on boundary, max push at center,
+-- horizontal only
+phi :: Double -> P2 Double -> P2 Double
+phi r p@(P (V2 x y))
+  | dist >= r  = p
+  | otherwise  = p .+^ r2 (0.5 * bump, 0)  -- push right only
+  where
+    v     = p .-. origin
+    dist  = norm v
+    t     = dist / r
+    bump  = (1 - t^2)^2  -- max at center, 0 at edge
+\end{minted}
+\end{frame}
+
 
 \begin{frame}{Logical Structure of the Hole Argument}
 

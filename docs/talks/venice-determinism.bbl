@@ -1,0 +1,255 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{belot}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=09c48b8e49c7248ac3efa5076805ddb1}{%
+           family={Belot},
+           familyi={B\bibinitperiod},
+           given={Gordon},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{09c48b8e49c7248ac3efa5076805ddb1}
+      \strng{fullhash}{09c48b8e49c7248ac3efa5076805ddb1}
+      \strng{fullhashraw}{09c48b8e49c7248ac3efa5076805ddb1}
+      \strng{bibnamehash}{09c48b8e49c7248ac3efa5076805ddb1}
+      \strng{authorbibnamehash}{09c48b8e49c7248ac3efa5076805ddb1}
+      \strng{authornamehash}{09c48b8e49c7248ac3efa5076805ddb1}
+      \strng{authorfullhash}{09c48b8e49c7248ac3efa5076805ddb1}
+      \strng{authorfullhashraw}{09c48b8e49c7248ac3efa5076805ddb1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The British journal for the philosophy of science}
+      \field{number}{2}
+      \field{title}{New work for counterpart theorists: {D}eterminism}
+      \field{volume}{46}
+      \field{year}{1995}
+      \field{pages}{185\bibrangedash 195}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1093/bjps/46.2.185
+      \endverb
+    \endentry
+    \entry{lsl}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=6ac7e21451c80f04ca26894d84279358}{%
+           family={Carnap},
+           familyi={C\bibinitperiod},
+           given={Rudolf},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{6ac7e21451c80f04ca26894d84279358}
+      \strng{fullhash}{6ac7e21451c80f04ca26894d84279358}
+      \strng{fullhashraw}{6ac7e21451c80f04ca26894d84279358}
+      \strng{bibnamehash}{6ac7e21451c80f04ca26894d84279358}
+      \strng{authorbibnamehash}{6ac7e21451c80f04ca26894d84279358}
+      \strng{authornamehash}{6ac7e21451c80f04ca26894d84279358}
+      \strng{authorfullhash}{6ac7e21451c80f04ca26894d84279358}
+      \strng{authorfullhashraw}{6ac7e21451c80f04ca26894d84279358}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Logical Syntax of Language}
+      \field{year}{1937}
+    \endentry
+    \entry{primer}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e5ffb874797b7995784a3c9fa01e4153}{%
+           family={Earman},
+           familyi={E\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{e5ffb874797b7995784a3c9fa01e4153}
+      \strng{fullhash}{e5ffb874797b7995784a3c9fa01e4153}
+      \strng{fullhashraw}{e5ffb874797b7995784a3c9fa01e4153}
+      \strng{bibnamehash}{e5ffb874797b7995784a3c9fa01e4153}
+      \strng{authorbibnamehash}{e5ffb874797b7995784a3c9fa01e4153}
+      \strng{authornamehash}{e5ffb874797b7995784a3c9fa01e4153}
+      \strng{authorfullhash}{e5ffb874797b7995784a3c9fa01e4153}
+      \strng{authorfullhashraw}{e5ffb874797b7995784a3c9fa01e4153}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A primer on determinism}
+      \field{year}{1986}
+    \endentry
+    \entry{hawthorne}{incollection}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=737ff8a3a0971e88a58492b317eb1d27}{%
+           family={Hawthorne},
+           familyi={H\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{737ff8a3a0971e88a58492b317eb1d27}
+      \strng{fullhash}{737ff8a3a0971e88a58492b317eb1d27}
+      \strng{fullhashraw}{737ff8a3a0971e88a58492b317eb1d27}
+      \strng{bibnamehash}{737ff8a3a0971e88a58492b317eb1d27}
+      \strng{authorbibnamehash}{737ff8a3a0971e88a58492b317eb1d27}
+      \strng{authornamehash}{737ff8a3a0971e88a58492b317eb1d27}
+      \strng{authorfullhash}{737ff8a3a0971e88a58492b317eb1d27}
+      \strng{authorfullhashraw}{737ff8a3a0971e88a58492b317eb1d27}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Metaphysical Essays}
+      \field{title}{Determinism De Re}
+      \field{year}{2006}
+      \field{pages}{239\bibrangedash 243}
+      \range{pages}{5}
+    \endentry
+    \entry{lewis-work}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=987abb6adca7047e7c1fbaecfa4ef1af}{%
+           family={Lewis},
+           familyi={L\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{987abb6adca7047e7c1fbaecfa4ef1af}
+      \strng{fullhash}{987abb6adca7047e7c1fbaecfa4ef1af}
+      \strng{fullhashraw}{987abb6adca7047e7c1fbaecfa4ef1af}
+      \strng{bibnamehash}{987abb6adca7047e7c1fbaecfa4ef1af}
+      \strng{authorbibnamehash}{987abb6adca7047e7c1fbaecfa4ef1af}
+      \strng{authornamehash}{987abb6adca7047e7c1fbaecfa4ef1af}
+      \strng{authorfullhash}{987abb6adca7047e7c1fbaecfa4ef1af}
+      \strng{authorfullhashraw}{987abb6adca7047e7c1fbaecfa4ef1af}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Australasian journal of philosophy}
+      \field{number}{4}
+      \field{title}{New work for a theory of universals}
+      \field{volume}{61}
+      \field{year}{1983}
+      \field{pages}{343\bibrangedash 377}
+      \range{pages}{35}
+      \verb{doi}
+      \verb 10.1080/00048408312341131
+      \endverb
+    \endentry
+    \entry{melia}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=908aefb43bef595e9cdfe28fa29055a3}{%
+           family={Melia},
+           familyi={M\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{908aefb43bef595e9cdfe28fa29055a3}
+      \strng{fullhash}{908aefb43bef595e9cdfe28fa29055a3}
+      \strng{fullhashraw}{908aefb43bef595e9cdfe28fa29055a3}
+      \strng{bibnamehash}{908aefb43bef595e9cdfe28fa29055a3}
+      \strng{authorbibnamehash}{908aefb43bef595e9cdfe28fa29055a3}
+      \strng{authornamehash}{908aefb43bef595e9cdfe28fa29055a3}
+      \strng{authorfullhash}{908aefb43bef595e9cdfe28fa29055a3}
+      \strng{authorfullhashraw}{908aefb43bef595e9cdfe28fa29055a3}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The British journal for the philosophy of science}
+      \field{number}{4}
+      \field{title}{Holes, haecceitism and two conceptions of determinism}
+      \field{volume}{50}
+      \field{year}{1999}
+      \true{nocite}
+      \field{pages}{639\bibrangedash 664}
+      \range{pages}{26}
+      \verb{doi}
+      \verb 10.1093/bjps/50.4.639
+      \endverb
+    \endentry
+    \entry{smart-free}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f2bbb02a31a888cacee39c5b6c3229a9}{%
+           family={Smart},
+           familyi={S\bibinitperiod},
+           given={J.J.C.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f2bbb02a31a888cacee39c5b6c3229a9}
+      \strng{fullhash}{f2bbb02a31a888cacee39c5b6c3229a9}
+      \strng{fullhashraw}{f2bbb02a31a888cacee39c5b6c3229a9}
+      \strng{bibnamehash}{f2bbb02a31a888cacee39c5b6c3229a9}
+      \strng{authorbibnamehash}{f2bbb02a31a888cacee39c5b6c3229a9}
+      \strng{authornamehash}{f2bbb02a31a888cacee39c5b6c3229a9}
+      \strng{authorfullhash}{f2bbb02a31a888cacee39c5b6c3229a9}
+      \strng{authorfullhashraw}{f2bbb02a31a888cacee39c5b6c3229a9}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mind}
+      \field{number}{279}
+      \field{title}{Free-will, praise and blame}
+      \field{volume}{70}
+      \field{year}{1961}
+      \field{pages}{291\bibrangedash 306}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1093/mind/lxx.279.291
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

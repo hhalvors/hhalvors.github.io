@@ -1,0 +1,29 @@
+\frametitle{The one true definition of determinism}
+
+\begin{columns}[c]  % [c] for vertical centering
+
+  \column{0.4\textwidth}
+  {\Large
+  \[
+  \begin{tikzcd}
+    M \arrow[r, "g", dashed] & M' \\
+    U \arrow[u, hookrightarrow, "i"] \arrow[r, "f"'] & U' \arrow[u,
+    hookrightarrow, "i'"']
+  \end{tikzcd}
+  \]
+  }
+
+  \column{0.6\textwidth}
+  \begin{itemize}
+  \item $U \hookrightarrow M$ is an embedding of an initial segment.
+  \item For each isomorphism $f:U\to U'$ of initial segments, there is
+    a unique isomorphism $g:M\to M'$ of worlds.
+  \item Determinism: data on $U$ determines behavior in $M$.
+  \end{itemize}
+
+\end{columns}
+
+
+
+
+

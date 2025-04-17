@@ -1,0 +1,15 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'venice-determinism.blg'
+[33] biber-darwin:340> INFO - === Thu Apr 17, 2025, 06:35:14
+[42] Biber.pm:420> INFO - Reading 'venice-determinism.bcf'
+[76] Biber.pm:994> INFO - Found 7 citekeys in bib section 0
+[83] Biber.pm:4463> INFO - Processing section 0
+[88] Biber.pm:4654> INFO - Looking for bibtex file '~/research/determinism/det.bib' for section 0
+[182] bibtex.pm:1713> INFO - LaTeX decoding ...
+[197] bibtex.pm:1519> INFO - Found BibTeX data source '/Users/hhalvors/research/determinism/det.bib'
+[229] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[229] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[229] Biber.pm:4283> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[229] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[232] bbl.pm:676> INFO - Writing 'venice-determinism.bbl' with encoding 'UTF-8'
+[234] bbl.pm:779> INFO - Output to venice-determinism.bbl
