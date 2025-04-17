@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.16)  17 APR 2025 08:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.16)  17 APR 2025 08:57
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -867,6 +867,29 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowwidth=\dimen312
 \pgfarrowlinewidth=\dimen313
 )))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome5/fontawesome5.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-11-02 L3 programming layer (loader) 
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count357
+\l__pdf_internal_box=\box82
+))
+Package: fontawesome5 2022/05/02 v5.15.4 Font Awesome 5
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2024-08-16 L3 Experimental document command parser
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome5/fontawesome5-generic
+-helper.sty
+Package: fontawesome5-generic-helper 2022/05/02 v5.15.4 non-uTeX helper for fon
+tawesome5
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome5/fontawesome5-mapping
+.def)))
 (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarydecorations.pathreplacing.code.tex
 (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
@@ -878,11 +901,11 @@ s.code.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen316
 \pgfdecoratedinputsegmentremainingdistance=\dimen317
 \pgf@decorate@distancetomove=\dimen318
-\pgf@decorate@repeatstate=\count357
+\pgf@decorate@repeatstate=\count358
 \pgfdecorationsegmentamplitude=\dimen319
 \pgfdecorationsegmentlength=\dimen320
 )
-\tikz@lib@dec@box=\box82
+\tikz@lib@dec@box=\box83
 )
 (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
 brarydecorations.pathreplacing.code.tex))
@@ -905,11 +928,11 @@ rb
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
-\FV@CodeLineNo=\count358
+\FV@CodeLineNo=\count359
 \FV@InFile=\read3
-\FV@TabBox=\box83
-\c@FancyVerbLine=\count359
-\FV@StepNumber=\count360
+\FV@TabBox=\box84
+\c@FancyVerbLine=\count360
+\FV@StepNumber=\count361
 \FV@OutFile=\write5
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/upquote/upquote.sty
@@ -921,47 +944,47 @@ Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
 ))
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2023/05/20 line numbers on paragraphs v5.3
-\linenopenalty=\count361
+\linenopenalty=\count362
 \output=\toks52
-\linenoprevgraf=\count362
+\linenoprevgraf=\count363
 \linenumbersep=\dimen321
 \linenumberwidth=\dimen322
-\c@linenumber=\count363
-\c@pagewiselinenumber=\count364
-\c@LN@truepage=\count365
-\c@internallinenumber=\count366
-\c@internallinenumbers=\count367
+\c@linenumber=\count364
+\c@pagewiselinenumber=\count365
+\c@LN@truepage=\count366
+\c@internallinenumber=\count367
+\c@internallinenumbers=\count368
 \quotelinenumbersep=\dimen323
 \bframerule=\dimen324
 \bframesep=\dimen325
-\bframebox=\box84
-\linenoamsmath@ams@eqpen=\count368
+\bframebox=\box85
+\linenoamsmath@ams@eqpen=\count369
 LaTeX Info: Redefining \\ on input line 3180.
 )
-\c@FancyVerbWriteLine=\count369
-\c@FancyVerbBufferLine=\count370
-\c@FV@TrueTabGroupLevel=\count371
-\c@FV@TrueTabCounter=\count372
-\FV@TabBox@Group=\box85
+\c@FancyVerbWriteLine=\count370
+\c@FancyVerbBufferLine=\count371
+\c@FV@TrueTabGroupLevel=\count372
+\c@FV@TrueTabCounter=\count373
+\FV@TabBox@Group=\box86
 \FV@TmpLength=\skip79
-\c@FV@HighlightLinesStart=\count373
-\c@FV@HighlightLinesStop=\count374
-\FV@LoopCount=\count375
-\FV@NCharsBox=\box86
+\c@FV@HighlightLinesStart=\count374
+\c@FV@HighlightLinesStop=\count375
+\FV@LoopCount=\count376
+\FV@NCharsBox=\box87
 \FV@BreakIndent=\dimen326
-\FV@BreakIndentNChars=\count376
+\FV@BreakIndentNChars=\count377
 \FV@BreakSymbolSepLeft=\dimen327
-\FV@BreakSymbolSepLeftNChars=\count377
+\FV@BreakSymbolSepLeftNChars=\count378
 \FV@BreakSymbolSepRight=\dimen328
-\FV@BreakSymbolSepRightNChars=\count378
+\FV@BreakSymbolSepRightNChars=\count379
 \FV@BreakSymbolIndentLeft=\dimen329
-\FV@BreakSymbolIndentLeftNChars=\count379
+\FV@BreakSymbolIndentLeftNChars=\count380
 \FV@BreakSymbolIndentRight=\dimen330
-\FV@BreakSymbolIndentRightNChars=\count380
-\c@FancyVerbLineBreakLast=\count381
-\FV@LineBox=\box87
-\FV@LineIndentBox=\box88
-\c@FV@BreakBufferDepth=\count382
+\FV@BreakSymbolIndentRightNChars=\count381
+\c@FancyVerbLineBreakLast=\count382
+\FV@LineBox=\box88
+\FV@LineIndentBox=\box89
+\c@FV@BreakBufferDepth=\count383
 \FV@LineWidth=\dimen331
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/latex2pydata/latex2pydata.sty
@@ -974,22 +997,22 @@ Package shellesc Info: Unrestricted shell escape enabled on input line 75.
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count383
+\c@float@type=\count384
 \float@exts=\toks53
-\float@box=\box89
+\float@box=\box90
 \@float@everytoks=\toks54
-\@floatcapt=\box90
+\@floatcapt=\box91
 )
-\c@minted@FancyVerbLineTemp=\count384
+\c@minted@FancyVerbLineTemp=\count385
 \@float@every@listing=\toks55
-\c@listing=\count385
+\c@listing=\count386
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count386
+\lrq@indent=\count387
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -997,49 +1020,49 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
-\c@tabx@nest=\count387
-\c@listtotal=\count388
-\c@listcount=\count389
-\c@liststart=\count390
-\c@liststop=\count391
-\c@citecount=\count392
-\c@citetotal=\count393
-\c@multicitecount=\count394
-\c@multicitetotal=\count395
-\c@instcount=\count396
-\c@maxnames=\count397
-\c@minnames=\count398
-\c@maxitems=\count399
-\c@minitems=\count400
-\c@citecounter=\count401
-\c@maxcitecounter=\count402
-\c@savedcitecounter=\count403
-\c@uniquelist=\count404
-\c@uniquename=\count405
-\c@refsection=\count406
-\c@refsegment=\count407
-\c@maxextratitle=\count408
-\c@maxextratitleyear=\count409
-\c@maxextraname=\count410
-\c@maxextradate=\count411
-\c@maxextraalpha=\count412
-\c@abbrvpenalty=\count413
-\c@highnamepenalty=\count414
-\c@lownamepenalty=\count415
-\c@maxparens=\count416
-\c@parenlevel=\count417
-\blx@tempcnta=\count418
-\blx@tempcntb=\count419
-\blx@tempcntc=\count420
-\c@blx@maxsection=\count421
-\blx@maxsegment@0=\count422
-\blx@notetype=\count423
-\blx@parenlevel@text=\count424
-\blx@parenlevel@foot=\count425
-\blx@sectionciteorder@0=\count426
-\blx@sectionciteorderinternal@0=\count427
-\blx@entrysetcounter=\count428
-\blx@biblioinstance=\count429
+\c@tabx@nest=\count388
+\c@listtotal=\count389
+\c@listcount=\count390
+\c@liststart=\count391
+\c@liststop=\count392
+\c@citecount=\count393
+\c@citetotal=\count394
+\c@multicitecount=\count395
+\c@multicitetotal=\count396
+\c@instcount=\count397
+\c@maxnames=\count398
+\c@minnames=\count399
+\c@maxitems=\count400
+\c@minitems=\count401
+\c@citecounter=\count402
+\c@maxcitecounter=\count403
+\c@savedcitecounter=\count404
+\c@uniquelist=\count405
+\c@uniquename=\count406
+\c@refsection=\count407
+\c@refsegment=\count408
+\c@maxextratitle=\count409
+\c@maxextratitleyear=\count410
+\c@maxextraname=\count411
+\c@maxextradate=\count412
+\c@maxextraalpha=\count413
+\c@abbrvpenalty=\count414
+\c@highnamepenalty=\count415
+\c@lownamepenalty=\count416
+\c@maxparens=\count417
+\c@parenlevel=\count418
+\blx@tempcnta=\count419
+\blx@tempcntb=\count420
+\blx@tempcntc=\count421
+\c@blx@maxsection=\count422
+\blx@maxsegment@0=\count423
+\blx@notetype=\count424
+\blx@parenlevel@text=\count425
+\blx@parenlevel@foot=\count426
+\blx@sectionciteorder@0=\count427
+\blx@sectionciteorderinternal@0=\count428
+\blx@entrysetcounter=\count429
+\blx@biblioinstance=\count430
 \labelnumberwidth=\skip80
 \labelalphawidth=\skip81
 \biblabelsep=\skip82
@@ -1051,9 +1074,9 @@ Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 \blx@bcfin=\read4
 \blx@bcfout=\write6
 \blx@langwohyphens=\language89
-\c@mincomprange=\count430
-\c@maxcomprange=\count431
-\c@mincompwidth=\count432
+\c@mincomprange=\count431
+\c@maxcomprange=\count432
+\c@mincompwidth=\count433
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1064,74 +1087,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'authoryear.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count433
-\c@savedafterword=\count434
-\c@annotator=\count435
-\c@savedannotator=\count436
-\c@author=\count437
-\c@savedauthor=\count438
-\c@bookauthor=\count439
-\c@savedbookauthor=\count440
-\c@commentator=\count441
-\c@savedcommentator=\count442
-\c@editor=\count443
-\c@savededitor=\count444
-\c@editora=\count445
-\c@savededitora=\count446
-\c@editorb=\count447
-\c@savededitorb=\count448
-\c@editorc=\count449
-\c@savededitorc=\count450
-\c@foreword=\count451
-\c@savedforeword=\count452
-\c@holder=\count453
-\c@savedholder=\count454
-\c@introduction=\count455
-\c@savedintroduction=\count456
-\c@namea=\count457
-\c@savednamea=\count458
-\c@nameb=\count459
-\c@savednameb=\count460
-\c@namec=\count461
-\c@savednamec=\count462
-\c@translator=\count463
-\c@savedtranslator=\count464
-\c@shortauthor=\count465
-\c@savedshortauthor=\count466
-\c@shorteditor=\count467
-\c@savedshorteditor=\count468
-\c@labelname=\count469
-\c@savedlabelname=\count470
-\c@institution=\count471
-\c@savedinstitution=\count472
-\c@lista=\count473
-\c@savedlista=\count474
-\c@listb=\count475
-\c@savedlistb=\count476
-\c@listc=\count477
-\c@savedlistc=\count478
-\c@listd=\count479
-\c@savedlistd=\count480
-\c@liste=\count481
-\c@savedliste=\count482
-\c@listf=\count483
-\c@savedlistf=\count484
-\c@location=\count485
-\c@savedlocation=\count486
-\c@organization=\count487
-\c@savedorganization=\count488
-\c@origlocation=\count489
-\c@savedoriglocation=\count490
-\c@origpublisher=\count491
-\c@savedorigpublisher=\count492
-\c@publisher=\count493
-\c@savedpublisher=\count494
-\c@language=\count495
-\c@savedlanguage=\count496
-\c@origlanguage=\count497
-\c@savedoriglanguage=\count498
-\c@pageref=\count499
-\c@savedpageref=\count500
+\c@afterword=\count434
+\c@savedafterword=\count435
+\c@annotator=\count436
+\c@savedannotator=\count437
+\c@author=\count438
+\c@savedauthor=\count439
+\c@bookauthor=\count440
+\c@savedbookauthor=\count441
+\c@commentator=\count442
+\c@savedcommentator=\count443
+\c@editor=\count444
+\c@savededitor=\count445
+\c@editora=\count446
+\c@savededitora=\count447
+\c@editorb=\count448
+\c@savededitorb=\count449
+\c@editorc=\count450
+\c@savededitorc=\count451
+\c@foreword=\count452
+\c@savedforeword=\count453
+\c@holder=\count454
+\c@savedholder=\count455
+\c@introduction=\count456
+\c@savedintroduction=\count457
+\c@namea=\count458
+\c@savednamea=\count459
+\c@nameb=\count460
+\c@savednameb=\count461
+\c@namec=\count462
+\c@savednamec=\count463
+\c@translator=\count464
+\c@savedtranslator=\count465
+\c@shortauthor=\count466
+\c@savedshortauthor=\count467
+\c@shorteditor=\count468
+\c@savedshorteditor=\count469
+\c@labelname=\count470
+\c@savedlabelname=\count471
+\c@institution=\count472
+\c@savedinstitution=\count473
+\c@lista=\count474
+\c@savedlista=\count475
+\c@listb=\count476
+\c@savedlistb=\count477
+\c@listc=\count478
+\c@savedlistc=\count479
+\c@listd=\count480
+\c@savedlistd=\count481
+\c@liste=\count482
+\c@savedliste=\count483
+\c@listf=\count484
+\c@savedlistf=\count485
+\c@location=\count486
+\c@savedlocation=\count487
+\c@organization=\count488
+\c@savedorganization=\count489
+\c@origlocation=\count490
+\c@savedoriglocation=\count491
+\c@origpublisher=\count492
+\c@savedorigpublisher=\count493
+\c@publisher=\count494
+\c@savedpublisher=\count495
+\c@language=\count496
+\c@savedlanguage=\count497
+\c@origlanguage=\count498
+\c@savedoriglanguage=\count499
+\c@pageref=\count500
+\c@savedpageref=\count501
 \shorthandwidth=\skip88
 \shortjournalwidth=\skip89
 \shortserieswidth=\skip90
@@ -1157,19 +1180,19 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-\c@textcitecount=\count501
-\c@textcitetotal=\count502
-\c@textcitemaxnames=\count503
-\c@biburlbigbreakpenalty=\count504
-\c@biburlbreakpenalty=\count505
-\c@biburlnumpenalty=\count506
-\c@biburlucpenalty=\count507
-\c@biburllcpenalty=\count508
+\c@textcitecount=\count502
+\c@textcitetotal=\count503
+\c@textcitemaxnames=\count504
+\c@biburlbigbreakpenalty=\count505
+\c@biburlbreakpenalty=\count506
+\c@biburlnumpenalty=\count507
+\c@biburlucpenalty=\count508
+\c@biburllcpenalty=\count509
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count509
+\c@smartand=\count510
 )
 Package biblatex Info: Trying to load natbib compatibility...
 Package biblatex Info: ... file 'blx-natbib.def' found.
@@ -1189,8 +1212,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count510
-\c@bbx:relatedtotal=\count511
+\c@bbx:relatedcount=\count511
+\c@bbx:relatedtotal=\count512
 ))
 Package biblatex Info: Trying to load citation style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.cbx' found.
@@ -1213,24 +1236,12 @@ File: biblatex.cfg
 )
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2024-11-02 L3 programming layer (loader) 
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count512
-\l__pdf_internal_box=\box91
-))
 Package biblatex Info: ... and expl3
 (biblatex)             2024-11-02 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
-(/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2024-08-16 L3 Experimental document command parser
-)
 Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
 ))
 \@quotelevel=\count513
@@ -1472,12 +1483,12 @@ Package pdftex.def Info: hole.pdf  used on input line 55.
 \pydata@fh@_8702415070623726E0954B9DB799551F.data.minted=\write8
 \openout8 = `_8702415070623726E0954B9DB799551F.data.minted'.
 
-runsystem(latexminted config  --timestamp 20250417084908 8702415070623726E0954B
+runsystem(latexminted config  --timestamp 20250417085714 8702415070623726E0954B
 9DB799551F)...executed.
 
 
 (./_8702415070623726E0954B9DB799551F.config.minted)
-runsystem(latexminted cleanconfig  --timestamp 20250417084908 8702415070623726E
+runsystem(latexminted cleanconfig  --timestamp 20250417085714 8702415070623726E
 0954B9DB799551F)...executed.
 
 
@@ -1639,10 +1650,10 @@ Package logreq Info: Writing requests to 'venice-determinism.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38709 strings out of 473330
- 827141 string characters out of 5719762
- 1691891 words of memory out of 5000000
- 61076 multiletter control sequences out of 15000+600000
+ 41733 strings out of 473330
+ 894116 string characters out of 5719762
+ 1736370 words of memory out of 5000000
+ 64086 multiletter control sequences out of 15000+600000
  587154 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,21n,123p,1885b,1547s stack positions out of 10000i,1000n,20000p,200000b,200000s
