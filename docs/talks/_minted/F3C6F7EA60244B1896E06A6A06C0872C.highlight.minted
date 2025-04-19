@@ -1,0 +1,13 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+nf}{phi}\PYG{+w}{ }\PYG{o+ow}{::}\PYG{+w}{ }\PYG{k+kt}{Double}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{k+kt}{P2}\PYG{+w}{ }\PYG{k+kt}{Double}\PYG{+w}{ }\PYG{o+ow}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{k+kt}{P2}\PYG{+w}{ }\PYG{k+kt}{Double}
+\PYG{n+nf}{phi}\PYG{+w}{ }\PYG{n}{r}\PYG{+w}{ }\PYG{n}{p}\PYG{o}{@}\PYG{p}{(}\PYG{k+kt}{P}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{V2}\PYG{+w}{ }\PYG{n}{x}\PYG{+w}{ }\PYG{n}{y}\PYG{p}{)}\PYG{p}{)}
+\PYG{+w}{  }\PYG{o}{|}\PYG{+w}{ }\PYG{n}{dist}\PYG{+w}{ }\PYG{o}{\PYGZgt{}=}\PYG{+w}{ }\PYG{n}{r}\PYG{+w}{  }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{n}{p}
+\PYG{+w}{  }\PYG{o}{|}\PYG{+w}{ }\PYG{n}{otherwise}\PYG{+w}{  }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{n}{p}\PYG{+w}{ }\PYG{o}{.+\PYGZca{}}\PYG{+w}{ }\PYG{n}{r2}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mf}{0.5}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{bump}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}
+\PYG{+w}{  }\PYG{k+kr}{where}
+\PYG{+w}{    }\PYG{n}{v}\PYG{+w}{     }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{n}{p}\PYG{+w}{ }\PYG{o}{.\PYGZhy{}.}\PYG{+w}{ }\PYG{n}{origin}
+\PYG{+w}{    }\PYG{n}{dist}\PYG{+w}{  }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{n}{norm}\PYG{+w}{ }\PYG{n}{v}
+\PYG{+w}{    }\PYG{n}{t}\PYG{+w}{     }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{n}{dist}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{r}
+\PYG{+w}{    }\PYG{n}{bump}\PYG{+w}{  }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{k+kr}{if}\PYG{+w}{ }\PYG{n}{t}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{l+m+mi}{1}
+\PYG{+w}{              }\PYG{k+kr}{then}\PYG{+w}{ }\PYG{n}{exp}\PYG{+w}{ }\PYG{p}{(}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{t}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{t}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{)}
+\PYG{+w}{              }\PYG{k+kr}{else}\PYG{+w}{ }\PYG{l+m+mi}{0}
+\end{MintedVerbatim}

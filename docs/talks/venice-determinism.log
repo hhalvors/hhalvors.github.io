@@ -1,6 +1,7 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.16)  17 APR 2025 08:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.16)  19 APR 2025 15:43
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
 **venice-determinism.tex
 (./venice-determinism.tex
@@ -993,7 +994,7 @@ thon literal format
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
-Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+Package shellesc Info: Restricted shell escape enabled on input line 77.
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
@@ -1467,11 +1468,24 @@ thkerncmss.
 [3
 
 ]
-<hole.pdf, id=59, 376.40625pt x 197.16519pt>
+<hole.pdf, id=59, 602.25pt x 301.125pt>
 File: hole.pdf Graphic file (type pdf)
 <use hole.pdf>
-Package pdftex.def Info: hole.pdf  used on input line 55.
-(pdftex.def)             Requested size: 301.1254pt x 157.73236pt.
+Package pdftex.def Info: hole.pdf  used on input line 66.
+(pdftex.def)             Requested size: 301.12425pt x 150.56212pt.
+
+Overfull \hbox (3.75475pt too wide) detected at line 66
+ $\OML/cmm/m/it/10.95 ^^^\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 p\OT
+1/cmss/m/n/10.95 ) = \OT1/mathkerncmss/m/sl/10.95 p \OT1/cmss/m/n/10.95 + [] \O
+T1/mathkerncmss/m/sl/10.95 b\OT1/cmss/m/n/10.95 (\OMS/cmsy/m/n/10.95 k\OT1/math
+kerncmss/m/sl/10.95 p\OMS/cmsy/m/n/10.95 k\OT1/cmss/m/n/10.95 ) (\T1/cmss/m/n/1
+0.95 1\OML/cmm/m/it/10.95 ; \T1/cmss/m/n/10.95 0\OT1/cmss/m/n/10.95 )\OML/cmm/m
+/it/10.95 ;  \OT1/mathkerncmss/m/sl/10.95 b\OT1/cmss/m/n/10.95 (\OT1/mathkerncm
+ss/m/sl/10.95 t\OT1/cmss/m/n/10.95 ) = [] []\OMS/cmsy/m/n/10.95 ^^@[][]\OML/cmm
+/m/it/10.95 ;  \OMS/cmsy/m/n/10.95 k\OT1/mathkerncmss/m/sl/10.95 p\OMS/cmsy/m/n
+/10.95 k \OML/cmm/m/it/10.95 < \T1/cmss/m/n/10.95 1\OML/cmm/m/it/10.95 :$ 
+ []
+
 
 
 [4
@@ -1483,19 +1497,25 @@ Package pdftex.def Info: hole.pdf  used on input line 55.
 \pydata@fh@_8702415070623726E0954B9DB799551F.data.minted=\write8
 \openout8 = `_8702415070623726E0954B9DB799551F.data.minted'.
 
-runsystem(latexminted config  --timestamp 20250417085714 8702415070623726E0954B
-9DB799551F)...executed.
+runsystem(latexminted config  --timestamp 20250419154307 8702415070623726E0954B
+9DB799551F)...executed safely (allowed).
 
 
 (./_8702415070623726E0954B9DB799551F.config.minted)
-runsystem(latexminted cleanconfig  --timestamp 20250417085714 8702415070623726E
-0954B9DB799551F)...executed.
+runsystem(latexminted cleanconfig  --timestamp 20250419154307 8702415070623726E
+0954B9DB799551F)...executed safely (allowed).
 
 
 (./_minted/tango.style.minted)
-(./_minted/D062F4890B92E205EA5331E1E3AFB698.highlight.minted
+\openout8 = `_8702415070623726E0954B9DB799551F.data.minted'.
+
+runsystem(latexminted highlight  --timestamp 20250419154307 8702415070623726E09
+54B9DB799551F)...executed safely (allowed).
+
+
+(./_minted/F3C6F7EA60244B1896E06A6A06C0872C.highlight.minted
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 4.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 2.
 ))
 
 [5
@@ -1541,7 +1561,7 @@ LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
 [15
 
 ]
-Overfull \vbox (6.90318pt too high) detected at line 228
+Overfull \vbox (6.90318pt too high) detected at line 239
  []
 
 
@@ -1553,7 +1573,7 @@ Overfull \vbox (6.90318pt too high) detected at line 228
 [17
 
 ]
-Overfull \hbox (28.85619pt too wide) in paragraph at lines 286--286
+Overfull \hbox (28.85619pt too wide) in paragraph at lines 297--297
  [] 
  []
 
@@ -1590,7 +1610,7 @@ Overfull \hbox (28.85619pt too wide) in paragraph at lines 286--286
 [24
 
 ]
-Overfull \hbox (28.85619pt too wide) in paragraph at lines 409--409
+Overfull \hbox (28.85619pt too wide) in paragraph at lines 420--420
  [] 
  []
 
@@ -1613,7 +1633,7 @@ Overfull \hbox (28.85619pt too wide) in paragraph at lines 409--409
 ]
 
 LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <10> not available
-(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 441.
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 452.
 
 
 
@@ -1638,6 +1658,11 @@ LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <10> not available
 \tf@snm=\write11
 \openout11 = `venice-determinism.snm'.
 
+\openout8 = `_8702415070623726E0954B9DB799551F.data.minted'.
+
+runsystem(latexminted clean  --timestamp 20250419154307 8702415070623726E0954B9
+DB799551F)...executed safely (allowed).
+
  (./venice-determinism.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
@@ -1650,38 +1675,38 @@ Package logreq Info: Writing requests to 'venice-determinism.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41733 strings out of 473330
- 894116 string characters out of 5719762
- 1736370 words of memory out of 5000000
- 64086 multiletter control sequences out of 15000+600000
- 587154 words of font info for 108 fonts, out of 8000000 for 9000
+ 41731 strings out of 473330
+ 894093 string characters out of 5719762
+ 1737371 words of memory out of 5000000
+ 64085 multiletter control sequences out of 15000+600000
+ 586839 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,21n,123p,1885b,1547s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><
-/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><
-/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb><
-/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></
-usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr
-/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/l
-ocal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loc
-al/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb></usr/local
-/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfit1000.pfb></usr/local/t
-exlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsi1000.pfb></usr/local/tex
-live/2024/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></usr/local/texli
-ve/2024/texmf-dist/fonts/type1/public/cm-super/sfso1095.pfb></usr/local/texlive
-/2024/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/2
-024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local/texlive/202
-4/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/2024/
-texmf-dist/fonts/type1/public/cm-super/sfss2488.pfb></usr/local/texlive/2024/te
-xmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/local/texlive/2024/texm
-f-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2024/texmf-
-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2024/texmf-di
-st/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2024/texmf-dist
-/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on venice-determinism.pdf (31 pages, 345386 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
+/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></
+usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></
+usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></
+usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></u
+sr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
+r/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/
+local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/lo
+cal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loca
+l/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb></usr/local/
+texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsi1000.pfb></usr/local/te
+xlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></usr/local/texl
+ive/2024/texmf-dist/fonts/type1/public/cm-super/sfso1095.pfb></usr/local/texliv
+e/2024/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/
+2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local/texlive/20
+24/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/2024
+/texmf-dist/fonts/type1/public/cm-super/sfss2488.pfb></usr/local/texlive/2024/t
+exmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/local/texlive/2024/tex
+mf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2024/texmf
+-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2024/texmf-d
+ist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2024/texmf-dis
+t/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on venice-determinism.pdf (31 pages, 334815 bytes).
 PDF statistics:
  391 PDF objects out of 1000 (max. 8388607)
  295 compressed objects within 3 object streams

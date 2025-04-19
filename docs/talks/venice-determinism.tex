@@ -48,7 +48,18 @@
 
 \begin{frame}{The hole argument}
 
-  \includegraphics[scale=0.8]{hole.pdf}
+  \includegraphics[scale=0.5]{hole.pdf}
+
+\[
+\phi(p)=p+\frac12\,b(\|p\|)\,(1,0),
+\quad
+b(t)=\exp\!\Bigl(-\frac{t^2}{1-t^2}\Bigr),
+\quad
+\|p\|<1.
+\]
+  
+
+  
 
 %% but wait: what is determinism? Is this a failure of determinism?  
 
@@ -56,17 +67,17 @@
 
 \begin{frame}[fragile]{Deformation Function $\varphi$}
 \begin{minted}[fontsize=\small]{haskell}
--- Deformation phi: identity on boundary, max push at center,
--- horizontal only
 phi :: Double -> P2 Double -> P2 Double
 phi r p@(P (V2 x y))
   | dist >= r  = p
-  | otherwise  = p .+^ r2 (0.5 * bump, 0)  -- push right only
+  | otherwise  = p .+^ r2 (0.5 * bump, 0)
   where
     v     = p .-. origin
     dist  = norm v
     t     = dist / r
-    bump  = (1 - t^2)^2  -- max at center, 0 at edge
+    bump  = if t < 1
+              then exp ( - t^2 / (1 - t^2) )
+              else 0
 \end{minted}
 \end{frame}
 
