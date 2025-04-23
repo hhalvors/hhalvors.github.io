@@ -1,0 +1,25 @@
+\frametitle{Realism vs. Antirealism (and Bohr)}
+
+\begin{center}
+  \begin{tikzpicture}[node distance=4cm, every node/.style={align=center}]
+    \node (realism) [rectangle, draw, thick, minimum width=3.5cm, minimum height=1.5cm]
+      {Realism \\ \small Science aims at truth \\ about an objective reality};
+
+    \node (antirealism) [rectangle, draw, thick, minimum width=3.5cm, minimum height=1.5cm, right of=realism]
+      {Antirealism \\ \small Science organizes experience; \\ truth may not apply};
+
+    \node (bohr) [ellipse, draw=blue, very thick, minimum width=4.5cm, minimum height=1.5cm, below of=realism, xshift=2cm, yshift=-0.8cm, fill=blue!10]
+      {Bohr \\ \small “Unambiguous communication” \\ but not about “things-in-themselves”};
+
+    \draw[<->, thick] (realism) -- (antirealism);
+    \draw[->, dashed, thick] (bohr.north) -- ++(0,1) node[midway, right] {\scriptsize neither? both?};
+  \end{tikzpicture}
+\end{center}
+
+\vspace{0.5em}
+\begin{itemize}
+  \item Is Bohr a realist about classical concepts?
+  \item Or an antirealist about quantum entities?
+  \item He challenges the dichotomy itself.
+\end{itemize}
+
