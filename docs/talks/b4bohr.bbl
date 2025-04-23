@@ -1,0 +1,502 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{bohr-atomteori}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=09ca20fddac431fc5e6dae0595c682f8}{%
+           family={Bohr},
+           familyi={B\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Copenhagen}%
+      }
+      \list{publisher}{1}{%
+        {Frederiksberg Bogtrykkeri}%
+      }
+      \strng{namehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{bibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorbibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authornamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \field{extraname}{1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Beretning om det 18. skandinaviske Naturforskermode i København 26.-31. August 1929}
+      \field{title}{Atomteori og naturbeskrivelse}
+      \field{year}{1929}
+      \field{pages}{71\bibrangedash 83}
+      \range{pages}{13}
+    \endentry
+    \entry{religion54}{incollection}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=09ca20fddac431fc5e6dae0595c682f8}{%
+           family={Bohr},
+           familyi={B\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Ejnar Munksgaard}%
+      }
+      \strng{namehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{bibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorbibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authornamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \field{extraname}{2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Studia Orientalia Ioanni Pedersen Septuagenario A.D. VII id. Nov. Anno MCMLIII}
+      \field{title}{Physical science and the study of religions}
+      \field{year}{1953}
+      \field{pages}{385\bibrangedash 390}
+      \range{pages}{6}
+    \endentry
+    \entry{unity55}{incollection}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=09ca20fddac431fc5e6dae0595c682f8}{%
+           family={Bohr},
+           familyi={B\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=666d55b85c1d8ee48f5c3e3853e427cd}{%
+           family={L.\bibnamedelimi Leary},
+           familyi={L\bibinitperiod\bibinitdelim L\bibinitperiod},
+           prefix={ed.},
+           prefixi={e\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Doubleday \& Co.}%
+      }
+      \strng{namehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{bibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorbibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authornamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{editorbibnamehash}{666d55b85c1d8ee48f5c3e3853e427cd}
+      \strng{editornamehash}{666d55b85c1d8ee48f5c3e3853e427cd}
+      \strng{editorfullhash}{666d55b85c1d8ee48f5c3e3853e427cd}
+      \strng{editorfullhashraw}{666d55b85c1d8ee48f5c3e3853e427cd}
+      \field{extraname}{3}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The unity of knowledge}
+      \field{year}{1955}
+      \field{pages}{47\bibrangedash 62}
+      \range{pages}{16}
+    \endentry
+    \entry{rutherford}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=09ca20fddac431fc5e6dae0595c682f8}{%
+           family={Bohr},
+           familyi={B\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{bibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorbibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authornamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \field{extraname}{4}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Physical Society}
+      \field{number}{6}
+      \field{title}{The Rutherford Memorial Lecture 1958}
+      \field{volume}{78}
+      \field{year}{1961}
+      \field{pages}{1083}
+      \range{pages}{1}
+    \endentry
+    \entry{unity}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=09ca20fddac431fc5e6dae0595c682f8}{%
+           family={Bohr},
+           familyi={B\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{bibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorbibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authornamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \field{extraname}{5}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revue de la Fondation Europeenne de la Culture}
+      \field{title}{The unity of human knowledge}
+      \field{year}{1961}
+      \field{pages}{63\bibrangedash 66}
+      \range{pages}{4}
+    \endentry
+    \entry{brandes1889}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=cc748020e96665fa52f505448e869b17}{%
+           family={Brandes},
+           familyi={B\bibinitperiod},
+           given={Georg},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Gyldendal}%
+      }
+      \strng{namehash}{cc748020e96665fa52f505448e869b17}
+      \strng{fullhash}{cc748020e96665fa52f505448e869b17}
+      \strng{fullhashraw}{cc748020e96665fa52f505448e869b17}
+      \strng{bibnamehash}{cc748020e96665fa52f505448e869b17}
+      \strng{authorbibnamehash}{cc748020e96665fa52f505448e869b17}
+      \strng{authornamehash}{cc748020e96665fa52f505448e869b17}
+      \strng{authorfullhash}{cc748020e96665fa52f505448e869b17}
+      \strng{authorfullhashraw}{cc748020e96665fa52f505448e869b17}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Essays. Danske Personligheder}
+      \field{year}{1889}
+    \endentry
+    \entry{hoffding1909}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=850a74cf37a6ae630be1d3fb370708f1}{%
+           family={H{ø}ffding},
+           familyi={H\bibinitperiod},
+           given={Harald},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Gyldendal}%
+      }
+      \strng{namehash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{fullhash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{fullhashraw}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{bibnamehash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{authorbibnamehash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{authornamehash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{authorfullhash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{authorfullhashraw}{850a74cf37a6ae630be1d3fb370708f1}
+      \field{extraname}{1}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Danske filosofer}
+      \field{volume}{108}
+      \field{year}{1909}
+    \endentry
+    \entry{hoffding1910}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=850a74cf37a6ae630be1d3fb370708f1}{%
+           family={H{ø}ffding},
+           familyi={H\bibinitperiod},
+           given={Harald},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Gyldendal}%
+      }
+      \strng{namehash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{fullhash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{fullhashraw}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{bibnamehash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{authorbibnamehash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{authornamehash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{authorfullhash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{authorfullhashraw}{850a74cf37a6ae630be1d3fb370708f1}
+      \field{extraname}{2}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Den menneskelige tanke: dens former og dens opgaver}
+      \field{year}{1910}
+    \endentry
+    \entry{hoffding1917}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=850a74cf37a6ae630be1d3fb370708f1}{%
+           family={H{ø}ffding},
+           familyi={H\bibinitperiod},
+           given={Harald},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {AF H{ø}st \& s{ø}n}%
+      }
+      \strng{namehash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{fullhash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{fullhashraw}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{bibnamehash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{authorbibnamehash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{authornamehash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{authorfullhash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{authorfullhashraw}{850a74cf37a6ae630be1d3fb370708f1}
+      \field{extraname}{3}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Totalitet som kategori: en erkendelsesteoretisk unders{ø}gelse}
+      \field{year}{1917}
+    \endentry
+    \entry{koch2016danske}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9cc77ab5b3a81fcb7474bde346c91d97}{%
+           family={Koch},
+           familyi={K\bibinitperiod},
+           given={Carl\bibnamedelima Henrik},
+           giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Lindhardt og Ringhof}%
+      }
+      \strng{namehash}{9cc77ab5b3a81fcb7474bde346c91d97}
+      \strng{fullhash}{9cc77ab5b3a81fcb7474bde346c91d97}
+      \strng{fullhashraw}{9cc77ab5b3a81fcb7474bde346c91d97}
+      \strng{bibnamehash}{9cc77ab5b3a81fcb7474bde346c91d97}
+      \strng{authorbibnamehash}{9cc77ab5b3a81fcb7474bde346c91d97}
+      \strng{authornamehash}{9cc77ab5b3a81fcb7474bde346c91d97}
+      \strng{authorfullhash}{9cc77ab5b3a81fcb7474bde346c91d97}
+      \strng{authorfullhashraw}{9cc77ab5b3a81fcb7474bde346c91d97}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Den danske idealisme: 1800-1880}
+      \field{year}{2016}
+      \true{nocite}
+    \endentry
+    \entry{speculative1842}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5645ae252263a070818e54fc1f241c23}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={Rasmus},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Københavns Universitet}%
+      }
+      \strng{namehash}{5645ae252263a070818e54fc1f241c23}
+      \strng{fullhash}{5645ae252263a070818e54fc1f241c23}
+      \strng{fullhashraw}{5645ae252263a070818e54fc1f241c23}
+      \strng{bibnamehash}{5645ae252263a070818e54fc1f241c23}
+      \strng{authorbibnamehash}{5645ae252263a070818e54fc1f241c23}
+      \strng{authornamehash}{5645ae252263a070818e54fc1f241c23}
+      \strng{authorfullhash}{5645ae252263a070818e54fc1f241c23}
+      \strng{authorfullhashraw}{5645ae252263a070818e54fc1f241c23}
+      \field{extraname}{1}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Den speculative Methodes Anvendelse paa den hellige Historie}
+      \field{type}{phdthesis}
+      \field{year}{1842}
+    \endentry
+    \entry{prop60}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5645ae252263a070818e54fc1f241c23}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={Rasmus},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Gyldendal}%
+      }
+      \strng{namehash}{5645ae252263a070818e54fc1f241c23}
+      \strng{fullhash}{5645ae252263a070818e54fc1f241c23}
+      \strng{fullhashraw}{5645ae252263a070818e54fc1f241c23}
+      \strng{bibnamehash}{5645ae252263a070818e54fc1f241c23}
+      \strng{authorbibnamehash}{5645ae252263a070818e54fc1f241c23}
+      \strng{authornamehash}{5645ae252263a070818e54fc1f241c23}
+      \strng{authorfullhash}{5645ae252263a070818e54fc1f241c23}
+      \strng{authorfullhashraw}{5645ae252263a070818e54fc1f241c23}
+      \field{extraname}{2}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Forelæsninger over Philosophisk Propædeutik fra Universitetsaaret 1860--61}
+      \field{year}{1862}
+      \true{nocite}
+    \endentry
+    \entry{grund}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5645ae252263a070818e54fc1f241c23}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={Rasmus},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Gyldendal}%
+      }
+      \strng{namehash}{5645ae252263a070818e54fc1f241c23}
+      \strng{fullhash}{5645ae252263a070818e54fc1f241c23}
+      \strng{fullhashraw}{5645ae252263a070818e54fc1f241c23}
+      \strng{bibnamehash}{5645ae252263a070818e54fc1f241c23}
+      \strng{authorbibnamehash}{5645ae252263a070818e54fc1f241c23}
+      \strng{authornamehash}{5645ae252263a070818e54fc1f241c23}
+      \strng{authorfullhash}{5645ae252263a070818e54fc1f241c23}
+      \strng{authorfullhashraw}{5645ae252263a070818e54fc1f241c23}
+      \field{extraname}{3}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Grundideernes Logik}
+      \field{year}{1864}
+    \endentry
+    \entry{avg}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5645ae252263a070818e54fc1f241c23}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={Rasmus},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Gyldendal}%
+      }
+      \strng{namehash}{5645ae252263a070818e54fc1f241c23}
+      \strng{fullhash}{5645ae252263a070818e54fc1f241c23}
+      \strng{fullhashraw}{5645ae252263a070818e54fc1f241c23}
+      \strng{bibnamehash}{5645ae252263a070818e54fc1f241c23}
+      \strng{authorbibnamehash}{5645ae252263a070818e54fc1f241c23}
+      \strng{authornamehash}{5645ae252263a070818e54fc1f241c23}
+      \strng{authorfullhash}{5645ae252263a070818e54fc1f241c23}
+      \strng{authorfullhashraw}{5645ae252263a070818e54fc1f241c23}
+      \field{extraname}{4}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Almindelig Videnskabslære i Grundtræk}
+      \field{year}{1880}
+    \endentry
+    \entry{rosen}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b89d06fa4ed97fa302ec27784620adf9}{%
+           family={Rosen},
+           familyi={R\bibinitperiod},
+           given={Stanley},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {University of Chicago Press}%
+      }
+      \strng{namehash}{b89d06fa4ed97fa302ec27784620adf9}
+      \strng{fullhash}{b89d06fa4ed97fa302ec27784620adf9}
+      \strng{fullhashraw}{b89d06fa4ed97fa302ec27784620adf9}
+      \strng{bibnamehash}{b89d06fa4ed97fa302ec27784620adf9}
+      \strng{authorbibnamehash}{b89d06fa4ed97fa302ec27784620adf9}
+      \strng{authornamehash}{b89d06fa4ed97fa302ec27784620adf9}
+      \strng{authorfullhash}{b89d06fa4ed97fa302ec27784620adf9}
+      \strng{authorfullhashraw}{b89d06fa4ed97fa302ec27784620adf9}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Idea of Hegel's `Science of Logic'}
+      \field{year}{2019}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
