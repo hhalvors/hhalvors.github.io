@@ -3,7 +3,7 @@ title: "Talks"
 author: Hans Halvorson
 ---
 
-- Niels Bohr's philosophical background [talks/b4bohr.pdf](pdf) [tex](talks/b4bohr.tex)
+- Niels Bohr's philosophical background [pdf](talks/b4bohr.pdf) [tex](talks/b4bohr.tex)
 - Defining determinism [pdf](talks/venice-determinism.pdf) [tex](talks/venice-determinism.tex)
 - Equivalence -- state of play [pdf](talks/equivalence.pdf) [tex](talks/equivalence.tex)
 - Reduction redux [pdf](talks/reduction.pdf) [tex](talks/reduction.tex)
