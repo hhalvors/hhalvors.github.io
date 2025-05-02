@@ -211,6 +211,15 @@ main = hakyllWith config $ do
     --             >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
     --             >>= relativizeUrls
 
+    -- Bohr: Process all .md files in the "kierkegaard" folder
+    match "kierkegaard/*.md" $ do
+      route $ setExtension "html"
+      compile $ do
+        myPandocBiblioCompiler
+            >>= loadAndApplyTemplate "templates/page.html" (defaultContext `mappend` siteCtx)
+            >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+    
+
     -- Bohr: Process all .md files in the "bohr" folder
     match "bohr/*.md" $ do
       route $ setExtension "html"
