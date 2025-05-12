@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <!---
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  -->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Fragmentalism in Special Relativity &middot; Hans Halvorson
+    
+  </title>
+
+  
+      
+  <link rel="canonical" href="https://hanshalvorson.dk/spacetime/fragmentalism.html">
+      
+  
+
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  
+
+  <!-- MathJax configuration -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript">
+  MathJax = {
+    tex: {
+      macros: {
+        // Map ⊢ to a version with space before and after
+        "⊢": "\\mathrel{\\;\\vdash\\;}"
+      }
+    }
+  };
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!---
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ '/public/apple-touch-icon-precomposed.png' | absolute_url }}">
+  <link rel="shortcut icon" href="{{ '/public/favicon.ico' | absolute_url }}">
+  -->
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="atom.xml">
+
+  <!--- deactivate google analytics
+  {% if site.google_analytics_id %}
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{{ site.google_analytics_id }}', 'auto');
+    ga('send', 'pageview');
+  </script>
+  {% endif %}
+  -->
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Personligheden er Sandheden</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/index.html">Home</a>
+
+    <!--- The code below dynamically generates a sidebar nav of the files in the folder /pages 
+
+    
+      
+        <a class="sidebar-nav-item" href="/pages/About.html">About</a>
+      
+    
+      
+        <a class="sidebar-nav-item" href="/index.html">index</a>
+      
+    
+      
+        <a class="sidebar-nav-item" href="/john.html">john</a>
+      
+     -->
+
+
+	
+   <!-- Add the new Publications link -->
+	<a class="sidebar-nav-item" href="/publications.html">Publications</a>
+
+        <a class="sidebar-nav-item" href="/bohr/">Bohr</a>
+
+	<a class="sidebar-nav-item" href="/spacetime/">Spacetime</a>
+
+	<a class="sidebar-nav-item" href="/drafts.html">Drafts</a>
+
+	<a class="sidebar-nav-item" href="/talks.html">Talks</a>
+
+	<a class="sidebar-nav-item" href="/courses/">Courses</a>
+
+	<a class="sidebar-nav-item" href="/logic/">Logic</a>
+
+
+
+	<a class="sidebar-nav-item" href="https://www.dropbox.com/scl/fi/xs0ssqnvi6zvstxnehgpd/cv.pdf?rlkey=qgwhhw1tiaspqbrlnkbnwcpt2&dl=0">CV</a>
+
+	<a class="sidebar-nav-item" href="https://github.com/hhalvors">GitHub project</a>
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2024. All rights reserved.
+    </p>
+    <p>
+        <img src="/images/haskell-logo.png" class=logo style="display: inline;"/>
+        Site created with
+        <a href="https://jaspervdj.be/hakyll">Hakyll</a>.
+        <br>
+        Modified theme
+        <a href="https://github.com/hahey/lanyon-hakyll">lanyon-hakyll</a>
+        based on
+        <a href="https://lanyon.getpoole.com/">Lanyon</a>.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Hans Halvorson</a>
+            <small>Physics, Logic, Philosophy</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+          <div class="page">
+  <h1 class="page-title">Fragmentalism in Special Relativity</h1>
+     <h2 id="introduction">Introduction</h2>
+<p>Fragmentalism is a metaphysical view developed by Kit Fine, according to which reality consists of distinct, possibly incompatible “fragments” that reflect different perspectives or aspects of the world. This idea becomes especially provocative when applied to special relativity, which challenges the classical idea of a single, objective present.</p>
+<p>Fine’s framework allows for a realist account of tense and temporal becoming, even in the context of relativistic physics, by treating each relativistic frame as indexing its own fragment of reality.</p>
+<h2 id="key-source">Key Source</h2>
+<h3 id="kit-fine-tense-and-reality">Kit Fine: Tense and Reality</h3>
+<p>Fine introduces his fragmentalist metaphysics in the essay:</p>
+<ul>
+<li><strong>Fine, Kit.</strong> “Tense and Reality.” In <em>Modality and Tense: Philosophical Papers</em>, Oxford University Press, 2005. <a href="https://doi.org/10.1093/0199278709.001.0001">DOI: 10.1093/0199278709.001.0001</a></li>
+</ul>
+<p>Fine argues that the world can be understood as a plurality of partial realities, each reflecting a different perspective on what is real—such as what is present according to a particular time or frame.</p>
+<h2 id="applications-to-special-relativity">Applications to Special Relativity</h2>
+<p>Fine’s approach has inspired both support and critique, especially in its application to special relativity:</p>
+<ul>
+<li><p><strong>Hofweber, Thomas, and Marc Lange.</strong> “Fine’s Fragmentalist Interpretation of Special Relativity.” <em>Noûs</em> 51, no. 4 (2017): 871–883. <a href="https://doi.org/10.1111/nous.12150">DOI: 10.1111/nous.12150</a></p></li>
+<li><p><strong>Hofweber, Thomas, and Marc Lange.</strong> “Fragmentalism and Special Relativity.” <em>Teorema</em> 38, no. 3 (2019): 5–16.</p></li>
+<li><p><strong>Lipman, Martin A.</strong> “On the Fragmentalist Interpretation of Special Relativity.” <em>Philosophical Studies</em> 177 (2020): 21–37. <a href="https://doi.org/10.1007/s11098-018-1178-4">DOI: 10.1007/s11098-018-1178-4</a></p></li>
+<li><p><strong>Lipman, Martin A.</strong> “On Fine’s Fragmentalism.” <em>Synthese</em> 198 (2021): 6317–6334. <a href="https://doi.org/10.1007/s11229-019-02471-0">DOI: 10.1007/s11229-019-02471-0</a></p></li>
+</ul>
+<h2 id="related-perspectives">Related Perspectives</h2>
+<ul>
+<li><p><strong>Slavov, Matias.</strong> “Eternalism and Perspectival Realism About the ‘Now’.” <em>Foundations of Physics</em> 50 (2020): 1398–1410. <a href="https://doi.org/10.1007/s10701-020-00385-x">DOI: 10.1007/s10701-020-00385-x</a></p></li>
+<li><p><strong>Rovelli, Carlo.</strong> “Neither Presentism nor Eternalism.” <em>Foundations of Physics</em> 49, no. 12 (2019): 1325–1335. <a href="https://doi.org/10.1007/s10701-019-00312-9">DOI: 10.1007/s10701-019-00312-9</a></p>
+<p>Rovelli argues for a relational interpretation of temporal structure, rejecting both presentism and eternalism. While Rovelli does not endorse fragmentalism per se, his approach shares with Fine’s view a sensitivity to the perspectival nature of temporal facts. Both authors seek to make room for a notion of becoming within the relativistic framework—Fine through metaphysical fragmentation, Rovelli through observer-dependent temporal structure. The similarities suggest a convergence toward models of time that emphasize relational or perspectival ontologies over monolithic block-universe metaphysics.</p></li>
+</ul>
+<h2 id="summary">Summary</h2>
+<p>Fragmentalism offers a bold metaphysical strategy for reintroducing tense and temporal perspective into modern physics. Whether this approach is tenable in the face of the relativistic rejection of absolute simultaneity remains an open question—but it continues to be a source of rich philosophical debate.</p>
+<p>Philosophers such as Carlo Rovelli explore alternative relational frameworks that similarly emphasize the perspectival nature of temporal existence without committing to a fragmented ontology. The intersection of metaphysics and physics remains a fertile field for further exploration.</p>
+<hr />
+<p><a href="/bib/fragmentalism.bib">Download the full bibliography as BibTeX</a></p>
+<p><em>This page is part of an ongoing effort to document metaphysical responses to relativity on this site. For related topics, see <a href="/eternalism.html">Eternalism</a> and <a href="/presentism.html">Presentism</a>.</em></p>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src='https://hanshalvorson.dk/public/js/script.js'></script>
+
+  </body>
+
+</html>

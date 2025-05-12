@@ -335,7 +335,7 @@ main = hakyllWith config $ do
 myPandocBiblioCompiler :: Compiler (Item String)
 myPandocBiblioCompiler = do
   csl <- load "bib/style.csl"
-  bib <- load "bib/bibliography.bib"
+  bib <- load "bib/bibliography.bib" :: Compiler (Item Biblio)
 
   let mathExtensions = [ Ext_tex_math_dollars, Ext_tex_math_double_backslash, Ext_latex_macros, Ext_raw_tex, Ext_raw_html ]
       newExtensions = foldr enableExtension (writerExtensions defaultHakyllWriterOptions) mathExtensions
