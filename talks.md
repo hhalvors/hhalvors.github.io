@@ -3,6 +3,7 @@ title: "Talks"
 author: Hans Halvorson
 ---
 
+- Brandes against Dualism [pdf](talks/brandes.pdf)
 - Niels Bohr's philosophical background [pdf](talks/b4bohr.pdf) [tex](talks/b4bohr.tex)
 - Defining determinism [pdf](talks/venice-determinism.pdf) [tex](talks/venice-determinism.tex)
 - Equivalence -- state of play [pdf](talks/equivalence.pdf) [tex](talks/equivalence.tex)
@@ -21,7 +22,7 @@ author: Hans Halvorson
 - The goal of formal analysis [pdf](talks/formal-outline.pdf)
 - The concept of a reference frame [pdf](talks/vienna2023.pdf) 
 
-The TeX files are in Beamer format. Feel free to cannibalize them for
+The TeX files are in Beamer format. Feel free to re-use formatting for
 your own presentations.
 
 For building diagrams: [GitHub repo](https://github.com/hhalvors/diagrams)
