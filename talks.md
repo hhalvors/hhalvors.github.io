@@ -3,6 +3,7 @@ title: "Talks"
 author: Hans Halvorson
 ---
 
+- Climacus' two ways of reflection [pdf](talks/climacus.pdf)
 - Brandes against Dualism [pdf](talks/brandes.pdf)
 - Niels Bohr's philosophical background [pdf](talks/b4bohr.pdf) [tex](talks/b4bohr.tex)
 - Defining determinism [pdf](talks/venice-determinism.pdf) [tex](talks/venice-determinism.tex)
