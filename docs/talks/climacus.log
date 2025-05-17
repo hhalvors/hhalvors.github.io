@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.16)  15 MAY 2025 07:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.16)  16 MAY 2025 08:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1125,10 +1125,10 @@ Package rerunfilecheck Info: File `climacus.out' has not changed.
 (rerunfilecheck)             Checksum: F11A58D45E49B29786163A380F0A6D82;916.
  ) 
 Here is how much of TeX's memory you used:
- 25153 strings out of 473330
- 505750 string characters out of 5719762
- 856294 words of memory out of 5000000
- 47727 multiletter control sequences out of 15000+600000
+ 25154 strings out of 473330
+ 505766 string characters out of 5719762
+ 857295 words of memory out of 5000000
+ 47728 multiletter control sequences out of 15000+600000
  567016 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,13n,123p,1875b,756s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1138,7 +1138,7 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><
 /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb><
 /usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb>
-Output written on climacus.pdf (22 pages, 83358 bytes).
+Output written on climacus.pdf (22 pages, 83749 bytes).
 PDF statistics:
  211 PDF objects out of 1000 (max. 8388607)
  167 compressed objects within 2 object streams
