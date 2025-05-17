@@ -71,7 +71,15 @@ main = hakyllWith config $ do
           >>= saveSnapshot "page-content"
           >>= loadAndApplyTemplate "templates/page.html" siteCtx
           >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> indexCtx)
-          >>= relativizeUrls      
+          >>= relativizeUrls
+
+    -- Rule for course-specific pages in subfolders
+    match "courses/*/**.md" $ do
+      route $ setExtension "html"
+      compile $ pandocCompiler
+        >>= loadAndApplyTemplate "templates/page.html" siteCtx
+        >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+        >>= relativizeUrls      
 
     match "pages/john.md" $ do
       route $ constRoute "john.html"
