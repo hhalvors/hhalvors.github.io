@@ -63,6 +63,16 @@ main = hakyllWith config $ do
           >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> indexCtx)
           >>= relativizeUrls
 
+    match "courses/index.md" $ do
+      route $ constRoute "courses/index.html"
+      compile $ do
+        let indexCtx = constField "title" "test" `mappend` siteCtx
+        pandocCompiler
+          >>= saveSnapshot "page-content"
+          >>= loadAndApplyTemplate "templates/page.html" siteCtx
+          >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> indexCtx)
+          >>= relativizeUrls      
+
     match "pages/john.md" $ do
       route $ constRoute "john.html"
       compile $ do
@@ -173,14 +183,14 @@ main = hakyllWith config $ do
 --          >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
 --          >>= relativizeUrls
 
-    -- Rule to process courses-temp.html and output it as courses/index.html
-    match "courses-temp.html" $ do
-      route $ customRoute (const "courses/index.html")
-      compile $ do
-        getResourceBody
-          >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Courses" `mappend` siteCtx)
-          >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
-          >>= relativizeUrls
+    -- -- Rule to process courses-temp.html and output it as courses/index.html
+    -- match "courses-temp.html" $ do
+    --   route $ customRoute (const "courses/index.html")
+    --   compile $ do
+    --     getResourceBody
+    --       >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Courses" `mappend` siteCtx)
+    --       >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+    --       >>= relativizeUrls
        
 
     -- Rule to process bohr-causality-quotes.html without applying templates or relativizing URLs
