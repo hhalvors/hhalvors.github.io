@@ -316,8 +316,12 @@ main = hakyllWith config $ do
     -- Rule to copy PDF files from the "pdf" directory
     match "pdf/*.pdf" $ do
         route idRoute
-        compile copyFileCompiler    
+        compile copyFileCompiler
 
+    match "courses/vtfys_2025/week6*.pdf" $ do
+        route idRoute
+        compile copyFileCompiler
+    
     -- .nojekyll
     create [".nojekyll"] $ do
         route idRoute
