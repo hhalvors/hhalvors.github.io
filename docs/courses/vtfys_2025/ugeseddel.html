@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <!---
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  -->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Ugeseddel 4: Videnskabelig Forståelse og AI &middot; Hans Halvorson
+    
+  </title>
+
+  
+      
+  <link rel="canonical" href="https://hanshalvorson.dk/courses/vtfys_2025/ugeseddel.html">
+      
+  
+
+  <link rel="stylesheet" href="../../css/poole.css">
+  <link rel="stylesheet" href="../../css/syntax.css">
+  <link rel="stylesheet" href="../../css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  
+
+  <!-- MathJax configuration -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript">
+  MathJax = {
+    tex: {
+      macros: {
+        // Map ⊢ to a version with space before and after
+        "⊢": "\\mathrel{\\;\\vdash\\;}"
+      }
+    }
+  };
+</script>
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!---
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ '/public/apple-touch-icon-precomposed.png' | absolute_url }}">
+  <link rel="shortcut icon" href="{{ '/public/favicon.ico' | absolute_url }}">
+  -->
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="atom.xml">
+
+  <!--- deactivate google analytics
+  {% if site.google_analytics_id %}
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{{ site.google_analytics_id }}', 'auto');
+    ga('send', 'pageview');
+  </script>
+  {% endif %}
+  -->
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Personligheden er Sandheden</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="../../index.html">Home</a>
+
+    <!--- The code below dynamically generates a sidebar nav of the files in the folder /pages 
+
+    
+      
+        <a class="sidebar-nav-item" href="/pages/About.html">About</a>
+      
+    
+      
+        <a class="sidebar-nav-item" href="/index.html">index</a>
+      
+    
+      
+        <a class="sidebar-nav-item" href="/john.html">john</a>
+      
+     -->
+
+
+	
+   <!-- Add the new Publications link -->
+	<a class="sidebar-nav-item" href="../../publications.html">Publications</a>
+
+        <a class="sidebar-nav-item" href="../../bohr/">Bohr</a>
+
+	<a class="sidebar-nav-item" href="../../spacetime/">Spacetime</a>
+
+	<a class="sidebar-nav-item" href="../../drafts.html">Drafts</a>
+
+	<a class="sidebar-nav-item" href="../../talks.html">Talks</a>
+
+	<a class="sidebar-nav-item" href="../../courses/">Courses</a>
+
+	<a class="sidebar-nav-item" href="../../logic/">Logic</a>
+
+
+
+	<a class="sidebar-nav-item" href="https://www.dropbox.com/scl/fi/xs0ssqnvi6zvstxnehgpd/cv.pdf?rlkey=qgwhhw1tiaspqbrlnkbnwcpt2&dl=0">CV</a>
+
+	<a class="sidebar-nav-item" href="https://github.com/hhalvors">GitHub project</a>
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2024. All rights reserved.
+    </p>
+    <p>
+        <img src="../../images/haskell-logo.png" class="logo" style="display: inline;" />
+        Site created with
+        <a href="https://jaspervdj.be/hakyll">Hakyll</a>.
+        <br>
+        Modified theme
+        <a href="https://github.com/hahey/lanyon-hakyll">lanyon-hakyll</a>
+        based on
+        <a href="https://lanyon.getpoole.com/">Lanyon</a>.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="../../" title="Home">Hans Halvorson</a>
+            <small>Physics, Logic, Philosophy</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+          <div class="page">
+  <h1 class="page-title">Ugeseddel 4: Videnskabelig Forståelse og AI</h1>
+     <p>Er det et mål for videnskaben, at forskerne skal øge deres
+<em>forståelse</em>?</p>
+<p>Hvis ja, så ser det ud til, at det bliver sværere at nå dette mål, da
+mængden af data stiger eksponentielt, mens specialiseringerne bliver
+mere snævre. Vi er nået til en æra med <em>big science</em>, hvor den enkelte
+forsker nemt kan blive et tandhjul i den store maskine.</p>
+<p>I løbet af denne uge diskuterer vi, om forståelse stadig kan og bør
+være et mål for videnskabsfolk — og om vi kan skærpe opfattelsen af,
+hvad målet er. Vi ser især på de trusler, som AI udgør for den
+videnskabelige forståelse, og vi overvejer, om disse trusler kan
+omdannes til muligheder for at øge forståelsen.</p>
+<hr />
+<h2 id="forelæsning-mandag-d.-19.5.-ved-hans-halvorson">Forelæsning — Mandag d. 19.5. ved Hans Halvorson</h2>
+<p><strong>Læs dette inden forelæsningen:</strong></p>
+<ul>
+<li>De Regt og Dieks (2005): <em>A contextual approach to scientific
+understanding</em></li>
+<li>Krenn, M., Pollice, R., et al. (2022): <em>On scientific understanding
+with artificial intelligence</em></li>
+</ul>
+<hr />
+<h2 id="case-forelæsning-onsdag-d.-21.5.-tba">Case-forelæsning — Onsdag d. 21.5. TBA</h2>
+<hr />
+<h2 id="øvelser-onsdag-d.-21.5.">Øvelser — Onsdag d. 21.5.</h2>
+<h3 id="time-1-videnskabelig-forståelse">Time 1: Videnskabelig forståelse</h3>
+<h4 id="gruppeoplæg-gruppe-5-1015-minutter">Gruppeoplæg (Gruppe 5, 10–15 minutter)</h4>
+<p>I De Regt og Dieks’ artikel berøres en klassisk debat mellem to forskellige syn på videnskabelig forklaring: <strong>kausal-mekaniske</strong> og <strong>unifikationistiske</strong> opfattelser.</p>
+<p>Oplægget skal dække følgende:</p>
+<ol type="1">
+<li>Sammenlign og modstil de to forklaringsmodeller. Hvilke fordele og ulemper har de?</li>
+<li>Forklar De Regt og Dieks’ argument om, at begge typer forklaringer kan give forståelse.</li>
+<li>Forklar De Regt og Dieks’ kriterium for, hvornår en teori er <em>intelligibel</em>.</li>
+</ol>
+<h4 id="gruppeopgaver-20-minutter">Gruppeopgaver (20 minutter)</h4>
+<ol type="1">
+<li>Hvad ville De Regt og Dieks sige til en kartesiansk fysiker, der hævdede, at Newtons fysik er uforståelig, fordi de kræfter, han henviser til, ikke kan forklares mekanisk?</li>
+<li>Hvilken betydning har De Regt og Dieks’ kriterium for spørgsmålet om, hvordan vi skal håndtere kvantemekanikken?</li>
+<li>I sidste uge talte vi om matematisering og klagen over, at det går ud over forståelsen. De Regt og Dieks hævder, at forståelse måles ud fra evnen til at komme med <strong>kvalitative</strong> snarere end <strong>kvantitative</strong> forudsigelser. Er deres redegørelse forudindtaget i forhold til en mere matematisk tilgang til fysik? Kan matematisk forståelse ikke også bidrage til fysisk forståelse?</li>
+</ol>
+<p><strong>Plenumopsamling</strong></p>
+<hr />
+<h3 id="time-2-videnskabelig-forståelse-og-ai">Time 2: Videnskabelig forståelse og AI</h3>
+<h4 id="gruppeoplæg-gruppe-6-1015-minutter">Gruppeoplæg (Gruppe 6, 10–15 minutter)</h4>
+<p>Beskriv Krenn et al.s syn på AI’s potentiale for at bidrage til videnskabelig forståelse.</p>
+<p>Inkluder følgende:</p>
+<ol type="1">
+<li>Forklar med egne ord de tre grundlæggende dimensioner, hvormed AI kan bidrage til ny videnskabelig forståelse.</li>
+<li>Forklar begrebet <em>computational microscope</em> med mindst ét eksempel (fra Krenn et al. eller jeres egne erfaringer). Er der mere her end blot evnen til at køre computersimuleringer?</li>
+<li>Hvordan kan man ifølge Krenn et al. vurdere, om en AI har opnået forståelse?</li>
+</ol>
+<h4 id="gruppeopgaver-20-minutter-1">Gruppeopgaver (20 minutter)</h4>
+<ol type="1">
+<li>Har I allerede brugt AI i jeres kurser eller i jeres forskning? Har AI hjulpet jer med at forstå noget bedre?</li>
+<li>På hvilke måder kan en AI-samarbejdspartner være mere nyttig end et menneske? Og på hvilke måder er menneskelige samarbejdspartnere stadig vigtigere end nogen kendt AI?</li>
+</ol>
+<p><strong>Plenumopsamling</strong></p>
+<hr />
+<h3 id="time-3-er-ai-revolutionerende">Time 3: Er AI revolutionerende?</h3>
+<h4 id="gruppeopgaver-30-minutter">Gruppeopgaver (30 minutter)</h4>
+<p>Der er meget hype om AI. Formålet med denne diskussion er at vurdere, om der faktisk er tale om en <strong>videnskabelig revolution</strong> eller blot et <strong>videnskabeligt fremskridt</strong>.</p>
+<p>Diskuter følgende:</p>
+<ol type="1">
+<li>Hvordan skelner man mellem innovation på det teknologiske niveau og innovation inden for videnskaben? Kan I nævne eksempler på teknologiske, økonomiske eller samfundsmæssige innovationer, som <em>ikke</em> bør regnes som videnskabelige?</li>
+<li>Giv eksempler på idemæssige innovationer i videnskabens historie. Hvad gjorde dem revolutionerende?</li>
+<li>Hvilke aspekter af AI vil efter jeres mening mest sandsynligt bidrage til fremtidige videnskabelige innovationer?</li>
+</ol>
+<p><strong>Plenumopsamling</strong></p>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="https://hanshalvorson.dk/public/js/script.js"></script>
+
+  </body>
+
+</html>
