@@ -318,7 +318,7 @@ main = hakyllWith config $ do
         route idRoute
         compile copyFileCompiler
 
-    match "courses/vtfys_2025/week6*.pdf" $ do
+    match "courses/vtfys_2025/week4*.pdf" $ do
         route idRoute
         compile copyFileCompiler
     
