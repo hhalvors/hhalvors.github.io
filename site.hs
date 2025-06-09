@@ -17,7 +17,7 @@ import           Control.Monad                 ((<=<))
 import Text.Pandoc.Options (HTMLMathMethod(..), writerExtensions, writerHTMLMathMethod, WriterOptions, Extension(..), enableExtension)
 import Text.Pandoc (pandocExtensions)
 import Text.Pandoc.SideNote (usingSideNotes)
- 
+import PubList (parseBibTeXFile, transformEntry, generateHtml)
 
 --------------------------------------------------------------------------------
 
@@ -172,15 +172,28 @@ main = hakyllWith config $ do
     match "hh.bib" $ do
       compile getResourceBody
 
--- Rule to process temp.html and output it as publications.html
-    match "temp.html" $ do
-      route $ customRoute (const "publications.html")
+    create ["publications.html"] $ do
+      route idRoute
       compile $ do
-        let titleCtx = constField "title" "Publications" `mappend` siteCtx
-        getResourceBody
-          >>= loadAndApplyTemplate "templates/page.html" titleCtx
-          >>= loadAndApplyTemplate "templates/default.html" (titleCtx `mappend` baseSidebarCtx)
-          >>= relativizeUrls
+        result <- unsafeCompiler $ parseBibTeXFile "hh.bib"
+        case result of
+          Left err -> error $ "BibTeX parse error: " ++ show err
+          Right entries -> do
+            let htmlBody = generateHtml False (map PubList.transformEntry entries)
+            makeItem htmlBody
+              >>= loadAndApplyTemplate "templates/page.html"    (constField "title" "Publications" `mappend` siteCtx)
+              >>= loadAndApplyTemplate "templates/default.html" (constField "title" "Publications" `mappend` baseSidebarCtx `mappend` siteCtx)
+              >>= relativizeUrls
+
+-- Rule to process temp.html and output it as publications.html
+    -- match "temp.html" $ do
+    --   route $ customRoute (const "publications.html")
+    --   compile $ do
+    --     let titleCtx = constField "title" "Publications" `mappend` siteCtx
+    --     getResourceBody
+    --       >>= loadAndApplyTemplate "templates/page.html" titleCtx
+    --       >>= loadAndApplyTemplate "templates/default.html" (titleCtx `mappend` baseSidebarCtx)
+    --       >>= relativizeUrls
   
     -- Rule to process courses-temp.html and output it as courses.html
 --    match "courses-temp.html" $ do
