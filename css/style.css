@@ -1,270 +1,158 @@
+/*  ───────────────────────────────────────────────
+    GLOBAL TOKENS
+    ─────────────────────────────────────────────── */
 @charset "UTF-8";
 :root {
-    --blue: #007bff;
-    --indigo: #6610f2;
-    --purple: #6f42c1;
-    --pink: #e83e8c;
-    --red: #dc3545;
-    --orange: #fd7e14;
-    --yellow: #ffc107;
-    --green: #28a745;
-    --teal: #20c997;
-    --cyan: #17a2b8;
-    --white: #fff;
-    --gray: #6c757d;
-    --gray-dark: #343a40;
-    --primary: #3E6987;
-    --secondary: #6c757d;
-    --success: #28a745;
-    --info: #17a2b8;
-    --warning: #ffc107;
-    --danger: #dc3545;
-    --light: #F4F4F4;
-    --dark: #343a40;
-    --breakpoint-xs: 0;
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 992px;
-    --breakpoint-xl: 1200px;
-    --font-family-sans-serif: Lato, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+  /* brand palette (unchanged) */
+  --blue:#007bff; --indigo:#6610f2; --purple:#6f42c1; --pink:#e83e8c;
+  --red:#dc3545;  --orange:#fd7e14; --yellow:#ffc107; --green:#28a745;
+  --teal:#20c997; --cyan:#17a2b8;  --white:#fff;     --gray:#6c757d;
+  --gray-dark:#343a40; --primary:#3E6987; --secondary:#6c757d;
+  --success:#28a745; --info:#17a2b8; --warning:#ffc107; --danger:#dc3545;
+  --light:#F4F4F4; --dark:#343a40;
 }
 
-
-body {
-    margin: 0;
-    font-family: Lato, helvetica neue, Arial, noto sans, sans-serif, apple color emoji, segoe ui, segoe ui emoji, segoe ui symbol, noto color emoji;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    text-align: left;
-    background-color: #fff
+/*  ───────────────────────────────────────────────
+    TYPOGRAPHY
+    ─────────────────────────────────────────────── */
+html, body{
+  font-family:"EB Garamond",Georgia,serif;
+  font-size:20px;
+  line-height:1.6;
+  color:#222;
+  background:#fff;
+  margin:0;
 }
 
-h1, h3 {
-    margin-left: 0; /* Removes any default margin */
-    padding-left: 0; /* Ensures padding is consistent */
+h1,h2,h3,h4,h5{
+  font-family:"Fira Sans","Helvetica Neue",sans-serif;
+  font-weight:700;
+  line-height:1.25;
+  margin:2.5rem 0 1rem;
+}
+h1{font-size:2.2rem;}
+h2{font-size:1.6rem;}
+h3{font-size:1.25rem;}
+
+a{color:#b33682;text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+blockquote{
+  font-style:italic;
+  color:#555;
+  margin:1.5rem 2rem;
 }
 
-/* If there are specific container elements around your h1 or h3, you might need to adjust their paddings as well */
-.container, .publications-container {
-    padding-left: 20px; /* Adjust this value so it aligns with the text of your h3 elements */
+/*  ───────────────────────────────────────────────
+    LAYOUT CONTAINERS
+    ─────────────────────────────────────────────── */
+.container.content,
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem 1rem 2rem 1rem;
 }
 
-div.container, div.publications-container {
-  max-width: 1100px; /* Adjust this value as needed */
-  margin: 0 auto; /* This centers the container */
-  padding: 20px 20px 0; /* This adds padding inside the container */
-  padding-bottom: 40px; /* Adjust this value as needed */
+/* masthead text (logo) */
+.masthead-title{
+  font-family:"Fira Sans",sans-serif;
+  font-size:1.8rem;
+  font-weight:700;
 }
 
-
-.yeartable {
-    border-collapse: collapse;
-    width: 100%; /* Adjust the width as necessary */
-    margin-left: 20px; /* To offset the negative margin of h3 */
+/* sidebar navigation */
+.sidebar-nav-item{
+  font-family:"Fira Sans",sans-serif;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
 }
 
-.yeartable .bibitemanchor {
-    text-align: right;
-    vertical-align: top;
-    padding-right: 10px; /* Space between anchor and title */
+/* lists */
+ul,ol{margin-left:1.25rem;}
+ul li, ol li{margin-bottom:0.5rem;}
+
+/*  ───────────────────────────────────────────────
+    FOOTER
+    ─────────────────────────────────────────────── */
+footer{
+  font-size:0.9rem;
+  color:#888;
+  margin-top:4rem;
 }
 
-.yeartable .bibitemtext {
-    vertical-align: top;
+/*  ───────────────────────────────────────────────
+    CUSTOM COMPONENTS  (kept from original)
+    ─────────────────────────────────────────────── */
+
+/* publication list tables */
+.yeartable{border-collapse:collapse;width:100%;margin-left:20px;}
+.yeartable .bibitemanchor{text-align:right;vertical-align:top;padding-right:10px;}
+.yeartable .bibitemtext{vertical-align:top;}
+.title a{font-weight:bold;text-decoration:none;}
+.venueline .journal{font-style:italic;}
+
+/* button */
+.button{
+  display:inline-block;background:#f2f2f2;border:1px solid #ccc;
+  padding:5px;border-radius:5px;cursor:pointer;margin-top:5px;
 }
 
-.title a {
-    font-weight: bold; /* Highlight the title */
-    text-decoration: none; /* Optional: removes underline from links */
+/* course card */
+.course{
+  margin-bottom:20px;padding:20px;border:1px solid #e0e0e0;border-radius:5px;
+  max-width:600px;
+}
+.course h2{margin-top:0;}
+.course-link{
+  background:#f4f4f4;color:#333;padding:10px 15px;
+  border:1px solid #ddd;border-radius:5px;display:inline-block;
+}
+.course-link:hover{background:#e9e9e9;}
+
+/* code blocks inside cards */
+.card.card-body{
+  white-space:pre;font-family:'Menlo',monospace;overflow-x:auto;
 }
 
-.venueline .journal {
-    font-style: italic; /* Style for journal or venue */
+/* publication year grouping */
+.year-container{display:flex;align-items:flex-start;padding-bottom:30px;}
+.year-container h2{margin-right:20px;margin-bottom:0;}
+.year-container ul{padding:0;margin:-0.5em;margin-top:3em;}
+
+/* top navigation bar (if still used) */
+ul.topnav{
+  list-style:none;margin:0 auto;padding:0;overflow:hidden;background:#333;
+  display:flex;justify-content:space-between;max-width:1100px;
+}
+ul.topnav li a{
+  display:block;color:#fff;text-align:center;padding:14px 16px;text-decoration:none;
+}
+ul.topnav li:first-child a{text-align:left;}
+ul.topnav li:not(:first-child){margin-left:auto;}
+@media screen and (max-width:1100px){
+  ul.topnav{flex-direction:column;}
+  ul.topnav li{width:100%;}
+  ul.topnav li:not(:first-child){margin-left:0;}
 }
 
-.button {
-    display: inline-block;
-    background-color: #f2f2f2; /* Button background color */
-    border: 1px solid #ccc; /* Button border */
-    padding: 5px; /* Button padding */
-    text-decoration: none; /* Removes underline from links */
-    cursor: pointer; /* Cursor style */
-    margin-top: 5px; /* Space above the button */
-    border-radius: 5px; /* Adjust as needed for desired roundness */
+/* current-research card grid */
+.current-research-content{
+  display:flex;flex-wrap:wrap;gap:20px;justify-content:center;align-items:flex-start;
 }
-
-.bibhidden {
-    display: none; /* Initially hide the bibtex content */
+.card{
+  background:#fff;border:1px solid #ddd;box-shadow:0 2px 5px rgba(0,0,0,.1);
+  border-radius:8px;padding:20px;width:300px;margin-bottom:20px;
 }
+.card h3{margin-top:0;color:#333;}
+.card p{color:#666;}
 
-.publications-container {
-    padding-left: 20px; /* Adjust as needed for left padding */
-    padding-right: 20px; /* Adjust as needed for right padding */
-    margin: auto; /* This centers the container in the page */
-    max-width: 1200px; /* Or your preferred maximum width */
-}
-
-.year-container {
-  display: flex;
-  align-items: flex-start; /* Keeps items aligned at the top; adjust if necessary */
-  padding-bottom: 30px;
-}
-
-.year-container h2 {
-  margin-right: 20px; /* Increase space between the year and the list */
-  margin-bottom: 0; /* Removes the default bottom margin from h2 */
-}
-
-.year-container ul {
-    padding: 0px;
-    padding-left: -5px;
-  margin: -0.5em;
-  margin-top: 3em; /* Adjusts the vertical positioning */
-}
-
-
-
-/* ul.topnav {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-} */
-
-/* Update to your topnav to match the container width and use Flexbox */
-ul.topnav {
-  list-style-type: none;
-  margin: 0 auto; /* Center the nav */
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  display: flex;
-  justify-content: space-between; /* Adjust space as needed */
-  max-width: 1100px; /* Match the container's width */
-}
-
-ul.topnav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Special styling for "Hans Halvorson" if it's the first item */
-ul.topnav li:first-child a {
-  text-align: left;
-}
-
-/* Or if using a specific class for "Hans Halvorson" */
-ul.topnav li.hans a {
-  text-align: left;
-}
-
-/* CSS for right-aligned items */
-ul.topnav li:not(:first-child) {
-  margin-left: auto;
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 1100px) {
-  ul.topnav {
-    flex-direction: column;
-  }
-
-  ul.topnav li {
-    width: 100%; /* Ensure list items fill the container */
-  }
-
-  ul.topnav li:not(:first-child) {
-    margin-left: 0; /* Reset margin on smaller screens */
-  }
-}
-
-.course {
-            margin-bottom: 20px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-	    max-width: 600px;
-        }
-
-.course h2 {
-            margin-top: 0;
-        }
-
-.course-link {
-           background-color: #f4f4f4;
-            color: #333;
-            text-decoration: none;
-            padding: 10px 15px;
-            display: inline-block;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-        }
-
-.course-link:hover {
-            background-color: #e9e9e9;
-        }
-
-.card.card-body {
-    white-space: pre; /* or white-space: pre; depending on your need */
-    font-family: 'Menlo', monospace;
-    overflow-x: auto; /* Adds horizontal scrolling if the code overflows */
-}
-
-.no-style {
-  list-style-type: none;
-  padding-left: 0;
-  margin-left: 0;
-}
-
-ul.topnav li a {
-  font-size: 20px; /* Example size, adjust as needed */
-}
-
-body ul {
-  padding-left: 20px; /* Decrease this value to reduce indentation */
-  margin-left: 0; /* Adjust this value as needed */
-}
-
-/* Target ul or ol that directly follow h2 elements */
-h2 + ul, h2 + ol {
-  padding-left: 40px; /* Adjust this value to increase indentation */
-}
-
-h3 {
-  font-size: 1.2em; /* Adjust this value as needed */
-}
-
-.current-research-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  align-items: flex-start; /* Align items at the start, allowing different heights */
-}
-
-
-.card {
-  background: #FFFFFF; /* Card background */
-  border: 1px solid #ddd; /* A light border */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
-  border-radius: 8px; /* Rounded corners */
-  padding: 20px;
-  width: 300px; /* Fixed width, but you can make it responsive */
-  margin-bottom: 20px; /* Spacing between cards vertically */
-}
-
-.card h3 {
-  margin-top: 0;
-  color: #333; /* Title color */
-}
-
-.card p {
-  color: #666; /* Text color */
+/*  ───────────────────────────────────────────────
+    DARK-MODE  (optional)
+    ─────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark){
+  body{background:#121212;color:#e0e0e0;}
+  a{color:#ff79c6;}
+  .container.content,.page{background:none;}
+  .course{background:#1e1e1e;border-color:#333;}
+  footer{color:#888;}
 }
