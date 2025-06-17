@@ -1,4 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE BlockArguments #-}
 
 module Main where
 
@@ -19,6 +20,13 @@ import Text.Pandoc (pandocExtensions)
 import Text.Pandoc.SideNote (usingSideNotes)
 import PubList (parseBibTeXFile, transformEntry, generateHtml)
 
+import           Data.Aeson           (FromJSON(..), withObject, (.:), (.:?), eitherDecode)
+import qualified Data.ByteString.Lazy as BL
+import           Data.Ord             (Down (..))
+import           Data.Function        (on)
+import           Data.List            (groupBy, sortOn)
+import           Control.Applicative  ((<|>))
+
 --------------------------------------------------------------------------------
 
 config :: Configuration
@@ -28,7 +36,67 @@ config = defaultConfiguration
 
 myWriter :: WriterOptions
 myWriter = defaultHakyllWriterOptions
-    
+
+------------------------------------------------------------------------------
+-- Course data  +  FromJSON instance
+------------------------------------------------------------------------------
+data Course = Course
+  { title    :: String
+  , code     :: String
+  , semester :: String
+  , year     :: Int
+  , link     :: Maybe String
+  } deriving Show
+
+instance FromJSON Course where
+  parseJSON = withObject "Course" $ \o ->
+      Course <$> o .:  "title"
+             <*> o .:  "code"
+             <*> o .:  "semester"
+             <*> o .:  "year"
+             <*> o .:? "link"
+
+------------------------------------------------------------------------------
+-- Load and decode JSON once at compile time
+------------------------------------------------------------------------------
+loadAllCourses :: Compiler [Course]
+loadAllCourses = unsafeCompiler $ do
+  bs <- BL.readFile "data/courses.json"
+  either (fail . ("JSON decode error: " <>)) pure (eitherDecode bs)
+
+------------------------------------------------------------------------------
+-- Context for a single course
+------------------------------------------------------------------------------
+courseCtx :: Context Course
+courseCtx =
+     field "title"    (return . title    . itemBody)
+  <> field "code"     (return . code     . itemBody)
+  <> field "semester" (return . semester . itemBody)
+  <> field "year"     (return . show . year . itemBody)
+  <> field "link"     (return . maybe "#" id . link . itemBody)
+  <> field "hasLink"  (return . maybe "false" (const "true") . link . itemBody)
+
+------------------------------------------------------------------------------
+-- Rule: build /courses/index.html
+------------------------------------------------------------------------------
+buildCoursesPage :: Rules ()
+buildCoursesPage =
+  create ["courses/index.html"] $ do
+    route idRoute
+    compile $ do
+      cs <- loadAllCourses            -- [Course]
+      let sorted = sortOn (Down . year) cs
+      itemList <- mapM makeItem sorted
+      let pageCtx =
+            listField "courses" courseCtx (return itemList)
+            <> listField "list_pages" defaultContext (return [])
+            <> constField "title" "Courses Taught"
+            <> siteCtx     
+      makeItem ("" :: String)
+        >>= loadAndApplyTemplate "templates/courses.html" pageCtx
+        >>= loadAndApplyTemplate "templates/default.html" pageCtx
+        >>= relativizeUrls
+
 main :: IO ()
 main = hakyllWith config $ do
     match ("images/*" .||. "js/*") $ do
@@ -63,15 +131,15 @@ main = hakyllWith config $ do
           >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> indexCtx)
           >>= relativizeUrls
 
-    match "courses/index.md" $ do
-      route $ constRoute "courses/index.html"
-      compile $ do
-        let indexCtx = constField "title" "test" `mappend` siteCtx
-        pandocCompiler
-          >>= saveSnapshot "page-content"
-          >>= loadAndApplyTemplate "templates/page.html" siteCtx
-          >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> indexCtx)
-          >>= relativizeUrls
+    -- match "courses/index.md" $ do
+    --   route $ constRoute "courses/index.html"
+    --   compile $ do
+    --     let indexCtx = constField "title" "test" `mappend` siteCtx
+    --     pandocCompiler
+    --       >>= saveSnapshot "page-content"
+    --       >>= loadAndApplyTemplate "templates/page.html" siteCtx
+    --       >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> indexCtx)
+    --       >>= relativizeUrls
 
     -- Rule for course-specific pages in subfolders
     match "courses/*/**.md" $ do
@@ -364,6 +432,8 @@ main = hakyllWith config $ do
         let feedCtx = postCtx `mappend` bodyField "description"
         posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots ("posts/*" .&&. hasNoVersion) "content"
         renderAtom feedConfig feedCtx posts
+
+    buildCoursesPage
 
 -----
 
