@@ -34,8 +34,6 @@ h1{font-size:2.2rem;}
 h2{font-size:1.6rem;}
 h3{font-size:1.25rem;}
 
-a{color:#b33682;text-decoration:none;}
-a:hover{text-decoration:underline;}
 
 blockquote{
   font-style:italic;
@@ -196,7 +194,15 @@ h2.year-label{
     the selector more general: .year-label { … } will match either element.
 */
 
-/* ───── minimalist link colour override ───── */
-a       { color: #555; }           /* normal state: mid-grey           */
-a:visited{ color: #666; }          /* visited links (optional)         */
-a:hover { color: #000; text-decoration: underline; } /* on hover      */
+.publist a {
+  color: #666;  /* or your chosen subtle but visible color */
+  text-decoration: none;
+}
+
+.publist a:hover {
+  color: #1a1a1a;  /* darken slightly on hover */
+  text-decoration: underline;
+}
+
+
+
