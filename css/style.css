@@ -114,10 +114,6 @@ footer{
   white-space:pre;font-family:'Menlo',monospace;overflow-x:auto;
 }
 
-/* publication year grouping */
-.year-container{display:flex;align-items:flex-start;padding-bottom:30px;}
-.year-container h2{margin-right:20px;margin-bottom:0;}
-.year-container ul{padding:0;margin:-0.5em;margin-top:3em;}
 
 /* top navigation bar (if still used) */
 ul.topnav{
@@ -156,3 +152,46 @@ ul.topnav li:not(:first-child){margin-left:auto;}
   .course{background:#1e1e1e;border-color:#333;}
   footer{color:#888;}
 }
+
+/*  ───────────────────────────────────────────────
+    PUBLICATIONS – YEAR GUTTER LAYOUT
+    ─────────────────────────────────────────────── */
+
+/* ─────────  PUBLICATIONS LAYOUT  ───────── */
+
+/* ─────────  PUBLICATION YEAR GRID  ───────── */
+
+/*  wrapper for one year-block  */
+.year-container{
+  position:relative;          /* lets us absolutely-place the year */
+  padding-left:4rem;          /* = width of year + a comfy gap     */
+  margin-bottom:1.4rem;       /* space between year blocks         */
+}
+
+/*  the year itself – now absolutely positioned  */
+h2.year-label{
+  position:absolute;
+  left:0;                     /* flush with left edge of the column */
+  top:0.15rem;                /* nudges baseline into line with bullet */
+  width:4rem;                 /* just wide enough for “2025”          */
+  margin:0;
+  font:400 1rem/1.4 "Fira Sans",sans-serif;
+  color:#999;
+  text-align:left;            /* NO right-align any more             */
+}
+
+/*  the publication list  */
+.publist{
+  margin:0;                   /* already indented by padding-left on
+                                 the parent (.year-container)        */
+  padding-left:0;
+  list-style-position:outside;
+}
+.publist li{margin-bottom:0.45rem;}
+
+
+
+
+/*  If you generated <h2 class="year-label"> instead of a <div>, you can make
+    the selector more general: .year-label { … } will match either element.
+*/

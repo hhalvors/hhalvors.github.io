@@ -36,30 +36,19 @@ transformEntry (Cons entryType identifier fields) =
     Cons entryType identifier (map (\(k, v) -> (k, removeBrackets v)) fields)
 
 generateHtml :: [T] -> String
-generateHtml entries = R.renderHtml $ H.docTypeHtml $ do
-    H.head $ do
-        H.title "BibTeX Entries"
-        H.meta H.! A.name "viewport" H.! A.content "width=device-width, initial-scale=1.0"
-        H.link H.! A.rel "stylesheet" H.! A.href "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        H.link H.! A.rel "stylesheet" H.! A.href "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        H.link H.! A.href "https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" H.! A.rel "stylesheet"
-        H.link H.! A.rel "stylesheet" H.! A.type_ "text/css" H.! A.href "css/style.css"
-        H.style $ "body { margin: 20px; }"
-    H.body $ do
-        H.h1 "Publications"
-        mapM_ renderYearGroup sortedGroupedEntries
-        H.script H.! A.src "https://code.jquery.com/jquery-3.5.1.slim.min.js" $ ""
-        H.script H.! A.src "https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" $ ""
-        H.script H.! A.src "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" $ ""
+generateHtml entries = R.renderHtml $ do
+    H.h1 "Publications"
+    mapM_ renderYearGroup sortedGroupedEntries
   where
-    sortedEntries = sortOn (Down . entryYear) entries
-    groupedEntries = groupBy ((==) `on` entryYear) sortedEntries
+    sortedEntries        = sortOn (Down . entryYear) entries
+    groupedEntries       = groupBy ((==) `on` entryYear) sortedEntries
     sortedGroupedEntries = map (\es -> (entryYear (head es), es)) groupedEntries
 
-    renderYearGroup (year, entries) = do
-        H.h2 (H.toHtml $ show year)
-        H.ul $ mapM_ renderEntry entries
-    
+    renderYearGroup (year, es) = do
+      H.div H.! A.class_ "year-container" $ do
+        H.h2 H.! A.class_ "year-label" $ H.toHtml (show year)
+        H.ul H.! A.class_ "publist"     $ mapM_ renderEntry es    
+
 -- Function to convert a BibTeX entry to an HTML string using blaze-html, omitting certain keys
 entryToHTML :: T -> H.Html
 entryToHTML (Cons entryType entryKey fields) = do
