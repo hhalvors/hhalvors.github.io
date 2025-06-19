@@ -79,23 +79,40 @@ courseCtx =
 ------------------------------------------------------------------------------
 -- Rule: build /courses/index.html
 ------------------------------------------------------------------------------
+
+yearCtx :: Context ([Course], Int)   -- ([coursesThisYear], year)
+yearCtx =
+       field "year"     (return . show . snd . itemBody)
+    <> listFieldWith "courses" courseCtx (\item -> mapM makeItem (fst $ itemBody item))
+
 buildCoursesPage :: Rules ()
 buildCoursesPage =
   create ["courses/index.html"] $ do
     route idRoute
     compile $ do
-      cs <- loadAllCourses            -- [Course]
+      -- load & sort newest-first
+      cs <- loadAllCourses
       let sorted = sortOn (Down . year) cs
-      itemList <- mapM makeItem sorted
+
+          -- group into [(year,[Course])]
+          groups :: [(Int,[Course])]
+          groups = map (\ys -> (year $ head ys, ys))
+                 . groupBy ((==) `on` year) $ sorted
+
+      -- turn each year-group into an Item ([Course],Int)
+      yearItems <- mapM (makeItem . (\(y,xs)->(xs,y))) groups
+
       let pageCtx =
-            listField "courses" courseCtx (return itemList)
-            <> listField "list_pages" defaultContext (return [])
+            listField "years" yearCtx (return yearItems)
+            <> baseSidebarCtx                 -- supplies list_pages etc.
             <> constField "title" "Courses Taught"
-            <> siteCtx     
+            <> siteCtx
+      
       makeItem ("" :: String)
-        >>= loadAndApplyTemplate "templates/courses.html" pageCtx
-        >>= loadAndApplyTemplate "templates/default.html" pageCtx
+        >>= loadAndApplyTemplate "templates/courses.html"  pageCtx
+        >>= loadAndApplyTemplate "templates/default.html"  pageCtx
         >>= relativizeUrls
+
 
 main :: IO ()
 main = hakyllWith config $ do
