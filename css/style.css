@@ -204,5 +204,22 @@ h2.year-label{
   text-decoration: underline;
 }
 
+.icon-links {
+  margin-top: 1em;
+  margin-bottom: 1.5em; /* add moderate space below the icon list */
+}
+
+.icon-links div {
+  display: flex;
+  align-items: center;
+  gap: 0.5em; /* spacing between icon and text */
+  margin-bottom: 0.2em; /* tighter vertical spacing between rows */
+}
+
+.icon-links .icon {
+  width: 1.5em;
+  text-align: center;
+  color: #333;
+}
 
 
