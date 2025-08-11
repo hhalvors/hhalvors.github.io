@@ -1,0 +1,136 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{faraday1932}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=09ca20fddac431fc5e6dae0595c682f8}{%
+           family={Bohr},
+           familyi={B\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{bibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorbibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authornamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \field{extraname}{1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Chemical Society}
+      \field{title}{Chemistry and the quantum theory of atomic constitution (May 8th, 1930)}
+      \field{year}{1932}
+      \field{pages}{349\bibrangedash 384}
+      \range{pages}{36}
+    \endentry
+    \entry{qphil1958}{incollection}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=09ca20fddac431fc5e6dae0595c682f8}{%
+           family={Bohr},
+           familyi={B\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=25162d91aee8a96fe2a7afbcd138564f}{%
+           family={Klibansky},
+           familyi={K\bibinitperiod},
+           given={Raymond},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {La Nuova Italia Editrice Firenze}%
+      }
+      \strng{namehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{bibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorbibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authornamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{editorbibnamehash}{25162d91aee8a96fe2a7afbcd138564f}
+      \strng{editornamehash}{25162d91aee8a96fe2a7afbcd138564f}
+      \strng{editorfullhash}{25162d91aee8a96fe2a7afbcd138564f}
+      \strng{editorfullhashraw}{25162d91aee8a96fe2a7afbcd138564f}
+      \field{extraname}{2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Philosophy in the Mid-Century: A Survey}
+      \field{title}{Quantum physics and philosophy: causality and complementarity}
+      \field{year}{1958}
+      \field{pages}{308\bibrangedash 314}
+      \range{pages}{7}
+    \endentry
+    \entry{russell1913}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c58c42b6f7e7e1f78dbbdc65ed8e5384}{%
+           family={Russell},
+           familyi={R\bibinitperiod},
+           given={Bertrand},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c58c42b6f7e7e1f78dbbdc65ed8e5384}
+      \strng{fullhash}{c58c42b6f7e7e1f78dbbdc65ed8e5384}
+      \strng{fullhashraw}{c58c42b6f7e7e1f78dbbdc65ed8e5384}
+      \strng{bibnamehash}{c58c42b6f7e7e1f78dbbdc65ed8e5384}
+      \strng{authorbibnamehash}{c58c42b6f7e7e1f78dbbdc65ed8e5384}
+      \strng{authornamehash}{c58c42b6f7e7e1f78dbbdc65ed8e5384}
+      \strng{authorfullhash}{c58c42b6f7e7e1f78dbbdc65ed8e5384}
+      \strng{authorfullhashraw}{c58c42b6f7e7e1f78dbbdc65ed8e5384}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Aristotelian Society}
+      \field{number}{1}
+      \field{title}{On the notion of cause}
+      \field{volume}{13}
+      \field{year}{1913}
+      \field{pages}{1\bibrangedash 26}
+      \range{pages}{26}
+      \verb{urlraw}
+      \verb https://academic.oup.com/aristotelian/article/13/1/1/1772124
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/aristotelian/article/13/1/1/1772124
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
