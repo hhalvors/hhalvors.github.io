@@ -19,7 +19,44 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global/global}
-    \entry{faraday1932}{article}{}{}
+    \entry{bensch}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5d26dcb86dd528931f33d7c89df4003c}{%
+           family={Ben-Menahem},
+           familyi={B\bibinithyphendelim M\bibinitperiod},
+           given={Yemina},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{5d26dcb86dd528931f33d7c89df4003c}
+      \strng{fullhash}{5d26dcb86dd528931f33d7c89df4003c}
+      \strng{fullhashraw}{5d26dcb86dd528931f33d7c89df4003c}
+      \strng{bibnamehash}{5d26dcb86dd528931f33d7c89df4003c}
+      \strng{authorbibnamehash}{5d26dcb86dd528931f33d7c89df4003c}
+      \strng{authornamehash}{5d26dcb86dd528931f33d7c89df4003c}
+      \strng{authorfullhash}{5d26dcb86dd528931f33d7c89df4003c}
+      \strng{authorfullhashraw}{5d26dcb86dd528931f33d7c89df4003c}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Studies in History and Philosophy of Science Part A}
+      \field{number}{3}
+      \field{title}{Struggling with causality: Schrödinger's case}
+      \field{volume}{20}
+      \field{year}{1989}
+      \field{pages}{307\bibrangedash 334}
+      \range{pages}{28}
+      \verb{doi}
+      \verb 10.1016/0039-3681(89)90010-1
+      \endverb
+    \endentry
+    \entry{bohr1921}{unpublished}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=09ca20fddac431fc5e6dae0595c682f8}{%
            family={Bohr},
@@ -43,11 +80,231 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{note}{In Collected Works, Vol 3}
+      \field{title}{Application of the quantum theory to atomic problems in general}
+      \field{year}{1921}
+    \endentry
+    \entry{bohr1924}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=09ca20fddac431fc5e6dae0595c682f8}{%
+           family={Bohr},
+           familyi={B\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {The University Press}%
+      }
+      \strng{namehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{bibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorbibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authornamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \field{extraname}{2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{1}
+      \field{title}{On the Application of the Quantum Theory to Atomic Structure: Part I. The Fundamental Postulates}
+      \field{year}{1924}
+    \endentry
+    \entry{bohr1927}{unpublisher}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=09ca20fddac431fc5e6dae0595c682f8}{%
+           family={Bohr},
+           familyi={B\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{bibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorbibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authornamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \field{extraname}{3}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Como lecture}
+      \field{title}{The quantum postulate and the recent development of atomic theory}
+      \field{year}{1927}
+    \endentry
+    \entry{continuity1931}{unpublished}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=09ca20fddac431fc5e6dae0595c682f8}{%
+           family={Bohr},
+           familyi={B\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{bibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorbibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authornamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \field{extraname}{4}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Manuscript: H.H. Wills Memorial Lecture, given at the University of Bristol on 5 October 1931}
+      \field{title}{Space-time-continuity and atomic physics}
+      \field{year}{1931}
+    \endentry
+    \entry{faraday1932}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=09ca20fddac431fc5e6dae0595c682f8}{%
+           family={Bohr},
+           familyi={B\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{bibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorbibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authornamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \field{extraname}{5}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Chemical Society}
       \field{title}{Chemistry and the quantum theory of atomic constitution (May 8th, 1930)}
       \field{year}{1932}
       \field{pages}{349\bibrangedash 384}
       \range{pages}{36}
+    \endentry
+    \entry{conservation1936}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=09ca20fddac431fc5e6dae0595c682f8}{%
+           family={Bohr},
+           familyi={B\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group UK London}%
+      }
+      \strng{namehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{bibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorbibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authornamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \field{extraname}{6}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{number}{3479}
+      \field{title}{Conservation laws in quantum theory}
+      \field{volume}{138}
+      \field{year}{1936}
+      \field{pages}{25\bibrangedash 26}
+      \range{pages}{2}
+    \endentry
+    \entry{natural1939}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=09ca20fddac431fc5e6dae0595c682f8}{%
+           family={Bohr},
+           familyi={B\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{bibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorbibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authornamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \field{extraname}{7}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{number}{18}
+      \field{title}{Natural philosophy and human cultures}
+      \field{volume}{143}
+      \field{year}{1939}
+      \field{pages}{268\bibrangedash 272}
+      \range{pages}{5}
+    \endentry
+    \entry{causal-problem}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=09ca20fddac431fc5e6dae0595c682f8}{%
+           family={Bohr},
+           familyi={B\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Paris}%
+      }
+      \list{organization}{1}{%
+        {International Institute of Intellectual Co-operation}%
+      }
+      \strng{namehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{fullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{bibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorbibnamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authornamehash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhash}{09ca20fddac431fc5e6dae0595c682f8}
+      \strng{authorfullhashraw}{09ca20fddac431fc5e6dae0595c682f8}
+      \field{extraname}{8}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{New Theories in Physics}
+      \field{title}{The causality problem in atomic physics}
+      \field{year}{1939}
+      \field{pages}{11\bibrangedash 30}
+      \range{pages}{20}
     \endentry
     \entry{qphil1958}{incollection}{}{}
       \name{author}{1}{}{%
@@ -80,7 +337,7 @@
       \strng{editornamehash}{25162d91aee8a96fe2a7afbcd138564f}
       \strng{editorfullhash}{25162d91aee8a96fe2a7afbcd138564f}
       \strng{editorfullhashraw}{25162d91aee8a96fe2a7afbcd138564f}
-      \field{extraname}{2}
+      \field{extraname}{9}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{extradatescope}{labelyear}
@@ -92,6 +349,71 @@
       \field{year}{1958}
       \field{pages}{308\bibrangedash 314}
       \range{pages}{7}
+    \endentry
+    \entry{faye1979}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c666b6e5d3d23e67e687dc65b98c06ef}{%
+           family={Faye},
+           familyi={F\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Brill}%
+      }
+      \strng{namehash}{c666b6e5d3d23e67e687dc65b98c06ef}
+      \strng{fullhash}{c666b6e5d3d23e67e687dc65b98c06ef}
+      \strng{fullhashraw}{c666b6e5d3d23e67e687dc65b98c06ef}
+      \strng{bibnamehash}{c666b6e5d3d23e67e687dc65b98c06ef}
+      \strng{authorbibnamehash}{c666b6e5d3d23e67e687dc65b98c06ef}
+      \strng{authornamehash}{c666b6e5d3d23e67e687dc65b98c06ef}
+      \strng{authorfullhash}{c666b6e5d3d23e67e687dc65b98c06ef}
+      \strng{authorfullhashraw}{c666b6e5d3d23e67e687dc65b98c06ef}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Danish Yearbook of Philosophy}
+      \field{number}{1}
+      \field{title}{The influence of Harald H{ø}ffding’s philosophy on Niels Bohr’s interpretation of quantum mechanics}
+      \field{volume}{16}
+      \field{year}{1979}
+      \true{nocite}
+      \field{pages}{37\bibrangedash 72}
+      \range{pages}{36}
+    \endentry
+    \entry{hoff}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=850a74cf37a6ae630be1d3fb370708f1}{%
+           family={Høffding},
+           familyi={H\bibinitperiod},
+           given={Harald},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {P.G. Philipsens Forlag}%
+      }
+      \strng{namehash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{fullhash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{fullhashraw}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{bibnamehash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{authorbibnamehash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{authornamehash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{authorfullhash}{850a74cf37a6ae630be1d3fb370708f1}
+      \strng{authorfullhashraw}{850a74cf37a6ae630be1d3fb370708f1}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{title}{Psykologi i Omrids}
+      \field{year}{1892}
     \endentry
     \entry{russell1913}{article}{}{}
       \name{author}{1}{}{%

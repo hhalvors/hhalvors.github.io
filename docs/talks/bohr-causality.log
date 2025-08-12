@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.16)  11 AUG 2025 15:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.16)  12 AUG 2025 17:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -848,166 +848,6 @@ Package: inputenc 2024/02/08 v1.3d Input encoding file
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
-(/usr/local/texlive/2024/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
-Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
-
-(/usr/local/texlive/2024/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
-(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarymatrix.code.tex
-File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibraryquotes.code.tex
-File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
-meta.code.tex
-File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen310
-\pgfarrowlength=\dimen311
-\pgfarrowwidth=\dimen312
-\pgfarrowlinewidth=\dimen313
-)))
-(/usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome5/fontawesome5.sty
-(/usr/local/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2024-11-02 L3 programming layer (loader) 
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count357
-\l__pdf_internal_box=\box82
-))
-Package: fontawesome5 2022/05/02 v5.15.4 Font Awesome 5
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2024-08-16 L3 Experimental document command parser
-)
-(/usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome5/fontawesome5-generic
--helper.sty
-Package: fontawesome5-generic-helper 2022/05/02 v5.15.4 non-uTeX helper for fon
-tawesome5
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/fontawesome5/fontawesome5-mapping
-.def)))
-(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarydecorations.pathreplacing.code.tex
-(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarydecorations.code.tex
-(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
-s.code.tex
-\pgfdecoratedcompleteddistance=\dimen314
-\pgfdecoratedremainingdistance=\dimen315
-\pgfdecoratedinputsegmentcompleteddistance=\dimen316
-\pgfdecoratedinputsegmentremainingdistance=\dimen317
-\pgf@decorate@distancetomove=\dimen318
-\pgf@decorate@repeatstate=\count358
-\pgfdecorationsegmentamplitude=\dimen319
-\pgfdecorationsegmentlength=\dimen320
-)
-\tikz@lib@dec@box=\box83
-)
-(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
-brarydecorations.pathreplacing.code.tex))
-(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarypositioning.code.tex
-File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/usr/local/texlive/2024/texmf-dist/tex/latex/minted/minted.sty
-Package: minted 2024/11/17 v3.4.0 Yet another Pygments shim for LaTeX
-
-(/usr/local/texlive/2024/texmf-dist/tex/generic/catchfile/catchfile.sty
-Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
-
-(/usr/local/texlive/2024/texmf-dist/tex/generic/etexcmds/etexcmds.sty
-Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-))
-(/usr/local/texlive/2024/texmf-dist/tex/latex/fvextra/fvextra.sty
-Package: fvextra 2024/11/17 v1.10.0 fvextra - extensions and patches for fancyv
-rb
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
-\FV@CodeLineNo=\count359
-\FV@InFile=\read3
-\FV@TabBox=\box84
-\c@FancyVerbLine=\count360
-\FV@StepNumber=\count361
-\FV@OutFile=\write5
-)
-(/usr/local/texlive/2024/texmf-dist/tex/latex/upquote/upquote.sty
-Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
-tim
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/base/textcomp.sty
-Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
-))
-(/usr/local/texlive/2024/texmf-dist/tex/latex/lineno/lineno.sty
-Package: lineno 2023/05/20 line numbers on paragraphs v5.3
-\linenopenalty=\count362
-\output=\toks52
-\linenoprevgraf=\count363
-\linenumbersep=\dimen321
-\linenumberwidth=\dimen322
-\c@linenumber=\count364
-\c@pagewiselinenumber=\count365
-\c@LN@truepage=\count366
-\c@internallinenumber=\count367
-\c@internallinenumbers=\count368
-\quotelinenumbersep=\dimen323
-\bframerule=\dimen324
-\bframesep=\dimen325
-\bframebox=\box85
-\linenoamsmath@ams@eqpen=\count369
-LaTeX Info: Redefining \\ on input line 3180.
-)
-\c@FancyVerbWriteLine=\count370
-\c@FancyVerbBufferLine=\count371
-\c@FV@TrueTabGroupLevel=\count372
-\c@FV@TrueTabCounter=\count373
-\FV@TabBox@Group=\box86
-\FV@TmpLength=\skip79
-\c@FV@HighlightLinesStart=\count374
-\c@FV@HighlightLinesStop=\count375
-\FV@LoopCount=\count376
-\FV@NCharsBox=\box87
-\FV@BreakIndent=\dimen326
-\FV@BreakIndentNChars=\count377
-\FV@BreakSymbolSepLeft=\dimen327
-\FV@BreakSymbolSepLeftNChars=\count378
-\FV@BreakSymbolSepRight=\dimen328
-\FV@BreakSymbolSepRightNChars=\count379
-\FV@BreakSymbolIndentLeft=\dimen329
-\FV@BreakSymbolIndentLeftNChars=\count380
-\FV@BreakSymbolIndentRight=\dimen330
-\FV@BreakSymbolIndentRightNChars=\count381
-\c@FancyVerbLineBreakLast=\count382
-\FV@LineBox=\box88
-\FV@LineIndentBox=\box89
-\c@FV@BreakBufferDepth=\count383
-\FV@LineWidth=\dimen331
-)
-(/usr/local/texlive/2024/texmf-dist/tex/latex/latex2pydata/latex2pydata.sty
-Package: latex2pydata 2024/11/17 v0.4.0 latex2pydata - write data to file in Py
-thon literal format
-)
-(/usr/local/texlive/2024/texmf-dist/tex/latex/tools/shellesc.sty
-Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
-Package shellesc Info: Restricted shell escape enabled on input line 77.
-)
-(/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count384
-\float@exts=\toks53
-\float@box=\box90
-\@float@everytoks=\toks54
-\@floatcapt=\box91
-)
-\c@minted@FancyVerbLineTemp=\count385
-\@float@every@listing=\toks55
-\c@listing=\count386
-)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/doi/doi.sty
 Package: doi 2018/09/09 handle doi numbers
 )
@@ -1016,7 +856,7 @@ Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count387
+\lrq@indent=\count357
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -1024,63 +864,63 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
-\c@tabx@nest=\count388
-\c@listtotal=\count389
-\c@listcount=\count390
-\c@liststart=\count391
-\c@liststop=\count392
-\c@citecount=\count393
-\c@citetotal=\count394
-\c@multicitecount=\count395
-\c@multicitetotal=\count396
-\c@instcount=\count397
-\c@maxnames=\count398
-\c@minnames=\count399
-\c@maxitems=\count400
-\c@minitems=\count401
-\c@citecounter=\count402
-\c@maxcitecounter=\count403
-\c@savedcitecounter=\count404
-\c@uniquelist=\count405
-\c@uniquename=\count406
-\c@refsection=\count407
-\c@refsegment=\count408
-\c@maxextratitle=\count409
-\c@maxextratitleyear=\count410
-\c@maxextraname=\count411
-\c@maxextradate=\count412
-\c@maxextraalpha=\count413
-\c@abbrvpenalty=\count414
-\c@highnamepenalty=\count415
-\c@lownamepenalty=\count416
-\c@maxparens=\count417
-\c@parenlevel=\count418
-\blx@tempcnta=\count419
-\blx@tempcntb=\count420
-\blx@tempcntc=\count421
-\c@blx@maxsection=\count422
-\blx@maxsegment@0=\count423
-\blx@notetype=\count424
-\blx@parenlevel@text=\count425
-\blx@parenlevel@foot=\count426
-\blx@sectionciteorder@0=\count427
-\blx@sectionciteorderinternal@0=\count428
-\blx@entrysetcounter=\count429
-\blx@biblioinstance=\count430
-\labelnumberwidth=\skip80
-\labelalphawidth=\skip81
-\biblabelsep=\skip82
-\bibitemsep=\skip83
-\bibnamesep=\skip84
-\bibinitsep=\skip85
-\bibparsep=\skip86
-\bibhang=\skip87
-\blx@bcfin=\read4
-\blx@bcfout=\write6
+\c@tabx@nest=\count358
+\c@listtotal=\count359
+\c@listcount=\count360
+\c@liststart=\count361
+\c@liststop=\count362
+\c@citecount=\count363
+\c@citetotal=\count364
+\c@multicitecount=\count365
+\c@multicitetotal=\count366
+\c@instcount=\count367
+\c@maxnames=\count368
+\c@minnames=\count369
+\c@maxitems=\count370
+\c@minitems=\count371
+\c@citecounter=\count372
+\c@maxcitecounter=\count373
+\c@savedcitecounter=\count374
+\c@uniquelist=\count375
+\c@uniquename=\count376
+\c@refsection=\count377
+\c@refsegment=\count378
+\c@maxextratitle=\count379
+\c@maxextratitleyear=\count380
+\c@maxextraname=\count381
+\c@maxextradate=\count382
+\c@maxextraalpha=\count383
+\c@abbrvpenalty=\count384
+\c@highnamepenalty=\count385
+\c@lownamepenalty=\count386
+\c@maxparens=\count387
+\c@parenlevel=\count388
+\blx@tempcnta=\count389
+\blx@tempcntb=\count390
+\blx@tempcntc=\count391
+\c@blx@maxsection=\count392
+\blx@maxsegment@0=\count393
+\blx@notetype=\count394
+\blx@parenlevel@text=\count395
+\blx@parenlevel@foot=\count396
+\blx@sectionciteorder@0=\count397
+\blx@sectionciteorderinternal@0=\count398
+\blx@entrysetcounter=\count399
+\blx@biblioinstance=\count400
+\labelnumberwidth=\skip79
+\labelalphawidth=\skip80
+\biblabelsep=\skip81
+\bibitemsep=\skip82
+\bibnamesep=\skip83
+\bibinitsep=\skip84
+\bibparsep=\skip85
+\bibhang=\skip86
+\blx@bcfin=\read3
+\blx@bcfout=\write5
 \blx@langwohyphens=\language89
-\c@mincomprange=\count431
-\c@maxcomprange=\count432
-\c@mincompwidth=\count433
+\c@mincomprange=\count401
+\c@maxcomprange=\count402
+\c@mincompwidth=\count403
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1091,88 +931,88 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'authoryear.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count434
-\c@savedafterword=\count435
-\c@annotator=\count436
-\c@savedannotator=\count437
-\c@author=\count438
-\c@savedauthor=\count439
-\c@bookauthor=\count440
-\c@savedbookauthor=\count441
-\c@commentator=\count442
-\c@savedcommentator=\count443
-\c@editor=\count444
-\c@savededitor=\count445
-\c@editora=\count446
-\c@savededitora=\count447
-\c@editorb=\count448
-\c@savededitorb=\count449
-\c@editorc=\count450
-\c@savededitorc=\count451
-\c@foreword=\count452
-\c@savedforeword=\count453
-\c@holder=\count454
-\c@savedholder=\count455
-\c@introduction=\count456
-\c@savedintroduction=\count457
-\c@namea=\count458
-\c@savednamea=\count459
-\c@nameb=\count460
-\c@savednameb=\count461
-\c@namec=\count462
-\c@savednamec=\count463
-\c@translator=\count464
-\c@savedtranslator=\count465
-\c@shortauthor=\count466
-\c@savedshortauthor=\count467
-\c@shorteditor=\count468
-\c@savedshorteditor=\count469
-\c@labelname=\count470
-\c@savedlabelname=\count471
-\c@institution=\count472
-\c@savedinstitution=\count473
-\c@lista=\count474
-\c@savedlista=\count475
-\c@listb=\count476
-\c@savedlistb=\count477
-\c@listc=\count478
-\c@savedlistc=\count479
-\c@listd=\count480
-\c@savedlistd=\count481
-\c@liste=\count482
-\c@savedliste=\count483
-\c@listf=\count484
-\c@savedlistf=\count485
-\c@location=\count486
-\c@savedlocation=\count487
-\c@organization=\count488
-\c@savedorganization=\count489
-\c@origlocation=\count490
-\c@savedoriglocation=\count491
-\c@origpublisher=\count492
-\c@savedorigpublisher=\count493
-\c@publisher=\count494
-\c@savedpublisher=\count495
-\c@language=\count496
-\c@savedlanguage=\count497
-\c@origlanguage=\count498
-\c@savedoriglanguage=\count499
-\c@pageref=\count500
-\c@savedpageref=\count501
-\shorthandwidth=\skip88
-\shortjournalwidth=\skip89
-\shortserieswidth=\skip90
-\shorttitlewidth=\skip91
-\shortauthorwidth=\skip92
-\shorteditorwidth=\skip93
-\locallabelnumberwidth=\skip94
-\locallabelalphawidth=\skip95
-\localshorthandwidth=\skip96
-\localshortjournalwidth=\skip97
-\localshortserieswidth=\skip98
-\localshorttitlewidth=\skip99
-\localshortauthorwidth=\skip100
-\localshorteditorwidth=\skip101
+\c@afterword=\count404
+\c@savedafterword=\count405
+\c@annotator=\count406
+\c@savedannotator=\count407
+\c@author=\count408
+\c@savedauthor=\count409
+\c@bookauthor=\count410
+\c@savedbookauthor=\count411
+\c@commentator=\count412
+\c@savedcommentator=\count413
+\c@editor=\count414
+\c@savededitor=\count415
+\c@editora=\count416
+\c@savededitora=\count417
+\c@editorb=\count418
+\c@savededitorb=\count419
+\c@editorc=\count420
+\c@savededitorc=\count421
+\c@foreword=\count422
+\c@savedforeword=\count423
+\c@holder=\count424
+\c@savedholder=\count425
+\c@introduction=\count426
+\c@savedintroduction=\count427
+\c@namea=\count428
+\c@savednamea=\count429
+\c@nameb=\count430
+\c@savednameb=\count431
+\c@namec=\count432
+\c@savednamec=\count433
+\c@translator=\count434
+\c@savedtranslator=\count435
+\c@shortauthor=\count436
+\c@savedshortauthor=\count437
+\c@shorteditor=\count438
+\c@savedshorteditor=\count439
+\c@labelname=\count440
+\c@savedlabelname=\count441
+\c@institution=\count442
+\c@savedinstitution=\count443
+\c@lista=\count444
+\c@savedlista=\count445
+\c@listb=\count446
+\c@savedlistb=\count447
+\c@listc=\count448
+\c@savedlistc=\count449
+\c@listd=\count450
+\c@savedlistd=\count451
+\c@liste=\count452
+\c@savedliste=\count453
+\c@listf=\count454
+\c@savedlistf=\count455
+\c@location=\count456
+\c@savedlocation=\count457
+\c@organization=\count458
+\c@savedorganization=\count459
+\c@origlocation=\count460
+\c@savedoriglocation=\count461
+\c@origpublisher=\count462
+\c@savedorigpublisher=\count463
+\c@publisher=\count464
+\c@savedpublisher=\count465
+\c@language=\count466
+\c@savedlanguage=\count467
+\c@origlanguage=\count468
+\c@savedoriglanguage=\count469
+\c@pageref=\count470
+\c@savedpageref=\count471
+\shorthandwidth=\skip87
+\shortjournalwidth=\skip88
+\shortserieswidth=\skip89
+\shorttitlewidth=\skip90
+\shortauthorwidth=\skip91
+\shorteditorwidth=\skip92
+\locallabelnumberwidth=\skip93
+\locallabelalphawidth=\skip94
+\localshorthandwidth=\skip95
+\localshortjournalwidth=\skip96
+\localshortserieswidth=\skip97
+\localshorttitlewidth=\skip98
+\localshortauthorwidth=\skip99
+\localshorteditorwidth=\skip100
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -1184,19 +1024,19 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-\c@textcitecount=\count502
-\c@textcitetotal=\count503
-\c@textcitemaxnames=\count504
-\c@biburlbigbreakpenalty=\count505
-\c@biburlbreakpenalty=\count506
-\c@biburlnumpenalty=\count507
-\c@biburlucpenalty=\count508
-\c@biburllcpenalty=\count509
+\c@textcitecount=\count472
+\c@textcitetotal=\count473
+\c@textcitemaxnames=\count474
+\c@biburlbigbreakpenalty=\count475
+\c@biburlbreakpenalty=\count476
+\c@biburlnumpenalty=\count477
+\c@biburlucpenalty=\count478
+\c@biburllcpenalty=\count479
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count510
+\c@smartand=\count480
 )
 Package biblatex Info: Trying to load natbib compatibility...
 Package biblatex Info: ... file 'blx-natbib.def' found.
@@ -1216,8 +1056,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count511
-\c@bbx:relatedtotal=\count512
+\c@bbx:relatedcount=\count481
+\c@bbx:relatedtotal=\count482
 ))
 Package biblatex Info: Trying to load citation style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.cbx' found.
@@ -1240,38 +1080,50 @@ File: biblatex.cfg
 )
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-11-02 L3 programming layer (loader) 
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count483
+\l__pdf_internal_box=\box82
+))
 Package biblatex Info: ... and expl3
 (biblatex)             2024-11-02 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2024-08-16 L3 Experimental document command parser
+)
 Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
 ))
-\@quotelevel=\count513
-\@quotereset=\count514
+\@quotelevel=\count484
+\@quotereset=\count485
 
 (./bohr-causality.aux)
 \openout1 = `bohr-causality.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1309,17 +1161,17 @@ LaTeX Font Info:    ... okay on input line 33.
 
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count515
-\scratchdimen=\dimen332
-\scratchbox=\box92
-\nofMPsegments=\count516
-\nofMParguments=\count517
-\everyMPshowfont=\toks56
-\MPscratchCnt=\count518
-\MPscratchDim=\dimen333
-\MPnumerator=\count519
-\makeMPintoPDFobject=\count520
-\everyMPtoPDFconversion=\toks57
+\scratchcounter=\count486
+\scratchdimen=\dimen310
+\scratchbox=\box83
+\nofMPsegments=\count487
+\nofMParguments=\count488
+\everyMPshowfont=\toks52
+\MPscratchCnt=\count489
+\MPscratchDim=\dimen311
+\MPnumerator=\count490
+\makeMPintoPDFobject=\count491
+\everyMPtoPDFconversion=\toks53
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1329,69 +1181,69 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 33.
+Package hyperref Info: Link coloring OFF on input line 23.
 
 (./bohr-causality.out) (./bohr-causality.out)
-\@outlinefile=\write7
-\openout7 = `bohr-causality.out'.
+\@outlinefile=\write6
+\openout6 = `bohr-causality.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 33.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 23.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 33.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 23.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 33.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 33.
+(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 33.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 33.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 33.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 33.
+(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 33.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 33.
+(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 33.
+(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 33.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 33.
+(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 33.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 33.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 23.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 33.
+(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 23.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 33.
+(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 33.
+(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/cmss/b/n --> T1/cmss/b/n on input line 33.
+(Font)                  T1/cmss/b/n --> T1/cmss/b/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 33.
+(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 33.
+(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/cmtt/m/n --> T1/cmtt/b/n on input line 33.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 33.
+(Font)                  T1/cmtt/m/n --> T1/cmtt/b/n on input line 23.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 23.
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 33
+(Font)              `pureletters' in the math version `normal' on input line 23
 .
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 33
+(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 23
 .
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 33.
+(Font)              `pureletters' in the math version `bold' on input line 23.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 33
+(Font)                  T1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 23
 .
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 33.
+ut line 23.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
@@ -1426,16 +1278,16 @@ File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout6 = `bohr-causality.bcf'.
+\openout5 = `bohr-causality.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'bohr-causality.bbl' found.
 
 (./bohr-causality.bbl)
-Package biblatex Info: Reference section=0 on input line 33.
-Package biblatex Info: Reference segment=0 on input line 33.
+Package biblatex Info: Reference section=0 on input line 23.
+Package biblatex Info: Reference segment=0 on input line 23.
  (./bohr-causality.nav)
-Overfull \vbox (44.54378pt too high) detected at line 37
+Overfull \vbox (44.54378pt too high) detected at line 27
  []
 
 
@@ -1452,19 +1304,19 @@ al/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
 [3
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
 
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
 
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 65.
+ut line 55.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
@@ -1508,25 +1360,64 @@ thkerncmss.
 
 ]
 
-LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <10> not available
-(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 159.
-
-
-
 [13
 
+]
+
+[14
+
+]
+
+[15
+
+]
+
+[16
+
+]
+
+[17
+
+]
+
+[18
+
+]
+
+[19
+
+]
+
+LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <10> not available
+(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 277.
+
+
+Package biblatex Warning: No driver for 'unpublisher'.
+(biblatex)                Using fallback driver on input line 277.
+
+
+
+[20
+
  </usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
-\tf@nav=\write8
-\openout8 = `bohr-causality.nav'.
 
-\tf@toc=\write9
-\openout9 = `bohr-causality.toc'.
+[21
 
-\tf@snm=\write10
-\openout10 = `bohr-causality.snm'.
 
-runsystem(latexminted cleantemp  --timestamp 20250811150347 4930D3308121A15EE8C
-D2FA874B3DB5D)...executed safely (allowed).
+]
+
+[22
+
+
+]
+\tf@nav=\write7
+\openout7 = `bohr-causality.nav'.
+
+\tf@toc=\write8
+\openout8 = `bohr-causality.toc'.
+
+\tf@snm=\write9
+\openout9 = `bohr-causality.snm'.
 
  (./bohr-causality.aux)
  ***********
@@ -1534,34 +1425,35 @@ LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-11-02>
  ***********
 Package rerunfilecheck Info: File `bohr-causality.out' has not changed.
-(rerunfilecheck)             Checksum: 8A242C948055C3A6456389D7CAEE259E;260.
+(rerunfilecheck)             Checksum: CAE0C461500130A8E552170CDB7E00AB;568.
 Package logreq Info: Writing requests to 'bohr-causality.run.xml'.
 \openout1 = `bohr-causality.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40975 strings out of 473330
- 878624 string characters out of 5719762
- 1730463 words of memory out of 5000000
- 63396 multiletter control sequences out of 15000+600000
- 580984 words of font info for 90 fonts, out of 8000000 for 9000
+ 32958 strings out of 473330
+ 662886 string characters out of 5719762
+ 1440619 words of memory out of 5000000
+ 55438 multiletter control sequences out of 15000+600000
+ 581813 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,13n,123p,1881b,1758s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,13n,123p,1881b,1846s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pf
 b></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb>
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsi1000.pfb></
 usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></us
-r/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/
-local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/lo
-cal/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/loca
-l/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/
-texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/te
-xlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texl
-ive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on bohr-causality.pdf (13 pages, 184107 bytes).
+r/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfso1095.pfb></usr/
+local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/lo
+cal/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/loca
+l/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/
+texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/te
+xlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texl
+ive/2024/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texliv
+e/2024/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on bohr-causality.pdf (22 pages, 232546 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 272 PDF objects out of 1000 (max. 8388607)
+ 211 compressed objects within 3 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 67 words of extra memory for PDF output out of 10000 (max. 10000000)
 

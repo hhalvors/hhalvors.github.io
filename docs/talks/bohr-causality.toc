@@ -1,1 +1,3 @@
 \beamer@sectionintoc {1}{Philosophical background to Bohr's stance}{4}{0}{1}
+\beamer@sectionintoc {2}{The quantum challenge for causality}{9}{0}{2}
+\beamer@sectionintoc {3}{Summary}{17}{0}{3}
