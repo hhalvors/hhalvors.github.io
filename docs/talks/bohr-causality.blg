@@ -1,15 +1,15 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'bohr-causality.blg'
-[33] biber-darwin:340> INFO - === Mon Aug 11, 2025, 14:55:49
+[33] biber-darwin:340> INFO - === Tue Aug 12, 2025, 15:25:07
 [41] Biber.pm:420> INFO - Reading 'bohr-causality.bcf'
-[74] Biber.pm:994> INFO - Found 3 citekeys in bib section 0
-[81] Biber.pm:4463> INFO - Processing section 0
+[75] Biber.pm:994> INFO - Found 13 citekeys in bib section 0
+[82] Biber.pm:4463> INFO - Processing section 0
 [87] Biber.pm:4654> INFO - Looking for bibtex file '~/drafts/master.bib' for section 0
-[176] bibtex.pm:1713> INFO - LaTeX decoding ...
-[206] bibtex.pm:1519> INFO - Found BibTeX data source '/Users/hhalvors/drafts/master.bib'
-[232] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[232] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[232] Biber.pm:4283> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[232] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[237] bbl.pm:676> INFO - Writing 'bohr-causality.bbl' with encoding 'UTF-8'
-[237] bbl.pm:779> INFO - Output to bohr-causality.bbl
+[179] bibtex.pm:1713> INFO - LaTeX decoding ...
+[211] bibtex.pm:1519> INFO - Found BibTeX data source '/Users/hhalvors/drafts/master.bib'
+[256] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[256] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[256] Biber.pm:4283> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[257] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[265] bbl.pm:676> INFO - Writing 'bohr-causality.bbl' with encoding 'UTF-8'
+[268] bbl.pm:779> INFO - Output to bohr-causality.bbl

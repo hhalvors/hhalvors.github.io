@@ -3,6 +3,7 @@ title: "Talks"
 author: Hans Halvorson
 ---
 
+- Niels Bohr on Causal Explanation [pdf](talks/bohr-causality.pdf)
 - Climacus' two ways of reflection [pdf](talks/climacus.pdf)
 - Brandes against Dualism [pdf](talks/brandes.pdf)
 - Niels Bohr's philosophical background [pdf](talks/b4bohr.pdf) [tex](talks/b4bohr.tex)
