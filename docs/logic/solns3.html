@@ -24,27 +24,17 @@
   <link rel="stylesheet" href="/css/poole.css">
   <link rel="stylesheet" href="/css/syntax.css">
   <link rel="stylesheet" href="/css/lanyon.css">
-  <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
 
   
 
-  <!-- MathJax configuration -->
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript">
-  MathJax = {
-    tex: {
-      macros: {
-        // Map ⊢ to a version with space before and after
-        "⊢": "\\mathrel{\\;\\vdash\\;}"
-      }
-    }
-  };
-</script>
-<script type="text/javascript" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+
+    <link rel="stylesheet" href="/css/style.css">
+
 
   <!---
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ '/public/apple-touch-icon-precomposed.png' | absolute_url }}">
@@ -161,7 +151,7 @@
   
   <h2 id="exercise-3.1">Exercise 3.1</h2>
 <ol type="1">
-<li><p><span class="math inline">\(P\: ⊢ \: Q→(P∧Q)\)</span></p>
+<li><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mtext> </mtext><mo>⊢</mo><mtext> </mtext><mi>Q</mi><mo>→</mo><mo stretchy="false">(</mo><mi>P</mi><mo>∧</mo><mi>Q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P\: ⊢ \: Q→(P∧Q)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⊢</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">Q</span><span class="mclose">)</span></span></span></span></p>
 <table class="proof-table">
 <tr><td>1</td><td>(1)&nbsp;\( P \)</td><td>A</td></tr>
 <tr><td>2</td><td>(2)&nbsp;\( Q \)</td><td>A</td></tr>
@@ -169,7 +159,7 @@
 <tr><td>1</td><td>(4)&nbsp;\( Q → (P ∧ Q) \)</td><td>2,3 CP</td></tr>
 </table>
 </li>
-<li><p><span class="math inline">\((P→Q)∧(P→R)⊢P→(Q∧R)\)</span></p>
+<li><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>P</mi><mo>→</mo><mi>Q</mi><mo stretchy="false">)</mo><mo>∧</mo><mo stretchy="false">(</mo><mi>P</mi><mo>→</mo><mi>R</mi><mo stretchy="false">)</mo><mo>⊢</mo><mi>P</mi><mo>→</mo><mo stretchy="false">(</mo><mi>Q</mi><mo>∧</mo><mi>R</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(P→Q)∧(P→R)⊢P→(Q∧R)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">Q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⊢</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">Q</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span></span></span></span></p>
 <table class="proof-table">
 <tr><td>1</td><td>(1)&nbsp;\( (P → Q) ∧ (P → R) \)</td><td>A</td></tr>
 <tr><td>2</td><td>(2)&nbsp;\( P \)</td><td>A</td></tr>
@@ -181,7 +171,7 @@
 <tr><td>1</td><td>(8)&nbsp;\( P → (Q ∧ R) \)</td><td>2,7 CP</td></tr>
 </table>
 </li>
-<li><p><span class="math inline">\(P→(Q→R) ⊢ Q→(P→R)\)</span></p>
+<li><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mo stretchy="false">(</mo><mi>Q</mi><mo>→</mo><mi>R</mi><mo stretchy="false">)</mo><mo>⊢</mo><mi>Q</mi><mo>→</mo><mo stretchy="false">(</mo><mi>P</mi><mo>→</mo><mi>R</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P→(Q→R) ⊢ Q→(P→R)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">Q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⊢</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span></span></span></span></p>
 <table class="proof-table">
 <tr><td>1</td><td>(1)&nbsp;\( P → (Q → R) \)</td><td>A</td></tr>
 <tr><td>2</td><td>(2)&nbsp;\( Q \)</td><td>A</td></tr>
@@ -192,7 +182,7 @@
 <tr><td>1</td><td>(7)&nbsp;\( Q → (P → R) \)</td><td>2,6 CP</td></tr>
 </table>
 </li>
-<li><p><span class="math inline">\(P→Q ⊢ (Q→R)→(P→R)\)</span></p>
+<li><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mi>Q</mi><mo>⊢</mo><mo stretchy="false">(</mo><mi>Q</mi><mo>→</mo><mi>R</mi><mo stretchy="false">)</mo><mo>→</mo><mo stretchy="false">(</mo><mi>P</mi><mo>→</mo><mi>R</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P→Q ⊢ (Q→R)→(P→R)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⊢</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">Q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span></span></span></span></p>
 <table class="proof-table">
 <tr><td>1</td><td>(1)&nbsp;\( P → Q \)</td><td>A</td></tr>
 <tr><td>2</td><td>(2)&nbsp;\( Q → R \)</td><td>A</td></tr>
@@ -203,7 +193,7 @@
 <tr><td>1</td><td>(7)&nbsp;\( (Q → R) → (P → R) \)</td><td>2,6 CP</td></tr>
 </table>
 </li>
-<li><p><span class="math inline">\(P→(P→Q) ⊢ P→Q\)</span></p>
+<li><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mo stretchy="false">(</mo><mi>P</mi><mo>→</mo><mi>Q</mi><mo stretchy="false">)</mo><mo>⊢</mo><mi>P</mi><mo>→</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">P→(P→Q) ⊢ P→Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">Q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⊢</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span></p>
 <table class="proof-table">
 <tr><td>1</td><td>(1)&nbsp;\( P → (P → Q) \)</td><td>A</td></tr>
 <tr><td>2</td><td>(2)&nbsp;\( P \)</td><td>A</td></tr>
@@ -212,7 +202,7 @@
 <tr><td>1</td><td>(5)&nbsp;\( P → Q \)</td><td>2,4 MP </td></tr>
 </table>
 </li>
-<li><p><span class="math inline">\(P→(Q→R) ⊢ (P∧Q)→R\)</span></p>
+<li><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mo stretchy="false">(</mo><mi>Q</mi><mo>→</mo><mi>R</mi><mo stretchy="false">)</mo><mo>⊢</mo><mo stretchy="false">(</mo><mi>P</mi><mo>∧</mo><mi>Q</mi><mo stretchy="false">)</mo><mo>→</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">P→(Q→R) ⊢ (P∧Q)→R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">Q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⊢</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">Q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span></p>
 <table class="proof-table">
 <tr><td>1</td><td>(1)&nbsp;\( P → (Q → R) \)</td><td>A</td></tr>
 <tr><td>2</td><td>(2)&nbsp;\( P ∧ Q \)</td><td>A</td></tr>
@@ -223,7 +213,7 @@
 <tr><td>1</td><td>(7)&nbsp;\( (P ∧ Q) → R \)</td><td>2,6 CP</td></tr>
 </table>
 </li>
-<li><p><span class="math inline">\((P∨Q)→R ⊢ P→R\)</span></p>
+<li><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>P</mi><mo>∨</mo><mi>Q</mi><mo stretchy="false">)</mo><mo>→</mo><mi>R</mi><mo>⊢</mo><mi>P</mi><mo>→</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">(P∨Q)→R ⊢ P→R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">Q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⊢</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span></p>
 <table class="proof-table">
 <tr><td>1</td><td>(1)&nbsp;\( (P ∨ Q) → R \)</td><td>A</td></tr>
 <tr><td>2</td><td>(2)&nbsp;\( P \)</td><td>A</td></tr>
@@ -232,7 +222,7 @@
 <tr><td>1</td><td>(5)&nbsp;\( P → R \)</td><td>2,4 CP</td></tr>
 </table>
 </li>
-<li><p><span class="math inline">\(¬P ⊢ ¬(P∧Q)\)</span></p>
+<li><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">¬</mi><mi>P</mi><mo>⊢</mo><mi mathvariant="normal">¬</mi><mo stretchy="false">(</mo><mi>P</mi><mo>∧</mo><mi>Q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">¬P ⊢ ¬(P∧Q)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">¬</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⊢</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">¬</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">Q</span><span class="mclose">)</span></span></span></span></p>
 <table class="proof-table">
 <tr><td>1</td><td>(1)&nbsp;\( ¬P \)</td><td>A</td></tr>
 <tr><td>2</td><td>(2)&nbsp;\( P ∧ Q \)</td><td>A</td></tr>
@@ -241,7 +231,7 @@
 <tr><td>1</td><td>(5)&nbsp;\( ¬(P ∧ Q) \)</td><td>4,1 MT</td></tr>
 </table>
 </li>
-<li><p><span class="math inline">\(¬(P∨Q)⊢¬P∧¬Q\)</span></p>
+<li><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">¬</mi><mo stretchy="false">(</mo><mi>P</mi><mo>∨</mo><mi>Q</mi><mo stretchy="false">)</mo><mo>⊢</mo><mi mathvariant="normal">¬</mi><mi>P</mi><mo>∧</mo><mi mathvariant="normal">¬</mi><mi>Q</mi></mrow><annotation encoding="application/x-tex">¬(P∨Q)⊢¬P∧¬Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">¬</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">Q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⊢</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">¬</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">¬</span><span class="mord mathnormal">Q</span></span></span></span></p>
 <table class="proof-table">
 <tr><td>1</td><td>(1)&nbsp;\( ¬(P ∨ Q) \)</td><td>A</td></tr>
 <tr><td>2</td><td>(2)&nbsp;\( P \)</td><td>A</td></tr>
@@ -255,7 +245,7 @@
 <tr><td>1</td><td>(10)&nbsp;\( ¬P ∧ ¬Q \)</td><td>5,9 ∧I</td></tr>
 </table>
 </li>
-<li><p><span class="math inline">\(P→¬P⊢¬P\)</span></p>
+<li><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mi mathvariant="normal">¬</mi><mi>P</mi><mo>⊢</mo><mi mathvariant="normal">¬</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">P→¬P⊢¬P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">¬</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⊢</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">¬</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span></p>
 <table class="proof-table">
 <tr><td>1</td><td>(1)&nbsp;\( P \)</td><td>A</td></tr>
 <tr><td>2</td><td>(2)&nbsp;\( P → ¬P \)</td><td>A</td></tr>
@@ -277,7 +267,6 @@
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
     <script src='https://hanshalvorson.dk/public/js/script.js'></script>
-
 
 
   </body>

@@ -222,4 +222,40 @@ h2.year-label{
   color: #333;
 }
 
+/* Match KaTeX's font size to body text */
+.katex {
+  font-size: 1em; /* adjust to match body size exactly */
+  font-family: "STIX Two Math", "Cambria Math", "Latin Modern Math", serif;
+  line-height: 1.4; /* match text line-height */
+}
 
+/* Improve display math spacing */
+.katex-display {
+  margin: 1em 0 1.2em;  /* top, sides, bottom */
+  text-align: center;   /* consistent centering */
+}
+
+/* Reduce KaTeX inline math vertical shift */
+.katex .base {
+  vertical-align: middle;
+}
+
+/* Make math less cramped in paragraphs */
+.katex .mord,
+.katex .mop,
+.katex .mbin,
+.katex .mrel,
+.katex .mopen,
+.katex .mclose,
+.katex .mpunct,
+.katex .minner {
+  padding: 0 0.04em;
+}
+
+/* Optional: lighten fractions, roots, etc., so they don't overpower text */
+.katex .frac-line {
+  border-color: rgba(0, 0, 0, 0.75);
+}
+.katex .sqrt-line {
+  border-color: rgba(0, 0, 0, 0.75);
+}
