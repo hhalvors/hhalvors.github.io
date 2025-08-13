@@ -24,27 +24,17 @@
   <link rel="stylesheet" href="/css/poole.css">
   <link rel="stylesheet" href="/css/syntax.css">
   <link rel="stylesheet" href="/css/lanyon.css">
-  <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
 
   
 
-  <!-- MathJax configuration -->
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript">
-  MathJax = {
-    tex: {
-      macros: {
-        // Map ⊢ to a version with space before and after
-        "⊢": "\\mathrel{\\;\\vdash\\;}"
-      }
-    }
-  };
-</script>
-<script type="text/javascript" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+
+    <link rel="stylesheet" href="/css/style.css">
+
 
   <!---
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ '/public/apple-touch-icon-precomposed.png' | absolute_url }}">
@@ -181,7 +171,7 @@ surgeon and physiologist. Several procedures are named after him.</li>
 <h1 id="primary-sources">Primary sources</h1>
 <ul>
 <li><em>Elementa logices Aristotelicae. In usum scholarum ex Aristotele
-excerpsit convertit, illustravit Frider.</em> 1836. <span class="math inline">\(\to\)</span> <a href="https://archive.org/details/outlinesoflogice00arisrich"><em>Outlines of
+excerpsit convertit, illustravit Frider.</em> 1836. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">→</span></span></span></span> <a href="https://archive.org/details/outlinesoflogice00arisrich"><em>Outlines of
 logic; an English translation of Trendelenburg’s Elementa logices
 Aristoteleae</em></a></li>
 <li><em>Logische Untersuchungen</em>. 1840.<br />
@@ -214,7 +204,6 @@ Haaparanta.</li>
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
     <script src='https://hanshalvorson.dk/public/js/script.js'></script>
-
 
 
   </body>

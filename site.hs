@@ -3,39 +3,88 @@
 
 module Main where
 
-import           Data.Monoid                   (mappend)
-import           Data.List                     (sortBy)
-import           Data.Ord                      (comparing)
+-- Core / utils
+import           Control.Applicative      ((<|>))
+import           Control.Monad            (forM_, when, liftM, (<=<))
+import           Data.Aeson               (FromJSON(..), withObject, (.:), (.:?), eitherDecode)
+import qualified Data.ByteString.Lazy     as BL
+import           Data.Function            (on)
+import           Data.List                (groupBy, sortOn, sortBy)
+import           Data.Maybe               (fromMaybe)
+import           Data.Monoid              (mappend)
+import           Data.Ord                 (Down(..), comparing)
+import           System.FilePath          (takeBaseName, takeFileName)
+
+-- Text / process
+import qualified Data.Text                as T
+import qualified Data.Text.IO             as T
+import           GHC.IO.Handle            (hSetBuffering, BufferMode(NoBuffering))
+import           System.Process           (runInteractiveCommand)
+
+-- Hakyll / Pandoc
 import           Hakyll
-import           Control.Monad                 (liftM, forM_, when)
-import           System.FilePath               (takeBaseName, takeFileName)
-import           BibTeXParser                  (parseBibTeX, generateHTML, transformEntry)
-import           Data.Maybe                    (fromMaybe)
-import           Text.Pandoc.Walk              (walkM)
-import           LemmonFilter                  (applyLemmonFilter)
-import           Text.Pandoc.Definition        (Pandoc)
-import           Control.Monad                 ((<=<))
-import Text.Pandoc.Options (HTMLMathMethod(..), writerExtensions, writerHTMLMathMethod, WriterOptions, Extension(..), enableExtension)
-import Text.Pandoc (pandocExtensions)
-import Text.Pandoc.SideNote (usingSideNotes)
-import PubList (parseBibTeXFile, transformEntry, generateHtml)
+import qualified Text.Pandoc.Options      as P
+import           Text.Pandoc              (pandocExtensions)
+import           Text.Pandoc.SideNote     (usingSideNotes)
+import           Text.Pandoc.Definition   (Pandoc, Inline(..), MathType(..))
+import           Text.Pandoc.Walk         (walkM)
 
-import           Data.Aeson           (FromJSON(..), withObject, (.:), (.:?), eitherDecode)
-import qualified Data.ByteString.Lazy as BL
-import           Data.Ord             (Down (..))
-import           Data.Function        (on)
-import           Data.List            (groupBy, sortOn)
-import           Control.Applicative  ((<|>))
-
---------------------------------------------------------------------------------
+import           BibTeXParser             (parseBibTeX, generateHTML)
+import           PubList                  (parseBibTeXFile, transformEntry, generateHtml)
+import           LemmonFilter             (applyLemmonFilter)
 
 config :: Configuration
 config = defaultConfiguration
   { destinationDirectory = "docs"
   }
 
-myWriter :: WriterOptions
-myWriter = defaultHakyllWriterOptions
+myReader :: P.ReaderOptions
+myReader =
+  let exts = foldr P.enableExtension (P.readerExtensions defaultHakyllReaderOptions)
+               [ P.Ext_tex_math_dollars
+               , P.Ext_tex_math_double_backslash
+               , P.Ext_latex_macros
+               , P.Ext_raw_tex
+               , P.Ext_raw_html
+               ]
+  in defaultHakyllReaderOptions { P.readerExtensions = exts }
+
+myWriter :: P.WriterOptions
+myWriter =
+  let exts = foldr P.enableExtension (P.writerExtensions defaultHakyllWriterOptions)
+               [ P.Ext_tex_math_dollars
+               , P.Ext_tex_math_double_backslash
+               , P.Ext_latex_macros
+               , P.Ext_raw_tex
+               , P.Ext_raw_html
+               ]
+  in defaultHakyllWriterOptions { P.writerExtensions = exts
+                                , P.writerHTMLMathMethod = P.PlainMath
+                                  -- We will inject *rendered* HTML ourselves
+                                }
+
+-- Server-side KaTeX: replace Math inlines/blocks with KaTeX HTML via Deno script
+hlKaTeX :: Pandoc -> Compiler Pandoc
+hlKaTeX doc = recompilingUnsafeCompiler $ do
+  -- Allow reading the local script and fetching katex.mjs from jsdelivr:
+  let cmd = "deno run --allow-read --allow-net=cdn.jsdelivr.net scripts/math.ts"
+  (hin, hout, _, _) <- runInteractiveCommand cmd
+  hSetBuffering hin  NoBuffering
+  hSetBuffering hout NoBuffering
+
+  let renderOne :: Bool -> T.Text -> IO T.Text
+      renderOne isDisplay t = do
+        let line = if isDisplay then T.pack ":DISPLAY " <> t else t
+        T.hPutStrLn hin (T.strip line)
+        T.hGetLine hout  -- we made math.ts print a single line per input
+
+      go :: Inline -> IO Inline
+      go (Math InlineMath  t) = RawInline "html" <$> renderOne False t
+      go (Math DisplayMath t) = RawInline "html" <$> renderOne True  t
+      go x                    = pure x
+
+  walkM go doc  
+
 
 ------------------------------------------------------------------------------
 -- Course data  +  FromJSON instance
@@ -158,13 +207,14 @@ main = hakyllWith config $ do
     --       >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> indexCtx)
     --       >>= relativizeUrls
 
-    -- Rule for course-specific pages in subfolders
-    match "courses/*/**.md" $ do
+    -- Courses: all .md under courses/, any depth
+    match "courses/**.md" $ do
       route $ setExtension "html"
-      compile $ pandocCompiler
-        >>= loadAndApplyTemplate "templates/page.html" siteCtx
-        >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
-        >>= relativizeUrls      
+      compile $
+        myPandocBiblioCompiler
+          >>= loadAndApplyTemplate "templates/page.html" (defaultContext <> siteCtx)
+          >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+          >>= relativizeUrls
 
     match "pages/john.md" $ do
       route $ constRoute "john.html"
@@ -196,6 +246,12 @@ main = hakyllWith config $ do
 
     match "pandoc/elsevier.csl" $
         compile cslCompiler
+
+    match "debug.md" $ do
+      route $ setExtension "html"
+      compile $
+        pandocCompilerWith myReader myWriter
+          >>= relativizeUrls    
 
     tags <- buildTags "posts/*" (fromCapture "tags/*.html")
 
@@ -378,16 +434,6 @@ main = hakyllWith config $ do
             >>= loadAndApplyTemplate "templates/page.html" (defaultContext `mappend` siteCtx)
             >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)        
 
-    -- Courses: Process all .md files in the "courses" folder, including subfolders
-    match "courses/**.md" $ do
-      route $ setExtension "html"
-      compile $ do
-        myPandocBiblioCompiler
-            >>= loadAndApplyTemplate "templates/page.html" (defaultContext `mappend` siteCtx)
-            >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
-            >>= relativizeUrls
-            
-
     -- Drafts
     match "drafts.md" $ do
         route $ customRoute (const "drafts.html")
@@ -458,23 +504,37 @@ myPandocBiblioCompiler :: Compiler (Item String)
 myPandocBiblioCompiler = do
   csl <- load "bib/style.csl"
   bib <- load "bib/bibliography.bib" :: Compiler (Item Biblio)
-
-  let mathExtensions = [ Ext_tex_math_dollars, Ext_tex_math_double_backslash, Ext_latex_macros, Ext_raw_tex, Ext_raw_html ]
-      newExtensions = foldr enableExtension (writerExtensions defaultHakyllWriterOptions) mathExtensions
-      writerOptions = defaultHakyllWriterOptions
-        { writerExtensions = newExtensions
-        , writerHTMLMathMethod = MathJax ""  -- Use MathJax for math rendering
-        }
-
   pandocCompilerWithTransformM
-    defaultHakyllReaderOptions
-    writerOptions
-    (\pandoc -> do
-        -- Apply bibliography processing
-        processed <- processPandocBiblio csl bib (Item "" pandoc)
-        -- Apply Lemmon filter to the processed result
-        return $ applyLemmonFilter (itemBody processed)
+    myReader
+    myWriter
+    (\p -> do
+        processed <- processPandocBiblio csl bib (Item "" p)
+        -- If you have a Lemmon filter, run it *before* KaTeX or ensure it skips Math
+        let p1 = applyLemmonFilter (itemBody processed)
+        hlKaTeX p1
     )
+
+-- myPandocBiblioCompiler :: Compiler (Item String)
+-- myPandocBiblioCompiler = do
+--   csl <- load "bib/style.csl"
+--   bib <- load "bib/bibliography.bib" :: Compiler (Item Biblio)
+
+--   let mathExtensions = [ Ext_tex_math_dollars, Ext_tex_math_double_backslash, Ext_latex_macros, Ext_raw_tex, Ext_raw_html ]
+--       newExtensions = foldr enableExtension (writerExtensions defaultHakyllWriterOptions) mathExtensions
+--       writerOptions = defaultHakyllWriterOptions
+--         { writerExtensions = newExtensions
+--         , writerHTMLMathMethod = MathJax ""   
+--         }
+
+--   pandocCompilerWithTransformM
+--     defaultHakyllReaderOptions
+--     writerOptions
+--     (\pandoc -> do
+--         -- Apply bibliography processing
+--         processed <- processPandocBiblio csl bib (Item "" pandoc)
+--         -- Apply Lemmon filter to the processed result
+--         return $ applyLemmonFilter (itemBody processed)
+--     )
 
 
 

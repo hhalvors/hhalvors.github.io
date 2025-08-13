@@ -24,27 +24,17 @@
   <link rel="stylesheet" href="/css/poole.css">
   <link rel="stylesheet" href="/css/syntax.css">
   <link rel="stylesheet" href="/css/lanyon.css">
-  <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
 
   
 
-  <!-- MathJax configuration -->
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript">
-  MathJax = {
-    tex: {
-      macros: {
-        // Map ⊢ to a version with space before and after
-        "⊢": "\\mathrel{\\;\\vdash\\;}"
-      }
-    }
-  };
-</script>
-<script type="text/javascript" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+
+    <link rel="stylesheet" href="/css/style.css">
+
 
   <!---
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ '/public/apple-touch-icon-precomposed.png' | absolute_url }}">
@@ -162,11 +152,11 @@
   <h2 id="exercise-6.1">Exercise 6.1</h2>
 <ol type="1">
 <li><p>No logicians are celebrities.</p>
-<p><span class="math inline">\(∀x(Lx→¬Cx)\)</span></p></li>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∀</mi><mi>x</mi><mo stretchy="false">(</mo><mi>L</mi><mi>x</mi><mo>→</mo><mi mathvariant="normal">¬</mi><mi>C</mi><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">∀x(Lx→¬Cx)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∀</span><span class="mord mathnormal">x</span><span class="mopen">(</span><span class="mord mathnormal">Lx</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">¬</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span></p></li>
 </ol>
 <h2 id="exercise-6.5">Exercise 6.5</h2>
 <ol start="9" type="1">
-<li><p><span class="math inline">\(∀x∀yRxy ⊢ ∀xRxx\)</span></p>
+<li><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∀</mi><mi>x</mi><mi mathvariant="normal">∀</mi><mi>y</mi><mi>R</mi><mi>x</mi><mi>y</mi><mo>⊢</mo><mi mathvariant="normal">∀</mi><mi>x</mi><mi>R</mi><mi>x</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">∀x∀yRxy ⊢ ∀xRxx</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">∀</span><span class="mord mathnormal">x</span><span class="mord">∀</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⊢</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">∀</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord mathnormal">xx</span></span></span></span></p>
 <table class="proof-table">
 <tr><td>1</td><td>(1)&nbsp;\( ∀x∀yRxy \)</td><td>A</td></tr>
 <tr><td>1</td><td>(2)&nbsp;\( ∀yRay \)</td><td>1 UE</td></tr>
@@ -177,7 +167,7 @@
 </ol>
 <h2 id="exercise-6.13">Exercise 6.13</h2>
 <ol type="1">
-<li><p><span class="math inline">\(P→∃xFx ⊢ ∃x(P→Fx)\)</span></p>
+<li><p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>→</mo><mi mathvariant="normal">∃</mi><mi>x</mi><mi>F</mi><mi>x</mi><mo>⊢</mo><mi mathvariant="normal">∃</mi><mi>x</mi><mo stretchy="false">(</mo><mi>P</mi><mo>→</mo><mi>F</mi><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P→∃xFx ⊢ ∃x(P→Fx)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">∃</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⊢</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∃</span><span class="mord mathnormal">x</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span></p>
 <table class="proof-table">
 <tr><td>1</td><td>(1)&nbsp;\( P → ∃xFx \)</td><td>A</td></tr>
 <tr><td></td><td>(2)&nbsp;\( P ∨ ¬P \)</td><td>lem</td></tr>
@@ -202,7 +192,6 @@
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
     <script src='https://hanshalvorson.dk/public/js/script.js'></script>
-
 
 
   </body>

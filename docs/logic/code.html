@@ -24,27 +24,17 @@
   <link rel="stylesheet" href="/css/poole.css">
   <link rel="stylesheet" href="/css/syntax.css">
   <link rel="stylesheet" href="/css/lanyon.css">
-  <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
 
   
 
-  <!-- MathJax configuration -->
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript">
-  MathJax = {
-    tex: {
-      macros: {
-        // Map ⊢ to a version with space before and after
-        "⊢": "\\mathrel{\\;\\vdash\\;}"
-      }
-    }
-  };
-</script>
-<script type="text/javascript" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+
+    <link rel="stylesheet" href="/css/style.css">
+
 
   <!---
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ '/public/apple-touch-icon-precomposed.png' | absolute_url }}">
@@ -161,8 +151,7 @@
   
   <p>Computers can help a lot with logical thinking, but what’s easy for us
 to read or write is not necessarily natural for a computer to read or
-write. For example, while I would prefer to write “<span class="math inline">\(P\wedge (Q\to
-R)\)</span>”, my computer would rather read something like <code>And P (Implies Q R)</code>.</p>
+write. For example, while I would prefer to write “<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>∧</mo><mo stretchy="false">(</mo><mi>Q</mi><mo>→</mo></mrow><annotation encoding="application/x-tex">P\wedge (Q\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">Q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span></span></span></span>”, my computer would rather read something like <code>And P (Implies Q R)</code>.</p>
 <p>So, if we want to use computers to do logic, then we need to translate
 between our representational system and theirs. The code here aims to
 convert back and forth between <em>plain text</em> representations of
@@ -173,8 +162,8 @@ structures. It would be nice to be able to convert directly from
 which is built on <a href="https://pandoc.org">Pandoc</a>, and both are written
 in <a href="https://www.haskell.org">Haskell</a>. Pandoc parses a document in
 some standard format (e.g. markdown, docx, latex) into its own
-internal format, viz. an object <span class="math inline">\(X\)</span> of type <code>Pandoc</code>, and it can then
-write <span class="math inline">\(X\)</span> out again in any one of those standard formats. One also has
+internal format, viz. an object <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">R)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span></span></span></span> of type <code>Pandoc</code>, and it can then
+write <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span> out again in any one of those standard formats. One also has
 the option of writing “filters”, i.e. functions that act on the
 intermediate <code>Pandoc</code> object before writing it out. What’s interesting
 about this setup — from the point of view of logic — is that we
@@ -242,7 +231,6 @@ advantages over Fitch systems.<a href="#fnref1" class="footnote-back" role="doc-
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
     <script src='https://hanshalvorson.dk/public/js/script.js'></script>
-
 
 
   </body>

@@ -24,27 +24,17 @@
   <link rel="stylesheet" href="/css/poole.css">
   <link rel="stylesheet" href="/css/syntax.css">
   <link rel="stylesheet" href="/css/lanyon.css">
-  <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
 
   
 
-  <!-- MathJax configuration -->
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript">
-  MathJax = {
-    tex: {
-      macros: {
-        // Map ⊢ to a version with space before and after
-        "⊢": "\\mathrel{\\;\\vdash\\;}"
-      }
-    }
-  };
-</script>
-<script type="text/javascript" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+
+    <link rel="stylesheet" href="/css/style.css">
+
 
   <!---
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ '/public/apple-touch-icon-precomposed.png' | absolute_url }}">
@@ -162,11 +152,11 @@
   <p>Soon to figure out how to write theorem environments in
 markdown. Until then…</p>
 <p>Theorem
-: Let <span class="math inline">\(\mathbf{FMan}\)</span> be the category whose objects are simply
+: Let <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">F</mi><mi mathvariant="bold">M</mi><mi mathvariant="bold">a</mi><mi mathvariant="bold">n</mi></mrow><annotation encoding="application/x-tex">\mathbf{FMan}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord"><span class="mord mathbf">FMan</span></span></span></span></span> be the category whose objects are simply
 connected smooth manifolds with flat connection, and whose
 arrows are diffeomorphisms that preserve the connection. Let
-<span class="math inline">\(\mathbf{Aff}\)</span> be the category of affine spaces and affine
-maps. Then <span class="math inline">\(\mathbf{FlMan}\)</span> and <span class="math inline">\(\mathbf{Aff}\)</span> are equivalent
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">A</mi><mi mathvariant="bold">f</mi><mi mathvariant="bold">f</mi></mrow><annotation encoding="application/x-tex">\mathbf{Aff}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathbf" style="margin-right:0.10903em;">Aff</span></span></span></span></span> be the category of affine spaces and affine
+maps. Then <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">F</mi><mi mathvariant="bold">l</mi><mi mathvariant="bold">M</mi><mi mathvariant="bold">a</mi><mi mathvariant="bold">n</mi></mrow><annotation encoding="application/x-tex">\mathbf{FlMan}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathbf">FlMan</span></span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">A</mi><mi mathvariant="bold">f</mi><mi mathvariant="bold">f</mi></mrow><annotation encoding="application/x-tex">\mathbf{Aff}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathbf" style="margin-right:0.10903em;">Aff</span></span></span></span></span> are equivalent
 categories.</p>
 </div>
 
@@ -176,7 +166,6 @@ categories.</p>
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
     <script src='https://hanshalvorson.dk/public/js/script.js'></script>
-
 
 
   </body>
