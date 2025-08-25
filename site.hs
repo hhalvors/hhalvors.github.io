@@ -65,7 +65,7 @@ myWriter =
 
 -- Server-side KaTeX: replace Math inlines/blocks with KaTeX HTML via Deno script
 hlKaTeX :: Pandoc -> Compiler Pandoc
-hlKaTeX doc = recompilingUnsafeCompiler $ do
+hlKaTeX doc = unsafeCompiler $ do
   -- Allow reading the local script and fetching katex.mjs from jsdelivr:
   let cmd = "deno run --allow-read --allow-net=cdn.jsdelivr.net scripts/math.ts"
   (hin, hout, _, _) <- runInteractiveCommand cmd
