@@ -63,6 +63,25 @@ myWriter =
                                   -- We will inject *rendered* HTML ourselves
                                 }
 
+-- Simple HTML for a meta-refresh redirect
+redirectPage :: String -> String
+redirectPage target = mconcat
+  [ "<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'>"
+  , "<meta http-equiv='refresh' content='0; url=", target, "'>"
+  , "<link rel='canonical' href='", target, "'>"
+  , "<title>Redirecting…</title></head><body>"
+  , "<p>If you are not redirected automatically, "
+  , "<a href='", target, "'>click here</a>.</p>"
+  , "</body></html>"
+  ]
+
+-- Helper to create one output file with that HTML
+redirect :: Identifier -> String -> Rules ()
+redirect ident target =
+  create [ident] $ do
+    route idRoute
+    compile $ makeItem (redirectPage target)     
+
 -- Server-side KaTeX: replace Math inlines/blocks with KaTeX HTML via Deno script
 hlKaTeX :: Pandoc -> Compiler Pandoc
 hlKaTeX doc = unsafeCompiler $ do
@@ -224,7 +243,9 @@ main = hakyllWith config $ do
           >>= saveSnapshot "page-content"
           >>= loadAndApplyTemplate "templates/page.html" siteCtx
           >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> indexCtx)
-          >>= relativizeUrls      
+          >>= relativizeUrls
+
+    redirect "phi201/index.html" "https://hanshalvorson.dk/courses/phi201_f2025/"
 
     match "pages/*" $ do
       route $ setExtension "html"
