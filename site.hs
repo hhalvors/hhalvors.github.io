@@ -13,7 +13,7 @@ import           Data.List                (groupBy, sortOn, sortBy)
 import           Data.Maybe               (fromMaybe)
 import           Data.Monoid              (mappend)
 import           Data.Ord                 (Down(..), comparing)
-import           System.FilePath          (takeBaseName, takeFileName)
+import System.FilePath (splitDirectories, joinPath, takeExtension, takeBaseName, takeFileName)
 
 -- Text / process
 import qualified Data.Text                as T
@@ -492,6 +492,24 @@ main = hakyllWith config $ do
         route idRoute
         compile copyFileCompiler
 
+    let currentPhi201 = "phi201_f2025"    -- <<< update this once per year
+        courseRoot    = "courses/" ++ currentPhi201 ++ "/"
+
+    redirect (fromFilePath "phi201/index.html") ("/" ++ courseRoot)
+
+    -- Mirror every HTML page under the current course:
+    --   /courses/phi201_f2025/pset1.html
+    -- becomes a stub at
+    --   /phi201/pset1.html  (meta-refresh to the target above)
+    match (fromGlob (courseRoot ++ "**/*.html")) $ version "redirects" $ do
+      route $ customRoute $ \i ->
+        let p        = toFilePath i                          -- "courses/phi201_f2025/.../foo.html"
+            comps    = splitDirectories p                    -- ["courses","phi201_f2025",...,"foo.html"]
+            stripped = drop 2 comps                          -- [...,"foo.html"]
+        in  joinPath ("phi201" : stripped)      
+      compile $ do
+        src <- toFilePath <$> getUnderlying                  -- original path under /courses/...
+        makeItem (redirectPage ("/" ++ src))    
 
 -- Rule to generate publications.html
 --    create ["publications.html"] $ do 
