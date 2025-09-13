@@ -478,6 +478,11 @@ main = hakyllWith config $ do
         route $ gsubRoute "phi201_s2021_link/" (const "phi201_s2021/")
         compile copyFileCompiler
 
+    -- Copy any PDFs under courses/ (recursively)
+    match "courses/**.pdf" $ do
+        route   idRoute
+        compile copyFileCompiler    
+
     -- Rule to copy PDF files from the "pdf" directory
     match "pdf/*.pdf" $ do
         route idRoute
