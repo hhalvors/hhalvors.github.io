@@ -259,3 +259,21 @@ h2.year-label{
 .katex .sqrt-line {
   border-color: rgba(0, 0, 0, 0.75);
 }
+
+/* Tighter lists in page content */
+.page ul,
+.page ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  padding-left: 1.2rem; /* keeps bullets nicely aligned */
+}
+
+.page li {
+  margin: 0.15rem 0;
+  line-height: 1.35;  /* slightly tighter than default */
+}
+
+/* remove extra paragraph spacing inside list items */
+.page li > p {
+  margin: 0;
+}
