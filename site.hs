@@ -245,6 +245,22 @@ main = hakyllWith config $ do
           >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> indexCtx)
           >>= relativizeUrls
 
+    -- books/index.md  -> books/index.html (with baseSidebarCtx)
+    match "books/index.md" $ do
+      route $ constRoute "books/index.html"
+      compile $ do
+        let indexCtx = constField "title" "Books" <> siteCtx
+        pandocCompiler
+          >>= saveSnapshot "page-content"
+          >>= loadAndApplyTemplate "templates/page.html" siteCtx
+          >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> indexCtx)
+          >>= relativizeUrls
+
+-- books/*.pdf  -> copied verbatim (e.g., books/hlw-solutions.pdf)
+    match "books/*.pdf" $ do
+      route   idRoute
+      compile copyFileCompiler      
+
     redirect "phi201/index.html" "https://hanshalvorson.dk/courses/phi201_f2025/"
 
     match "pages/*" $ do
