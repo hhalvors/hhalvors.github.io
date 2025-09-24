@@ -216,6 +216,17 @@ main = hakyllWith config $ do
           >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> indexCtx)
           >>= relativizeUrls
 
+    match "courses/*.html" $ do
+      route   idRoute
+      compile $ do
+        let pageCtx = constField "title" "Course" <> siteCtx
+        getResourceBody
+          >>= readPandoc -- parses the HTML file into Pandoc AST
+          >>= return . writePandoc
+          >>= loadAndApplyTemplate "templates/page.html" pageCtx
+          >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> pageCtx)
+          >>= relativizeUrls      
+
     -- match "courses/index.md" $ do
     --   route $ constRoute "courses/index.html"
     --   compile $ do
