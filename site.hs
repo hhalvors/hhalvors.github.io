@@ -653,7 +653,7 @@ siteCtx =
     constField "site-url" "https://hanshalvorson.dk" `mappend`
     constField "tagline" "Physics, Logic, Philosophy" `mappend`
     constField "site-title" "Hans Halvorson" `mappend`
-    constField "copy-year" "2024" `mappend`
+    constField "copy-year" "2025" `mappend`
     constField "github-repo" "https://github.com/hhalvors" `mappend`
     defaultContext
 
