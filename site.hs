@@ -256,15 +256,13 @@ main = hakyllWith config $ do
           >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> indexCtx)
           >>= relativizeUrls
 
-    -- books/index.md  -> books/index.html (with baseSidebarCtx)
-    match "books/index.md" $ do
-      route $ constRoute "books/index.html"
-      compile $ do
-        let indexCtx = constField "title" "Books" <> siteCtx
+    match "books/*.md" $ do
+      route $ setExtension "html"
+      compile $
         pandocCompiler
           >>= saveSnapshot "page-content"
           >>= loadAndApplyTemplate "templates/page.html" siteCtx
-          >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> indexCtx)
+          >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
           >>= relativizeUrls
 
 -- books/*.pdf  -> copied verbatim (e.g., books/hlw-solutions.pdf)
