@@ -283,3 +283,42 @@ h2.year-label {
   border-color:rgba(0,0,0,0.75);
 }
 
+/* ───────────────────────────────────────────────
+   MOBILE TWEAKS
+   ─────────────────────────────────────────────── */
+
+@media (max-width: 700px) {
+
+  /* 1. Make the name in the masthead smaller on phones */
+  .masthead-title {
+    font-size: 1.6rem;        /* was 2rem */
+    line-height: 1.1;
+  }
+
+  .masthead-title small {
+    display: block;           /* put tagline on its own line */
+    font-size: 0.9rem;
+    margin-top: 0.15rem;
+  }
+
+  /* 2. Publications: put the year above the list instead of in a side gutter */
+
+  .year-container {
+    padding-left: 0;          /* remove left gutter on mobile */
+    margin-bottom: 1.6rem;
+  }
+
+  h2.year-label {
+    position: static;         /* no absolute positioning */
+    width: auto;
+    margin: 0 0 0.2rem 0;     /* year above the list */
+    font-weight: 600;
+    color: #b0b0b0;
+    letter-spacing: 0.02em;
+  }
+
+  .publist {
+    padding-left: 1.1rem;     /* normal list indent again */
+  }
+}
+
