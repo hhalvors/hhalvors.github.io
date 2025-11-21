@@ -506,6 +506,11 @@ main = hakyllWith config $ do
     -- Copy any PDFs under courses/ (recursively)
     match "courses/**.pdf" $ do
         route   idRoute
+        compile copyFileCompiler
+
+    -- Copy any TeX files under courses/ (recursively)
+    match "courses/**.tex" $ do
+        route   idRoute
         compile copyFileCompiler    
 
     -- Rule to copy PDF files from the "pdf" directory

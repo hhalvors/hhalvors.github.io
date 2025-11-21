@@ -1,0 +1,188 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,enumitem}
+\setlength{\parskip}{0.6em}
+\setlength{\parindent}{0pt}
+
+\title{Worksheet: Defining one relation from another}
+\date{}
+\begin{document}
+\maketitle
+
+We work in ordinary first-order logic with identity, with:
+\begin{itemize}
+  \item monadic (unary) predicate symbols $P,Q$,
+  \item a binary predicate symbol $R$,
+  \item and, later, a binary predicate symbol $S$.
+\end{itemize}
+Throughout, $x,y,z$ range over objects in the domain.
+
+This worksheet explores what we can \emph{prove} about a binary relation when it is
+defined in terms of simpler predicates.
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{1. Defining a Product Relation}
+
+Suppose we \emph{define} a binary relation $R$ by:
+\[
+  Rxy \;\leftrightarrow\; Px\ \wedge\ Qy.
+\]
+
+Intuitively, $R$ relates exactly those pairs $(x,y)$ such that $x$ has property $P$
+and $y$ has property $Q$.
+
+\subsection*{Tasks}
+
+\begin{enumerate}[label=\textbf{(1.\arabic*)}]
+  \item Show that for all $x$ and $y$:
+  \[
+    Rxy \rightarrow Px \qquad\text{and}\qquad Rxy \rightarrow Qy.
+  \]
+  (A very easy warm-up.)
+
+  \item Define two unary predicates \emph{from} $R$:
+  \[
+    P_R(x) \;\equiv\; \exists y\,Rxy
+    \qquad\text{and}\qquad
+    Q_R(y) \;\equiv\; \exists x\,Rxy.
+  \]
+  Show that in any structure satisfying the definition $Rxy \leftrightarrow Px\wedge Qy$, we have:
+  \[
+    \forall x\bigl(P_R(x) \leftrightarrow Px\bigr)
+    \qquad\text{and}\qquad
+    \forall y\bigl(Q_R(y) \leftrightarrow Qy\bigr).
+  \]
+
+  \item \textbf{Rectangle Law.} Show that $R$ satisfies the following ``rectangle'' property:
+  \[
+    \forall x\forall x'\forall y\forall y'\bigl(
+      (Rxy \wedge Rx'y') \rightarrow (Rxy' \wedge Rx'y)
+    \bigr).
+  \]
+  In words: whenever $(x,y)$ and $(x',y')$ are in $R$, then the ``crossed'' pairs
+  $(x,y')$ and $(x',y)$ are also in $R$.
+
+  \item Explain why the Rectangle Law expresses the idea that the extension of $R$
+  in the domain is a \emph{full rectangular block} between the $P$-objects
+  and the $Q$-objects. (It has no ``holes'' inside that block.)
+\end{enumerate}
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{2. Defining an Equivalence from a Monadic Predicate}
+
+Now suppose we define a new binary relation $R$ from a single unary predicate $P$:
+\[
+  Rxy \;\leftrightarrow\; \bigl(Px\leftrightarrow Py\bigr).
+\]
+Intuitively: $x$ is $R$-related to $y$ iff $x$ and $y$ either both have property $P$,
+or both lack property $P$.
+
+\subsection*{Tasks}
+
+\begin{enumerate}[label=\textbf{(2.\arabic*)}]
+  \item Prove that $R$ is \textbf{reflexive}:
+  \[
+    \forall x\,Rxx.
+  \]
+  (Hint: what is $Px\leftrightarrow Px$?)
+
+  \item Prove that $R$ is \textbf{symmetric}:
+  \[
+    \forall x\forall y\,(Rxy \rightarrow Ryx).
+  \]
+  (Hint: use the symmetry of the biconditional: $Px\leftrightarrow Py$ iff $Py\leftrightarrow Px$.)
+
+  \item Prove that $R$ is \textbf{transitive}:
+  \[
+    \forall x\forall y\forall z\bigl((Rxy \wedge Ryz) \rightarrow Rxz\bigr).
+  \]
+  (Hint: if $Px$ and $Py$ have the same truth-value, and $Py$ and
+  $P(z)$ have the same truth-value, then $Px$ and $Pz$ have the same
+  truth-value.)
+
+  \item Conclude that $R$ is an \textbf{equivalence relation}.
+  
+  \item Describe informally what the $R$-equivalence classes look like.  
+  (How many equivalence classes are there? Which objects are in each class?)
+\end{enumerate}
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{3. Defining a Relation from Another}
+
+Now start with an arbitrary binary relation $R$.  
+Define a new binary relation $S$ by:
+\[
+  Sxy \;\leftrightarrow\; \forall z\bigl(Rxz \rightarrow Ryz\bigr).
+\]
+
+Intuitively:
+\begin{itemize}
+  \item $Sxy$ means: \emph{every} $R$-successor of $x$ is also an $R$-successor of $y$.
+  \item So $y$ has at least all the $R$-successors that $x$ has (perhaps more).
+\end{itemize}
+
+\subsection*{Tasks}
+
+\begin{enumerate}[label=\textbf{(3.\arabic*)}]
+  \item Prove that $S$ is \textbf{reflexive}:
+  \[
+    \forall x\,Sxx.
+  \]
+  (Hint: for any $x$ and $z$, $Rxz \rightarrow Rxz$ is always true.)
+
+  \item Prove that $S$ is \textbf{transitive}:
+  \[
+    \forall x\forall y\forall w\bigl((Sxy \wedge Syw) \rightarrow Sxw\bigr).
+  \]
+  (Hint: unpack the definition: if every $R$-successor of $x$ is an $R$-successor of $y$, and every $R$-successor of $y$ is an $R$-successor of $w$, then what can you say about the $R$-successors of $x$ and $w$?)
+
+  \item Is $S$ necessarily \textbf{symmetric}?  
+  Either:
+  \begin{itemize}
+    \item give a proof that $\forall x\forall y(Sxy \rightarrow Syx)$ is valid, or
+    \item give a countermodel (a structure and an interpretation of $R$) where $Sxy$ holds but $Syx$ fails for some $x,y$.
+  \end{itemize}
+
+  \item Based on your answers above, what kind of relational structure is $S$?  
+  (For example: is it an equivalence relation, a partial order, a preorder, \dots?)
+
+  \item Explain in ordinary language what $Sxy$ says about the relationship between $x$ and $y$,
+  in terms of their $R$-successor sets.
+\end{enumerate}
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{Optional Challenge}
+
+\begin{enumerate}[label=\textbf{(C.\arabic*)}]
+  \item In Part~1, we saw that if $Rxy \leftrightarrow Px\wedge Qy$, then $R$ satisfies the Rectangle Law.  
+  Prove the \emph{converse}: if a binary relation $R$ satisfies
+  \[
+    \forall x\forall x'\forall y\forall y'
+    \bigl( (Rxy \wedge Rx'y') \rightarrow (Rxy' \wedge Rx'y) \bigr),
+  \]
+  then there exist monadic predicates $P$ and $Q$ such that
+  \[
+    Rxy \leftrightarrow Px\wedge Qy
+  \]
+  holds in the structure.
+
+  (Hint: let $Px$ say ``row $x$ of $R$ is nonempty'', and let $Qy$ say ``column $y$ of $R$ is nonempty''.)
+\end{enumerate}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

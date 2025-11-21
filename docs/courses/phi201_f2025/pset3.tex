@@ -1,0 +1,62 @@
+% Options for packages loaded elsewhere
+\documentclass[12pt]{article}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+\usepackage{fullpage,amssymb,array}
+
+\title{logic pset3}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\thispagestyle{empty}
+
+\vspace*{-3em}
+
+Resources: Lecture 3 and Chapters 3 and 5 of \emph{How Logic
+  Works}. (Note that we are skipping over Chapter 4 for now.)
+
+\section*{A. Proofs}
+
+Use any of the rules of inference, including reductio ad absurdum, to
+prove the following sequents.
+
+\begin{enumerate}
+\item $\neg (P\to Q)\:\vdash\: Q\to R$
+\item $P\to Q\:\vdash\:\neg P\vee Q$
+\item $P\to (Q\vee R)\:\vdash\: (P\to Q)\vee R$
+\end{enumerate}
+
+\section*{B. Truth tables}
+
+\begin{enumerate}
+\item Use truth table reasoning to show that
+  $P\vee (Q\wedge R)\:\vDash\: P\vee Q$. You don't have to display a
+  full truth table, but if you do, explain how the table demonstrates
+  the result.
+\item Use truth table reasoning to show that
+  $P\to (Q\vee R)\:\not\vDash \:P\to Q$.
+\item Use truth table reasoning to show that the following ``proof''
+  must have a mistake.
+
+  \medskip \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm}
+      >{\centering\arraybackslash}p{1cm} p{4cm}
+      >{\raggedright\arraybackslash}p{3.5cm}}
+                1   & (1) & $P\vee Q$  &    A \\
+           2   & (2) & $P$    &   A \\
+           3   & (3) & $Q$    &   A \\
+           2,3 & (4) & $P\wedge Q$  & 2,3 $\wedge$I \\
+           2,3 & (5) & $P$    &    4 $\wedge$E \\
+           1 & (6) & $P$ & 1,2,2,3,5 $\vee$E
+\end{tabular}
+\end{enumerate}
+  
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

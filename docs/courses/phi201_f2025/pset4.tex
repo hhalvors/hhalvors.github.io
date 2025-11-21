@@ -1,0 +1,80 @@
+% Options for packages loaded elsewhere
+\documentclass[12pt]{article}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+\usepackage{fullpage,amssymb,array}
+
+\title{logic pset4}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\thispagestyle{empty}
+
+\vspace*{-3em}
+
+Resources: Lecture 4 and Chapter 6 (pp 84-99) of \emph{How Logic
+  Works}.
+
+\section*{A. Translation}
+
+Represent the form of the following sentences in predicate logic.
+We've suggested appropriate symbols. (We assume that quantifiers are
+restricted to persons, so you don't need to add an extra predicate for
+``$x$ is a person.'')
+
+\begin{enumerate}
+\item Only students who do the homework will learn logic. ($Sx,Hx,Lx$)
+
+\item All students and professors get a discount. ($Sx,Px,Dx$)
+
+\item Every student respects every professor who respects some
+student. ($Sx,Px,Rxy$)
+   
+\item There is some student who respects only those professors who
+   respect all students. ($Sx,Px,Rxy$)
+\end{enumerate}
+
+
+\section*{B. Proofs}
+
+Prove the following sequents with the propositional logic rules plus
+UE and UI. You may also use cut and replacement with any of the
+``useful sequents'' from the back of the textbook.
+
+\begin{enumerate}
+\item $\forall x(Fx \to\forall yGy)\:\vdash\: \forall x\forall y(Fx\to
+Gy)$
+\item $\forall x\forall y(Fx\to Gy)\:\vdash\: \forall x(Fx\to \forall
+yGy)$
+\item $\vdash\:\forall x(\forall yRxy\to Rxx)$
+\end{enumerate}
+
+
+\section*{C. Conceptual}
+
+It can be proven that
+$\forall xFx\to \forall xGx\vdash \forall x(Fx\to Gx)$, but the
+following attempt at a proof has a mistake. What is the mistake? A
+good answer can be as short as one sentence.
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm}
+    >{\centering\arraybackslash}p{1cm} p{4cm}
+    >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\forall xFx \to \forall xGx$ & A \\
+2 & (2) & $Fa$ & A \\
+2 & (3) & $\forall xFx$ & 2 UI \\
+1,2 & (4) & $\forall xGx$ & 1,3 MP \\
+1,2 & (5) & $Ga$ & 4 UE \\
+1 & (6) & $Fa \to Ga$ & 2,5 CP \\
+1 & (7) & $\forall x(Fx \to Gx)$ & 6 UI \\
+\end{tabular}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

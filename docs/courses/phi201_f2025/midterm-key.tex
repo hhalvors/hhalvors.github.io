@@ -1,0 +1,176 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{array}
+\renewcommand{\thesubsection}{\Alph{subsection}.}
+\usepackage{enumitem}
+\setlength{\parindent}{0em}
+\usepackage{amssymb,amsmath}
+\begin{document}
+
+\section*{Intro Logic: Midterm Exam 2025 --- Answer Key}
+
+\textbf{Instructions:} (same as on exam)
+
+\subsection{Translation}
+
+Translate the following sentences into propositional logic. In each case, clearly indicate what letters you are assigning to atomic sentences. (2 points each)
+
+\begin{enumerate}[leftmargin=*]
+\item If Bob does not exercise regularly or does not eat healthy
+  meals, then Bob will not maintain good health.
+
+\textbf{Answer:} Let $E$ = Bob exercises regularly; $H$ = Bob eats healthy meals; $G$ = Bob maintains good health.  
+Translation: $(\neg E \vee \neg H) \to \neg G$.
+
+\item Carla will increase her chances of admission only if Carla
+submits her application early and asks for strong recommendation letters.
+
+\textbf{Answer:} Let $I$ = Carla increases her chances of admission; $S$ = Carla submits her application early; $R$ = Carla asks for strong recommendation letters.  
+Translation: $I \to (S \wedge R)$.
+
+\item Either David gets a front-row seat, or if David does not go with
+friends then David will not enjoy the concert.
+
+\textbf{Answer:} Let $F$ = David gets a front-row seat; $K$ = David goes with friends; $J$ = David enjoys the concert.  
+Translation: $F \vee (\neg K \to \neg J)$.
+\end{enumerate}
+
+
+\subsection{Semantics (truth tables)}
+
+\begin{enumerate}[leftmargin=*]
+
+\item For each of the following sentences, state whether it is a
+  tautology, contingency, or inconsistency, and justify your claim in
+  terms of truth tables. (3 points each)
+
+  \begin{enumerate}
+  \item $(P \wedge Q) \vee (\neg P \wedge \neg Q)$
+
+    \textbf{Answer:} Contingency.  True when $P$ and $Q$ have the same
+    truth value (true/true or false/false). False otherwise.
+
+  \item $P \to (Q \to (R \to (S \to P)))$
+
+    \textbf{Answer:} Tautology.  If $P$ is true, all nested
+    implications yield true; if $P$ is false, the outer conditional is
+    true. No false rows.
+  \end{enumerate}
+  
+\item For each of the following arguments, state whether it is valid
+  or invalid, and justify your claim in terms of truth tables. (3
+  points each)
+  \begin{enumerate}
+  \item $P \to Q \:\vdash\: P \to (Q \wedge R)$  
+
+    \textbf{Answer:} Invalid.  Counterexample: $P=1, Q=1, R=0$ makes
+    the premise true and conclusion false.
+
+  \item $Q \to R \:\vdash\: (P \vee Q) \to (P \vee R)$  
+
+    \textbf{Answer:} Valid.  If the conclusion is false, then
+    $P\vee Q$ is true and $P\vee R$ is false. The only way for this to
+    be the case is if $Q$ is true and $R$ is false, which means that
+    the premise $Q\to R$ is false.
+  \end{enumerate}
+\end{enumerate}
+
+
+\subsection{Proofs}
+
+Prove the following. Besides the basic rules, you may also use cut and
+replacement, but only if you include a proof of the relevant
+``lemmas'' in your exam booklet. (4 points each)
+
+\begin{enumerate}[leftmargin=*]
+
+\item $P,\neg P \:\vdash\: Q$
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $P$ & A \\
+2 & (2) & $\neg P$ & A \\
+3 & (3) & $\neg Q$ & A \\
+1,2 & (4) & $P \wedge \neg P$ & 1,2 $\wedge$I \\
+1,2 & (5) & $\neg \neg Q$ & 3,4 RA \\
+1,2 & (6) & $Q$ & 5 DN \\
+\end{tabular}
+  
+\item $P \vee Q, \neg P \:\vdash\: Q$
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+  1 & (1) & $P\vee Q$ & A \\
+  2 & (2) & $\neg P$ & A \\
+  3 & (3) & $P$ & A \\
+  2,3 & (4) & $Q$ & 3,2 problem 1 \\
+  5 & (5) & $Q$ & A \\
+  1,2 & (6) & $Q$ & 1,3,4,5,5 $\vee$E 
+\end{tabular}
+
+\item $\neg P\to Q \:\vdash\: P\vee Q$
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\neg P \to Q$ & A \\
+2 & (2) & $\neg (P \vee Q)$ & A \\
+3 & (3) & $P$ & A \\
+3 & (4) & $P \vee Q$ & 3 $\vee$I \\
+2,3 & (5) & $(P \vee Q) \wedge \neg (P \vee Q)$ & 4,2 $\wedge$I \\
+2 & (6) & $\neg P$ & 3,5 RA \\
+1,2 & (7) & $Q$ & 1,6 MP \\
+1,2 & (8) & $P \vee Q$ & 7 $\vee$I \\
+1,2 & (9) & $(P \vee Q) \wedge \neg (P \vee Q)$ & 8,2 $\wedge$I \\
+1 & (10) & $\neg \neg (P \vee Q)$ & 2,9 RA \\
+1 & (11) & $P \vee Q$ & 10 DN \\
+\end{tabular}
+
+\item $(\neg P \vee Q) \to (P \vee Q) \:\vdash\: P \vee Q$
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $(\neg P \vee Q) \to (P \vee Q)$ & A \\
+2 & (2) & $\neg P$ & A \\
+  2 & (3) & $\neg P\vee Q$ & 2 $\vee$I \\
+  1,2 & (4) & $P\vee Q$ & 1,3 MP \\
+  1,2 & (5) & $Q$ & 4,2 problem 2 \\
+  1 & (6) & $\neg P\to Q$ & 2,5 CP \\
+  1 & (7) & $P\vee Q$ & 6 problem 3 
+\end{tabular}
+
+\end{enumerate}
+
+
+\subsection{Conceptual}
+
+\begin{enumerate}[leftmargin=*]
+  
+\item Is there a correctly written proof with the following line
+  fragment? Justify your answer by showing that the relevant argument
+  is valid or invalid, and by invoking soundness or completeness. (4
+  points)
+  \[ \varnothing \vdash ((P\to Q)\to \neg P)\to \neg P \]
+  
+  \textbf{Answer:} No.  The sentence is not a tautology.
+  Counterexample: $P=1, Q=0$ makes the formula false.  By soundness,
+  no correct proof from $\varnothing$ exists.
+
+\item Suppose that $\varphi$ and $\psi$ are contingencies. Can
+  $\varphi \to \psi$ be a tautology, contingency, or inconsistency?
+  Justify your answers. (4 points)
+
+  \textbf{Answer:}
+  \begin{itemize}
+    \item \textbf{Tautology:} Yes. Example: $\varphi$ and $\psi$ are identical.
+    \item \textbf{Contingency:} Yes. Example: $\varphi=P$, $\psi=Q$.
+    \item \textbf{Inconsistency:} No. Since $\varphi$ is a
+      contingency, it is false on some row of its truth table. On this
+      row, $\varphi\to\psi$ is true. Hence $\varphi\to\psi$ cannot be
+      an inconsistency.
+  \end{itemize}
+\end{enumerate}
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

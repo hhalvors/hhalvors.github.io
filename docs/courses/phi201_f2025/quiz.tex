@@ -1,0 +1,123 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{array}
+\renewcommand{\thesubsection}{\Alph{subsection}.}
+\usepackage{enumitem}
+\setlength{\parindent}{0em}
+\usepackage{amssymb,amsmath}
+\begin{document}
+
+\thispagestyle{empty}
+
+\section*{Intro logic 2025: quiz}
+
+The only resources allowed are your brain and a writing
+instrument. Please write your answers neatly in the exam booklet.
+
+\subsection{Proofs}
+
+Please prove \textbf{one of the two} sequents below. You may use any
+of the primitive rules (including UE,UI,EE,EI), or ``prop taut'' for
+any substitution instance of a valid sequent of the propositional
+calculus. There is a list of some useful valid sequents on the back
+side of this page.
+
+\begin{enumerate}
+\item $\vdash\:\exists x\forall y(Fx\to Fy)$
+\item $\forall x (\exists y Rxy \to \forall z Rzx), \exists x\exists yRxy\:\vdash \:\forall x\forall yRxy$
+\end{enumerate}
+
+\subsection{Translation}
+
+Please translate \textbf{both} of the sentences below into predicate
+logic. For the first sentence, don't use any predicates or relation
+symbols besides the equals symbol.
+
+\begin{enumerate}
+\item There are exactly two things. 
+\item There is a critic who admires no painters. ($Cx,Py,Axy$)
+\end{enumerate}
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
+
+
+
+
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\forall x (\exists y Rxy \to \forall z Rzx)$ & A \\
+2 & (2) & $Rcd$ & A \\
+2 & (3) & $\exists y Rcy$ & 2 EI \\
+1 & (4) & $\exists y Rcy \to \forall z Rzc$ & 1 UE \\
+1,2 & (5) & $\forall z Rzc$ & 4,3 MP \\
+1,2 & (6) & $Rbc$ & 5 UE \\
+1,2 & (7) & $\exists y Rby$ & 6 EI \\
+1 & (8) & $\exists y Rby \to \forall z Rzb$ & 1 UE \\
+1,2 & (9) & $\forall z Rzb$ & 8,7 MP \\
+1,2 & (10) & $Rab$ & 9 UE \\
+1,2 & (11) & $\forall y Ray$ & 10 UI \\
+1,2 & (12) & $\forall x \forall y Rxy$ & 11 UI \\
+\end{tabular}
+
+\bigskip
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\forall x \exists y (Fx \to Gy)$ & A \\
+2 & (2) & $\exists y Gy \vee \neg \exists y Gy$ & LEM \\
+3 & (3) & $\exists y Gy$ & A \\
+4 & (4) & $Ga$ & A \\
+3 & (4) & $Fb \to Ga$ & 3 pos paradox  \\
+3 & (5) & $\forall x (Fx \to Ga)$ & 4 UI \\
+3 & (7) & $\exists y \forall x (Fx \to Gy)$ & 6 EI \\
+2 & (8) & $\exists y \forall x (Fx \to Gy)$ & 2,3,7 EE \\
+9 & (9) & $\neg \exists y Gy$ & A \\
+10 & (10) & $Fc$ & A \\
+
+11 & (12) & $\exists y (Fc \to Gy)$ & 11 UE \\
+13 & (13) & $Fc \to Gd$ & A \\
+10,13 & (14) & $Gd$ & 13,10 MP \\
+10,13 & (15) & $\exists y Gy$ & 14 EI \\
+9,10,13 & (16) & $\exists y Gy \wedge \neg \exists y Gy$ & 15,9 $\wedge$I \\
+  9,13 & (17) & $\neg Fc$ & 10,16 RA \\
+  9,13 & (18) & $Fc\to Ge$ & 17 neg paradox \\
+  9,11 & (19) & $Fc\to Ge$ & 12,13,18 EE \\
+  9,11 & (20) & $\forall x(Fx\to Ge)$ & 19 UI \\
+  9,11 & (21) & $\exists y\forall x(Fx\to Gy)$ & 20 EI \\
+  1,11 & (22) & $\exists y\forall x(Fx\to Gy)$ & 1,2,8,9,21 EE                                                 
+\end{tabular}
+
+\bigskip 
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1  & (1)  & $\forall x \exists y (Fx \to Gy)$ & A \\
+2  & (2)  & $\exists y Gy \vee \neg \exists y Gy$ & LEM \\
+3  & (3)  & $\exists y Gy$ & A \\
+4  & (4)  & $Ga$ & A \\
+5  & (5)  & $Fb \to Ga$ & 4,3 CP \\
+6  & (6)  & $\forall x (Fx \to Ga)$ & 5 UI \\
+7  & (7)  & $\exists y \forall x (Fx \to Gy)$ & 6 EI \\
+8  & (8)  & $\exists y \forall x (Fx \to Gy)$ & 3,4,7 EE \\
+9  & (9)  & $\neg \exists y Gy$ & A \\
+10 & (10) & $Fc$ & A \\
+11 & (11) & $\exists y (Fc \to Gy)$ & 1 UE \\
+12 & (12) & $Fc \to Gd$ & A \\
+13 & (13) & $Gd$ & 12,10 MP \\
+14 & (14) & $\exists y Gy$ & 13 EI \\
+15 & (15) & $\exists y Gy \wedge \neg \exists y Gy$ & 14,9 $\wedge$I \\
+16 & (16) & $\neg Fc$ & 10,15 RA \\
+17 & (17) & $Fc \to Ge$ & 16 \emph{neg paradox} \\
+18 & (18) & $Fc \to Ge$ & 11,12,17 EE \\
+19 & (19) & $\forall x(Fx \to Ge)$ & 18 UI \\
+20 & (20) & $\exists y\forall x(Fx \to Gy)$ & 19 EI \\
+21 & (21) & $\exists y\forall x(Fx \to Gy)$ & 2,3,8,9,20 EE \\                                                
+\end{tabular}
+
+

@@ -1,0 +1,358 @@
+\documentclass[11pt,fleqn]{article}
+\usepackage{fullpage}
+\usepackage{enumitem}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+\usepackage{amsfonts,amsmath,amsthm}
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{ass}{Assumption}
+\usepackage{outlines}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\7}{\mathbb}
+% \newcommand{\2}{\mathcal}
+\usepackage{hyperref}
+
+
+
+
+
+\begin{document}
+
+
+\section*{Chapter 6: Substantivalism -- Newton versus Leibniz}
+
+\begin{description}
+\item[(R1)] All motion is the relative motion of bodies, and
+  consequently, spacetime does not have structures that support
+  absolute quantities of motion.
+\item[(R2)] Spatiotemporal relations among bodies and events are
+  direct; i.e.\ they are not derived from relations among a substratum
+  of space-time points that underlie events.
+\end{description}
+
+
+\subsection*{Stage setting}
+
+``\dots the best judgment emerging from the evidence marshalled in
+chapters 4 and 5 is that (R1) is in fact false in both the classical
+and relativistic settings.'' (p 111)
+
+Chapter 3 supposedly shows (R1) and ``determinism is possible''
+implies (R2)
+
+``\dots if we want to allow for the possibility that particle motions
+are deterministic and if we want to make a substantivalist
+interpretation of the space-time manifold (not R2), it follows that
+the structure of space-time must be at least as rich as that of
+neo-Newtonian spacetime (not R1).'' (p 55)
+
+\textbf{Definition:} A theory is \emph{deterministic} (in the sense of
+David Lewis) if for any nomologically possible worlds $W$ and $W'$, if
+$W$ and $W'$ agree on an initial segment, then $W=W'$.
+
+Earman will argue that not-R2 and R1 imply not-determinism.
+
+\textbf{Fact:} Let $M$ be a classical spacetime with less structure
+than Galilean spacetime. There is a symmetry $\varphi :M\to M$ that is
+the identity for $t\leq 0$, but not the identity for $t>0$. (HH
+agrees.) Thus, R1 implies the existence of such a symmetry.
+
+``\dots we can thus produce two dynamically possible models where the
+world lines of the particles coincide for all $t\leq 0$ but diverge
+for $t>0$, a violation of determinism.''
+
+HH: It is not clear how not-R2 is supposed to function in this
+argument.
+
+Earman produces a second argument. R1 was taken to mean ``less
+structure than Galilean spacetime''. But even if we allow Galilean
+spacetime, we still might get failure of determinism.
+
+Let R1' = not full Newtonian spacetime. Hence R1 implies R1' but not
+vice versa.
+
+Now Earman argues that not-R2 and R1' implies not-determinism. The key
+fact now is that there is a Galilean transformation that is the
+identity at $t=0$ but not the identity elsewhere.
+
+\newpage 
+
+\subsection*{Leibniz's argument(s)}
+
+Leibniz argues for (R2), in particular that absolute space is an idle
+wheel.
+
+\textbf{Principle of Sufficient Reason:} (1) God would have a good
+reason to create one world instead of another. (2) Nothing happens
+without a cause.
+
+\textbf{Principle of the Identity of Indiscernibles:} If $a\neq b$,
+then there is some property that $a$ has and that $b$ lacks, or vice
+versa.
+
+Leibniz's shift argument: If space is a substance, all matter can be
+moved $n$ meters to the east of its current location, and the result
+is a new possible world. (see p 118)
+
+The existence of these possible worlds $\{ W_r:r\in\mathbb{R}\}$ is a
+problem both for PSR (which should God create?), and for PIdIn (the
+substantivalist declares them non-equal when they agree on all
+properties).
+
+Earman: For Leibniz's invocation of PIdIn to work, it would need to be
+supplemented by an implausible verificationist assumption. For
+example: if two things agree on observable properties, then they
+agree. (``verifiability version of PIdIn'' p 120)
+
+
+
+\end{document}
+
+
+
+
+\subsection*{Does a lonely particle have a velocity?}
+
+Let's start where we left off last week --- discussing whether an
+individual particle has a velocity. This will let us start to unpack
+what John Earman means by an absolute quantity.
+
+Consider a possible world with just a single particle all alone. Does
+that particle have a velocity? I think different people will have
+different intuitions about this. But if we make the same background
+assumptions that Earman does, then we must answer yes. In particular,
+if spacetime is represented by a smooth manifold $M$, and a particle
+by a smooth curve $\gamma$ in $M$, then this particle has a definite
+velocity vector at each point along its trajectory. This is true in
+any smooth manifold, without the need to add any additional
+structure. Granted, if the manifold $M$ cannot be sliced up, at least
+locally, into space+time, then we wouldn't know whether to call a
+smooth curve a ``trajectory''. But we don't need a connection, much
+less a metric, to have such a local slicing. The conclusion, then, is
+that having the structure of a smooth manifold is in itself sufficient
+for each physical object (represented by a smooth curve in that
+manifold) having an \emph{absolute} velocity at each moment of its
+life.\footnote{What I'm saying here can be thought of as the opposite
+  of the lesson that some people draw from Galilean relativity, i.e.\
+  that nothing is \emph{really} moving. I'm suggesting that everything
+  is moving, insofar as ``moving'' is cashed out in terms of
+  assignment of a non-zero velocity vector.}
+
+It should be clear, however, that there are multiple senses of
+``absolute'', and the sense in which velocity is absolute cannot be
+what people like John Earman mean with his use of the term. Earman
+agrees with the folklore view that velocity is \emph{not} absolute in
+Galilean spacetime. So what is this other sense of ``absolute''?
+
+The sense of absolute that I was (perhaps incautiously) using was
+being definable without reference to other bodies. ... I mean simply
+that the particle's trajectory $\gamma$ defines, without reference to
+any other physical bodies, a vector $v(s)\in T_{\gamma (s)}$. (I will
+subsequently set $\gamma (s)=p$ and $v(s)=v$ for notational
+simplicity.) Or in other words, having the velocity vector $v\in T_p$
+is a monadic property of the particle with this trajectory.
+
+What then is the standard sense of ``absolute''? It's not so easy to
+think immediately of a fully rigorous mathematical definition. One
+wants to to equate ``absolute'' with ``invariant'', and then just turn
+the crank: a mathematical thing $X$ represents something absolute just
+in case $f(X)=X$ for every symmetry $f$. But there are some subtleties
+here. First, symmetries don't act directly on the things we are
+interested in (such as an object's acceleration vector); they act on
+the points of spacetime, and then we have to decide how to induce
+actions on other kinds of mathematical objects. Another serious issue
+for any theory that uses the apparatus of smooth manifolds is that a
+symmetry $\varphi :M\to M$ maps elements of the fiber over $p\in M$ to
+elements of the fiber over $\varphi (p)$ (or the fiber over
+$\varphi ^{-1}(p)$, depending on how we set up the definitions). But
+elements in the one fiber are not directly comparable to elements in
+the other fiber, i.e.\ there is no cross-fiber identity relation. So
+how in the world are we supposed to make sense of $f(X)=X$?\footnote{I
+  will leave aside for now the common --- and surely not totally
+  incorrect --- idea that symmetries act on equations, and that terms
+  of equations can be invariant under such transformations. For
+  example, it's typically said that Galilean transformations leave the
+  form of the law $F=ma$ intact. People of a mathematical bent would
+  like to know the rules of this transformation game. What kind of
+  things are the objects being acted upon? Are they strings of symbols
+  with some kind of formation rules? And if so, under what conditions
+  do we say that two such strings are identical?}
+
+The situation is not quite as bad as that makes it sound: we do have
+good intuitions about which quantities are absolute in specific
+cases. For example:
+\begin{quote}
+  (*) In Galilean spacetime $M$, the acceleration of a body is
+  absolute, while its velocity is not. \end{quote} What exactly does
+(*) mean?  Let's resist cashing (*) out in terms of reference frames,
+because the notion of a reference frame is no more clear than the
+notion of an absolute quantity. Let's try, instead, to find a
+mathematical fact that corresponds to (*). (As Carnap would say, we're
+looking for an \emph{explication} of (*).) Here we are helped by the
+fact that Galilean spacetime can be represented by an affine space
+$M\times V\to M$ with a temporal metric $t:V\to\7R$. Here $V$ is the
+four-dimensional tangent space, now treated as the same space for all
+different points in $M$. In this case, a fixed base point $a\in M$
+defines a bijection $u\mapsto a+u$ from $V$ to $M$. A Galilean boost
+$\varphi$ based at $a$ and by velocity $v$ is defined by 
+\[ \varphi (a+u) \:=\: (a+u)+t(u)v \:=\: a+(u+t(u)v). \] In other
+words, $\varphi (a+u)=a+\Phi (u)$, where $\Phi :V\to V$ is the linear
+map $u\mapsto u+t(u)v$.
+
+The map $\Phi$ will obviously change the velocity vector
+
+In summary, when the manifold $M$ has a flat connection, then there is
+a preferred standard of comparison between vectors in a tangent space
+$T_p$ and vectors in a tangent space $T_{\varphi (p)}$. This standard
+then allows for a notion of an invariant vector field, either on the
+entire space $M$, or on some smooth curve $\gamma$ in $M$.
+
+\begin{defn} Suppose that $M$ is a smooth manifold, and let $\nabla$
+  be a flat connection on $M$. For a diffeomorphism $f:M\to M$ and
+  vector field $X$ on $M$, we that $X$ is \textbf{invariant} under $f$
+  just in case
+  \[ \nabla X \: = \: \nabla (f_* X) .\] \end{defn}
+
+Unfortunately this definition is not immediately useful for the case
+of interest: the acceleration field $X$ along a smooth curve $\gamma$
+in $M$. The problem is that $X$ is not defined on all of $M$, but just
+on the image of $\gamma$ in $M$. 
+
+
+[[TO DO: Galilean spacetime as affine space. Galilean boost as affine
+space map.]]
+
+for example, the classic case: in Galilean spacetime $M$, acceleration
+is absolute, but velocity is not. Here's one easy way to think of
+that: let $\gamma$ be a smooth timelike curve in $M$, and let
+$\mathsf{In}$ be the predicate of curves that means ``is inertial'',
+which is tantamount to saying that the curve is a
+\kw[geodesic]{geodesic} according to the derivative operator $\nabla$
+that is part of the definition of $M$. Of course $\nabla$ is invariant
+under Galilean transformations in the precise sense that
+\[ \varphi_* (\nabla_X Y) = \nabla_{\varphi_* X} (\varphi_* Y) ,
+\]
+for any Galilean transformation $\varphi :M\to M$, and for any vector
+fields $X$ and $Y$.  Thus, Galilean transformations map geodesics to
+geodesics, and $\mathsf{In}$ holds of a curve $\gamma$ iff
+$\mathsf{In}$ holds of the curve $\varphi \circ \gamma$, where
+$\varphi$ is an arbitrary Galilean transformation.
+
+Let $\gamma$ be a timelike geodesic with a timelike tangent vector
+$T^a$ satisfying $t_c T^c = 1$, where $t_c$ is the temporal
+1-form. Let $X^a$ be a spacelike vector at some point on $\gamma$,
+such that $t_c X^c = 0$, and let \(X^a(\tau)\) be the parallel
+transport of \(X^a\) along \(\gamma(\tau)\).
+
+Then, the Galilean boost $\varphi: M \to M$ is defined by:
+\[ \varphi(p) \:= \: p + t(p)\vec{v}, \] where: $t(p)$ is the time
+coordinate of the point $p$.
+
+
+
+
+I am fully aware that it seems meaningless to assert that the velocity
+of a particle is $v$, while not saying anything else about the vector
+$v$. The problem is that vectors are abstract mathematical objects in
+a particularly egregious sense. Let me explain
+
+Assuming that the manifold $M$ is four-dimensional (as we expect
+spacetime to be), a tangent space $T_p$ is a four-dimensional vector
+space over $\7R$. It's fairly easy to prove that for any two
+\emph{non-zero} vectors $v,w$ in a vector space $V$, there is an
+isomorphism $L:V\to V$ (i.e.\ an invertible linear mapping) such that
+$Lv=w$. (Construct a basis $\{ v,v_1,v_2,\dots \}$ for $V$, and extend
+$L$ by setting $L(v_i)=v_i$ for all $i$.) Using the standard
+mathematical account of definable properties of mathematical
+objects,\footnote{The standard result in model theory is that if
+  $h:M\to N$ is an elementary embedding, then $M\models \phi (a)$ iff
+  $N\models \phi (h(a))$. Now for any $a\in M$, let $\mathrm{tp}_M(a)$
+  be the family of all predicates $\phi$ such that
+  $M\models \phi (a)$. Then $\mathrm{tp}_M(a)=\mathrm{tp}_M(h(a))$,
+  i.e.\ $a$ and $h(a)$ have all the same definable properties.} there
+is then no vector-space-definable property that $v$ has and that $w$
+lacks. In other words, any two non-zero vectors in $V$ are
+indistinguishable by the lights of vector space theory. (The zero
+vector $0$ is the only distinguishable element of $V$ in the sense
+that $v\in V$ is preserved under every automorphism of $V$ iff
+$v=0$. However, the tangent vector of a smooth curve can never be
+$0$.)
+
+It's tempting, then, to think that the assignment of a velocity vector
+$v\in T_p$ is meaningless, i.e.\ it's just a mathematical tag that
+doesn't mean anything, because $v$ is no different than any other
+non-zero vector. There is \emph{some} truth in that claim, viz.\ we
+could always change representational conventions and use a different
+vector to represent velocity. But this freedom of representational
+conventions does not itself mean that the assignment of a specific
+vector is meaningless. First, the tangent space $T_p$ at a point
+$p\in M$ is not just an abstract vector space: it is the concrete
+vector space of \kw[derivations]{derivation} of scalar fields on
+neighborhoods around $p$. (As usual, let $\2S (p)$ denote the family
+of neighborhoods of $p$.) Thus, the tangent vector of a curve $\gamma$
+is uniquely defined by its action on to these scalar fields: it
+specifies the rate of change of each scalar field along the trajectory
+$\gamma$. A different vector $w\in T_p$ would give different answers
+to questions of the form ``how fast is $f$ changing along the
+trajectory $\gamma$''.\footnote{So the velocity of an object is not
+  defined relative to some fixed standard, but relative to any
+  standard of scalar values along its trajectory. But another way of
+  putting this is that the velocity of a particle is the standard by
+  which change of scalar values can be judged.}
+
+It might be tempting to think that we smuggled in spacetime
+substantivalism by assuming that there is a manifold in which the
+particle's motion is represented. The temptation here is to think that
+the particle has a velocity vector precisely because its position is
+changing relative to the background spacetime (represented by the
+manifold). But that doesn't make much sense. A tangent vector to a
+curve is not a measure, in any sort of way, of how that curve is
+changing relative to some fixed standard of reference inside the
+manifold, or some structure on the manifold. There are not ``grooves''
+in the manifold such that the rate of change of $\gamma$ can be
+defined in terms of how many grooves it crosses per unit of time. In
+fact, a smooth manifold (without further structure) is like a
+``Heraclitus world'' in the sense that nothing remains constant from
+point to point. This lack of a fixed standard of reference is
+precisely what makes a smooth manifold different from the familiar
+space $\7R ^4$ of quadruples of real numbers (or what is the same: by
+fixing a preferred global coordinate chart on a manifold).
+
+
+TODO: There is another sense in (connection doesn't compare different
+observers' velocities) ...
+
+There may be some \emph{other} sense of ``absolute'' such that the
+velocity of a particle is not absolute; but let's take our time to
+explore the options. One immediate thought here is that an abstract
+velocity vector $v\in T_p$ is a very different kind of thing than a
+numerical value. After all, it's the variability of numerical values
+that drives the intuition that velocity is \emph{not} absolute in,
+say, Galilean spacetime. For example, the proverbial man on the ship
+has zero velocity relative to the ship, while he has non-zero velocity
+relative to the shore.
+
+
+
+But in order to explain this other sense, we will need to look at
+quantities that are normally thought to be absolute, e.g.\
+acceleration in Galilean spacetime.
+
+
+
+
+\newpage
+\printglossaries
+
+
+  
+
+
+
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

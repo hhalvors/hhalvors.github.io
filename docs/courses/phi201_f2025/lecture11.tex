@@ -1,0 +1,328 @@
+\documentclass[aspectratio=169,17pt,fleqn]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{dolphin}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+\usepackage{amsmath,amssymb,array}
+
+
+\usepackage{fontspec}    
+\usepackage{unicode-math}  
+
+\AtBeginSection[]{
+  \begin{frame}
+    \centering
+    \vfill
+    \Large\insertsectionhead
+    \vfill
+  \end{frame}
+}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,matrix}
+
+
+\title{Review: translations and proofs}
+\author{PHI~201 -- Introductory Logic}
+\date{November 17, 2025}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{Proofs}
+
+\begin{frame}{Quantifiers of the same type}
+
+  \[ \forall x\forall y\,\varphi \:\equiv \: \forall y\forall
+    x\,\varphi \]
+  \[ \exists x\exists y\,\varphi \:\equiv \: \exists y\exists
+    x\,\varphi \]
+
+  \textbf{Fact:} Quantifiers of the same type commute. That is,
+  universal quantifiers commute with each other, and existential
+  quantifiers commute with each other.
+
+
+
+\end{frame}
+
+\begin{frame}{Prenex normal form}
+
+  \textbf{Fact:} Every sentence in predicate logic is equivalent to a
+  sentence where all the quantifiers occur at the beginning.
+
+\end{frame}
+
+\begin{frame}{Pushing negation inside}
+
+  \[ \neg \forall x\,\varphi \equiv \exists x\neg \varphi \]
+  \[ \neg\exists x\,\varphi\equiv\forall x\neg \varphi \]
+
+
+
+\end{frame}
+
+\begin{frame}{Equivalent formulas}
+
+  For purposes of establishing equivalence, you can treat the
+  variables inside a formula as names.
+
+  \bigskip If quantifiers are stripped, and variables replaced by
+  distinct names, then the process can be reversed to put the
+  quantifiers back on.
+
+\end{frame}
+
+\begin{frame}{Equivalent formulas}
+
+\textbf{Fact:} If $\varphi (a_1,\dots ,a_n)$ is equivalent to
+$\psi (a_1,\dots ,a_n)$, then
+$Q_1x_1\cdots Q_nx_n\,\varphi (x_1,\dots ,x_n)$ is equivalent to
+$Q_1x_1\cdots Q_nx_n\,\psi (x_1,\dots ,x_n)$.
+  
+\bigskip Practical upshot: you can detect equivalence by looking at
+the formula inside quantifiers.
+
+
+
+
+\end{frame}
+
+\begin{frame}
+\small 
+  
+  \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{8cm} >{\raggedright\arraybackslash}p{3.5cm}}
+    1 & (1) & $\forall x \exists y \forall z ((Fx \wedge Gy) \to Hz)$ & A \\
+    1 & (2) & $\exists y \forall z ((Fa \wedge Gy) \to Hz)$ & 1 UE \\
+    3 & (3) & $\forall z ((Fa \wedge Gb) \to Hz)$ & A \\
+    3 & (4) & $(Fa \wedge Gb) \to Hc$ & 3 UE \\
+    3 & (5) & $(\neg Fa\vee \neg Gb)\vee Hc$ & 4 TTV \\
+    3 & (6) & $\forall z((\neg Fa\vee \neg Gb)\vee Hz)$ & 5 UI \\
+    3 & (7) & $\exists y\forall z((\neg Fa\vee Gy)\vee Hz)$ & 6 EI \\
+    1 & (8) & $\exists y\forall z((\neg Fa\vee Gy)\vee Hz)$ & 2,3,7 EE
+    \\
+    1 & (9) & $\forall x\exists y\forall z((\neg Fx\vee Gy)\vee Hz)$ &
+                                                                       8
+                                                                       UI \end{tabular}
+
+\end{frame}
+
+\begin{frame}
+
+  \[ \begin{array}{rcl}
+       Fy\wedge \exists xGx & \equiv & \exists
+                                                  x(Fy\wedge Gx) \\[5pt]
+       Fy\vee \exists xGx &\equiv & \exists
+                                               x(Fy\vee Gx) \\[5pt]
+       Fy\to \exists xGx & \equiv & \exists
+                                               x(Fy\to Gx) \end{array}
+   \]
+
+ \end{frame}
+
+ \begin{frame}
+
+   \[ \begin{array}{rcl}
+        \exists x(Gx\wedge Fy) & \equiv & \exists xGx\wedge Fy \\[5pt]
+        \exists x(Gx\vee Fy) & \equiv & \exists xGx\wedge Fy \\[5pt]
+        \exists x(Gx\to Fy) & \equiv & \forall xGx\to Fy \end{array} \]
+
+
+\end{frame}
+
+\begin{frame}
+
+  \[ \begin{array}{rcl}
+       \forall y(\exists xGx\to Fy) & \equiv & \forall y\forall
+                                               x(Gx\to Fy)  \\[5pt]
+     & \equiv & \exists xGx\to \forall yGy \end{array} \]
+
+
+\end{frame}
+
+\begin{frame}
+
+  $\forall xFx\to Gb\:\vdash\:\exists x(Fx\to Gb)$
+
+  \vspace{10em}
+
+
+
+
+\end{frame}
+ 
+\begin{frame}{Test your understanding}
+
+  Use what you just learned to quickly see that the following sentence
+  is a tautology:
+
+  \[ \forall y\exists x(Rxy\to \forall zRzy) \]
+
+\end{frame}
+
+
+
+\section{Translation}
+
+\begin{frame}{Nested Quantifiers and Scope}
+
+  \textbf{Source note.} The next few slides are based in part on
+  Warren Goldfarb's \emph{Deductive Logic}.
+
+\medskip
+
+\textbf{Nested quantifiers introduce a new complication:} \\
+we must determine \emph{which quantifier governs which.}
+
+\medskip
+\begin{itemize}
+  \item Quantifiers have \textbf{scope}, and one may fall inside another.
+  \item To paraphrase, it helps to work \textbf{from the outside in}.
+  \item First decide whether the statement as a whole is \textbf{universal} $(\forall)$
+        or \textbf{existential} $(\exists)$.
+  \item Then paraphrase the \textbf{open formula} inside its scope.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example Sentences}
+We assume—for now—that the \textbf{universe of discourse} is the class of \textbf{persons}.
+
+\medskip
+Consider the following English sentences:
+
+\begin{enumerate}
+  \item Every critic admires some painter.
+  \item Every critic is admired by some painter.
+  \item Every critic admires all painters.
+\end{enumerate}
+
+All three sentences are \textbf{universal quantifications}.
+\end{frame}
+
+\begin{frame}{Example (1): Every critic admires some painter}
+
+\textbf{Step 1 (outer quantifier):}
+\[
+  \forall x\, (x \text{ is a critic} \rightarrow \dots)
+\]
+
+\textbf{Step 2 (inner scope):}
+\[
+  x \text{ admires some painter}
+  \quad \leadsto \quad
+  \exists y\, (y \text{ is a painter} \wedge x \text{ admires } y)
+\]
+
+\textbf{Final formalization:}
+\[
+  \forall x\, (Cx \rightarrow \exists y\, (Py \wedge Axy))
+\]
+
+\end{frame}
+
+
+\begin{frame}{Example (2): Every critic is admired by some painter}
+
+\textbf{Paraphrase structure:}
+\[
+  \forall x\, (Cx \rightarrow \exists y\, (Py \wedge Ayx))
+\]
+
+Note the reversal in the predicate:
+\[
+  Ayx \equiv y \text{ admires } x.
+\]
+
+\textbf{Final symbolic form:}
+\[
+  \forall x\, (Cx \rightarrow \exists y\, (Py \wedge Ayx))
+\]
+\end{frame}
+
+\begin{frame}{Example (3): Every critic admires all painters}
+
+\textbf{Step 1 (outer quantifier):}
+\[
+  \forall x\, (Cx \rightarrow \dots)
+\]
+
+\textbf{Step 2 (scope):}
+\[
+  x \text{ admires all painters}
+  \quad \leadsto \quad
+  \forall y (Py \rightarrow Axy)
+\]
+
+\textbf{Final formalization:}
+\[
+  \forall x\, (Cx \rightarrow \forall y (Py \rightarrow Axy))
+\]
+\end{frame}
+
+\begin{frame}{Existential sentences}
+
+
+  There is a painter who is admired by every critic.
+
+  \bigskip $\exists x(x\;\text{is a painter}\;\wedge x \;\text{is admired by every critic})$
+
+\vspace{2em} Some critics admire all painters.
+
+\vspace{2em} There is a critic who admires no painters.
+
+
+\end{frame}
+
+
+
+\begin{frame}
+
+  $P$'s bear the relation $R$ only to $Q$'s
+  \[ \forall x(Px\to \forall y(Rxy\to Qy)) \]
+
+  Conversational implicature of if and only if: ``Danes only trust
+  other Danes.''
+  \[ \forall x(Dx\to \forall y(Txy\leftrightarrow Dy)) \]
+
+  
+\end{frame}
+
+\begin{frame}
+
+  Only the $F$ that/who are $G$ are $H$.
+
+  \[ \forall x(Fx\to (Hx\to Gx)) \]
+  \[ \forall x(Hx\to (Fx\wedge Gx)) \]
+
+
+\end{frame}
+
+\begin{frame}
+
+  $P$'s bear the relation $R$ only to $Q$'s that/who are $S$.
+
+  
+  
+\end{frame}
+
+\begin{frame}
+
+  $a$ only respects Harvard professors who acknowledge that Princeton
+  is superior.
+
+\[ \forall x((Hx\wedge Rax)\to Ax) \]
+\[ \forall x(Rax\to (Hx\wedge Ax)) \]
+
+\end{frame}
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

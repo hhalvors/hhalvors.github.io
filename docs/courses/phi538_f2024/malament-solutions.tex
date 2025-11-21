@@ -1,0 +1,38 @@
+\documentclass[12pt,fleqn]{article}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+\usepackage{tensor}
+\begin{document}
+
+Here's an alternate solution to 1.6.2.
+
+Using the Leibniz rule and the fact that $L_\xi$ commutes with index
+substitution, we have:
+
+\[
+  \begin{array}{lll} L_{\xi}(\tensor{\eta}{^a}\tensor{\eta}{^b})
+    & = \eta ^aL_{\xi}(\eta ^b)+\eta ^bL_{\xi}(\eta ^a) \\
+    & = \eta ^a\tensor{\delta}{^b_a}L_{\xi}(\eta ^a)+\eta ^bL_{\xi}(\eta ^a) \\
+    & = \eta ^bL_{\xi}(\eta ^a)+\eta ^bL_{\xi}(\eta ^a) .\end{array}
+\]
+
+Thus, if $L_\xi (\eta ^a\eta ^b)=0$ then $\eta ^bL_\xi (\eta
+^a)=0$. If $\eta$ is nonvanishing, then it can be cancelled, leaving
+$L_{\xi}(\eta ^a)=0$.
+
+One thing I would prefer to confirm: how do we know that there is a
+smooth field $\lambda _a$ that is inverse to $\eta ^a$?
+
+Question: Is there an example of a smooth field $\eta$ such that both
+$L_{\xi}(\eta ^a\eta ^b)=0$ and $L_{\xi}(\eta ^a)\neq 0$? Obviously it
+would have to vanish at some point.
+
+
+
+
+
+\end{document} 
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
