@@ -1,0 +1,592 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{hyperref}
+
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage{tikz-cd}
+
+% Optional: slightly nicer spacing for a workbook
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.7em}
+
+\title{Logic Precepts Workbook}
+\author{PHI 201 – Introductory Logic}
+\date{Fall 2025}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\clearpage
+
+% ---------- Precept 2 ----------
+\section{Conditional proof and $\vee$ elimination}
+
+\subsection*{Warmup: Deducing}
+
+\textbf{Exercise 2.5} ($\wedge$E, $\wedge$I, $\vee$I, MP, MT, DN)
+
+$P\to \neg Q,Q\: \vdash \: \neg P$
+
+$\neg \neg P\: \vdash \: \neg \neg P\wedge (P\vee Q)$
+
+$\neg (P\wedge Q)\to R,\neg R\:\vdash \: P$
+
+$\neg P\to\neg Q,Q\:\vdash \: P$
+
+$P\:\vdash \: \neg \neg (P\vee Q)$
+
+\subsection*{New proof rules}
+
+We will work in blocks. The first block leads to problem A1.
+
+$P\to Q\:\vdash\: P\to (Q\vee R)$
+
+$(P\vee Q)\to R\:\vdash \: P\to R$
+
+$P\to Q\:\vdash\: (R\to P)\to (R\to Q)$
+
+$P\to Q\:\vdash\: (Q\to R)\to (P\to R)$
+
+\textbf{(A1)} $P\to (Q\to R)\:\vdash\: Q\to (P\to R)$
+
+The second block leads to A2. The focus is on the ``contrapositive
+maneuver''.
+
+$P\to Q\:\vdash\: \neg Q\to \neg P$
+
+$\:\vdash\: P\to (P\vee Q)$
+
+$\neg (P\vee Q)\:\vdash\: \neg P$
+
+$\:\vdash\: (P\wedge Q)\to P$
+
+\textbf{(A2)} $\neg P\:\vdash\: \neg (P\wedge Q)$
+
+The third block leads to A3 and A4.
+
+$P\:\vdash\: (P\to Q)\to Q$
+
+\textbf{(A3)} $P\:\vdash\: (P\to \neg P)\to \neg P$
+
+\textbf{(A4)} $Q\:\vdash\: \neg (Q\to\neg Q)$
+
+The fourth block leads to problem B1.
+
+$P\vee Q\:\vdash\: Q\vee P$
+
+$P\vee (Q\wedge R)\:\vdash\: (P\wedge Q)\vee (P\wedge R)$
+
+\textbf{(B1)} $P\wedge (Q\vee R)\:\vdash\: (P\wedge Q)\vee (P\wedge R)$
+
+The fifth block leads to problem B2.
+
+$P,\neg P\:\vdash\: Q$
+
+\textbf{(B2)} $P\vee Q,\neg P\:\vdash\: Q$
+
+\subsection*{Evaluating proofs}\label{evaluating-proofs}
+
+\textbf{Exercise} Which of the following proofs with CP is correct? If
+a proof is not correct, explain what is wrong with it, and say whether
+there is a simple fix, or whether it is fatally flawed. 
+
+  \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1cm} p{4cm} >{\raggedright\arraybackslash}p{3.5cm}}
+\textbf{Deps} & \textbf{Line} & \textbf{Formula} & \textbf{Justification} \\ \hline
+1   & (1) & $P\wedge Q$ & A \\
+1   & (2) & $P$ & 1 $\wedge$E \\
+1   & (3) & $Q$ & 2 $\wedge$E \\ 
+              & (4) & $P\to Q$ & 2,3 CP
+  \end{tabular}
+
+\medskip \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1cm} p{4cm} >{\raggedright\arraybackslash}p{3.5cm}}
+\textbf{Deps} & \textbf{Line} & \textbf{Formula} & \textbf{Justification} \\ \hline  
+1  & (1) & $Q$ & A \\
+2  & (2) & $P$ & A \\
+1  & (3) & $P\to Q$ & 2,1 CP \end{tabular}
+
+\bigskip \textbf{Exercise} Explain what is wrong with the following
+``proof''.
+
+\medskip \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm}
+    >{\centering\arraybackslash}p{1cm} p{4cm}
+           >{\raggedright\arraybackslash}p{3.5cm}}
+     \textbf{Deps} & \textbf{Line} & \textbf{Formula} & \textbf{Justification} \\ \hline        
+           1   & (1) & $P\vee Q$  &    A \\
+           2   & (2) & $P$    &   A \\
+           3   & (3) & $Q$    &   A \\
+           2,3 & (4) & $P\wedge Q$  & 2,3 $\wedge$I \\
+           2,3 & (5) & $P$    &    4 $\wedge$E \\
+           1 & (6) & $P$ & 1,2,2,3,5 $\vee$E
+\end{tabular}
+
+\subsection*{Additional practice problems}
+
+$\neg P\vee \neg Q\:\dashv\vdash\: \neg (P\wedge Q)$
+
+$P\to (P\to Q)\:\vdash\: P\to Q$
+
+$(P\vee Q)\to R\:\vdash\: P\to R$
+
+$P\to (Q\to R),P\to Q\:\vdash \: P\to R$
+
+$P\to (Q\to R)\:\vdash\: (P\to Q)\to (P\to R)$
+
+$(P\to Q)\to P\:\vdash\: (P\to Q)\to Q$
+
+$(P\to Q)\to P\: \vdash \: \neg P\to P$
+
+$(P\to R)\wedge (Q\to R)\:\vdash\: (P\vee Q)\to R$
+
+$P\vee (Q\vee R)\:\dashv\vdash\: (P\vee Q)\vee R$
+
+$P\wedge (Q\vee R)\:\dashv\vdash\: (P\wedge Q)\vee (P\wedge R)$
+
+$P\vee (Q\wedge R)\:\dashv\vdash\: (P\vee Q)\wedge (P\vee R)$
+
+$\neg P\vee Q\:\dashv\vdash\: P\to Q$
+
+$\neg (P\to Q)\:\dashv\vdash\: P\wedge \neg Q$
+
+$\vdash (P\to Q)\vee (Q\to P)$
+
+$P\to (Q\vee R)\:\vdash\: (P\to Q)\vee (P\to R)$
+
+$\vdash\: ((P\to Q)\to P)\to P$ (Hint: One possibility is to first
+prove $\vdash P\vee \neg P$, and then argue by cases. The first case
+is easy if you remember ``positive paradox''. For the second case,
+remember ``negative paradox'', i.e.~that $\neg P$ implies $P\to
+  Q$.)
+
+$P\to (Q\vee R)\:\vdash \: \neg R\to (\neg Q\to \neg P)$
+
+$P\to\neg P\:\dashv\vdash\:\neg P$
+
+$(P\to Q)\to Q\:\vdash\: (Q\to P)\to P$
+
+$(P\to Q)\to R\:\vdash\: (P\to R)\to R$
+
+$(P\to R)\to R\:\dashv\vdash\: P\vee R$ (Hint: derive $\neg P\to R$
+from the sentence on the left.)
+
+$(P\to Q)\to P\:\dashv\vdash \: P$ (Hint: assume $\neg P$ and derive
+$P\to Q$.)
+
+\clearpage
+
+
+\section{Reductio ad absurdum}
+
+\subsection*{Proofs}
+
+\subsubsection*{Review of $\vee$-elimination}
+
+\begin{enumerate}
+\item $(P\to Q)\vee (P\to R)\:\vdash\: P\to (Q\vee R)$
+\item $\neg P\vee\neg Q\:\vdash\: \neg (P\wedge Q)$
+\item $\neg P\vee Q\:\vdash\: P\to Q$
+\end{enumerate}
+
+\subsubsection*{Reductio ad Absurdum}
+
+\begin{enumerate}
+\item $P\to Q\:\vdash\: \neg (P\wedge \neg Q)$
+\item $\neg (P\to Q)\:\vdash\: \neg Q$
+\item pset1 $\neg (P\to Q)\:\vdash\: Q\to R$
+\item $\neg (P\vee Q)\:\vdash \: \neg P$  
+\item pset2 $P\to Q\:\vdash\:\neg P\vee Q$
+\item pset3 $P\to (Q\vee R)\:\vdash\: (P\to Q)\vee R$
+\end{enumerate}
+
+
+
+\subsection*{Challenge problem: Pierce's law}
+
+$\vdash\: ((P\to Q)\to P)\to P$
+
+\subsection*{Truth tables}
+
+\subsubsection*{Key Concepts}
+
+\begin{itemize}
+\item
+  arguments: valid, invalid
+\item
+  counterexample
+\item
+  truth-value
+\item
+  main connective
+\item
+  sentences (syntactic): atomic, conjunction, negation, disjunction,
+  conditional, biconditional
+\item
+  sentences (semantic): tautology, inconsistency, contingency
+\item
+  two sentences: equivalent, inconsistent, independent
+\end{itemize}
+
+\subsubsection*{For arguments}
+
+Determine whether the following arguments are valid or not. Explain
+your answer by showing the existence of a row of a truth table, or by
+pointing to a full truth table, or something of the sort.  Your answer
+should be articulated in English prose so that it can convince anyone
+else who is familiar with truth tables.
+
+\begin{enumerate}
+\item $P\to (Q\vee R)\:\vdash \: (P\to Q)\vee R$
+\item
+  $\vdash \: (P\leftrightarrow Q)\vee (P\leftrightarrow R)\vee
+  (Q\leftrightarrow R)$
+\item $P\to (Q\to R)\:\vdash\: (P\wedge Q)\to R$
+\item $P\to R\:\vdash\: (P\vee Q)\to R$
+\item $(P\leftrightarrow Q)\leftrightarrow R \:\vdash\: P\vee R$
+\item $\:\vdash\: (P\to Q)\vee (Q\to R)$
+\end{enumerate}
+
+\subsubsection*{Sentence classification
+(syntactic)}\label{sentence-classification-syntactic}
+
+\textbf{Exercise.} What is the \textbf{main connective} of each of the
+following formulas?
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(\neg (P\to Q)\)
+\item
+  \(\neg P\to Q\)
+\item
+  \(\neg (P\to \neg Q)\)
+\item
+  \((P\wedge Q)\vee \neg (P\to Q)\)
+\item
+  \(((P\to Q)\to P)\to P\)
+\end{enumerate}
+
+\subsection*{Sentence classification
+(semantic)}
+
+\textbf{Exercise.} Classify each of the following sentences as
+tautology, inconsistency, or contingency.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \((P\to \neg P)\to \neg P\)
+\item
+  \((P\wedge Q)\vee (\neg P\wedge \neg Q)\)
+\item
+  \((P\wedge (Q\wedge \neg R))\vee (\neg P\wedge (\neg Q\wedge R))\)
+\item
+  \((P\leftrightarrow Q)\leftrightarrow R\)
+\item
+  \((P\wedge Q)\vee \neg (P\to Q)\)
+\item
+  \(((P\to Q)\to R)\to Q\)
+\end{enumerate}
+
+\textbf{Exercise.} Show that if \(B\) is a tautology, then \(A\wedge B\)
+is logically equivalent to \(A\).
+
+\textbf{Exercise.} Show that if \(B\) is an inconsistency, then
+\(A\vee B\) is logically equivalent to \(A\).
+
+\subsubsection*{For multiple sentences}
+
+\textbf{Exercise:} What is the semantic relationship between
+\((P\wedge Q)\) and \(\neg (P\to Q)\)?
+
+\textbf{Exercise:} If \(\phi\wedge\psi\) is a contingency, then what are
+the possibilities for \(\phi\) and \(\psi\)?
+
+\textbf{Exercise:} If \(\phi\) is a tautology, then what are the
+possibilities for \(\phi\wedge\psi\)? What are the possibilities for
+\(\phi\vee\psi\)?
+
+
+\clearpage
+
+\section{Universal quantifier rules}
+
+\subsection*{Review}
+
+\begin{enumerate}
+  \item What kinds of sentences are there in predicate logic?
+  \item What is the difference between a \textbf{formula} and a \textbf{sentence}?
+  \item What is an \textbf{instance} of a universal sentence?
+  \item What is the restriction on UI?
+\end{enumerate}
+
+\subsection*{Proofs}
+
+\subsubsection*{Warmup Problems}
+
+\begin{enumerate}
+\item
+  $\forall x (F x \rightarrow G x) \ \vdash \ \forall x F x
+  \rightarrow \forall x G x$
+\item
+  $\forall x (P x \rightarrow Q x), \ \forall x (Q x \rightarrow R x)
+  \ \vdash \ \forall x (P x \rightarrow R x)$
+\item
+  $P \rightarrow \forall x F x \ \vdash \ \forall x (P \rightarrow F
+  x)$
+\item $\forall x \forall y R x y \ \vdash \ \forall y \forall x R x y$
+  
+\end{enumerate}
+
+\subsubsection*{Pset Problems}
+
+\begin{enumerate}
+\item $\forall x(Fx \rightarrow \forall y Gy) \ \vdash \ \forall x
+  \forall y (Fx \rightarrow Gy)$
+\item
+  $\forall x \forall y (F x \rightarrow G y) \ \vdash \ \forall x (F x
+  \rightarrow \forall y G y)$
+\item $\vdash \ \forall x (\forall y R x y \rightarrow R x x)$
+\end{enumerate}
+
+\subsection*{Translation}
+
+\subsubsection*{Exercise}
+
+How do you symbolize the following?
+
+\begin{enumerate}
+  \item All $F$ are $G$.
+  \item No $F$ are $G$.
+  \item Some $F$ are $G$.
+  \item Some $F$ are not $G$.
+  \end{enumerate}
+
+\subsubsection*{Exercise}
+
+Use $F$ for ``is French'', $G$ for ``is German'', $C$ for ``is
+Canadian'', $L x y$ for ``$x$ likes $y$'', $a$ for Alice, and $b$ for
+Bob. How would you symbolize:
+
+\begin{enumerate}
+\item Alice likes Canadians.
+\item Alice likes Bob only if Bob likes Canadians.
+\item Alice likes Bob only if he likes her.
+\item Alice is a German who likes Canadians.
+\item Alice is French only if she doesn't like Canadians.
+\item Alice likes only those people who don't like Canadians.
+\item Someone likes only those people who like Canadians.
+\item French people only like Canadians who don't like Germans.
+\item Some French people like only those Germans who don't like
+  themselves.
+\end{enumerate}
+
+
+\clearpage
+
+\section{Theories}
+
+\subsection*{Translation}
+
+\begin{enumerate}
+\item Mary  is the only student who didn’t miss any questions on the
+  exam.
+\item All professors except $a$ are boring.
+\item There is no greatest prime number.
+\item The smallest prime number is even.
+\item For each natural number, there is a unique next-greater natural
+  number.
+\item There are at least two Ivy League universities in New York
+  state.
+
+\end{enumerate}
+
+\subsection*{Proofs with equality}
+
+\begin{enumerate}
+\item $Fa\:\vdash\: \forall x((x=a)\to Fx)$
+\item $\forall x((x=a)\to Fx)\:\vdash\: Fa$  
+\item $\exists x\forall y(x=y)\:\vdash\: \forall x\forall y (x=y)$
+\end{enumerate}
+
+
+\subsection*{Partial order}
+
+In real life, rigorous proofs are rarely written with line numbers,
+dependencies, or named justifications. But the idea is to give the
+reader enough information so that s/he could reconstruct such a proof.
+
+\begin{enumerate}
+\item Write down a predicate logic sentence that expresses the claim
+  that every two elements have a least upper bound.
+\item Give an example of a partially ordered set in which that
+  sentence is false.
+\item Prove (informally) that if any two elements have a least upper
+  bound, then so do any three elements.
+\item We say that $\leq$ is a serial relation just in case
+  $\forall x\exists y(x\leq y\wedge x\neq y)$. Is there a
+  \emph{finite} partially ordered set that satisfies the serial axiom?
+\end{enumerate}
+
+
+\subsection*{Set theory}
+
+For sets $a$ and $b$, we write $a\subseteq b$ for the claim that
+$\forall x(x\in a\to x\in b)$.
+
+We let $a\cap b$ be the set defined by
+$\forall x((x\in a\cup b)\leftrightarrow (x\in a\wedge
+x\in b))$.
+
+\begin{enumerate}
+\item Show that if $a\subseteq b$ and $b\subseteq c$ then
+  $a\subseteq c$.
+\item Show that $a\subseteq b$ if and only if $a\cap b=a$.
+\end{enumerate}
+
+\clearpage 
+
+\section{Models}
+
+
+\begin{enumerate}[leftmargin=*]
+\item What does it mean for a predicate logic sentence to be
+  \emph{consistent}?
+
+\item Suppose that we had an algorithm that determined whether
+  sentences are consistent. Explain how we could use this algorithm to
+  determine if arguments are valid.
+  
+\item Consider the following English sentences, along with the two
+  possible translations into predicate logic. Are the two PL sentences
+  logically equivalent? Does one imply the other? How does this
+  information bear on your judgment about which is the best
+  translation?
+
+\begin{enumerate}
+\item Only students who do the homework will learn logic. ($Sx,Hx,Lx$)
+  \[ \forall x(Lx\to (Sx\wedge Hx)) \]
+  \[ \forall x((Sx\wedge Lx)\to Hx) \]
+  
+\item There is some student who respects only those professors who
+  respect all students. ($Sx,Px,Rxy$)
+\[ \exists x(Sx\wedge \forall y(Rxy\to (Py\wedge \forall z(Sz\to
+  Ryz)))) \]
+\[ \exists x(Sx\wedge \forall y((Py\wedge Rxy)\to \forall z(Sz\to
+  Ryz))) \]  
+
+\end{enumerate}
+
+\item Explain why the sentence $\exists x(Mx\to Dx)$ is \emph{not} a
+  good translation of ``There is a melancholy Dane.''
+
+\item Provide models to show that the following sequents are invalid:
+\begin{enumerate}
+\item $\forall x(Fx\vee Gx)\:\vdash \:\forall xFx\vee \forall xGx$
+\item $\forall xFx\to \forall xGx\:\vdash \: \forall x(Fx\to Gx)$
+\item $\exists x(Fx\to P)\:\vdash \: \exists xFx\to P$
+\end{enumerate}
+
+\item The EE rule requires that the arbitrary name that is used
+in the instance of the existential formula does \emph{not} appear in
+(a) the existential formula, (b) the auxiliary assumptions used to
+derive the conclusion, and (c) the conclusion itself. Explain why
+dropping any one of these three restrictions would lead to an unsound
+rule.
+
+\end{enumerate}
+
+\newpage
+
+\begin{enumerate}[resume]
+
+\item Which of the following sentences are true in which of the
+diagrams below.
+
+\begin{enumerate}
+  \item $\forall x \forall y (Rxy \rightarrow Ryy)$
+  \item $\forall x \exists y (Rxy \wedge Ryx)$
+  \item $\exists x \forall y (Rxy \rightarrow \exists z Ryz)$
+  \item $\forall x \exists y (Rxy \wedge \forall z (Ryz \rightarrow Rxz))$
+  \item $\exists x \exists y (Rxy \wedge \neg Ryx)$
+\end{enumerate}
+
+\begin{tikzpicture}[>=Stealth,thick]
+  % nodes
+  \node (a) at (0,1.5) {$a$};
+  \node (b) at (-1,-1) {$b$};
+  \node (c) at (1,-1) {$c$};
+
+  % arrows
+  \draw[->] (b) -- (a);
+  \draw[->] (c) -- (a);
+  \draw[->, looseness=15, out=60, in=120] (a) to (a); % loop on a
+
+\begin{scope}[xshift=4cm]
+    \node (a2) at (0,1.5) {$a$};
+    \node (b2) at (-1,-1) {$b$};
+    \node (c2) at (1,-1) {$c$};
+
+    \draw[->] (b2) -- (a2);
+    \draw[->] (a2) -- (c2);
+    \draw[->] (c2) -- (a2);
+    \draw[->, looseness=15, out=-120, in=-60] (b2) to (b2);
+  \end{scope}
+
+ \begin{scope}[xshift=8cm]
+    \node (a) at (0,1.5) {$a$};
+    \node (b) at (-1,-1) {$b$};
+    \node (c) at (1,-1) {$c$};
+
+    \draw[->] (a) -- (b);
+    \draw[->] (b) -- (c);
+    \draw[->] (c) -- (a);
+  \end{scope}
+
+   \begin{scope}[xshift=12cm]
+    \node (a) at (0,1.5) {$a$};
+    \node (b) at (-1,-1) {$b$};
+    \node (c) at (1,-1) {$c$};
+
+    % Single arrows
+    \draw[->] (a) -- (b);
+    \draw[->] (c) -- (a);
+
+    % Parallel arrows between b and c
+    \draw[->,transform canvas={yshift=3pt}] (b) -- (c);
+    \draw[->,transform canvas={yshift=-3pt}] (c) -- (b);
+  \end{scope}
+
+
+  
+\end{tikzpicture}
+
+\end{enumerate}
+
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
+
+

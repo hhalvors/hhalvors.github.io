@@ -1,0 +1,352 @@
+\documentclass[aspectratio=169,17pt,fleqn]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{dolphin}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+\usepackage{amsmath,amssymb,array}
+% \setmathfont{Latin Modern Math}
+
+\usepackage{fontspec}      % text fonts (beamer uses sans by default)
+\usepackage{unicode-math}  % modern math
+
+\AtBeginSection[]{
+  \begin{frame}
+    \centering
+    \vfill
+    \Large\insertsectionhead
+    \vfill
+  \end{frame}
+}
+
+
+\title{Existential Introduction \& Elimination}
+\author{PHI~201 — Introductory Logic}
+\date{Lecture~8}
+
+\begin{document}
+
+\frame{\titlepage}
+
+%-----------------------------------------------------
+\begin{frame}{Overview}
+\begin{itemize}
+  \item Review of universal quantifier rules
+  \item New rules for the existential quantifier:
+    \begin{itemize}
+      \item Existential Introduction (\textbf{EI})
+      \item Existential Elimination (\textbf{EE})
+    \end{itemize}
+  \item Practice proofs involving $\exists$ and $\forall$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Existential Introduction}
+\begin{block}{Rule}
+From a particular instance $Fa$, we may infer that something is $F$:
+\[
+\frac{Fa}{\exists x\,Fx}\;(\text{EI})
+\]
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+    \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $Fa \to Ga$ & A \\
+1 & (2) & $\exists x (Fx\to Gx)$ & 1 EI \\
+    \end{tabular}
+
+    \vspace{2em}
+
+  \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $Fa \to Ga$ & A \\
+1 & (2) & $\exists x (Fx\to Ga)$ & 1 EI \\
+  \end{tabular}
+
+  \vspace{2em} Unlike UI, EI permits replacement of some (but not all)
+  occurences of a name $a$.
+  
+\end{frame}
+
+\begin{frame}
+
+  \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $Raa$ & A \\
+1 & (2) & $\exists x Rxx$ & 1 EI \\
+  \end{tabular}
+
+  \vspace{2em}
+    \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $Raa$ & A \\
+      1 & (2) & $\exists y Ray$ & 1 EI \\
+      1 & (3) & $\exists x\exists yRxy$ & 2 EI 
+  \end{tabular}
+
+
+
+\end{frame}
+
+\begin{frame}
+
+  To show: $\neg\exists xFx\:\vdash\:\forall x\neg Fx$
+
+  \bigskip \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\neg \exists x Fx$ & A \\
+2 & (2) & $Fa$ & A \\
+2 & (3) & $\exists x Fx$ & 2 EI \\
+1,2 & (4) & $\exists x Fx \wedge \neg \exists x Fx$ & 3,1 $\wedge$I \\
+1 & (5) & $\neg Fa$ & 2,4 RA \\
+1 & (6) & $\forall x \neg Fx$ & 5 UI \\
+\end{tabular}
+
+
+
+\end{frame}
+
+\begin{frame}
+
+  \small
+
+  \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\neg \forall x Fx$ & A \\
+2 & (2) & $\neg \exists x \neg Fx$ & A \\
+3 & (3) & $\neg Fa$ & A \\
+3 & (4) & $\exists x \neg Fx$ & 3 EI \\
+2,3 & (5) & $\exists x \neg Fx \wedge \neg \exists x \neg Fx$ & 4,2 $\wedge$I \\
+2 & (6) & $\neg \neg Fa$ & 3,5 RA \\
+2 & (7) & $Fa$ & 6 DN \\
+2 & (8) & $\forall x Fx$ & 7 UI \\
+1,2 & (9) & $\forall x Fx \wedge \neg \forall x Fx$ & 8,1 $\wedge$I \\
+1 & (10) & $\neg \neg \exists x \neg Fx$ & 2,9 RA \\
+1 & (11) & $\exists x \neg Fx$ & 10 DN \\
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}
+
+  To show: $\neg \forall xFx\:\vdash \: \exists x(Fx\to P)$
+
+  \vspace{10em}
+
+
+\end{frame}
+
+\begin{frame}
+
+  To show $\neg \exists xFx\:\vdash \: \forall x(Fx\to P)$
+
+  \bigskip \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\neg \exists x Fx$ & A \\
+2 & (2) & $Fa$ & A \\
+2 & (3) & $\exists x Fx$ & 2 EI \\
+1,2 & (4) & $\exists x Fx \wedge \neg \exists x Fx$ & 3,1 $\wedge$I \\
+             1 & (5) & $\neg Fa$ & 2,4 RA \\
+             1 & (6) & $Fa\to P$ & 5 neg par \\
+             1 & (7) & $\forall x(Fx\to P)$ & 6 UI 
+\end{tabular}
+
+
+
+\end{frame}
+
+\section{Existential elimination}
+
+\begin{frame}{Idea}
+
+  What can be derived from $\exists x\varphi (x)$?
+
+  \bigskip Pick an arbitrary name $a$. If a general claim $\psi$ can
+  be derived from an instance $\varphi (a)$, without making any
+  additional assumptions about $a$, then $\psi$ follows from
+  $\exists x\varphi (x)$.
+
+
+
+\end{frame}
+
+\begin{frame}{Existential Elimination}
+
+    \begin{tabular}{>{\raggedleft\arraybackslash}p{2.5cm}
+      >{\centering\arraybackslash}p{1.0cm} p{4cm}
+      >{\raggedright\arraybackslash}p{3.5cm}}
+      $\Gamma$ & (m) & $\exists x\varphi (x)$ \\[0.5em]
+      n        & (n) & $\varphi (a)$ & A \\[0.5em]
+      $\Delta$ & (o) & $\psi$  \\[0.5em]
+      $\Gamma ,\Delta\backslash\{ n\}$ & (p) & $\psi$ & m,n,o EE \end{tabular}
+      
+  
+\end{frame}
+
+\begin{frame}{Existential Elimination}
+
+  \begin{itemize}
+  \item \textbf{Restriction:} The name $a$ must not occur in any
+    dependencies of the existential premise, or of the derived
+    conclusion, except for the instance $\varphi(a)$ itself.
+  \item Dependencies are the union of the dependencies of the
+    existential sentence and those of the derived conclusion, minus
+    dependency on the instance. \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Example}
+
+  \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\exists x (Fx\wedge Gx)$ & A \\
+2 & (2) & $Fa\wedge Ga$ & A \\
+2 & (3) & $Fa$ & 2 $\wedge$E \\
+2 & (4) & $\exists x Fx$ & 3 EI \\
+1 & (5) & $\exists x Fx$ & 1,2,4 EE \\
+\end{tabular}
+
+
+
+
+\end{frame}
+
+\begin{frame}{Reasoning with multiple $\exists$}
+
+  To show: $\exists x\exists yRxy\:\vdash\: \exists y\exists xRxy$
+
+  \bigskip   \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\exists x \exists y Rxy$ & A \\
+2 & (2) & $\exists y Ray$ & A \\
+3 & (3) & $Rab$ & A \\
+3 & (4) & $\exists x Rxb$ & 3 EI \\
+3 & (5) & $\exists y \exists x Rxy$ & 4 EI \\
+2 & (6) & $\exists y \exists x Rxy$ & 2,3,5 EE \\
+1 & (7) & $\exists y \exists x Rxy$ & 1,2,6 EE \\
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Reasoning with $\forall$ and $\exists$}
+
+  \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\forall x (Fx\to Gx)$ & A \\
+2 & (2) & $\exists x Fx$ & A \\
+3 & (3) & $Fa$ & A \\
+1 & (4) & $Fa \to Ga$ & 1 UE \\
+1,3 & (5) & $Ga$ & 4,3 MP \\
+1,3 & (6) & $\exists x Gx$ & 5 EI \\
+1,2 & (7) & $\exists x Gx$ & 2,3,6 EE \\
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Reasoning with $\forall$ and $\exists$}
+
+  \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\exists y \forall x Rxy$ & A \\
+2 & (2) & $\forall x Rxb$ & A \\
+2 & (3) & $Rab$ & 2 UE \\
+2 & (4) & $\exists y Ray$ & 3 EI \\
+2 & (5) & $\forall x \exists y Rxy$ & 4 UI \\
+1 & (6) & $\forall x \exists y Rxy$ & 1,2,5 EE \\
+\end{tabular}
+
+
+
+
+\end{frame}
+
+
+
+
+\begin{frame}{Preventing invalid inferences}
+
+  \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+    1 & (1) & $\exists x Fx$ & A \\
+    2 & (2) & $\exists x Gx$ & A \\
+    3 & (3) & $Fa$ & A \\
+    4 & (4) & $Ga$ & A \\
+    3,4 & (5) & $Fa\wedge Ga$ & 3,4 $\wedge$I \\
+    3,4 & (6) & $\exists x(Fx\wedge Gx)$ & 5 EI \end{tabular}
+
+  \medskip \footnotesize EE cannot be applied to 1,3,6 because 6 depends on
+  4, which contains $a$.
+
+  EE cannot be applied to 1,4,6 because 6 depends on 3, which contains
+  $a$.
+
+\end{frame}
+
+\begin{frame}{Preventing invalid inferences}
+  \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm}
+    >{\centering\arraybackslash}p{1.0cm} p{5cm}
+    >{\raggedright\arraybackslash}p{3.5cm}}
+    1 & (1) & $\forall x\exists yRxy$ & A \\
+    1 & (2) & $\exists yRay$ & 1 UE \\
+    3 & (3) & $Rab$ & A \\
+    3 & (4) & $\forall xRxb$ & Error! \end{tabular}
+
+  \bigskip UI cannot be applied to 3 because it depends on 3, which
+  contains $a$.
+  
+\end{frame}
+
+\begin{frame}{Quantifier order matters}
+
+  \Large $\forall x\exists y\,\varphi (x,y)$ follows from
+  $\exists y\forall x\, \varphi (x,y)$. But not vice versa.
+
+
+\end{frame}
+
+\begin{frame}{Quantifier negation equivalences}
+
+  $\neg \exists xFx$ is equivalent to $\forall x\neg Fx$
+
+  \bigskip $\neg \forall xFx$ is equivalent to $\exists x\neg Fx$
+
+  \bigskip ``Equivalent'' means mutually derivable
+
+\end{frame}
+
+\begin{frame}
+
+  To show: $\forall x\neg Fx\:\vdash \: \neg \exists xFx$
+
+  \bigskip \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm}
+      >{\centering\arraybackslash}p{1.0cm} p{5cm}
+      >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\forall x \neg Fx$ & A \\
+2 & (2) & $\exists x Fx$ & A \\
+3 & (3) & $Fa$ & A \\
+1 & (4) & $\neg Fa$ & 1 UE \\
+1,3 & (5) & $Fa \wedge \neg Fa$ & 3,4 $\wedge$I \\
+1,3 & (6) & $\neg \exists x Fx$ & 2,5 RA \\
+1,2 & (7) & $\neg \exists x Fx$ & 2,3,6 EE \\
+1,2 & (8) & $\exists x Fx \wedge \neg \exists x Fx$ & 2,7 $\wedge$I \\
+1 & (9) & $\neg \exists x Fx$ & 2,8 RA \\
+\end{tabular}
+
+
+
+
+\end{frame}
+
+\begin{frame}{Non-constructive existence proofs}
+
+  How to derive $\exists x(Fx\to P)$ from $\forall xFx\to P$?
+
+  \bigskip Not possible to derive $Fa\to P$ from $\forall xFx\to P$.
+
+
+
+\end{frame}
+
+
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

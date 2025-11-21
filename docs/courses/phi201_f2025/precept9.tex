@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+\title{Logic precept: Week 8}
+\date{}
+\begin{document}
+
+\maketitle
+
+\vspace*{-4em}
+
+\section*{Translation}
+
+\begin{enumerate}
+\item Mary  is the only student who didn’t miss any questions on the
+  exam.
+\item All professors except $a$ are boring.
+\item There is no greatest prime number.
+\item The smallest prime number is even.
+\item For each natural number, there is a unique next-greater natural
+  number.
+\item There are at least two Ivy League universities in New York
+  state.
+
+\end{enumerate}
+
+\section*{Proofs with equality}
+
+\begin{enumerate}
+\item $Fa\:\vdash\: \forall x((x=a)\to Fx)$
+\item $\forall x((x=a)\to Fx)\:\vdash\: Fa$  
+\item $\exists x\forall y(x=y)\:\vdash\: \forall x\forall y (x=y)$
+\end{enumerate}
+
+
+\section*{Partial order}
+
+In real life, rigorous proofs are rarely written with line numbers,
+dependencies, or named justifications. But the idea is to give the
+reader enough information so that s/he could reconstruct such a proof.
+
+\begin{enumerate}
+\item Write down a predicate logic sentence that expresses the claim
+  that every two elements have a least upper bound.
+\item Give an example of a partially ordered set in which that
+  sentence is false.
+\item Prove (informally) that if any two elements have a least upper
+  bound, then so do any three elements.
+\item We say that $\leq$ is a serial relation just in case
+  $\forall x\exists y(x\leq y\wedge x\neq y)$. Is there a
+  \emph{finite} partially ordered set that satisfies the serial axiom?
+\end{enumerate}
+
+
+ 
+
+
+\section*{Set theory}
+
+For sets $a$ and $b$, we write $a\subseteq b$ for the claim that
+$\forall x(x\in a\to x\in b)$.
+
+We let $a\cap b$ be the set defined by
+$\forall x((x\in a\cup b)\leftrightarrow (x\in a\wedge
+x\in b))$.
+
+\begin{enumerate}
+\item Show that if $a\subseteq b$ and $b\subseteq c$ then
+  $a\subseteq c$.
+\item Show that $a\subseteq b$ if and only if $a\cap b=a$.
+\end{enumerate}
+
+
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

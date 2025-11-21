@@ -1,0 +1,270 @@
+\documentclass[12pt,fleqn]{article}
+% \usepackage{fullpage}
+\usepackage{enumitem}
+% \setlength{\parskip}{1em}
+% \setlength{\parindent}{0em}
+\usepackage{amsfonts,amsmath,amsthm}
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{ass}{Assumption}
+\usepackage{outlines}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\7}{\mathbb}
+% \newcommand{\2}{\mathcal}
+\usepackage{hyperref}
+
+
+
+
+
+\begin{document}
+
+
+\section*{Chapter 7: Kant, Incongruent Counterparts, and Absolute
+  Space}
+
+\begin{itemize}
+
+  \item This debate flared up in the early 1970s, with work by Sklar,
+    Nerlich, and Earman. 
+
+  \item There is a forgetful functor from metric affine spaces to
+    metric spaces.
+
+  \item Even topological spaces have something like
+    orientation. Consider the fundamental group of $S^1$: it's the
+    integers, with both positive and negative numbers. So we have two
+    orientations, going clockwise around the circle or going
+    counterclockwise.
+
+  \item Question: is orientation in the sense of ordered bases already
+    present in the one-dimensional case? 
+
+  \item In a topological space, triangles do not have orientation ---
+    this in contrast to vector spaces. One wonders, is there some
+    notion of an unoriented vector space? Could we quotient the two
+    orientations?
+
+\item Perhaps simplicial sets are unoriented?
+ 
+
+\end{itemize}
+
+\begin{outline}[enumerate]
+
+
+  \1 Test for substantivalism: Imagine a possible world with a single
+  glove. Would there be a fact of the matter about whether that glove
+  is left or right handed?
+
+  Relationalism: ``\dots contrary to Kant, for a hand standing alone
+  there aren't two different actions of creative cause for God to
+  choose between.'' (p 138)
+
+  \1 Recall that substantivalists supposedly think that shifts create
+  new possibilities.
+
+  Would the substantivalist count the reflected triangle as a
+  different possible world?
+
+  \1 ``Broad imagines that the set of space points occupied by $B$ and
+  the set of points occupied by $B'$ might differ in some geometrical
+  properties that are not manifested in the relations among the
+  occupying particles of matter \dots '' (p 140)
+
+  HH: But space and its structures provide a common standard --- in
+  the same way that space and its structures provide a standard for
+  travelling on a straight line.
+
+  \1 ``Nerlich is incorrect in holding that Kant is right if we
+  interpret him as saying that the enantiomorphism of a hand depends
+  upon the relation between it and the absolute container space
+  considered as a unity.'' (p 142)
+
+  \1 Fact: The group of symmetries of Euclidean space has three
+  subgroups: translations, rotations, and reflections. The
+  translations and rotations are continuously connected to the
+  identity $I$, and their determinant is $1$. The reflections are
+  \emph{not} continuously connected to the identity $I$, and their
+  determinant is $-1$.
+
+  \1 Fact: Symmetries preserve properties of, and relations between,
+  shapes.
+
+  \1 Fact: The relation of being incongruent counterparts is definable
+  in terms of inner products of vectors. i.e.\ Euclidean geometry
+  defines a relation ``same handed'', although it doesn't define
+  predicates for ``left'' and ``right''.
+
+  The bases \( \{u_1, \dots, u_n\} \) and \( \{v_1, \dots, v_n\} \)
+  are co-oriented if and only if:
+
+  \[ \sum_{i_1, i_2, \dots, i_n = 1}^n \varepsilon_{i_1 i_2 \dots i_n}
+    \langle u_1, v_{i_1} \rangle \langle u_2, v_{i_2} \rangle \cdots
+    \langle u_n, v_{i_n} \rangle > 0 ,\]
+
+  where $\varepsilon_{i_1 i_2 \dots i_n}$ is the Levi-Civita
+  symbol. (The equation on the left is just the determinant of the
+  linear operator that maps $u_1,\dots ,u_n$ to $v_1,\dots ,v_n$.)
+
+  So a triangle alone in space ``has an orientation'', it's just
+  neither left nor right!
+
+  This fact doesn't contradict what we said above about reflections
+  preserving all properties and relations. If $X$ and $Y$ are same
+  handed, then $M(X)$ and $M(Y)$ are same handed.
+
+\item Fact: The binary relation of same-handedness cannot be analyzed
+  into a conjunction of unary predicates.
+
+  Recall that Leibniz believes that all relational properties are
+  ultimately grounded in monadic properties.
+
+
+\end{outline}
+
+\end{document}
+
+
+
+The argument from handedness to substantivalism was put forward by
+Kant in 1768, and was revived in the 1970s by Graham Nerlich. Nerlich
+is somewhat unique among contemporary philosophers in thinking that
+the phenomenon of ``incongruent counterparts'' supports
+substantivalism. What's more, Nerlich's argument is set in the context
+of an arbitrary Riemannian manifold, rather than in the context of
+Euclidean space. So I'll begin with the simpler case and then return
+later to Nerlich.
+
+Kant's argument is based on the following factual claim:
+
+\begin{quote} (Hands) In Euclidean space (of dimension greater than 1)
+  there can be two objects $X$ and $Y$ such that (i) $X$ and $Y$ have
+  identical internal spatial relations, but (ii) no combination of
+  translations and rotations can move $X$ into the place of
+  $Y$. \end{quote}
+
+The argument then proceeds by reductio ad absurdum: suppose that
+substantivalism is false. In that case, all spatial facts are
+determined by the distance relations between the parts of physical
+bodies. By Hands, $X$ cannot be moved into the place of $Y$. But by
+Hands again, all spatial facts about $X$ are true of $Y$ and vice
+versa, so there is no fact about $Y$ that could explain why $X$ cannot
+be moved into its place. Therefore substantivalism is false.
+
+This is roughly the form of Kant's first argument from handedness to
+substantivalism. But this this argument has several notable
+weaknesses. First, we no longer take it for granted (as Kant did in
+1768) that every fact can be explained by the intrinsic properties of
+objects; and so we might not be bothered by their being no fact about
+$Y$ that can explain why $X$ cannot take its place.
+
+It seems, however, that the argument has some force even without the
+talk of explaining why some transformation cannot be performed. The
+point is that relationalism only has $X$ and $Y$; and by the
+relationalist's lights, there is no difference between $X$ and
+$Y$. But there does seem to be an interesting difference between $X$
+and $Y$, and the substantivalist has an account for what that
+difference is. The substantivalist can assume that $Z$ is a generic
+(unoriented) right triangle with legs of lengths 1 and 2, and he also
+has the background space $E^2$. But to put the generic triangle in the
+background space, one has to choose between two possible orientations
+for the legs of the triangle. The substantivalist can explain the
+existence of incongruent counteparts by assuming that space (with its
+two possible orientations) is given in advance.
+
+Second, we were a bit imprecise with what we meant by ``all spatial
+facts about $X$''. Let's try to tighten that part of the argument.
+
+In the language of metaphysics, we would say that Kant is talking
+about \emph{intrinsic} properties of $X$ and $Y$. But thank goodness,
+we need not get into details about what ``intrinsic'' means. We can
+just talk about formulas in the language of Euclidean geometry. For
+simplicity, we'll take the background space to be the Cartesian plane
+$E^2$. We can then assume that $X$ has base point at $(0,0)$ and is
+generated by a pair of vectors $v_1,v_2$:
+\[ X = \{ av_1+bv_2 : a\geq 0,b\geq 0,a+b\leq 1 \} .\] We then take
+$Y$ to be the triangle with $v_2$ flipped to $-v_2$, that is,
+\[ X = \{ av_1-bv_2 : a\geq 0,b\geq 0,a+b\leq 1 \} .\]
+Let's take $v_1$
+to be the vector $(0,1)$ and $v_2$ to be the vector $(2,0)$. (We need
+$v_1$ and $v_2$ to have different lengths for this example to work.)
+
+Now it's obvious that the reflection $f$ about $v_1$ maps $v_2$ to
+$-v_2$, and hence $f(X)=Y$. It then follows that $X$ and $Y$ satisfy
+all the same predicates in the language of Euclidean geometry. For
+example, consider the claim that $X$ has three vertices
+$p_0,p_1,p_2$. Since $f$ maps vertices to vertices, it follows that
+$Y$ has three vertices. Similarly, the maximum distance between two
+points in $X$ is $\sqrt{5}$, and since $f$ preserves distances, the
+maximum distance between two points in $Y$ is also $\sqrt{5}$. For any
+points $p_0,\dots ,p_n\in X$, the mirror image points
+$f(p_0),\dots ,f(p_0)\in Y$ stand in exactly the same relations.
+
+But this shows that there are certain intuitive properties of $X$ and
+$Y$ that \emph{cannot} be expressed in the language of Euclidean
+geometry. For example, let $p_0=(0,0)$ and let $p_2=(1,0)$ be the
+bottom vertices of $X$. Then $p_2$ is to the right of $p_0$, which we
+might want to formalize as $R(p_2,p_0)$. Since $f(p_0)=0$ and
+$f(p_2)=-p_2$, it is not the case that $R(f(p_2),f(p_0))$. What this
+means is that the relation $R$ simply cannot be defined in the
+language of Euclidean geometry.
+
+If you think about it, you wouldn't even expect to be able to define
+the relation of one vertex being to the right of another. After all,
+that relation wouldn't even be preserved by a rotation through 180
+degrees. But the story is different with the vectors $v_1$ and $v_2$
+that define those vertices. In the triangle $X$, the longer vector
+$v_1$ is to the left of the shorter vector $v_2$, and this would
+remain true if $X$ were translated or rotated. A translation would
+change the vertex $p_0$, but not the vectors $v_1,v_2$ that generate
+the vertices. A rotation would change the vectors $v_1,v_2$, but it
+would not reverse their orientation. There is no combination of
+translations and rotations that could map the triangle $X$ to the
+triangle $Y$. 
+
+
+
+Our first definition assumes that space is represented by an affine
+space $(A,V)$, with a positive definite inner product on
+$V$. (Essentially we are talking about Euclidean space, minus the
+preferred origin, basis, or orientation.) This assumption seems to be
+the minimum needed to make sense of the notion of enantiomorphs, where
+we need both the notion of a \emph{translation} symmetry and the
+notion of a \emph{reflection} symmetry. We will return later to the
+question of whether it makes sense to talk about enantiomorphs in more
+general spaces, e.g.\ those represented by Riemannian manifolds.
+
+We assume that physical objects are represented by subsets of
+space. For simplicity I will ignore wild subsets and typically assume
+that an object is represented by a polytope, or even more simply, by
+an $n$-simplex. For example, when $\dim A=2$, a $2$ simplex in $A$ is
+the convex hull of three affinely independent points, viz.\ a
+triangle.
+
+\newcommand{\vc}[1]{\overrightarrow{#1}}
+
+There is clearly no mirror symmetry when $\dim A=1$, hence there are
+no enantiomorphs. But as soon as $\dim A =2$, there are
+enantiomorphs. For example, let $(p_0,p_1,p_2)$ be a triangle
+described by the following data:
+\[ \langle \vc{p_0p_1},\vc{p_0p_2}\rangle = 0, \: \| \vc{p_0p_1} \| =
+  2 ,\: \| \vc{p_0p_2}\| = 1 .\] Let $H$ be the one-dimensional
+subspace of $A$ generated by $\vc{p_0p_1}$. Each point $p\in A$ is of
+the form $p_0+v$ for some unique $v\in V$. The reflection about $H$
+can then be described by changing $v$ to its mirror reflection on the
+other side of $H$:
+\[ v\mapsto v-2\langle v,n\rangle n ,\] where $n$ is a unit vector
+orthogonal to $\vc{p_0p_1}$.
+
+
+  
+
+
+
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

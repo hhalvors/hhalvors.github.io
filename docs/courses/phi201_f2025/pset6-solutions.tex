@@ -1,0 +1,186 @@
+\documentclass[fleqn,12pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{fullpage}
+\usepackage[colorlinks]{hyperref}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+\usepackage{enumitem}
+\usepackage{array}
+\begin{document}
+\thispagestyle{empty}
+
+\section*{Logic pset 6}
+
+Resources: HLW \href{https://doi.org/10.2307/j.ctvxrpz0q.10}{Ch 7} pp
+116-127
+
+\begin{enumerate}[leftmargin=*, labelindent=0pt]  
+\item Represent the form of the following sentences in predicate logic
+  using the $=$ symbol where necessary.
+  \begin{enumerate}
+  \item There is one and only one Princeton University. (Use $Px$ for
+    ``$x$ is a Princeton University'')
+    
+  \[ \exists x(Px\wedge \forall y(Py\to y=x)) \]
+    
+  \item There is at most one Ivy League university in New Jersey. (Use
+    $Ix$ for ``$x$ is an Ivy League university'', and use $Nx$ for
+    ``$x$ is in New Jersey.'')
+
+  \[ \forall x\forall y(((Ix\wedge Nx)\wedge (Iy\wedge Ny))\to x=y) \]
+    
+  \item There is a smallest prime number. ($Px,Sxy$, variables are
+    restricted to numbers.)
+
+    \[ \exists x(Px\wedge \forall y((Py\wedge y\neq x)\to Sxy)) \]
+
+    This translation does not capture the uniqueness that may be
+    implicit in ``smallest''. But if it's written in a context where
+    $Sxy$ is a linear order, then there can only be one $x$ with the
+    feature that $\forall y((Py\wedge y\neq x)\to Sxy)$.
+    
+ \end{enumerate}
+
+\item Prove the following sequents using any of the rules, including
+  $=$E and $=$I.
+  \begin{enumerate}
+  \item $\exists x(Px\wedge \forall y(Py\to x=y))\: \vdash \: \forall
+    x\forall y((Px\wedge Py)\to x=y)$
+
+    \bigskip  \noindent\hspace*{-1.5cm}%
+\begin{tabular}{@{}>{\raggedleft\arraybackslash}p{1.5cm}
+                >{\centering\arraybackslash}p{1.0cm}
+                 p{7cm}
+                >{\raggedright\arraybackslash}p{3.5cm}@{}}
+1 & (1) & $\exists x (Px \wedge \forall y (Py \to x = y))$ & A \\
+2 & (2) & $Pc \wedge \forall y (Py \to c = y)$ & A \\
+3 & (3) & $Pa \wedge Pb$ & A \\
+3 & (4) & $Pa$ & 3 $\wedge$E \\
+3 & (5) & $Pb$ & 3 $\wedge$E \\
+2 & (6) & $\forall y (Py \to c = y)$ & 2 $\wedge$E \\
+2 & (7) & $Pa \to c = a$ & 6 UE \\
+2 & (8) & $Pb \to c = b$ & 6 UE \\
+2,3 & (9) & $c = a$ & 7,4 MP \\
+2,3 & (10) & $c = b$ & 8,5 MP \\
+2,3 & (11) & $a = b$ & 10,9 =E \\
+2 & (12) & $(Pa \wedge Pb) \to a = b$ & 3,11 CP \\
+2 & (13) & $\forall y ((Pa \wedge Py) \to a = y)$ & 12 UI \\
+2 & (14) & $\forall x \forall y ((Px \wedge Py) \to x = y)$ & 13 UI \\
+1 & (15) & $\forall x \forall y ((Px \wedge Py) \to x = y)$ & 1,2,14 EE \\
+\end{tabular}
+
+
+
+    
+\item $\vdash\: \forall x\forall y((x=y)\to (y=x))$
+
+\bigskip \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $a = b$ & A \\
+$\varnothing$ & (2) & $a = a$ & =I \\
+1 & (3) & $b = a$ & 2,1 =E \\
+$\varnothing$ & (4) & $a = b \to b = a$ & 1,3 CP \\
+$\varnothing$ & (5) & $\forall y (a = y \to y = a)$ & 4 UI \\
+$\varnothing$ & (6) & $\forall x \forall y (x = y \to y = x)$ & 5 UI \\
+\end{tabular}
+
+  
+  \end{enumerate}
+
+\item Let $Rxy$ be a binary relation symbol that satisfies the
+  transitivity axiom (page 126). Suppose that $Rxy$ satisfies two
+  other axioms: serial $\forall x\exists yRxy$ and irreflexive
+  $\forall x\neg Rxx$. Show that there are at least three distinct
+  things, i.e.,
+  \[ \exists x\exists y\exists z((x\neq y\wedge x\neq z)\wedge y\neq
+    z) .\] It would also suffice to show that the claim ``there are at
+  most two things'' contradicts the assumptions. You may write your
+  proof in English prose (not our formal system), but you need to
+  convince the reader that you would be able to write a full formal
+  proof.
+
+  \bigskip Here's a sub-proof that establishes that there are two
+  things $a,b$. We use $a$ as an arbitrary name for a thing that bears
+  the relation $R$ to some $y$. We then use $b$ as an arbitrary name
+  for some $y$ to which $a$ bears the relation $R$. The irreflexivity
+  axiom (4) entails that $a\neq b$.
+
+\medskip \begin{tabular}{>{\raggedleft\arraybackslash}p{2.5cm} >{\centering\arraybackslash}p{1.0cm} p{8cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\forall x \exists y Rxy$ & A \\
+1 & (2) & $\exists y Ray$ & 1 UE \\
+3 & (3) & $Rab$ & A \\
+4 & (4) & $\forall x \neg Rxx$ & A \\
+4 & (5) & $\neg Rbb$ & 4 UE \\
+6 & (6) & $a = b$ & A \\
+3,6 & (7) & $Rbb$ & 3,6 =E \\
+3,4,6 & (8) & $Rbb \wedge \neg Rbb$ & 7,5 $\wedge$I \\
+3,4 & (9) & $a\neq b$ & 6,8 RA \\
+         \end{tabular}
+
+We now repeat the exact same process to establish that there is a $c$
+such that $c\neq b$. 
+
+ \medskip \begin{tabular}{>{\raggedleft\arraybackslash}p{2.5cm}
+            >{\centering\arraybackslash}p{1.0cm} p{8cm}
+            >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (10) & $\exists y Rby$ & 1 UE \\
+11 & (11) & $Rbc$ & A \\
+12 & (12) & $c = b$ & A \\
+11,12 & (13) & $Rbb$ & 11,12 =E \\
+4,11,12 & (14) & $Rbb \wedge \neg Rbb$ & 13,5 $\wedge$I \\
+            4,11 & (15) & $c \neq b$ & 12,14 RA \end{tabular}
+
+          \medskip Now we need to show that $c\neq a$. If $c=a$, then
+          $Rba$, and the transitivity axiom implies that $Raa$.
+
+ \medskip \begin{tabular}{>{\raggedleft\arraybackslash}p{2.5cm}
+            >{\centering\arraybackslash}p{1.0cm} p{8cm}
+            >{\raggedright\arraybackslash}p{3.5cm}}
+16 & (16) & $c = a$ & A \\
+11,16 & (17) & $Rba$ & 11,16 =E \\
+18 & (18) & $\forall x \forall y \forall z ((Rxy \wedge Ryz) \to Rxz)$ & A \\
+18 & (19) & $\forall y \forall z ((Ray \wedge Ryz) \to Raz)$ & 18 UE \\
+18 & (20) & $\forall z ((Rab \wedge Rbz) \to Raz)$ & 19 UE \\
+18 & (21) & $(Rab \wedge Rba) \to Raa$ & 20 UE \\
+3,11,16 & (22) & $Rab \wedge Rba$ & 3,17 $\wedge$I \\
+3,11,16,18 & (23) & $Raa$ & 21,22 MP \\
+4 & (24) & $\neg Raa$ & 4 UE \\
+3,4,11,16,18 & (25) & $Raa \wedge \neg Raa$ & 23,24 $\wedge$I \\
+            3,4,11,18 & (26) & $c \neq a$ & 16,25 RA \end{tabular}
+
+          \medskip To tidy up the proof, we need to collect everything
+          together and do some steps of EI and EE. We end with
+          dependency on the axioms $1,4,18$.
+
+ \medskip \begin{tabular}{>{\raggedleft\arraybackslash}p{2.5cm}
+            >{\centering\arraybackslash}p{1.0cm} p{8cm}
+            >{\raggedright\arraybackslash}p{3.5cm}}
+3,4,11 & (27) & $a\neq b \wedge c \neq b$ & 9,15 $\wedge$I \\
+3,4,11,18 & (28) & $(a \neq b \wedge c \neq b) \wedge c \neq a$ & 27,26 $\wedge$I \\
+3,4,11,18 & (29) & $\exists z ((a \neq b \wedge z \neq b) \wedge z
+                   \neq a)$ & 28 EI \\
+3,4,11,18 & (30) & $\exists y \exists z ((a\neq y \wedge z \neq y)
+                   \wedge z \neq a)$ & 29 EI \\
+3,4,11,18 & (31) & $\exists x \exists y \exists z ((x \neq y \wedge z
+                   \neq y) \wedge z \neq x)$ & 30 EI \\
+1,3,4,18 & (32) & $\exists x \exists y \exists z ((x \neq y \wedge z
+                  \neq y) \wedge  z \neq x)$ & 10,11,31 EE \\
+1,4,18 & (33) & $\exists x \exists y \exists z ((x \neq y \wedge z
+                \neq y) \wedge z \neq x)$ & 2,3,32 EE \\
+\end{tabular}
+           
+            
+
+  
+
+  
+\end{enumerate}
+
+
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

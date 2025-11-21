@@ -1,0 +1,156 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{enumitem}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+\usepackage{amsfonts,amsmath,amsthm}
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{ass}{Assumption}
+\usepackage{outlines}
+\newcommand{\mf}{\mathfrak}
+\begin{document}
+
+Chapter 3 of \emph{World Enough and Spacetime} is challenging because
+it has heavy technical \emph{and} philosophical components. I assume
+that the majority of you would prefer to focus on the philosophical
+component, so let's start with that. The technical component leaves
+open many questions --- on which it is possible to make some definite
+progress. But it's doubtful that we'll make that progress in the
+session today.
+
+\section*{What does it mean to ``choose a spacetime''? And what
+  kind of reasons can one have for doing so?}
+
+\begin{outline}[enumerate]
+
+\1 One might think of ``choosing a spacetime'' as a simple exercise
+of first-order metaphysical theorizing. Consider e.g.\ the reasons
+that David Builes has for preferring monism to other views in
+metaphysics. One might adduce similar reasons for thinking that
+spacetime is fully Galilean and not just Maxwellian (or vice versa)
+
+\2 For example, is there reason to believe that spacetime has a
+preferred foliation?
+
+\2 Granted: we are all convinced now that spacetime is Einsteinian
+(e.g.\ a Lorentzian manifold), and none of these. But this is an
+exercise in historical reconstruction. What reasons were there for the
+participants in this debate. And we will come later to the questions
+that face us today. e.g.\ does GTR posit too much spacetime structure?
+
+\1 Material versus formal mode (Carnap)
+
+The metaphysician's question is posed in the material mode. There is a
+parallel question in the formal mode: what reasons can we have for
+adopting a spacetime theory. The difference here is that the
+metaphysical implications of adopting a theory are not fully
+transparent. What \emph{does} one believe if one adopts Galilean
+relativity? I myself am not convinced that adopting Galilean
+relativity is tantamount to asserting that spacetime has the structure
+of a quadruple $\langle M,h^{ab},t_c,\nabla \rangle$ with certain
+specified properties.
+
+\2 Carnap thought that the philosopher's job is to ask questions in
+the formal mode. Earman was reacting against the logical postivists
+and poses the question in the material mode.
+
+\2 Earman's approach is tied together with the semantic view of
+theories, i.e.\ a theory is a collection of models and believing the
+theory is tantamount to believing that the world is represented by one
+of them
+
+
+\1 Empiricist criteria, e.g.\ eliminate unobservable structure
+
+Earman doesn't like these --- neither the stronger (positivist) view
+that ``I don't know what that means'' nor the weaker view that ``I
+won't believe it if I can't see it''.
+
+Nonetheless, he is perfectly ok with \emph{Ockhamism} as a
+methodological principle. His view here is influential, or at least
+widely shared.
+
+
+
+\1 Symmetry principles 
+
+
+
+
+\end{outline}
+
+\section*{Earman's technical definitions}
+
+\begin{defn} A classical theory of motion $T$ is associated with a
+  family $\mf M _T$ of models. Each model has the form
+  $\langle M,A_1,A_2,\dots ,P_1,P_2,\dots \rangle$ where the $A_i$
+  represent ``fixed spacetime structure'' and the $P_i$ represent
+  ``the physical contents of spacetime''. \end{defn}
+
+No reason to write out the full list, or even to specify that the
+$A_i$ and $P_i$ are ``geometric-object fields''. We can just say:
+$\langle M,A,P\rangle$, where $A$ represents (fixed) spacetime
+structure, and $P$ represents material contents. There are various
+ways we could do the specification. e.g.\ $A$ might be a metric in the
+sense of a function $d:M\times M\to M$, and $P$ might be a curve
+representing the trajectory of a particle.
+
+But: there is an ambiguity in Earman about whether $P$ represents
+fixed material contents, or is a specification of possible material
+contents.
+
+\begin{ass} For any two models $\langle M,A,P\rangle$,
+  $\langle M',A',P'\rangle$ in $\mf M_T$, there is an isomorphism in
+  the relevant category from $\langle M,A\rangle$ to $\langle
+  M',A'\rangle$. \end{ass}
+
+There is also an ambiguity about the role of ``diffeomorphisms'' in
+the specification of $\mf M_T$. This ambiguity appears in the
+following:
+
+\begin{defn} Let $\Phi$ be a diffeomorphism of $M$ onto $M$. We say
+  that $\Phi$ is a \emph{dynamical symmetry} if for any model $\langle
+  M,A,P\rangle$ in $\mf M_T$, the structure $\langle M,A,\Phi
+  ^*P\rangle$ is also in $\mf M_T$. \end{defn}
+
+For example: a map $\Phi$ that takes straight lines to bent curves is
+\emph{not} a dynamical symmetry of Galilean relativity.
+
+
+\begin{defn}[General covariance] The laws of $T$ are \emph{generally
+    covariant} just in case whenever $\langle M,A,P\rangle \in\mf M_T$
+  then $\langle M,\varphi ^*A,\varphi ^*P\rangle \in\mf
+  M_T$. \end{defn}
+
+
+\section*{A mini hole argument}
+
+\begin{outline}[enumerate]
+
+  \1 Earman claims that the spacetimes with less structure than
+  Galilean correspond to indeterministic theories. In particular,
+  there are models $M$ and $N$ and an isomorphism $\varphi :M\to N$
+  such that $\varphi |_{t<0}=\mathrm{id}$ but
+  $\varphi \neq \mathrm{id}$.
+
+  \1 But doesn't the fact that $\phi :M\to N$ is (according to $T$) an
+  isomorphism mean that $M$ and $N$ are (according to $T$) really the
+  same model?
+
+  \1 There is, in fact, something syntactically wrong with the
+  statement above: $\varphi |_{t<0}=\mathrm{id}$ makes sense only if
+  $M=N$. (The identification of the underlying sets $M$ and $N$ is
+  permitted by Earman's setup, but we have to wonder if this setup
+  isn't problematic.)
+  
+  \1 Wouldn't a real violation of determinism be two models that are
+  isomorphic on an initial segment but not isomorphic subsequently?
+
+ \end{outline}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

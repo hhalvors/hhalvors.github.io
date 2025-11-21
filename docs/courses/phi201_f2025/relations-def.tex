@@ -1,0 +1,179 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+
+\title{Worksheet: Relational Properties and Spans}
+\date{}
+\begin{document}
+\maketitle
+
+\section*{Background}
+
+Let $S$ and $R$ be binary relation symbols.  
+We say that \emph{$x$ and $y$ are spanned by $S$} if there exists a $z$ such that
+\[
+S z x \;\wedge\; S z y.
+\]
+We consider two different ways of relating $R$ and $S$:
+
+\begin{description}
+    \item[(A) One-way span axiom:] 
+    \[
+    \forall x \forall y\bigl( \exists z(Szx \land Syx) \rightarrow Rxy \bigr).
+    \]
+    This says: if $x$ and $y$ share a common $S$-predecessor, then $Rxy$ holds.
+
+    \item[(B) Definitional equivalence:]
+    \[
+    \forall x \forall y\bigl( Rxy \leftrightarrow \exists z(Szx \land Syx) \bigr).
+    \]
+    Here $R$ is \emph{exactly} the span of $S$.
+\end{description}
+
+We investigate which relational properties transfer from $S$ to $R$ under each assumption.
+
+\bigskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Part I: Countermodels under the One-Way Span Axiom}
+
+\subsection*{1. Nothing interesting follows from (A)}
+
+\textbf{Task:}  
+Give a structure $\mathcal{M}$ with domain $D$ and interpretations of $S$ and $R$ such that:
+
+\begin{enumerate}
+    \item $\mathcal{M} \models \forall x\forall y( \exists z(Szx \land Syx) \to Rxy)$, but
+    \item $R$ fails to be reflexive, symmetric, and transitive.
+\end{enumerate}
+
+\textbf{Hint:}  
+Let $S$ be empty, and let $R$ be \emph{anything at all}.  
+Explain why the implication in (A) is automatically satisfied.
+
+\bigskip
+
+\subsection*{2. A more interesting countermodel}
+
+Now give a structure where $S$ \emph{does} have nontrivial spans (i.e.\ some pairs $x,y$ share an $S$-predecessor), but $R$ still fails to have any nice property you choose (reflexivity, symmetry, or transitivity).
+
+\textbf{Write down explicitly:}
+
+\begin{itemize}
+    \item domain $D$,
+    \item extension of $S$,
+    \item extension of $R$,
+    \item verification that (A) holds,
+    \item verification that the chosen property of $R$ fails.
+\end{itemize}
+
+\bigskip
+\hrule
+\bigskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Part II: Property Transfer under Definitional Equivalence}
+
+Now assume the stronger connection (B):
+\[
+Rxy \quad\text{iff}\quad \exists z(Szx \land Syx).
+\]
+
+\subsection*{3. Symmetry of $R$}
+
+Show that under (B),
+\[
+\forall x\forall y(Rxy \to Ryx)
+\]
+is valid in all structures.
+
+\textbf{Task:} Prove the sequent
+\[
+\forall x\forall y\bigl(Rxy \leftrightarrow \exists z(Szx \land Syx)\bigr) 
+\;\;\vdash\;\;
+\forall x\forall y(Rxy \rightarrow Ryx)
+\]
+using the HLW/Lemmon natural deduction rules.
+
+\bigskip
+
+\subsection*{4. Failure of Transitivity}
+
+Show that even under (B), $R$ need \emph{not} be transitive.  
+Construct a countermodel.
+
+\textbf{Task:} Provide a structure $\mathcal{M}$ such that:
+
+\begin{itemize}
+    \item $\mathcal{M} \models$ (B), i.e.\ $R$ is \emph{exactly} the $S$-span;
+    \item $\mathcal{M} \not\models \forall x\forall y\forall z\bigl( (Rxy \land Ryz) \to Rxz \bigr)$.
+\end{itemize}
+
+\textbf{Hint:} Make three points $a,b,c$ which pairwise share different $S$-predecessors, but no single predecessor is shared by all three.
+
+\bigskip
+\hrule
+\bigskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Part III: Reflexivity Transfer}
+
+\subsection*{5. When does $R$ become reflexive?}
+
+We want $Rxx$ to hold for every $x$.  
+Under (B), this means:
+\[
+\forall x\, Rxx 
+\quad\text{iff}\quad
+\forall x\, \exists z( Szx \land Sxx ).
+\]
+
+\textbf{Task A:}  
+Give conditions on $S$ that ensure $\forall x Rxx$ holds.  
+(Hint: consider \emph{left-seriality} \(\forall x \exists z\, Szx\) and \emph{reflexivity} \(\forall x\, Sxx\).)
+
+\medskip
+
+\textbf{Task B:}  
+Prove the following sequent in Lemmon/HLW style:
+\[
+\begin{aligned}
+&\forall x\forall y\bigl(Rxy \leftrightarrow \exists z(Szx \land Syx)\bigr), \\
+&\forall x Sxx, \\
+&\forall x \exists z Szx
+\quad\vdash\quad 
+\forall x Rxx.
+\end{aligned}
+\]
+
+You may assume standard relational equivalences and use EI/EG and UG in the HLW system.
+
+\bigskip
+\hrule
+\bigskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Part IV: Extra Exploration (Optional)}
+
+\subsection*{6. Defining spans the other way around}
+
+Instead of taking $S$-predecessors, suppose we define $R$ by common $S$-\emph{successors}:
+\[
+Rxy \quad\text{iff}\quad \exists z(Sxz \land Syz).
+\]
+
+\textbf{Tasks:}
+\begin{enumerate}
+    \item Show that $R$ is automatically symmetric, regardless of what $S$ is.
+    \item Investigate: under what conditions on $S$ will $R$ be reflexive? transitive?
+    \item Compare your answers with Parts II--III.
+\end{enumerate}
+
+\bigskip
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

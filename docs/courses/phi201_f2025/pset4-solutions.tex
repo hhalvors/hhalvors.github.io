@@ -1,0 +1,137 @@
+% Options for packages loaded elsewhere
+\documentclass[12pt,fleqn]{article}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+\usepackage{fullpage,amssymb,array}
+
+\title{logic pset4}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\thispagestyle{empty}
+
+\vspace*{-3em}
+
+Resources: Lecture 4 and Chapter 6 (pp 84-99) of \emph{How Logic
+  Works}.
+
+\section*{A. Translation}
+
+Represent the form of the following sentences in predicate logic.
+We've suggested appropriate symbols. (We assume that quantifiers are
+restricted to persons, so you don't need to add an extra predicate for
+``$x$ is a person.'')
+
+\begin{enumerate}
+\item Only students who do the homework will learn logic. ($Sx,Hx,Lx$)
+
+  \[ \forall x(Sx\to (Lx\to Hx)) \]
+
+\item All students and professors get a discount. ($Sx,Px,Dx$)
+
+  \[ \forall x((Sx\vee Px)\to Dx) \]
+
+\item Every student respects every professor who respects some
+  student. ($Sx,Px,Rxy$)
+
+  \[ \forall x(Sx\to \forall y(Py \to (\exists z(Sz\wedge Ryz)\to
+    Rxy))) \]
+
+  \[
+\forall x \forall y \big( (Sx \wedge Py \wedge \exists z (Sz \wedge Ryz)) \to Rxy \big)
+\]
+   
+\item There is some student who respects only those professors who
+  respect all students. ($Sx,Px,Rxy$)
+
+  \[ \exists x(Sx\wedge \forall y(Py\to (Rxy\to \forall z(Sz\to
+    Ryz)))) \]
+
+  \[
+\exists x \big( Sx \wedge \forall y \big( (Py \wedge Rxy) \to \forall z (Sz \to Ryz) \big) \big)
+\]
+  
+\end{enumerate}
+
+
+\section*{B. Proofs}
+
+Prove the following sequents with the propositional logic rules plus
+UE and UI. You may also use cut and replacement with any of the
+``useful sequents'' from the back of the textbook.
+
+\begin{enumerate}
+\item $\forall x(Fx \to\forall yGy)\:\vdash\: \forall x\forall y(Fx\to
+  Gy)$
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+  1 & (1) & $\forall x (Fx \to \forall y Gy)$ & A \\
+  2 & (2) & $Fa$ & A \\
+  1 & (3) & $Fa \to \forall y Gy$ & 1 UE \\
+  1,2 & (4) & $\forall y Gy$ & 3,2 MP \\
+  1,2 & (6) & $Gb$ & 4 UE \\
+  1 & (7) & $Fa\to Gb$ & 2,6 CP \\
+  1 & (8) & $\forall y (Fa\to Gy)$ & 7 UI \\
+  1 & (9) & $\forall x \forall y (Fx\to Gy)$ & 8 UI \\
+\end{tabular}
+
+\item $\forall x\forall y(Fx\to Gy)\:\vdash\: \forall x(Fx\to \forall
+  yGy)$
+
+  \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\forall x \forall y (Fx\to Gy)$ & A \\
+2 & (2) & $Fa$ & A \\
+1 & (3) & $\forall y (Fa\to Gy)$ & 1 UE \\
+1 & (4) & $Fa\to Gb$ & 3 UE \\
+1,2 & (5) & $Gb$ & 4,2 MP \\
+1,2 & (6) & $\forall y Gy$ & 5 UI \\
+1 & (7) & $Fa \to \forall y Gy$ & 2,6 CP \\
+1 & (8) & $\forall x (Fx\to \forall y Gy)$ & 7 UI \\
+\end{tabular}
+
+  
+\item $\vdash\:\forall x(\forall yRxy\to Rxx)$
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\forall y Ray$ & A \\
+1 & (2) & $Raa$ & 1 UE \\
+$\varnothing$ & (3) & $\forall y Ray \to Raa$ & 1,2 CP \\
+$\varnothing$ & (4) & $\forall x (\forall y Rxy \to Rxx)$ & 3 UI \\
+\end{tabular}
+
+
+  
+\end{enumerate}
+
+
+\section*{C. Conceptual}
+
+It can be proven that
+$\forall xFx\to \forall xGx\vdash \forall x(Fx\to Gx)$, but the
+following attempt at a proof has a mistake. What is the mistake? A
+good answer can be as short as one sentence.
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm}
+    >{\centering\arraybackslash}p{1cm} p{4cm}
+    >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\forall xFx \to \forall xGx$ & A \\
+2 & (2) & $Fa$ & A \\
+2 & (3) & $\forall xFx$ & 2 UI \\
+1,2 & (4) & $\forall xGx$ & 1,3 MP \\
+1,2 & (5) & $Ga$ & 4 UE \\
+1 & (6) & $Fa \to Ga$ & 2,5 CP \\
+1 & (7) & $\forall x(Fx \to Gx)$ & 6 UI \\
+\end{tabular}
+
+Line 3 is not a valid application of UI, since ``$a$'' occurs in the
+dependencies of line 2.
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

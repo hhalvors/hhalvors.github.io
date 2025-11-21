@@ -1,0 +1,164 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{enumitem}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+\usepackage{amsfonts,amsmath}
+\begin{document}
+
+Chapter 2 of \emph{World Enough and Spacetime} is the technically most
+demanding chapter of the book. Earman makes lots of (mostly correct)
+claims that take several lines of math to prove --- rarely mentioning
+how one could reconstruct the proof. He also uses a notation that is
+slightly ambiguous about whether the indices are abstract (as in
+Malament's $a,b,c,\dots $) or whether they are components of the
+tensor relative to a chart.
+
+Nonetheless, the upshot of the chapter is clear: there is a stack of
+increasing spacetime structures.
+
+\bigskip \noindent \begin{tabular}{l|ll} spacetime & new structure &
+  new concept \\ \hline
+                     Aristotelean spacetime & worldline & absolute position \\
+                     Newtonian spacetime & reference frame & absolute velocity \\
+                     Galilean spacetime & affine structure & absolute acceleration \\
+                     Maxwellian spacetime & affine structures & rotation \\
+                     Leibnizian spacetime & temporal metric & relative acceleration \\
+                     Machian spacetime & simultaneity, Euclidean
+                                         metric on space \end{tabular}
+
+\subsection*{Machian spacetime}
+
+\begin{itemize}
+\item Assumption: $M$ is a smooth manifold that is diffeomorphic with
+  $\mathbb{R}^4$. i.e., there is a smooth bijection
+  $\varphi :M\to \mathbb{R}^4$. (This assumption saves one from some
+  nuances about global structure.)
+\item Motivating idea: All there is are metric relations at each
+  moment. But we assume (contra Hume!) that we can re-identify
+  physical objects at different times. Mathematically, this means that
+  we permit ourselves to write $\gamma :\mathbb{R}\to M$ to represent
+  the trajectory of a material object.
+\item Assumption: There is a metric $g^{ab}$ of signature $(+ + + 0)$
+  on $M$. Hence, locally, in each tangent space $T_p$, one can
+  distinguish three spacelike dimensions and one timelike
+  dimension. But since there is no \textbf{connection} on $M$, there
+  is no sense to the question of whether the timelike direction in
+  $T_p$ is the same as the timelike direction in $T_q$. (Since
+  $g^{ab}$ is assumed to be smooth, there is a sense in which the
+  timelike direction changes continuously. But that does \emph{not}
+  mean that these timelike directions can be stitched together
+  consistently in such a way that we can define a global notion of
+  time. The \textbf{kernel distribution} does not necessarily
+  correspond to a smooth vector field.)
+\item Assumption: There is a family $\mathbb{T}$ of time functions
+  $t:M\to\mathbb{R}$, but no particular member of $\mathbb{T}$ is
+  privileged with regard to duration between two events. For any
+  $t_1,t_2\in \mathbb{T}$, there is a smooth bijection
+  $f:\mathbb{R}\to\mathbb{R}$ such that $t_2=f\circ t_1$ and
+  $f'=df/dt>0$. (The latter condition is equivalent to $f$ being
+  continuous and order-preserving.)
+  \begin{itemize}
+  \item ``$x$ and $y$ are moving relative to each other'' is
+    definable, i.e.\ their distance is changing.
+  \item ``The velocity of $x$ relative to $y$'' is not definable.  
+  \item ``$x$ and $y$ are accelerating relative to each other'' is not
+    definable.
+  \end{itemize}  
+\item Fact: If two smooth functions $t_1,t_2:M\to\mathbb{R}$ provide
+  the same foliation, then they are related as $t_2=f\circ t_1$, for a
+  continuous, order-preserving function $f$.
+\item Assumption: $g^{ab}t_a=0$, meaning that $g^{ab}t_av_b=0$ for any
+  covector $v_b$. (Question: Is there a sense in which $g^{ab}t_a$ is
+  the \emph{projection} of $t_a$ onto space?)
+\end{itemize}
+
+\subsection*{Leibnizian spacetime}
+
+\begin{itemize}
+\item Earman does something strange here. Instead of selecting a
+  particular time function $t\in\mathbb{T}$, he defines a temporal
+  metric $h_{ij}$. He then requires that $g^{ij}h_{ij}=0$. Of course,
+  $h_{ij}$ does defines temporal distances.
+\item Question: Couldn't we just pick a particular time function
+  $t\in\mathbb{T}$ and then take $h_{ab}=\partial _at\partial _bt$?
+  Conjecture: That wouldn't reduce generality, because a metric that
+  is non-degenerate on only one dimension is actually a product of
+  one-forms.
+\item Fact: for two curves $\gamma _1,\gamma _2:\mathbb{R}\to M$,
+  instantaneous relative velocity is definable. Reparameterize $\gamma
+  _1$ and $\gamma _2$ so that they are functions of the global time
+  coordinate. Each each $t$, $v(t)=\gamma _1(t)-\gamma _2(t)$ is a
+  vector in $\mathbb{R}^3$.
+\item Imagine three curves $\gamma _1,\gamma _2,\gamma _3$ that form a
+  triangle with vertices of constant distance. There is no meaning to
+  the claim that this triangle is rotating or not. 
+\end{itemize}
+
+\subsection*{Maxwellian spacetime}
+
+\begin{itemize}
+\item The construction here is complicated because the goal is to add
+  a ``standard of rotation'' without adding a standard of absolute
+  acceleration. Earman's idea is to fix a particular flat affine
+  connection $\nabla$ that is compatible with the spatial and temporal
+  metrics. The specification of such a connection is tantamount to the
+  specification of a notion of ``straight line'' in $M$. At this
+  stage, absolute acceleration would be definable, and we don't want
+  that. We just want to know if an alternative definition $\nabla '$
+  of ``straight line'' would agree with $\nabla$ about which extended
+  things are rotating.
+\item Take a spacelike vector field $f^a$ that is constant, at each
+  time, relative to the connection $\nabla$. I believe this means that
+  $f^a$ corresponds to shifting each spatial hypersurface --- i.e.\ we
+  can bevel the deck in a smooth (but not necessarily linear) way. 
+\end{itemize}  
+  
+
+\subsection*{Galilean spacetime}
+
+A covariant derivative operator $\nabla$ takes a tensor $T$ and
+produces a new tensor $\nabla T$ that has one more lower index. The
+intuitive interpretation is that if $\xi ^a$ is a directional vector,
+then $\xi ^a\nabla _aT$ is the tensor representing the rate of change
+of $T$ in the direction $\xi$.
+
+How is it possible that (absolute) acceleration is definable while
+(absolute) velocity is not? Starting with the simple, binary case of
+``moving versus not moving'' and ``accelerating versus not
+accelerating'': an affine connection (covariant derivative operator)
+$\nabla$ defines a predicate on timlike curves --- ``$\gamma$ is a
+geodesic''. The more precise definition is that if $\vec{\gamma} |_p$
+is parallel transported from $p$ to $q$, then the result is
+$\vec{\gamma } |_q$. In short, an object (represented by a timeline
+curve $\gamma$) is accelerating at a point $p\in M$ just in case
+$\xi ^a \nabla _a\xi ^b\neq 0$.
+
+% Or what is equivalent ...
+
+\subsection*{Additional resources}
+
+If you want to learn more about these different spacetimes, it can be
+a challenging because typical physics books are focused on the current
+theory, viz. general relativity, which is rather different than these
+``classical'' spacetimes.
+
+\begin{itemize}
+\item Weatherall, Jim (2021). Classical spacetime structure. In
+  (Eds.), The Routledge Companion to Philosophy of Physics
+  (pp. 33–45). Routledge.
+\item Lee, \emph{Introduction to Smooth Manifolds}, chapter 19 is
+  about foliations.
+\item Claude Godbillon, \emph{Feuilletages: Études Géométriques}
+  (1971) is the classic about foliations (although not available in
+  English).
+\item ``Foliations and Geometric Structures'' by Barbot, Béguin, and
+  Labourie (in Géométrie différentielle)
+\end{itemize}
+ 
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

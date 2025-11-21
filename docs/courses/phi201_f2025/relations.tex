@@ -1,0 +1,407 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem*{fact}{Fact}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\title{Binary relations on a three-element set} \date{}
+
+\begin{document}
+\maketitle
+
+Let $A=\{a,b,c\}$.  A \emph{binary relation} $R$ on $A$ is any subset
+of $A\times A$.  Equivalently, $R$ is determined by its $3\times3$
+adjacency matrix $(r_{xy})_{x,y\in A}$, where $r_{xy}=1$ iff
+$Rxy$. Since $|A\times A|=9$, each ordered pair may or may not belong
+to $R$.  Hence the total number of binary relations on $A$ is
+$2^{9}=\mathbf{512}$.
+
+We say that two relations $R,R'$ are the same \emph{type} if one can
+be obtained from the other by permuting the elements of $A$; i.e.,
+there is some $\sigma\in S_3$ with
+\[ \langle x,y\rangle \in R \iff \langle \sigma x,\sigma y\rangle \in
+  R'. \] The group $S_3$ acts on the set of all relations in this way.
+Burnside's lemma gives
+\[
+\frac{1}{6}\bigl(2^{9}+3\!\cdot\!2^{5}+2\!\cdot\!2^{3}\bigr)=104,
+\]
+so there are \textbf{104} distinct relation types (isomorphism
+classes) under relabeling.\footnote{%
+  \textbf{Burnside’s Lemma.}  Let a finite group $G$ act on a finite
+  set $X$.  For each $g\in G$, let
+  $\mathrm{Fix}(g)=\{x\in X : g\cdot x=x\}$ be the set of elements
+  fixed by $g$.  Then the number of distinct orbits of $X$ under the
+  action of $G$ is
+  \[ \frac{1}{|G|}\sum_{g\in G} |\mathrm{Fix}(g)|. \] In particular,
+  if $G$ acts by permuting coordinates of combinatorial structures
+  (such as the rows and columns of a matrix), the lemma gives the
+  number of unlabeled structures up to relabeling.%
+}
+
+\begin{fact} Let $\varphi$ be a sentence with the binary relation
+  symbol $R$ and no names. Let $M$ and $N$ be interpretations of $R$
+  such that $R^M$ is of the same type as $R^N$. Then $M\vDash\varphi$
+  iff $N\vDash\varphi$. \end{fact}
+
+We now describe some of these 104 types in detail, focusing on three
+important families: the \emph{equivalence relations}, the
+\emph{symmetric relations}, and the \emph{asymmetric relations}.
+
+
+\section{Equivalence relations}
+
+Equivalence relations correspond to partitions of $A$.  Up to
+isomorphism there are precisely three partitions (hence three types).
+
+\medskip
+\begin{description}
+\item[\textbf{E1:}] $\{\{a\},\{b\},\{c\}\}$ (identity relation)
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,baseline=(current bounding box.center)]
+  \node (a) at (0,1.0) {$a$};
+  \node (b) at (-1,-0.6) {$b$};
+  \node (c) at (1,-0.6) {$c$};
+  \draw[loop above,looseness=14] (a) to (a);
+  \draw[loop left,looseness=14] (b) to (b);
+  \draw[loop right,looseness=14] (c) to (c);
+\end{tikzpicture}
+\end{center}
+
+\item[\textbf{E2:}] $\{\{a,b\},\{c\}\}$ (one 2--class + one singleton)
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,baseline=(current bounding box.center)]
+  \node (a) at (0,1.0) {$a$};
+  \node (b) at (-1,-0.6) {$b$};
+  \node (c) at (1,-0.6) {$c$};
+  \draw[loop above,looseness=14] (a) to (a);
+  \draw[loop left,looseness=14] (b) to (b);
+  \draw (a) -- (b);
+  \draw[loop right,looseness=14] (c) to (c);
+\end{tikzpicture}
+\end{center}
+
+\item[\textbf{E3:}] $\{\{a,b,c\}\}$ (universal relation)
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,baseline=(current bounding box.center)]
+  \node (a) at (0,1.0) {$a$};
+  \node (b) at (-1,-0.6) {$b$};
+  \node (c) at (1,-0.6) {$c$};
+  \draw (a) -- (b) -- (c) -- (a);
+  \draw[loop above,looseness=14] (a) to (a);
+  \draw[loop left,looseness=14] (b) to (b);
+  \draw[loop right,looseness=14] (c) to (c);
+\end{tikzpicture}
+\end{center}
+\end{description}
+
+\section{Symmetric relations (20 types)}
+
+A symmetric relation is an \emph{undirected} graph with optional loops.
+Up to isomorphism, start from the underlying simple graph (no loops), 
+then add loops modulo its automorphisms.
+
+\paragraph{Underlying graph shapes (no loops):}
+\begin{center}
+\begin{tabular}{cccc}
+Empty & One edge & Path on 3 & Triangle \\
+\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+  \node (a) at (0,0.8) {}; \node (b) at (-0.8,-0.6) {}; \node (c) at (0.8,-0.6) {};
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+  \node (a) at (0,0.8) {}; \node (b) at (-0.8,-0.6) {}; \node (c) at (0.8,-0.6) {};
+  \draw (a)--(b);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+  \node (a) at (0,0.8) {}; \node (b) at (-0.8,-0.6) {}; \node (c) at (0.8,-0.6) {};
+  \draw (a)--(b)--(c);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+  \node (a) at (0,0.8) {}; \node (b) at (-0.8,-0.6) {}; \node (c) at (0.8,-0.6) {};
+  \draw (a)--(b)--(c)--(a);
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\vspace{1em}
+\noindent Each base shape can receive loops in various ways, counted up to automorphisms.
+
+\paragraph{(a) Empty graph.}
+All vertices are indistinguishable; loops can be placed on any subset.
+Distinct cases (by number of loops): 0, 1, 2, or 3.
+\begin{center}
+\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+  \node (a) at (0,0.8) {}; \node (b) at (-0.8,-0.6) {}; \node (c) at (0.8,-0.6) {};
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+  \node (a) at (0,0.8) {}; \node (b) at (-0.8,-0.6) {}; \node (c) at (0.8,-0.6) {};
+  \draw[loop above,looseness=14] (a) to (a);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+  \node (a) at (0,0.8) {}; \node (b) at (-0.8,-0.6) {}; \node (c) at (0.8,-0.6) {};
+  \draw[loop above,looseness=14] (a) to (a);
+  \draw[loop left,looseness=14] (b) to (b);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+  \node (a) at (0,0.8) {}; \node (b) at (-0.8,-0.6) {}; \node (c) at (0.8,-0.6) {};
+  \draw[loop above,looseness=14] (a) to (a);
+  \draw[loop left,looseness=14] (b) to (b);
+  \draw[loop right,looseness=14] (c) to (c);
+\end{tikzpicture}
+\end{center}
+
+\paragraph{(b) One edge.}
+Automorphism swaps the two adjacent vertices; the isolated vertex is distinct.
+Loops on the pair: 0, 1, or 2; loop on the isolated: 0 or 1.
+This gives $3\times2=6$ types.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+  \node (a) at (0,0.8) {}; \node (b) at (-0.8,-0.6) {}; \node (c) at (0.8,-0.6) {};
+  \draw (a)--(b);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+  \node (a) at (0,0.8) {}; \node (b) at (-0.8,-0.6) {}; \node (c) at (0.8,-0.6) {};
+  \draw (a)--(b); \draw[loop right,looseness=14] (c) to (c);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+  \node (a) at (0,0.8) {}; \node (b) at (-0.8,-0.6) {}; \node (c) at (0.8,-0.6) {};
+  \draw (a)--(b); \draw[loop above,looseness=14] (a) to (a);
+\end{tikzpicture}
+\end{center}
+
+\paragraph{(c) Path on three vertices.}
+Automorphism swaps the two endpoints; the middle vertex is distinguished.
+Loops on endpoints: 0, 1, or 2; loop on middle: 0 or 1.
+Again $3\times2=6$ types.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+  \node (a) at (0,0.8) {}; \node (b) at (-0.8,-0.6) {}; \node (c) at (0.8,-0.6) {};
+  \draw (a)--(b)--(c);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+  \node (a) at (0,0.8) {}; \node (b) at (-0.8,-0.6) {}; \node (c) at (0.8,-0.6) {};
+  \draw (a)--(b)--(c);
+  \draw[loop left,looseness=14] (b) to (b);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+  \node (a) at (0,0.8) {}; \node (b) at (-0.8,-0.6) {}; \node (c) at (0.8,-0.6) {};
+  \draw (a)--(b)--(c);
+  \draw[loop above,looseness=14] (a) to (a);
+\end{tikzpicture}
+\end{center}
+
+\paragraph{(d) Triangle.}
+All vertices indistinguishable; loops can be placed on any subset.
+Distinct cases (by number of loops): 0, 1, 2, or 3.
+\begin{center}
+\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+  \node (a) at (0,0.8) {}; \node (b) at (-0.8,-0.6) {}; \node (c) at (0.8,-0.6) {};
+  \draw (a)--(b)--(c)--(a);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+  \node (a) at (0,0.8) {}; \node (b) at (-0.8,-0.6) {}; \node (c) at (0.8,-0.6) {};
+  \draw (a)--(b)--(c)--(a);
+  \draw[loop above,looseness=14] (a) to (a);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+  \node (a) at (0,0.8) {}; \node (b) at (-0.8,-0.6) {}; \node (c) at (0.8,-0.6) {};
+  \draw (a)--(b)--(c)--(a);
+  \draw[loop above,looseness=14] (a) to (a);
+  \draw[loop left,looseness=14] (b) to (b);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+  \node (a) at (0,0.8) {}; \node (b) at (-0.8,-0.6) {}; \node (c) at (0.8,-0.6) {};
+  \draw (a)--(b)--(c)--(a);
+  \draw[loop above,looseness=14] (a) to (a);
+  \draw[loop left,looseness=14] (b) to (b);
+  \draw[loop right,looseness=14] (c) to (c);
+\end{tikzpicture}
+\end{center}
+
+\paragraph{Count check.}
+Distinct loop patterns modulo automorphisms:
+\[
+  4\ (\text{empty})\;+\;6\ (\text{one edge})\;+\;6\
+  (\text{path})\;+\;4\ (\text{triangle})\;=\;\boxed{20}.
+\]
+Thus there are \textbf{20 symmetric relation types} on a 3--element set.
+
+Every symmetric relation on $A=\{a,b,c\}$ can be represented by a
+$3\times3$ Boolean matrix $(r_{ij})$ such that $r_{ij}=r_{ji}$ for all
+$i,j$.  Each $r_{ij}$ records whether the ordered pair
+$\langle a_i,a_j\rangle$ belongs to the relation $R$.
+
+\medskip
+\noindent
+To understand how many distinct symmetric relations there are up to isomorphism,
+it helps to build these matrices column by column.  
+The first column determines all entries in the first row by symmetry,  
+so we can visualize the process as gradually filling in the upper--left
+triangle of the matrix.
+
+\[
+\begin{bmatrix}
+r_{11} & r_{12} & r_{13} \\
+r_{12} & r_{22} & r_{23} \\
+r_{13} & r_{23} & r_{33}
+\end{bmatrix}
+\]
+
+\medskip
+\noindent
+The first column corresponds to the loops and connections involving the first element~$a$.
+We can freely choose:
+\begin{itemize}
+  \item whether $a$ has a loop ($r_{11}=0$ or $1$), and
+  \item whether $a$ is connected to $b$ ($r_{12}$) and to $c$ ($r_{13}$).
+\end{itemize}
+Hence there are $2^3=8$ possibilities for the first column (and its symmetric first row).
+
+\medskip
+\noindent
+Now fix one of those eight possibilities.  
+Once the first column is chosen, some entries in the second column are already
+constrained by symmetry: the entry $r_{21}$ is equal to $r_{12}$.
+Thus the second column still has two unconstrained positions:
+$r_{22}$ (loop on~$b$) and $r_{23}$ (connection between $b$ and~$c$).
+That gives $2^2=4$ degrees of freedom for the second column.
+
+\medskip
+\noindent
+Finally, once we have filled in the first and second columns,
+the third column is almost completely determined by symmetry:
+$r_{31}=r_{13}$ and $r_{32}=r_{23}$ are fixed,
+and only $r_{33}$ (the loop on~$c$) remains free.
+
+\medskip
+\noindent
+Altogether we have
+\[
+2^3 \text{ (for the first column)} \;\times\;
+2^2 \text{ (for the second column)} \;\times\;
+2^1 \text{ (for the third column)} \;=\; 2^6 = 64
+\]
+labeled symmetric relations.  
+
+\medskip
+\noindent
+When we ignore the names of $a$, $b$, and $c$—that is, when we identify
+relations that differ only by renaming the elements of~$A$—
+many of these $64$ labeled matrices coincide.
+For example, the two matrices
+\[
+\begin{bmatrix}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}
+\qquad\text{and}\qquad
+\begin{bmatrix}
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+1 & 0 & 0
+\end{bmatrix}
+\]
+represent the same relation \emph{type}:
+each depicts a single undirected edge connecting two of the three elements,
+with the remaining element isolated.  
+They differ only in which pair of vertices happens to be connected.
+When we collapse all such relabelings, the 64 labeled matrices fall into
+exactly \textbf{20 distinct unlabeled patterns}.
+These correspond precisely to the $20$ symmetric relation types
+classified earlier by their underlying graph shapes and possible loop configurations.
+
+\section{Asymmetric relations}
+
+A relation $R$ on $A=\{a,b,c\}$ is \emph{asymmetric} if
+\[
+Rxy \;\Rightarrow\; \lnot Ryx.
+\]
+Equivalently, $R$ has no loops and no pair of opposite arrows; in graph terms,
+it is a loopless digraph without $2$--cycles.  (Asymmetric $\Rightarrow$ irreflexive.)
+
+\medskip
+\noindent
+For each unordered pair $\{x,y\}$ there are exactly three options:
+$(x\!\to\!y)$, $(y\!\to\!x)$, or neither.  With $\binom{3}{2}=3$ pairs, the number
+of \emph{labeled} asymmetric relations on $A$ is
+\[
+3^3 = 27.
+\]
+
+\medskip
+\noindent
+Representative shapes up to relabeling (no loops anywhere):
+
+\begin{itemize}
+  \item \textbf{Empty relation.}\;
+  \begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+    \node (a) at (0,1.0) {};
+    \node (b) at (-1,-0.6) {};
+    \node (c) at (1,-0.6) {};
+  \end{tikzpicture}
+
+  \item \textbf{Single arrow} ($a\!\to b$).\;
+  \begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+    \node (a) at (0,1.0) {};
+    \node (b) at (-1,-0.6) {};
+    \node (c) at (1,-0.6) {};
+    \draw[->] (a) -- (b);
+  \end{tikzpicture}
+
+  \item \textbf{Fork (two arrows with a common source)} ($a\!\to b$, $a\!\to c$).\;
+  \begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+    \node (a) at (0,1.0) {};
+    \node (b) at (-1,-0.6) {};
+    \node (c) at (1,-0.6) {};
+    \draw[->] (a) -- (b);
+    \draw[->] (a) -- (c);
+  \end{tikzpicture}
+
+  \item \textbf{Chain} ($a\!\to b\!\to c$).\;
+  \begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+    \node (a) at (0,1.0) {};
+    \node (b) at (-1,-0.6) {};
+    \node (c) at (1,-0.6) {};
+    \draw[->] (a) -- (b);
+    \draw[->] (b) -- (c);
+  \end{tikzpicture}
+
+  \item \textbf{3--cycle (tournament on three)} ($a\!\to b\!\to c\!\to a$).\;
+  \begin{tikzpicture}[scale=0.8,baseline=(current bounding box.center)]
+    \node (a) at (0,1.0) {};
+    \node (b) at (-1,-0.6) {};
+    \node (c) at (1,-0.6) {};
+    \draw[->] (a) -- (b);
+    \draw[->] (b) -- (c);
+    \draw[->] (c) -- (a);
+  \end{tikzpicture}
+\end{itemize}
+
+\section{Summary}
+\begin{itemize}
+  \item $2^{9}=512$ labeled binary relations on $A=\{a,b,c\}$.
+  \item $104$ relation types up to relabeling of the domain.
+  \item Equivalence relations split into $3$ types (partitions of $A$).
+  \item Symmetric relations split into $20$ types (simple-graph shape $\times$ loop--pattern modulo automorphisms).
+\end{itemize}
+
+\end{document}

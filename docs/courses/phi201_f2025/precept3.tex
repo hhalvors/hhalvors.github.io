@@ -1,0 +1,151 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\title{Logic precept 3}
+\date{}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+\begin{document}
+
+\maketitle
+
+\vspace*{-4em}
+
+\section*{Proofs}
+
+\subsection*{Review of $\vee$-elimination}
+
+\begin{enumerate}
+\item $(P\to Q)\vee (P\to R)\:\vdash\: P\to (Q\vee R)$
+\item $\neg P\vee\neg Q\:\vdash\: \neg (P\wedge Q)$
+\item $\neg P\vee Q\:\vdash\: P\to Q$
+\end{enumerate}
+
+\subsection*{Reductio ad Absurdum}
+
+\begin{enumerate}
+\item $P\to Q\:\vdash\: \neg (P\wedge \neg Q)$
+\item $\neg (P\to Q)\:\vdash\: \neg Q$
+\item pset1 $\neg (P\to Q)\:\vdash\: Q\to R$
+\item $\neg (P\vee Q)\:\vdash \: \neg P$  
+\item pset2 $P\to Q\:\vdash\:\neg P\vee Q$
+\item pset3 $P\to (Q\vee R)\:\vdash\: (P\to Q)\vee R$
+\end{enumerate}
+
+
+
+\subsubsection*{Challenge problem: Pierce's law}
+
+$\vdash\: ((P\to Q)\to P)\to P$
+
+\section*{Truth tables}
+
+\subsection*{Key Concepts}
+
+\begin{itemize}
+\item
+  arguments: valid, invalid
+\item
+  counterexample
+\item
+  truth-value
+\item
+  main connective
+\item
+  sentences (syntactic): atomic, conjunction, negation, disjunction,
+  conditional, biconditional
+\item
+  sentences (semantic): tautology, inconsistency, contingency
+\item
+  two sentences: equivalent, inconsistent, independent
+\end{itemize}
+
+\subsection*{For arguments}
+
+Determine whether the following arguments are valid or not. Explain
+your answer by showing the existence of a row of a truth table, or by
+pointing to a full truth table, or something of the sort.  Your answer
+should be articulated in English prose so that it can convince anyone
+else who is familiar with truth tables.
+
+\begin{enumerate}
+\item $P\to (Q\vee R)\:\vdash \: (P\to Q)\vee R$
+\item
+  $\vdash \: (P\leftrightarrow Q)\vee (P\leftrightarrow R)\vee
+  (Q\leftrightarrow R)$
+\item $P\to (Q\to R)\:\vdash\: (P\wedge Q)\to R$
+\item $P\to R\:\vdash\: (P\vee Q)\to R$
+\item $(P\leftrightarrow Q)\leftrightarrow R \:\vdash\: P\vee R$
+\item $\:\vdash\: (P\to Q)\vee (Q\to R)$
+\end{enumerate}
+
+\end{document}
+
+
+\subsection*{Sentence classification
+(syntactic)}\label{sentence-classification-syntactic}
+
+\textbf{Exercise.} What is the \textbf{main connective} of each of the
+following formulas?
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(\neg (P\to Q)\)
+\item
+  \(\neg P\to Q\)
+\item
+  \(\neg (P\to \neg Q)\)
+\item
+  \((P\wedge Q)\vee \neg (P\to Q)\)
+\item
+  \(((P\to Q)\to P)\to P\)
+\end{enumerate}
+
+\section{Sentence classification
+(semantic)}\label{sentence-classification-semantic}
+
+\textbf{Exercise.} Classify each of the following sentences as
+tautology, inconsistency, or contingency.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \((P\to \neg P)\to \neg P\)
+\item
+  \((P\wedge Q)\vee (\neg P\wedge \neg Q)\)
+\item
+  \((P\wedge (Q\wedge \neg R))\vee (\neg P\wedge (\neg Q\wedge R))\)
+\item
+  \((P\leftrightarrow Q)\leftrightarrow R\)
+\item
+  \((P\wedge Q)\vee \neg (P\to Q)\)
+\item
+  \(((P\to Q)\to R)\to Q\)
+\end{enumerate}
+
+\textbf{Exercise.} Show that if \(B\) is a tautology, then \(A\wedge B\)
+is logically equivalent to \(A\).
+
+\textbf{Exercise.} Show that if \(B\) is an inconsistency, then
+\(A\vee B\) is logically equivalent to \(A\).
+
+\subsection{For multiple sentences}
+
+\textbf{Exercise:} What is the semantic relationship between
+\((P\wedge Q)\) and \(\neg (P\to Q)\)?
+
+\textbf{Exercise:} If \(\phi\wedge\psi\) is a contingency, then what are
+the possibilities for \(\phi\) and \(\psi\)?
+
+\textbf{Exercise:} If \(\phi\) is a tautology, then what are the
+possibilities for \(\phi\wedge\psi\)? What are the possibilities for
+\(\phi\vee\psi\)?
+
+
+
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
