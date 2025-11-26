@@ -1,0 +1,64 @@
+\documentclass[fleqn,12pt]{article}
+\usepackage{amsmath}
+\usepackage[colorlinks]{hyperref}
+\usepackage{fullpage}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\begin{document}
+\thispagestyle{empty}
+
+\section*{Logic pset 8}
+
+Please answer \textbf{ONE} of the following questions. Some of these
+problems are rather complex, but your answer shouldn't be longer than
+two pages. All of these are exercises in Chapter 9 of HLW.
+
+\begin{enumerate}
+
+\item Prove that the set $\{ \neg ,\leftrightarrow \}$ is not
+  expressively complete.
+
+\item Prove the steps of the soundness theorem for the $\vee$I and
+  $\vee$E rules.
+
+% \item Show that if $\varphi$ is inconsistent, then any substitution
+%  instance of $\varphi$ is inconsistent.  Here we mean ``inconsistent''
+%  in the semantic sense of being assigned $0$ by all valuations.
+
+\item Show that if $\varphi$ is a contingent sentence, then
+  $\varphi$ has an inconsistent substitution instance.
+
+\item In this exercise, you're asked to show that the RA rule is
+  redundant.  We write $\Gamma\succ\varphi$ to indicate that there is
+  a proof of $\varphi$ from $\Gamma$ that does \emph{not} use RA. Show
+  that if $\Gamma\vdash\varphi$ then $\Gamma\succ\varphi$.
+
+\item Let's say that a sentence $\varphi$ of propositional logic is
+  ``conjunctive'' just in case it contains no connectives besides
+  $\wedge$ and $\neg$. That is, conjunctive sentences do not contain
+  $\vee$ or $\to$. If $\Gamma$ is a set of conjunctive sentences and
+  $\varphi$ is a conjunctive sentence, we write $\Gamma\succ\varphi$
+  to indicate that there is a proof of $\varphi$ from $\Gamma$ that
+  uses only DN, RA, $\wedge$I, or $\wedge$E. Show that if
+  $\Gamma\vdash\varphi$ then $\Gamma\succ\varphi$. (You don't need to
+  prove the cases for all inference rules that define $\vdash$; a
+  representative sample will suffice.)
+
+\item Give introduction and elimination rules for the nand connective
+  $\uparrow$. (You may use the symbol $\bot$ for a generic
+  contradiction.) Use these rules to derive the sequent:
+  \[ P\:\vdash \: (P\uparrow P)\uparrow (Q\uparrow Q) \] Prove that
+  your rules are sound relative to the truth-table for $\uparrow$.
+
+\end{enumerate}  
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
