@@ -1,0 +1,173 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage{fullpage}
+\usepackage{amsmath,amssymb}
+\setlength{\parindent}{0em}
+\begin{document}
+
+\thispagestyle{empty}
+
+%% Hey, remember next time to PRINT OUT grade sheets
+
+\section*{PHI 201, Practice Final Exam} 
+
+\textbf{Instructions:} Write your name, preceptor's name, and pledge
+on the exam booklet. Write your answers \emph{legibly} in the exam
+booklet. While you may take up to three hours to complete the exam, it
+was designed to take no more than two.
+
+% When finished, place your exam booklet in the box at the front of the
+% room, and leave quietly.
+
+\begin{enumerate}
+
+\item Translate the following into predicate logic.  You can assume
+  that the domain is people, and so you don't need an additional
+  predicate symbol for ``$x$ is a person''.
+
+\begin{enumerate}
+\item There is a person who loves all people who love her.  (Use $Lxy$
+  for ``$x$ loves $y$''.)
+
+\item Every lover loves herself.
+
+\item There are exactly two people.
+
+\end{enumerate}
+
+\item Could the following sentence be true?  Explain your answer.
+  \[ (\neg P\vee Q)\wedge ((Q\to (\neg R\wedge \neg P))\wedge (P\vee R)) \]
+
+% \item Grade the following attempted proof:
+
+%   \begin{tabular}{lllll}
+% 1 & (1) & $p\vee q$ & & A \\
+% 2 & (2) & $p$ & & A \\
+% 3 & (3) & $q$ & & A \\
+% 2,3 & (4) & $p\wedge q$ & & 2,3 $\andd$I \\
+% 2,3 & (5) & $p$ & & 4 $\andd$E \\
+% 1 & (6) & $p$ & & 1,2,2,3,5 $\orr$E \end{tabular}
+
+\item Explain what's wrong with the following attempted proof:
+
+  \bigskip \begin{tabular}{lllll}
+  1 & (1) $Fa$ & & A \\
+  $\varnothing$  & (2) $Fa \to Fa$ & & 1,1 CP \\
+  $\varnothing$  & (3) $\forall y(Fy \to Fa)$ & & 2 UI \\
+  $\varnothing$  & (4) $\exists x\forall y(Fy\to Fx)$ & & 3 EI \end{tabular}
+
+\item Prove the following sequent.  You can use ``cut'' or
+  ``replacement'', but only if you prove the relevant sequents in your
+  exam booklet. 
+  \[ \vdash\: \exists x\forall y(Fy\to Fx) \]
+
+\item Prove the following fact of set theory:
+  \[ C\setminus (A\cap B) \: \subseteq \: (C\setminus A)\cup (C\setminus B) ,
+  \]
+  where $C\setminus X$ is defined by
+  \[ \forall x((x\in (C\setminus X))\leftrightarrow (x\in C\wedge
+    x\not\in X)) .\] Your proof should be rigorous, but it can
+  (preferably) be written in English prose.
+
+\item Let $\Gamma$ be the set of sentences defined inductively by:
+  \begin{itemize}
+  \item $P\in \Gamma$
+  \item If $\varphi\in\Gamma$ then $\neg\varphi\in\Gamma$.
+  \item If $\varphi\in \Gamma$ and $\psi\in \Gamma$ then
+    $\varphi\to\psi\in \Gamma$.
+  \end{itemize} Show that for every $\varphi\in\Gamma$, either
+  $P\vdash \varphi$ or $P\vdash\neg\varphi$.
+
+  % \item Let $A$ be the set defined inductively by:
+  % \begin{itemize}
+  % \item $p\in A$
+  % \item If $\phi\in A$ and $\psi\in A$ then $(\phi\wedge\neg\psi )\in A$.  \end{itemize}
+  % Show that there are no tautologies in $A$, i.e.\ for every $\phi\in
+  % A$, there is a valuation $v$ such that $v(\phi )=0$. 
+  
+\item Provide a countermodel to show that the following sequent cannot
+  be proven. 
+\[ \exists x(Fx\to \exists yGy)\:\vdash\: \exists xFx\to \exists yGy \]
+
+\end{enumerate}
+
+\end{document}
+
+
+ 
+
+\textbf{Proofs and Counterexamples} [20 points total]
+
+\begin{enumerate}
+\item Prove the following tautology.  (You may use SI only for things
+  provable in propositional logic, and for the quantifier-negation
+  equivalences.)  [8 points]
+
+$$\vdash \; \exists x\forall y (Fy\to Fx)$$
+
+% \item{2.} Prove the following using the basic rules of inference.
+%   (If you use Sequent Introduction, then also prove the cited
+%   sequent(s).)
+% $$ (x)(y)[(\exists z)Ryz \to Rxy] \; \vdash \; (\exists x)(\exists
+% y)Rxy \to (x)(y)Rxy$$
+
+\item The two sentences ``$\forall x\forall y(Rxy \to Ryx)$'' and
+  ``$\forall x(Fx\leftrightarrow \exists yRxy )$'' together imply one
+  of (a) and (b) below, but not the other.  Find which is implied and
+  show the implication by giving a proof (using SI only for
+  propositional logic proofs or the quantifier-negation equivalences).
+  Show that lack of implication in the other case by giving a suitable
+  interpretation.
+\begin{enumerate}
+\item $\forall xFx\to \exists x\forall yRxy$
+\item $\exists x\forall yRxy \to \forall xFx$
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+\textbf{Metatheory} [6 points each; 12 points total] Please complete
+\underbar{two} of the following three problems.  If you give solutions
+to all three, please clearly designate which two problems you want to
+be graded.
+\begin{enumerate}
+\item State and prove the soundness of Conditional Proof (CP) relative
+  to propositional logic interpretations (i.e.\ truth tables).  That
+  is, show that CP takes ``good lines'' to ``good lines.''
+
+% \item We showed in lecture (and in the handout) that if $A$ is an
+%   inconsistent sentence of propositional logic, then there is a proof
+%   $A\vdash P\wedge \neg P$.  Use this fact to show that our proof
+%   rules for propositional logic are \emph{complete} relative to truth
+%   tables, that is if $A_1,\dots A_n\models B$ then $A_1,\dots
+%   ,A_n\vdash B$.
+
+\item Let $\Sigma$ be the set of sentences of propositional logic
+  whose only atomic sentence is $P$.  Show that for any consistent
+  sentence $A$ in $\Sigma$, either $P\vdash A$ or $\neg P\vdash A$.
+  (You may cite any result that we established during the semester.)
+
+\item Prove that the set $\{ \wedge ,\rightarrow \}$ of connectives is
+  \emph{not} truth-functionally complete.
+
+% \item True or False (explain your answer): If a propositional logic
+%   argument is semantically valid (i.e. $A_1,\dots ,A_n\models B$), and
+%   if all occurrences of an atomic sentence $P$ in the argument are
+%   replaced with some other (possibly non-atomic) sentence $X$, then
+%   the resulting argument is also semantically valid.
+
+\end{enumerate}
+
+
+
+
+
+
+\begin{center} -- THE END -- \end{center}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

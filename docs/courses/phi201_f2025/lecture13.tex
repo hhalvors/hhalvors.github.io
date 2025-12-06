@@ -1,0 +1,436 @@
+\documentclass[aspectratio=169,17pt,fleqn]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{dolphin}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+\usepackage{amsmath,amssymb,array}
+
+\usepackage{booktabs}
+
+
+
+\usepackage{fontspec}    
+\usepackage{unicode-math}  
+
+\AtBeginSection[]{
+  \begin{frame}
+    \centering
+    \vfill
+    \Large\insertsectionhead
+    \vfill
+  \end{frame}
+}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,matrix,backgrounds}
+\usepackage{tikz-cd}
+
+
+\title{Lecture 13}
+\author{PHI~201 -- Introductory Logic}
+\date{December 1, 2025}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Review}
+
+\begin{itemize}
+\item We have formulated a theory \emph{about} propositional logic,
+  and now we're proving some facts.
+\item Our new inference rule is mathematical induction --- usually on
+  the construction of sentences, or on the construction of sequents.
+\item E.g., in the previous lecture, I showed that every sentence is
+  equivalent to one in which just $\vee$ and $\neg$ occur.
+\end{itemize}
+
+\end{frame}
+
+\section{Soundness}
+
+\begin{frame}
+
+  \textbf{Theorem.} Every line in a correctly written proof is
+  semantically valid. That is, the sentence in the center column is a
+  semantic consequence of the dependency sentences.
+
+  \bigskip Method of proof:
+
+  \begin{enumerate}
+  \item Show that Rule of Assumptions lines are semantically valid.
+  \item Show that the other inference rules transform semantically
+    valid lines to semantically valid lines.
+  \end{enumerate}
+
+
+\end{frame}
+
+\begin{frame}{Induction MP}
+
+Suppose that $\Gamma ,\Delta\vdash \psi$ is derived from
+$\Gamma\vdash\varphi\to\psi$ and $\Delta\vdash\varphi$.
+  \[ \begin{array}{r c l l}
+       \Gamma & (a) & \varphi\to\psi & \\
+       \Delta & (b) & \varphi & \\[0.3em]
+       \Gamma ,\Delta & (c) & \psi \end{array} \]
+Suppose that (a) and (b) are semantically valid.
+
+\end{frame}
+
+\begin{frame}{Induction MP}
+
+  Let $v$ be an arbitrary valuation, and suppose that $v$ assigns $1$
+  to all elements of $\Gamma ,\Delta$. Since line (a) is valid,
+  $v(\varphi\to\psi )=1$. Since line (b) is valid, $v(\varphi )=1$. By
+  the truth table for $\to$, it follows that $v(\psi )=1$. Since $v$
+  was an arbitrary valuation, any valuation that assigns $1$ to all
+  elements of $\Gamma ,\Delta$ also assigns $1$ to $\psi$. Therefore,
+  line (c) is semantically valid.
+
+\end{frame}
+
+\begin{frame}{Induction RA}
+
+Suppose that $\Delta '$ is derived from $\varphi\vdash\varphi$ and
+$\Delta\vdash\bot$.
+\[ \begin{array}{c c l l}
+     a  & (a) & \varphi & \text{A} \\
+     \Delta  & (b) & \bot \\[0.3em]
+     \Delta ' & (c) & \neg\varphi \end{array} \]
+ Suppose that (a) and (b) are semantically valid.
+
+\end{frame}
+
+\begin{frame}{Induction RA}
+
+  Let $v$ be an arbitrary valuation, and suppose that $v$ assigns $1$
+  to every element of $\Delta '$. Since (b) is valid, $v$ does not
+  assign $1$ to every element of $\Delta$. Therefore, $v(\varphi )=0$,
+  since $\varphi$ is only thing in $\Delta$ that is not in $\Delta
+  '$. Therefore, $v(\neg\varphi )=1$. Since $v$ was an arbitrary
+  valuation, every valuation that assigns $1$ to all elements of
+  $\Delta '$ also assigns $1$ to $\neg\varphi$, and line (c) is valid.   
+
+
+\end{frame}
+
+\section{Disjunctive normal form}
+
+%---------------------------------------------------------
+\begin{frame}[t]{Goal: Disjunctive Normal Form (DNF)}
+
+ \small 
+
+\textbf{DNF:} A sentence is in disjunctive normal form if it is a disjunction
+of conjunctions of literals.
+
+\begin{itemize}
+  \item A \textbf{literal} is either an atomic sentence
+    (e.g.\ $P,Q,R$) or the negation of an atomic sentence (e.g.\ $\neg P$).
+  \item A \textbf{conjunction of literals} has the form
+    \[
+      L_1 \wedge L_2 \wedge \cdots \wedge L_n,
+    \]
+    where each $L_i$ is a literal.
+  \item A sentence is in \textbf{DNF} if it has the form
+    \[
+      C_1 \vee C_2 \vee \cdots \vee C_k,
+    \]
+    where each $C_j$ is a conjunction of literals
+    (or a single literal).
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+  \textbf{Fact 1:} Every sentence is provably equivalent to a sentence
+  in DNF.
+
+  \bigskip \textbf{Fact 2:} A DNF sentence $C_1\vee\cdots\vee C_n$ is
+  a semantic tautology iff for each elementary conjunction $E$, there
+  is a $C_i$ such that $E\vdash C_i$.
+
+
+\end{frame}
+
+\begin{frame}{DNF and truth tables}
+
+  You can ``guess'' a DNF equivalent of a sentence by looking at its
+  truth table and taking a disjunction of all the rows in which its
+  true. For example:
+
+  \[ \begin{array}{c c | c }
+       P & Q & \varphi \\ \hline
+       1 & 0 & 1  \end{array} \]
+
+\end{frame}  
+
+\begin{frame}[t]{Truth Table for $P \to Q$}
+
+\[
+\begin{array}{c c | c | c }
+P & Q & P \to Q & (P\wedge Q)\vee (\neg P\wedge Q)\vee (\neg
+                  P\wedge\neg Q) \\ \hline
+1 & 1 & 1 \\
+1 & 0 & 0 \\
+0 & 1 & 1 \\
+0 & 0 & 1
+\end{array}
+\]
+
+
+\end{frame}
+
+
+
+  
+
+
+
+
+% ---------------------------------------------------------
+\begin{frame}[t]{DNF algorithm: High-level strategy}
+
+Given any sentence $\varphi$ built from
+$\wedge, \vee, \neg, \to$ and atomic $P,Q,R,\dots$:
+
+\bigskip
+
+\begin{enumerate}
+  \item Eliminate all occurrences of $\to$.
+  \item Push all occurrences of $\neg$ inwards so that
+        they apply only to atomic sentences.
+  \item Distribute $\wedge$ over $\vee$ to obtain a disjunction
+        of conjunctions.
+  \item Clean up: remove unnecessary parentheses, reorder
+        conjuncts/disjuncts, and combine duplicates if desired.
+\end{enumerate}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}[t]{Step 1: Eliminate conditionals}
+
+Replace every occurrence of $A \to B$ with $\neg A\vee B$.
+
+\begin{itemize}
+  \item Do this recursively on all subformulas:
+    \[
+      (\varphi \to \psi) \wedge (\chi \to \theta)
+      \;\rightsquigarrow\;
+      (\neg \varphi \vee \psi) \wedge (\neg \chi \vee \theta).
+    \]
+  \item After this step, your sentence uses only
+        $\wedge, \vee, \neg$ and atomic letters.
+\end{itemize}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}[t]{Step 2: Push Negations Inward}
+
+Use these equivalences repeatedly until $\neg$ appears only
+directly in front of atomic sentences:
+
+{\small $\neg\neg A \;\equiv\; A \qquad \neg(A \wedge B) \;\equiv\; \neg A
+\vee \neg B \qquad \neg(A \vee B) \;\equiv\; \neg A \wedge \neg B $  }
+
+\begin{itemize}
+  \item Apply these rules from the outside in, simplifying
+        as you go.
+  \item After this step, the sentence is built from $\wedge,\vee$
+        and literals (atoms or negated atoms).
+\end{itemize}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}[t]{Step 3: Distribute $\wedge$ over $\vee$}
+
+\small 
+
+To get a disjunction of conjunctions, repeatedly use
+the distributive laws:
+\[ A \wedge (B \vee C) \;\equiv\; (A \wedge B) \vee (A \wedge C)
+\] \[ (A \vee B) \wedge C \;\equiv\; (A \wedge C) \vee (B \wedge C)
+\]
+
+\begin{itemize}
+  \item Whenever you see a conjunction whose parts contain
+        disjunctions, distribute.
+  \item Also use associativity and commutativity of
+        $\wedge, \vee$ to rearrange and “flatten”:
+  $A \vee (B \vee C) \;\equiv\; A \vee B \vee C,
+          \qquad
+          A \wedge (B \wedge C) \;\equiv\; A \wedge B \wedge C.
+        $
+\end{itemize}
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}[t]{Step 4: Cleanup to Get DNF}
+
+After distribution, your sentence should be a disjunction of
+conjunctions of literals. Then:
+
+\begin{itemize}
+  \item Remove redundant parentheses using associativity.
+  \item Optionally, reorder literals and conjunctions to a
+        standard order (e.g.\ alphabetically).
+  \item Optionally, simplify obvious redundancies, e.g.
+        $(P \wedge P \wedge Q) \;\equiv\; (P \wedge Q)$
+\end{itemize}
+
+The resulting sentence is in disjunctive normal form and is
+logically equivalent to the original sentence.
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}[t]{Worked Example: From Formula to DNF}
+
+\small
+
+Start with $(P \to Q) \wedge \neg R$ 
+
+\medskip
+\textbf{1. Eliminate $\to$:}
+\[
+  (P \to Q) \wedge \neg R
+  \;\equiv\;
+  (\neg P \vee Q) \wedge \neg R.
+\]
+
+\medskip
+\textbf{2. Push negations inward:} nothing to do (already on atoms).
+
+\medskip
+\textbf{3. Distribute $\wedge$ over $\vee$:}
+\[
+  (\neg P \vee Q) \wedge \neg R
+  \;\equiv\;
+  (\neg P \wedge \neg R) \vee (Q \wedge \neg R).
+\]
+Now we have a disjunction of conjunctions of literals, which is in
+DNF.
+
+\end{frame}
+%---------------------------------------------------------
+\begin{frame}[t]{Algorithm in Pseudocode}
+
+\small
+
+\textbf{Input:} sentence $\varphi$ built from
+$\wedge, \vee, \neg, \to$ and atomic $P,Q,R,\dots$
+
+\bigskip
+
+\begin{enumerate}
+  \item \textbf{ElimCond}($\varphi$): recursively replace each
+        subformula of the form $(A \to B)$ by $(\neg A \vee B)$.
+  \item \textbf{PushNeg}($\varphi$): recursively apply
+        \(\neg\neg A \equiv A\),
+        \(\neg(A \wedge B) \equiv \neg A \vee \neg B\),
+        \(\neg(A \vee B) \equiv \neg A \wedge \neg B\)
+        until every $\neg$ is on an atom.
+  \item \textbf{Distribute}($\varphi$): recursively apply
+        the distributive laws to move all $\wedge$ inside all $\vee$.
+  \item \textbf{Output} the resulting disjunction of conjunctions
+        of literals as the DNF of the original sentence.
+\end{enumerate}
+
+\end{frame}
+%---------------------------------------------------------
+
+\section{Completeness}
+
+\begin{frame}{Substitution theorem}
+
+  For a formula $\varphi$, let $\varphi '$ denote the result of
+  uniformly substituting formulas for the atomic sentences that occur
+  in $\varphi$. We say that $\varphi '$ is an \alert{substitution
+    instance} of $\varphi$. 
+
+  \bigskip \textbf{Proposition.} If
+  $\varphi _1,\dots ,\varphi _n\vdash\psi$ then
+  $\varphi '_1,\dots ,\varphi '_n\vdash\psi '$.
+
+\end{frame}
+
+\begin{frame}
+
+  \textbf{Proposition.} If $\varphi$ is not provable, then it has a
+  substitution instance $\varphi '$ such that $\vdash \neg \varphi '$.
+
+  \medskip By the DNF theorem, $\varphi$ is provably equivalent to a
+  sentence $C_1\vee\cdots\vee C_n$, where each $C_i$ is a consistent
+  conjunction of literals.
+
+  \medskip It's not hard to see that $\vdash E_1\vee\cdots \vee E_m$,
+  where the $E$s are an exhaustive set of elementary conjunctions.
+
+\end{frame}
+
+\begin{frame}
+
+  If each $E_j$ entailed some $C_i$, then $C_1\vee\cdots\vee C_n$
+  would be provable.
+
+  \bigskip Since $\varphi$ is not provable, there is an elementary
+  conjunction $E$ that does not imply any $C_i$.
+
+  \bigskip $E\vdash \neg C_i$
+
+
+\end{frame}
+
+\begin{frame}
+
+  A substitution that takes $E$ to something provable will take each
+  $C_i$ to something whose negation is provable. 
+  \[ E\vdash \neg C_i \: \Longrightarrow \: \top \vdash \neg C_i' \]
+  Therefore $\vdash \neg (C_1'\vee\cdots \vee C_n')$, and hence
+  $\vdash \neg\varphi '$.
+
+\end{frame}
+
+\begin{frame}
+
+  \textbf{Theorem.} If $\varphi$ is not provable, then there is a
+  valuation $v$ such that $v(\varphi )=0$.
+
+\bigskip Take the elementary conjunction $E$ from the previous
+argument and use it to define $v$.
+
+\medskip $v(C_i)=0$ for $i=1,\dots ,n$. Therefore $v(C_1\vee\cdots\vee C_n)=0$.
+
+\medskip Since $\varphi\vdash C_1\vee\cdots\vee C_n$, soundness implies that
+$v(\varphi )=0$.
+
+
+
+\end{frame}
+
+\begin{frame}
+
+  \textbf{Corollary.} If $\varphi _1,\dots ,\varphi _n\not\vdash\psi$,
+  then there is a valuation $v$ such that $v(\varphi _i)=1$ and
+  $v(\psi )=0$.
+
+  \bigskip If
+  $\vdash (\varphi _1\wedge\cdots\wedge \varphi _n)\to \psi$, then
+  $\wedge$I and MP give $\varphi _1,\dots ,\varphi _n\vdash\psi$. So
+  $(\varphi _1\wedge\cdots\wedge\varphi _n )\to \psi$ is not
+  provable. By the previous theorem, there is a valuation $v$ such
+  that $v((\varphi _1\wedge\cdots\wedge\varphi _n )\to \psi )=0$. By
+  the truth-tables for $\wedge$ and $\to$, it follows that
+  $v(\varphi _i)=1$ for $i=1,\dots ,n$, while $v(\psi )=0$.
+
+
+\end{frame}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
