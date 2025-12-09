@@ -1,0 +1,84 @@
+\documentclass[11pt]{article}
+
+% --- Encoding and fonts ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}   % clean, neutral serif font
+\usepackage{microtype} % improves spacing subtly
+
+% --- Page layout ---
+\usepackage{geometry}
+\geometry{
+  left=1.2in,
+  right=1.2in,
+  top=1in,
+  bottom=1in
+}
+
+% --- Spacing ---
+\usepackage{setspace}
+\setstretch{1.15}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% --- Math and logic ---
+\usepackage{amsmath, amssymb}
+\usepackage{mathtools}
+
+% Common logic symbols
+
+% --- Tables and lists ---
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\setlist[itemize]{topsep=4pt}
+\setlist[enumerate]{topsep=4pt}
+
+% --- Boxes for definitions/rules ---
+\usepackage{tcolorbox}
+\tcbset{
+  colback=gray!5,
+  colframe=gray!50,
+  boxrule=0.5pt,
+  arc=2pt,
+  left=6pt,
+  right=6pt,
+  top=4pt,
+  bottom=4pt
+}
+
+% --- Hyperlinks ---
+\usepackage[colorlinks=true, linkcolor=blue!60!black]{hyperref}
+
+% --- Header/footer (optional) ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Introductory Logic}
+\rhead{\thepage}
+
+\begin{document}
+
+On the final exam, you'll be permitted to use the full power of
+substitution and replacement. For propositional validities, you can
+just cite ``prop taut'', and we'll trust that you know how to prove
+it. That includes replacement as applied to subformulas of quantified
+formulas. So, for example, you could replace
+$\forall x((Fx\wedge Gx)\to Hx)$ with $\forall x(Fx\to (Gx\to Hx))$
+and cite ``prop taut'', since the formula $(Fx\wedge Gx)\to Hx$ is
+propositionally to $Fx\to (Gx\to Hx)$. For quantifier validities, you
+would need also to include a proof in your exam booklet. So, for
+example, you could derive $\forall x\exists y\neg (Fx\to Gx)$ from
+$\neg \exists x\forall y(Fx\to Gy)$ by substituting two quantifier
+equivalences; but you'd also need to prove
+$\neg \exists xPx\vdash \forall x\neg Px$ and
+$\neg \exists yQy\vdash \forall y\neg Qy$.
+
+
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
