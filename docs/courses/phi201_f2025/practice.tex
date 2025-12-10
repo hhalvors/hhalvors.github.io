@@ -1,0 +1,131 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage{amsmath,amssymb}
+\usepackage[letterpaper,left=1.25in,right=1.25in,top=1.2in,bottom=1.2in]{geometry}
+\usepackage{array}
+
+\begin{document}
+
+\vspace*{-4em}
+
+\section*{Practice Problems: Predicate Logic}
+
+\thispagestyle{empty}
+
+\subsection*{A. Proofs}
+
+\begin{enumerate}
+
+  \item $Fa\:\vdash \: \forall x((x=a)\to Fx)$
+
+  \item $\vdash \:\forall x\forall y\bigl((Fx \wedge \neg Fy)
+    \rightarrow x \neq y\bigr)$
+
+  \begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{7cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $Fa \wedge \neg Fb$ & A \\
+2 & (2) & $a = b$ & A \\
+1 & (3) & $Fa$ & 1 $\wedge$E \\
+1 & (4) & $\neg Fb$ & 1 $\wedge$E \\
+1,2 & (5) & $Fb$ & 3,2 =E \\
+1,2 & (6) & $Fb \wedge \neg Fb$ & 5,4 $\wedge$I \\
+1 & (7) & $a\neq b$ & 2,6 RA \\
+$\varnothing$ & (8) & $(Fa \wedge \neg Fb) \to a\neq b$ & 1,7 CP \\
+$\varnothing$ & (9) & $\forall y ((Fa \wedge \neg Fy) \to a\neq y)$ & 8 UI \\
+$\varnothing$ & (10) & $\forall x \forall y ((Fx \wedge \neg Fy) \to
+                       x\neq y)$ & 9 UI \\
+\end{tabular}
+  
+
+  \item $\forall x(Fx \rightarrow \exists y(Gy \wedge x = y)) \:\vdash\: \forall x(Fx \rightarrow Gx)$
+
+  \item $\forall y(Ray \rightarrow y = b) \:\vdash\: \exists y(Ray \wedge Gy) \rightarrow Gb$
+
+  \item $\forall x\forall y\forall z(Rxy \rightarrow \neg Ryz) \:\vdash\: \exists y\forall x\neg Rxy$
+
+    First strategy: Assume the negation of the conclusion for RA. Use
+    QN
+
+  \begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{7cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\forall x \forall y \forall z (Rxy \to \neg Ryz)$ & A \\
+2 & (2) & $\neg \exists y \forall x \neg Rxy$ & A \\
+2 & (3) & $\forall y \neg \forall x \neg Rxy$ & 2 QN \\
+2 & (4) & $\neg \forall x \neg Rxb$ & 3 UE \\
+2 & (5) & $\exists x \neg \neg Rxb$ & 4 QN \\
+6 & (6) & $\neg \neg Rab$ & A \\
+6 & (7) & $Rab$ & 6 DN \\
+1 & (8) & $\forall y \forall z (Ray \to \neg Ryz)$ & 1 UE \\
+1 & (9) & $\forall z (Rab \to \neg Rbz)$ & 8 UE \\
+1 & (10) & $Rab \to \neg Rbc$ & 9 UE \\
+1,6 & (11) & $\neg Rbc$ & 10,7 MP \\
+1,2 & (12) & $\neg Rbc$ & 5,6,11 EE \\
+1,2 & (13) & $\forall x \neg Rxc$ & 12 UI \\
+1,2 & (14) & $\exists y \forall x \neg Rxy$ & 13 EI \\
+1,2 & (15) & $\exists y \forall x \neg Rxy \wedge \neg \exists y \forall x \neg Rxy$ & 14,2 $\wedge$I \\
+1 & (16) & $\neg \neg \exists y \forall x \neg Rxy$ & 2,15 RA \\
+1 & (17) & $\exists y \forall x \neg Rxy$ & 16 DN \\
+  \end{tabular}
+
+  Second strategy: Either there is a pair of elements with an arrow
+  between them or not. In the first case, there cannot be an arrow
+  into the first element. In the second case, pick anything in the
+  domain, and there is no arrow into it. In either case, there is
+  something that has no arrow into it.
+
+\begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{7cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\forall x \forall y \forall z (Rxy \to \neg Ryz)$ & A \\
+$\varnothing$ & (2) & $\exists y \exists x Rxy \vee \neg \exists y \exists x Rxy$ & prop taut \\
+3 & (3) & $\exists y \exists x Rxy$ & A \\
+4 & (4) & $\exists x Rxb$ & A \\
+5 & (5) & $Rab$ & A \\
+6 & (6) & $Rca$ & A \\
+1 & (7) & $\forall y \forall z (Rcy \to \neg Ryz)$ & 1 UE \\
+1 & (8) & $\forall z (Rca \to \neg Raz)$ & 7 UE \\
+1 & (9) & $Rca \to \neg Rab$ & 8 UE \\
+5 & (10) & $\neg \neg Rab$ & 5 DN \\
+1,5 & (11) & $\neg Rca$ & 9,10 MT \\
+1,5 & (12) & $\forall x \neg Rxa$ & 11 UI \\
+1,5 & (13) & $\exists y \forall x \neg Rxy$ & 12 EI \\
+1,4 & (14) & $\exists y \forall x \neg Rxy$ & 4,5,13 EE \\
+1,3 & (15) & $\exists y \forall x \neg Rxy$ & 3,4,14 EE \\
+16 & (16) & $\neg \exists y \exists x Rxy$ & A \\
+16 & (17) & $\forall y \neg \exists x Rxy$ & 16 QN \\
+16 & (18) & $\neg \exists x Rxa$ & 17 UE \\
+16 & (19) & $\forall x \neg Rxa$ & 18 QN \\
+16 & (20) & $\exists y \forall x \neg Rxy$ & 19 EI \\
+1 & (21) & $\exists y \forall x \neg Rxy$ & 2,3,15,16,20 $\vee$E \\
+\end{tabular}
+
+    
+  
+
+  \item $\forall xFx \leftrightarrow \neg \exists x\exists y Rxy
+    \:\vdash\: \exists x\forall y\forall z (Fx \rightarrow \neg Ryz)$
+
+    First strategy: Either $\forall xFx$ or $\exists x\neg Fx$. In the
+    former case, the premise gives $\neg\exists x\exists yRxy$, and QN
+    gives $\forall y\forall z\neg Ryz$. In the latter case,
+    $Fa\to \neg Rbc$ by negative paradox.
+
+  \item $\vdash\: \forall x\exists y\forall z (\exists uTxyu
+    \rightarrow \exists vTxzv )$
+
+    This one is less complex than it looks. We show how to derive
+    \[ \exists y\forall z(\exists uTayu\to \exists vTazv) .\]
+    Up to $\alpha$-equivalence, the conditional under the quantifiers
+    is of the form $\varphi (y)\to \varphi (z)$, so it's enough to
+    prove
+    \[ \exists y\forall z(\varphi (y)\to \varphi (z)) .\] We have seen
+    this before: it's just another instance of
+    $\exists x\forall y(Fx\to Gy)$.
+    
+
+  \item $\forall x\exists y\forall z(Rxy\wedge \neg Ryz)\:\vdash\:
+    \exists x\exists y(x\neq y)$ (Bonus: does the premise entail that
+    there are at least three things?)
+
+\end{enumerate}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
