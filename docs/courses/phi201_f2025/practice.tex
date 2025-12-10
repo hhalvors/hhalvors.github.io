@@ -108,14 +108,13 @@ $\varnothing$ & (2) & $\exists y \exists x Rxy \vee \neg \exists y \exists x Rxy
   \item $\vdash\: \forall x\exists y\forall z (\exists uTxyu
     \rightarrow \exists vTxzv )$
 
-    This one is less complex than it looks. We show how to derive
-    \[ \exists y\forall z(\exists uTayu\to \exists vTazv) .\]
-    Up to $\alpha$-equivalence, the conditional under the quantifiers
-    is of the form $\varphi (y)\to \varphi (z)$, so it's enough to
-    prove
-    \[ \exists y\forall z(\varphi (y)\to \varphi (z)) .\] We have seen
-    this before: it's just another instance of
-    $\exists x\forall y(Fx\to Gy)$.
+    We show how to derive the instance
+    $\exists y\forall z(\exists uTayu\to \exists vTazv)$.  Up to
+    $\alpha$-equivalence, the embedded conditional is of the form
+    $\varphi (y)\to \varphi (z)$. So it's enough to prove that
+    $\exists y\forall z(\varphi (y)\to \varphi (z))$. We have seen
+    this before: it's a substitution instance of
+    $\exists x\forall y(Fx\to Fy)$.
     
 
   \item $\forall x\exists y\forall z(Rxy\wedge \neg Ryz)\:\vdash\:
