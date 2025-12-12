@@ -356,6 +356,39 @@ main = hakyllWith config $ do
 
     match "templates/*" $ compile templateBodyCompiler
 
+    -- Copy any PDFs under courses/ (recursively)
+    match "courses/**.pdf" $ do
+        route   idRoute
+        compile copyFileCompiler
+
+    -- Copy any TeX files under courses/ (recursively)
+    match "courses/**.tex" $ do
+        route   idRoute
+        compile copyFileCompiler
+
+    create ["logic-exams-page"] $ do
+      route $ constRoute "courses/logic-exams/index.html"
+      compile $ do
+        exams <- (loadAll "courses/logic-exams/*.pdf" :: Compiler [Item CopyFile])
+        unsafeCompiler $ mapM_ (putStrLn . ("DBG url: " ++) . toUrl . toFilePath . itemIdentifier) (take 3 exams)
+
+        let examCtx :: Context CopyFile
+            examCtx =
+                 field "url"  (pure . toFilePath . itemIdentifier)
+              <> field "name" (pure . takeBaseName . toFilePath . itemIdentifier)
+
+            pageCtx :: Context String
+            pageCtx =
+                 constField "title" "intro logic exams"
+              <> listField "exams" examCtx (pure exams)
+              <> baseSidebarCtx
+              <> siteCtx
+
+        makeItem ("" :: String)
+          >>= loadAndApplyTemplate "templates/logic-exams-list.html" pageCtx
+          >>= loadAndApplyTemplate "templates/page.html"            pageCtx
+          >>= loadAndApplyTemplate "templates/default.html"         pageCtx
+
     match "hh.bib" $ do
       compile getResourceBody
 
@@ -503,15 +536,6 @@ main = hakyllWith config $ do
         route $ gsubRoute "phi201_s2021_link/" (const "phi201_s2021/")
         compile copyFileCompiler
 
-    -- Copy any PDFs under courses/ (recursively)
-    match "courses/**.pdf" $ do
-        route   idRoute
-        compile copyFileCompiler
-
-    -- Copy any TeX files under courses/ (recursively)
-    match "courses/**.tex" $ do
-        route   idRoute
-        compile copyFileCompiler    
 
     -- Rule to copy PDF files from the "pdf" directory
     match "pdf/*.pdf" $ do

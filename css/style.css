@@ -332,3 +332,12 @@ h2.year-label {
     margin-top: 1.2rem !important;   /* default is ~2.5rem */
   }
 }
+
+/* Logic exams list */
+.exam-list {
+  line-height: 1.8;
+}
+
+.exam-list code {
+  font-family: ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
