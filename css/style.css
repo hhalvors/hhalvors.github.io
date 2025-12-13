@@ -286,7 +286,6 @@ h2.year-label {
 /* ───────────────────────────────────────────────
    MOBILE TWEAKS
    ─────────────────────────────────────────────── */
-
 @media (max-width: 700px) {
 
   /* 1. Make the name in the masthead smaller on phones */
@@ -319,22 +318,28 @@ h2.year-label {
 
   .publist {
     padding-left: 1.1rem;     /* normal list indent again */
+    margin-left: 0;
   }
-}
 
-/* ───────────────────────────────────────────────
-   MOBILE LAYOUT FIXES
-   ─────────────────────────────────────────────── */
-@media (max-width: 600px) {
+  /* 3. Resources + all content lists: remove excessive mobile indent */
 
-  /* reduce space above first page title */
+  .content ul,
+  .content ol {
+    padding-left: 1.1rem !important;
+    margin-left: 0 !important;
+  }
+
+  .content ul ul,
+  .content ol ol,
+  .content ul ol,
+  .content ol ul {
+    padding-left: 0.8rem !important;
+  }
+
+  /* 4. Reduce space above first page title */
+
   .content h1:first-of-type {
     margin-top: 1.2rem !important;   /* default is ~2.5rem */
-  }
-
-  /* tighten nested bullet list indentation */
-  ul ul {
-    padding-left: 0.8em;
   }
 }
 
