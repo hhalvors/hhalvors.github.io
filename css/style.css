@@ -323,13 +323,18 @@ h2.year-label {
 }
 
 /* ───────────────────────────────────────────────
-   MOBILE HEADER SPACING FIX
+   MOBILE LAYOUT FIXES
    ─────────────────────────────────────────────── */
 @media (max-width: 600px) {
 
   /* reduce space above first page title */
   .content h1:first-of-type {
     margin-top: 1.2rem !important;   /* default is ~2.5rem */
+  }
+
+  /* tighten nested bullet list indentation */
+  ul ul {
+    padding-left: 0.8em;
   }
 }
 
