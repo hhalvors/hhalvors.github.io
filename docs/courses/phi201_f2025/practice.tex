@@ -68,9 +68,10 @@ $\varnothing$ & (10) & $\forall x \forall y ((Fx \wedge \neg Fy) \to
   \item $\forall x\forall y\forall z(Rxy \rightarrow \neg Ryz) \:\vdash\: \exists y\forall x\neg Rxy$
 
     First strategy: Assume the negation of the conclusion for RA and
-    use QN
+    use QN. Notice that we use multi-UE, which is shorthand for UE
+    applied multiple times.
 
-  \begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{7cm} >{\raggedright\arraybackslash}p{3.5cm}}
+ \begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{7cm} >{\raggedright\arraybackslash}p{3.5cm}}
 1 & (1) & $\forall x \forall y \forall z (Rxy \to \neg Ryz)$ & A \\
 2 & (2) & $\neg \exists y \forall x \neg Rxy$ & A \\
 2 & (3) & $\forall y \neg \forall x \neg Rxy$ & 2 QN \\
@@ -78,23 +79,21 @@ $\varnothing$ & (10) & $\forall x \forall y ((Fx \wedge \neg Fy) \to
 2 & (5) & $\exists x \neg \neg Rxb$ & 4 QN \\
 6 & (6) & $\neg \neg Rab$ & A \\
 6 & (7) & $Rab$ & 6 DN \\
-1 & (8) & $\forall y \forall z (Ray \to \neg Ryz)$ & 1 UE \\
-1 & (9) & $\forall z (Rab \to \neg Rbz)$ & 8 UE \\
-1 & (10) & $Rab \to \neg Rbc$ & 9 UE \\
-1,6 & (11) & $\neg Rbc$ & 10,7 MP \\
-1,2 & (12) & $\neg Rbc$ & 5,6,11 EE \\
-1,2 & (13) & $\forall x \neg Rxc$ & 12 UI \\
-1,2 & (14) & $\exists y \forall x \neg Rxy$ & 13 EI \\
-1,2 & (15) & $\exists y \forall x \neg Rxy \wedge \neg \exists y \forall x \neg Rxy$ & 14,2 $\wedge$I \\
-1 & (16) & $\neg \neg \exists y \forall x \neg Rxy$ & 2,15 RA \\
-1 & (17) & $\exists y \forall x \neg Rxy$ & 16 DN \\
-  \end{tabular}
-
-  Second strategy: Either there is a pair of elements with an arrow
-  between them or not. In the first case, there cannot be an arrow
-  into the first element. In the second case, pick anything in the
-  domain, and there is no arrow into it. In either case, there is
-  something that has no arrow into it.
+1 & (8) & $Rab \to \neg Rbc$ & 1 UE \\
+1,6 & (9) & $\neg Rbc$ & 8,7 MP \\
+1,2 & (10) & $\neg Rbc$ & 5,6,9 EE \\
+1,2 & (11) & $\forall x \neg Rxc$ & 10 UI \\
+1,2 & (12) & $\exists y \forall x \neg Rxy$ & 11 EI \\
+1,2 & (13) & $\exists y \forall x \neg Rxy \wedge \neg \exists y \forall x \neg Rxy$ & 12,2 $\wedge$I \\
+1 & (14) & $\neg \neg \exists y \forall x \neg Rxy$ & 2,13 RA \\
+1 & (15) & $\exists y \forall x \neg Rxy$ & 14 DN \\
+\end{tabular}
+   
+Second strategy: Either there is a pair of elements with an arrow
+between them or not. In the first case, there cannot be an arrow
+into the first element. In the second case, pick anything in the
+domain, and there is no arrow into it. In either case, there is
+something that has no arrow into it.
 
 \begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{7cm} >{\raggedright\arraybackslash}p{3.5cm}}
 1 & (1) & $\forall x \forall y \forall z (Rxy \to \neg Ryz)$ & A \\
