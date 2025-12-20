@@ -270,7 +270,7 @@ main = hakyllWith config $ do
       route   idRoute
       compile copyFileCompiler      
 
-    redirect "phi201/index.html" "https://hanshalvorson.dk/courses/phi201_f2025/"
+    redirect "phi201/index.html" "https://hanshalvorson.com/courses/phi201_f2025/"
 
     match "pages/*" $ do
       route $ setExtension "html"
@@ -668,7 +668,7 @@ feedConfig = FeedConfiguration
     , feedDescription = "Personligheden er Sandheden"
     , feedAuthorName  = "Hans Halvorson"
     , feedAuthorEmail = "hhalvors@princeton.edu"
-    , feedRoot        = "https://hanshalvorson.dk"
+    , feedRoot        = "https://hanshalvorson.com"
     }
 
 --------------------------------------------------------------------------------
@@ -677,7 +677,7 @@ siteCtx :: Context String
 siteCtx =
     baseCtx `mappend`
     constField "site_description" "Personligheden er Sandheden" `mappend`
-    constField "site-url" "https://hanshalvorson.dk" `mappend`
+    constField "site-url" "https://hanshalvorson.com" `mappend`
     constField "tagline" "Physics, Logic, Philosophy" `mappend`
     constField "site-title" "Hans Halvorson" `mappend`
     constField "copy-year" "2025" `mappend`
@@ -688,7 +688,7 @@ siteCtx =
 
 baseCtx = 
 --  constField "baseurl" "http://localhost:8000"
-    constField "baseurl" "https://hanshalvorson.dk"
+    constField "baseurl" "https://hanshalvorson.com"
 
 --------------------------------------------------------------------------------
 
