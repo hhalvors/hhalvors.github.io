@@ -14,6 +14,8 @@ import           Data.Maybe               (fromMaybe)
 import           Data.Monoid              (mappend)
 import           Data.Ord                 (Down(..), comparing)
 import System.FilePath (splitDirectories, joinPath, takeExtension, takeBaseName, takeFileName)
+import Text.Regex.TDFA ((=~))
+import Text.Read (readMaybe)
 
 -- Text / process
 import qualified Data.Text                as T
@@ -153,6 +155,27 @@ yearCtx =
        field "year"     (return . show . snd . itemBody)
     <> listFieldWith "courses" courseCtx (\item -> mapM makeItem (fst $ itemBody item))
 
+isPlainPsetPdf :: Identifier -> Bool
+isPlainPsetPdf ident =
+  takeFileName (toFilePath ident) =~ ("^pset[0-9]+\\.pdf$" :: String)
+
+psetNumber :: Identifier -> Int
+psetNumber ident =
+  let fname = takeFileName (toFilePath ident)
+      ds    = takeWhile (`elem` ['0'..'9']) (drop 4 fname)
+  in maybe 0 id (readMaybe ds)       
+
+psetCtx :: Context CopyFile
+psetCtx =
+  (field "number" $ \item -> do
+     let fname = takeBaseName . toFilePath $ itemIdentifier item  -- "pset7"
+     pure (drop 4 fname)                                         -- "7"
+  )
+  <>
+  (field "url" $ \item ->
+     pure . toUrl . toFilePath $ itemIdentifier item
+  )       
+
 buildCoursesPage :: Rules ()
 buildCoursesPage =
   create ["courses/index.html"] $ do
@@ -237,14 +260,36 @@ main = hakyllWith config $ do
     --       >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> indexCtx)
     --       >>= relativizeUrls
 
-    -- Courses: all .md under courses/, any depth
-    match "courses/**.md" $ do
+    match "courses/phi201_f2025/index.md" $ do
+      route $ setExtension "html"
+      compile $ do
+        allPdfs <- loadAll "courses/phi201_f2025/pset*.pdf"
+
+        let psets =
+              sortOn (psetNumber . itemIdentifier)
+                (filter (isPlainPsetPdf . itemIdentifier) allPdfs)
+
+        let pageCtx =
+              listField "psets" psetCtx (pure psets)
+              <> defaultContext
+              <> siteCtx
+
+        getResourceBody
+          >>= applyAsTemplate pageCtx
+          >>= readPandocWith myReader
+          >>= return . writePandocWith myWriter
+          >>= loadAndApplyTemplate "templates/page.html" pageCtx
+          >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> pageCtx)
+          >>= relativizeUrls
+
+
+    match ("courses/**.md" .&&. complement "courses/phi201_f2025/index.md") $ do
       route $ setExtension "html"
       compile $
         myPandocBiblioCompiler
           >>= loadAndApplyTemplate "templates/page.html" (defaultContext <> siteCtx)
           >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
-          >>= relativizeUrls
+          >>= relativizeUrls      
 
     match "pages/john.md" $ do
       route $ constRoute "john.html"
