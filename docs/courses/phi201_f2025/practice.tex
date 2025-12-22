@@ -145,7 +145,7 @@ $\varnothing$ & (2) & $\exists y \exists x Rxy \vee \neg \exists y \exists x Rxy
   \item Show that the sentence
     $\forall x\exists y\forall z(Rxy\wedge \neg Ryz)$ is inconsistent.
 
-\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+\begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{7cm} >{\raggedright\arraybackslash}p{3.5cm}}
 1 & (1) & $\forall x \exists y \forall z (Rxy \wedge \neg Ryz)$ & A \\
 1 & (2) & $\exists y \forall z (Ray \wedge \neg Ryz)$ & 1 UE \\
 3 & (3) & $\forall z (Rab \wedge \neg Rbz)$ & A \\
@@ -166,44 +166,44 @@ $\varnothing$ & (2) & $\exists y \exists x Rxy \vee \neg \exists y \exists x Rxy
   $\exists x\exists y(Fx\leftrightarrow \neg Fy)\:\vdash\: \forall
   x\exists y(Fx\leftrightarrow \neg Fy)$
 
-\begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{7cm} >{\raggedright\arraybackslash}p{3.5cm}}
+  \begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{7cm} >{\raggedright\arraybackslash}p{3.5cm}}
 1 & (1) & $\exists x \exists y (Fx \leftrightarrow \neg Fy)$ & A \\
 2 & (2) & $\neg \exists y (Fa \leftrightarrow \neg Fy)$ & A \\
 2 & (3) & $\forall y \neg (Fa \leftrightarrow \neg Fy)$ & 2 QN \\
 2 & (4) & $\neg (Fa \leftrightarrow \neg Fb)$ & 3 UE \\
 2 & (5) & $Fa \leftrightarrow Fb$ & 4 prop taut \\
 2 & (6) & $\forall z (Fa \leftrightarrow Fz)$ & 5 UI \\
-7 & (7) & $\exists y (Fc \leftrightarrow \neg Fy)$ & A \\
-8 & (8) & $Fc \leftrightarrow \neg Fd$ & A \\
-2 & (9) & $Fa \leftrightarrow Fc$ & 6 UE \\
-2 & (10) & $Fa \leftrightarrow Fd$ & 6 UE \\
-2,8 & (11) & $P \wedge \neg P$ & 8,9,10 prop taut \\
-8 & (12) & $\neg \neg \exists y (Fa \leftrightarrow \neg Fy)$ & 2,11 RA \\
-8 & (13) & $\exists y (Fa \leftrightarrow \neg Fy)$ & 12 DN \\
-7 & (14) & $\exists y (Fa \leftrightarrow \neg Fy)$ & 7,8,13 EE \\
-1 & (15) & $\exists y (Fa \leftrightarrow \neg Fy)$ & 1,7,14 EE \\
-1 & (16) & $\forall x \exists y (Fx \leftrightarrow \neg Fy)$ & 15 UI \\
+7 & (7) & $Fc \leftrightarrow \neg Fd$ & A \\
+2 & (8) & $Fa \leftrightarrow Fc$ & 6 UE \\
+2 & (9) & $Fa \leftrightarrow Fd$ & 6 UE \\
+2,7 & (10) & $P \wedge \neg P$ & 7,8,9 prop taut \\
+7 & (11) & $\neg \neg \exists y (Fa \leftrightarrow \neg Fy)$ & 2,10 RA \\
+7 & (12) & $\exists y (Fa \leftrightarrow \neg Fy)$ & 11 DN \\
+1 & (13) & $\exists y (Fa \leftrightarrow \neg Fy)$ & 1,7,12 EE \\
+1 & (14) & $\forall x \exists y (Fx \leftrightarrow \neg Fy)$ & 13 UI \\
 \end{tabular}
+
+
+
 
 \item
   $\exists x\exists y(Fx\leftrightarrow \neg Fy)\:\vdash\: \exists
   x\exists y(Fx\wedge\neg Fy)$
 
-\begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{7cm} >{\raggedright\arraybackslash}p{3.5cm}}
+  \begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{7cm} >{\raggedright\arraybackslash}p{3.5cm}}
 1 & (1) & $\exists x \exists y (Fx \leftrightarrow \neg Fy)$ & A \\
-2 & (2) & $\exists y (Fa \leftrightarrow \neg Fy)$ & A \\
-3 & (3) & $Fa \leftrightarrow \neg Fb$ & A \\
-3 & (4) & $(Fa \wedge \neg Fb) \vee (Fb \wedge \neg Fa)$ & 3 prop taut \\
-5 & (5) & $Fa \wedge \neg Fb$ & A \\
-5 & (6) & $\exists y (Fa \wedge \neg Fy)$ & 5 EI \\
-5 & (7) & $\exists x \exists y (Fx \wedge \neg Fy)$ & 6 EI \\
-8 & (8) & $Fb \wedge \neg Fa$ & A \\
-8 & (9) & $\exists y (Fb \wedge \neg Fy)$ & 8 EI \\
-8 & (10) & $\exists x \exists y (Fx \wedge \neg Fy)$ & 9 EI \\
-3 & (11) & $\exists x \exists y (Fx \wedge \neg Fy)$ & 4,5,7,8,10 $\vee$E \\
-2 & (12) & $\exists x \exists y (Fx \wedge \neg Fy)$ & 2,3,11 EE \\
-1 & (13) & $\exists x \exists y (Fx \wedge \neg Fy)$ & 1,2,12 EE \\
+2 & (2) & $Fa \leftrightarrow \neg Fb$ & A \\
+2 & (3) & $(Fa \wedge \neg Fb) \vee (Fb \wedge \neg Fa)$ & 2 prop taut \\
+4 & (4) & $Fa \wedge \neg Fb$ & A \\
+4 & (5) & $\exists x \exists y (Fx \wedge \neg Fy)$ & 4 EI \\
+6 & (6) & $Fb \wedge \neg Fa$ & A \\
+6 & (7) & $\exists x \exists y (Fx \wedge \neg Fy)$ & 6 EI \\
+2 & (8) & $\exists x \exists y (Fx \wedge \neg Fy)$ & 3,4,5,6,7 $\vee$E \\
+1 & (9) & $\exists x \exists y (Fx \wedge \neg Fy)$ & 1,2,9 EE \\
 \end{tabular}
+
+  
+
   
   
 
