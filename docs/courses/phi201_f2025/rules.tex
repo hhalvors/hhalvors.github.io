@@ -1,0 +1,59 @@
+\subsection*{Generalized Quantifier Rules}
+
+Throughout, let $\varphi,\psi$ be formulas.
+Let $\bar x = (x_1,\dots,x_k)$ be a list of distinct variables,
+and let $\bar c = (c_1,\dots,c_k)$ be a list of constants
+(not assumed distinct unless stated).
+Substitution $\varphi[\bar c/\bar x]$ is simultaneous and capture-avoiding.
+
+\bigskip
+
+\paragraph{Universal Elimination (UE).}
+\[
+\frac{\Gamma \vdash \forall x_1\cdots\forall x_n\,\varphi}
+     {\Gamma \vdash \varphi[\bar c/\bar x]}
+\]
+provided $1 \le k \le n$ and $\bar x=(x_1,\dots,x_k)$.
+
+\emph{No restriction} on the constants $\bar c$.
+
+\bigskip
+
+\paragraph{Universal Introduction (UI).}
+\[
+\frac{\Gamma \vdash \varphi[\bar c/\bar x]}
+     {\Gamma \vdash \forall x_1\cdots\forall x_k\,\varphi}
+\]
+provided:
+\begin{itemize}
+  \item the constants $c_1,\dots,c_k$ are \emph{distinct},
+  \item none of $c_1,\dots,c_k$ occur free in any undischarged assumption in $\Gamma$.
+\end{itemize}
+
+\bigskip
+
+\paragraph{Existential Introduction (EI).}
+\[
+\frac{\Gamma \vdash \varphi[\bar c/\bar x]}
+     {\Gamma \vdash \exists x_1\cdots\exists x_k\,\varphi}
+\]
+with \emph{no restrictions} on the constants $\bar c$.
+
+\bigskip
+
+\paragraph{Existential Elimination (EE).}
+\[
+\frac{\Gamma \vdash \exists x_1\cdots\exists x_k\,\varphi
+\qquad
+\Gamma,\,\varphi[\bar a/\bar x] \vdash \psi}
+{\Gamma \vdash \psi}
+\]
+provided:
+\begin{itemize}
+  \item the constants $a_1,\dots,a_k$ are \emph{distinct and fresh},
+  \item $a_1,\dots,a_k$ do not occur free in $\Gamma$ or in $\psi$.
+\end{itemize}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
