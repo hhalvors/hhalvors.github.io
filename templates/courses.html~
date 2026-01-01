@@ -1,0 +1,16 @@
+<div class="container content">
+ <h1 class="page-title">$title$</h1>
+  <ul>
+  $for(courses)$
+    <li>
+      <strong>$title$</strong>
+      $if(hasLink)$
+        (<a href="$link$">$code$, $semester$ $year$</a>)
+      $else$
+        ($code$, $semester$ $year$)
+      $endif$
+    </li>
+  $endfor$
+  </ul>
+</div>
+
