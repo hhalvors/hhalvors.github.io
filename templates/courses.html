@@ -1,0 +1,23 @@
+<div class="page">
+  <h1 class="page-title">Courses Taught</h1>
+
+  $for(years)$
+    <div class="year-container">
+      <h2 class="year-label">$year$</h2>
+      <ul class="publist">
+        $for(courses)$
+          <li>
+            $title$
+            $if(hasLink)$
+              (<a href="$link$">$code$, $semester$</a>)
+            $else$
+              ($code$, $semester$)
+            $endif$
+          </li>
+        $endfor$
+      </ul>
+    </div>
+  $endfor$
+</div>
+
+
