@@ -1,0 +1,409 @@
+[
+  
+  {
+    "title": "Kierkegaard in Copenhagen",
+    "code": "PHI367",
+    "semester": "Summer",
+    "year": 2026,
+    "link": ""
+  },       
+  {
+    "title": "Material Objects in Spacetime",
+    "code": "PHI5xx",
+    "semester": "Spring",
+    "year": 2026,
+    "link": ""
+  },       
+  {
+    "title": "The Modern Breakthrough in Scandinavia",
+    "code": "HUM3xx",
+    "semester": "Spring",
+    "year": 2026,
+    "link": ""
+  },     
+ {
+    "title": "Introductory Logic",
+    "code": "PHI201",
+    "semester": "Fall",
+    "year": 2025,
+    "link": "phi201_f2025/index.html"
+  },  
+  {
+    "title": "Fysikkens Videnskabsteori",
+    "code": "VtFys",
+    "semester": "Summer",
+    "year": 2025,
+    "link": "vtfys_2025/index.html"
+  },
+  {
+    "title": "Religion and Scientific Objectivity",
+    "code": "PHI363",
+    "semester": "Fall",
+    "year": 2024,
+    "link": "phi363_f2024/index.html"
+  },
+  {
+    "title": "Philosophy of Physics: Space and Time",
+    "code": "PHI538",
+    "semester": "Fall",
+    "year": 2024,
+    "link": "phi538_f2024"
+  },
+  {
+    "title": "Fysikkens Videnskabsteori",
+    "code": "VtFys",
+    "semester": "Summer",
+    "year": 2024,
+    "link": null
+  },
+  {
+    "title": "Introductory Logic",
+    "code": "PHI201",
+    "semester": "Spring",
+    "year": 2024,
+    "link": "../phi201_s2024"
+  },
+  {
+    "title": "Philosophy of Physics: Quantum Mechanics",
+    "code": "PHI538",
+    "semester": "Fall",
+    "year": 2023,
+    "link": "https://www.dropbox.com/scl/fi/oizqi6exmdf0dtc496ye5/syllabus.pdf?rlkey=4788qr6k89w434cjdkn1yil31&dl=0"
+  },
+  {
+    "title": "Kierkegaard in Copenhagen",
+    "code": "PHI367",
+    "semester": "Summer",
+    "year": 2023,
+    "link": "https://www.princeton.edu/~hhalvors/kierkegaard.html"
+  },
+  {
+    "title": "Fysikkens Videnskabsteori",
+    "code": "VtFys",
+    "semester": "Summer",
+    "year": 2023,
+    "link": null
+  },
+  {
+    "title": "Philosophy of Physics: Space and Time",
+    "code": "PHI538",
+    "semester": "Spring",
+    "year": 2023,
+    "link": "https://www.dropbox.com/scl/fi/i8das6z1py3cmjajvq3d1/syllabus.pdf?rlkey=w26t052b8ic5w80oipdddc9e2&dl=0"
+  },
+  {
+    "title": "Philosophy of Physics",
+    "code": "PHI327",
+    "semester": "Fall",
+    "year": 2022,
+    "link": "https://tinyurl.com/bdhb3enb"
+  },
+  {
+    "title": "Fysikkens Videnskabsteori",
+    "code": "VtFys",
+    "semester": "Summer",
+    "year": 2022,
+    "link": null
+  },
+  {
+    "title": "Kierkegaard in Copenhagen",
+    "code": "PHI367",
+    "semester": "Summer",
+    "year": 2021,
+    "link": "https://docs.google.com/document/d/1Zabr5106yg087FNxUML7Gn04QNqMu8cevwgquIm_aXg/edit?usp=sharing"
+  },
+  {
+    "title": "Introductory Logic",
+    "code": "PHI201",
+    "semester": "Spring",
+    "year": 2021,
+    "link": "phi201_s2021"
+  },
+  {
+    "title": "Religion and Scientific Objectivity",
+    "code": "PHI363",
+    "semester": "Fall",
+    "year": 2020,
+    "link": "phi363_f2020"
+  },
+  {
+    "title": "Kierkegaard in Copenhagen",
+    "code": "PHI367",
+    "semester": "Summer",
+    "year": 2020,
+    "link": "https://docs.google.com/document/d/1e88fnzC4Hy-33ilo6c4jH18lsLOYRL6cj2UGX7zy_F4/edit?usp=sharing"
+  },
+  {
+    "title": "Philosophy of Physics",
+    "code": "PHI327",
+    "semester": "Spring",
+    "year": 2020,
+    "link": "phi327_s2020"
+  },
+  {
+    "title": "Intermediate Logic",
+    "code": "PHI312",
+    "semester": "Fall",
+    "year": 2019,
+    "link": "phi312_f2019"
+  },
+  {
+    "title": "Metaphysics",
+    "code": "PHI540",
+    "semester": "Fall",
+    "year": 2019,
+    "link": "phi540_f2019"
+  },
+  {
+    "title": "Kierkegaard in Copenhagen",
+    "code": "PHI367",
+    "semester": "Summer",
+    "year": 2019,
+    "link": "phi367_s2019"
+  },
+  {
+    "title": "Introductory Logic",
+    "code": "PHI201",
+    "semester": "Spring",
+    "year": 2019,
+    "link": "phi201_s2019"
+  },
+  {
+    "title": "Religion and Scientific Objectivity",
+    "code": "PHI363",
+    "semester": "Fall",
+    "year": 2018,
+    "link": "phi363_f2018"
+  },
+  {
+    "title": "Philosophy of Religion: Kierkegaard",
+    "code": "PHI513",
+    "semester": "Fall",
+    "year": 2018,
+    "link": "phi513_f2018"
+  },
+  {
+    "title": "Introductory Logic",
+    "code": "PHI201",
+    "semester": "Spring",
+    "year": 2018,
+    "link": "phi201_s2018"
+  },
+  {
+    "title": "Intermediate Logic",
+    "code": "PHI312",
+    "semester": "Fall",
+    "year": 2016,
+    "link": "https://www.princeton.edu/~hhalvors/teaching/phi312_f2016"
+  },
+  {
+    "title": "Philosophy of Physics",
+    "code": "PHI327",
+    "semester": "Fall",
+    "year": 2016,
+    "link": "phi327_f2016"
+  },
+  {
+    "title": "Introductory Logic",
+    "code": "PHI201",
+    "semester": "Spring",
+    "year": 2016,
+    "link": "https://www.princeton.edu/~hhalvors/teaching/phi201_s2016"
+  },
+  {
+    "title": "History of Analytic Philosophy: 1900\u20131950",
+    "code": "PHI338",
+    "semester": "Fall",
+    "year": 2015,
+    "link": "phi338_f2015"
+  },
+  {
+    "title": "Philosophy of Science",
+    "code": "PHI321",
+    "semester": "Spring",
+    "year": 2015,
+    "link": "phi321_s2015"
+  },
+  {
+    "title": "Logic",
+    "code": "PHI520",
+    "semester": "Spring",
+    "year": 2015,
+    "link": "https://www.princeton.edu/~hhalvors/teaching/phi520_s2015"
+  },
+  {
+    "title": "History of Analytic Philosophy: 1900\u20131950",
+    "code": "PHI338",
+    "semester": "Fall",
+    "year": 2014,
+    "link": "phi338_f2014"
+  },
+  {
+    "title": "Philosophy of Mathematics",
+    "code": "PHI314",
+    "semester": "Spring",
+    "year": 2014,
+    "link": "https://www.princeton.edu/~hhalvors/teaching/phi314_s2014"
+  },
+  {
+    "title": "Category Theory",
+    "code": "PHI323",
+    "semester": "Spring",
+    "year": 2014,
+    "link": "https://www.princeton.edu/~hhalvors/teaching/phi323_s2014"
+  },
+  {
+    "title": "Intermediate Logic",
+    "code": "PHI312",
+    "semester": "Spring",
+    "year": 2013,
+    "link": "phi312_s2013"
+  },
+  {
+    "title": "Logic",
+    "code": "PHI520",
+    "semester": "Fall",
+    "year": 2012,
+    "link": "phi520_f2012"
+  },
+  {
+    "title": "Model Theory",
+    "code": "PHI323",
+    "semester": "Spring",
+    "year": 2012,
+    "link": "https://www.princeton.edu/~hhalvors/teaching/phi323_s2012"
+  },
+  {
+    "title": "Philosophy of Mathematics",
+    "code": "PHI536",
+    "semester": "Spring",
+    "year": 2011,
+    "link": "phi536_s2011"
+  },
+  {
+    "title": "Category Theory",
+    "code": "PHI323",
+    "semester": "Fall",
+    "year": 2010,
+    "link": "https://www.princeton.edu/~hhalvors/teaching/phi323_f2010"
+  },
+  {
+    "title": "Philosophy of Religion",
+    "code": "PHI325",
+    "semester": "Spring",
+    "year": 2010,
+    "link": "https://www.princeton.edu/~hhalvors/teaching/phi325_s2010/syllabus.html"
+  },
+  {
+    "title": "Category Theory",
+    "code": "PHI323",
+    "semester": "Fall",
+    "year": 2009,
+    "link": "https://www.princeton.edu/~hhalvors/teaching/phi323_f2009"
+  },
+  {
+    "title": "Philosophical Logic",
+    "code": "PHI340",
+    "semester": "Fall",
+    "year": 2007,
+    "link": "https://www.princeton.edu/~hhalvors/teaching/phi340_f2007"
+  },
+  {
+    "title": "Introductory Logic",
+    "code": "PHI201",
+    "semester": "Spring",
+    "year": 2006,
+    "link": "https://www.princeton.edu/~hhalvors/teaching/phi201_s2006"
+  },
+  {
+    "title": "Philosophical Logic",
+    "code": "PHI340",
+    "semester": "Fall",
+    "year": 2005,
+    "link": "phi340_f2005"
+  },
+  {
+    "title": "Philosophy of Physics",
+    "code": "PHI538",
+    "semester": "Fall",
+    "year": 2005,
+    "link": "phi538_f2005"
+  },
+  {
+    "title": "Introductory Logic",
+    "code": "PHI201",
+    "semester": "Spring",
+    "year": 2005,
+    "link": "https://www.princeton.edu/~hhalvors/teaching/phi201_s2005"
+  },
+  {
+    "title": "Philosophical Logic",
+    "code": "PHI340",
+    "semester": "Fall",
+    "year": 2004,
+    "link": "phi340_f2004"
+  },
+  {
+    "title": "Philosophy of Physics",
+    "code": "PHI538",
+    "semester": "Fall",
+    "year": 2004,
+    "link": "phi538_f2004"
+  },
+  {
+    "title": "Introductory Logic",
+    "code": "PHI201",
+    "semester": "Spring",
+    "year": 2004,
+    "link": "https://www.princeton.edu/~hhalvors/teaching/phi201_s2004"
+  },
+  {
+    "title": "Philosophy of Physics",
+    "code": "PHI327",
+    "semester": "Spring",
+    "year": 2003,
+    "link": "https://www.princeton.edu/~hhalvors/teaching/phi327_s2003"
+  },
+  {
+    "title": "Introductory Logic",
+    "code": "PHI201",
+    "semester": "Fall",
+    "year": 2002,
+    "link": "https://www.princeton.edu/~hhalvors/teaching/phi201_f2002"
+  },
+  {
+    "title": "Recent and Contemporary Philosophy",
+    "code": "PHI514",
+    "semester": "Fall",
+    "year": 2002,
+    "link": "phi514_f2002"
+  },
+  {
+    "title": "Philosophy of Science",
+    "code": "PHI531",
+    "semester": "Fall",
+    "year": 2002,
+    "link": "phi531_f2002"
+  },
+  {
+    "title": "Philosophy of Physics",
+    "code": "PHI327",
+    "semester": "Spring",
+    "year": 2002,
+    "link": "https://www.princeton.edu/~hhalvors/teaching/phi327_s2002"
+  },
+  {
+    "title": "Introductory Logic",
+    "code": "PHI201",
+    "semester": "Fall",
+    "year": 2001,
+    "link": "https://www.princeton.edu/~hhalvors/teaching/phi201_f2001"
+  },
+  {
+    "title": "Recent and Contemporary Philosophy",
+    "code": "PHI514",
+    "semester": "Fall",
+    "year": 2001,
+    "link": "phi514_f2001"
+  }
+]
