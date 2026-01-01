@@ -1,0 +1,11 @@
+<h1>PHI 201: Logic exams</h1>
+
+<p>
+Download a PDF. Filenames use <code>sYYYY</code> (Spring) and <code>fYYYY</code> (Fall).
+</p>
+
+<ul class="exam-list">
+  $for(exams)$
+    <li><a href="/$url$">$name$</a></li>
+  $endfor$
+</ul>

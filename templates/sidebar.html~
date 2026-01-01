@@ -1,0 +1,63 @@
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>$site_description$</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item$if(home)$ active$endif$" href="/index.html">Home</a>
+
+    <!--- The code below dynamically generates a sidebar nav of the files in the folder /pages 
+
+    $for(list_pages)$
+      $if(title)$
+        <a class="sidebar-nav-item$if(eval(title))$ active$endif$" href="$node-url$">$title$</a>
+      $endif$
+    $endfor$ -->
+
+
+	
+   <!-- Add the new Publications link -->
+	<a class="sidebar-nav-item" href="/publications.html">Publications</a>
+
+	<a class="sidebar-nav-item" href="/courses/">Courses</a>
+
+<a class="sidebar-nav-item" href="/books/">Books</a>
+
+        <a class="sidebar-nav-item" href="/bohr/">Bohr</a>
+
+	<a class="sidebar-nav-item" href="/spacetime/">Spacetime</a>
+
+	<a class="sidebar-nav-item" href="/drafts.html">Drafts</a>
+
+	<a class="sidebar-nav-item" href="/talks.html">Talks</a>
+
+
+
+
+	<a class="sidebar-nav-item" href="https://www.dropbox.com/scl/fi/xs0ssqnvi6zvstxnehgpd/cv.pdf?rlkey=qgwhhw1tiaspqbrlnkbnwcpt2&dl=0">CV</a>
+
+	<a class="sidebar-nav-item" href="$github-repo$">GitHub project</a>
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; $copy-year$. All rights reserved.
+    </p>
+    <p>
+        <img src="/images/haskell-logo.png" class=logo style="display: inline;"/>
+        Site created with
+        <a href="https://jaspervdj.be/hakyll">Hakyll</a>.
+        <br>
+        Modified theme
+        <a href="https://github.com/hahey/lanyon-hakyll">lanyon-hakyll</a>
+        based on
+        <a href="https://lanyon.getpoole.com/">Lanyon</a>.
+    </p>
+  </div>
+</div>

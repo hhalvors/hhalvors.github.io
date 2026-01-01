@@ -1,0 +1,13 @@
+<h2>$year$</h2>
+<ul>
+  $for(courses)$
+    <li>
+      <strong>$title$</strong>
+      $if(hasLink)$
+        (<a href="$link$">$code$, $semester$ $year$</a>)
+      $else$
+        ($code$, $semester$ $year$)
+      $endif$
+    </li>
+  $endfor$
+</ul>
