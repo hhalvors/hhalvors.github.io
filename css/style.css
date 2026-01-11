@@ -343,11 +343,4 @@ h2.year-label {
   }
 }
 
-/* Logic exams list */
-.exam-list {
-  line-height: 1.8;
-}
 
-.exam-list code {
-  font-family: ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-}

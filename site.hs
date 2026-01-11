@@ -16,6 +16,7 @@ import           Data.Ord                 (Down(..), comparing)
 import System.FilePath (splitDirectories, joinPath, takeExtension, takeBaseName, takeFileName)
 import Text.Regex.TDFA ((=~))
 import Text.Read (readMaybe)
+import Data.Yaml (decodeFileEither)
 
 -- Text / process
 import qualified Data.Text                as T
@@ -34,6 +35,14 @@ import           Text.Pandoc.Walk         (walkM)
 import           BibTeXParser             (parseBibTeX, generateHTML)
 import           PubList                  (parseBibTeXFile, transformEntry, generateHtml)
 import           LemmonFilter             (applyLemmonFilter)
+import CoursePages.Course
+  ( loadCourseYaml
+  , compileLecturesFromCourseYaml
+  , compilePsetsFromCourseYaml
+  , CourseYaml(..)
+  , CourseMeta(..)
+  , NavItem(..)
+  )
 
 config :: Configuration
 config = defaultConfiguration
@@ -106,6 +115,30 @@ hlKaTeX doc = unsafeCompiler $ do
 
   walkM go doc  
 
+----
+--- stuff for building course websites
+---
+
+-- For the course-website header nav
+courseNavItemCtx :: String -> Context NavItem
+courseNavItemCtx activeId =
+     field "id"    (pure . navId    . itemBody)
+  <> field "label" (pure . navLabel . itemBody)
+  <> field "path"  (pure . navPath  . itemBody)
+  <> field "isActive"    (\it -> pure $ if navId (itemBody it) == activeId then "true" else "")
+  <> field "activeClass" (\it -> pure $ if navId (itemBody it) == activeId then "active" else "")
+
+-- Context for course-site pages (header fields + nav)
+courseSiteCtx :: CourseYaml -> String -> Context String
+courseSiteCtx cy activeId =
+     constField "courseCode"  (courseCode  (cyCourse cy))
+  <> constField "courseTitle" (courseTitle (cyCourse cy))
+  <> constField "courseTerm"  (courseTerm  (cyCourse cy))
+  <> constField "courseUniversity" (courseUniversity (cyCourse cy))
+  <> listField "nav" (courseNavItemCtx activeId)
+       (mapM makeItem (courseNavigation (cyCourse cy)))
+  <> defaultContext
+
 
 ------------------------------------------------------------------------------
 -- Course data  +  FromJSON instance
@@ -145,7 +178,7 @@ courseCtx =
   <> field "year"     (return . show . year . itemBody)
   <> field "link"     (return . maybe "#" id . link . itemBody)
   <> field "hasLink"  (return . maybe "false" (const "true") . link . itemBody)
-
+  
 ------------------------------------------------------------------------------
 -- Rule: build /courses/index.html
 ------------------------------------------------------------------------------
@@ -154,6 +187,28 @@ yearCtx :: Context ([Course], Int)   -- ([coursesThisYear], year)
 yearCtx =
        field "year"     (return . show . snd . itemBody)
     <> listFieldWith "courses" courseCtx (\item -> mapM makeItem (fst $ itemBody item))
+
+courseBaseCtx :: FilePath -> String -> Compiler (Context String)
+courseBaseCtx rootPath activeId = do
+  cy <- loadCourseYaml (rootPath <> "/course.yaml")
+  let cm = cyCourse cy
+
+  navItems <- mapM makeItem (courseNavigation cm)
+
+  let navCtx =
+           field "id"    (pure . navId    . itemBody)
+        <> field "label" (pure . navLabel . itemBody)
+        <> field "path"  (pure . navPath  . itemBody)
+        <> field "isActive" (\it -> pure $ if navId (itemBody it) == activeId then "true" else "")
+        <> field "activeClass" (\it -> pure $ if navId (itemBody it) == activeId then "active" else "")
+
+  pure $
+       constField "root" ("/" <> rootPath)
+    <> constField "courseCode"  (courseCode cm)
+    <> constField "courseTitle" (courseTitle cm)
+    <> constField "courseTerm"  (courseTerm cm)
+    <> listField "nav" navCtx (pure navItems)
+    <> defaultContext       
 
 isPlainPsetPdf :: Identifier -> Bool
 isPlainPsetPdf ident =
@@ -263,25 +318,30 @@ main = hakyllWith config $ do
     match "courses/phi201_f2025/index.md" $ do
       route $ setExtension "html"
       compile $ do
-        allPdfs <- loadAll "courses/phi201_f2025/pset*.pdf"
-
-        let psets =
-              sortOn (psetNumber . itemIdentifier)
-                (filter (isPlainPsetPdf . itemIdentifier) allPdfs)
-
-        let pageCtx =
-              listField "psets" psetCtx (pure psets)
-              <> defaultContext
-              <> siteCtx
-
-        getResourceBody
-          >>= applyAsTemplate pageCtx
-          >>= readPandocWith myReader
-          >>= return . writePandocWith myWriter
-          >>= loadAndApplyTemplate "templates/page.html" pageCtx
-          >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> pageCtx)
+        ctx <- courseBaseCtx "courses/phi201_f2025" "home"
+        pandocCompiler
+          >>= loadAndApplyTemplate "templates/course-base.html" ctx
           >>= relativizeUrls
 
+    match "courses/phi201_f2025/lectures.md" $ do
+      route $ constRoute "courses/phi201_f2025/lectures.html"
+      compile $ do
+        ctx <- courseBaseCtx "courses/phi201_f2025" "lectures"
+        compileLecturesFromCourseYaml
+          "courses/phi201_f2025/course.yaml"
+          "templates/lectures-grid.html"
+          >>= loadAndApplyTemplate "templates/course-base.html" ctx
+          >>= relativizeUrls
+
+    match "courses/phi201_f2025/psets.md" $ do
+      route $ constRoute "courses/phi201_f2025/psets.html"
+      compile $ do
+        ctx <- courseBaseCtx "courses/phi201_f2025" "assignments"  
+        compilePsetsFromCourseYaml
+          "courses/phi201_f2025/course.yaml"
+          "templates/psets-list.html"
+          >>= loadAndApplyTemplate "templates/course-base.html" ctx
+          >>= relativizeUrls
 
     match ("courses/**.md" .&&. complement "courses/phi201_f2025/index.md") $ do
       route $ setExtension "html"
