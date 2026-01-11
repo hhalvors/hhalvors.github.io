@@ -336,7 +336,7 @@ main = hakyllWith config $ do
     match "courses/phi201_f2025/psets.md" $ do
       route $ constRoute "courses/phi201_f2025/psets.html"
       compile $ do
-        ctx <- courseBaseCtx "courses/phi201_f2025" "assignments"  
+        ctx <- courseBaseCtx "courses/phi201_f2025" "psets"  
         compilePsetsFromCourseYaml
           "courses/phi201_f2025/course.yaml"
           "templates/psets-list.html"
