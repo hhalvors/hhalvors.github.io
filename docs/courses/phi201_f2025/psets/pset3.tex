@@ -1,10 +1,45 @@
-% Options for packages loaded elsewhere
+% ---COURSE-META-BEGIN---
+% kind: pset
+% course: "PHI 201"
+% term: "Fall 2025"
+% id: 3
+% title: "Problem Set 3"
+% topic: "Conditionals, disjunction, and truth-table validity"
+% resources:
+%   - "Lecture 3"
+%   - "How Logic Works, Chapters 3 and 5 (skipping Chapter 4)"
+% sections:
+%   - id: A
+%     title: "Proofs"
+%     skills:
+%       - "Prove sequents in Lemmon-style natural deduction"
+%       - "Use Conditional Proof (→I) and Conditional Elimination (→E) appropriately"
+%       - "Use disjunction introduction (∨I) and disjunction elimination (∨E) with correct subproof structure"
+%       - "Use reductio ad absurdum (RAA) when appropriate"
+%       - "Track and discharge assumptions correctly; maintain correct dependency sets"
+%       - "Cite rules and line numbers accurately"
+%   - id: B
+%     title: "Truth tables"
+%     skills:
+%       - "Use truth-table semantics to establish entailment (⊨) and non-entailment (not ⊨)"
+%       - "Use countermodels/valuations to demonstrate non-entailment"
+%       - "Explain (in words) how a truth table supports a semantic claim"
+%       - "Use semantic reasoning to diagnose that a purported proof is invalid"
+%       - "Connect semantic invalidity to likely proof-structure errors (especially ∨E and dependencies)"
+% estimated_time_minutes: 75
+% difficulty: "medium"
+% artifacts:
+%   handout_pdf: "psets/pset3.pdf"
+%   source_tex: "psets/pset3.tex"
+% status:
+%   solutions_posted: false
+% ---COURSE-META-END---
 \documentclass[12pt]{article}
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1em}
 \usepackage{fullpage,amssymb,array}
 
-\title{logic pset3}
+\title{PHI 201 — Problem Set 3}}
 \author{}
 \date{}
 
