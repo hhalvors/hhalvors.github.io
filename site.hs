@@ -323,6 +323,14 @@ main = hakyllWith config $ do
           >>= loadAndApplyTemplate "templates/course-base.html" ctx
           >>= relativizeUrls
 
+    match "courses/phi201_f2025/resources.md" $ do
+      route $ constRoute "courses/phi201_f2025/resources.html"
+      compile $ do
+        ctx <- courseBaseCtx "courses/phi201_f2025" "resources"
+        pandocCompiler
+          >>= loadAndApplyTemplate "templates/course-base.html" ctx
+          >>= relativizeUrls      
+
     match "courses/phi201_f2025/lectures.md" $ do
       route $ constRoute "courses/phi201_f2025/lectures.html"
       compile $ do
