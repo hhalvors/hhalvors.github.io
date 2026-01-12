@@ -39,6 +39,7 @@ import CoursePages.Course
   ( loadCourseYaml
   , compileLecturesFromCourseYaml
   , compilePsetsFromCourseYaml
+  , compilePreceptsFromCourseYaml
   , CourseYaml(..)
   , CourseMeta(..)
   , NavItem(..)
@@ -350,6 +351,16 @@ main = hakyllWith config $ do
           "templates/psets-list.html"
           >>= loadAndApplyTemplate "templates/course-base.html" ctx
           >>= relativizeUrls
+
+    match "courses/phi201_f2025/precepts.md" $ do
+      route $ constRoute "courses/phi201_f2025/precepts.html"
+      compile $ do
+        ctx <- courseBaseCtx "courses/phi201_f2025" "precepts"
+        compilePreceptsFromCourseYaml
+          "courses/phi201_f2025/course.yaml"
+          "templates/precepts-list.html"
+          >>= loadAndApplyTemplate "templates/course-base.html" ctx
+          >>= relativizeUrls      
 
     match ("courses/**.md" .&&. complement "courses/phi201_f2025/index.md") $ do
       route $ setExtension "html"
