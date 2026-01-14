@@ -39,10 +39,10 @@ import CoursePages.Course
   ( loadCourseYaml
   , compileLecturesFromCourseYaml
   , compilePsetsFromCourseYaml
+  , courseBaseCtx
+  , courseSiteCtx
+  , courseNavItemCtx
   , compilePreceptsFromCourseYaml
-  , CourseYaml(..)
-  , CourseMeta(..)
-  , NavItem(..)
   )
 
 config :: Configuration
@@ -116,30 +116,6 @@ hlKaTeX doc = unsafeCompiler $ do
 
   walkM go doc  
 
-----
---- stuff for building course websites
----
-
--- For the course-website header nav
-courseNavItemCtx :: String -> Context NavItem
-courseNavItemCtx activeId =
-     field "id"    (pure . navId    . itemBody)
-  <> field "label" (pure . navLabel . itemBody)
-  <> field "path"  (pure . navPath  . itemBody)
-  <> field "isActive"    (\it -> pure $ if navId (itemBody it) == activeId then "true" else "")
-  <> field "activeClass" (\it -> pure $ if navId (itemBody it) == activeId then "active" else "")
-
--- Context for course-site pages (header fields + nav)
-courseSiteCtx :: CourseYaml -> String -> Context String
-courseSiteCtx cy activeId =
-     constField "courseCode"  (courseCode  (cyCourse cy))
-  <> constField "courseTitle" (courseTitle (cyCourse cy))
-  <> constField "courseTerm"  (courseTerm  (cyCourse cy))
-  <> constField "courseUniversity" (courseUniversity (cyCourse cy))
-  <> listField "nav" (courseNavItemCtx activeId)
-       (mapM makeItem (courseNavigation (cyCourse cy)))
-  <> defaultContext
-
 
 ------------------------------------------------------------------------------
 -- Course data  +  FromJSON instance
@@ -188,28 +164,6 @@ yearCtx :: Context ([Course], Int)   -- ([coursesThisYear], year)
 yearCtx =
        field "year"     (return . show . snd . itemBody)
     <> listFieldWith "courses" courseCtx (\item -> mapM makeItem (fst $ itemBody item))
-
-courseBaseCtx :: FilePath -> String -> Compiler (Context String)
-courseBaseCtx rootPath activeId = do
-  cy <- loadCourseYaml (rootPath <> "/course.yaml")
-  let cm = cyCourse cy
-
-  navItems <- mapM makeItem (courseNavigation cm)
-
-  let navCtx =
-           field "id"    (pure . navId    . itemBody)
-        <> field "label" (pure . navLabel . itemBody)
-        <> field "path"  (pure . navPath  . itemBody)
-        <> field "isActive" (\it -> pure $ if navId (itemBody it) == activeId then "true" else "")
-        <> field "activeClass" (\it -> pure $ if navId (itemBody it) == activeId then "active" else "")
-
-  pure $
-       constField "root" ("/" <> rootPath)
-    <> constField "courseCode"  (courseCode cm)
-    <> constField "courseTitle" (courseTitle cm)
-    <> constField "courseTerm"  (courseTerm cm)
-    <> listField "nav" navCtx (pure navItems)
-    <> defaultContext       
 
 isPlainPsetPdf :: Identifier -> Bool
 isPlainPsetPdf ident =
@@ -321,6 +275,7 @@ main = hakyllWith config $ do
       compile $ do
         ctx <- courseBaseCtx "courses/phi201_f2025" "home"
         pandocCompiler
+          >>= loadAndApplyTemplate "templates/course-home.html" ctx
           >>= loadAndApplyTemplate "templates/course-base.html" ctx
           >>= relativizeUrls
 
