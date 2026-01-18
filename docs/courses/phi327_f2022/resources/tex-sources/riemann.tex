@@ -1,0 +1,164 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts}
+\title{Riemann's Revolution in Geometry}
+\begin{document}
+
+\maketitle
+
+Today we are going to talk about the remarkable work of Bernhard
+Riemann, which has come to serve as the backdrop for Einstein's
+general theory of relativity. Before we turn to Riemann's article, let
+me begin with a bit of mathematical context.
+
+When people talk about ``non-euclidean geometry'', then normally mean
+the sort of synthetic geometry that was developed by Bolyai and
+Lobachevsky in the early part of the 19th century. Here the word
+``synthetic'' means that the methods are similar to those of Euclid,
+where the primary representational tool is natural language
+supplemented by figures, and where the focus is on step by step
+logical deduction. The contrasting approach is sometimes called
+``analytic geometry'', and it is characterized by the use of equations
+and calculations.
+
+Now, Riemman's proposal in the 1854 paper is most certainly not
+squarely in the tradition of synthetic geometry. And yet in a certain
+sense, what he proposes is a generalization of all three synthetic
+geometries, viz. Euclidean, hyperbolic, and spherical. I will explain
+the sense in which it is a generalization in just a bit.
+
+The second bit of mathematical context we need is a reminder about how
+Euclidean geometry is related to the real numbers. The real number
+line $\mathbb{R}$ is, of course, familiar to you. It consists of whole
+numbers, fractions, and also all those infinite non-repeating decimals
+that do not correspond to fractions. For our purposes, the real number
+line is a good representation of how Newton understood time. In
+particular, $\mathbb{R}$ comes with a natural notion of ordering: less
+than or equal to. In addition, the real number line comes with a
+natural notion of distance: the distance between two numbers $a,b$ in
+$\mathbb{R}$ is just the absolute value $|b-a|$.
+
+There is, however, one sense in which even Newton would find the real
+numbers to have too much structure to represent time. In particular,
+$\mathbb{R}$ has an ``origin'', viz.\ the number $0$. But Newton has
+no notion of a preferred ``zero time''. So what he really needs is
+something like the real numbers with a less than relationship, and
+with distances, but without a zero. Actually what he needs is
+$\mathbb{R}$ as an \emph{affine space}, a notion that I will not
+define right now, but which will be useful later on.
+
+So much for the mathematical representation of Newtonian absolute
+time. Let's proceed now to Newtonian absolute space. First of all, the
+Cartesian plane $\mathbb{R}^2$ consists of ordered pairs of real
+numbers. For example, the origin can be represented by
+$\langle 0,0\rangle$, while a point $\langle a,b\rangle$ is on the
+unit circle just in case $a^2+b^2=1$. Now, the plane $\mathbb{R}^2$
+does not have a natural ordering relation, but it does have a natural
+distance function. In particular, for two real numbers
+$\langle x_1,y_1\rangle$ and $\langle x_2,y_2\rangle$, we define the
+distance to be
+\[ \sqrt{(y_2-y_1)^2+(x_2-x_1)^2} .\] Of course, Newton thinks that
+space is three dimensional, so he needs to add a third coordinate,
+which we can think of as the $z$-axis. In this case, $\mathbb{R}^3$
+consists of triples of real numbers, and the distance relationship is
+given by the generalized Pythagorean formula:
+\[ \sqrt{(y_2-y_1)^2+(x_2-x_1)^2+(z_2-z_1)} .\]
+
+Newton says explicitly that space endures unchanged through time. We
+might represent this mathematically by saying that this very same
+$\mathbb{R}^3$ continues to exist at all times. That also means that
+we can speak explicitly about whether or not a physical object is in
+the \emph{same} place at two different times.
+
+This result is actually not ideal for Newton, as it would commit him
+not just to absolute acceleration, but also to absolute velocity. In
+particular, we can say that an object is \emph{stationary} through a
+time interval $I$ just in case that object is at the same point
+$\mathbf{x}\in\mathbb{R}^3$ at all times $t$ in $I$. But none of
+Newton's arguments assume that there really is a difference between
+being stationary and moving. All that he needs is that there is a
+difference between inertial (constant velocity) and accelerated
+(changing velocity) motion.
+
+Now, the idea of mixing space and time together did not really come up
+until Einstein's work in the twentieth century. Nonetheless, we can
+usefully talk about a notion of ``Newtonian spacetime''. In
+particular, if we now add a fourth coordinate for time, then we can
+say that Newtonian spacetime is the set
+$\mathbb{R}\times \mathbb{R}^3$ where $\mathbb{R}$ represents time,
+and where $\mathbb{R}^3$ represents space.
+
+Bernhard Riemann was not content with the status of geometry as of
+1854. In particular, he claims that geometers adopt a bunch of
+postulates --- i.e.\ assumptions about the structure of space ---
+without a clear understanding of why they accept them, and how they
+are related to each other. Riemann's proposal will be to start from a
+more primitive notion of a ``multiply extended quantity'', and then to
+add additional structure to capture the specific features of the space
+we actually live in. One way to see what he is doing here is to redraw
+the line between what is known \emph{a priori} about space, and what
+is only known \emph{a posteriori}. In this case, Riemann would be
+saying that we know a priori that space is some or other multiply
+extended quantity, and we know a posteriori that it has specific
+metric features. I will now proceed to clarify what Riemann means by
+``multiply extended quantity'' and by ``metric features''.
+
+\section{Commentary Part I}
+
+\begin{enumerate}
+
+\item (\S 1) How much structure do we need to even talk about
+  ``quantities''? What is a quantity after all? According to Riemann,
+  the most fundamental idea here is of having a concept that admits of
+  multiple instances. Of course we are familiar with such
+  things. Think, for example, of ``height'' --- one concept with many
+  different instances.
+
+  Riemann then points out that for any finite collection of things,
+  it's easy to make up a concept that they all fall under. But it's
+  different for infinite collections of things. Some of these infinite
+  collections naturally fall under a single concept, but others do
+  not. Riemann says that color and the position of sensible objects
+  are the most familiar cases of concepts whose instances form a
+  continuous manifold.
+
+  Now Riemann turns to the question of the quantitative comparison of
+  different regions in a manifold. In the case of finite manifolds,
+  the comparison is as simple as counting. But counting does not make
+  sense for comparing two infinite collections. Consider, for example,
+  the intervals $[0,1]$ and $[0,2]$. Both of these intervals contain
+  infinitely many points, but the second is bigger in some sense.
+
+  According to Riemann, the way to compare continuous quantities is by
+  \emph{superposition}, i.e.\ by setting them side by side. But now we
+  are on to an interesting notion: that there is some intrinsic
+  connection between static facts about sizes and a concept of
+  ``transport'' from one place to another.
+
+\item (\S 2) In this section, Riemann explains the notion of a
+  manifold by ``synthesizing'' it out of manifolds of lower
+  dimension. He first asks us to consider a manifold where there are
+  only two directions of motion: forward and backward. The idea, of
+  course, is of an abstract line. He then asks us to consider the idea
+  of moving such a line continuously, thereby generating a
+  two-dimensional surface.
+
+  This process can then continue, with the result that ``this
+  construction can be characterized as a synthesis of a variability of
+  $n+1$ dimensions from a variability of $n$ dimensions and
+  variability of one dimension.''
+
+\item (\S 3) In this section, Riemann describes how a point in a
+  $n$-dimensional manifold can be specified by $n$ real numbers. He
+  first asks us to consider a continuous function $x_1$ that assigns
+  each element of the manifold a real number, and such that $x_1$ is
+  never constant on a small neighborhood around any point. He then
+  notes that for each fixed real number $r$, the set of points in the
+  manifold that have value $r$ for $x_1$ will form a continuous
+  manifold of fewer dimensions than the original one.
+
+\end{enumerate}
+
+
+\section{Commentary Part II}
+
+\end{document}

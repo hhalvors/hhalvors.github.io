@@ -1,0 +1,439 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage{outlines}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{ass}{Assumption}
+\usepackage{fullpage}
+\usepackage{url}
+\usepackage{wrapfig}
+% \renewcommand{\emph}{\textbf}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0em}
+
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage[outline]{contour} % glow around text
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{decorations.markings}
+
+\usepackage{tikz-3dplot}
+
+\usepackage{pgfplots}
+
+\usepackage{colortbl}
+
+% A few colors
+%--------------------------------------------------------------
+\definecolor{plum}{rgb}{0.36078, 0.20784, 0.4}
+\definecolor{chameleon}{rgb}{0.30588, 0.60392, 0.023529}
+\definecolor{cornflower}{rgb}{0.12549, 0.29020, 0.52941}
+\definecolor{scarlet}{rgb}{0.8, 0, 0}
+\definecolor{brick}{rgb}{0.64314, 0, 0}
+\definecolor{sunrise}{rgb}{0.80784, 0.36078, 0}
+\definecolor{lightblue}{rgb}{0.15,0.35,0.75}
+
+\begin{document}
+
+\section*{Lecture 24: relativity wrap-up}
+
+\subsection*{The overall lesson of relativity theory?}
+
+
+\subsection*{Length contraction}
+
+Maudlin's claim: ``The coordinate-based Lorentz-Fitzgerald contraction
+is not, in any straightforward sense, the physical contraction of
+anything. \ldots there is a coordinate-based Lorentz-Fitzgerald
+contraction \dots and also a \emph{physical} Lorentz-Fitzgerald
+contraction that does have its explanation `in terms of forces or the
+like'.'' (p 99)
+
+We begin at the popular science level:
+\begin{quote} Claim: according to STR, if you are carrying a meter
+  stick and you go very fast, then the meter stick will shrink in
+  length. \end{quote}
+
+Why should you already be suspicious of the way that the claim is put?
+
+Open question (that we will not deal with right now): To what extent
+has the claim been tested empirically? To what extent can it be tested
+empirically?
+
+However, there is something correct about the claim. We want to
+understand (a) what exactly is correct, and (b) what it means
+vis-a-vis the metaphysics and epistemology of spacetime
+
+As to (b), there are two extremist points of view:
+\begin{itemize}
+\item (Minkowskian) There aren't really any three-dimensional
+  objects. There are four-dimensional objects, and the phenomenon of
+  length contraction is how those four-dimensional objects appear in
+  different reference frames.
+\item (Lorentzian) Length contraction is a physical effect of one
+  physical substance (the aether) on another physical substance (the
+  material that makes up the rod).
+\end{itemize}
+
+
+\subsection*{The geometry of length contraction}
+
+I will describe length contraction in two different ways. (1) A single
+measuring rod moving relative to some observer. (2) Two measuring rods
+in motion relative to each other.
+
+\begin{defn} The \emph{proper length} of a rod is its spatial length
+  in its own reference frame. \end{defn}
+
+Of course, the notion of proper length only makes sense for a rod that
+is in inertial motion. For a rod that is accelerating, funny stuff can
+happen.
+
+%% TO DO: where is proper time 1 on the hyperboloid? 
+
+\begin{itemize}
+\item There is one sense in which there is \emph{no} length
+  contraction: If we take a rod $\gamma$ and apply a Lorentz boost
+  $L$, then the resulting object $L(\gamma )$ has the same spatial
+  length as the original object (see Figure 1). We should not be
+  surprised by this because Lorentz transformations preserve spacetime
+  lengths, and they also preserve the relation ``is spacelike
+  related'' and the predicate ``is a spacelike object''. So it is
+  incorrect to say ``if $\gamma$ were moving faster, then it would be
+  shorter.''
+\item There is another sense in which there is length contraction. In
+  particular, if we look at the two-dimensional sheet swept out by a
+  rod $\gamma$ (moving relative to B), and if we measure the
+  instantaneous length in B's frame of reference, then this
+  instantaneous length will be shorter than $|\gamma |$. To be
+  precise:
+  \begin{prop} Let $\gamma$ be a line segment that is perpendicular to
+    the timelike vector $u\in V$. Let $v\in V$ be a timelike vector,
+    and let $P(\gamma )$ be the projection of $\gamma$ onto
+    $v^\perp$. Then $|P(\gamma )|\leq |\gamma |$, with equality only
+    if $v$ is proportional to $u$.
+  \end{prop}
+  This last proposition can be read as saying that if one observer A
+  is carrying an extended object $\gamma$, then A's account of the
+  length of $\gamma$ is expected to be longer than the estimate of an
+  observer B who is in motion relative to A. (For reflection: how
+  might we operationalize length measurement, and why would we expect
+  that observers in relative motion would measure things as having
+  different lengths?)
+\end{itemize}
+
+\end{document}
+
+\colorlet{mydarkred}{red!55!black}
+\colorlet{myfieldred}{mydarkred!5} % for S' background
+\colorlet{myblue}{blue!80!black}
+\colorlet{mypurple}{blue!40!red!80!black}
+\colorlet{mylightblue}{blue!50!black!30}
+\colorlet{mylightblue2}{myblue!10}
+\colorlet{mybrown}{brown!20!orange!90!black}
+\colorlet{mydarkbrown}{brown!20!orange!55!black}
+\colorlet{myred}{red!85!black}
+\colorlet{mylightred}{red!85!black!12}
+\colorlet{mydarkgreen}{green!50!black}
+\colorlet{mydarkblue}{blue!50!black}
+
+\tikzstyle{world line}=[myblue!40,line width=0.3]
+\tikzstyle{world line t}=[mypurple!50!myblue!40,line width=0.3]
+\tikzstyle{world line'}=[mydarkred!40,line width=0.3]
+\tikzstyle{rod}=[mydarkbrown,draw=mydarkbrown,double=mybrown,double distance=2pt,
+                 line width=0.2,line cap=round,shorten >=1pt,shorten <=1pt]
+
+% COMMON AXES
+\pgfdeclarelayer{back} % to draw on background
+\pgfsetlayers{back,main} % set order
+\def\xmin{0.23}
+\def\xmax{2}
+\def\Nlines{6} % number of world lines (at constant x/t)
+\def\DNxp{0}   % difference in number of world lines of x' axis
+\def\DNyp{0}   % difference in number of world lines of ct' axis
+\def\DNy{0}    % difference in number of world lines of ct axis
+\def\ang{20}   % angle between x and x' axes
+\def\xplabelang{180} % anchor angle of x' axis label
+%\pgfmathsetmacro\ang{atan(0.44)} % angle between x and x' axes
+\def\axes{
+  \pgfmathsetmacro\d{\xmax/(\Nlines+0.4)} % grid size
+  \pgfmathsetmacro\D{\d/cos(\ang)/sqrt(1-tan(\ang)^2)} % grid size, boosted
+  \pgfmathsetmacro\ymax{\xmax+\DNy*\d} % maximum of y = ct axis
+  \pgfmathsetmacro\xmaxp{(\xmax/\d+\DNxp)*\D} % maximum of x' axis
+  \pgfmathsetmacro\ymaxp{(\xmax/\d+\DNyp)*\D} % maximum of y' = ct' axis
+  \coordinate (O) at (0,0);
+  \coordinate (X) at (\xmax+0.15,0);
+  \coordinate (T) at (0,\ymax+0.15);
+  \coordinate (X') at (\ang:\xmaxp+0.2);
+  \coordinate (T') at (90-\ang:\ymaxp+0.2);
+  
+  % FILL
+  \begin{pgfonlayer}{back} % draw on back
+    \fill[myfieldred]
+      (O) --++ (\ang:\xmaxp) --++ (90-\ang:\ymaxp) --++ (\ang:-\xmaxp) -- cycle;
+  \end{pgfonlayer}
+  
+  % WORLD LINE GRID
+  \message{  Making world lines...^^J}
+  \pgfmathsetmacro\Nylines{\Nlines+\DNy} % number of world lines at constant ct'
+  \foreach \i [evaluate={\x=\i*\d;}] in {1,...,\Nlines}{
+    %\message{  Running i/N=\i/\Nlines, x=\x...^^J}
+    \draw[world line]   (\x,0) -- (\x,\ymax);
+  }
+  \foreach \i [evaluate={\t=\i*\d;}] in {1,...,\Nylines}{
+    %\message{  Running i/N=\i/\Nlines, t=\t...^^J}
+    \draw[world line t] (0,\t) -- (\xmax,\t);
+  }
+  
+  % BOOSTED WORLD LINE GRID
+  \message{  Making world lines for boosted frame...^^J}
+  \pgfmathsetmacro\Nxplines{\Nlines+\DNxp} % number of world lines at constant x'
+  \pgfmathsetmacro\Nyplines{\Nlines+\DNyp} % number of world lines at constant ct'
+  \foreach \i [evaluate={\x=\i*\D;}] in {1,...,\Nxplines}{
+    %\message{  Running i/N=\i/\Nlines, x=\x...^^J}
+    \draw[world line'] (\ang:\x) --++ (90-\ang:\ymaxp);
+  }
+  \foreach \i [evaluate={\t=\i*\D;}] in {1,...,\Nyplines}{
+    %\message{  Running i/N=\i/\Nlines, t=\t...^^J}
+    \draw[world line'] (90-\ang:\t) --++ (\ang:\xmaxp);
+  }
+  
+  % AXES
+  \draw[->,thick] (0,-\xmin) -- (T) node[left=-1] {$ct$};
+  \draw[->,thick] (-\xmin,0) -- (X) node[below=0] {$x$};
+  \draw[->,thick,mydarkred] (90-\ang:-\xmin) -- (T')
+    node[right=5,above=-1] {$ct'$};
+  \draw[->,thick,mydarkred] (\ang:-\xmin) -- (X')
+    node[anchor=\xplabelang,inner sep=2] {$x'$};
+}
+
+
+
+% SPACETIME DIAGRAM - LENGTH CONTRACTION of rod at rest in S
+% Inspiration: http://people.uncw.edu/hermanr/GR/Minkowski/Minkowski.pdf
+\def\ang{23} % angle between x and x' axes
+\begin{tikzpicture}[scale=1.8]
+  \message{Length contraction (rod at rest in S)^^J}
+  
+  % AXES
+  \def\Nlines{7} % number of world lines (at constant x/t)
+  \axes
+  
+  % SETTINGS
+  \pgfmathsetmacro\xA{2*\d} % triangle left corner x coordinate in S
+  \pgfmathsetmacro\yA{4*\d} % triangle left corner y=ct coordinate in S
+  \pgfmathsetmacro\Lz{4*\d} % proper/rest length L0 in S
+  \pgfmathsetmacro\L{\Lz/cos(\ang)} % length L in S'
+  \coordinate (L) at (\Lz,0); % rod end in S
+  \coordinate (L') at (\ang:\L); % rod end in S'
+  \coordinate (A) at (\xA,\yA); % point A in triangle
+  \coordinate (B) at (\xA+\Lz,\yA); % point B in triangle
+  \coordinate (B') at (\xA+\Lz,{\yA+\Lz*tan(\ang)}); % point B' in triangle
+  
+  % FILL
+  \begin{pgfonlayer}{back} % draw on back
+    \fill[mylightblue2] (\xA,-\xmin) rectangle (\xA+\Lz,\xmax);
+  \end{pgfonlayer}
+  \draw[->,thick,mydarkbrown] (\xA,-\xmin) --++ (0,\xmin+\xmax+0.2);
+  \draw[->,thick,mydarkbrown] (\xA+\Lz,-\xmin) --++ (0,\xmin+\xmax+0.2);
+  
+  % ROD
+  \draw[rod] (\xA,0) --++ (L)
+    node[midway,below=-1] {$L_0$};
+  \draw[rod] (\ang:{\xA/cos(\ang)}) --++ (L')
+    node[pos=0.485,above=1] {\contour{mylightblue2}{$L$}};
+  
+  % TRIANGLE
+  \draw[very thick,myred,rounded corners=0.1]
+    (A) -- (B') node[midway,above=0] {\contour{mylightblue2}{$\Delta x'$}}
+        -- (B) node[midway,right=-2] {\contour{myfieldred}{$c\Delta t$}}
+        -- cycle node[pos=0.51,below=-1] {\contour{mylightblue2}{$\Delta x$}};
+  %\fill[myfieldred] (A)++(185:0.089) circle(0.04);
+  %\fill[mydarkred] (A) circle(0.03) node[below=1,left=-2.7] {A};
+  \fill[myfieldred] (A)++(200:0.1) circle(0.04);
+  \fill[mydarkred] (A) circle(0.03) node[below=1,left=-2.3] {\contour{myfieldred}{A}};
+  \fill[mydarkred] (B) circle(0.03) node[below=1,right=0] {\contour{myfieldred}{B}};
+  \fill[mydarkred] (B') circle(0.03) node[above=2,right=-1] {\contour{myfieldred}{B$'$}};
+  
+\end{tikzpicture}
+
+
+
+% SPACETIME DIAGRAM - LENGTH CONTRACTION of moving rod (at rest in S')
+\begin{tikzpicture}[scale=1.8]
+  \message{Length contraction (rod at rest in S')^^J}
+  
+  % AXES
+  \def\Nlines{6} % number of world lines (at constant x/t)
+  \axes
+  
+  % SETTINGS
+  \pgfmathsetmacro\Lz{4*\D} % proper/rest length L0 in S'
+  \pgfmathsetmacro\L{cos(2*\ang)/cos(\ang)*\Lz} % contracted length L in S
+  \coordinate (L) at (\L,0); % rod end in S
+  \coordinate (L') at (\ang:\Lz); % rod end in S'
+  \coordinate (A) at (90-\ang:{3*\d/cos(\ang)}); % point A in triangle
+  \coordinate (B) at ($(A)+(L)$); % point B' in triangle
+  \coordinate (B') at ($(A)+(L')$); % point B in triangle
+  
+  % FILL
+  \begin{pgfonlayer}{back} % draw on back
+    \fill[mylightred]
+      (90-\ang:-\xmin) -- (90-\ang:\xmaxp) --++ (\ang:\Lz) -- (L) --++ (90-\ang:-\xmin) -- cycle;
+  \end{pgfonlayer}
+  \draw[->,thick,mydarkbrown] (L)++(90-\ang:-\xmin) -- (L) -- (L') --++ (90-\ang:\xmaxp+0.2);
+  
+  % ROD
+  \draw[rod] (O) -- (L)
+    node[midway,below=-1] {$L$};
+  \draw[rod] (O) -- (L')
+    node[pos=0.49,above=1] {\contour{mylightred}{$L_0$}};
+  
+  % TRIANGLE
+  \draw[very thick,myred,rounded corners=0.1]
+    (A) -- (B') node[midway,above=0] {\contour{mylightred}{$\Delta x'$}}
+        -- (B) node[midway,right=-2] {\contour{myfieldred}{$c\Delta t'$}}
+        -- cycle node[pos=0.525,below=-1] {\contour{mylightred}{$\Delta x$}};
+  \fill[mydarkred] (A) circle(0.03) node[below=0,left=0] {\contour{white}{A}};
+  \fill[mydarkred] (B) circle(0.03) node[below=1,right=0] {\contour{myfieldred}{B}};
+  \fill[mydarkred] (B') circle(0.03) node[below=0.5,right=-1] {\contour{myfieldred}{B$'$}};
+  
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=2]
+  \message{Invariant hyperboloids with equations^^J}
+
+  \pgfmathsetmacro\ang{atan(0.52)} % angle between x and x' axes
+  \pgfmathsetmacro\d{0.64*\xmax/\Nlines} % grid size
+  \pgfmathsetmacro\D{\d/cos(\ang)/sqrt(1-tan(\ang)^2)} % grid size, boosted
+  \pgfmathsetmacro\Ax{3*\D*sin(\ang)} % x coordinate of event A
+  \pgfmathsetmacro\Ay{3*\D*cos(\ang)} % y coordinate of event A
+  \pgfmathsetmacro\Bx{4*\D*cos(\ang)} % x coordinate of event B
+  \pgfmathsetmacro\By{4*\D*sin(\ang)} % y coordinate of event B
+  \pgfmathsetmacro\st{3*\d} % spacetime interval
+  \pgfmathsetmacro\sx{4*\d} % spacetime interval
+
+  \def\tick#1#2{\draw[thick] (#1) ++ (#2:0.06) --++ (#2-180:0.12)}
+\def\tickp#1#2{\draw[thick,mydarkred] (#1) ++ (#2:0.06) --++ (#2-180:0.12)}
+  
+  % AXES
+  \axes
+  \node[mydarkgreen,below=1] at (\Ax/2,{sqrt((\st)^2+(\Ax/2)^2)}) {$\phi$};
+  \node[mydarkblue,left=1.5] at ({sqrt(\sx^2+(0.54*\By)^2)},0.54*\By) {\contour{white}{$\phi$}};
+  
+  % TICKS
+  \tick{0,\Ay}{0} node[mydarkgreen,above=0,left=-2]
+    {$ct_1\cosh\phi$};
+  \tick{\Ax,0}{90} node[mydarkgreen,right=4,below=-4]
+    {\contour{white}{$ct_1\sinh\phi$}};
+  \tick{\Bx,0}{90} node[mydarkblue,right=8,below=-4]
+    {\contour{white}{$x_1\cosh\phi$}};
+  \tick{0,\By}{0} node[mydarkblue,below=0,left=-2]
+    {$x_1\sinh\phi$};
+  
+  % EVENT LABELS
+  \node[mydarkred,anchor=0,inner sep=3] at (C) {\contour{myfieldred}{R}};
+  \node[mydarkred,below right] at (1.0*\xmax,3.57*\d) {$
+    \begin{aligned}
+      %\mathrm{R} &= (x_1,ct_1) \\
+      %           &= (x_1\cosh\phi-ct_1\sinh\phi,\\[-0.3em]
+      %           &\hspace{1.7em} ct_1\cosh\phi-x_1\sinh\phi)\\
+      \mathrm{R}
+      &=
+      \left\{\begin{aligned}
+        ct &= ct_1 \\
+         x &=  x_1
+      \end{aligned}\right.\\
+      &=
+      \left\{\begin{aligned}
+        ct' &= ct_1\cosh\phi -  x_1\sinh\phi \\
+         x' &=  x_1\cosh\phi - ct_1\sinh\phi
+      \end{aligned}\right.
+    \end{aligned}
+  $};
+  %\node[mydarkred,anchor=-173,inner sep=3] at (C') {\contour{myfieldred}{R$'$}};
+  \node[mydarkred,anchor=167,inner sep=3] at (C') {$
+    \begin{aligned}
+      \mathrm{\contour{myfieldred}{R}}
+      &=
+      \left\{\begin{aligned}
+        ct &= ct_1\cosh\phi +  x_1\sinh\phi \\
+         x &=  x_1\cosh\phi + ct_1\sinh\phi
+      \end{aligned}\right.\\
+      &=
+      \left\{\begin{aligned}
+        ct' &= ct_1 \\
+         x' &=  x_1
+      \end{aligned}\right.
+    \end{aligned}
+  $};
+  
+\end{tikzpicture}
+
+
+
+% SPACETIME DIAGRAM - INVARIANT HYPERBOLOIDS with equations 2
+\begin{tikzpicture}[scale=2]
+  \message{Invariant hyperboloids with equations 2^^J}
+  
+  % AXES
+  \axes
+  
+  % TICKS
+  \tick{0,\Ay}{0} node[mydarkgreen,above=0,left=-2]
+    {$\gamma ct_1$};
+  \tick{\Ax,0}{90} node[mydarkgreen,right=1,below=-1]
+    {\contour{white}{$\gamma\beta ct_1$}};
+  \tick{\Bx,0}{90} node[mydarkblue,right=0,below=-1]
+    {\contour{white}{$\gamma x_1$}};
+  \tick{0,\By}{0} node[mydarkblue,below=0,left=-2]
+    {$\gamma\beta x_1$};
+  
+  % EVENT LABELS
+  \node[mydarkred,anchor=0,inner sep=3] at (C) {\contour{myfieldred}{R}};
+  \node[mydarkred,below right] at (1.0*\xmax,3.57*\d) {$
+    \begin{aligned}
+      \mathrm{R}
+      &=
+      \left\{\begin{aligned}
+        ct &= ct_1 \\
+         x &=  x_1
+      \end{aligned}\right.\\
+      &=
+      \left\{\begin{aligned}
+        ct' &= \gamma(ct_1 - \beta  x_1) \\
+         x' &= \gamma( x_1 - \beta ct_1)
+      \end{aligned}\right.
+    \end{aligned}
+  $};
+  %\node[mydarkred,anchor=-173,inner sep=3] at (C') {\contour{myfieldred}{R$'$}};
+  \node[mydarkred,anchor=167,inner sep=3] at (C') {$
+    \begin{aligned}
+      \mathrm{\contour{myfieldred}{R}}
+      &=
+      \left\{\begin{aligned}
+        ct &= \gamma(ct_1 + \beta  x_1) \\
+         x &= \gamma( x_1 + \beta ct_1)
+      \end{aligned}\right.\\
+      &=
+      \left\{\begin{aligned}
+        ct' &= ct_1 \\
+         x' &=  x_1
+      \end{aligned}\right.
+    \end{aligned}
+  $};
+  
+\end{tikzpicture}
+
+
+
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
