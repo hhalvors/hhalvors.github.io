@@ -315,6 +315,29 @@ main = hakyllWith config $ do
           "courses/phi201_f2025/course.yaml"
           "templates/precepts-list.html"
           >>= loadAndApplyTemplate "templates/course-base.html" ctx
+          >>= relativizeUrls
+
+    -- ============================================================
+-- PHI 338 (Fall 2014) — legacy course: syllabus + lecture handouts
+-- ============================================================
+
+    match "courses/phi338_f2014/index.md" $ do
+      route $ setExtension "html"
+      compile $ do
+        ctx <- courseBaseCtx "courses/phi338_f2014" "home"
+        pandocCompiler
+          >>= loadAndApplyTemplate "templates/course-home.html" ctx
+          >>= loadAndApplyTemplate "templates/course-base.html" ctx
+          >>= relativizeUrls
+
+    match "courses/phi338_f2014/lectures.md" $ do
+      route $ setExtension "html"
+      compile $ do
+        ctx <- courseBaseCtx "courses/phi338_f2014" "lectures"
+        compileLecturesFromCourseYaml
+          "courses/phi338_f2014/course.yaml"
+          "templates/lectures-grid.html"
+          >>= loadAndApplyTemplate "templates/course-base.html" ctx
           >>= relativizeUrls      
 
     match ("courses/**.md" .&&. complement "courses/phi201_f2025/index.md") $ do
