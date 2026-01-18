@@ -1,0 +1,355 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage{outlines}
+\usepackage{amsfonts}
+\usepackage{fullpage}
+\usepackage{url}
+\renewcommand{\emph}{\textbf}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+\begin{document}
+
+\section*{Lecture 21: Special relativity}
+
+\subsection*{Outline of philosophical issues}
+
+\begin{outline}[enumerate]
+
+\1 presentism versus eternalism (Putnam's argument)
+
+\1 the twin paradox
+
+\1 Lorentz contraction and four-dimensional objects
+
+\1 suprise issue 
+
+
+
+% \1 Relativity of simultaneity: does it profoundly change our view of
+% time?
+
+% \2 Presentism versus Eternalism
+
+% \2 Free Will versus Fatalism
+
+
+
+% \1 Three philosophical interpretations of STR
+
+% \2 Four dimensional universe (Minkowski, Einstein, Ted Sider, Yuri
+% Balashov)
+
+% \2 Neo-Lorentzian (W.L. Craig, Bohmians): there actually is a
+% preferred frame of reference, even if it is impossible for us to
+% detect it
+
+% \2 Fragmentalism (Kit Fine)
+
+
+% %% Rovelli neither presentism nor eternalism
+
+
+% \1 Is the fundamental ontology of the universe $3$ or $4$ dimensional?
+
+
+% \1 How are we supposed to think of the frame-relative descriptions
+% versus the four-dimensional model? 
+
+
+% \1 Does spacetime geometry explain physical states of affairs? (Should
+% we think of spacetime as a thing in the causal order?)
+
+% %% Lorentz contraction 
+
+% %% Brown and Timpson, glorious non-entity
+
+% %% Bell spaceship
+
+
+% \1 Should physical theories proceed constructively, from existence
+% claims to principles?
+
+% %% Principle versus constructive theories
+
+\end{outline}
+
+\subsection*{Intuition pumps}
+
+\begin{outline}[enumerate]
+
+\1 Constancy of the speed of light in all reference frames
+
+\2 One way speed (addition of velocities)  
+
+\2 Round trip speed  
+
+% \1 Lorentz contraction and dilation
+
+% \1 Time dilation
+
+\1 Relativity of simultaneity 
+
+\end{outline}
+
+
+
+\subsection*{The geometry of simultaneity}
+
+light cones $\Leftrightarrow$ null tangent vector
+
+inertial trajectory $\Leftrightarrow$ timelike tangent vector
+
+Minkowski metric and orthogonality
+
+spacelike hypersurface $\Leftrightarrow$ spacelike tangent vector
+
+constancy of the speed of light $c=1$
+
+? hyperbolic angles
+
+
+\newpage 
+
+\subsection*{Putnam's argument for eternalism}
+
+\begin{outline}[enumerate]
+
+\1 Conclusion: ``\dots contingent statements about future events
+already have a truth value'' (p 247)
+
+``\dots the notion of being `real' turns out toe be coextensive with
+the \textit{tenseless} notion of existence''
+
+\1 Assumptions from common sense
+
+\2 I-now am real 
+
+\2 Two people A and B can move past each other
+
+\2 There are no privileged observers (democracy of reference frames)
+
+If A takes B to be real, and B takes X to be real, then A should take
+X to be real
+
+If A takes B to be just as reliable as himself, and if B currently (in
+A's frame of reference) believes that ``the event X has occurred'',
+then A should believe that ``the event X has occurred''
+
+\1 Putnam's construction
+
+\2 Let A and B be located at the same place, but have velocity
+vectors that are not parallel 
+
+\2 There is an X such that:
+
+\3 B should take X to be real (since X lies in the simultaneity
+surface for B)
+
+\3 X lies in the future of the simultaneity surface for A
+
+\2 So there is an X that is in the future for A, but that A
+should judge as real
+
+
+\1 Ways out from Putnam's conclusion
+
+Treat all spacelike separated events as vaguely ``now''
+
+
+
+\1 Modified version of Putnam's construction
+
+Consider two observers A and B such that B lies on A's
+simultaneity surface, and such that the instantaneous velocity vectors
+of A and B are not parallel
+
+In this case, there is an event X that lies on B's simultaneity
+surface, and such that X is in the \underline{causal future} of A
+
+
+\1 Responses to Putnam
+
+\2 Neo-lorentzian
+
+There is a preferred frame of reference
+
+\2 Howard Stein
+
+\3 ``Now'' for me is my past lightcone
+
+\3 ``Now'' for me is a point
+
+\2 Momentum and context 
+
+Statements are made in a context
+
+Context includes state of motion
+
+\end{outline}
+
+\subsection*{Points for discussion}
+
+\begin{itemize}
+\item Are there (objective) facts about which events are simultaneous?
+  \begin{itemize}
+  \item Can it be objectively true that X and Y are simultaneous relative to A?
+  \end{itemize}
+\item ``\ldots the problem of the reality and the determinateness of
+  future events is now solved. Moreover, it is solved by physics and
+  not by philosophy. We have learned that we live in a
+  four-dimensional and not a three-dimensional world'' (p 247)
+
+\end{itemize}
+
+\small
+
+\textbf{More literature on this topic}
+\begin{itemize}
+\item C.W. Rietdijk, ``A rigorous proof of determinism derived from
+  the special theory of relativity''
+\item H. Stein, ``On Minkowski spacetime''
+\item H. Stein, ``On relativity theory and the openness of the
+  future''
+\item T. Sider, \textit{Four Dimensionalism: An Ontology of
+    Persistence and Time}
+\item M. Hinchliff, ``A defense of presentism in a relativistic
+  setting''
+\item S. Saunders, ``How relativity contradicts presentism''
+\item C. Rovelli, ``Neither presentism nor eternalism''
+\item H. Halvorson, ``Momentum and context''
+\item A. Ney, \textit{Metaphysics}
+\end{itemize}
+
+\end{document}
+
+
+
+
+
+\begin{outline}[enumerate]
+
+\1 Minkowski spacetime $M$ is an $n$-dimensional (with $n\geq 2$)
+  \emph{affine space}, equipped with a Lorentzian metric
+
+\2 There is an $n$-dimensional vector space $V$, and for any two points
+  $p,q\in M$, there is a vector $\overline{pq}\in V$.
+
+\2 There is an inner product $\eta :V\times V\to\mathbb{R}$. The
+vector space $V$ can be divided (in many ways!) into a
+three-dimensional subspace on which $\eta$ is negative-definite and an
+orthogonal subspace on which $\eta$ is positive-definite
+
+\2 We say that $u\in V$ is \emph{timelike} if $\eta (u,u)>0$
+
+\2 We say that $u\in V$ is \emph{spacelike} if $\eta (u,u)<0$
+
+\2 We say that $u\in V$ is \emph{lightlike} or \emph{null} if
+$\eta (u,u)=0$
+
+\2 We say that $u\in V$ is \emph{causal} if $\eta (u,u)\geq 0$
+
+\1 For any $p,q\in M$, we say that $p$ is timelike related to $q$ just
+in case $\overline{pq}$ is timelike. We define spacelike and lightlike
+similarly
+
+
+\1 Given $p\in M$, the set of points that are causally related to $p$
+consists of two subsets whose intersection is $p$. We label on of
+these subsets as $F_p$ and the other as $B_p$. We call these sets the
+\emph{lightcones} based at $p$
+
+The interior of $F_p$ is called the \emph{causal future} of $p$
+
+The interior of $B_p$ is called the \emph{causal past} of $p$ 
+
+
+\1 An \emph{inertial trajectory} is represented by a line $\alpha$ in
+$M$ that always stays within the light cone (i.e.\ trajectories of
+material bodies are never as fast as light)
+
+\dots which is generated by a pair $(p,u)$ where $p\in M$ and $u$ is a
+timelike vector in~$V$
+
+
+
+\1 Simultaneity slices: Given $p\in M$ and $u$ a timelike vector in
+$V$, the set
+\[ (p,u)^\perp \: = \: \{ q\in M:\eta (u,\overline{pq})=0 \} \]
+is a three-dimensional subspace of $M$
+
+
+\1 Relativity of simultaneity: if $v$ is between $u$ and a null vector
+$w$, then $(p,v)^\perp$ is between $(p,u)^\perp$ and $w$
+
+
+\1 Coordinate systems
+
+Let $p\in M$ and $u\in V$, and fix an orthonormal basis
+$(e_1,e_2,e_3)$ of $u^\perp$. Then for any vector $v\in V$, there is a
+unique quadruple $(t,a_1,a_2,a_3)$ of real numbers such that
+\[ v = tu+a_1e_1+a_2e_2+a_3e_3 .\] We may then define a coordinate
+chart $\phi :M\to\mathbb{R}^4$ by setting
+$\phi (p+v)=(t,a_1,a_2,a_3)$, for each $v\in V$. Since for each
+$q\in M$, there is a unique $v\in V$ such that $p+v=q$, it follows
+that $\phi$ is defined on all of $M$.
+
+Fact: The set $u^\perp$ has coordinates of the form
+$(0,a_1,a_2,a_3)$. i.e.\ the events that are \emph{simultaneous} for
+an observer at $p$ with velocity $u$.
+
+
+\end{outline}
+
+\subsection*{Putnam's argument for eternalism}
+
+\begin{outline}[enumerate]
+
+\1 Assumptions from common sense
+
+\2 A-now is real
+
+\2 Two people A and B can be at roughly the same place, but with
+different states of motion
+
+\2 There are no privileged observers
+
+If A should take B to be real, and B should take X to be real,
+then A should take X to be real
+
+If A believes that B exists, and A believes that B correctly
+asserts that ``the event X has occurred'', then A should believe
+that X has occurred
+
+\1 Putnam's construction
+
+\2 Let A and B be located at the same place, but have velocity
+vectors that are not parallel 
+
+\2 There is an X such that:
+
+\3 B should take X to be real (since X lies in the simultaneity
+surface for B)
+
+\3 X lies in the future of the simultaneity surface for A
+
+\2 So there is an X that is in the future for A, but that A
+should judge as real
+
+
+
+\1 Modified version of Putnam's construction
+
+Consider two observers A and B such that B lies on A's
+simultaneity surface, and such that the instantaneous velocity vectors
+of A and B are not parallel
+
+In this case, there is an even X that lies on B's simultaneity
+surface, and such that X is in the \emph{causal future} of A 
+
+
+\end{outline}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
