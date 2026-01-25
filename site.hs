@@ -338,7 +338,49 @@ main = hakyllWith config $ do
           "courses/phi338_f2014/course.yaml"
           "templates/lectures-grid.html"
           >>= loadAndApplyTemplate "templates/course-base.html" ctx
-          >>= relativizeUrls      
+          >>= relativizeUrls
+
+-- ============================================================
+-- PHI 327 (Spring 2020)
+-- ============================================================
+
+    match "courses/phi327_s2020/index.md" $ do
+      route $ setExtension "html"
+      compile $ do
+        ctx <- courseBaseCtx "courses/phi327_s2020" "home"
+        pandocCompiler
+          >>= loadAndApplyTemplate "templates/course-home.html" ctx
+          >>= loadAndApplyTemplate "templates/course-base.html" ctx
+          >>= relativizeUrls
+
+    match "courses/phi327_s2020/lectures.md" $ do
+      route $ constRoute "courses/phi327_s2020/lectures.html"
+      compile $ do
+        ctx <- courseBaseCtx "courses/phi327_s2020" "lectures"
+        compileLecturesFromCourseYaml
+          "courses/phi327_s2020/course.yaml"
+          "templates/lectures-grid.html"
+          >>= loadAndApplyTemplate "templates/course-base.html" ctx
+          >>= relativizeUrls
+
+    match "courses/phi327_s2020/assignments.md" $ do
+      route $ constRoute "courses/phi327_s2020/assignments.html"
+      compile $ do
+        ctx <- courseBaseCtx "courses/phi327_s2020" "assignments"
+        pandocCompiler
+          >>= loadAndApplyTemplate "templates/course-base.html" ctx
+          >>= relativizeUrls
+
+    match "courses/phi327_s2020/resources.md" $ do
+      route $ constRoute "courses/phi327_s2020/resources.html"
+      compile $ do
+        ctx <- courseBaseCtx "courses/phi327_s2020" "resources"
+        pandocCompiler
+          >>= loadAndApplyTemplate "templates/course-base.html" ctx
+          >>= relativizeUrls
+
+---- end of course block
+      
 
     match ("courses/**.md" .&&. complement "courses/phi201_f2025/index.md") $ do
       route $ setExtension "html"

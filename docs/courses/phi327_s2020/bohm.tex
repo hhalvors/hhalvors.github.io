@@ -1,0 +1,262 @@
+
+\documentclass[12pt,fleqn]{article}
+\usepackage{amsfonts,amssymb,amsthm,amsmath}
+\title{Bohmian Mechanics}
+\author{Hans Halvorson}
+\date{\today}
+\usepackage{tikz}
+\usepackage{url}
+\usepackage{natbib}
+
+\newcommand{\bh}{\mathbf{B}(\mathcal{H})}
+\newcommand{\bk}{\mathbf{B}(\mathcal{K})}
+
+\newcommand{\2}{\mathcal}      
+
+\renewcommand{\emph}{\textbf}
+
+\newcommand{\vp}{\varphi}
+
+% \newcommand{\b}[1]{\mathbf{#1}}
+
+
+\newcommand{\Ex}{\mathcal{E}}
+
+\newcommand{\7}[1]{\mathbb{#1}}
+
+\swapnumbers
+
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}[prop]{Theorem}
+\newtheorem{lemma}[prop]{Lemma}
+\newtheorem*{bellthm}{Bell's Theorem}
+\theoremstyle{definition}
+\newtheorem*{fact}{Fact}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{question}{Question}
+\newtheorem{exercise}{Exercise}
+\newtheorem*{disc}{Discussion}
+
+% \usepackage{dsfont}
+
+
+%% TO DO explain: it's possible to have a non-local theory with commutative
+%% algebras
+
+%% separable and non-separable states
+
+%% TO DO: explain how the Bell inequality could be violated in
+%% classical physics
+
+%% TO DO: Werner states
+
+\newcommand{\ke}[1]{|#1\rangle}
+ \newcommand{\ket}[1]{|#1\rangle}
+
+\newcommand{\singa}{\ensuremath{\varphi _{+z}\otimes \varphi _{-z}}}
+\newcommand{\singb}{\ensuremath{\varphi _{-z}\otimes \varphi _{+z}}}
+\newcommand{\s}[1]{\varphi _{#1}}
+
+\begin{document}
+
+%% TO DO: primitive ontology
+
+%% contextuality
+
+%% momentum
+
+%% status of the wavefunction
+
+\maketitle
+
+In 1952, a young Princeton physicist named David Bohm discovered a new
+theory whose predictions match, for all practical purposes, those of
+standard quantum mechanics.  (I add ``for all practical purposes'' for
+those who doubt that standard QM makes clear predictions.)  What's
+more, defenders of Bohmian mechanics claim that this new theory has
+none of the drawbacks of standard QM: it doesn't treat ``measurement''
+as a primitive, it doesn't require violations of Schr{\"o}dinger's
+equation, it has a clear ontology (i.e.\ local beables), it has a
+deterministic equation of motion, etc.
+
+In the past, opponents of Bohmian mechanics often dismissed it on the
+basis that it is a ``metaphysical addition'' to QM, i.e.\ it adds new
+entities without adding predictive power, therby violating Ockham's
+razor.  However, that style of criticism has fallen out of fashion
+along with other radical forms of empiricism that were popular in the
+twentieth century.  Defenders of Bohmian mechanics will say that it's
+not an addition to an already well defined theory (QM), but that Bohm
+finally gave us a theory does the explanatory work that QM was
+supposed to do.  What's more, they'll say, Bohm's theory doesn't call
+for a radical reconceptualization of the human epistemic predicament
+(as Bohr suggests), nor does it call for a radical rethinking of the
+nature of personal identity (as Everett requires), nor does it call
+for rejection of the Schr{\"o}dinger equation (as GRW requires).
+
+The purpose of this chapter is to assess the extent to which Bohmian
+mechanics can live up to these promises.  Now that radical empiricist
+critiques of Bohm are out of fashion, the next main complaint about
+Bohm is that it's nonlocal, and hence conflicts with relativity
+theory.  Bohmians have an answer.  They claim that Bell's theorem
+shows that any empirically adequate theory will be nonlocal.  They
+have also argued (persuasively, I think) that Bohmian mechanics is
+consistent with the empirical predictions of relativity theory.  So,
+there's no easy argument from locality to not-Bohm.
+
+In this chapter, I'll focus primarily on other issues with Bohmian
+mechanics.  In particular, I will focus on the motivation behind
+Bohmian mechanics, and whether what it gives us in the end is really
+better than the alternatives.
+
+\section{The preferred quantity}
+
+Consider again the example from earlier in the course.  There are two
+boxes, one labelled $L$ and one labelled $R$, and there is a marble
+that we place into one of the boxes.  Let $\ket{L}$ be the state where
+the marble is in the left box and let $\ket{R}$ be the state where the
+marble is in the right box.  In addition to these two states, we have
+the state $\ket{0}$, in which the marble is stationary, and the state
+$\ket{1}$ in which the marble is moving.  We stipulate the following
+relations (which are the structural relations between position and
+momentum in any quantum system):
+\begin{eqnarray*} \ket{0} & = & \tfrac{1}{\sqrt{2}}\left(
+    \ket{L}+\ket{R} \right)
+                                ,\\
+  \ket{1} & = & \tfrac{1}{\sqrt{2}}\left( \ket{L}-\ket{R} \right)
+                .\end{eqnarray*} The basic idea behind Bohmian
+mechanics, in a quick snapshot, is that we described the states
+$\ket{0}$ and $\ket{1}$ in the wrong way.  We said that $\ket{0}$ is
+the state in which ``the marble is stationary.''  But why say that?
+After all, the marble is stationary just in case it stays in the same
+box from one moment to the next.  So we don't need any additional
+states besides $\ket{L}$ and $\ket{R}$.  Sure, the vectors $\ket{0}$
+and $\ket{1}$ are in the Hilbert space, but the question is what they
+mean {\it qua} states.  The Bohmian proposal is that $\ket{0}$ and
+$\ket{1}$ should be interpreted as probability distributions over the
+space $\{ \ket{L},\ket{R} \}$.  In particular, both $\ket{0}$ and
+$\ket{1}$ correspond to the flat distribution that assigns $0.5$ to
+both $\ket{L}$ and $\ket{R}$.  (That might make $\ket{0}$ and
+$\ket{1}$ seem like the same state.  But we will see later that $\ket{0}$ and
+$\ket{1}$ have different dynamical properties.)
+
+The move we just made can be generalized.  In any quantum system where
+there is a well-behaved position operator $Q$, the Hilbert space $\2H$
+is isomorphic to a space of functions $L(X)$, where $X$ is the set of
+values that $Q$ can take.\footnote{I am oversimplifying here.
+  Typically there will be several position operators, three for each
+  particle.}  Thus, any state $\psi\in\2H$ can be {\it interpreted} as
+a probability distribution over $X$, and that's exactly what the
+Bohmian does.  The Bohmian treats the quantity $Q$ as privileged in
+the sense that (1) $Q$ always has a definite value, and (2) every
+state should be interpreted as a probability distribution over $Q$
+values.
+
+Bohmian mechanics is often described as a {\it hidden variable
+  theory}, but that is misleading in a couple of ways.  First, it's
+misleading from a mathematical point of view, because Bohmian
+mechanics does not add new states to the formalism of QM.  Notice how
+we described the situation above: the states of the marble are just
+$\ket{L}$ and $\ket{R}$.  There was no need to supplement with any
+further states.  Second, it's misleading from an epistemic point of
+view to describe Bohmian mechanics as a hidden variable theory,
+because the variables aren't hidden.  In fact, the states $\ket{L}$
+and $\ket{R}$ are the opposite of hidden: they are what we see.
+
+If interpreting states as distributions over positions were all there
+were to Bohmian mechanics, then it could have been discovered by
+anyone who understood Hilbert space.  But there is more to Bohmian
+mechanics.  The genuinely new thing that Bohm discovered is a
+``sub-dynamics'' on the position eigenstates.  Here's what I mean by a
+sub-dynamics:
+
+Suppose that the quantum-mechanical time evolution is represented by a
+family of unitary operators $U_t$, where $t$ is a real-number
+parameter.  In other words, as time ticks from $t$ to $t'$, the
+quantum state changes from $U_t\psi$ to $U_{t'}\psi$.  Then typically
+a position eigenstate such as $\ket{L}$ will be transformed by $U_t$
+to something that is not a position eigenstate, say
+\[ U_t\ket{L} \: = \: \tfrac{1}{\sqrt{2}}\left(\ket{L}+\ket{R} \right)
+  .\] But that doesn't make any sense as a genuine change of the way
+things are, because the superposition state on the right is not a
+``way things are.''  The superposition state on the right represents
+our ignorance of the way things are.
+
+Now Bohm responds to this challenge not by adding something new to the
+formalism of QM, but essentially by allowing there to be two states.
+The first state can be called the \emph{value state}, and it must be
+an element of the set $\{ \ket{L} ,\ket{R} \}$.  The second state can
+be called the \emph{wavefunction}, and it can be any element of $\2H$.
+The quantum dynamical evolution $U_t$ is only applied to the
+wavefunction.  Bohm's big discovery was finding a second dynamical law
+that applies to the value state and that meshes nicely with the first
+dynamical law.
+
+The one tricky thing about Bohm's second dynamical law is that it
+depends on {\it both} the present value state and the wavefunction.
+In other words, the future value state $\ket{j}$ is a function of the
+present value state $\ket{i}$ and the present wavefunction $\psi$.
+This is the reason that the wavefunction is sometimes called the
+``pilot wave'' and the corresponding dynamical law is called the
+``guiding equation.''
+
+\section{Missing quantities}
+
+What then are the challenges for Bohmian mechanics?  The first
+challenge is to explain the utility of the quantum-mechanical
+formalism, in particular the fact that operators (such as $P$) appear
+to represent quantities (such as momentum) that occasionally have
+values.  Unfortunately, momentum itself is not the best example to
+start with.  It's tempting to think that momentum is nothing but
+velocity times mass, and velocity is nothing more than a description
+of position over time, and hence, if one has positions at all times,
+then one automatically has velocities.  This also might tempt you to
+think that there is nothing to explain vis-a-vis momentum, because to
+measure momentum one just measures a series of positions.  So let's
+start with a different example.
+
+Consider a two-dimensional Hilbert space with spin-$z$ and spin-$x$
+operators.  Suppose that we prefer spin-$z$ in the way that Bohmians
+prefer position: at each time, the particle has value state either
+$\ket{z+}$ or $\ket{z-}$, and its quantum state (i.e.\ wavefunction)
+$\psi$ happens to give the best guess (prior to measurement) of what
+this value state is.  Now suppose that we ``measure'' spin-$x$ and the
+particle comes out up.  How are we supposed to understand what just
+happened?  And how should we explain the fact that if we immediately
+measure spin-$x$ again, we will get the same value?
+
+Notice, in fact, that Bohm violates the EPR reality criterion at
+precisely this point.  We can predict with certainty that spin-$x$
+will have a value, but there Bohm says that there is no corresponding
+element of reality!  I myself don't take this to be a damning feature
+of Bohm, at least not if we can explain our predictive ability in
+terms of the behavior of the fundamental elements of reality (in this
+case, the values of spin-$z$).
+
+
+
+
+
+
+
+
+
+
+\nocite{bohm-sep}
+
+\nocite{daumer}
+
+
+\bibliographystyle{chicago}
+
+\bibliography{/Users/hhalvors/teaching/phi327_s2020/qbib}
+
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

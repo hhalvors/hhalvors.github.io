@@ -1,0 +1,1403 @@
+%% TO DO: Is the singlet state invariant under all local unitaries?
+%% Yes, it must be, because the reduced state is tracial.  
+
+%% TO DO: claim - if state a is a component of state b, then a has leq
+%% dispersion
+
+%% TO DO: notion of a partial state (see Christensen)
+
+%% TO DO: quantum teleportation
+
+%% TO DO: no cloning
+
+\documentclass[12pt,fleqn]{article}
+\sloppy
+% \usepackage{fullpage}
+\usepackage{outlines}
+\usepackage{soul}
+\usepackage{enumitem} 
+% \setlength{\parskip}{1em}
+% \setlength{\parindent}{0em}
+% \usepackage{setspace}
+% \spacing{2}
+\usepackage{url}
+\usepackage{tabu}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{tikz-3dplot}
+\usepackage{mathtools}
+
+
+\newcommand{\zu}{|z+\rangle}
+\newcommand{\zd}{|z-\rangle}
+
+\newcommand{\xu}{|x+\rangle}
+\newcommand{\xd}{|x-\rangle}
+
+\newcommand{\ke}[1]{|#1\rangle}
+ \newcommand{\ket}[1]{|#1\rangle}
+
+
+
+\usepackage{amsthm,amsmath,amsfonts}
+\swapnumbers
+\newtheorem*{fact}{Fact}
+\newtheorem*{spec}{Spectral Theorem}
+\newtheorem{thm}{Theorem}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem*{exercise}{Exercise}
+\newtheorem*{defn}{Definition}
+\newtheorem*{convention}{Convention}
+\newtheorem*{example}{Example}
+\title{Phil Physics: Week 5}
+\date{}
+
+\usepackage{natbib}
+
+\renewcommand{\emph}{\textbf}
+
+\newcommand{\7}[1]{\mathbb{#1}}
+\newcommand{\spc}[1]{\mathrm{sp}(#1)}
+
+
+\begin{document}
+\maketitle
+
+\section*{Review}
+
+Let's return to the map of ``different places where quantum weirdness
+might be located.''  We've already talked about superposition (a
+relation on quantum states), and a little bit about entangled states.
+Last week with Alex you talked about what many people think is the
+absolute most central problem of QM: the measurement problem.  Let's
+begin with a short discussion of how you assess the relation between
+the measurement problem and the previous two issues.
+
+Cards on the table: I myself am somewhat puzzled that people put so
+much weight on the measurement problem.  Here's a question: can you
+imagine a quantum world in which there were no observers whatsoever
+--- where, by definition, there can be no measurement problem?  How
+would you understand superpositions in this world?  How would you
+understand entangled states in this world?  Do you think that
+\textit{those} questions are easy to answer, but that there's
+something mysterious about what happens during measurements?  My
+feeling is that once you've done all the work to understand how
+quantum theory could be true in a world without observers, then it
+won't be an additional huge challenge to understand how quantum theory
+could be true in a world with observers.  In other words, I would
+suggest that there is a problem that comes up \textit{before} the
+measurement problem: how to understand superpositions and entangled
+states.  (For further reflection: what would it mean to understand
+superpositions and entangled states?)
+
+\section*{Hidden variables}
+
+The subject this week (and, to some degree, next week) are the famous
+``no hidden variables theorems.''  Some people think that these
+theorems are deeply significant, i.e.\ they tell us something
+important about the quantum world.  Other people think that these
+theorems are massively overrated, and indeed misleading.  To be
+honest, I've never seen a good \textit{argument} for either one of
+those views.  I think it's a matter of taste --- and I happen to be
+among those who find these theorems to be illuminating.
+
+\subsection*{Historical overview}
+\begin{description}
+\item[1932] First NHV theorem proven by John von Neumann \citep{vn}
+\item[1935] Von Neumann's proof criticized by philosopher-physicist
+  Grete Hermann \citeyearpar{hermann}.  Unfortunately, Hermann was
+  largely ignored.
+\item[1952] David Bohm constructs a hidden variable model, seemingly
+  in contradiction with von Neumann's result.  (Some would say that
+  Bohm rediscovered Louis De Broglie's theory, and there are strong
+  similarities between Bohm's views and the views of Schr\"odinger.)
+\item[1957] Mackey conjectures and Gleason proves: when
+  $\dim H\geq 3$, every probability measure on subspaces (projections)
+  is represented by a quantum state. \citep{gleason}
+\item[1964--66] John Bell criticizes von Neumann's proof; introduces
+  idea of contextual hidden variables; proves no local hidden
+  variables theorem (i.e.\ derivation of Bell inequality); uses
+  Gleason's theorem to derive a result equivalent to the
+  Kochen-Specker theorem
+\item[1967] Kochen and Specker prove a NHV theorem without linearity
+  assumption \citep{ks}
+\item[1972--2018] Bell tests, see
+  \url{https://en.wikipedia.org/wiki/Bell_test_experiments}
+\item[1988] ``The von Neumann proof, if you actually come to grips
+  with it, falls apart in your hands! There is nothing to it.  It's
+  not just flawed, it's silly!  \dots When you translate [his
+  assumptions] into terms of physical dispositions, they're
+  nonsense. You may quote me on that: The proof of von Neumann is not
+  merely false but foolish!'' \citep{bell1988}
+\item[1993] ``Many generations of graduate students who might have
+  been tempted to try to construct hidden-variables theories were
+  beaten into submission by the claim that von Neumann, 1932, had
+  proved that it could not be done.  \ldots A third of a century
+  passed before John Bell, 1966, rediscovered the fact that von
+  Neumann's nohidden-variables proof was based on an assumption that
+  can only be described as silly---so silly, in fact, that one is led
+  to wonder whether the proof was ever studied by either the students
+  or those who appealed to it to rescue them from speculative
+  adventures.'' \citep{mermin1993}
+\item[2006] Conway-Kochen free will theorem \citep{conway}
+\end{description}
+
+
+
+\subsection*{Framework assumptions}
+
+To clarify one thing: you cannot prove any mathematical theorem
+without adopting a mathematical framework.  You've got to make some
+assumptions about what mathematical things will be used to represent
+things like: propositions, properties, truth-values, states,
+probabilities, etc.
+
+The NHV theorems we will look at fall under one of the following two
+frameworks.
+\begin{enumerate}
+\item Logical: show that we cannot simultaneously assign truth values
+  to all propositions that can (at some time or other) be asserted
+  about a quantum system.
+\item Algebraic: show that we cannot simultaneously assign
+  dispersion-free expectation values to all quantities that (at some
+  time or other) a system can have.
+\end{enumerate}
+
+For many of you in this class --- e.g.\ philosophy concentrators ---
+the logical result will be easier to understand.  However, the logical
+framework is farther away from the actual formalism that physicist
+use.  So here is how I will proceed.  I will first explain the result
+in the algebraic framework.  During this part, you philosophy types
+shouldn't worry if you have trouble following step by step.  Then I'll
+explain how the algebraic result translates into a logical result, and
+that's when everybody needs to pay close attention again.
+
+\section*{Quantities and states}
+
+What we know so far:
+\begin{enumerate}
+  \item Quantum \emph{states} are represented by vectors in some
+    space $H$.  These states can be superposed.
+  \item A \emph{quantity} is represented by an assignment of real
+    numbers to orthonormal basis of vectors.  For example, spin-$z$ is
+    represented by an assignment of $+1$ to one vector, and $-1$ to an
+    orthogonal vector.  (Note: people often call these
+    \emph{observables} instead of quantities.)  The numbers here are
+    the possible values that the quantity can take.
+  \item With the above two conventions, the Born rule tells us how to
+    compute, for any given quantum state, and for any given quantity,
+    the probability that quantity will have a certain value in that
+    quantum state.
+  \end{enumerate}
+
+We're now going to explain a second way of thinking about
+quantities, which is captured by the following correspondence:
+
+\bigskip \noindent \begin{tabular}{| p{3.3cm} | p{6cm} | p{4cm} |}
+  \hline quantity \newline (aka observable) & assignment of real numbers to an orthonormal set
+                    of vectors & self-adjoint linear \newline operator
+           \\ \hline
+                     property \newline (aka proposition) & subspace of
+                               Hilbert space & projection operator \\ \hline
+                     state & assignment of expectation values to
+                             quantities & density operator
+                                                                       \\
+                     \hline \end{tabular}
+
+\bigskip \noindent Under this correspondence, the orthonormal basis of a
+quantity are the \emph{eigenvectors} of the operator, and the assigned
+real numbers are the \emph{eigenvalues} of the operator.
+
+So now for some precise definitions.
+
+\begin{defn} Let $H$ and $K$ be vector spaces.  A \emph{linear
+    operator} $A:H\to K$ is a function such that $A(x+y)=Ax+Ay$ and
+  $A(\lambda x)=\lambda Ax$, for all $x,y\in H$ and for all
+  $\lambda \in\mathbb{C}$.  \end{defn}
+
+Here we're using complex numbers $\mathbb{C}$ for our scalars.
+
+\begin{exercise} Given linear operators $A:H\to K$ and $B:H\to K$,
+  define $A+B$ to be the function that assigns $Ax+Bx$ to $x$.  Show
+  that $A+B$ is a linear operator.  Similarly, for
+  $\lambda\in \mathbb{C}$, define $(\lambda A)x=\lambda (Ax)$, and
+  show that $\lambda A$ is a linear operator.  It's straightforward
+  to verify that $L(H,K)$ is itself a vector space.  \end{exercise}
+
+For the next result, we need to make use of the following fact: if $x$
+and $y$ are unit vectors, then $\langle y,x\rangle =1$ iff $x=y$.  For
+the ``only if'' part, note first that $x=\langle y,x\rangle y+z$,
+where $z$ is a vector such that $\langle y,z\rangle =0$, and
+$|\langle y,x\rangle |^2+\| z \|^2=1$.  (Here $z$ is the projection of
+$x$ onto the subspace orthogonal to $y$.)  Hence, if
+$\langle y,x\rangle =1$, then $z=0$ and $x=y$.
+
+\begin{thm} Let $H$ be a finite-dimensional inner product space.  For
+  each $y\in H$, then the equation $\varphi _y(x)=\langle y,x\rangle$
+  defines a linear functional $\varphi _y$ on $H$.  Moreover, each
+  linear functional on $H$ arises, in this way, from a unique element
+  $y\in H$. \label{fubar} \end{thm}
+
+\begin{proof} The first claim follows immediately from the fact that
+  the inner product is linear in the second argument.  For the second
+  claim, let $\varphi :H\to \mathbb{C}$ be a linear functional.  If
+  $\varphi (x)=0$ for all $x\in H$, then the result follows with
+  $y=0$.  So suppose that $\varphi (x)\neq 0$ for some $x\in
+  H$.  Let $K$ be the kernel of $\phi$, i.e.\ the subspace of vectors
+  $x\in H$ such that $\phi (x)=0$.  Since $\phi$ isn't constantly
+  zero, $K\neq H$, and $K^\perp$ is nonempty.  Let $u$ be a unit
+  vector in $K^\perp$, and note that
+  \[ \varphi \left( \varphi (u)x-\varphi (x)u \right) \: = \: 0 , \]
+  for each $x\in H$.  Hence, $\phi (u)x-\phi (x)u\in K$, and since
+  $u\in K^\perp$, we have
+\[ 0 \: = \: \left\langle u, \varphi (u)x-\varphi (x)u\right\rangle \:
+  = \: \varphi (u)\langle u,x\rangle -\varphi (x) .\] If we then set
+$y=\overline{\varphi (u)}$, we have
+\[ \varphi _y(x) \: = \: \langle \overline{\varphi (u)}u,x \rangle \:
+  = \: \varphi (x) , \qquad (x\in H).\] Therefore, $\varphi$ has the
+form $\varphi _y$ for some $y\in H$.  To show the uniqueness of $y$,
+suppose that $\varphi _y=\varphi _z$.  Then
+$\langle y,x\rangle =\langle x,x\rangle = 1$, and from the discussion
+preceding this theorem, $x=y$.  \end{proof}
+
+\begin{prop} Given a linear operator $A:H\to K$, there is a unique
+  linear operator \mbox{$A^*:K\to H$} such that
+  \[ \langle y,Ax\rangle \: = \: \langle A^*y,x\rangle ,\]
+  for all $x\in H$ and $y\in K$.  \end{prop}
+
+The operator $A^*$ is called the \emph{adjoint} of $A$.
+
+\begin{proof} Define $\varphi :H\to \mathbb{C}$ by
+  $\varphi (x)=\langle y,Ax\rangle$.  By the previous theorem,
+  $\varphi = \varphi _{A^*y}$ for some vector $A^*y\in H$; that is,
+  $\langle y,Ax\rangle =\langle A^*y,x\rangle$, for all $x\in H$.
+  Moreover, given $y,z\in K$, we have
+  \[ \langle A^*(y+z),x\rangle \: = \: \langle y+z,Ax\rangle \: = \:
+    \langle y,Ax\rangle + \langle z,Ax\rangle \: = \: \langle
+    A^*y+A^*z,x\rangle , \]
+  for all $x\in H$.  By the previous theorem again,
+  $A^*(y+z)=A^*y+A^*z$.  A similar argument shows that $A^*(\lambda
+  y)=\lambda A^*y$, and hence $A^*$ is a linear operator.
+
+  To see that $A^*$ is unique, suppose that $\langle A^*y,x\rangle =
+  \langle By,x\rangle$, for all $x,y\in H$.  Then $\langle
+  A^*y-By,x\rangle =0$, for all $x\in H$, from which $A^*y=By$, for all
+  $y\in H$. 
+\end{proof}
+
+\begin{prop} For any $A\in B(H)$, we have $A^{**}=A$. \end{prop}
+
+\begin{proof} Since $\langle x,Ay\rangle = \langle A^*x,y\rangle$, it
+  follows that $\langle Ay,x\rangle = \langle
+  y,A^*x\rangle$.  \end{proof}
+
+\begin{exercise} Show that $(A+B)^*=A^*+B^*$, and
+  $(AB)^*=B^*A^*$. \end{exercise}
+
+\begin{defn} We say that $A:H\to H$ is \emph{self-adjoint} if
+  $A=A^*$. \end{defn}
+
+This last definition isn't so illuminating; but the important thing is
+that it's tantamount to saying that $A$ has an orthonormal basis of
+eigenvectors, and that its eigenvalues are real numbers.
+
+\begin{defn} Let $x$ be a nonzero vector in $H$.  We say that $x$ is
+  an \emph{eigenvector} for $A$ just in case $Ax=\lambda x$ for some
+  $\lambda \in \mathbb{C}$.  \end{defn}
+
+In other words, $A$ doesn't move $x$ outside of its ray.
+
+\begin{defn} We say that $\lambda\in\mathbb{C}$ is an
+  \emph{eigenvalue} for $A$ just in case $Ax=\lambda x$ for some
+  nonzero vector $x\in H$. \end{defn}
+
+\begin{defn} We say that an operator $E$ on $H$ is a \emph{projection
+    operator} just in case it is self-adjoint and $E^2=E$.
+  Equivalently, $E$ is self-adjoint and has eigenvalues in the set
+  $\{ 0,1\}$.  In particular, the zero operator $0$ and the identity
+  operator $I$ are projection operators. \end{defn}
+
+Seen as a ``quantity'', a projection operator $E$ is kind of boring:
+it only has two possible values, $0$ and $1$.  But that allows it to
+play the special role as representing a \emph{property}, i.e.\
+something that the system either has or lacks.  That is, if the value
+of $E$ is $1$, then the system is thought to have the property $E$,
+and if the value of $E$ is $0$, then the system is thought to lack the
+property~$E$.  (In some literature, the projection operators are
+called \emph{yes-no questions}.)
+
+\begin{exercise} Let $y\in H$ be a unit length vector, and define an
+  operator $E:H\to H$ by
+  \[ Ex \: = \: \langle y,x\rangle y ,\qquad (x\in H) .\] Show that
+  $E$ is a projection operator, and that $z\in H$ is an eigenvector
+  for $E$ iff $z=cy$ for some $c\in \mathbb{C}$. \end{exercise}
+
+\begin{defn} We say that projection operators $E$ and $F$ are
+  \emph{orthogonal} when $EF=0$. \end{defn}
+
+\begin{exercise} Show that if $E$ and $F$ are orthogonal projection
+  operators, then $E+F$ is also a projection operator. \end{exercise}
+
+\begin{defn} Let $K$ be a subset of the vector space $H$.  We say that
+  $K$ is a \emph{subspace} just in case for all $x,y\in K$ and all
+  $\lambda\in\mathbb{C}$, both $x+y\in K$ and $\lambda x\in K$.  We
+  write $\dim K$ for the dimension of $K$, i.e.\ the maximal number of
+  mutually orthogonal vectors in $K$.  \end{defn}
+
+\begin{exercise} Suppose that $K$ and $L$ are subspaces of $H$.  Show
+  that $K\cap L$ is also a subspace. \end{exercise}
+
+\begin{exercise} Let $E$ be a projection operator on $H$, and let $K$
+  be the set of vectors $x\in H$ such that $Ex=x$.  Show that $K$ is a
+  subspace. \end{exercise}
+
+\begin{exercise} Suppose that $E$ and $F$ are projection operators on
+  $H$ and that $EF=FE$.  Show that $EF$ is a projection operator.  Let
+  $[E]$ be the subspace onto which $E$ projects.  Show that
+  $[EF]=[E]\cap [F]$. \end{exercise}
+
+\begin{spec} If $A$ is a self-adjoint linear operator, then there are
+  orthogonal projection operators $E_1,\dots ,E_n$ and real numbers
+  $\lambda _1,\dots ,\lambda _n$ such that
+  \[ A \: = \: \lambda _1E_1+\cdots +\lambda _nE_n .\] 
+\end{spec}
+
+For understanding the spectral representation of a self-adjoint
+operator, it can be helpful to think of the sum operation on
+orthogonal projection operators as a logical disjunction.  In fact,
+for any projections $E$ and $F$, we can define $E\vee F$ to be the
+projection onto the smallest subspace of $H$ that contains both $[E]$
+and $[F]$.  \begin{exercise} Show that when $E$ and $F$ are orthogonal, then
+  $E\vee F=E+F$. \end{exercise}
+
+But beware not to carry over all of your intuitions from classical
+logic.  For example, if $E$ and $F$ are projections onto mutually
+orthogonal unit vectors $x$ and $y$, then $E\vee F$ is the projection
+onto the subspace spanned by $\{ x,y\}$.  In that case, the state
+$\frac{1}{\sqrt{2}}(x+y)$ assigns $1$ to $E\vee F$ even though it
+doesn't assign $1$ to either $E$ or to $F$.  In other words, quantum
+probabilities have the strange feature that a disjunction can be
+certainly true even if neither disjunct is certainly true.
+
+We now let $B(H)$ denote the set of all linear operators on $H$.  (The
+letter ``$B$'' here comes from the fact that when $H$ is infinite
+dimensional, we restrict to \textit{bounded} linear operators.)  The
+set $B(H)$ has the following operations:
+\begin{description}
+\item[addition] $A,B\mapsto A+B$
+\item[scalar multiplication] $\lambda ,A\mapsto \lambda A$
+\item[multiplication] $A,B\mapsto AB$
+\item[adjunction] $A\mapsto A^*$
+\end{description}
+There are also two special elements $0\in B(H)$ and $I\in B(H)$.  The
+former is defined by $0x=0$ for all $x\in H$, and the latter by $Ix=x$
+for all $x\in H$.  With these operations, $B(H)$ is not simply a
+vector space over $\mathbb{C}$, it is also an ``algebra with
+adjunction''.
+
+\begin{defn} For operators $A,B\in B(H)$, we define $[A,B]=AB-BA$.  We
+  say that $A$ and $B$ are \emph{compatible} just in case
+  $[A,B]=0$. \end{defn}
+
+We will now define the notion of an abstract ``state'' on $B(H)$.  In
+short, a state assigns a real number to a self-adjoint operator, which
+can be interpreted as the expectation value of the corresponding
+quantity in that state.
+
+\begin{defn} A \emph{linear functional} on $B(H)$ is a function
+  $\rho :B(H)\to \mathbb{C}$ such that $\rho (A+B)=\rho (A)+\rho (B)$
+  and $\rho (\lambda A)=\lambda \rho (A)$.   \end{defn}
+
+\begin{defn} A \emph{state} in the abstract sense on $B(H)$ is a
+  function $\omega :B(H)\to\7C$ such that:
+  \begin{enumerate}
+  \item $\omega$ is linear, and
+  \item $\min [\spc{A}]\leq \omega (A)\leq \max [\spc{A}]$, for every
+    self-adjoint operator $A\in B(H)$.
+  \end{enumerate}
+\end{defn}
+
+In particular, if $\omega$ is a state, then $\omega (I)=1$, since $1$
+is the only eigenvalue of $I$.  Similarly, if $E$ is a projection
+operator, then $\omega (E)\in [0,1]$.  It's easy to see why a state
+$\omega$ should have this latter feature, i.e.\ that $\omega (A)$ lies
+between the smallest and largest eigenvalues of $A$.  After all,
+$\omega$ is supposed to assign an expectation value to $A$, which
+should be a weighted average of the possible values that $A$ could
+take.
+
+But why assume that states are linear functionals?  It is true that,
+in classical physics, expectation values are linear functions on
+random variables.  So why should it be any different in quantum
+physics?  However, it's the linearity assumption that John Bell
+considers to be ``silly'' and ``meaningless.''
+
+\begin{example} Let $x\in H$ be a unit length vector, and define a
+  function $\omega _x:B(H)\to \mathbb{C}$ by
+  $\omega _x(A)=\langle x,Ax\rangle$.  Obviously $\omega _x$ is a
+  linear functional.  Furthermore, if $A=\lambda
+  _1E_1+\cdots +\lambda _nE_n$ is a self-adjoint operator in its
+  spectral representation, then 
+  \[ \omega _x(A) = \sum _i \lambda _i\langle x,E_ix\rangle ,\] which
+  is a weighted average of the eigenvalues of $A$.  Therefore,
+  $\omega _x$ is a state. \end{example}
+
+\begin{defn} If $\sigma$ and $\rho$ are linear functionals, and
+  $a,b\in \mathbb{C}$, then we define $a\sigma +b\rho $ to be the
+  function defined by
+  \[ (a\sigma +b\rho )(A) \: = \: a\sigma (A)+b\rho (A) .\] It's easy
+  to see that $a\sigma+b\rho$ is a linear functional. \end{defn}
+
+\begin{exercise} Suppose that $\sigma$ and $\rho$ are states on
+  $B(H)$, and that $\lambda \in (0,1)$.  Show that
+  $\lambda \sigma +(1-\lambda )\rho$ is also a state on $B(H)$.  We
+  call this latter state a \emph{mixture} of $\sigma$ and
+  $\rho$.  If a state is \textit{not} a mixture of other states, then
+  we say that it is \emph{pure}.  \end{exercise}
+
+The previous exercise shows that if we have $n$ unit vectors
+$x_1,\dots ,x_n\in H$, then we can form mixed states such as
+\[ \lambda _1\omega _{x_1}+\cdots +\lambda _n\omega _{x_n} ,\]
+where $\lambda _i\in [0,1]$ such that $\lambda _1+\cdots +\lambda
+_n=1$.
+
+\newcommand{\tr}[1]{\mathrm{Tr}(#1)}
+
+\begin{example} Since we're working here in the finite-dimensional
+  case, i.e.\ where the dimension of $H$ is a finite number $n$, there
+  is always a special state, the so-called \emph{maximally mixed
+    state}.  The idea behind this state is simple: take any quantity,
+  say $A$, that has possible values $a_1,\dots ,a_n$.  Suppose that
+  we don't know anything whatsoever about the system.  Then what
+  value should we ``expect'' for $A$?  The maximally mixed state
+  says: take the average of $a_1,\dots ,a_n$, i.e.\ set
+  \[ \tau (A) \: = \: \frac{a_1+\cdots +a_n }{n} .\] In particular,
+  for any projection operator $E$, $\tau (E)=\frac{d(E)}{n}$, where
+  $d(E)$ is the dimension of the subspace onto which $E$ projects.
+  This maximally mixed state has another name: it is the \emph{trace},
+  or to be more precise, the trace divided by the dimension of the
+  vector space $H$.  We use $\tr$ for the trace, so that $\tr{A}=n\tau
+  (A)$.  \end{example}
+
+For those of you who have done linear algebra, you'll remember that
+the  trace of a matrix is the sum of its diagonal elements.  Here is a
+more formal (coordinate-free) definition.
+
+\begin{defn} Suppose that $\dim H=n$, and let $\{ x_1,\dots ,x_n\}$ be an
+  orthonormal basis for $H$.  The \emph{trace} on $B(H)$ is defined by
+  \[ \tr{A} \: = \: \sum _{i=1}^n \langle x_i,Ax_i\rangle ,\]
+  for all $A\in B(H)$.   \end{defn}
+
+It is easy to show that trace is a linear functional.  Furthermore, 
+\begin{equation*} \tr{A^*} \: =\: \sum _i \langle x_i,A^*x_i \rangle
+  \: = \: \sum _i\overline{\langle x_i,Ax_i\rangle} \: = \:
+  \overline{\tr{A}} ,\end{equation*}
+for any operator $A\in B(H)$.  Finally, if $\tr{A^*A}=0$, then 
+\[ 0 \: =\: \tr{A^*A} \: = \: \sum _i \| Ax_i \| ^2 , \] which means
+that $Ax_i=0$ for all $x_i$ in the basis $\{ x_1,\dots ,x_n\}$, hence
+$A=0$.  (In this case, we say that the trace is \emph{faithful}.)
+ 
+
+We're going to show now that the definition of the trace is in fact
+independent of the chosen orthonormal basis $\{ x_1,\dots ,x_n\}$.
+But first we need to gather some more facts about Hilbert spaces.
+Recall that $\{ x_1,\dots ,x_n\}$ is said to be an \emph{orthonormal
+  basis} for $H$ just in case: (1) it's a basis, i.e.\ every vector
+$y\in H$ can be written as $y=c_1x_1+\cdots +c_nx_n$ for a unique
+sequence $c_i$ of complex numbers, and (2) $\langle x_i,x_j\rangle=0$
+when $i\neq j$, and (3) $\langle x_i,x_i\rangle =1$.  It immediately
+follows then that for any vector $y\in H$, if
+$\langle y,x_i\rangle =0$ for $i=1,\dots ,n$, then $y=0$.
+
+\begin{defn} For any subset $K$ of $H$, we write $K^{\perp}$ for the
+  set of vectors $y\in H$ such that $\langle y,x\rangle =0$ for all
+  $x\in K$.  \end{defn}
+
+\begin{exercise} Show that $K^\perp$ is a subspace of
+  $H$. \end{exercise}
+
+\begin{prop} Suppose that $\{ x_1,\dots ,x_n\}$ is an orthonormal
+  basis for $H$.  Then for any vector $y\in H$,
+  \[ y \: = \: \sum _{i=1}^n \langle x_i,y\rangle x_i .\] \end{prop}
+
+\begin{proof} Since $\{ x_1,\dots ,x_n\}^\perp=\{ 0\}$, it will
+  suffice to show that $y-\sum _{i=1}^n\langle x_i,y\rangle x_i$ is
+  orthogonal to each $x_j$.  For a fixed $j$, we have
+\[ \left\langle x_j \, ,\, y-\sum _{i=1}^n\langle x_i,y\rangle x_i\right\rangle \:
+    = \: \langle x_j,y\rangle - \langle x_j,y\rangle \: = \: 0 ,\]
+  as we needed to show.  \end{proof}
+
+\begin{prop} If $\{ x_1,\dots ,x_n\}$ is an orthonormal basis, then
+  for any vectors $y,z\in H$, 
+  \[ \langle y,z\rangle \: = \: \sum _{i=1}^n \langle y,x_i\rangle \,
+    \langle x_i,z\rangle .\]   \end{prop}
+
+\begin{proof} Just write out $z=\sum _{i=1}^n\langle x_i,z\rangle
+  x_i$, and take its inner product with~$y$. \end{proof}
+
+Now we can show that the definition of the trace is independent of
+basis.  Let $\{ x_1,\dots ,x_n\}$ and $\{ y_1,\dots ,y_n\}$ be
+orthonormal bases for $H$.  Then
+\begin{eqnarray*}
+  \sum _i \langle x_i,Bx_i\rangle & = & \sum _i\sum _j
+                                        \langle
+                                        x_i,y_j\rangle \,
+                                        \langle
+                                        y_j,Bx_i\rangle \\
+                                  & = & \sum _i\sum _j \langle x_i,y_j\rangle \, \langle
+                                        B^*y_j,x_i\rangle \\
+                                  & = & \sum _j\sum _i\langle B^*y_j,x_i\rangle \,\langle
+                                        x_i,y_j\rangle \\
+                                  & = & \sum _j \langle B^*y_j,y_j\rangle \\
+                                  & = & \sum _j\langle
+                                        y_j,By_j\rangle
+                                        ,\end{eqnarray*}
+as we needed to show.                                      
+
+\begin{example} For an operator represented by a matrix, the trace can
+  be taken by summing the entries on the diagonal.  For example,
+  \[ \mathrm{Tr}\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \: = \:
+    0. \]
+  This operation represents summing with the basis consisting of
+  $\begin{pmatrix} 1 \\ 0 \end{pmatrix}$ and $\begin{pmatrix} 0 \\
+    1 \end{pmatrix}$.
+\end{example}
+
+%% TO DO: every operator is sum of two self adjoint, and four unitary
+
+%% TO DO: meaning of maximally mixed
+
+
+                                         
+                                         
+\begin{defn} Let $U:H\to K$ be a linear operator.  We say that $U$ is
+  \emph{unitary} just in case $\langle x,y\rangle _H=\langle
+  Ux,Uy\rangle _K$ for all $x,y\in H$. \end{defn}
+
+\begin{exercise} Show that $U:H\to K$ is unitary iff $U^*U$ is the
+  identity on $H$, and $U^*U$ is the identity on $K$. \end{exercise}
+
+\begin{exercise} Suppose that $\{ x_1,\dots ,x_n\}$ is an orthonormal
+  basis for $H$, and that $U:H\to K$ is a unitary operator.  Show that
+  $\{ Ux_1,\dots ,Ux_n\}$ is an orthonormal basis for $K$. \end{exercise}
+
+\begin{prop} For any unitary operator $U:H\to H$, we have
+  $\tr{U^*AU}=\tr{A}$ for all $A\in B(H)$. \end{prop}
+
+\begin{proof} We have
+  \begin{eqnarray*} \tr{U^*AU} & = & \sum _{i=1}^n\langle
+                                    x_i,U^*AUx_i\rangle \\
+                              & = & \sum _{i=1}^n\langle Ux_i,AUx_i\rangle \\
+                              & = & \tr{A} ,\end{eqnarray*}
+where the last equation follows from the fact that $\{ Ux_i,\dots
+,Ux_n\}$ is an orthonormal basis.  \end{proof}
+
+\begin{prop} Any operator $A\in B(H)$ is a linear combination of
+  unitary operators. \end{prop}
+
+I'll omit the proof for now, but for the case of spin operators, it
+turns out that $\{ S_x,S_y,S_z,I\}$ is, in fact, a linear basis for
+$B(H)$.  In other words, for each $A\in B(H)$, there is a unique
+quadruple $a_i\in \7C$ such that
+\[ A \: = \: a_0I+a_1S_x+a_2S_y+a_3S_z .\]
+
+\begin{prop} For any operators $A,B\in B(H)$,
+  $\tr{AB}=\tr{BA}$. \end{prop}
+
+
+
+
+%% TO Show: It turns out that this definition is
+%% independent of the chosen orthonormal basis.
+
+%% And Trace is tracial!
+
+%% show: trace of a projection is its dimension.
+
+%% Define density operator
+
+\begin{defn} A linear operator $D$ on $H$ is said to be a
+  \emph{density operator} just in case $D$ is self-adjoint with
+  eigenvalues $\lambda _i\in [0,1]$ such that $\sum _i\lambda
+  _i=1$.  \end{defn}
+
+\begin{example}[Trace formula] Suppose that $D$ is a density operator, and define a
+  function $\omega _D:B(H)\to \mathbb{C}$ by setting
+  \[ \omega _D(A) \: = \: \tr{DA} ,\]
+for all $A\in B(H)$.  Then $\omega _D$ is a state.  Indeed, if $D=\lambda
+  _1E_{x_1}+\cdots +\lambda _nE_{x_n}$, then $\omega _D=\lambda _1\omega _{x_1}+\cdots +\lambda _n\omega
+  _{x_n}$. \end{example}
+
+\begin{prop} For an abstract state $\omega$ on $B(H)$, the following
+  are equivalent:
+  \begin{enumerate}
+  \item $\omega (A^2)=\omega (A)^2$ for every self-adjoint operator
+    $A\in B(H)$.
+     \item $\omega (A)$ is an eigenvalue of $A$, for every
+       self-adjoint operator $A\in B(H)$.
+     \item $\omega (E)\in \{ 0,1\}$ for every projection operator
+       $E\in B(H)$. \end{enumerate} \end{prop}
+
+   \begin{proof}{Sketch of proof} ($1\Rightarrow 3$) Let $E$ be a
+     projection operator.  Since $EE=E$, it follows that $\omega
+     (E)^2=\omega (E)$, and hence $\omega (E)\in \{ 0,1\}$.
+
+     ($3\Rightarrow 2$) Let $A=\sum _i\lambda _iE_i$, where $\sum
+     _iE_i=I$.  Since $\omega$ is linear, $\omega (E_i)=1$ for one
+     $E_i$, and $\omega (E_j)=0$ for the others.  Hence, $\omega
+     (A)=\lambda _i$. 
+   \end{proof}
+
+   \begin{defn} When the conditions above hold, we say that $\omega$
+     is a \emph{dispersion-free state} on $B(H)$. \end{defn}
+
+   Note: first, this definition of dispersion-free matches classical
+   statistics, where the \emph{variance} of a random variable $X$ is
+   $E[X^2]-E[X]^2$, where $E$ is the expectation value function.  In
+   other words, a dispersion-free state is a state where all random
+   variables have zero variance.  Second, if we take the projection
+   operators in $B(H)$ to represent propositions, then a
+   dispersion-free state is precisely an assignment of truth values to
+   these propositions.
+
+We will shortly prove the von Neumann NHV theorem, which shows that
+when $\dim H\geq 2$, then there are no dispersion-free states on
+$B(H)$.  The proof has two parts:\begin{enumerate}\item When
+  $\dim H\geq 2$, then there are no dispersion-free quantum state,
+  i.e.\ states of the form $\omega _D$ for some density operator
+  $D\in B(H)$.
+\item Every abstract state on $B(H)$ has the form $\omega _D$ for some
+  density operator $D$ on~$H$.
+
+  Note: it's this second part where John Bell thinks that von Neumann
+  made a mistake.  Von Neumann assumed that a ``state'' or ``hidden
+  variable'' would have to be a linear function on $B(H)$.  Bell
+  thinks that this assumption is ``silly.''  Bell thinks that hidden
+  variables would only have to be linear on compatible observables
+  (i.e.\ observables that can be simultaneously measured, represented
+  by self-adjoint operators that commute with each other).  Let's call
+  that feature \emph{sub-linearity}.  Ironically, Gleason's theorem
+  shows that when the dimension of $H$ is $3$ or more, then
+  sub-linearity implies linearity. \end{enumerate}
+
+Proving the first part of von Neumann's theorem is easy.  Suppose that
+$\dim H\geq 2$, and let $x\in H$ be a unit vector.  Since
+$\dim H\geq 2$, there is another unit vector $y$ that is skew to $x$,
+i.e.\ it is neither in the ray generated by $x$, nor is it orthogonal
+to $x$.  In particular, $0<|\langle x,y\rangle |^2<1$.  Now let $E$ be
+the projection onto $y$.  Then
+\[ \omega _x(E) \: = \: \langle x,Ex\rangle \: = \: \left\langle x
+    ,\langle y,x\rangle y\right\rangle \: = \: |\langle x,y\rangle
+  |^2. \] It follows that $\omega _x(E)\not\in \{ 0,1\}$, and hence
+$\omega _x$ is not dispersion free.  Since $x$ was an arbitrary unit
+vector in $H$, it follows that no state of the form $\omega _D$ is
+dispersion-free on $B(H)$.  [[There is a little gap here in infering
+from there are no dispersion-free vector states to there are no
+dispersion-free density operator states.  But the fact is that density
+operator states always have more dispersion than vector states.]]
+
+Now on to the second part of von Neumann's theorem, which is a
+``representation'' result.  In particular, we show that if
+$\omega :B(H)\to \mathbb{C}$ is a state in the abstract sense, then
+there is a density operator $D$ on $H$ such that
+\[ \omega (A) \: = \: \tr{DA} ,\] for all $A\in B(H)$.
+
+
+
+\begin{prop} Every operator $A$ in $B(H)$ is a sum of two self-adjoint
+  operators. \end{prop}
+
+\begin{proof} Let $A_r=\frac{1}{2}(A+A^*)$ and let
+  $A_i=\frac{i}{2}(A^*-A)$.  Then
+\[ 2(A_r+iA_i) \: = \: A+A^*+A-A^* \: = \: 2A .\] \end{proof}
+
+\begin{thm} For any abstract state $\omega :B(H)\to\7C$, there is a
+  density operator $D\in B(H)$ such that $\omega (A)=\tr{DA}$ for all
+  $A\in B(H)$. \end{thm}
+
+\begin{proof} Assume that $\omega :B(H)\to \7C$ is an abstract state.
+  Define a positive-definite inner product on $B(H)$ by
+  \[ \langle B,A\rangle _2 \: = \: \tr{B^*A} ,\] for all
+  $B,A\in B(H)$.  Since $\omega$ is linear, Theorem \ref{fubar}
+  entails that there is an operator $D\in B(H)$ such that
+  \[ \omega (A) \: = \: \langle D,A\rangle _2 \: = \: \tr{D^*A} ,\]
+  for all $A\in B(H)$.  We need to show then that $D$ is a density
+  operator, i.e.\ a self-adjoint operator with eigenvalues
+  $0\leq \lambda _1,\dots ,\lambda _m\leq 1$ such that
+  $\sum _{i=1}^m\lambda _i=1$.
+  
+  Since every operator $A\in B(H)$ has the form $A=A_r+iA_i$, with
+  $A_r$ and $A_i$ self-adjoint, and since states are linear and assign
+  real-values to self-adjoint operators, it follows that
+  $\omega (A)=\overline{\omega (A^*)}$ for all $A\in B(H)$.  Hence,
+  \[ \tr{DA} \: =\: \overline{\tr{DA^*}} \: = \: \tr{D^*A} ,\] for all
+  $A\in B(H)$.  Thus, $\langle D,A\rangle _2=\langle D^*,A\rangle _2$
+  for all $A\in B(H)$, from which it follows that $D=D^*$.
+  
+  Now let $\lambda$ be an eigenvalue of $D$, and let $E$ be the
+  projection onto the corresponding eigenvector.  Since
+  $\omega (E)\in [0,1]$, it follows that
+  \[ \lambda \: = \: \lambda \tr{E} \: = \: \tr{DE} \: \in \: [0,1]
+    .\]  Furthermore, if $E_1,\dots ,E_m$ are the spectral projections
+  of $D$, then $\sum _{i=1}^mE_i=I$ and
+ \[ \sum _{i=1}^m\lambda _i \: = \: \sum _{i=1}^m \tr{DE_i} \: = \: \tr{DI} \: =
+   \: 1 .\]
+  Therefore, $D$ is a density operator. \end{proof}
+
+This completes the proof of the von Neumann NHV theorem.  Every
+abstract state on $B(H)$ is represented by some density operator $D$,
+using the trace formula.  But no such states are dispersion free.
+Therefore, there are no dispersion-free states on $B(H)$.
+
+%% von Neumann theorem -- use Riesz representation theorem again
+
+\section*{Logical version of von Neumann theorem}
+
+We now prove a second version of the von Neumann NHV theorem, this
+time from a logical point of view.  (This proof of the theorem will
+also serve as a bridge to the Kochen-Specker theorem.)
+
+\begin{defn} For projection operators $E,F$, we define $E\vee F$ to be
+  the projection unto the smallest subspace that contains both $[E]$
+  and $[F]$.  We let $E\wedge F$ be the projection onto $[E]\cap [F]$.
+  We let $\neg E = I-E$.  Finally, we write $E\leq F$ just in case
+  $EF=E$.  \end{defn}
+
+\begin{exercise} Show that if $E\leq F$ and $F\leq G$ then $E\leq
+  G$. \end{exercise}
+
+Let $L(H)$ be the set of all projection operators on the Hilbert space
+$H$.  When equipped with the relation $\leq$, and the operations
+$\wedge ,\vee$, the set $L(H)$ is a \emph{lattice}.  With the
+operation $\neg$, it becomes an \emph{orthocomplemented lattice}.
+These lattice operations look like logical operations (conjunction,
+disjunction, and negation), and in some ways they behave like them.
+However, these operations don't satisfy all the rules as classical
+logic, such as distribution. 
+For example, let $E$ be the projection onto $\ket{z+}$, let $F_1$ be
+the projection onto $\ket{x+}$ and let $F_2$ be the projection onto
+$\ket{x-}$.  Then $E\wedge F_1=0$ and $E\wedge F_2=0$, but
+\[ E\wedge (F_1\vee F_2) \: = \: E\wedge I \: = \: E \]
+and therefore,
+\[ E\wedge (F_1\vee F_2) \: \neq \: (E\wedge F_1)\vee (E\wedge F_2)
+  .\] These features of the lattice $L(H)$ have led some people to say
+that the weird thing about QM is that it violates the rules of
+classical logic.\footnote{\citet{birkhoff} were the first to
+  investigate the logical features of QM.  \citet{reichenbach} claims
+  that QM demands a move to a three-valued logic.  \citet{putnam1969}
+  says that QM demands that we reject classical logic.  For a clear
+  discussion of the issues, see \citep{gibbins}.}
+
+%% TO DO: probability measure on L(H)
+%% feature of quantum states that if m(E\wedge F)=0 then ... NO
+%% ...
+%% p(E)p(F) = <x,Ex><x,Fx> =
+
+%% |<Ex,Fx>| leq |Ex| |Fx| = p(E)p(F) 
+
+\begin{defn} Let $p:L(H)\to \{ 0,1\}$ be a function.  We say that $p$
+  is a \emph{truth-valuation} on $L(H)$ just in case:
+  \begin{enumerate}
+  \item $p(I)=1$,
+  \item $p(E\wedge F)$ is the minimum of $p(E)$ and $p(F)$, i.e.\
+    $p(E\wedge F)=1$ iff $p(E)=1$ and $p(F)=1$, and
+  \item $p(E\vee F)$ is the maximum of $p(E)$ and
+    $p(F)$.  \end{enumerate} \end{defn}
+
+\begin{thm} If $\dim H\geq 2$, then there is no truth-valuation on
+  $L(H)$. \end{thm}
+
+\begin{proof} Suppose for reductio ad absurdum that $p$ is a
+  truth-valuation on $L(H)$.  If $\dim H\geq 2$, then there must be a
+  two-dimensional projection $X$ on $H$ such that $p(X)=1$.  Let
+  $x_1,x_2$ be orthogonal unit vectors in the range of $X$, and let
+  $E_i$ be the projection onto $x_i$.  Let $F_1$ be the projection
+  onto $x_1+x_2$, and let $F_2$ be the projection onto $x_1-x_2$.
+  Then $E_1\vee E_2=X$, and hence $p(E_1)=1$ or $p(E_2)=1$.  Without
+  loss of generality, assume that $p(E_1)=1$.  Since
+  $E_1\wedge F_i=0$, it follows that $p(F_i)=0$ for $i=1,2$.  But then
+  $1=p(F_1\vee F_2)=0$, a contradiction.  Therefore, $p$ cannot
+  exist.  \end{proof}
+
+What does this result show?  Some people would say that the result
+shows that:
+\begin{quote}
+  ($\dagger$) Quantum systems are, of necessity, \emph{indeterminate}
+  --- i.e.\ in any situation, there will be some propositions about
+  the system that are neither true nor false. \end{quote} For example,
+suppose that $D$ is a density operator on $H$, and that we define
+$p:L(H)\to [0,1]$ by $p(E)=\tr{DE}$.  Then $p$ assigns every
+proposition some probability, but it will assign some propositions a
+value strictly between $0$ and $1$.  So, some people would say that in
+such a situation (represented by the density operator $D$), those
+propositions don't have a definite truth-value.
+
+To assess if ($\dagger$) is a reasonable interpretation of the result,
+let's note some tacit assumptions that could be questioned:
+\begin{enumerate}
+\item Every projection operator in $L(H)$ represents a proposition
+  about the system.  (If this were false, then it might still be the
+  case that every proposition gets assigned a definite truth value.
+  Suppose, for example, that there really weren't any such thing as
+  spin-$x$, and that sentences about spin-$x$ could be seen as
+  employing a fiction to speak obliquely about the real thing,
+  spin-$z$.  This is the kind of strategy that's employed by Bohmian
+  mechanics, where particle position is taken to be the only
+  fundamentally real quantity.)
+
+\item A truth assignment to all propositions would have to satisfy the
+  conditions above.
+
+  First of all, of course it's possible to assign all elements of
+  $L(H)$ either ``true'' or ``false,'' if we don't respect the
+  supposed logical relations between elements.
+
+  Suppose that $E$ is the projection onto $\ket{z+}$ and that $F$ is
+  the projection onto $\ket{x+}$.  According to a standard way of
+  interpreting the formalism, we have:
+  \[ \begin{array}{r c p{7cm}}
+       E & \equiv & spin-$z$ has value $+1$ \\
+       F & \equiv & spin-$x$ has value $+1$ \end{array} \]
+  The convention we adopted was that $E\wedge F$ is the projection
+  onto the subspace $[E]\cap [F]$, which is simply the zero vector.
+  In other words, $E\wedge F =0$, so that our convention presupposes
+  that it's not possible for both $S_x$ and $S_z$ to have value
+  $+1$ (or any other definite value) at the same time.  Of course,
+ this convention agrees with a certain way of looking at QM, where
+ \emph{incompatible quantities} cannot simultaneously have values.  
+
+
+  
+\item A truth assignment doesn't depend on some additional index,
+  e.g.\ a context.  (Some say that every proposition has a truth-value
+  relative to a measurement context.)
+\end{enumerate}
+
+
+
+Was there something ``silly'' in the assumptions we made about
+truth-valuations?  Well, without futher discussion, the symbols
+``$\wedge$'' and ``$\vee$'' only superficially resemble conjunction
+and disjunction.  It isn't obvious that we should think of $E\vee F$
+as ``either $E$ or $F$.''  For example, if $E$ is the projection onto
+$\ke{z+}$ and $F$ is the projection onto $\ket{z-}$, then $E\vee
+F=I$.  If we interpreted this ``$\vee$'' as a classical disjunction,
+then we would have to see that the system's state is either definitely
+$\ket{z+}$ or $\ket{z-}$.  
+
+
+%% TO DO: KS theorem
+
+\section*{Kochen-Specker theorem}
+
+Let's take a step back from the standard formalism for QM, which has
+built in relations between quantities such as $S_x$ and $S_z$.
+Instead, let's think of $L(H)$ not as a set of proposition, but as a
+collection of sets of propositions.  For example, let $L(S_z)$ be the
+set of all spectral projections of $S_z$, i.e.\ $L(S_z)$ is the four
+element Boolean lattice with $0$, $I$, and the projections onto
+$\ket{z+}$ and $\ket{z-}$.  Thus, $L(S_z)$ is a maximal \emph{Boolean
+  sublattice} of $L(H)$, and we can think of the latter as an
+aggregate of Boolean lattices.
+
+The question now is whether we can assign states to the individual
+Boolean sublattices of $L(H)$.  
+
+When $\dim H=2$, the answer is obviously yes.  Since the lattices
+$L(A),L(B),\dots $ are only connected by sharing $0$ and $I$, their
+states can be chosen independently of each other.  To be more precise,
+for each maximal Boolean sublattice $L$ of $L(H)$, we can choose a
+truth-valuation $p_L$ on $L$.  Then we can think of the aggregate
+$\{ p_L:L\subseteq L(H) \}$ as a hidden variable.  This aggregate
+state assigns $0$ or $1$ to every proposition, and it respects the
+logical operations on compatible projection operators (i.e.\ those
+that commute with each other).
+
+The Kochen-Specker theorem shows that when $\dim H>2$, these aggregate
+states do not exist.  The key to proving the theorem is to exploit the
+fact that some of these maximal Boolean sublattices share elements in
+common.  In that case, the state of one sublattice cannot be chosen
+independently of the state of another sublattice.
+
+\tabulinesep=1.3mm
+
+\begin{figure}[h] 
+  \[ \begin{tabu}{c | c | c | c | c | c | c | c | c}
+      A_1 & A_2 & A_3 & A_4 & A_5 & A_6 & A_7 & A_8 & A_9 \\ \hline & & & & &
+      & & & \\ 
+\begin{pmatrix*}[r] 0 \\ 0 \\ 0 \\ 1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+0 \\ 0 \\ 0 \\ 1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ -1 \\ 1 \\ -1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ -1 \\ 1 \\ -1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+0 \\ 0 \\ 1 \\ 0
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ -1 \\ -1 \\ 1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ 1 \\ -1 \\ 1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ 1 \\ -1 \\ 1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ 1 \\ 1 \\ -1
+\end{pmatrix*}
+\\
+\begin{pmatrix*}[r]
+0 \\ 0 \\ 1 \\ 0
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+0 \\ 1 \\ 0 \\ 0
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ -1 \\ -1 \\ 1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ 1 \\ 1 \\ 1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+0 \\ 1 \\ 0 \\ 0
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ 1 \\ 1 \\ 1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ 1 \\ 1 \\ -1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+-1 \\ 1 \\ 1 \\ 1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+-1 \\ 1 \\ 1 \\ 1
+\end{pmatrix*}
+\\
+\begin{pmatrix*}[r]
+1 \\ 1 \\ 0 \\ 0
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ 0 \\ 1 \\ 0
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ 1 \\ 0 \\ 0
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ 0 \\ -1 \\ 0
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ 0 \\ 0 \\ 1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ 0 \\ 0 \\ -1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ -1 \\ 0 \\ 0
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ 0 \\ 1 \\ 0
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ 0 \\ 0 \\ 1
+\end{pmatrix*}
+\\
+\begin{pmatrix*}[r]
+1 \\ -1 \\ 0 \\ 0
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ 0 \\ -1 \\ 0
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+0 \\ 0 \\ 1 \\ 1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+0 \\ 1 \\ 0 \\ -1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+1 \\ 0 \\ 0 \\ -1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+0 \\ 1 \\ -1 \\ 0
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+0 \\ 0 \\ 1 \\ 1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+0 \\ 1 \\ 0 \\ -1
+\end{pmatrix*}
+&
+\begin{pmatrix*}[r]
+0 \\ 1 \\ -1 \\ 0
+\end{pmatrix*} 
+
+\end{tabu} \]
+\caption{Nine quantities for Kochen-Specker contradiction} \label{kochen}
+\end{figure}
+
+Here I'll sketch the proof for Kochen-Specker in four dimensions.
+Following \citet{cabello}, we construct nine maximal Boolean
+sublattices of $L(H)$, each of which has four atoms.  (See Figure
+\ref{kochen}.)  With nine distinct Boolean sublattices, there could be
+thirty-six distinct atoms.  However, in this collection, each atom
+occurs exactly two times, so there are only eighteen distinct atoms.
+By assumption, only one entry in each column is assigned $1$.  Thus,
+nine entries in total get assigned $1$.  However, each proposition
+occurs in the table twice, and it must be assigned the same value at
+both occurrences.  It follows that the number of entries assigned $1$
+is even, a contradiction.
+
+%% TO DO: reduced states
+
+%% TO DO: cite Bub paper
+
+%% TO DO: Gleason's theorem
+
+%% TO DO: discuss contextual HVs
+
+
+\section*{Contextual hidden variables}
+
+%% https://en.wikipedia.org/wiki/Quantum_contextuality
+
+%% See Bohm chapter in Norsen book
+
+%% Griffiths: https://arxiv.org/pdf/1902.05633.pdf claims that QM is
+%% definitely not contextual in this sense
+
+Before the 1950s, many people thought that von Neumann's theorem
+showed that it is not possible to supplement QM with hidden variables.
+The result was often interpreted as showing that QM cannot be replaced
+with a \emph{deterministic theory}.  Then along came Bohm's theory
+which is deterministic, and which reproduces the predictions of QM.
+Thus, it might seem that Bohm's theory shows that hidden variables are
+possible after all.
+
+Indeed, it's easy to get confused here because of what John Bell said
+about von Neumann's theorem --- i.e.\ that it has a silly assumption.
+One might be tempted to think that Bohm's theory bypasses von
+Neumann's theorem because its hidden variables don't satisfy von
+Neumann's assumption.  That, however, is a misreading of the
+situation, for the Bell-Kochen-Specker theorem proves that as long as
+the state space has dimension three, then von Neumann's conclusion
+follows even without his silly assumption.
+
+To be clear, then, whatever Bohmian mechanics does, it cannot be
+``realist'' in the sense of assigning definite values to all
+quantities, if we assume that all self-adjoint operators on Hilbert
+space represent quantities.  So, there are two things that Bohmian
+mechanics might be doing: it might be denying that all operators
+represent quantities, or it might be thinking of states in a different
+way.
+
+We'll come back a little bit later to the first option, but let me
+just say here that Bohmians definitely {\it do} embrace this first
+horn of the dilemma.  Most notably, see \cite{goldstein}.
+
+What about the second option?  Is there a more liberal notion of
+``hidden variable'' according to which Bohmian mechanics is a hidden
+variable theory.  One proposal that has been put out there is the idea
+of \emph{contextual hidden variables}.  To see what that's supposed to
+mean, look back at the table we used for the Kochen-Specker theorem.
+Let $E$ be the ``proposition'' that occurs in the top left hand
+corner, and also in the top row of the second column.  The assumption
+of the KS theorem is that a state $\omega$ assigns $E$ a value ($0$ or
+$1$), in other words, that ``$\omega (E)$'' is unambiguous.  Let's
+write this out as an official definition:
+\begin{description}
+\item[non-contextuality] The value $\omega (E)$ is independent of
+  context. \end{description} Here, we're thinking of a ``context'' as
+corresponding to the choice of a quantity to be measured.
+
+Here's how a contextualist could sidestep the Kochen-Specker theorem:
+assign all propositions in the top row $1$, and assign all others $0$.
+Of course, to do so, he ends up speaking ambiguously about the
+projection operator that occurs in both row 1, column 5 and in row 2,
+column 1.  He says: if you're asking me for the value of $E$ relative
+to a measurement of $A_1$, then my answer is $0$.  But if you're
+asking me for the value of $E$ relative to a measurement of $A_5$,
+then my answer is $1$.
+
+So, the contextualist doesn't take projections to represent
+propositions in the traditional sense.  Instead, projections represent
+the sort of thing that philosophers have called \emph{centering
+  features} or \emph{propositional functions}, i.e.\ functions from
+contexts to propositions \cite[see][]{egan2006}.\footnote{Here's a
+  semi-precise definition: a propositional function is an expression
+  having the form of a proposition but containing undefined symbols
+  for the substantive elements and becoming a proposition when
+  appropriate values are assigned to the symbols.}  A typical
+propositional function is something like (S) ``I am over six feet
+tall,'' which is like a function from contexts to propositions.  For
+example, S plus the context in which Napolean is speaking returns a
+false proposition, whereas S plus the context in which Goliath is
+speaking returns a true proposition.
+
+Now, there is one ``cheap'' way in which we can turn
+context-relativism into realism.  Suppose for simplicity that there
+are two context-relative correct descriptions: suppose that $E_1$ is
+true relative to context $C_1$, and that $E_2$ is true relative to
+context $C_2$.  Then we could say that the true story of reality is:
+\begin{quote}
+  ($E_1$ relative to $C_1$) and ($E_2$ relative to $C_2$) and
+  \dots \end{quote} But to me at least, this seems like a cheap kind
+of realism.  I have a hunch that this kind of conjunctive description
+should not really count as yet another description.  (But the
+conjunctive description does, in some ways, remind me of the
+philosopher Kit Fine's view about relativity theory.)
+
+To be clear: I've never heard anybody say that we can get a ``god's
+eye view'' by taking a logical sum of context-relative descriptions.
+I have, in contrast, heard people suggest that QM can be replaced by a
+realist theory, so long as its hidden variables are contextual (or
+nonlocal).  But as far as I can tell, contextualism is completely at
+odds with the spirit of ``realism'', at least the kind of realism that
+is expressed in the introduction to \cite{maudlin}.
+
+The interpretation that most obviously complies with Maudlin's vision
+(i.e.\ the goal of physics is to describe matter in motion) is Bohmian
+mechanics.  In the Bohm picture, there is a world out there whose
+structure is completely independent of who is looking at it.  In
+contrast, a contextual hidden variable assignment is a kind of
+relativism, i.e.\ things only have reality relative to a choice of
+measured observable.
+
+%% TO DO: need a Bohr quote to substantiate the following
+
+It seems to me that the contextualist approach would fit much better
+with the likes of Niels Bohr than with the likes of David Bohm or Tim
+Maudlin.  Bohr frequently talks about the need to relativize the
+description to a choice of measurement apparatus.  That sounds quite a
+lot like the idea of contextual hidden variables --- i.e.\ there is a
+``realist'' way of describing within a reference frame, but no realist
+description that is frame-independent.
+
+%% Gudder - deOccamization
+
+%% TO DO: preparation problem
+
+\section*{More or less properties}
+
+There's another way of trying to sidestep the NHV theorems:
+identifying properties of quantum systems besides those represented by
+projections.  To begin with an example, consider the sentence:
+\begin{quote} (P) Ebbe is in an eigenstate of $S_z$. \end{quote} (Here
+``Ebbe'' is fictional name I'm using for an electron.)  To be in an
+eigenstate of $S_z$ is to be either to have the property $E_1$ (the
+projection onto $\ket{z+}$) or to have the property $E_2$ (the
+projection onto $\ket{z-}$).  What then is the correct way to
+represent the sentence P?  On the one hand, P might be the quantum
+disjunction $E_1\vee E_2$; on the other hand, P might be the
+set-theoretic union of $\ket{z+}$ and $\ket{z-}$.  Let's first look at
+the problems with the first idea, and then we'll look at how we might
+develop the second idea.
+
+
+
+%% David Wallace
+
+%% Wave function realism
+
+%% GRW
+
+\section*{For further reading}
+
+\begin{itemize}
+\item For more on Grete Hermann, see \citep{crull}.  For an argument
+  that von Neumann wasn't so confused, see \citep{bub2011}.  And the
+  debate goes on: \citep{dieks2017,mermin2018}.
+\end{itemize}
+
+
+\section*{Appendix: Spectral representations}
+
+Suppose that $H$ is a finite-dimensional Hilbert space and that $A$ is
+a self-adjoint operator on $H$.  We let $\spc{A}$ denote the set of
+eigenvalues of $A$, i.e.\ the \emph{spectrum} of $A$.
+
+\begin{prop} If $A$ is a self-adjoint operator on a finite-dimensional
+  Hilbert space, then the spectrum of $A$ is a finite subset of real
+  numbers. \end{prop}
+
+One can prove this fact in a couple of different ways.  On the one
+hand, one can use classical linear algebra.  On the other hand, one
+can use the theory of commutative $C^*$-algebras.  Let $C^*(A)$ be the
+smallest subalgebra of $B(H)$ that contains the operator $A$.  In the
+case we are interested in, where $H$ is finite-dimensional, $C^*(A)$
+will consist of polynomials (over $\mathbb{C}$) in $A$ and $I$.  If
+$A-\lambda I$ is not invertible in $C^*(A)$, then it's contained in a
+maximal ideal.  A finite-dimensional algebra has only a finite number
+of distinct maximal ideals.  Since the proof is fairly complicated, we
+will omit further details.
+
+The following result is known as the continuous spectral
+representation, and it holds quite generally.  In our particular case,
+where $A$ is a self-adjoint operator with finite spectrum, the result
+is rather trivial.
+
+\begin{prop} The $C^*$-algebra $C^*(A)$ generated by $A$ is isomorphic
+  to $C(\spc{A})$, the set of all continuous complex valued functions
+  on $\spc{A}$. \end{prop}
+
+In the case we're interested in, $\spc{A}$ is a finite Hausdorff
+space, and ``continuous'' is redundant.
+
+\begin{prop} Let $A$ be a self-adjooint operator on a
+  finte-dimensional Hilbert space $H$.  Then there is a canonical
+  bijection between the following sets:
+  \begin{enumerate}
+  \item Eigenvalues of $A$
+  \item Minimal projections in the Boolean lattice $L(A)$
+  \item Pure states on the algebra generated by $A$ [The pure states
+    of a commutative algebra are precisely the multiplicative states.]
+  \item Truth-valuations on the Boolean lattice $L(A)$
+  \end{enumerate} \end{prop}
+
+\begin{prop} When $\spc{A}$ is finite, the following five algebras are
+  canonically isomorphic to each other.
+\begin{enumerate}
+\item $C^*(A)$  
+\item $C(\spc{A})$
+\item $C(\sigma A)$, where $\sigma A$ is the set of pure states of
+  $C^*(A)$.
+\item $L_\infty (\sigma A)$, the algebra of essentially bounded Borel
+  functions from $\sigma A$ to $\mathbb{C}$.  [Since $\sigma A$ is
+  finite, ``essentially bounded Borel'' is redundant.]
+\item $\ell _\infty (\sigma A)$, the algebra of bounded sequences of
+  complex numbers indexed by $\sigma A$.
+\end{enumerate} \end{prop}
+
+%% TO DO: Koopman formalism ; multiplication algebra ; Borel functions
+
+\begin{proof}[Sketch of proof] For $(1)\Leftrightarrow (3)$, we use
+  the famous \emph{Gelfand duality theorem}: if $A$ is a commutative
+  $C^*$-algebra, then $A\cong C(X)$, where $X$ is the compact
+  Hausdorff space of states on $A$.  That result is not easy to prove
+  in the general case.  For the case where $A$ is finite-dimensional,
+  the result is almost trivial.
+
+  The equivalence of $(2),(4)$, and $(5)$ is a simple consequence of
+  the fact that $\sigma (A)$ is finite.  \end{proof}
+
+The fourth and fifth representations make it obvious that $C^*(A)$ has
+many projection operators, which correspond to step functions in
+$L_\infty (\spc{A})$.  In fact, for each subset $\Delta$ of $\spc{A}$,
+there is a operator $E(\Delta )\in C^*(A)$ that projects onto the span
+of the eigenspaces for $A$ with eigenvalues in $\Delta$.
+[Interpretively, we would say that $E(\Delta )$ represents the
+proposition that the value of $A$ lies in $\Delta$.]  In particular,
+let $E_i = E(\{ \lambda _i \})$, and we have
+\[ A \: = \: \sum _{i=1}^n \lambda _iE_i .\] Thus, we have the
+following result.
+
+\begin{prop} Every operator in $B(H)$ is a sum of projection
+  operators. \end{prop}
+
+\begin{defn} We say that $A=\sum _{i=1}^n\lambda _iE_i$ is the
+  \emph{reduced spectral decomposition} of $A$ just in case the $E_i$
+  are nonzero and mutually orthogonal projections, and
+  $\lambda _i\neq \lambda _j$ when $i\neq j$. \end{defn}
+
+\begin{defn} Given self-adjoint operators $A,B$ on $H$, we write
+  $A\sim B$ just in case $A$ and $B$ have the same reduced spectral
+  decomposition.  Speaking loosely, we say that $A$ and $B$ have the
+  same spectral projections.  \end{defn}
+  
+\begin{prop} When $H$ is finite-dimensional, there is a bijective
+  correspondence between:
+  \begin{enumerate}
+  \item Equivalence classes of self-adjoint operators with the same
+    spectral projections. 
+  \item Commutative subalgebras of $B(H)$.
+  \item Boolean sublattices of $L(H)$.
+  \end{enumerate}
+\end{prop}
+
+\newcommand{\bh}{B(H)}                                          
+
+\begin{prop} Let $A,B\in \bh$ be self-adjoint.  Then $[A,B]=0$ iff $A$
+  and $B$ have a common eigenbasis.  \end{prop}
+
+\begin{thm}[finite Stone-Weierstrass] Let $X$ be a finite set of real
+  numbers.  Then every function $f:X\to \mathbb{C}$ is a polynomial in
+  $x$ and $1$. \end{thm}
+
+\begin{proof}[Sketch of proof] Suppose that $X=\{ a,b,c\}$.  Then the
+  characteristic function of $b$ is
+  \[ \frac{(a-x)(c-x)}{(a-b)(c-b)}  .\] All such
+  characteristic functions are polynomials in $x$ and $1$, and every
+  function $f:X\to \7C$ is a linear combination of characteristic
+  functions. \end{proof}
+
+\begin{example} If $X=\{ -1,1\}$ then $\frac{1}{2}(1-x)$ is the
+  characteristic function of $-1$ and $\frac{1}{2}(1+x)$ is the
+  characteristic function of $1$. 
+
+  Similarly, if $X=\{ -1,0,1\}$ then $-\frac{1}{2}x(1-x)$ is the
+  characteristic function of $-1$, and $\frac{1}{2}x(1+x)$ is the
+  characteristic function of $1$, and $(1+x)(1-x)$ is the
+  characteristic function of $0$. \end{example}
+
+The Stone-Weierstrass theorem entails that if $E$ is a spectral
+projection of $A$, then there is a polynomial $f$ in $x$ and $1$ such
+that $f(A)=E$.  Here $f(A)$ is the operator polynomial that results
+from replacing $x$ with $A$ throughout $f$.  Furthermore, if
+$E_1,\dots ,E_n$ are the spectral projections of $A$, then for any
+complex numbers $c_1,\dots ,c_n$, there is a polynomial $g$ such that
+\[ g(A) \: = \: g(\lambda _1)E_1+\cdots +g(\lambda _n)E_n\: =\:
+  c_1E_1+\cdots +c_nE_n .\]
+
+\bibliographystyle{chicago}
+
+\bibliography{her.bib}
+\end{document}
+
+%% TO DO: naive realism about operators
+
+%% TO DO: primitive ontology !!
+
+%% TO DO: some complaints about GRW
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
