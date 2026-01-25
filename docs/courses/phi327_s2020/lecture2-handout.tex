@@ -1,0 +1,189 @@
+\documentclass[11pt,fleqn]{article}
+\sloppy
+\usepackage{fullpage}
+\usepackage{outlines}
+\usepackage{soul}
+\usepackage{enumitem} 
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+% \usepackage{setspace}
+% \spacing{2}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{tikz-3dplot}
+
+\begin{document}
+
+\section*{Whence the quantum conundrum?}
+
+\begin{outline}[enumerate]
+
+\1 Cobbling together a new ``theory'' (1915--1930)
+
+\2 Matrix mechanics (Heisenberg 1925)
+
+\3 \emph{beobachtbare Gr\"osse}
+
+\3 uncertainty principle and disturbance interpretation
+
+\2 Wave mechanics (Schr{\"o}dinger 1925)
+
+\3 \emph{verdammte Quantenspringerei}
+
+\3 Schr\"odinger equation
+
+\2 Complementarity (Bohr 1927)
+
+\2 Hilbert space formalism (von Neumann 1926--32)
+
+No hidden variables theorem
+
+
+\1 Einstein-Bohr debates (1927--1935)
+
+\2 Photon box (1927)
+
+\2 Einstein-Podolsky-Rosen argument (1935)
+
+\2 Realism versus antirealism?  Rational versus irrational?
+Determinism versus ``god rolls dice''?  
+
+\1 Bohr for dummies, a.k.a.\ Copenhagen/Orthodox interpretation (1935--)
+
+Collapse of the wavefunction
+
+\1 Heretics
+
+\2 David Bohm's ``hidden variable'' theory (1952)
+
+\2 Many worlds (Hugh Everett 1957)
+
+\2 Nonlocality (John Bell 1965)
+
+\2 ``Quantum theory without observers'' (Bell 1986)
+
+\2 Bell's disciples (1990-)
+
+
+\end{outline}
+
+\end{document}
+
+\section*{Maudlin: intro to book}
+
+\begin{enumerate}
+\item Warm up (easy question): who are the bad guys in Maudlin's
+  story?  Who are the good guys?
+\item When you're going through the text, note words with strong
+  positive or negative connotations.  (e.g.\ in application to a
+  statement or theory, ``clear'' has a strong positive connotation.)
+  For each such word, write down --- in a sentence or two --- what you
+  think Maudlin means by it.
+\item What does Maudlin mean by saying that quantum mechanics is not a
+  theory?  What does he think it takes to be a theory?
+\end{enumerate}
+
+
+\section*{Stern-Gerlach experiments}
+
+What we \emph{do} know in advance: (1) We can measure ``spin'' along
+any axis in the $xz$ plane. \newline (2) Electrons always come out
+``up'' or ``down''.
+
+What we do \emph{not} know in advance: (1) Are electrons indivisible
+particles, or should we be thinking of electron-waves?  (2) Does each
+electron have a feature that determines whether it will come out
+``up'' or ``down''?  (2) Does passing through a magnet change the
+features of electrons?
+
+\subsection*{First experiment}
+
+Two magnets, perpendicular orientation.  i.e.\ send ``up'' from
+spin-$z$ to a spin-$x$ magnet. Here $E$ is an eraser, and $D$ are
+detectors.  \newline
+\begin{tikzcd}   \\
+Z  \arrow[d] \arrow[r] & X \arrow{d} \arrow{r} & D \\
+E  &  D & 
+\end{tikzcd}
+
+\bigskip \noindent Phenomena: (1) The detectors click individually
+(not at the same time).  (2) In the long run, each detector clicks in
+$50\%$ of trials.
+
+% \begin{tikzcd}
+% & & &  \\ 
+% & A  \arrow[ru] \arrow[rd] & \\ 
+% B \arrow[ru] \arrow[rd] &  & \\ \end{tikzcd}
+
+\subsection*{Second experiment}
+
+Two magnets, same orientation.  i.e.\ send ``up'' from spin-$z$ to a
+spin-$z$ magnet. \newline
+\begin{tikzcd}   \\
+Z \arrow[d] \arrow[r] & Z  \arrow{d} \arrow{r} & D \\
+E  &  D & 
+\end{tikzcd}
+
+\bigskip \noindent Phenomena: (1) The top detector always clicks.  (2)
+The bottom detector never clicks.
+
+\subsection*{Third experiment}
+
+Three magnets: spin-$z$, spin-$x$, spin-$z$ \newline 
+\begin{tikzcd}   \\
+Z \arrow[d] \arrow[r] & X \arrow{d} \arrow{r} &  Z \arrow{r}\arrow{d} & D  \\
+E  &  E  & D & 
+\end{tikzcd}
+
+\bigskip \noindent Phenomena: equal chance of detection for the top
+and bottom detectors.
+
+
+\subsection*{Fourth experiment}
+
+Here $R_i$ is a reflector. \newline 
+\begin{tikzcd}   \\
+Z \arrow[d] \arrow[r] & X \arrow{d} \arrow{r} &  R_1  \arrow{d} &   \\
+E  &  R_2 \arrow[r]   & Z \arrow{r} \arrow{d} & D_a \\
+   &      & D_b 
+ \end{tikzcd}
+
+%  \bigskip \noindent Phenomena: top detector always clicks, bottom
+%  detector never clicks.
+
+ \subsection*{Problem set 1}
+
+ Consider the following argument in relation to the fourth experiment:
+ \begin{description}
+ \item[P1.] Half of the electrons bounce off $R_1$ and half of the
+   electrons bounce off $R_2$.
+ \item[P2.] Of the electrons that bounce off $R_1$, half hit $D_a$ and
+   half hit $D_b$.
+ \item[P3.] Of the electrons that bounce off $R_2$, half hit $D_a$ and
+   half hit $D_b$.
+ \item[C.] Therefore, half of the electrons hit $D_a$ and half hit
+   $D_b$.
+ \end{description}
+ Please answer the following on one (neatly written or typed) page.
+ Please upload your answer by Monday, Feb 10 at 3pm.  A link will be
+ emailed.
+ \begin{enumerate}
+\item  Give some motivation for premises P1,P2, and P3 from the
+  experimental data.
+\item Explain the pattern of inference from P1,P2,P3 to C.  Do you
+  think that this pattern of inference is valid?  If so, then how can
+  it be that C is false?
+  \end{enumerate}
+
+
+
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

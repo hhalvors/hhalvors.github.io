@@ -1,0 +1,1558 @@
+%% TO DO: faster than light causality
+
+%% Often we think of non-locality is a dynamic thing.  But in QM, some
+%% states are local, and some states are not.  A state is a way that
+%% things are at some time.  Ergo, quantum non-locality is not
+%% dynamical.
+%%
+%% I guess that in Bohmian mechanics, an entangled state gives rise to
+%% dynamical nonlocality?
+
+%% TO DO: quantum no-signalling and connection to no-cloning
+
+%% TO DO: quantum teleportation ... beating classical limits on
+%% transmission of information
+
+%% counterfactuals
+
+%% outcome dependence - parameter dependence
+
+%% act-outcome correlations - outcome-outcome correlations
+
+%% passion at a distance 
+
+%% TO DO: quantum no-signaling
+
+%% TO DO: relationship of non-locality to contextuality
+
+%% what is realism? Maudlin points out that a theory cannot be realist
+%% ...
+
+%% TO DO: show that the singlet state is tracial on subsystems
+
+%% TO DO: more about realism and locality
+
+
+
+
+\documentclass[12pt,fleqn]{article}
+\usepackage{amsfonts,amssymb,amsthm,amsmath}
+\title{Bell's Theorem and Nonlocality}
+\author{Hans Halvorson}
+\date{\today}
+\usepackage{tikz}
+\usepackage{url}
+\usepackage{natbib}
+
+\newcommand{\bh}{\mathbf{B}(\mathcal{H})}
+\newcommand{\bk}{\mathbf{B}(\mathcal{K})}
+
+\newcommand{\2}{\mathcal}      
+
+\renewcommand{\emph}{\textbf}
+
+\newcommand{\vp}{\varphi}
+
+% \newcommand{\b}[1]{\mathbf{#1}}
+
+
+\newcommand{\Ex}{\mathcal{E}}
+
+\newcommand{\7}[1]{\mathbb{#1}}
+
+\swapnumbers
+
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}[prop]{Theorem}
+\newtheorem{lemma}[prop]{Lemma}
+\newtheorem*{bellthm}{Bell's Theorem}
+\theoremstyle{definition}
+\newtheorem*{fact}{Fact}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{question}{Question}
+\newtheorem{exercise}{Exercise}
+\newtheorem*{disc}{Discussion}
+
+% \usepackage{dsfont}
+
+
+%% TO DO explain: it's possible to have a non-local theory with commutative
+%% algebras
+
+%% separable and non-separable states
+
+%% TO DO: explain how the Bell inequality could be violated in
+%% classical physics
+
+%% TO DO: Werner states
+
+\newcommand{\ke}[1]{|#1\rangle}
+ \newcommand{\ket}[1]{|#1\rangle}
+
+\newcommand{\singa}{\ensuremath{\varphi _{+z}\otimes \varphi _{-z}}}
+\newcommand{\singb}{\ensuremath{\varphi _{-z}\otimes \varphi _{+z}}}
+\newcommand{\s}[1]{\varphi _{#1}}
+
+\begin{document}
+
+\maketitle
+
+The objective of this document is to introduce you to Bell's theorem,
+which has been called ``the most profound discovery of science''
+\citep{stapp1975}.  A typical way of discussing these issues is to
+begin with the famous 1935 paper by Einstein, Podolsky, and Rosen, and
+then to see Bell's 1964 paper as a sort of extension of it.  However,
+the issues raised by EPR are, in one sense, more conceptually subtle
+than those raised by Bell.  So we'll go straight to Bell, and then
+circle back to EPR.
+
+\bigskip \noindent {\it Primary reading:} The original Bell paper,
+``On the Einstein-Podolsky-Rosen paradox.''  I suggest reading the
+words in this paper, but skim over the equations (at least on a first
+reading).  In the current document, I'll present the technical results
+in a more systematic and transparent way.  (When you read the Bell
+paper, keep in mind the question, ``what assumptions does he make in
+order to derive the inequality?''  For that, you'll at least have to
+glance at the equations --- to see how Bell translates words into
+equations.)
+
+\bigskip \noindent {\it Secondary reading:} We'll read Maudlin's paper
+``What Bell did'', and the response by Werner.
+
+\bigskip \noindent {\it Additional resources:} Here are two survey
+articles about Bell's theorem:
+\begin{itemize}
+\item \url{http://www.scholarpedia.org/article/Bell%27s_theorem}
+\item \url{https://plato.stanford.edu/entries/bell-theorem/} 
+\end{itemize}
+These articles are really long and quite technical --- please don't
+feel like you need to read them straight through.  I suggest that you
+skim them, and then refer back to them when they might add to the
+discussion in this document.
+
+\section{Introduction}
+
+It's difficult state Bell's theorem without immediately taking sides
+on contentious issues.  To try to speak neutrally, let me say that
+\cite{bell} shows that if a certain set $\Gamma$ of assumptions holds,
+then an experimentally testable inequality $\phi$ holds.  Bell then
+points out that QM violates the inequality $\phi$, i.e.\
+QM$\,\Rightarrow\neg\phi$.  Hence, QM$\,\Rightarrow\neg\Gamma$, i.e.\
+QM implies that one of the assumptions in $\Gamma$ is false.
+
+What's interesting about this result is that the assumptions in
+$\Gamma$ appear to be significant metaphysical theses --- such as
+``realism'' or ``locality''.  If that's right, then Bell's theorem
+shows that QM violates either realism or locality.  But that
+undersells Bell's result.  It's not just that QM implies that Bell's
+inequality is violated, we now have strong experimental evidence that
+Bell's inequality is violated.  Hence, we have strong evidence that
+one of the assumptions in $\Gamma$ must be false.  For this reason,
+some philosophers have said that Bell's theorem enables us to do
+``experimental metaphysics.''
+
+But there is an intense debate about how to think about Bell's
+theorem, in particular, how to think about the assumptions that are
+needed to derive the inequality.  From about 1980 to 2000, the common
+story was that the assumptions needed for Bell's theorem are realism
+and locality --- so that the upshot of Bell's theorem is that one must
+reject {\it either} realism {\it or} locality.  It was then thought
+that orthodox or standard QM rejects realism, while Bohmian mechanics
+(and other realist interpretations) reject locality.  (For further
+thought: where does the Everett interpretation sit in this dialectic?)
+
+More recently, some philosophers and physicists have rejected this
+analysis.  For example, \cite{goldstein2011} say that,
+\begin{quote}
+  ($\neg$LOC) One can prove the CHSH–Bell inequality from the
+  assumption of locality alone and, therefore, no matter what one
+  believes about the role of non-commuting observables, it follows
+  that the violation of the CHSH–Bell inequality implies
+  non-locality.  \end{quote} I think that Goldstein et al.\ have
+overstated the case, because there's really no such thing as a
+mathematical proof that has just one assumption.  To prove anything,
+you've got to make other assumptions about which inferential moves are
+permitted, and you've got to make other ``framework assumptions.''
+
+To play devil's advocate, I'll take the opposing side to Goldstein et
+al., i.e.\ the side that says that Bell's theorem isn't really about
+locality.\footnote{The view that violation of Bell's inequality isn't
+  really about nonlocality was put forward long ago by the philosopher
+  Arthur Fine.  He says that ``our investigations suggest that what
+  the different hidden variables programs have in common, and the
+  common source of their difficulties, is the provision of joint
+  distributions in those cases where quantum mechanics denies them''
+  \cite[p 1309]{fine}.  The joint distributions that Fine is talking
+  about are assignments of joint probabilities to incompatible
+  quantities, such as position and momentum, or spin-$z$ and spin-$x$.
+  So, Fine's opinion is: Bell's inequality is violated in QM {\it
+    because} QM does not provide joint distributions for non-commuting
+  quantities.  Fine's analysis was disputed by \cite{shimony}.  Some
+  support for Fine's position can be derived from the fact that Bell's
+  inequality is violated even for different degrees of freedom of a
+  single object.  If the explanation for violations should be the same
+  in all cases, then the explanation cannot be nonlocality.}  Here by
+``V'' I'll mean the claim that all properties can simultaneously
+possess values.
+\begin{quote}
+  ($\neg$VAL) One can prove the CHSH-Bell inequality from the
+  assumption of V \underline{alone} and, therefore, no matter what one
+  believes about the role of locality, it follows that the violation
+  of the CHSH-Bell inequality implies not-V. \end{quote} Your job will
+be to decide which one of these claims is better supported by the
+evidence.
+
+Here is an outline of the rest of this document: First we'll talk
+about classical (i.e.\ non-quantum) probability theory.  We restrict
+the discussion mostly to the (boring) finite case, just because that's
+all we'll need to derive the Bell inequality.  On a first reading, you
+can skim this section, and proceed straight to the section on the
+derivation of the Bell inequality --- referring back to the earlier
+section if you have questions about terminology.
+
+% At the end of this unit, you should be able to:
+% \begin{itemize}
+% \item Sketch in outline the derivation of Bell's inequality.
+% \item Defend a position on the questions: ``What, if any, are the
+%   metaphysical implications of the violations of Bell's inequality?''
+% \item Take a position on the question of whether QM predicts
+%   faster-than-light causality or ``spooky action at a distance.''
+% \item Explain how various interpretations of QM account for violations
+%   of Bell's inequality.
+% \end{itemize}
+
+
+\section{Classical probability}\label{dens}
+
+\begin{defn} Let $X$ be a finite set; the elements of $X$ may be
+  thought of as \emph{pure states}, i.e.\ complete, classical
+  configurations of some system or world.  A \emph{probability
+    measure} is a map $p: X \to [0, 1]$ such that
+  $\sum_{x\in X} p(x)=1$.  \end{defn}
+
+\begin{example} When the space $X$ is finite --- as we have assumed
+  --- there is one probability measure that seems special or
+  preferred, viz.\ the flat distribution:
+\[ p_0(x) \: = \: \frac{1}{n} ,\]
+where $n$ is the number of elements in $X$.  However, $p_0$ is by no
+means the only probability distribution on $X$.  For example, for
+each point $x\in X$, there is a probability measure that is
+concentrated on $x$:
+\[ p_x(y) \: = \: \begin{cases} 0 & \textrm{if}\; x=y, \\
+    1 & \textrm{if}\; x\neq y . \end{cases} \] If $p$ and $q$ are
+probability measures on $X$, and $\lambda\in [0,1]$, then
+$\lambda p+(1-\lambda )q$ is a probability measure on $X$, called a
+\emph{convex combination} of $p$ and $q$. \end{example}
+
+\begin{defn} If a state $p$ (i.e.\ a probability measure) can be
+  written as a non-trivial convex combination of other states, then we
+  say that $p$ is a \emph{mixed state}.  Otherwise we say that $p$ is
+  a \emph{pure state}.  In other words, the pure states are the
+  \emph{extremal points} of the convex set of states.  \end{defn}
+
+%% TO DO: define dispersion
+
+The following result shows that the pure states of $X$ are precisely
+the point masses, and hence stand in one-to-one correspondence with
+elements of $X$.
+
+\begin{prop} If $p(x)>0$, then $p=\lambda p_x+(1-\lambda )q$ for some
+  probability measure $q$ and some $\lambda >0$.  \end{prop}
+
+\begin{proof} If $p(x)=1$, then $p=p_x$ and we're finished.  If
+  $p(x)<1$, then we may define
+  \[ q \: = \: (1-\lambda )^{-1}(p-\lambda p_x) ,\] where
+  $\lambda =p(x)$. Then
+  \[ \begin{array}{rcl} \sum _{y\in X}q(y) & = & (1-p(x))^{-1}\sum
+      _{y\in
+        X}(p(y)-\lambda p_x(y))  \\
+      & = & (1-p(x))^{-1}(1-p(x)) \\
+      & = & 1 .\end{array} \] Hence $q$ is a probability measure, and
+  by definition $p=\lambda p_x+(1-\lambda )q$. \end{proof}
+
+\begin{prop} A probability measure $p$ on $X$ is pure iff $p=p_x$ for
+  some $x\in X$.  \label{gelfand} \end{prop}
+
+\begin{proof} Suppose that $p$ is pure.  Let $x\in X$ such that
+  $p(x)>0$.  By the previous result, $p=\lambda p_x+(1-\lambda )q$.
+  Since $p$ is pure, $p=p_x$.
+
+  Now we show that $p_x$ is pure.  Suppose that $p_x=\lambda
+  p+(1-\lambda )q$.  If $y\neq x$ then 
+  \[ 0 \: = \: p_x(y) \: = \: (1-\lambda )p(y)+\lambda q(y) .\] Hence
+  $p(y)=0=q(y)$.  Since $y$ was arbitrary, it follows that $p=p_x=q$.
+\end{proof}
+
+\begin{defn} A \emph{property} (or \emph{event} or \emph{proposition})
+  $E$ is defined to be a subset of $X$. \end{defn}
+
+The events/propositions on $X$ form a \emph{Boolean algebra} with the
+operations $\wedge$ (intersection), $\vee$ (union), and $\neg$
+(complement).  Any event $E$ also has an associated probability,
+denoted $p(E)$ and defined by
+\[ 
+  p(E) \: = \: \sum_{x\in E} p(x) .\] The map $p$ from subsets of $X$
+to probabilities is called a \emph{probability measure}, and it
+satisfies some obvious equations such as
+\[ p(E\vee F) \: = \: p(E)+p(F) ,\] when $E$ and $F$ are disjoint.
+
+\begin{disc} In classical physics, it's standard to assume that every
+  subset of state space corresponds to a property.  That's not the
+  general understanding in QM.  For example, consider the subset
+  $E=\{ \ket{0},\ket{1} \}\subseteq \2H$, which one might think
+  represents the property,
+  \begin{quote} \dots being in an eigenstate of $S_z$. \end{quote}
+  However, since $E$ is not a subspace of $\2H$, there is no
+  projection operator corresponding to it, and it's not usually
+  considered to represent a property.  But why not?  Should it be?
+
+  Let's use the name {\it abundant properties view} for the view that
+  all subsets of state space represent properties.  An old-fashioned
+  argument against the abundant view went like this:
+  \begin{quote}
+    The only properties that can be measured are those that are
+    represented by projection operators.  If something cannot be
+    measured, then there's no reason to think it's there.  Therefore,
+    there's no reason to think that there are properties besides those
+    represented by projection operators. \end{quote} The second
+  premise of that argument is beyond questionable.  What's more, there
+  are many projection operators that don't really correspond to things
+  that we can measure.  (After all, there is an uncountable infinite
+  of projection operators, and for most of them, we don't have any
+  idea what physical measuring procedure they would correspond to.)
+
+  However, there are better arguments against the abundant view.  For
+  example, there's the argument from paradoxes in the foundations in
+  mathematics.  Similarly, there are philosophical arguments such as
+  Goodman's grue paradox.
+
+  My favorite argument against the abundant view is the simple ``tell
+  me more'' argument.  It does like this: if you want to modify the
+  standard approach to QM, then please explicitly specify your new
+  theory, including its states, its properties, and the rules for
+  which properties are possessed in which states.  My suspicion is
+  that if somebody tells me more, then their new properties will end
+  up doing no work, i.e.\ they can be excised without the theory
+  losing any explanatory power. \end{disc}
+
+\begin{defn} Suppose that $p(E)>0$.  Then we define the
+  \emph{conditional probability} of $F$ given $E$ as
+  \[ p(F|E) \: = \: \frac{p(F\wedge E)}{p(E)} .\] \end{defn} \noindent
+In fact, $F\mapsto p_E(F)=p(F|E)$ is the probability measure generated
+by the function
+\[ p_E(x) \: = \:  \begin{cases} p(E)^{-1}p(x) & x\in E \\
+    0 & x\not\in E .\end{cases} \]
+itself a probability measure, and
+it's the most conservative choice of a new probability measure once
+one learns that $E$ holds.  Indeed, define a distance between
+probability measures on $X$ as follows:
+\[ \| p-q\| \: = \: \sum _{x\in X}|p(x)-q(x)| .\] Now let $M_E(X)$ be
+the set of all probability measures on $X$ with the feature that
+$q(E)=1$.  Clearly $p_E\in M_E(X)$, and it can be shown that
+\[ \| p - p_E \| \: \leq \: \| p-q \| ,\] for all $q\in M_E(X)$.  We
+will leave the details of a proof to the reader, but intuitively,
+$p_E$ is the only measure on $E$ that results from uniformly
+stretching values $p(x)$ for $x\in E$.  If that goal is to minimize
+the distance from $p$, then no measure $q$ can do better than a
+uniform stretch.  If $q$ were closer to $p$ at some point $x\in E$,
+then $q$ would have to be that much further away from $p$ at some
+other point $y\in E$.
+
+
+\begin{defn} A \emph{random variable} is a function
+  $f:X\to\mathbb{R}$.  We will sometimes call $f$ a \emph{quantity},
+  or for the sake of compassion with quantum theory, an
+  \emph{observable}. \end{defn}
+
+\begin{example} If $X$ is the classical configuration space
+  $\mathbb{R}^3$, then the function $f(x_1,x_2,x_3)=x_1$ represents
+  the quantity ``first coordinate of position.'' \end{example}
+
+Let $\mathbb{R}^X$ be the set of random variables, i.e.\ functions
+from $X$ to $\mathbb{R}$.  This set $\mathbb{R}^X$ naturally forms an
+algebra where the operations are defined pointwise.  That is, given
+$f,g$, we define
+\[ \begin{array}{rcl}
+    (f+g)(x) & = & f(x)+g(x) ,\\
+    (fg)(x) & = & f(x)g(x) ,\\
+    (rf)(x) & = & rf(x) .\end{array} \] Clearly this algebra has a
+multiplicative identity (the constant $1$ function), and is
+commutative, i.e.\ $fg=gf$.
+
+\newcommand{\spec}{\mathrm{sp}}
+
+\begin{defn} The \emph{spectrum} of $f$,
+  $\spec (f) \subseteq \mathbb{R}$, is the image of $X$ under $f$,
+  i.e.
+\begin{equation}
+  \spec (f) = \{ f(x) \in \mathbb{R} : x \in X \} .
+\end{equation} \end{defn}
+
+\begin{prop} For a quantity $f$, the following are equivalent.
+  \begin{enumerate}
+  \item $\spec (f)\in \{ 0,1\}$.
+
+  \item $f$ is the characteristic function of some subset $E$ of $X$.
+      \item $f^2=f$. \end{enumerate}
+  \end{prop}
+
+  \begin{proof} Suppose first that $\spec (f)\in \{ 0,1\}$.  If $E=\{
+    x\in X\mid f(x)=1\}$ then $f$ is the characteristic function of
+    $E$.  It's also clear that a characteristic function $f$ has the
+    property that $f^2=f$.  Hence $(1)\Rightarrow
+    (2)\Rightarrow (3)$.
+
+    Now suppose that $f^2=f$.  Then for any $x\in X$, $f(x)^2=f(x)$,
+    which implies that $f(x)=0$ or $f(x)=1$.  Therefore $\spec (f)\in
+    \{ 0,1\}$.    \end{proof}  
+
+  There is a natural probability density on $\spec (f)$ denoted by
+  $p_f$ and defined (for $\lambda \in \spec (f)$) by
+\[  p_f (\lambda) = \sum_{x\in f^{-1}(\lambda )} p(x) .\]
+
+More generally, for any $n$ random variables $f_1, \dotsc, f_n$, there
+is a discrete probability density on
+$\spec ( f_1) \times \cdots \times \spec (f_n)$ given by
+\[ 
+p_{f_1, \dots, f_n} (\lambda_1, \dots , \lambda_n) = \sum_{x\in S} p (x),
+\] 
+where $S= \bigcap_{i =1}^n f^{-1}_i(\lambda _i)$.
+
+\begin{defn} Given a random variable $f: X\to \mathbb{R}$, we define
+  the \emph{expectation value} of $f$ as
+\[ 
+p(f) \:=\: \sum_{x\in X} p(x)f(x) .
+\]  \end{defn}
+
+
+
+\begin{defn} If $E\subseteq X$, then the \emph{characteristic function} of $E$ is
+the function $e:X\to \{ 0,1\}$ that assigns $1$ to $x$ iff $x\in
+E$. \end{defn}
+
+It follows that $p(E)=p(e)$, where $p(E)=\sum _{x\in E}p(x)$, and
+$p(e)=\sum _{x\in X}e(x)p(x)$.  Hence, we can freely interchange
+application of $p$ to a subset and that subset's characteristic
+function.
+
+\begin{exercise} Show that expectation value is linear, i.e.\
+  $p(f+g)=p(f)+p(g)$, and $p(rf)=rp(f)$.  Show that expectation value
+  is positive, i.e.\ $p(f)\geq 0$ for any function $f$ such that
+  $\spec (f)\subseteq \mathbb{R}^+$.  Show that expectation value is
+  normalized, i.e.\ $p(1)=1$, where the first ``$1$'' is the constant
+  function on $X$.  Show that expectation value is not necessarily
+  multiplicative, i.e.\ $p(fg)\neq p(f)p(g)$.  \end{exercise}
+
+% dispersion
+
+\begin{example} If $p_a$ is the measure concentrated on $a\in X$, then
+  \[ p_a(f) \: =\: \sum _{x\in X}p_a(x)f(x) \: = \: f(a) ,\] for all
+  $f\in\mathbb{R}^X$.  (Here $\mathbb{R}^X$ is the set of functions
+  from $X$ to $\mathbb{R}$.)  Conversely, if $p(f)=f(a)$ for all
+  $f\in \mathbb{R}^X$, then $p(e)=1$ where $e$ is the characteristic
+  function of $\{ a\}$, and it follows that $p=p_a$. \end{example}
+
+\begin{prop} A state $p$ is pure iff $p(E)\in \{ 0,1\}$ for all events
+  $E$. \label{purity} \end{prop}
+
+\begin{proof} Suppose first that $p$ is pure.  By Prop \ref{gelfand},
+  $p=p_a$ for some $a\in X$.  Hence
+  \[ p(E) \:= \: p_a(E) \: = \: \sum _{x\in E} p_a(x) \: =
+    \: \begin{cases} 0 & x\not\in E , \\
+      1 & x\in E .\end{cases} \]
+
+Suppose now that $p(E)\in \{ 0,1\}$ for all events $E$.  In
+particular, $p(\{ x\})\in \{ 0,1\}$ for each $x\in X$.  Since
+\[ 1 \: = \: p(X) \: = \: \sum _{x\in X}p(\{ x\}) ,\] it follows that
+$p(\{ a\})=1$ for some $a\in X$, and hence $p=p_a$.  Therefore, $p$ is
+pure.
+\end{proof}
+
+\begin{defn} Let $f$ be a quantity (aka random variable) and let $p$
+  be a state.  The \emph{dispersion} (aka variance) $V_p(f)$ of
+  $f$ in $p$ is defined by
+  \[ V_p(f) \: = \: p(f^2)-p(f)^2 . \] We say that $p$ is
+  \emph{dispersion free} on $f$ just in case $V_p(f)=0$.  We say
+  that $p$ is \emph{dispersion free} if it is dispersion free on all
+  quantities.  \end{defn}
+
+If $f$ is a projection, then $f^2=f$, and hence $V_p(f)=p(f)^2-p(f)$.
+Therefore $p(f)\in \{ 0,1\}$ iff $V_p(f)=0$.
+
+We now look at the \emph{spectral decomposition} of a function.  For
+any subset $\lambda \in \spec (f)$, let
+\[ E(\lambda ) \: = \: \{ x\in X \mid f(x)=\lambda \} .\] Using the
+correspondence between a subset $E(\lambda )$ of $X$ and its
+characteristic function $e(\lambda )$, we have 
+\[ f \: = \: \lambda _1e(\lambda _1)+\cdots +\lambda _ne(\lambda _n)
+  .\] This fact is completely trivial in the case we are dealing with.
+But it will be important to remember the analogy when we derive an
+analogous result for quantum probability spaces.
+
+\begin{prop} A state $p$ is pure iff $p$ is dispersion-free on all
+  quantities. \end{prop}
+
+\begin{proof} Suppose that $p$ is pure.  By Prop \ref{purity},
+  $p(g)\in \{ 0,1\}$ for all $g$ such that $g^2=g$.  In particular,
+  $p(e(\lambda _i))\in \{ 0,1\}$, for any spectral projection
+  $e(\lambda _i)$ of $f$.  Hence,
+  \[ p(f) \: = \: \sum _i \lambda _ip(e(\lambda _i)) \: = \: \lambda
+    _j ,\]
+  for some $\lambda _j\in \spec (f)$.  A similar calculation shows
+  that $p(f^2)=\lambda _j^2$.
+
+  Now suppose that $V_p(f)=0$ for all quantities $f$.  In particular,
+  $p(f^2)=p(f)^2$ for any idempotent $f$, and hence
+  $p(f)\in \{ 0,1\}$.  By Prop \ref{purity}, $p$ is pure.  \end{proof}
+
+%% simplex
+
+
+
+%% multiplicative <-> dispersion-free
+
+The following result shows the precise sense in which there are always
+\textbf{hidden variables} for classical systems, i.e.\ any state
+whatsoever can be interpreted as an ignorance mixture of determinate
+(i.e.\ dispersion-free) states.
+
+\begin{prop}[unique decomposition] Every state $p$ on $X$ decomposes
+  uniquely as a convex combination of dispersion-free
+  states. \end{prop}
+
+\begin{proof} Suppose that $X=\{ x_1,\dots ,x_n\}$.  Since $p(X)=1$,
+  it follows that $p(x_i)>0$ for some $i\in [1,n]$.  Let
+  $S=\{ i\in [1,n] : p(x_i)> 0\}$, and let $\lambda _i=p(x_i)$.  Then
+  $p=\sum _{i\in S}\lambda _ip_{x_i}$.
+
+  To see that this decomposition is unique, suppose that
+  $p=\sum _{i\in S'}\lambda _i'p_{x_i}$ where $0<\lambda '_i<1$ and
+  $\sum _{i\in S'}\lambda _i'=1$.  If $k\in S$, then
+  \[ \sum _{i\in S'}\lambda _i'p_{x_i}(x_k) \: > \: 0 ,\]
+  and it follows that $k\in S'$.  By symmetry, if $k\in S'$ then $k\in
+  S$.  Finally, for $k\in S=S'$, we have $\lambda _k=p(x_k)=\lambda
+  '_k$. 
+\end{proof}
+
+\begin{defn} Let $V$ be a linear space over the real numbers.  A
+  subset $K\subseteq V$ is said to be \emph{convex} just in case for
+  each $x,y\in K$ and $\lambda \in (0,1)$, we have
+  $\lambda x+(1-\lambda )y\in K$. \end{defn}
+
+If we use $M(X)$ to denote the set of probability measures on $X$,
+then $M(X)$ can be seen as living inside the linear space of functions
+from $\7R ^X$ to $\7R$, i.e.\ functionals on the algebra of random
+variables.  Clearly $M(X)$ is a convex set, and the previous result
+tells us that $M(X)$ is a special kind of convex set, called a
+simplex.
+
+\begin{defn} Let $V$ be a finite-dimensional vector space, and let $K$
+  be a convex subset of $V$.  Then $K$ is called a \emph{simplex} just
+  in case each $x\in K$ has a unique decomposition in terms of
+  extremal points in $K$. \end{defn}
+
+In fact, there is a nice geometric representation of $M(X)$ when $X$
+has $n$ elements: it is the standard simplex with $n$ extreme points.
+In particular, for $n=2$, $M(X)$ is a line segment; for $n=3$, $M(X)$
+is a triangle; for $n=3$, $M(X)$ is a tetrahedron, etc.
+
+In contrast, quantum state spaces are not simplices.  (The quantum
+state space is not actually the Hilbert space $\2H$, but the convex
+set of density operators on $\2H$.)  Take, for example, the density
+operators on a two-dimensional Hilbert space.  If $E_0$ and $E_1$ are
+the spectral projections of $S_z$, and $F_0$ and $F_1$ the spectral
+projections of $S_x$, then
+\[ \tfrac{1}{2}E_0+\tfrac{1}{2}E_1 \: = \: \tfrac{1}{2}I \: = \:
+  \tfrac{1}{2}F_0+\tfrac{1}{2}F_1 .\] Thus, an equal mixture of the
+eigenstates of $S_z$ is the same state as an equal mixture of the
+eigenstates of $S_x$, i.e.\ a state can be decomposed into pure states
+in more than one way.  This feature of quantum state spaces is known
+as the \emph{non-unique decomposability of mixtures}.  In fact, the
+convex set of density operators on a two-dimensional Hilbert space is
+shaped like a sphere, and it's usually called the \emph{Bloch sphere}.
+
+
+\begin{prop} Let $q:\mathbb{R}^X\to \mathbb{R}$ be a positive linear
+  functional such that $q(1)=1$.  Then there is a unique probability
+  measure $p$ on $X$ such that $q(f)=\sum _{x\in X}p(x)f(x)$, for each
+  $f\in \mathbb{R}^X$. \end{prop}
+
+\begin{proof} Let $e_1,\dots ,e_n$ be characteristic functions of all
+  singleton subsets of $X$.  Since $q$ is linear and normalized, we
+  have
+  \[ 1 \: = \: q(e_1+\cdots +e_n) \: = \: q(e_1)+\cdots +q(e_n) .\]
+  Since $q$ is positive, $q(e_i)\in [0,1]$.  Hence if we define
+  $p(x)=q(\{ x\})$, then $p$ is a probability measure on $X$.  Now let
+  $f$ be an arbitrary element of $\mathbb{R}^X$, and let
+  $e(\lambda _1),\dots ,e(\lambda _m)$ be its spectral decomposition,
+  which means that $f(x)=\lambda _i$ iff $e(\lambda _i)(x)=1$.
+  Clearly we have
+  \[ \sum _{x\in e(\lambda _i )}p(x) \: = \: \sum _{x\in e(\lambda
+      _i)}q(\{ x\}) \: = \: q(e(\lambda _i)) ,\] and hence
+  \[ \begin{array}{rcl}
+      q(f) & = & \lambda _1q(e(\lambda _1))+\cdots \lambda _m q(e(\lambda
+      _m)) \\
+      & = &  \lambda _1p(e(\lambda _1))+\cdots \lambda _m p(e(\lambda
+      _m)) \\
+      & = & \sum _{x\in X}p(x)f(x) . \end{array} \]
+
+
+\end{proof}
+
+
+
+
+\section{Composite systems} \label{derive}
+
+Given two state spaces $X$ and $Y$, the state space of the composite
+system is the Cartesian product
+\[ X\times Y \: = \: \{ (x,y) \mid x\in X,y\in Y \} .\] In this case,
+Prop \ref{purity} implies that every pure state is of the form
+$p_{(x,y)}$.
+
+The space $X\times Y$ has the feature that for any functions
+$f:X\to \7R$ and $g:X\to\mathbb{R}$, there is a unique function
+$f\times g:X\times Y\to\mathbb{R}$ given by
+\[ (f\times g)(x,y) \: = \: f(x)g(y) , \] for all $x\in X$ and
+$y\in Y$.  However, there are also functions on $X\times Y$ that do
+not decompose in this way.  For example, let $X=Y=\{ a,b\}$, and
+consider the function $p$ such that
+\[ p(x,y) \: = \: \begin{cases} \frac{1}{2} & x=y , \\
+    0 & x\neq y .\end{cases} \] In fact, this function $p$ is a
+probability measure on $X\times Y$.  Intuitively, it's a state in
+which the two systems are \emph{strictly correlated}: either both are
+in state $a$, or both are in state $b$.  Nonetheless, each state on
+$X\times Y$ is a convex combination of pure states.  In particular,
+$p=\sum _i \lambda _ip_i$, where each $p_i$ is a state of the form
+$p_x\times p_y$.  This mathematical fact corresponds to the physical
+fact that correlated states can be interpreted \textit{epistemically},
+e.g.\ as representing our ignorance of the real state of the system,
+which is a logical sum of the state of the individual subsystems.
+
+
+%% TO DO: Bell's inequality
+
+In order to derive Bell's inequality, we first need to prove a trivial
+little result about inequalities of real numbers:
+
+\begin{prop} For real numbers $a,b\in [-1,1]$, we
+  have \begin{equation} |a+b|+|a-b| \:\leq\:
+    2. \label{trivial} \end{equation} \end{prop}
+
+\begin{proof} If $a+b$ is positive, then $|a+b|+|a-b|=2\max \{ a,b\}$,
+  and if $a+b$ is negative, then $|a+b|+|a-b|=2\max \{
+  -a,-b\}$. \end{proof}
+
+Now we consider two systems with state spaces $X$ and $Y$.  Let
+$f_1,f_2\in \mathbb{R}^X$ such that $\spec (f_i)\subseteq [-1,1]$, and
+let $g_1,g_2\in \mathbb{R}^Y$ such that $\spec (g_i)\subseteq [-1,1]$.
+That is, $f_1$ and $f_2$ are quantities associated with system $X$,
+and $g_1$ and $g_2$ are quantities associated with system $Y$.
+Consider the quantity represented by the function
+\[ r \: = \: f_1\times (g_1+g_2) + f_2\times (g_1-g_2) .\] This $r$ is
+called a \emph{Bell observable}, and it could, in principle, be
+measured by two observers with systems $X$ and $Y$.  We then have
+\[ \begin{array}{rcl} | r(x,y) | & = &
+    |f_1(x)g_1(y)+f_1(x)g_2(y)+f_2(x)g_1(y)-f_2(x)g_2(y)| \\
+    & \leq & |f_1(x)+f_2(x)|+|f_1(x)-f_2(x)| \\ & \leq & 2
+    , \end{array} \] where the final inequality follows from
+Eq.~\ref{trivial}, since $f_1(x),f_2(x)\in [-1,1]$.
+
+\begin{bellthm} If $r$ is a Bell observable, then for any classical
+  state $\omega$,
+  \begin{equation} -2\: \leq \: \omega (r) \: \leq \: 2 . \label{bell} \end{equation}  \end{bellthm}
+\noindent Equation \ref{bell} is called \emph{Bell's inequality}, or
+to be more accurate the \emph{CHSH} variant of Bell's inequality (in
+honor of Clauser, Horne, Shimony, and Holt).
+
+\begin{proof} The discussion above shows that $-2\leq p(r)\leq 2$ for
+  any pure state $p$.  An arbitrary state $\omega$ is a convex
+  combination of pure states, and so the result holds for $\omega$ as
+  well.  \end{proof}
+
+\begin{question} The word ``locality'' does not occur in this section.
+  So how is it that the derivation of Bell's inequality requires the
+  assumption of locality?  \end{question}
+
+
+\section{QM predicts violation of Bell's inequality}
+
+%% TO DO: Show that if [B_1,B_2]=0, then there is no violation of Bell
+
+The Bell experiment uses an idea that is due to David Bohm, and which
+is based on the Einstein-Podolsky-Rosen thought experiment.  In the
+EPR thought experiment, we have two systems whose locations and
+momenta are strictly correlated.  However, that thought experiment is
+difficult to describe mathematically, because position and momentum
+are continuous quantities.  So, Bohm suggests that we look at two
+systems whose spins are strictly anticorrelated.
+
+To be more precise, let $\2H$ and $\2K$ be two-dimensional Hilbert
+spaces, i.e.\ both are isomorphic to $\mathbb{C}^2$.  Then the state
+space of the joint system is the tensor product $\2H\otimes \2K$.  The
+\emph{singlet state} of $\2H\otimes \2K$ is given by
+\[ \Omega \: = \: 2^{-1/2}\left( \ket{01}+\ket{10} \right) ,\] where
+$\ket{0}$ is the $+1$ eigenstate of $S_z$, and $\ket{1}$ is the $-1$
+eigenstate of $S_z$, and $\ket{ij}=\ket{i}\otimes\ket{j}$.  We now let
+\[ \begin{array}{l c l l}
+     A_1 = S_x\otimes I & & B_1 =  I\otimes -\frac{1}{\sqrt{2}}(S_y+S_x)  \\ \\
+     A_2= S_y\otimes I  & & 
+                                                 B_2= I\otimes
+                                                 \frac{1}{\sqrt{2}}(S_y-S_x)
+                                                 .\end{array} \] %
+Note that each $A_i$ and $B_j$ is self-adjoint with spectrum
+$\{-1,+1\}$.  [Here $B_1$ is a measurement of spin along an axis
+tilted $\pi /4$ from the $x$-axis in the $xy$ plane, and $B_2$ is a measurement of spin
+along an axis tilted $-\pi /4$ from the $x$-axis.]  Since $[A_i,B_j]=0$, it follows that $A_iB_j$ is also
+self-adjoint with spectrum $\{-1,+1\}$.
+
+Combining $A_1,A_2,B_1,B_2$, we have four different global measurement
+contexts: $A_1B_1,A_1B_2,A_2B_1$, and $A_2B_2$.  (Here a ``global''
+measurement context means that measurements have been chosen for both
+subsystems.)  
+
+For any quantity $X$, let
+$\omega (X)=\langle \Omega ,X\Omega \rangle$, i.e.\ $\omega (X)$ is
+the quantum expectation value of $X$ in state $\Omega$.  From the
+equations in the appendix, we have $\omega (A_iB_j)=2^{-1/2}$ when $i=1$ or
+$j=1$, and $\omega (A_2B_2)=-2^{-1/2}$.  Hence, \begin{equation}
+  \omega (A_1B_1)+
+  \omega (A_1B_2)+ \omega (A_2B_1) - \omega (A_2B_2) \: = \: \frac{4}{\sqrt{2}} \: = \:
+  2\sqrt{2} ,\label{viol} \end{equation} and if we let
+$R=A_1B_1+A_1B_2+A_2B_1-A_2B_2$, then $\omega (R)= 2\sqrt{2}$.
+
+What Bell showed is that if $A_1,A_2,B_1,B_2$ are classical random
+variables with spectrum in $[-1,1]$, then
+\[ -2 \: \leq \: \omega (A_1B_1)+\omega (A_1B_2) + \omega
+  (A_2B_1)-\omega (A_2B_2) \: \leq \: 2 .\] Therefore, Eqn \ref{viol}
+shows that the predictions of QM cannot be reproduced by a classical
+probabilistic model.
+                                                                
+Let's pause to note a crucial difference between the classical and
+quantum cases: in the quantum case, no two of the four measurements
+are compatible.  To put it in neutral, mathematical terms: since $A_1$
+and $A_2$ do not commute, $A_1B_1$ and $A_2B_1$ do not commute, etc.
+What do those neutral, mathematical terms mean?  Well, according to
+Kochen-Specker, if operators do not commute, then they cannot
+simultaneously possess values.  I don't say that because I'm an
+operationalist (i.e.\ ``if it can't be measured then it's not real''),
+but because I cannot assign values to both $A_1$ and $A_2$ without
+contradicting myself.\footnote{The current example is precisely the
+  exceptional case to Kochen-Specker: it is, in fact, possible to
+  assign joint values to $A_1$ and $A_2$.  Does that change the
+  overall dialectic?  I don't think so, because nobody thinks that the
+  world is made of two-dimensional systems.}
+
+The fact we just noted (i.e.\ that the four measurement contexts are
+incompatible) adds a wrinkle to the dialectic of the Bell inequality.
+Think of it this way: Bell argues that {\it if} there were a classical
+probabilistic model of the four measurement contexts, {\it then} that
+model would be nonlocal.  However, we already know that there can be
+no classical probabilistic model of the four measurement contexts.
+Thus, one might wonder whether Bell's result really adds anything new
+to the Kochen-Specker result.  We'll come back to that question after
+we finish showing that QM violates Bell's inequality.
+
+%% To Do: cite Arthur Fine
+
+\begin{exercise} In this exercise, you will show that the Bell
+  inequality is violated only if Anne and Bjarke both make use of
+  incompatible measurement settings --- a fortiori, violations of
+  Bell's inequality require at least four quantities.  As a warm-up,
+  check that if
+  $B_1=B_2=-2^{-1/2}I\otimes (S_y+S_x)$, then
+  \[ \omega (A_1B_1)+\omega (A_1B_2)+\omega (A_2B_1)-\omega (A_2B_2)
+    \: = \: \sqrt{2} \: < \: 2 .\] Then there are a couple different
+  ways one can generalize that result.  First, one can note that if
+  $[B_1,B_2]=0$, then there is a single self-adjoint operator $C$ such
+  that both $B_1$ and $B_2$ are functions of $C$.  (Intuitively: if
+  $B_1$ and $B_2$ can be simultaneously diagonalized, then it's easy
+  to construct another diagonal matrix $C$ and functions $f_1$ and
+  $f_2$ such that the eigenvalues of $B_i$ result from applying the
+  function $f_i$ to the eigenvalues of $C$.)  Second, one can show
+  that if $R$ is a Bell observable, then
+\[ R^2 \: = \: 4I + [A_1,A_2][B_1,B_2] .\]
+Hence, if either $[A_1,A_2]=0$ or $[B_1,B_2]=0$, then $R^2=4I$ which
+entails that $\spec{(R)}\subseteq [-2,2]$.                                                            \end{exercise}
+
+The previous exercise raises the following puzzle for the defenders of
+the nonlocality thesis (i.e.\ the thesis that the violation of Bell's
+inequality establishes non-locality): why is Bell's inequality only
+violated for measurements of incompatible quantities?  If there is
+nonlocality in nature, then why does it not display itself in
+measurements of a single quantity?
+
+
+\section{Locality and contextuality}
+
+In this section we will investigate the relation between Bell's
+inequality and contextuality.  Our original derivation of Bell's
+inequality (in Section \ref{derive}) tacitly assumes non-contextuality
+(in having just one probability space $X$ for all four experiments).
+Some people have said, however, that Bell does not assume
+non-contextuality; he assumes locality, and derives non-contextuality
+from it.  If that's right, the our derivation in Section \ref{derive}
+contains an implicit assumption of locality.
+
+Recall that the Bell setup talks about four separate experiments
+(measurement of $A_i$ and $B_j$ for $i,j=1,2$), and that according to
+QM, no two of these experiments are compatible with each other.  Thus,
+one might suggest that there are really four state spaces in play, say
+$X_{11},X_{12},X_{21},X_{22}$.  The elements of $X_{ij}$ are states
+that a system can be relative to the quantities $A_i$ and $B_j$, say
+$(-1,-1),(-1,+1),(+1,-1),(-1,-1)$.
+
+Our first question is: are there classical probability distributions
+$p_{ij}$ on $X_{ij}$ that reproduce the statistics of the singlet
+state?  Even without checking details, it is obvious that the answer
+is yes.  For any quantity $R$, a quantum state $\Omega$ induces a
+classical probability measure over the eigenstates of $R$.  For the
+specific case at hand, we can let $p_{ij}$ be the probability
+distribution induced by the singlet state on the eigenstates of the
+operator $A_iB_j$.
+
+%% TO DO: show that this model is not local / ... is contextual /
+%% ... not factorizable
+
+%% TO DO: show that locality => non-contextuality
+
+Here's another version of the Bell theorem.  Suppose in this case that
+we have two propositions $A$ and $B$ about the left system, and two
+propositions $B'$ and $C$ about the right system.  For example, $A$
+might be the proposition that $S_a\otimes I$ has value $+1$, and $B'$
+might be the proposition that $I\otimes S_b$ has value $+1$.  We
+assume that $B$ and $B'$ are strictly anticorrelated, i.e.\ for any
+truth-assignment (aka hidden variable) $\omega$, the value
+$\omega (B)$ must be the opposite of $\omega (B')$, i.e.\ if the
+former is true, then the latter is false, and vice versa.  If a hidden
+variable $\omega$ did not have this feature, then it would not
+contribute in an significant way to the statistics of the singlet
+state.  In Bell's terminology, the measure of these hidden variables
+would be zero, so they can be omitted from further consideration.
+
+Now, we claim that if $\omega (A\wedge C)=1$ then either
+$\omega (A\wedge B')=1$ or $\omega (B\wedge C)=1$.  Indeed, either
+$\omega (B)=0$ or $\omega (B)=1$, and in the former case,
+$\omega (B')=1$ and hence $\omega (A\wedge B')=1$.  In the latter
+case, $\omega (B\wedge C)=1$.  Thus, in either case,
+\[ \omega (A\wedge C) \: \leq \: \omega (A\wedge B')+ \omega (A\wedge
+  C) .\] Since integration is linear and preserves inequalities, it
+follows that for any probability measure $\mu$ on hidden variables,
+\begin{equation} \mu (A\wedge C) \: \leq \: \mu (A\wedge B')+\mu
+  (B\wedge C) .\label{pbell} \end{equation} This last equation is a
+simple probabilistic version of Bell's inequality.  In particular,
+suppose that we've chosen three measurement directions ($a,b,c$) and
+suppose that:
+ \begin{itemize}
+   \item $A$ is the statement that $S_a\otimes I$ has value
+     $+1$.
+   \item $B$ is the statement that $S_b\otimes I$ has value
+     $+1$.
+   \item $B'$ is the statement that $I\otimes S_b$ has value
+     $+1$.
+   \item $C$ is the statement that $I\otimes S_c$ has value
+     $+1$.  \end{itemize}
+   Then we have the following translation scheme:
+   \begin{eqnarray*} 
+        \mu (A\wedge B') &  = & P_{ab}(++) \\
+        \mu (A\wedge C) &   = & P_{ac}(++) \\
+        \mu (B\wedge C) & = & P_{bc}(++) ,\end{eqnarray*} 
+                              and Equation \ref{pbell} becomes
+\begin{equation} P_{ac}(++) \: \leq \: P_{ab}(++)+P_{bc}(++)
+  .\end{equation}
+For QM, if $a=\pi /3$, $b=0$, and $c=-\pi /3$, then one can calculate
+(as shown in the appendix) that: 
+\[ P_{ac}(++)=3/8,\qquad P_{ab}(++)=1/8 ,\qquad P_{bc}(++)=1/8 .\] So,
+once again, QM violates Bell's inequality.
+
+
+\section{What did Bell do?}
+
+At the time when Bell proved his theorem, it was already known that QM
+would predict a violation of Bell's inequality.  However, at that time
+--- in the 1960s --- no direct experiment had been undertaken to
+verify this prediction of QM.  In the intervening years, many
+different experiments have confirmed that Bell's inequality is
+violated.  (Many people would say that the decisive experiment was the
+one undertaken by Alain Aspect in 1982.)  Let's look at the
+significance of these two facts in reverse order.
+
+First, what is the significance of the fact that there are
+experimental violations of Bell's inequality?  In the first instance,
+the only significance of this fact is that the model we made above
+does not adequately describe those experimental situations.  In other
+words, if we thought that there were two systems $X$ and $Y$, and that
+classical probability theory was applicable in the simple way we
+described above, then we would derive a false prediction about the
+outcomes the experiments.
+
+Some other philosophers and physicists have not been so modest in
+their claims about what these experiments show.  For example,
+according to Tim Maudlin, the violation of Bell's inequality show
+quite simply that the physical universe has a feature called
+``non-locality''.
+\begin{quote} [John Bell] taught us something about the world we live
+  in, a lesson that will survive even the complete abandonment of
+  quantum theory. For what cannot be reconciled with locality is an
+  observable phenomenon: the violations of Bell’s inequality for
+  ‘measurements’ performed at arbitrary distances apart, or at least
+  at space-like separation. And this phenomenon has been verified, and
+  continues to be verified, in the lab. Neither indeterministic nor
+  deterministic theories can recover these predictions in a local way.
+  Non-locality is here to stay. \cite[p 22]{maudlin} \end{quote}
+Similarly, \citet{norsen} claims that, ``nonlocality really is
+required to coherently explain the empirical data.''  This is an
+interesting point of view, and there are a couple of different ways to
+read it --- either in the material mode, or in the formal mode.  (The
+material mode is speaking about the universe, and the formal mode is
+speaking about theories.)  In the material mode, the claim seems to be
+that some possible universes are local, and others are non-local, but
+that any universe that displays violations of Bell's inequalities is
+one of the non-local universes.  But that claim doesn't look anything
+like what Bell actually proved.  Bell didn't talk about varieties of
+universes, and he didn't give us any insight into what a non-local
+universe would look like.
+
+To read Maudlin and Norsen's claims in the formal mode would have Bell
+showing something like this:
+\begin{quote}
+  There is no theory $T$ with property $\Phi$ such that $T$ predicts
+  violations of Bell's inequalities \end{quote} where, in this
+particular case, $\Phi$ is the property of being a local theory.  Once
+again, the claim seems too strong.  Bell didn't do any surveying of
+the space of all possible theories, so it's not clear how his result
+could show anything of this sort.  Instead, what Bell showed is that a
+certain familiar kind of modeling strategy --- classical probability
+--- makes the wrong predictions for these kinds of experiments.  We
+have a long way to go before we can say anything about all possible
+future theories.
+
+In fact, in the decades immediately following Bell's theorem, there
+was a different consensus about the physical significance of the
+result.  In particular, the common view was that Bell's theorem should
+be thought of as a derivation of an (experimentally testable)
+inequality from the conjunction of two premises:
+\begin{description}
+\item[realism] The moon is there even when no-one is looking.
+\item[locality] Things that happen in one place cannot have an
+  instantaneous effect on things in another place.
+\end{description}
+(The classic ``Jarrett analysis'' of Bell's derivation can be found in
+\cite{jarrett}.)  I've purposely stated these premises in both a
+vague, and an overspecific, way.  The point of doing so is that as
+soon as one starts explicating (i.e.\ formalizing) these premises,
+then one has to beg some questions about the framework.  In standard
+analyses of Bell's theorem, one begins immediately to translate
+\textbf{locality} into a statement about conditional probabilities.
+But to apply classical probability theory to a complicated situation
+requires making quite a few physical assumptions about what's going
+on.
+
+In the case at hand, note that the Bell observable
+\[ f_1\times (g_1+g_2)+f_2\times (g_1-g_2) ,\] is built out of four
+different observables: $f_1$ and $f_2$ belong to the first
+experimenter, and $g_1$ and $g_2$ belong to the second experimenter.
+Hence, to successfully carry out a test of Bell's inequality, the
+first experimenter must perform at least two different measurements,
+and the second experimenter must also perform at least two different
+measurements.  So, we're not talking about any single state of
+affairs, but a sequence of different experiments.  If we assume that
+these four experiments can be jointly modeled in the way that
+classical physics suggests, then we get a false prediction (i.e.\ that
+Bell's inequality would be satisfied).
+
+To be clear, to prove a claim of the form
+\begin{quote} \textbf{locality} $\:\Longrightarrow\quad |p(r)|\leq 2$
+  ,\end{quote} one first has to make \textbf{locality} into a
+mathematically precise statement.  So let's say that
+\textbf{i-locality} is our intuitive concept of locality, and let's
+say that \textbf{m-locality} is a mathematical precisification of
+\textbf{i-locality}.  Then Bell's theorem is of the form
+\begin{quote} \textbf{m-locality}
+  $\:\Longrightarrow\quad |p(r)|\leq 2$ ,\end{quote} and the
+experimental result $p(r)>1$ shows that \textbf{m-locality} doesn't
+hold.  Does it follow that \textbf{i-locality} doesn't hold?  Well,
+not unless the intuitive concept of locality demands a particular
+mathematical explication.  Perhaps it does; we will have to think
+about that.  (For a similar argument, see \cite{werner-maudlin}.)
+
+Update: what I wrote about i-locality and m-locality is not clear.
+(Thanks to Alex for raising some questions.)  The point I was trying
+to make is that it's possible (I think!) that QM does satisfy some
+form(s) of locality, even though it violates Bell's inequality.  To
+try to make that point more clearly, I've added the following section.
+
+\section{How QM is local}
+
+In this section, I'll explain some ways in which QM does seem to be
+local.  In particular, QM has the feature that what is measured at one
+location seems to be irrelevant for the statistics of measurements at
+other locations.  If that's right, then one cannot send signals by
+choosing what to measure, nor can one figure out what somebody else
+measured (at a distance) by looking at the result of one's local
+measurements.  This is not to say that QM forbids non-local causality
+--- only that if there is such causality, then its effects are well
+hidden from us.
+
+Suppose that Anne is in Amsterdam and Bente is in Beijing, and Anne
+wants to send an instantaneous (faster than light) message to Bente.
+Suppose, in particular, that Bente wants to know whether Ajax
+Amsterdam won their game.  Here then is a strategy for Anne to signal
+to Bente: 
+\begin{quote} (Protocol A) Anne and Bente prepare a pair of electrons
+  in the singlet state $\psi$.  If Anne measures $S_z\otimes I$, then
+  after the measurement, their state will either be $\ket{01}$, or it
+  will be $\ket{10}$.  On the other hand, if Anne measures $S_x$, then
+  after the measurement, their state will either be $\ket{\!+\!-}$, or
+  it will be $\ket{\!-\!+}$.  (Here we use $\ket{\pm}$ for the $\pm 1$
+  eigenstate of $S_x$.)  Before the experiment begins, Anne and Bente
+  agree that if the state is one of the $S_z$ eigenstates, then the
+  message is ``Yes'', and if the state is one of the $S_x$
+  eigenstates, then the message is ``No.'' \end{quote}
+\begin{exercise} Recall that according to the collapse postulate, if
+  Anne measures $S_z\otimes I$ on state
+  $\psi=\frac{1}{\sqrt{2}}(\ket{01}-\ket{10})$, then the subsequent
+  quantum state is either $\ket{01}$ or $\ket{10}$.  (1) Explain how
+  Protocol A assumes the collapse postulate.  (2) Explain why, even
+  with the collapse postulate, Protocol A will not
+  work. \end{exercise}
+
+Back in section ?, we assumed that composite quantum systems could be
+described using the tensor product operation: ``$\otimes$''.  I also
+told you not to worry too much about why the tensor product is the
+right way to represent composite systems.  Indeed, I'm not sure that
+anyone has a good argument for the claim that the tensor product is
+``natural'' or ``demanded'' by the concept of spatial parts.  There
+is, however, at least one sense in which the tensor product operation
+ensures that the two systems (or two parts of one system) are {\it
+  independent} from each other.  In particular, if $H_1\otimes H_2$ is
+the state space of a composite system, then the quantities associated
+with the first system are of the form $A\otimes I$, and the quantities
+associated with the second system are of the form $I\otimes B$.  Then
+we have
+\[ (A\otimes I)(I\otimes B) \: = \: A\otimes B \: = \: (I\otimes
+  B)(A\otimes I) .\]
+In other words,
+\[ [A\otimes I,I\otimes B] \: = \: 0 ,\] which means that the
+quantities $A\otimes I$ and $I\otimes B$ are \emph{compatible}.  That
+is, QM {\it assumes} that any quantity associated with one system is
+compatible with any other quantity associated with a distant system
+--- which is at least an interesting mathematical difference in
+comparison to the quantities associated with a single system.
+
+For a single system, there are quantities, such as position $Q$ and
+momentum $P$, that have an uncertainty relation.  At least
+statistically speaking, QM predicts that you'll won't find yourself in
+a situation where sequences of position-then-momentum measurements
+will stay within narrow bands.  The situation is different with
+spatially separated systems.  QM predicts that for {\it any}
+quantities $A$ and $B$ associated with spatially distant systems,
+there are states in which both quantities have zero dispersion.
+
+Intuitively, if there were an uncertainty relation between $A$ and
+$B$, then Anne could signal Bente by measuring $A$, thereby forcing
+(if we assume the collapse postulate) the system into an eigenstate
+$\omega$ of $A$, so that the variance $V_\omega (B)$ would be nonzero.
+
+%% now explain why expectation value on rhs is independent of lhs
+
+So, the tensor product formalism ensures that there are no uncertainty
+relations between Anne's quantities and Bente's quantities.  Another
+feature of the tensor product formalism is that it's possible to ``mix
+and match'' states.  To see what I mean, consider a contrasting
+example:
+
+\begin{quote} Suppose that there are twins, Arnie and Barnie.  Arnie
+  and Barnie are perfectly in sync, so that if Arnie orders chicken
+  for dinner, then so does Barnie --- even if they are on opposite
+  sides of the world.  
+\end{quote}
+
+Spatially separated quantum systems are {\it not} like Arnie and
+Barnie.  For any state $x$ of $H_A$ and for any state $y$ of a
+spatially distant system $H_B$, it's possible for the composite system
+to be in state $x\otimes y$.  For example, if $x$ is the state of
+ordering chicken, and $y$ is the state of ordering beef, then there is
+a state in which the first system orders chicken and the second system
+orders beef.\footnote{Something more complicated happens when we take
+  into account the permutation symmetries of QM.  In that case, there
+  are two kinds of particles, those whose states are symmetric under
+  permutation, and those whose states are antisymmetric under
+  permutations.  However, those restrictions don't conflict with the
+  property I'm describing here.}  That is, the quantum states of
+spatially separated systems are freely combinable, a feature called
+\emph{state preparation independence}.
+
+Here's another way to put the issue.  Let $E$ be a nonzero projection
+operator associated with Anne's system, and let $F$ be a nonzero
+projection operator associated with Bente's system.  Then not only do
+we have $[E,F]=0$ (the projections are compatible), but we also have
+$E\wedge F\neq 0$.  In other words, Anne's system having property $E$
+does not rule out Bente's system having property $F$.  If $F\neq I$,
+then we also have $E\wedge \neg F\neq 0$, i.e.\ Anne's system having
+property $E$ does not rule out Bente's system having property
+$\neg F$.  In short, the properties of Anne's system are completely
+independent of the properties of Bente's system.
+
+For those who aren't convinced of the mathematics in the previous
+passage: here $E$ is really a projection of the form $E\otimes I$, and
+$F$ is really a projection of the form $I\otimes F$.  If $E$ has a
+nonzero eigenvector $x$, and if $F$ has a nonzero eigenvector $y$,
+then $(E\otimes I)(I\otimes F)=E\otimes F$ has a nonzero eigenvector
+$x\otimes y$.  It follows that $E\otimes F\neq 0$.
+
+As a summary, here are some of the ways in which QM is manifestly
+local:
+\begin{itemize}
+\item microcausality: quantitites associated with distant regions are
+  compatible with each other.
+\item state preparation independence: if $D_1$ can be prepared and
+  $D_2$ can be prepared, then $D_1\otimes D_2$ can be prepared.
+\item quantum no signalling theorem
+\item apparent parameter independence: statistics of measurements are
+  independent of what is being measured at a distance.
+\end{itemize}
+
+
+\section{Bell's inequality for separable states}
+
+It's not true, of course, that all quantum states violate Bell's
+inequality.  Indeed, product states, such as $x\otimes y$, most
+definitely do not violate Bell's inequality.
+
+In this section, we define the notion of a separable state, and we
+show that no separable states violate Bell's inequality.  The paradigm
+case of separable states are those given by product vectors such as
+$x\otimes y$.  In that case, for any product operator such as
+$A\otimes B$, we have
+\begin{eqnarray*} \langle x\otimes y,(A\otimes B)x\otimes y\rangle & =
+  & \langle x\otimes y,Ax\otimes By\rangle \\
+  & = & \langle x,Ax\rangle \cdot \langle y,By\rangle .\end{eqnarray*}
+That is, expectation values factorize, which motivates the following definition.
+
+\begin{defn} Let $\2H\otimes\2K$ be the Hilbert space for a composite
+  quantum system, and let $\omega$ be a quantum state for this system.
+  We say that $\omega$ is a \emph{product state} just in case
+  $\omega (A\otimes B)=\omega (A\otimes I)\times \omega (I\otimes B)$,
+  for all $A\in \bh$ and $B\in \bk$.  We say that $\omega$ is a
+  \emph{separable state} just in case it is a convex combination of
+  product states.  If a state is not separable, then we say that it is
+  \emph{inseparable}.  Thus, the notion of an inseparable state is a
+  generalization of the notion of an entangled state.  \end{defn}
+
+\newcommand{\tr}[1]{\mathrm{Tr}(#1)}
+
+We show first that product states satisfy Bell's inequality.  In fact,
+the result is simple enough: if $\omega$ is a product state and
+$R=A_1(B_1+B_2)+A_2(B_1-B_2)$ is a Bell observable, then
+\[ \omega (R) \: = \: \omega (A_1)\omega (B_1)+\omega (A_1)\omega
+  (B_2)+\omega (A_2)\omega (B_1)-\omega (A_2)\omega (B_2) .\]
+Furthermore, since we've assumed that $\spec{(A_i)}\subseteq [-1,1]$
+and $\spec{(B_i)}\subseteq [-1,1]$, it follows that
+$-1\leq \omega (A_i)\leq 1$ and $-1\leq \omega (B_i)\leq 1$, and we
+can just plug the numbers into the previous derivation of Bell's
+inequality.  That is, $-2\leq \omega (R)\leq 2$.
+
+Now suppose that $\rho$ is separable, that is
+$\rho = \sum _{i=1}^n \lambda _i\omega _i$, where each $\omega _i$ is
+a product state, and where $\sum _i\lambda _i=1$.  Since
+$-2\leq \omega _i(R)\leq 2$ for $i=1,\dots ,n$, it follows that
+$-2\leq \rho (R)\leq 2$.  Therefore, all separable states satisfy
+Bell's inequality.
+
+One might conjecture now that if a state is inseparable, then it
+violates Bell's inequality.  It turns out, however, that this
+conjecture is false.  There are certain quantum states, known as
+\emph{Werner states}, that are inseparable but satisfy Bell's
+inequality \cite[see][]{werner1989}.
+
+
+
+\section{Summary}
+
+Why are people arguing about the upshot of Bell's theorem?  My sense
+is that the deeper source of the disagreement here are the different
+attitudes toward the question: what should we do next in physics?  Or
+to put the question in a more mundane way: which approach should I ---
+as a student, or as a researcher --- invest my time and effort into?
+In particular: should we proceed with the quantum theory we find in
+today's textbooks, or should we work on an alternative such as Bohmian
+mechanics?  Let me explain what Bell's theorem has to do with that
+question.
+
+Quantum mechanics definitely poses some conceptual challenges.  (I use
+the phrase ``conceptual challenges'' as a euphemism where others say
+that ``QM is incoherent'' or ``QM is not even a theory.'')  When one
+learns about these challenges, and then learns that other approaches
+--- such as Bohmian mechanics --- don't face these same challenges,
+then one is faced with a dilemma.  Should one give up the current
+version of QM?  One of the knee-jerk reactions among physicists has
+been that Bohmian mechanics is not a good alternative to standard QM,
+because Bohmian mechanics is nonlocal, and hence conflicts with
+Einstein's relativity theory.
+
+Thus, for defenders of Bohmian mechanics, it's sociologically and
+psychologically important to establish that their theory does not have
+a fatal flaw --- or at least, not a flaw that other approaches lack.
+If Bohmians could demonstrate that {\it any} theory that saves the
+phenomena is nonlocal, then they will have removed the primary
+objection to their approach.  In other words, Bell's theorem could
+provide Bohmians with the ultimate {\it tu quoque} response to
+objections to their theory: ``You call my theory nonlocal?  Well, so
+is yours.''
+
+Bohmians are not the only guilty party here.  I suspect that
+resistance to the claim that Bell's theorem establishes nonlocality is
+primarily driven by the desire to maintain the status quo in physics.
+When physicists are told that their favorite theory is ``incoherent''
+or ``not even a theory,'' and when they are presented with an
+alternative (such as Bohmian mechanics) which presumably does not have
+these fatal flaws, then they might want to strike back with: ``well,
+but Bohmian mechanics, unlike standard QM, contradicts relativity.''
+
+On balance, I think the situation is simply the frustrating one that
+Bell's theorem --- like any other mathematical theorem --- makes use
+of many premises, some explicit, any many others implicit.  What that
+means is that a violation of Bell's inequality only tells us that one
+or another of those premises is false.  It doesn't tell us which one
+of those premises is the guilty one, and for all we know, it might be
+a framework assumption that we haven't yet made explicit.  Think here
+about Einstein's path to the discovery of relativity theory.  When
+Lorentz's ether theory made a false prediction, then the obvious thing
+was to conclude that one of Lorentz's premises was false.  However,
+nobody before Einstein thought that perhaps the false thing was the
+implicit assumption that the notion of simultaneity is
+observer-independent!  Is it possible then we have yet to identify
+some implicit assumption in the derivation of Bell's inequality?
+
+\section*{Discussion questions}
+
+\begin{enumerate}
+\item Bohmian mechanics says that all measurements
+  ultimately reduce to position measurements.  How is it then that
+  Bohmian mechanics violates Bell's inequality --- as it, must, since
+  it reproduces all the predictions of QM? 
+\item For those who have studied relativity theory: it's often said
+  that relativity theory is the paradigm of a local physical theory.
+  How is the locality assumption expressed in relativity
+  theory?  Does the kind of locality required by relativity conflict
+  with what we see in QM?
+\item Is locality a discovery of science, or is it a presupposition
+  for intelligible explanations?  Why is there a tendency to associate
+  non-locality with something ``spooky'' or even
+  ``mystical''?
+\item If there is nonlocality in nature, then why can it apparently
+  not be used to send information faster than the speed of light?  
+\end{enumerate}
+
+
+
+\section*{Appendix: Probabilities in the singlet state}
+
+\begin{lemma} Let $\Omega$ be the singlet vector in $\2H\otimes\2H$,
+  and let $\{ e_0,e_1\}$ be an orthonormal basis for $\2H$.  Then
+  \[ \Omega \: = \: c(e_0\otimes e_1-e_1\otimes e_0 )
+    ,\] for some complex number $c$. \label{schmidt} \end{lemma}
+
+\begin{proof}[Sketch of proof] Write $\ket{0}=c_0e_0+c_1e_1$ and
+  $\ket{1}=d_0e_0+d_1e_1$, and compute.  \end{proof}
+
+\begin{lemma} If $\Omega$ is the singlet vector, then the reduced
+  state on each subsystem is the the maximally mixed state. \end{lemma}
+
+\begin{proof} Of course, this fact can be computed directly.  In
+  addition, looking at Lemma \ref{schmidt}, if $P$ is any
+  one-dimensional projection, then
+  $\langle \psi ,(P\otimes I)\psi \rangle = \frac{1}{2}$.  \end{proof}
+
+
+By default convention, the three basic spin operators on $\2H = \7C ^2$
+are given by:
+\[ S _x=\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \qquad
+  S _z=\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \qquad
+  S _y=\begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} \]
+It then follows that  \[ 
+                   S _jS _k-S _kS_j =2i S_\ell , \qquad \text{and} \qquad S _jS _k+S _kS _j =
+                               0 , \]
+whenever $j,k,\ell$ are distinct. 
+\begin{exercise} Show that the operators $\frac{1}{2}(1+S _z)$ and
+  $\frac{1}{2}(1-S _z)$ are the spectral projections for $S
+  _z$. \end{exercise} For our calculations, it will be convenient to
+generate spin matrices from the following more basic matrices:
+\[ V=\begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix} \qquad \qquad V^*
+  =\begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \] Technically, we
+shouldn't have written $V^*$ until we established that $V^*$ is the
+adjoint of $V$, but it is a straightforward calculation.  Here $V$ is
+defined by the fact that $V\ket{0}=\ket{1}$ and $V\ket{1}=0$, or in
+Dirac notation, $V=|1\rangle\langle 0|$.  Similarly, $V^*$ is defined
+by the fact that $V^*\ket{1}=\ket{0}$ and $V^*\ket{0}=0$, or in Dirac
+notation, $V^*=|0\rangle\langle 1|$.  Hence,
+\[ V^*V \: = \: |0\rangle\langle 1|1\rangle\langle 0| \: = \:
+  |0\rangle\langle 0 | \] is the projection onto the $+1$ eigenspace
+of $S_z$, and $VV^*=|1\rangle\langle 1|$ is the projection onto the
+$-1$ eigenspace of $S_z$.  We also have $V^2=(V^*)^2=0$ and
+$\tr{V}=\tr{V^*}=0$.
+
+Now let
+\[ A(\theta ) \: = \: \exp (i\theta )V+\exp (-i\theta )V^* ,\] where
+$\theta$ is any angle in the $xy$ plane up from $x$.  In particular,
+\[ A(0) \: = \: V+V^* \: = \: S_x , \] and
+\[ A(\pi /2) \: = \: iV-iV^* \: = \: S_y ,\]
+where we used the fact that $\exp (i\pi/2)=i$ and $\exp (-i\pi
+/2)=-i$.  Note furthermore that
+\begin{eqnarray*} A(\pi /4 )& = & 2^{-1/2}( V+iV+V^*-iV^*) \\
+                            & = & 2^{-1/2}(V+V^*+iV-iV^*) \\
+                            & = & 2^{-1/2}(S_x+S_y) ,\end{eqnarray*}
+                                  and
+                           \begin{eqnarray*} A(-\pi /4 ) & = & 2^{-1/2}(S_y-S_x) .\end{eqnarray*}
+A straightforward calculation shows that
+\[ A(\theta _1) A(\theta _2) \: = \: \exp (i(\theta _1-\theta _2))P +
+  \exp (-i(\theta _1-\theta _2))(I-P) ,\] where $P=VV^*$.  Now let
+$\omega$ be any state such that $\omega (P)=\omega (I-P)=1/2$.  [This
+is true, for example, when $\omega$ is a tracial state, because then
+$\omega (V^*V)=\omega (VV^*)$.]  Then it follows that
+\begin{equation} \omega (A(\theta _1)A(\theta _2)) \: = \: \cos
+  (\theta _1-\theta _2) \label{cosa} .\end{equation}
+
+\begin{lemma} If $\Omega$ is the singlet vector, then
+  \[ (A(\theta )\otimes I)\Omega \: = \: -(I\otimes A(\theta ))\Omega .\] \end{lemma}
+
+\begin{proof} For notational simplicity, assume that all operators are
+  multiplied by $\sqrt{2}$, so that we don't have to repeatedly
+  renormalize vectors.  In that case, we have
+  $(V\otimes I)\Omega =\ket{11}$ and
+  $(V^*\otimes I)\Omega =-\ket{00}$, from which
+  \[ (A(\theta )\otimes I)\Omega \: = \: \exp (i\theta )\ket{11}-\exp
+    (-i\theta )\ket{00} .\] Similarly, $(I\otimes V)\Omega = -\ket{11}$ and
+  $(I\otimes V^*)\Omega = \ket{00}$, from which 
+\[ (I\otimes A(\theta ))\Omega \: = \: -\exp (i\theta )\ket{11}+\exp
+  (-i\theta )\ket{00} . \]
+\end{proof}
+
+Putting together the previous results gives the following
+expectation-value formula for the singlet state:
+\begin{eqnarray*}
+  \langle \Omega ,(A(\theta _1)\otimes -A(\theta _2))\Omega\rangle & = &
+  \langle \Omega ,(A(\theta _1)\otimes I)(A(\theta _2)\otimes I)\Omega
+                                                                         \rangle \\ 
+& = & \langle \Omega , (A(\theta _1)A(\theta _2)\otimes I)\Omega
+      \rangle \\  & = & \omega (A(\theta _1)A(\theta _2)) \\
+  & = & \cos (\theta _1-\theta _2) . \end{eqnarray*} 
+Here $\omega$ is the reduced state on the left-hand subsystem.  In particular, if we let $A_1=A(0)\otimes I$, $A_2=A(\pi /2 )\otimes I$,
+$B_1=I\otimes -A(\pi /4 )$, and $B_2=I\otimes -A (-\pi /4 )$, then we
+have the following expectation values:
+\[ \begin{array}{l c l c c c l }
+     \omega (A_1B_1) & = & \cos (-\pi /4) & = & \frac{1}{\sqrt{2}} \\ \\
+     \omega (A_1B_2) & = & \cos (\pi /4) & = & \frac{1}{\sqrt{2}}   \\ \\
+     \omega (A_2B_1) & = & \cos (\pi /4) & = & \frac{1}{\sqrt{2}}   \\ \\ 
+     \omega (A_2B_2) & = & \cos (3\pi /4 ) & = & -\frac{1}{\sqrt{2}}  .\end{array} \]
+                                             
+The next thing to do is to compute the corresponding probabilities,
+i.e.\ expectation values for spectral projections.  For fixed $\theta$,
+we have $A(\theta )^2=I$, hence both $E_0=\frac{1}{2}(I+A(\theta ))$
+and $E_1=\frac{1}{2}(I-A(\theta ))$ are projection operators such
+that $E_0-E_1=A(\theta )$.  For two angles $\theta _1$ and
+$\theta _2$, let $E=\frac{1}{2}(I+A(\theta _1))$ and let
+ $F=\frac{1}{2}(I+A(\theta _2))$.  Then \begin{eqnarray*} EF & = &
+   \tfrac{1}{4}(I+A(\theta _1)+A(\theta _2)+A(\theta _1)A(\theta _2))
+   .\end{eqnarray*} If $\omega$ is a tracial state, then
+ $\omega (A(\theta _i))=0$, and hence
+ \[ \omega (EF) \: = \: \tfrac{1}{4}(1+\cos (\theta _1-\theta _2)) \:
+   = \: \tfrac{1}{2}\cos ^2((\theta _1-\theta _2)/2) , \] where we
+ used Equation \ref{cosa} and the trigonometric identity
+ $\cos (2\theta )=2\cos ^2(\theta )-1$.  Similarly, if
+ $E'=\frac{1}{2}(I-A(\theta _1))$ and $F'=(I-A( \theta _2))$, then
+\[ 
+  E'F' \: = \: \tfrac{1}{4}(I-A(\theta _1)-A(\theta _2)+A(\theta
+  _1)A(\theta _2)) , \] from which it follows that $\omega (E'F')=\omega (EF)$.  Finally, 
+\[ \begin{array}{c c c c l } \omega (E'F) &=& \omega
+                                   ((I-E)F) & = & \omega (F)-\omega
+                                  (EF)  \\
+                               & = & \frac{1}{2}-\omega (EF) & =
+                                     & \frac{1}{2}\sin ^2 ((\theta
+                                     _1-\theta _2)/2)  .\end{array} \]
+These calculations yield the following probabilities in the
+singlet state:
+\[ \begin{array}{r c l l l }
+     P_{\theta _1\theta _2}(++) & = & \tfrac{1}{2}\sin ^2((\theta _1-\theta _2)/2 ) \\ \\
+     P_{\theta _1\theta _2}(+-) & = & \tfrac{1}{2}\cos ^2((\theta _1-\theta _2)/2 ) \\ \\
+     P_{\theta _1\theta _2}(-+) & = & \tfrac{1}{2}\cos ^2((\theta _1-\theta _2)/2 ) \\ \\ 
+     P_{\theta _2\theta _2}(--) & = & \tfrac{1}{2}\sin ^2((\theta _1-\theta _2)/2
+                 ) \end{array} \]
+The following table gives probabilities for measurement settings
+$a=\pi /3$ and $b=0$ on the left, and $b=0$ and $c=-\pi /3$ on the
+right.  These numbers give a maximal violation of the probabilistic
+version of Bell's inequality (Equation~\ref{pbell}).  
+\[ \begin{array}{c | c || c | c | c | c}
+                                    & & --     & -+     & +-    & ++  \\
+     \hline\hline \pi / 3 & 0         &  1/8     &  3/8    & 3/8       & 1/8 \\
+     \hline       \pi / 3 & -\pi /3   &  3/8    &  1/8       & 1/8   & 3/8  \\
+     \hline       0       & 0         &  0      &  1/2   &   1/2   &  0     \\
+     \hline       0       & -\pi /3   &  1/8    &  3/8   &  3/8  &  1/8 
+   \end{array} \]
+
+         
+\section*{Appendix: Reduced states}
+
+Any quantum state of a composite system $\omega$ gives rise to
+restricted states of its subsystems.  In particular, any operator $A$
+on $\2H$ corresponds to an operator $A\otimes I$ on $\2H\otimes \2K$,
+so we may define
+\[ \omega ^*(A) \: = \: \omega (A\otimes I ),\] for all $A\in \bh$.
+It is straightforward to verify that $\omega ^*$ is an abstract state
+on $\bh$.  And since every abstract state corresponds to a quantum
+state (i.e.\ a density operator), it follows that for any density
+operator $D$ on $\2H\otimes \2K$, there is a corresponding reduced
+density operator $D^*$ on $\2H$.  We now see how to compute this
+reduced density operator directly.
+
+We first show that the trace is multiplicative across tensor products.
+To this end, note that if we choose o.n. bases $\{ e_i\}$ for $\2H$
+and $\{ f_i\}$ for $\2K$, then $\{ e_i\otimes f_j\}$ is an o.n. basis
+for $\2H\otimes \2K$.  Hence,
+\begin{eqnarray*} \tr{X\otimes Y} & = & \sum _i\sum _j \langle
+                                        e_i\otimes f_j\mid Xe_i\otimes
+                                        Yf_j\rangle ,\\
+  & = & \sum _i\langle e_i\mid Xe_i\rangle \times \sum _j\langle
+        f_j\mid Yf_j\rangle \\
+                                  & = & \tr{X}\times \tr{Y}
+                                        .\end{eqnarray*}
+The multiplicativity of trace across tensor products also entails the Hilbert-Schmidt
+inner product is multiplicative across inner products:
+\begin{eqnarray*}
+  \langle A_1\otimes B_1 , A_2\otimes B_2\rangle  & = &
+                                                             \tr{(A_1\otimes
+                                                             A_2)^*(B_1\otimes
+                                                             B_2)} \\
+                                                       & = & \tr{A_1^*B_1\otimes A_2^*B_2} \\
+                                                       & = & \tr{A_1^*B_1}\times \tr{A_2^*B_2} \\
+  & = & \langle A_1 , B_1\rangle \times \langle A_2 ,B_2\rangle  .\end{eqnarray*}
+
+Let $\{ E_i\}$ be a family of one-dimensional projections on $\2H$
+such that $\sum _iE_i=I$.  It follows that $\{ E_i\}$ is an o.n. basis
+for $\bh$ relative to the Hilbert-Schmidt inner product, and hence,
+for any operator $A\in \bh$,
+\[ A \: = \: \sum _i\langle E_i,A\rangle E_i .\]
+Thus,
+\begin{eqnarray*} A\otimes I & = & \sum _i\langle E_i,A\rangle
+                                   (E_i\otimes I) ,
+\end{eqnarray*}
+and
+\begin{eqnarray*} \langle D,A\otimes I\rangle & = & \sum _i\langle
+                                                   D,E_i\otimes
+                                                   I\rangle \, \langle
+                                                   E_i,A\rangle
+                                                   .\end{eqnarray*} 
+Now define
+\[ D^* \: = \: \sum _i\lambda _iE_i ,\]
+where \[ \lambda _i \: = \: \langle D,E_i\otimes I \rangle \: = \:
+  \tr{D(E_i\otimes I)} .\]
+It's clear then that $0\leq \lambda _i\leq 1$, and that $\sum
+_i\lambda _i=1$.  Hence, $D^*$ is a density operator, and 
+\begin{eqnarray*} \tr{D^*A} & = & \langle D^* , A\rangle \\
+                            & = &   \sum _i\lambda _i\langle E_i , A \rangle \\
+  & = & \sum _i\langle D,E_i\otimes I \rangle \, \langle E_i ,
+        A\rangle \\
+                            & = & \langle D , A\otimes I \rangle \\
+                            & = & \tr{D(A\otimes I)} ,\end{eqnarray*}
+                          for all $A\in \mathcal{B}(\mathcal{H})$.
+
+\begin{example} Let $E$ be the projection onto the singlet state.
+  Thus, $E$ is a density operator state for a composite system
+  $\2H\otimes\2K$ consisting of two $2$-dimensional Hilbert spaces.
+  Let $F_1,F_2$ be orthogonal, one-dimensional projection operators on $\2H$.  It can
+  then be shown that $\tr{E(F_i\otimes I)}=\frac{1}{2}$.  Hence, the
+  reduced density operator on $\2H$ is
+  $(1/2)F_1+(1/2)F_2=(1/2)I$, i.e.\ the maximally
+  mixed state.  This is a prime example of a case where the reduced
+  state ``loses information.''  If we take the tensor product of the two density operators
+  $(1/2)I$ and $(1/2)I$ on the subsystems, then we get a mixed state
+  $(1/4)I$, and not the singlet state.     \end{example}
+
+
+
+                                
+
+\begin{lemma} Let $D_1$ be a density operator on $\2H$, and let $D_2$
+  be a density operator on $\2K$.  Then the density operator
+  $D_1\otimes D_2$ represents a product state on
+  $\2H\otimes\2K$. \end{lemma}
+
+\begin{proof} We compute:
+  \begin{eqnarray*} \tr{(D_1\otimes
+                                              D_2)(A\otimes B)} & = & \tr{D_1A\otimes D_1B} \\
+                                        & = & \tr{D_1A}\times
+                                              \tr{D_2B}  \\
+    & = & \tr{(D_1\otimes D_2)(A\otimes I)}\times \tr{(D_1\otimes D_2)(I\otimes B)} .\end{eqnarray*}
+
+
+\end{proof}
+
+
+
+
+
+
+
+%% TO DO: in QM talk about how we do know that choice of measurement
+%% doesn't affect statistics of the other system
+
+%% act-outcome and outcome-outcome dependence
+
+%% parameter dependence outcome dependence
+
+
+%% Jarrett analysis
+
+
+
+
+%% TO DO: conditionalization
+
+
+\bibliographystyle{chicago}
+
+\bibliography{/Users/hhalvors/teaching/phi327_s2020/qbib}
+
+
+
+\end{document}
+
+\section*{Appendix: Classical dynamical systems}
+
+For finite state spaces, the mathematical representation of dynamical
+evolution is not very interesting.  It's much more interesting for an
+infinite space $X$ that might have further structure --- such as a
+topology, or a metric, or a symplectic form.  In any case, whether $X$
+is finite or infinite, one might assume that dynamical evolution is a
+``flow'' on $X$, which we can represent by a parameterized family
+$u_t:X\to X$, $t\in\7R$ of automorphisms of $X$.  Furthermore, it
+would be natural to require that $u_{t+s}=u_tu_s$ and
+$u_{-t}=u_t^{-1}$.  Notice, however, that this representation presumes
+\emph{determinism}, i.e.\ that the state of a system at one time fixes
+the state of the system of future times.  In other words, a family
+such as $\{ u_t\mid t\in \mathbb{R} \}$ is a \emph{deterministic
+  dynamical law}.
+
+In contrast, a \emph{stochastic dynamical law} would specify a
+probability distribution over future states.  For example, $p_t(x,-)$
+could define a probability distribution on $X$.  We would then want to
+specify some further properties of the map $t,x\mapsto p_t(x,-)$, but
+we will not pursue that here.
+
+There is another way that one can specify a stochastic dynamical law,
+and that is as one-parameter family of morphisms on the space $M(X)$
+of states (i.e.\ probability distributions) on $X$.  If a pure state
+$p_y$ is mapped to a mixed state $q$, then that could naturally be
+interpreted as a stochastic process, where the transition probability
+from $p_y$ to $p_x$ is given by $q(x)$.
+
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

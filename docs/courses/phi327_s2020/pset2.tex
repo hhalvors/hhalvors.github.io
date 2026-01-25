@@ -1,0 +1,54 @@
+\documentclass[11pt,fleqn]{article}
+\sloppy
+% \usepackage{fullpage}
+\usepackage{outlines}
+\usepackage{soul}
+\usepackage{enumitem} 
+% \setlength{\parskip}{1em}
+% \setlength{\parindent}{0em}
+% \usepackage{setspace}
+% \spacing{2}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{tikz-3dplot}
+
+\newcommand{\zu}{|z+\rangle}
+\newcommand{\zd}{|z-\rangle}
+
+\newcommand{\xu}{|x+\rangle}
+\newcommand{\xd}{|x-\rangle}
+
+
+
+
+\usepackage{amsthm,amsmath,amsfonts}
+\theoremstyle{definition}
+\newtheorem*{exercise}{Exercise}
+\newtheorem*{defn}{Definition}
+\newtheorem*{convention}{Convention}
+\title{Phil Physics: Week 3}
+\date{}
+
+\renewcommand{\emph}{\textbf}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\section*{phil physics: pset 2}
+
+\newcommand{\ke}[1]{|#1\rangle}
+
+Let $\psi$ be the singlet state.  That is,
+\[ \psi \: = \: \frac{1}{\sqrt{2}}\left (\ke{L}\ke{R}-\ke{R}\ke{L}\right ).\]
+Recall that $\ke{L}\ke{R}$ is shorthand for the more cumbersome notation $\ke{L}\otimes\ke{R}$.  You are given the equations
+\[ \ke{0} \: =\: \frac{1}{\sqrt{2}}\left( \ke{L}+\ke{R} \right) ,\qquad      \ke{1} \: = \: \frac{1}{\sqrt{2}}\left( \ke{L}-\ke{R} \right) . \]
+ Show that
+ \[ \psi \: = \: \frac{1}{\sqrt{2}}\left( \ke{1}\ke{0}-\ke{0}\ke{1} \right) .\]
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
