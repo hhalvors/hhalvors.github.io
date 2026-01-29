@@ -350,25 +350,28 @@ h2.year-label {
   }
 }
 
-/* Parallel Danish/English layout — inside normal content column */
+/* Parallel Danish/English layout — bookish style */
 .parallel {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 3.5rem;
-  margin: 2rem 0;
+  gap: 1.6rem;              /* wider gutter like a book fold */
+  margin: 2.5rem 0;
   align-items: start;
 }
 
-/* remove column padding/border if you like; keep if you like */
+/* Danish (left) */
 .parallel > .dk {
-  padding-right: 1.75rem;
-  border-right: 1px solid #eee;
+  padding-right: 1.2rem;   /* inner margin like page gutter */
+  border-right: 1px solid #ddd;  /* soft divider */
   min-width: 0;
 }
+
+/* English (right) */
 .parallel > .en {
-  padding-left: 1.75rem;
+  padding-left: 1.2rem;
   min-width: 0;
 }
+
 
 /* Mobile: stack */
 @media (max-width: 1100px) {
