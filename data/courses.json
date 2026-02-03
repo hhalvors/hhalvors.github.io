@@ -13,7 +13,14 @@
     "semester": "Summer",
     "year": 2026,
     "link": ""
-  },       
+  },
+        {
+    "title": "Fysikkens videnskabsteori",
+    "code": "VtFys",
+    "semester": "Summer",
+    "year": 2026,
+    "link": "vtfys_2026/index.html"
+  },
   {
     "title": "Relativity and the metaphysics of material objects",
     "code": "PHI544",
