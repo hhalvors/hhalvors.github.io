@@ -6,11 +6,16 @@ course:
   title: "Tools for thought: logic, probability, and arguments for philosophy and life"
   status: "Draft"
   last_updated: "2026-02-02"
+  university: Princeton University
 
-people:
+staff:
   instructors:
-    - name: "Adam Elga"
-    - name: "Hans Halvorson"
+  - name: "Adam Elga"
+    role: "Professor"
+    email: "adame@princeton.edu"
+  - name: "Hans Halvorson"
+    role: "Professor"
+    email: "hhalvors@princeton.edu"    
 
 overview:
   description: >

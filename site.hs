@@ -317,6 +317,17 @@ main = hakyllWith config $ do
           >>= loadAndApplyTemplate "templates/course-base.html" ctx
           >>= relativizeUrls
 
+-- phi 220
+
+    match "courses/phi220_f2026/index.md" $ do
+      route $ setExtension "html"
+      compile $ do
+        ctx <- courseBaseCtx "courses/phi220_f2026" "home"
+        pandocCompiler
+          >>= loadAndApplyTemplate "templates/course-home.html" ctx
+          >>= loadAndApplyTemplate "templates/course-base.html" ctx
+          >>= relativizeUrls
+
     -- ============================================================
 -- PHI 338 (Fall 2014) — legacy course: syllabus + lecture handouts
 -- ============================================================
