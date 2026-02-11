@@ -319,10 +319,10 @@ main = hakyllWith config $ do
 
 -- phi 220
 
-    match "courses/phi220_f2026/index.md" $ do
+    match "courses/phi221_f2026/index.md" $ do
       route $ setExtension "html"
       compile $ do
-        ctx <- courseBaseCtx "courses/phi220_f2026" "home"
+        ctx <- courseBaseCtx "courses/phi221_f2026" "home"
         pandocCompiler
           >>= loadAndApplyTemplate "templates/course-home.html" ctx
           >>= loadAndApplyTemplate "templates/course-base.html" ctx
