@@ -399,9 +399,23 @@ h2.year-label {
   text-align: left !important;
 }
 
-.container {
-  padding-left: 0rem !important;
-  padding-right: 0rem !important;
+:root{
+  --content-pad: 1.25rem;  /* good default side padding */
 }
+
+/* keep your existing container.content rule */
+.container.content {
+  max-width: var(--content-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--content-pad);
+  padding-right: var(--content-pad);
+}
+
+/* MOBILE: a bit smaller padding */
+@media (max-width: 700px) {
+  :root{ --content-pad: 1rem; }
+}
+
 
 
