@@ -160,34 +160,53 @@ Assistens Kirkegård.</p>
   <div id="kierkegaard-map"></div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
   <script>
-    const map = L.map('kierkegaard-map').setView([55.6810, 12.5710], 15);
 
-    const modern = L.tileLayer(
-      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      { attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
-        maxZoom: 19 }
-    );
-    modern.addTo(map);
+  const map = L.map('kierkegaard-map').setView([55.6810, 12.5710], 15);
 
-    fetch('/data/kierkegaard-locations.json')
-      .then(r => r.json())
-      .then(locations => {
-          locations.forEach(loc => {
-	  const icon = L.divIcon({
-            className: '',
-            html: '<div class="kk-marker">' + loc.id + '</div>',
-            iconSize: [26, 26],
-            iconAnchor: [13, 13],
-            popupAnchor: [0, -14]
-          });
-          const popup = '<h3>' + loc.name + '</h3><p>' + loc.description + '</p>';    
-          L.marker([loc.lat, loc.lng], { icon })
-            .bindPopup(popup)
-            .addTo(map);
-        });
+const modern = L.tileLayer(
+  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  { attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+    maxZoom: 19 }
+);
+
+const historical = L.tileLayer.wms(
+  'https://api.dataforsyningen.dk/topo20_hoeje_maalebordsblade_DAF',
+  { layers: 'dtk_hoeje_maalebordsblade',
+    format: 'image/png',
+    transparent: true,
+    token: 'cd1efbba288eb47dc57e8335d5d601c8',
+    opacity: 0.85,
+    attribution: '© Klimadatastyrelsen',
+    maxZoom: 19 }
+);
+
+historical.addTo(map);
+
+L.control.layers(
+  { 'c. 1850': historical, 'Modern': modern }
+).addTo(map);
+
+fetch('/data/kierkegaard-locations.json')
+  .then(r => r.json())
+  .then(locations => {
+    locations.forEach(loc => {
+      const icon = L.divIcon({
+        className: '',
+        html: '<div class="kk-marker">' + loc.id + '</div>',
+        iconSize: [26, 26],
+        iconAnchor: [13, 13],
+        popupAnchor: [0, -14]
       });
-  </script>
+      const popup = '<h3>' + loc.name + '</h3><p>' + loc.description + '</p>';
+      L.marker([loc.lat, loc.lng], { icon })
+        .bindPopup(popup)
+        .addTo(map);
+    });
+  });
+</script>  
+
 </div>
 
       </div>
