@@ -617,6 +617,20 @@ main = hakyllWith config $ do
     --             >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
     --             >>= relativizeUrls
 
+    match "data/kierkegaard-locations.json" $ do
+      route idRoute
+      compile copyFileCompiler
+
+    match "kierkegaard/index.md" $ do
+      route $ constRoute "kierkegaard/index.html"
+      compile $
+        pandocCompiler
+          >>= loadAndApplyTemplate "templates/kierkegaard-map.html"
+                (constField "title" "Kierkegaard's Copenhagen" <> siteCtx)
+          >>= loadAndApplyTemplate "templates/default.html"
+                (baseSidebarCtx <> siteCtx)
+          >>= relativizeUrls
+
     -- Bohr: Process all .md files in the "kierkegaard" folder
     match "kierkegaard/*.md" $ do
       route $ setExtension "html"
