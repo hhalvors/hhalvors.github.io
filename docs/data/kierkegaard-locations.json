@@ -96,6 +96,30 @@
     "lat": 55.6823,
     "lng": 12.5730,
     "description": "From 1838 to 1841, the theologian and philosopher Rasmus Nielsen (1809–1884) lived here. Nielsen completed his theological doctorate in 1840 and became a professor at the University of Copenhagen in 1841. In the early 1840s he became acquainted with Kierkegaard, and the two maintained a complex intellectual relationship. Nielsen was initially drawn to Hegelian idealism before later aligning with Grundtvigianism."
-  }  
+  },
+    { "id": "ved-stranden-16"
+      , "name": "Niels Bohr's Birthplace (Gustmeyer House)"
+      , "lat": 55.6776
+, "lng": 12.5813
+, "address": "Ved Stranden 16"
+, "description": "The Neoclassical Gustmeyer House, built 1797, where both Niels Bohr (1885) and his brother Harald were born. Their mother Ellen Adler came from the banking family that owned the building. Now houses McKinsey & Company."
+, "category": "intellectual-history"
+    },
+ { "id": "gammel-torv-hoffding"
+   , "name": "Harald Høffding's Birthplace"
+   , "lat": 55.6786
+, "lng": 12.5721
+, "address": "Nørregade 1 / Gammeltorv (Alexandrahus)"
+, "description": "Corner site where Harald Høffding was born on 11 March 1843 — the same year Kierkegaard published Either/Or. A commemorative plaque marks the building. Høffding later became Niels Bohr's philosophy teacher at the University of Copenhagen and a lifelong influence."
+, "category": "intellectual-history"
+}
+, { "id": "studiestraede-6"
+, "name": "H.C. Ørsted's Home and Laboratory"
+, "lat": 55.6791
+, "lng": 12.5706
+, "address": "Studiestræde 6"
+, "description": "Home and workplace of Hans Christian Ørsted from 1829 until his death in 1851. Here he served as director of the Polyteknisk Læreanstalt. A commemorative plaque marks the gate. Ørsted had already discovered electromagnetism in 1820 and founded the Society for the Dissemination of Natural Science."
+, "category": "intellectual-history"
+}
 ]
 

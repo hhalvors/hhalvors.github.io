@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <!---
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  -->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Ugeseddel 2: AI og videnskabelig forståelse &middot; Hans Halvorson
+    
+  </title>
+
+  
+    
+      <link rel="canonical" href="https://hanshalvorson.com/courses/vtfys_2026/ugeseddel2.html">
+    
+  
+
+  <!-- Core site styles -->
+  <link rel="stylesheet" href="../../css/poole.css">
+  <link rel="stylesheet" href="../../css/syntax.css">
+  <link rel="stylesheet" href="../../css/lanyon.css">
+
+  <!-- Icon set -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+
+  <!-- Existing serif / sans families (kept for now in case they’re referenced) -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- ✦ Inter variable font (slant + weight) with optical sizing support -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Math (KaTeX + STIX Two Math) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+
+  <!-- Site-specific overrides (where we’ll tune Inter) -->
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="atom.xml">
+</head>
+
+
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Personligheden er Sandheden</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="../../index.html">Home</a>
+
+    <!--- The code below dynamically generates a sidebar nav of the files in the folder /pages 
+
+    
+      
+        <a class="sidebar-nav-item" href="/pages/About.html">About</a>
+      
+    
+      
+        <a class="sidebar-nav-item" href="/index.html">index</a>
+      
+    
+      
+        <a class="sidebar-nav-item" href="/john.html">john</a>
+      
+     -->
+
+
+	
+   <!-- Add the new Publications link -->
+	<a class="sidebar-nav-item" href="../../publications.html">Publications</a>
+
+	<a class="sidebar-nav-item" href="../../courses/">Courses</a>
+
+<a class="sidebar-nav-item" href="../../books/">Books</a>
+
+	<a class="sidebar-nav-item" href="../../drafts.html">Drafts</a>
+
+	<a class="sidebar-nav-item" href="../../talks.html">Talks</a>
+
+	<a class="sidebar-nav-item" href="https://www.dropbox.com/scl/fi/xs0ssqnvi6zvstxnehgpd/cv.pdf?rlkey=qgwhhw1tiaspqbrlnkbnwcpt2&dl=0">CV</a>
+
+	<a class="sidebar-nav-item" href="https://github.com/hhalvors">GitHub project</a>
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2025. All rights reserved.
+    </p>
+    <p>
+        <img src="../../images/haskell-logo.png" class="logo" style="display: inline;" />
+        Site created with
+        <a href="https://jaspervdj.be/hakyll">Hakyll</a>.
+        <br>
+        Modified theme
+        <a href="https://github.com/hahey/lanyon-hakyll">lanyon-hakyll</a>
+        based on
+        <a href="https://lanyon.getpoole.com/">Lanyon</a>.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="../../" title="Home">Hans Halvorson</a>
+            <small>Physics, Logic, Philosophy</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+          <div class="page">
+  
+  <h1 class="post-title">Ugeseddel 2: AI og videnskabelig forståelse</h1>
+  
+  <p>Kunstig intelligens er i dag et fast redskab i videnskabelig praksis.
+Men skaber AI videnskabelig <em>forståelse</em> — eller kun bedre
+<em>forudsigelser</em>?</p>
+<p>Spørgsmålet er ikke blot filosofisk abstrakt. I 2024 modtog Geoffrey
+Hinton og John Hopfield Nobelprisen i fysik for kunstige neurale
+netværk, og Demis Hassabis og John Jumper modtog kemiprisens for
+AlphaFold, der forudsiger proteinstrukturer med hidtil uset præcision.
+Begge priser skabte debat: er dette videnskabelige gennembrud i
+egentlig forstand, eller er det enestående teknologisk engineering? Og
+hvad siger det om forholdet mellem forudsigelse og forståelse?</p>
+<p>I denne uge anvender vi den ramme, vi etablerede i forrige uge, på
+disse spørgsmål. Vi spørger, under hvilke betingelser AI kan bidrage
+til videnskabelig forståelse — og hvornår det måske snarere hindrer
+den.</p>
+<hr />
+<h2 id="forelæsning-ved-hans-halvorson">Forelæsning — ved Hans Halvorson</h2>
+<p><strong>Læs dette inden forelæsningen:</strong></p>
+<ul>
+<li>Krenn et al. (2022): <em>On scientific understanding with artificial
+intelligence</em></li>
+<li>Sullivan (2022): <em>Understanding from Machine Learning Models</em></li>
+</ul>
+<hr />
+<h2 id="case-forelæsning-tba">Case-forelæsning — TBA</h2>
+<hr />
+<h2 id="øvelser">Øvelser</h2>
+<hr />
+<h3 id="time-1-tre-dimensioner-af-ai-assisteret-forståelse">Time 1: Tre dimensioner af AI-assisteret forståelse</h3>
+<h4 id="gruppeoplæg-gruppe-3-1015-minutter">Gruppeoplæg (Gruppe 3, 10–15 minutter)</h4>
+<p>Krenn et al. identificerer tre dimensioner, hvormed AI potentielt kan
+bidrage til videnskabelig forståelse. Oplægget skal dække følgende:</p>
+<ol type="1">
+<li>Forklar de tre dimensioner med egne ord: <em>computational microscope</em>,
+<em>resource of inspiration</em> og <em>agent of understanding</em>. Hvad er
+forskellen på dem?</li>
+<li>Krenn et al. skelner mellem <em>rediscovery tasks</em> og egentlig
+konceptuel innovation. Hvad er forskellen, og hvorfor er sondringen
+vigtig?</li>
+<li>Hvordan foreslår Krenn et al., at man kan vurdere, om en AI har
+opnået forståelse — frem for blot at imitere forståelse?</li>
+</ol>
+<h4 id="gruppeopgaver-20-minutter">Gruppeopgaver (20 minutter)</h4>
+<ol type="1">
+<li>AlphaFold forudsiger proteinstrukturer med bemærkelsesværdig
+præcision. Hvilken af Krenn et al.s tre dimensioner passer bedst på
+AlphaFold? Begrund jeres svar — og overvej, om AlphaFold
+kvalificerer sig som mere end én dimension.</li>
+<li>Krenn et al. skriver, at de ikke kender til tilfælde, hvor AI har
+afsløret <em>tidligere ukendte begreber</em> i videnskaben. Er det stadig
+rigtigt i dag? Kan I komme på eksempler, der måske udfordrer denne
+påstand?</li>
+<li>Anvend De Regt og Dieks’ CIT på AlphaFold: kan man genkende
+<em>kvalitativt karakteristiske konsekvenser</em> af AlphaFold uden at
+køre modellen? Hvad følger af svaret for spørgsmålet om, hvorvidt
+AlphaFold giver os videnskabelig forståelse af proteinfoldning?</li>
+</ol>
+<p><strong>Plenumopsamling</strong></p>
+<hr />
+<h3 id="time-2-den-sorte-boks-uigennemsigtighed-og-forståelse">Time 2: Den sorte boks — uigennemsigtighed og forståelse</h3>
+<h4 id="gruppeoplæg-gruppe-4-1015-minutter">Gruppeoplæg (Gruppe 4, 10–15 minutter)</h4>
+<p>Emily Sullivan argumenterer for, at det ikke er AI-modellers
+uigennemsigtighed i sig selv, der hindrer videnskabelig forståelse.
+Oplægget skal dække følgende:</p>
+<ol type="1">
+<li>Hvad er den naive <em>sorte-boks-indvending</em> mod maskinlæringsmodeller?
+Hvorfor finder Sullivan den utilstrækkelig?</li>
+<li>Forklar Sullivans begreb om <em>link uncertainty</em>: hvad er det, og
+hvad er det, der primært begrænser videnskabelig forståelse fra
+ML-modeller ifølge hende?</li>
+<li>Sullivan skelner mellem at forstå <em>modellen</em> og at forstå
+<em>fænomenet via modellen</em>. Hvad er forskellen, og hvorfor er den
+vigtig?</li>
+</ol>
+<h4 id="gruppeopgaver-20-minutter-1">Gruppeopgaver (20 minutter)</h4>
+<ol type="1">
+<li>AlphaFold ville ikke have fungeret uden det eksisterende korpus af
+eksperimentelt bestemte proteinstrukturer i Protein Data Bank.
+Hvordan illustrerer dette Sullivans begreb om link uncertainty?
+Giver AlphaFolds succes os forståelse af proteinfoldning, eller
+blot forudsigelsesevne?</li>
+<li>Sullivan argumenterer for, at graden af link uncertainty — og
+dermed kravet om empirisk forankring — bør være højere i <em>high
+stakes</em>-situationer. Giv eksempler fra fysik eller medicin, hvor
+dette princip er relevant. Er I enige i, at konteksten bør bestemme
+kravene til forståelse?</li>
+<li>Krenn et al. og Sullivan lægger vægten forskelligt: Krenn et al. er
+relativt optimistiske om AI’s bidrag til forståelse, Sullivan mere
+forsigtigt kræsne. Hvem finder I mest overbevisende — og i forhold
+til hvilke typer videnskabelig praksis?</li>
+</ol>
+<p><strong>Plenumopsamling</strong></p>
+<hr />
+<h3 id="time-3-kan-vi-måle-videnskabelig-forståelse">Time 3: Kan vi måle videnskabelig forståelse?</h3>
+<h4 id="gruppeoplæg-gruppe-5-1015-minutter">Gruppeoplæg (Gruppe 5, 10–15 minutter)</h4>
+<p>Barman et al. foreslår en <em>Scientific Understanding Benchmark</em> (SUB) —
+et sæt af tests, der kan måle og sammenligne videnskabelig forståelse
+hos både mennesker og AI-systemer. Oplægget skal dække følgende:</p>
+<ol type="1">
+<li>Barman et al. anlægger en <em>adfærdsbaseret</em> opfattelse af forståelse:
+man forstår noget, hvis man kan udføre visse opgaver. Forklar denne
+tilgang og sammenlign den med De Regt og Dieks’ CIT. Er de to
+opfattelser forenelige?</li>
+<li>Barman et al. skelner mellem tre niveauer i deres benchmark:
+informationsgenfinding, forklaring og kontrafaktisk ræsonnement
+(<em>what-if</em>). Hvad er forskellen, og hvorfor er det tredje niveau
+det mest krævende?</li>
+<li>Hvad ville det betyde, hvis en AI klarede SUB bedre end en
+uddannet fysiker? Ville det bevise, at AI’en <em>forstår</em>
+videnskaben — eller ville det vise, at benchmarket er utilstrækkeligt?</li>
+</ol>
+<h4 id="gruppeopgaver-20-minutter-2">Gruppeopgaver (20 minutter)</h4>
+<ol type="1">
+<li>Anvend SUB’s tre niveauer på AlphaFold. Hvilke niveauer klarer
+AlphaFold, og hvilke klarer den ikke? Hvad fortæller det os om
+forholdet mellem forudsigelsesevne og forståelse?</li>
+<li>Er en adfærdsbaseret opfattelse af forståelse tilstrækkelig — eller
+er der noget ved <em>at forstå</em> som ikke kan indfanges af tests?
+Hvad ville Weinberg sige?</li>
+<li>Barman et al.s benchmark er designet til at være sammenlignelig på
+tværs af mennesker og maskiner. Er det i sig selv problematisk at
+behandle forståelse som noget, der kan måles og rangordnes?</li>
+</ol>
+<p><strong>Plenumopsamling</strong></p>
+<hr />
+<h3 id="time-4-nobelprisen-og-spørgsmålet-om-videnskabelig-forståelse">Time 4: Nobelprisen og spørgsmålet om videnskabelig forståelse</h3>
+<h4 id="gruppeopgaver-30-minutter">Gruppeopgaver (30 minutter)</h4>
+<p>I 2024 skabte Nobelkomiteens valg debat i den videnskabelige verden.
+Hinton og Hopfield fik fysikprisen for neurale netværk — ikke for en
+ny fysisk teori eller et eksperimentelt resultat. Hassabis og Jumper
+fik kemiprisens for AlphaFold. Mange naturvidenskabsfolk reagerede med
+forundring eller irritation: havde AI fået for stor en plads?</p>
+<ol type="1">
+<li>Hvad kræves der efter jeres mening for, at en videnskabelig
+opdagelse fortjener en Nobelpris? Er forudsigelsesevne nok, eller
+skal der også være tale om forståelse af de underliggende mekanismer?
+Brug De Regt og Dieks’ CIT som målestok.</li>
+<li>Hintons neurale netværk er inspireret af biologiske nervesystemer,
+men er ikke en model <em>af</em> dem. Hopfields netværk er hentet fra
+statistisk fysik. Er disse forbindelser til fysikken tilstrækkelige
+til at begrunde en fysikpris — eller er det snarere matematik eller
+datalogi?</li>
+<li>Sammenlign Hassabis og Jumpers situation med de eksempler på
+konceptuel innovation, vi diskuterede i uge 1 (gen-begrebet,
+elektromagnetiske felter, kvantetallet spin). Hvad er fælles, og
+hvad er forskelligt? Har AlphaFold introduceret <em>et nyt begreb</em> i
+biologien eller kemien?</li>
+<li>Hvad mener I: vil AI inden for de næste ti år føre til en
+<em>videnskabelig revolution</em> — en ændring i de grundlæggende begreber
+og forklaringsformer? Eller vil det primært accelerere <em>normal
+science</em> inden for eksisterende paradigmer?</li>
+</ol>
+<p><strong>Plenumopsamling</strong></p>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="https://hanshalvorson.com/public/js/script.js"></script>
+
+
+  </body>
+
+</html>
