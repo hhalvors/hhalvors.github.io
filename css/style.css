@@ -63,6 +63,21 @@ blockquote {
 ul, ol { margin-left: 1.3rem; }
 li { margin-bottom: 0.55rem; }
 
+/* Course/page content: override the browser's default 40px padding-left
+   plus the margin-left above, which together produce excessive indentation. */
+.page ul,
+.page ol {
+  margin-left: 0;
+  padding-left: 1.5rem;
+}
+
+.page ul ul,
+.page ul ol,
+.page ol ul,
+.page ol ol {
+  padding-left: 1.2rem;
+}
+
 /* Masthead */
 .masthead-title {
   font-family: var(--inter);
