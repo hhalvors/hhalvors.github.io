@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHI 423 — Week 9: Key Figures</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap');
+
+  :root {
+    --ink: #1a1410;
+    --paper: #f5f0e8;
+    --sepia: #8b6f47;
+    --rust: #7a3b2e;
+    --muted: #6b5e4e;
+    --border: #c9b99a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: none;
+  }
+
+  .cursor {
+    position: fixed;
+    width: 8px; height: 8px;
+    border: 1px solid var(--paper);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, opacity 0.2s;
+  }
+
+  .show {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+  }
+  .slide.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .portrait-col {
+    width: 42%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #110e0a;
+  }
+
+  .portrait-col::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent 70%, #110e0a 100%);
+    z-index: 1;
+  }
+
+  .portrait-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    filter: sepia(20%) contrast(1.05);
+    opacity: 0.9;
+  }
+
+  .slide-num {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--sepia);
+    text-transform: uppercase;
+    z-index: 5;
+  }
+
+  .text-col {
+    width: 58%;
+    background: #110e0a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5vw 6vw 5vw 4vw;
+    position: relative;
+  }
+
+  .text-col::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 15%; bottom: 15%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--sepia) 30%, var(--sepia) 70%, transparent);
+  }
+
+  .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 300;
+    color: var(--paper);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.3rem;
+  }
+
+  .dates {
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    color: var(--sepia);
+    letter-spacing: 0.1em;
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+
+  .role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .role::before {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--rust);
+  }
+
+  .desc {
+    font-size: 1.15rem;
+    color: #c9b99a;
+    line-height: 1.75;
+    max-width: 48ch;
+  }
+
+  .desc em {
+    color: var(--paper);
+    font-style: italic;
+  }
+
+  .nav {
+    position: fixed;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 100;
+  }
+
+  .nav-btn {
+    background: none;
+    border: 1px solid var(--sepia);
+    color: var(--sepia);
+    font-family: 'EB Garamond', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+  }
+  .nav-btn:hover {
+    background: var(--sepia);
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  .dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--muted);
+    transition: background 0.2s, transform 0.2s;
+    cursor: pointer;
+  }
+  .dot.active {
+    background: var(--sepia);
+    transform: scale(1.5);
+  }
+
+  .course-label {
+    position: fixed;
+    top: 2rem;
+    right: 2.5rem;
+    font-family: 'EB Garamond', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    z-index: 100;
+  }
+
+  .hint {
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    font-size: 0.7rem;
+    color: #3a3028;
+    letter-spacing: 0.1em;
+    font-family: 'EB Garamond', serif;
+  }
+
+  .portrait-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1a1410;
+    color: var(--sepia);
+    font-size: 5rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="course-label">PHI 423 · Week 8</div>
+
+<div class="show" id="show"></div>
+
+<nav class="nav">
+  <button class="nav-btn" onclick="prev()">← Prev</button>
+  <div class="dots" id="dots"></div>
+  <button class="nav-btn" onclick="next()">Next →</button>
+</nav>
+
+<div class="hint">← → keys to navigate</div>
+
+<script>
+const figures = [
+  {
+    name: "Rasmus Nielsen",
+    dates: "1809–1884",
+    role: "Philosopher, University of Copenhagen",
+    desc: "Nielsen succeeded Poul Martin Møller as professor of philosophy and became one of the most electrifying teachers in Danish academic history. His attempt to reconcile <em>tro og viden</em> — faith and knowledge — on the basis of Kierkegaard drew fierce attack from the young Brandes generation.",
+    imgFile: "Filosoffen,_professor_Rasmus_Nielsen_1866.jpg"
+  },
+  {
+    name: "Hans Brøchner",
+    dates: "1820–1875",
+    role: "Philosopher, University of Copenhagen",
+    desc: "A left-Hegelian and committed freethinker, Brøchner was the philosophical mentor behind Brandes's <em>Hovedstrømninger</em>. His 1868 critique <em>Problemet om Tro og Viden</em> was the most penetrating response to Nielsen, and his insistence on free intellectual inquiry became a lodestar for the Breakthrough generation.",
+    imgFile: "Hans_Br%C3%B8chner.jpg"
+  },
+  {
+    name: "Harald Høffding",
+    dates: "1843–1931",
+    role: "Philosopher & Psychologist, University of Copenhagen",
+    desc: "Høffding brought Danish philosophy into dialogue with Darwin, Mill, and the empiricist tradition. His 1874 essay on philosophy and Darwinism and his lifelong project of grounding ethics in experience made him the most internationally recognized Danish philosopher of his era.",
+    imgFile: "Harald_H%C3%B8ffding.jpg"
+  },
+  {
+    name: "Georg Brandes",
+    dates: "1842–1927",
+    role: "Literary critic & cultural theorist",
+    desc: "The architect of the Modern Breakthrough. Brandes's 1871 lectures <em>Hovedstrømninger i det 19de Aarhundredes Litteratur</em> declared that literature must subject itself to debate — launching a generation of writers, scientists, and intellectuals who would reshape Scandinavian culture.",
+    imgFile: "Georg_Brandes.jpg"
+  },
+  {
+    name: "Magdalene Thoresen",
+    dates: "1819–1903",
+    role: "Novelist & playwright, Denmark / Norway",
+    desc: "A commanding presence who spanned two literary worlds. Stepmother-in-law to Henrik Ibsen and friend to Bjørnson, Thoresen's fiction depicted Norwegian rural life with unusual psychological intensity. Young Brandes wrote a reverent tribute to her in 1866 — before he had made a name for himself.",
+    imgFile: "Magdalene_Thoresen_by_Grundtvig.jpg"
+  },
+  {
+    name: "Amalie Skram",
+    dates: "1846\u20131905",
+    role: "Novelist & playwright, Norway / Denmark",
+    desc: "The most unflinching naturalist in Scandinavian literature. Skram\u2019s novels \u2014 beginning with <em>Constance Ring</em> (1885) \u2014 expose the sexual and psychological costs of bourgeois marriage with a severity that scandalized her contemporaries. Her semi-autobiographical <em>Professor Hieronimus</em> (1895) indicts the psychiatric establishment that had her committed.",
+    imgFile: "Portrett_av_Amalie_Skram,_1877_(cropped).jpg"
+  },
+  {
+    name: "J. P. Jacobsen",
+    dates: "1847–1885",
+    role: "Novelist, poet & naturalist",
+    desc: "Jacobsen translated Darwin's <em>Origin of Species</em> into Danish (1871), then abandoned science for literature as tuberculosis closed in. <em>Niels Lyhne</em> (1880) is his masterpiece: a novel about the cost of living without God, written by a man who knew he was dying and refused consolation.",
+    imgFile: "Jens_Peter_Jacobsen.jpg"
+  }
+];
+
+const BASE = "https://commons.wikimedia.org/wiki/Special:FilePath/";
+
+const show = document.getElementById('show');
+const dotsEl = document.getElementById('dots');
+let current = 0;
+let slides = [];
+
+figures.forEach((f, i) => {
+  const slide = document.createElement('div');
+  slide.className = 'slide' + (i === 0 ? ' active' : '');
+  slide.innerHTML = `
+    <div class="portrait-col">
+      <span class="slide-num">${String(i+1).padStart(2,'0')} / 0${figures.length}</span>
+      <img class="portrait-img"
+           src="${BASE}${f.imgFile}?width=600"
+           onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=portrait-fallback>✦</div>'"
+           alt="${f.name}">
+    </div>
+    <div class="text-col">
+      <div class="role">${f.role}</div>
+      <div class="name">${f.name}</div>
+      <div class="dates">${f.dates}</div>
+      <div class="desc">${f.desc}</div>
+    </div>
+  `;
+  show.appendChild(slide);
+  slides.push(slide);
+
+  const dot = document.createElement('div');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
+  dot.onclick = () => goTo(i);
+  dotsEl.appendChild(dot);
+});
+
+function goTo(n) {
+  slides[current].classList.remove('active');
+  dotsEl.children[current].classList.remove('active');
+  current = (n + figures.length) % figures.length;
+  slides[current].classList.add('active');
+  dotsEl.children[current].classList.add('active');
+}
+function next() { goTo(current + 1); }
+function prev() { goTo(current - 1); }
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === ' ') next();
+  if (e.key === 'ArrowLeft') prev();
+});
+
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+</script>
+</body>
+</html>

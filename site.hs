@@ -521,6 +521,13 @@ main = hakyllWith config $ do
         route   idRoute
         compile copyFileCompiler
 
+    -- Copy standalone self-contained HTML files in course subdirectories.
+    -- These are not processed by Pandoc or wrapped in site templates.
+    -- Add new entries here as needed alongside the *.md sources.
+    match "courses/phi423_s2026/week9-figures.html" $ do
+        route   idRoute
+        compile copyFileCompiler
+
     create ["logic-exams-page"] $ do
       route $ constRoute "courses/logic-exams/index.html"
       compile $ do
