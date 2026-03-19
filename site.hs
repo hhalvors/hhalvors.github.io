@@ -727,6 +727,39 @@ main = hakyllWith config $ do
         route idRoute
         compile copyFileCompiler
 
+    -- ============================================================
+    -- Alumni lecture 2026 — translations from ~/bibliotek
+    -- Requires a symlink:  brochner -> ~/bibliotek/Brøchner, Hans
+    -- (symlink is in .gitignore; only the generated docs/ output is committed)
+    -- ============================================================
+
+    -- The alumni landing page
+    match "alumni2026.md" $ do
+        route $ setExtension "html"
+        compile $
+            pandocCompiler
+                >>= loadAndApplyTemplate "templates/page.html"
+                      (constField "title" "Alumni Lecture 2026" <> siteCtx)
+                >>= loadAndApplyTemplate "templates/default.html"
+                      (baseSidebarCtx <> siteCtx)
+                >>= relativizeUrls
+
+    -- Markdown translation/transcription pages living in ~/bibliotek
+    match "brochner/**.md" $ do
+        route $ setExtension "html"
+        compile $
+            pandocCompiler
+                >>= loadAndApplyTemplate "templates/page.html"
+                      (defaultContext <> siteCtx)
+                >>= loadAndApplyTemplate "templates/default.html"
+                      (baseSidebarCtx <> siteCtx)
+                >>= relativizeUrls
+
+    -- PDF scans and any other static assets in the brochner folder
+    match ("brochner/**.pdf" .||. "brochner/**.tex") $ do
+        route   idRoute
+        compile copyFileCompiler
+
     let currentPhi201 = "phi201_f2025"    -- <<< update this once per year
         courseRoot    = "courses/" ++ currentPhi201 ++ "/"
 
