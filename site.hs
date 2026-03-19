@@ -755,8 +755,9 @@ main = hakyllWith config $ do
                       (baseSidebarCtx <> siteCtx)
                 >>= relativizeUrls
 
-    -- PDF scans and any other static assets in the brochner folder
-    match ("brochner/**.pdf" .||. "brochner/**.tex") $ do
+    -- Compiled PDFs and TeX sources in brochner subdirectories
+    -- (excludes the large OCR scan PDFs at the top level)
+    match ("brochner/*/*.pdf" .||. "brochner/*/*.tex") $ do
         route   idRoute
         compile copyFileCompiler
 
