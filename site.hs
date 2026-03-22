@@ -761,6 +761,26 @@ main = hakyllWith config $ do
         route   idRoute
         compile copyFileCompiler
 
+    -- ============================================================
+    -- Nielsen library — transcriptions and translations
+    -- Requires a symlink:  nielsen -> ~/bibliotek/Nielsen, Rasmus
+    -- (symlink is in .gitignore; only the generated docs/ output is committed)
+    -- ============================================================
+
+    match "nielsen/**.md" $ do
+        route $ setExtension "html"
+        compile $
+            pandocCompiler
+                >>= loadAndApplyTemplate "templates/page.html"
+                      (defaultContext <> siteCtx)
+                >>= loadAndApplyTemplate "templates/default.html"
+                      (baseSidebarCtx <> siteCtx)
+                >>= relativizeUrls
+
+    match ("nielsen/*/*.pdf" .||. "nielsen/*/*.tex") $ do
+        route   idRoute
+        compile copyFileCompiler
+
     let currentPhi201 = "phi201_f2025"    -- <<< update this once per year
         courseRoot    = "courses/" ++ currentPhi201 ++ "/"
 
