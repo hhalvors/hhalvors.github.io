@@ -762,6 +762,26 @@ main = hakyllWith config $ do
         compile copyFileCompiler
 
     -- ============================================================
+    -- Høffding library — transcriptions and translations
+    -- Requires a symlink:  hoeffding -> ~/bibliotek/Høffding, Harald
+    -- (symlink is in .gitignore; only the generated docs/ output is committed)
+    -- ============================================================
+
+    match "hoeffding/**.md" $ do
+        route $ setExtension "html"
+        compile $
+            pandocCompiler
+                >>= loadAndApplyTemplate "templates/page.html"
+                      (defaultContext <> siteCtx)
+                >>= loadAndApplyTemplate "templates/default.html"
+                      (baseSidebarCtx <> siteCtx)
+                >>= relativizeUrls
+
+    match ("hoeffding/*/*.pdf" .||. "hoeffding/*/*.tex") $ do
+        route   idRoute
+        compile copyFileCompiler
+
+    -- ============================================================
     -- Nielsen library — transcriptions and translations
     -- Requires a symlink:  nielsen -> ~/bibliotek/Nielsen, Rasmus
     -- (symlink is in .gitignore; only the generated docs/ output is committed)
