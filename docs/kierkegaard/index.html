@@ -161,6 +161,25 @@
     }
     .leaflet-popup-content h3 { margin: 0 0 0.4em; font-size: 1em; }
     .leaflet-popup-content p  { margin: 0; font-size: 0.88em; line-height: 1.45; }
+    .kk-popup-thumb { margin: 0.4em 0 0.5em; cursor: zoom-in; }
+    .kk-popup-thumb img { width: 100%; max-width: 260px; display: block; border: 1px solid #ccc; }
+    .kk-popup-thumb figcaption { font-size: 0.75em; color: #666; margin-top: 2px; }
+    #kk-lightbox {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,0.85);
+      align-items: center; justify-content: center; flex-direction: column;
+    }
+    #kk-lightbox.open { display: flex; }
+    #kk-lightbox img { max-width: 90vw; max-height: 80vh; box-shadow: 0 4px 24px rgba(0,0,0,0.6); }
+    #kk-lightbox figcaption {
+      color: #ccc; font-size: 0.85em; margin-top: 0.6em; text-align: center;
+    }
+    #kk-lightbox figcaption a { color: #aaa; }
+    #kk-lb-close {
+      position: absolute; top: 1rem; right: 1.4rem;
+      color: white; font-size: 2rem; cursor: pointer; line-height: 1;
+      background: none; border: none; padding: 0;
+    }
   </style>
 
   <p>A walking tour of sites significant to Søren Kierkegaard’s life and thought.
@@ -170,6 +189,12 @@ Assistens Kirkegård.</p>
   <div id="kierkegaard-map"></div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <div id="kk-lightbox">
+    <button id="kk-lb-close" aria-label="Close">&times;</button>
+    <img id="kk-lb-img" src alt />
+    <figcaption id="kk-lb-cap"></figcaption>
+  </div>
 
   <div class="kk-biblio">
     <h2>Further reading</h2>
@@ -182,6 +207,7 @@ Assistens Kirkegård.</p>
       <li>Niels Thulstrup, <em>Kierkegaards K&oslash;benhavn</em> (C.A. Reitzel, 1987). A scholarly yet accessible portrait of the city&rsquo;s streets, squares, and inhabitants as the inescapable setting for Kierkegaard&rsquo;s life and thought, by one of the leading Kierkegaard scholars of the twentieth century.</li>
       <li>Villads Christensen, <em>S&oslash;ren Kierkegaard og Frederiksberg</em> (Rosenkilde og Bagger, 1959). An account of Kierkegaard&rsquo;s relationship to Frederiksberg &ndash; the garden suburb he visited throughout his life &ndash; drawing on local history and biographical sources.</li>
       <li>Peter Thielst, <em>Kierkegaard in Golden Age Copenhagen: A Concise and Pictorial Introduction</em> (Det lille Forlag). A brief, richly illustrated guide situating Kierkegaard within the cultural and urban life of Copenhagen&rsquo;s Golden Age, aimed at the general reader.</li>
+      <li>A. Egelund M&oslash;ller, <em>S&oslash;ren Kierkegaard om sin kj&aelig;re Hoved- og Residensstad, Kj&oslash;benhavn</em> (Attika, 1983).</li>
     </ul>
   </div>
 
@@ -212,6 +238,24 @@ L.control.layers(
   { 'c. 1850': historical, 'Modern': modern }
 ).addTo(map);
 
+function kkOpenLightbox(src, caption, credit, creditUrl) {
+  document.getElementById('kk-lb-img').src = src;
+  document.getElementById('kk-lb-img').alt = caption;
+  document.getElementById('kk-lb-cap').innerHTML =
+    caption + ' &mdash; <a href="' + creditUrl + '" target="_blank" rel="noopener">' + credit + '</a>';
+  document.getElementById('kk-lightbox').classList.add('open');
+}
+document.getElementById('kk-lb-close').addEventListener('click', function() {
+  document.getElementById('kk-lightbox').classList.remove('open');
+  document.getElementById('kk-lb-img').src = '';
+});
+document.getElementById('kk-lightbox').addEventListener('click', function(e) {
+  if (e.target === this) {
+    this.classList.remove('open');
+    document.getElementById('kk-lb-img').src = '';
+  }
+});
+
 fetch('/data/kierkegaard-locations.json')
   .then(r => r.json())
   .then(locations => {
@@ -223,7 +267,16 @@ fetch('/data/kierkegaard-locations.json')
         iconAnchor: [13, 13],
         popupAnchor: [0, -14]
       });
-      const popup = '<h3>' + loc.name + '</h3><p>' + loc.description + '</p>';
+      let popup = '<h3>' + loc.name + '</h3>';
+      if (loc.images && loc.images.length > 0) {
+        const img = loc.images[0];
+        const esc = function(s) { return s.replace(/'/g, '&#39;').replace(/"/g, '&quot;'); };
+        popup += '<figure class="kk-popup-thumb" onclick="kkOpenLightbox(\'' + esc(img.src) + '\',\'' + esc(img.caption) + '\',\'' + esc(img.credit) + '\',\'' + esc(img.creditUrl) + '\')">'
+               + '<img src="' + img.src + '?width=280" alt="' + esc(img.caption) + '" loading="lazy" />'
+               + '<figcaption>' + img.caption + '</figcaption>'
+               + '</figure>';
+      }
+      popup += '<p>' + loc.description + '</p>';
       L.marker([loc.lat, loc.lng], { icon })
         .bindPopup(popup)
         .addTo(map);

@@ -4,7 +4,15 @@
     "name": "Nytorv 2 — Birthplace",
     "lat": 55.6776,
     "lng": 12.5734,
-    "description": "Søren Kierkegaard was born here on 5 May 1813. His father Michael Pedersen Kierkegaard, a prosperous hosier, owned the house on the corner of Nytorv and Gammeltorv. The building is now a Danske Bank branch; a small grey plaque marks the spot."
+    "description": "Søren Kierkegaard was born here on 5 May 1813. His father Michael Pedersen Kierkegaard, a prosperous hosier, owned the house on the corner of Nytorv and Gammeltorv. The building is now a Danske Bank branch; a small grey plaque marks the spot.",
+    "images": [
+      {
+        "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Nytorv_1839.jpg",
+        "caption": "Nytorv, 1839",
+        "credit": "Wikimedia Commons",
+        "creditUrl": "https://da.wikipedia.org/wiki/Fil:Nytorv_1839.jpg"
+      }
+    ]
   },
   {
     "id": 2,
