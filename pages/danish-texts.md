@@ -265,6 +265,24 @@ Høffding's intellectual development. Only 46 pages.</p>
 </tr>
 </table>
 
+### "Filosofien og Darwinismen" (1874) <span class="kb-link">[[journal](https://tidsskrift.dk/fiv/issue/view/8742)]</span>
+
+<p class="work-desc">Subjects Darwinism to epistemological scrutiny while arguing
+that its significance for <em>Verdensanskuelse</em> (worldview) is separable from
+its empirical confirmation.</p>
+
+<table class="dt-table">
+<tr><th>Section</th><th>Links</th><th>Status</th></tr>
+<tr>
+  <td>Complete article</td>
+  <td class="links">
+    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/hoeffding/darwinismen/transcription.pdf">transcription</a>
+    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/hoeffding/darwinismen/translation.pdf">translation</a>
+  </td>
+  <td><span class="done">complete</span></td>
+</tr>
+</table>
+
 ### "Realisme i Videnskab og Tro" (1882), in *Mindre Arbejder* (1899)
 
 <p class="work-desc">Høffding's inaugural public statement of his mature
@@ -278,6 +296,23 @@ commitment. Available on <a href="https://da.wikisource.org/wiki/Mindre_Arbejder
   <td>Complete essay</td>
   <td class="links"><a href="https://da.wikisource.org/wiki/Mindre_Arbejder" target="_blank">Wikisource</a></td>
   <td><span class="todo">to do</span></td>
+</tr>
+</table>
+
+### "Om Realisme i Videnskab og Tro" (1884)
+
+<p class="work-desc">On realism in science and faith; engages with the relation
+between scientific knowledge and religious belief in the wake of Darwinism.</p>
+
+<table class="dt-table">
+<tr><th>Section</th><th>Links</th><th>Status</th></tr>
+<tr>
+  <td>Complete article</td>
+  <td class="links">
+    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/hoeffding/realisme/transcription.pdf">transcription</a>
+    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/hoeffding/realisme/translation.pdf">translation</a>
+  </td>
+  <td><span class="done">complete</span></td>
 </tr>
 </table>
 
@@ -297,41 +332,6 @@ equally great for faith and for science."</p>
     <a href="https://da.wikisource.org/wiki/Mindre_Arbejder" target="_blank">Wikisource</a>
   </td>
   <td><span class="prog">in progress</span></td>
-</tr>
-</table>
-
-### "Filosofien og Darwinismen" (1874) <span class="kb-link">[[journal](https://tidsskrift.dk/fiv/issue/view/8742)]</span>
-
-<p class="work-desc">Subjects Darwinism to epistemological scrutiny while arguing
-that its significance for <em>Verdensanskuelse</em> (worldview) is separable from
-its empirical confirmation.</p>
-
-<table class="dt-table">
-<tr><th>Section</th><th>Links</th><th>Status</th></tr>
-<tr>
-  <td>Complete article</td>
-  <td class="links">
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/hoeffding/darwinismen/transcription.pdf">transcription</a>
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/hoeffding/darwinismen/translation.pdf">translation</a>
-  </td>
-  <td><span class="done">complete</span></td>
-</tr>
-</table>
-
-### "Om Realisme i Videnskab og Tro" (1884)
-
-<p class="work-desc">On realism in science and faith; engages with the relation
-between scientific knowledge and religious belief in the wake of Darwinism.</p>
-
-<table class="dt-table">
-<tr><th>Section</th><th>Links</th><th>Status</th></tr>
-<tr>
-  <td>Complete article</td>
-  <td class="links">
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/hoeffding/realisme/transcription.pdf">transcription</a>
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/hoeffding/realisme/translation.pdf">translation</a>
-  </td>
-  <td><span class="done">complete</span></td>
 </tr>
 </table>
 
