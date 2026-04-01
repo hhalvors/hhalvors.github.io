@@ -975,9 +975,7 @@ sortOnM f xs = map fst . sortBy (comparing snd) . zip xs <$> mapM f xs
 --------------------------------------------------------------------------------
 
 sidebarCtx :: Context String -> Context String
-sidebarCtx nodeCtx =
-    listField "list_pages" nodeCtx (loadAllSnapshots ("pages/*" .&&. hasNoVersion) "page-content") `mappend`
-    defaultContext
+sidebarCtx _ = defaultContext
 
 baseNodeCtx :: Context String
 baseNodeCtx =
