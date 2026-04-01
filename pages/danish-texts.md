@@ -50,7 +50,7 @@ constitutively incommensurable.</p>
 
 ### *Om Hindringer og Betingelser for det aandelige Liv i Nutiden* (1868) <span class="kb-link">[[KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122595880805763)]</span>
 
-<p class="work-desc">Lectures delivered in Christiania (Oslo) in 1868 —
+<p class="work-desc">Lectures delivered in Christiania (Oslo) in 1868 ---
 Nielsen's most direct and mature response to Brøchner and Brandes during the
 height of the controversy.</p>
 
@@ -65,7 +65,7 @@ height of the controversy.</p>
 
 ### *Religionsphilosophie* (Copenhagen: Gyldendal, 1869) <span class="kb-link">[[KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122595882005763)]</span>
 
-<p class="work-desc">Nielsen's most systematic work on religion itself — the
+<p class="work-desc">Nielsen's most systematic work on religion itself --- the
 constructive counterpart to the <em>Grundideernes Logik</em>, developing what
 faith actually is and how a philosophy of religion built on heterogeneous
 principles is possible. He calls it an "inverted science"
@@ -245,7 +245,7 @@ PDF requiring OCR before transcription.</p>
 Nielsen's student and eventual successor as the dominant figure in Danish
 philosophy. His intellectual development is the key to the whole debate: in 1866
 he published his first book explicitly defending Nielsen's position, then within a
-year — under the influence of Brøchner's lectures — changed his mind completely.
+year --- under the influence of Brøchner's lectures --- changed his mind completely.
 He spent the next three decades working out what that conversion implied, arriving
 at the *Religionsfilosofi* (1901) as the systematic outcome.
 
@@ -291,8 +291,11 @@ equally great for faith and for science."</p>
 <tr><th>Section</th><th>Links</th><th>Status</th></tr>
 <tr>
   <td>Complete essay</td>
-  <td class="links"><a href="https://da.wikisource.org/wiki/Mindre_Arbejder" target="_blank">Wikisource</a></td>
-  <td><span class="todo">to do</span></td>
+  <td class="links">
+    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/hoeffding/forholdet-tro-viden/transcription.pdf">transcription</a>
+    <a href="https://da.wikisource.org/wiki/Mindre_Arbejder" target="_blank">Wikisource</a>
+  </td>
+  <td><span class="prog">in progress</span></td>
 </tr>
 </table>
 
@@ -336,7 +339,7 @@ between scientific knowledge and religious belief in the wake of Darwinism.</p>
 <p class="work-desc">The systematic culmination of three decades of thought.
 Epigraph: <em>Alte dubitat, qui altius credit</em> ("he doubts more deeply who
 believes more deeply"). The key constructive claim is the <em>sætningen om
-værdiens bestaaen</em> — the persistence of value. Translated into English as
+værdiens bestaaen</em> --- the persistence of value. Translated into English as
 <em>The Philosophy of Religion</em> (1906).</p>
 
 <table class="dt-table">
