@@ -293,6 +293,7 @@ equally great for faith and for science."</p>
   <td>Complete essay</td>
   <td class="links">
     <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/hoeffding/forholdet-tro-viden/transcription.pdf">transcription</a>
+    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/hoeffding/forholdet-tro-viden/translation.pdf">translation</a>
     <a href="https://da.wikisource.org/wiki/Mindre_Arbejder" target="_blank">Wikisource</a>
   </td>
   <td><span class="prog">in progress</span></td>
