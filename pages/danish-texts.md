@@ -335,6 +335,21 @@ equally great for faith and for science."</p>
 </tr>
 </table>
 
+### *Søren Kierkegaard som Filosof* (Copenhagen: P. G. Philipsens Forlag, 1892) <span class="kb-link">[[KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122595895505763)]</span>
+
+<p class="work-desc">Høffding's philosophical study of Kierkegaard, written after 25 years of reflection on his former teacher. The epistemology chapter (IV.A) is the most directly relevant to the faith--knowledge debate: Høffding reconstructs Kierkegaard's doctrine that subjective passion is the only mode of access to essential truth, and subjects it to sustained immanent critique.</p>
+
+<table class="dt-table">
+<tr><th>Section</th><th>Links</th><th>Status</th></tr>
+<tr>
+  <td>Chapter IV.A: Erkendelsesteori (pp. 58--70)</td>
+  <td class="links">
+    <a href="https://hhalvors.github.io/danish-texts/texts/hoeffding/kierkegaard-filosof/transcription.pdf">transcription</a>
+  </td>
+  <td><span class="prog">in progress</span></td>
+</tr>
+</table>
+
 ### *Religionsfilosofi* (Copenhagen: Gyldendal, 1901) <span class="kb-link">[[KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122595897005763)]</span>
 
 <p class="work-desc">The systematic culmination of three decades of thought.
