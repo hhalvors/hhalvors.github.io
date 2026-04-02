@@ -76,8 +76,8 @@ principles is possible. He calls it an "inverted science"
 <tr>
   <td>Introduction (§§ 1--2)</td>
   <td class="links">
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/nielsen/religionsphilosophie/indledning/transcription.pdf">transcription</a>
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/nielsen/religionsphilosophie/indledning/translation.pdf">translation</a>
+    <a href="https://github.com/hhalvors/danish-texts/blob/main/texts/nielsen/religionsphilosophie/indledning/transcription.pdf">transcription</a>
+    <a href="https://github.com/hhalvors/danish-texts/blob/main/texts/nielsen/religionsphilosophie/indledning/translation.pdf">translation</a>
   </td>
   <td><span class="prog">in progress</span></td>
 </tr>
@@ -99,8 +99,8 @@ concept of creation is a concept of faith, not of knowledge.</p>
 <tr>
   <td>Complete article</td>
   <td class="links">
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/nielsen/darwinismen/transcription.pdf">transcription</a>
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/nielsen/darwinismen/translation.pdf">translation</a>
+    <a href="https://github.com/hhalvors/danish-texts/blob/main/texts/nielsen/darwinismen/transcription.pdf">transcription</a>
+    <a href="https://github.com/hhalvors/danish-texts/blob/main/texts/nielsen/darwinismen/translation.pdf">translation</a>
   </td>
   <td><span class="done">complete</span></td>
 </tr>
@@ -133,8 +133,8 @@ inaccessible to scientific cognition.</p>
 <tr>
   <td>Section I</td>
   <td class="links">
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/nielsen/om-oprindelige-forhold/transcription.pdf">transcription</a>
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/nielsen/om-oprindelige-forhold/translation.pdf">translation</a>
+    <a href="https://github.com/hhalvors/danish-texts/blob/main/texts/nielsen/om-oprindelige-forhold/transcription.pdf">transcription</a>
+    <a href="https://github.com/hhalvors/danish-texts/blob/main/texts/nielsen/om-oprindelige-forhold/translation.pdf">translation</a>
   </td>
   <td><span class="done">complete</span></td>
 </tr>
@@ -156,8 +156,8 @@ translation by a decade.</p>
 <tr>
   <td>Darwin excerpt (pp. 326--328)</td>
   <td class="links">
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/nielsen/propaedeutik-darwin/transcription.pdf">transcription</a>
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/nielsen/propaedeutik-darwin/translation.pdf">translation</a>
+    <a href="https://github.com/hhalvors/danish-texts/blob/main/texts/nielsen/propaedeutik-darwin/transcription.pdf">transcription</a>
+    <a href="https://github.com/hhalvors/danish-texts/blob/main/texts/nielsen/propaedeutik-darwin/translation.pdf">translation</a>
   </td>
   <td><span class="done">complete</span></td>
 </tr>
@@ -186,8 +186,8 @@ religiously reconciled humane consciousness."</p>
 <tr>
   <td>Preface (pp. 1--7)</td>
   <td class="links">
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/brochner/problemet-tro-viden/transcription.pdf">transcription</a>
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/brochner/problemet-tro-viden/translation.pdf">translation</a>
+    <a href="https://github.com/hhalvors/danish-texts/blob/main/texts/brochner/problemet-tro-viden/transcription.pdf">transcription</a>
+    <a href="https://github.com/hhalvors/danish-texts/blob/main/texts/brochner/problemet-tro-viden/translation.pdf">translation</a>
   </td>
   <td><span class="done">complete</span></td>
 </tr>
@@ -276,8 +276,8 @@ its empirical confirmation.</p>
 <tr>
   <td>Complete article</td>
   <td class="links">
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/hoeffding/darwinismen/transcription.pdf">transcription</a>
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/hoeffding/darwinismen/translation.pdf">translation</a>
+    <a href="https://github.com/hhalvors/danish-texts/blob/main/texts/hoeffding/darwinismen/transcription.pdf">transcription</a>
+    <a href="https://github.com/hhalvors/danish-texts/blob/main/texts/hoeffding/darwinismen/translation.pdf">translation</a>
   </td>
   <td><span class="done">complete</span></td>
 </tr>
@@ -309,8 +309,8 @@ between scientific knowledge and religious belief in the wake of Darwinism.</p>
 <tr>
   <td>Complete article</td>
   <td class="links">
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/hoeffding/realisme/transcription.pdf">transcription</a>
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/hoeffding/realisme/translation.pdf">translation</a>
+    <a href="https://github.com/hhalvors/danish-texts/blob/main/texts/hoeffding/realisme/transcription.pdf">transcription</a>
+    <a href="https://github.com/hhalvors/danish-texts/blob/main/texts/hoeffding/realisme/translation.pdf">translation</a>
   </td>
   <td><span class="done">complete</span></td>
 </tr>
@@ -327,8 +327,8 @@ equally great for faith and for science."</p>
 <tr>
   <td>Complete essay</td>
   <td class="links">
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/hoeffding/forholdet-tro-viden/transcription.pdf">transcription</a>
-    <a href="https://github.com/hhalvors/danish-texts/raw/main/texts/hoeffding/forholdet-tro-viden/translation.pdf">translation</a>
+    <a href="https://github.com/hhalvors/danish-texts/blob/main/texts/hoeffding/forholdet-tro-viden/transcription.pdf">transcription</a>
+    <a href="https://github.com/hhalvors/danish-texts/blob/main/texts/hoeffding/forholdet-tro-viden/translation.pdf">translation</a>
     <a href="https://da.wikisource.org/wiki/Mindre_Arbejder" target="_blank">Wikisource</a>
   </td>
   <td><span class="prog">in progress</span></td>
