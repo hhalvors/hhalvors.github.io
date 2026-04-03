@@ -345,6 +345,7 @@ equally great for faith and for science."</p>
   <td>Chapter IV.A: Erkendelsesteori (pp. 58--70)</td>
   <td class="links">
     <a href="https://hhalvors.github.io/danish-texts/texts/hoeffding/kierkegaard-filosof/transcription.pdf">transcription</a>
+    <a href="https://hhalvors.github.io/danish-texts/texts/hoeffding/kierkegaard-filosof/translation.pdf">translation</a>
   </td>
   <td><span class="prog">in progress</span></td>
 </tr>
