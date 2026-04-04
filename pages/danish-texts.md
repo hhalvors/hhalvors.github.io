@@ -268,7 +268,7 @@ værdiens bestaaen* --- the persistence of value. Translated into English as
 
 | Section | Links | Status |
 |---------|-------|--------|
-| Selections (epistemological chapters) | [KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122595897005763) | to do |
+| Complete work | [transcription](https://hhalvors.github.io/danish-texts/texts/hoeffding/religionsfilosofi/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/hoeffding/religionsfilosofi/translation.pdf) · [KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122595897005763) | *in progress* |
 
 ### *Filosofiske Problemer* (Copenhagen, 1902)
 
