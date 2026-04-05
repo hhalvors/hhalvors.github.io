@@ -146,8 +146,7 @@ religiously reconciled humane consciousness."
 
 | Section | Links | Status |
 |---------|-------|--------|
-| Preface (pp. 1--7) | [transcription](https://hhalvors.github.io/danish-texts/texts/brochner/problemet-tro-viden/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/brochner/problemet-tro-viden/translation.pdf) | complete |
-| Chapters I--V | | to do |
+| Complete work (226 pp.) | [transcription](https://hhalvors.github.io/danish-texts/texts/brochner/problemet-tro-viden/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/brochner/problemet-tro-viden/translation.pdf) · [KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122130352405763) | *in progress* |
 
 ### *Om det Religiøse i dets Enhed med det Humane* (Copenhagen: Philipsen, 1869) [[KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122130352505763)]
 
