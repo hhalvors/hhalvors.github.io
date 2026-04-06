@@ -229,6 +229,22 @@ between scientific knowledge and religious belief in the wake of Darwinism.
 |---------|-------|--------|
 | Complete article | [transcription](https://hhalvors.github.io/danish-texts/texts/hoeffding/realisme/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/hoeffding/realisme/translation.pdf) | complete |
 
+### *Psykologi i Omrids paa Grundlag af Erfaring* (Copenhagen: Philipsen, 1882; 2nd ed. 1885)
+
+Høffding's psychology textbook, widely used across Scandinavia and translated
+into German (1887), English (1891), French, Russian, Polish, and Japanese.
+Organized around the three-fold division of consciousness into cognition,
+feeling, and will. Chapter VII on the psychology of will --- especially the
+sections on deliberation (*Overvejelse*), resolve (*Forsæt*), and decision
+(*Beslutning*), and on the concentration--expansion polarity --- is the
+psychological foundation for the complementarity idea that Bohr later
+transposed into physics. Available in English as *Outlines of Psychology*
+(1891).
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete work (421 pp.) | [transcription](https://hhalvors.github.io/danish-texts/texts/hoeffding/psykologi/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/hoeffding/psykologi/translation.pdf) | *in progress* |
+
 ### "Forholdet mellem Tro og Viden i dets historiske Udvikling" (1885), in *Mindre Arbejder*
 
 Revisits the 1866 historical survey from the other side of
