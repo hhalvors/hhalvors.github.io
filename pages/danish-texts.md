@@ -58,9 +58,9 @@ teleology.
 
 | Section | Links | Status |
 |---------|-------|--------|
-| I. Subjectiv Logik i Omrids (pp. 1--263) | | to do |
-| II. Psychologie (pp. 264--277) | | to do |
-| III. Psychologie og Biologie (pp. 277--477) | | to do |
+| I. Subjectiv Logik i Omrids (pp. 1--263) | [transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/logik-og-psychologie/transcription.pdf) | *skeleton* |
+| II. Psychologie (pp. 264--277) | [transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/logik-og-psychologie/transcription.pdf) | *skeleton* |
+| III. Psychologie og Biologie (pp. 277--477) | [transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/logik-og-psychologie/transcription.pdf) | *skeleton* |
 
 ### *Om Hindringer og Betingelser for det aandelige Liv i Nutiden* (1868) [[KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122595880805763)]
 
