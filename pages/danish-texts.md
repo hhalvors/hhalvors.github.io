@@ -49,6 +49,19 @@ constitutively incommensurable.
 |---------|-------|--------|
 | Selections (vol. I, §§ on the *Objektiveringslov*) | [KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122595827705763) | to do |
 
+### *Logik og Psychologie* (Copenhagen: Gyldendal, 1867) [[KB scan](https://www.kb.dk/e-mat/dod/11140802678C-color.pdf)]
+
+Lecture course for the university year 1867--68. Moves from a compact
+subjective logic through a transitional psychology into an extended
+treatment of the relation between psychology and biology, including
+teleology.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| I. Subjectiv Logik i Omrids (pp. 1--263) | | to do |
+| II. Psychologie (pp. 264--277) | | to do |
+| III. Psychologie og Biologie (pp. 277--477) | | to do |
+
 ### *Om Hindringer og Betingelser for det aandelige Liv i Nutiden* (1868) [[KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122595880805763)]
 
 Lectures delivered in Christiania (Oslo) in 1868 ---
