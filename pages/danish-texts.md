@@ -70,7 +70,7 @@ height of the controversy.
 
 | Section | Links | Status |
 |---------|-------|--------|
-| Selections | [KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122595880805763) | to do |
+| Selections | [KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122595880805763) · [transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/om-hindringer/transcription.pdf) | *skeleton* |
 
 ### *Religionsphilosophie* (Copenhagen: Gyldendal, 1869) [[KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122595882005763)]
 
@@ -104,6 +104,39 @@ undermines his theism. Written the same year as "Et Synspunkt for Darwinismen."
 | Section | Links | Status |
 |---------|-------|--------|
 | Selections (689 pp. total) | [KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122595884505763) | to do |
+
+### *Om Betingelserne for en kraftig Villie* (Copenhagen: Gyldendal, 1874)
+
+Popular lecture on the conditions for a strong will. Connects
+Nielsen's metaphysics of selfhood to practical psychology: if selfhood is
+constituted by a principle of unity, what determines the strength of
+the will? Predates Høffding's treatment of deliberation, resolve, and
+decision in *Psykologi i Omrids* (1882) by eight years.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete | | to do |
+
+### *Gamle og nye Profeter: Seks Forelæsninger* (Copenhagen: Gyldendal, 1878)
+
+Six popular lectures. The title --- "Old and New Prophets" ---
+suggests a direct engagement with the science--religion question at the
+close of the controversy decade, likely contrasting religious and
+naturalist voices.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Selections | | to do |
+
+### *Philosophiske Grundproblemer* (Copenhagen: Gyldendal, 1879)
+
+Popular presentation of core philosophical problems, late Nielsen.
+Immediate predecessor to the *Videnskabslære* (1880) and likely a more
+philosophically substantive treatment of the same territory.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Selections | | to do |
 
 ### *Almindelig Videnskabslære i Grundtræk* (Copenhagen, 1880)
 
