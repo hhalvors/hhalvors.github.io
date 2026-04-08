@@ -37,6 +37,12 @@ science-engaged phase of Nielsen's career that would later produce the
 |---------|-------|--------|
 | Selections | | to do |
 
+### *Mathematik og Dialektik: en philosophisk Afhandling* (Copenhagen: Hegel, 1859)
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Selections | | to do |
+
 ### *Grundideernes Logik*, vols. I--II (Copenhagen: Gyldendal, 1864--1866) [[KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122595827705763)]
 
 Nielsen's central systematic work and the text that triggered
