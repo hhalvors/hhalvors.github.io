@@ -25,6 +25,22 @@ central position of the mid-century debate: that faith and knowledge spring from
 other. The target of both Brøchner's philosophical critique and Brandes's cultural
 polemic.
 
+### *Om Theologiens Naturbegreb, med særligt Hensyn til Malebranche* (Universitetsprogram, 1855)
+
+University program treating the concept of nature in theology, with
+special reference to Malebranche's *De la recherche de la vérité*.
+Belongs to Nielsen's transitional period between the Kierkegaardian
+religious writings (*Evangelietroen og Theologien*, 1850; *Om Skjæbne
+og Forsyn*, 1853) and the turn toward the natural sciences. The
+engagement with Malebranche's occasionalism --- in which God mediates
+all causal relations between mind and body --- anticipates the question
+that would dominate Nielsen's later work: how to conceive the relation
+between natural causation and divine action.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete work | [transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/theologiens-naturbegreb/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/nielsen/theologiens-naturbegreb/translation.pdf) | *skeleton* |
+
 ### *Philosophie og Mathematik* (Copenhagen, 1857)
 
 Nielsen's dramatic turn toward the natural sciences in the mid-1850s,
