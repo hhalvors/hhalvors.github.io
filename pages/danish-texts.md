@@ -398,6 +398,32 @@ research but also Alf Ross's development of legal concepts.
 |---------|-------|--------|
 | Complete work | | to do |
 
+### "Pascal et Kierkegaard" (1923) [[JSTOR](https://www.jstor.org/stable/40895941)]
+
+Article in *Revue de Métaphysique et de Morale* 30, no. 2 (April--June
+1923), pp. 221--246. Written in French for a French audience (hence
+more space given to Kierkegaard than to Pascal). A systematic
+comparison in four parts: temperament, intellectual background, the
+Christian problem, and the paths left open. Høffding argues that
+both thinkers, two centuries apart, pushed Christianity to its logical
+extreme by insisting on the incompatibility between primitive
+Christianity and modern culture, and that both broke with the Church
+as a result. In the concluding section he identifies three
+possibilities for anyone who has followed Pascal and Kierkegaard to
+the end: (1) a literal return to primitive Christianity, (2)
+acknowledging that modern Christianity is a different religion, or
+(3) resuming the Greek project of founding moral life on nature and
+human experience --- and clearly favours the third. He criticises
+both thinkers for their sharp division between "essential" and
+"non-essential" knowledge, arguing that scientific thought can
+become decisive for personal conviction. References his own 1892
+monograph *Kierkegaard som Filosof* and the 1901 *Philosophie de la
+religion*.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete article (26 pp.) | [JSTOR](https://www.jstor.org/stable/40895941) | to do |
+
 ### *Begrebet Analogi* (Copenhagen, 1923)
 
 Høffding's last major philosophical contribution: a full monograph
