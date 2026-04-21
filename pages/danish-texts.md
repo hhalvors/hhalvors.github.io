@@ -424,6 +424,22 @@ religion*.
 |---------|-------|--------|
 | Complete article (26 pp.) | [JSTOR](https://www.jstor.org/stable/40895941) | to do |
 
+### *Relation som Kategori: en erkendelsesteoretisk Undersøgelse* (Copenhagen, 1921)
+
+Epistemological investigation of relation as a fundamental category of
+thought, forming a companion piece to *Totalitet som Kategori* (1917).
+Notably contains Høffding's engagement with the theory of relativity,
+which he interprets through his own epistemological framework --- a
+rare instance of his direct response to the most radical development
+in contemporary physics. Together with *Totalitet som Kategori* and
+*Begrebet Analogi* (1923), it forms a late trilogy of category
+investigations that represent Høffding's final epistemological
+synthesis.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete work | | to do |
+
 ### *Begrebet Analogi* (Copenhagen, 1923)
 
 Høffding's last major philosophical contribution: a full monograph
