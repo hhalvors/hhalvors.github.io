@@ -388,6 +388,29 @@ the problems of philosophy. Available on
 |---------|-------|--------|
 | Selections (epistemological chapters) | [Runeberg](https://runeberg.org/hhtanke/) | to do |
 
+### *Personlighedsprincippet i Filosofien* (lectures, Helsingfors, spring 1911; Danish trans. Copenhagen: KDVS, 2013) [[Royal Academy PDF](http://publ.royalacademy.dk/backend/web/uploads/2020-02-14/AFL%206/SDH8_6_00_00_2013_5926/SDH8_6_00_00_2013_5926.pdf)]
+
+Six lectures delivered at the University of Helsingfors (Helsinki) in spring 1911.
+Høffding develops the concept of personality (*Personlighed*) as the central
+organizing principle of his philosophy --- the thread that links his work in
+psychology, ethics, and *livsanskuelse* into a coherent whole. The lectures argue
+that personality is both a presupposition and an object of scientific inquiry, that
+the personality principle is constitutive for ethics (the goal of ethical life is the
+full realization of personality), and that no purely theoretical proof of the
+principle is possible --- it must be lived out in practice. The sixth and final
+lecture connects the personality principle directly to questions of religious and
+philosophical *livsanskuelse*, making this the most compact single statement of
+Høffding's mature position.
+
+Originally published in Swedish; first made available in Danish in a 2013
+translation by Mogens Blegvad (1917--2001), with commentary and an afterword by
+Carl Henrik Koch. Published by Det Kongelige Danske Videnskabernes Selskab as
+*Scientia Danica*, Series H, Humanistica, 8, vol. 6 (ISBN 978-87-7304-370-7).
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete work (Danish trans., 67 pp.) | [Royal Academy PDF](http://publ.royalacademy.dk/backend/web/uploads/2020-02-14/AFL%206/SDH8_6_00_00_2013_5926/SDH8_6_00_00_2013_5926.pdf) | to do |
+
 ### *Totalitet som Kategori: en erkendelsesteoretisk Undersøgelse* (1917)
 
 Høffding's epistemological investigation of totality as a fundamental
@@ -424,21 +447,31 @@ religion*.
 |---------|-------|--------|
 | Complete article (26 pp.) | [JSTOR](https://www.jstor.org/stable/40895941) | to do |
 
-### *Relation som Kategori: en erkendelsesteoretisk Undersøgelse* (Copenhagen, 1921)
+### *Relation som Kategori: en erkendelsesteoretisk Undersøgelse* (Copenhagen: Bianco Lunos Bogtrykkeri, 1921)
 
-Epistemological investigation of relation as a fundamental category of
+Høffding's epistemological investigation of relation as a fundamental category of
 thought, forming a companion piece to *Totalitet som Kategori* (1917).
+Published in the Royal Danish Academy's *Filosofiske Meddelelser* (I, 3).
 Notably contains Høffding's engagement with the theory of relativity,
 which he interprets through his own epistemological framework --- a
 rare instance of his direct response to the most radical development
-in contemporary physics. Together with *Totalitet som Kategori* and
-*Begrebet Analogi* (1923), it forms a late trilogy of category
-investigations that represent Høffding's final epistemological
-synthesis.
+in contemporary physics. The Einstein section (§3b, pp. 72--77) traces
+a direct line from Neumann and Mach's relational critique of the law of
+inertia to Einstein's relativization of simultaneity, framing the whole
+development as epistemologically continuous: natural science arriving
+independently at the insight that the knowing subject and its standpoint
+cannot be abstracted from any account of measurement. Høffding's conclusion
+--- that if Einstein is right, one need not therefore philosophize in a
+new way --- reflects his view that philosophy had already, via Kant and
+his own epistemology, absorbed the core insight. Together with
+*Totalitet som Kategori* and *Begrebet Analogi* (1923), it forms a late
+trilogy of category investigations that represent Høffding's final
+epistemological synthesis.
 
 | Section | Links | Status |
 |---------|-------|--------|
-| Complete work | | to do |
+| §3b: Den nye Relativitetsteori (pp. 72--77) | [transcription](https://hhalvors.github.io/danish-texts/texts/hoeffding/relation-som-kategori/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/hoeffding/relation-som-kategori/translation.pdf) | *in progress* |
+| Remainder of work | | to do |
 
 ### *Begrebet Analogi* (Copenhagen, 1923)
 
