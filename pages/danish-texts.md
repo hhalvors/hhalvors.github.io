@@ -216,6 +216,18 @@ religiously reconciled humane consciousness."
 |---------|-------|--------|
 | Complete work (226 pp.) | [transcription](https://hhalvors.github.io/danish-texts/texts/brochner/problemet-tro-viden/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/brochner/problemet-tro-viden/translation.pdf) · [KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122130352405763) | *in progress* |
 
+### Georg Brandes, *Levned*, vol. I (Copenhagen: Gyldendal, 1905), pp. 129--132
+
+Autobiographical account of Brandes's first encounter with Brøchner in September
+1861 and the development of their teacher--student relationship. Brandes describes
+Brøchner's physical presence, his pedagogical approach, and the gradual intellectual
+alignment that came only after Brandes had worked through Feuerbach independently.
+A primary source for Brøchner's personality and his influence on the next generation.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Excerpt (pp. 129--132) | [transcription](https://hhalvors.github.io/danish-texts/texts/brochner/brandes-levned/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/brochner/brandes-levned/translation.pdf) | complete |
+
 ### *Om det Religiøse i dets Enhed med det Humane* (Copenhagen: Philipsen, 1869) [[KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122130352505763)]
 
 The constructive positive supplement to the 1868 critique,
