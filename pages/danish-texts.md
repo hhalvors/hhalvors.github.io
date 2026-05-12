@@ -258,6 +258,30 @@ PDF requiring OCR before transcription.
 |---------|-------|--------|
 | Complete work (76 pp.) | [KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122130227705763) | to do |
 
+### *Levned*, Bind I (Copenhagen: Gyldendal, 1905), udvalgte passager
+
+Autobiographical excerpts selected for their bearing on Brandes's two
+philosophy professors. The Brøchner passages (chapters 4 and 6) document
+the teacher--student relationship from 1861 onward: Brøchner's physical
+presence and pedagogical method, the slow intellectual alignment that
+came only after Brandes had worked through Feuerbach independently, the
+professorship question that haunted the next decade, and Brøchner's
+characterization as representing an "ideal-realism" bridging speculative
+and empiricist philosophy. The Nielsen passages (chapters 3, 4, 6, and 7)
+cover the full arc: Nielsen as examiner giving an invented grade to a
+brilliantly improvising student; Hauch's affectionate nickname for him
+("en rigtig Rugbrødsnatur"); Brandes's first personal visit in early 1864;
+the polemic Brandes launched on his return from France in 1867, in which
+he charged Nielsen with being "ikke mindre teologisk sindet end sine
+Modstandere"; and a sardonic aside, from Hamburg, about Nielsen's school
+always claiming privileged access to "det Centrale" in existence.
+Source: [georgbrandes.dk](https://georgbrandes.dk) (Det Danske
+Sprog- og Litteraturselskab).
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Selected passages | [transcription](https://hhalvors.github.io/danish-texts/texts/brandes/levned/transcription.pdf) · translation | *in progress* |
+
 ---
 
 ## Harald Høffding (1843--1931)
