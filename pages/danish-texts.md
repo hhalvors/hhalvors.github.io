@@ -313,26 +313,6 @@ its empirical confirmation.
 |---------|-------|--------|
 | Complete article | [transcription](https://hhalvors.github.io/danish-texts/texts/hoeffding/darwinismen/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/hoeffding/darwinismen/translation.pdf) | complete |
 
-### "Realisme i Videnskab og Tro" (1882), in *Mindre Arbejder* (1899)
-
-Høffding's inaugural public statement of his mature
-position, arguing for a "realism" about religion: the religious question is a
-genuine question about reality, not a pseudo-question or a mere existential
-commitment. Available on [Wikisource](https://da.wikisource.org/wiki/Mindre_Arbejder).
-
-| Section | Links | Status |
-|---------|-------|--------|
-| Complete essay | [Wikisource](https://da.wikisource.org/wiki/Mindre_Arbejder) | to do |
-
-### "Om Realisme i Videnskab og Tro" (1884)
-
-On realism in science and faith; engages with the relation
-between scientific knowledge and religious belief in the wake of Darwinism.
-
-| Section | Links | Status |
-|---------|-------|--------|
-| Complete article | [transcription](https://hhalvors.github.io/danish-texts/texts/hoeffding/realisme/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/hoeffding/realisme/translation.pdf) | complete |
-
 ### *Psykologi i Omrids paa Grundlag af Erfaring* (Copenhagen: Philipsen, 1882; 2nd ed. 1885)
 
 Høffding's psychology textbook, widely used across Scandinavia and translated
@@ -348,6 +328,38 @@ transposed into physics. Available in English as *Outlines of Psychology*
 | Section | Links | Status |
 |---------|-------|--------|
 | Complete work (421 pp.) | [transcription](https://hhalvors.github.io/danish-texts/texts/hoeffding/psykologi/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/hoeffding/psykologi/translation.pdf) | *in progress* |
+
+### "Realisme i Videnskab og Tro" (lecture 1882; published 1884), in *Mindre Arbejder* (1899)
+
+Delivered as a lecture at the Studentersamfund on 2 September 1882,
+published in revised form in 1884, and reprinted in *Mindre Arbejder*
+(1899). The essay develops a concept of realism as the principle of
+natural causes --- the methodological core of modern science from
+Kant--Laplace through Darwin --- and then applies it to the
+science--faith question. The key move is a distinction between
+science (which investigates the laws and inner coherence of existence)
+and faith (which concerns the ethical significance and *value* of
+existence). On this analysis, genuine faith and science do not conflict,
+because they address different questions. Høffding distinguishes
+"humane or philosophical faith," which accepts that ideal values are
+realized entirely through natural causes and requires no supernatural
+interventions, from "theological faith," which makes theoretical claims
+that compete with science and is therefore permanently in tension with
+it. The essay contains the first appearance of Høffding's signature
+epigraph --- *alte dubitat qui altius credit* --- and anticipates the
+faith-as-value-conservation argument central to the *Religionsfilosofi*
+(1901). In the context of the Nielsen--Brøchner debate: Høffding's
+separation of science from faith reaches Nielsen's conclusion (no
+conflict) by a route that guts his intent, since it requires faith to
+surrender all supernatural theoretical content --- effectively endorsing
+Brandes's charge that Nielsen's dualism was a covert theology. The
+"humane faith" Høffding puts in its place is the direct heir of
+Brøchner's "religiously reconciled humane consciousness," cast in a
+more empiricist idiom. Available on [Wikisource](https://da.wikisource.org/wiki/Mindre_Arbejder).
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete essay | [transcription](https://hhalvors.github.io/danish-texts/texts/hoeffding/realisme/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/hoeffding/realisme/translation.pdf) · [Wikisource](https://da.wikisource.org/wiki/Mindre_Arbejder) | complete |
 
 ### "Forholdet mellem Tro og Viden i dets historiske Udvikling" (1885), in *Mindre Arbejder*
 
@@ -457,32 +469,6 @@ research but also Alf Ross's development of legal concepts.
 |---------|-------|--------|
 | Complete work | | to do |
 
-### "Pascal et Kierkegaard" (1923) [[JSTOR](https://www.jstor.org/stable/40895941)]
-
-Article in *Revue de Métaphysique et de Morale* 30, no. 2 (April--June
-1923), pp. 221--246. Written in French for a French audience (hence
-more space given to Kierkegaard than to Pascal). A systematic
-comparison in four parts: temperament, intellectual background, the
-Christian problem, and the paths left open. Høffding argues that
-both thinkers, two centuries apart, pushed Christianity to its logical
-extreme by insisting on the incompatibility between primitive
-Christianity and modern culture, and that both broke with the Church
-as a result. In the concluding section he identifies three
-possibilities for anyone who has followed Pascal and Kierkegaard to
-the end: (1) a literal return to primitive Christianity, (2)
-acknowledging that modern Christianity is a different religion, or
-(3) resuming the Greek project of founding moral life on nature and
-human experience --- and clearly favours the third. He criticises
-both thinkers for their sharp division between "essential" and
-"non-essential" knowledge, arguing that scientific thought can
-become decisive for personal conviction. References his own 1892
-monograph *Kierkegaard som Filosof* and the 1901 *Philosophie de la
-religion*.
-
-| Section | Links | Status |
-|---------|-------|--------|
-| Complete article (26 pp.) | [JSTOR](https://www.jstor.org/stable/40895941) | to do |
-
 ### *Relation som Kategori: en erkendelsesteoretisk Undersøgelse* (Copenhagen: Bianco Lunos Bogtrykkeri, 1921)
 
 Høffding's epistemological investigation of relation as a fundamental category of
@@ -508,6 +494,32 @@ epistemological synthesis.
 |---------|-------|--------|
 | §3b: Den nye Relativitetsteori (pp. 72--77) | [transcription](https://hhalvors.github.io/danish-texts/texts/hoeffding/relation-som-kategori/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/hoeffding/relation-som-kategori/translation.pdf) | *in progress* |
 | Remainder of work | | to do |
+
+### "Pascal et Kierkegaard" (1923) [[JSTOR](https://www.jstor.org/stable/40895941)]
+
+Article in *Revue de Métaphysique et de Morale* 30, no. 2 (April--June
+1923), pp. 221--246. Written in French for a French audience (hence
+more space given to Kierkegaard than to Pascal). A systematic
+comparison in four parts: temperament, intellectual background, the
+Christian problem, and the paths left open. Høffding argues that
+both thinkers, two centuries apart, pushed Christianity to its logical
+extreme by insisting on the incompatibility between primitive
+Christianity and modern culture, and that both broke with the Church
+as a result. In the concluding section he identifies three
+possibilities for anyone who has followed Pascal and Kierkegaard to
+the end: (1) a literal return to primitive Christianity, (2)
+acknowledging that modern Christianity is a different religion, or
+(3) resuming the Greek project of founding moral life on nature and
+human experience --- and clearly favours the third. He criticises
+both thinkers for their sharp division between "essential" and
+"non-essential" knowledge, arguing that scientific thought can
+become decisive for personal conviction. References his own 1892
+monograph *Kierkegaard som Filosof* and the 1901 *Philosophie de la
+religion*.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete article (26 pp.) | [JSTOR](https://www.jstor.org/stable/40895941) | to do |
 
 ### *Begrebet Analogi* (Copenhagen, 1923)
 
