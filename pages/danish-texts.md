@@ -519,3 +519,40 @@ shaped Bohr's philosophical vocabulary.
 | Section | Links | Status |
 |---------|-------|--------|
 | Complete work | | to do |
+
+### *Erindringer* (Copenhagen: Gyldendalske Boghandel, 1928) [[Runeberg](https://runeberg.org/hherind/)]
+
+Høffding's autobiography, published in his 85th year. Eight dated
+chapters (I. 1843--1861 through VIII. 1922--1924) cover his full
+intellectual life from Copenhagen schoolboy to elder statesman of
+European philosophy. The book is a primary source for the entire
+Nielsen--Brøchner--Høffding narrative.
+
+The central section for our purposes is **II. 1861--1874** (pp.\ 38--93),
+which covers Høffding's student years at the University of Copenhagen.
+Here he describes his first encounter with Rasmus Nielsen's philosophy
+course --- heavily saturated with Kierkegaard --- and the intellectual
+and spiritual crisis it precipitated; his subsequent encounter with
+Brøchner's lectures and the gradual reorientation they produced; and
+the moment of decisive break with Nielsen's position, which Høffding
+locates in a letter he wrote to Nielsen in 1867. The account is
+indispensable for understanding how Kierkegaard's influence was
+transmitted, resisted, and transformed across the generation that
+produced the mature tro-og-viden debate.
+
+Also relevant: **IV. 1883--1894** (pp.\ 121--174) contains Høffding's
+reflections on his 1892 *Kierkegaard som Filosof* and on the
+installation of his own philosophical position; **V. 1894--1904**
+(pp.\ 175--223) covers the *Religionsfilosofi* (1901) and the early
+Bohr connection; **VI. 1904--1914** (pp.\ 224--265) includes the
+period of Niels Bohr's intensive study with Høffding.
+
+Available on [Project Runeberg](https://runeberg.org/hherind/) (Norwegian
+National Library scan; OCR not yet proofread). 325 pp.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| II. 1861--1874 (pp. 38--93) | [Runeberg](https://runeberg.org/hherind/0042.html) · transcription · translation | to do |
+| IV. 1883--1894 (pp. 121--174) | [Runeberg](https://runeberg.org/hherind/0125.html) | to do |
+| V. 1894--1904 (pp. 175--223) | [Runeberg](https://runeberg.org/hherind/0179.html) | to do |
+| VI. 1904--1914 (pp. 224--265) | [Runeberg](https://runeberg.org/hherind/0228.html) | to do |
