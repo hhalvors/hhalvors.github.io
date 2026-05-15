@@ -415,7 +415,7 @@ James. German version 1903.
 
 | Section | Links | Status |
 |---------|-------|--------|
-| Complete essay | [transcription](https://hhalvors.github.io/danish-texts/texts/hoeffding/vort-hjem/transcription.pdf) | *in progress* |
+| Complete essay | [transcription](https://hhalvors.github.io/danish-texts/texts/hoeffding/vort-hjem/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/hoeffding/vort-hjem/translation.pdf) | *in progress* |
 
 ### "Om Begrebet Analogi og dets filosofiske Betydning" (1905), in *Mindre Arbejder* II
 
