@@ -64,8 +64,10 @@
   \vspace{0.8em}
   \textbf{Part II: Artificial Intelligence} \hfill \emph{(lecture 3)}
   \begin{itemize}\small
-  \item AI in science: prediction without understanding?
-  \item Content to be developed from notes
+  \item What genuine models explain: three examples from physics
+  \item The double meaning of ``model''
+  \item Sullivan's argument: link uncertainty vs.\ implementation opacity
+  \item A deeper challenge: is there an inside?
   \end{itemize}
 
 \end{frame}
@@ -743,11 +745,418 @@ independently chooses a setting and records a $\pm 1$ outcome.
   \vfill
 \end{frame}
 
-\section{AI and Scientific Understanding}
+\begin{frame}{Group Discussion}
 
-\begin{frame}{[Content to be developed]}
+  AlphaFold (2022) predicted the 3D structure of virtually every
+  known protein --- a problem biologists had worked on for 50 years.
+  AlphaFold is a deep neural network trained on known protein
+  structures.
 
-  \emph{Notes and content for this section will be added.}
+  \vspace{0.8em}
+  \begin{enumerate}
+  \item Did AlphaFold help us \textbf{understand} protein folding?
+    Or did it only help us \textbf{predict} protein structures?
+  \item Is there a meaningful difference between a neural network
+    that predicts and a model that explains?
+  \end{enumerate}
+
+\end{frame}
+
+\section{AI in Science}
+
+\begin{frame}{Two perspectives on AI in science}
+
+  \begin{description}
+  \item[Theoretical] Videnskabsteori has traditionally been focused
+    on \emph{scientists} as cognitive agents. These agents have always
+    used tools to increase understanding. But now we have tools that
+    seem borderline intelligent themselves. Does that change our
+    understanding of the task of science?
+  \item[Practical] Science produces (at least) two kinds of goods:
+    \begin{itemize}
+    \item \kw{Intrinsic:} The goods it gives back to scientists and
+      their lives --- helping them fulfill their human potential
+    \item \kw{Extrinsic:} The goods it produces for our material
+      lives and the economy
+    \end{itemize}
+    Use of AI threatens to make the extrinsic good completely
+    \emph{en\r{a}dig} (one-sided). What do we want science to be?
+    It is partly up to us.
+  \end{description}
+
+\end{frame}
+
+\begin{frame}{A fact about AI: opacity}
+
+  Deep Neural Networks (DNNs) --- including the transformer models
+  behind AlphaFold and large language models --- share one crucial
+  feature:
+
+  \vspace{0.5em}
+  \begin{center}
+  \kw{Even the experts who build them do not know how they work}
+  \end{center}
+
+  \vspace{0.5em}
+  \begin{itemize}
+  \item There is a fundamental \kw{mismatch} between human reasoning
+    and the path a DNN takes from inputs to outputs
+  \item A DNN learns by adjusting billions of numerical weights
+    through an optimization process; the resulting weights
+    are not human-readable
+  \item Joel Dudley (co-creator of the Deep Patient model):
+    ``We can build these models, but we don't know how they work''
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{What a DNN looks like inside}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.82]
+  \foreach \i in {1,...,4} {
+    \node[circle,draw,minimum size=0.55cm,fill=blue!10,font=\scriptsize]
+      (in\i) at (0, {2.5-(\i-1)*0.88}) {};
+  }
+  \foreach \i in {1,...,5} {
+    \node[circle,draw,minimum size=0.55cm,fill=gray!22,font=\scriptsize]
+      (ha\i) at (2.2, {3.0-(\i-1)*0.82}) {};
+  }
+  \foreach \i in {1,...,5} {
+    \node[circle,draw,minimum size=0.55cm,fill=gray!38,font=\scriptsize]
+      (hb\i) at (4.4, {3.0-(\i-1)*0.82}) {};
+  }
+  \foreach \i in {1,2} {
+    \node[circle,draw,minimum size=0.55cm,fill=red!12,font=\scriptsize]
+      (out\i) at (6.6, {1.5-(\i-1)*1.0}) {};
+  }
+  \foreach \i in {1,...,4} {
+    \foreach \j in {1,...,5} {
+      \draw[gray!50,line width=0.25pt] (in\i) -- (ha\j);
+    }
+  }
+  \foreach \i in {1,...,5} {
+    \foreach \j in {1,...,5} {
+      \draw[gray!50,line width=0.25pt] (ha\i) -- (hb\j);
+    }
+  }
+  \foreach \i in {1,...,5} {
+    \foreach \j in {1,2} {
+      \draw[gray!50,line width=0.25pt] (hb\i) -- (out\j);
+    }
+  }
+  \node[font=\scriptsize] at (0,3.2) {input};
+  \node[font=\scriptsize] at (3.3,3.7) {hidden layers};
+  \node[font=\scriptsize] at (6.6,2.2) {output};
+  \node[font=\tiny,align=center,text=gray!65] at (3.3,-0.85)
+    {each edge carries a weight $w_{ij}\in\mathbb{R}$,
+     learned by gradient descent --- not designed to represent
+     any physical quantity};
+\end{tikzpicture}
+\end{center}
+
+\vspace{-0.2em}
+\small The ``knowledge'' lives in the weights. These are the output of
+gradient descent over training data --- not designed to represent any
+physical mechanism or causal structure.
+
+\end{frame}
+
+\section{What Models Explain}
+
+\begin{frame}{What makes a model genuinely explanatory?}
+
+  Before turning to Sullivan, let us recall what it looks like when
+  physics provides genuine understanding.
+
+  \vspace{0.5em}
+  A \kw{model} in the philosophy-of-science sense:
+  \begin{itemize}
+  \item Has \emph{interpretable content} --- it says something about
+    what is going on in the world
+  \item States a mechanism, a structure, a \emph{reason why}
+  \item Scientists can read off qualitative consequences without
+    full calculation (De Regt \& Dieks: CIT)
+  \item Transfers understanding across domains
+  \end{itemize}
+
+  \vspace{0.4em}
+  Three examples.
+
+\end{frame}
+
+\begin{frame}{Example 1: Kinetic theory of gases}
+
+  \textbf{Model:} gas $= N$ molecules of mass $m$ moving randomly;
+  pressure arises from momentum transfer to container walls;
+  temperature $\propto$ mean kinetic energy
+  $\langle \tfrac{1}{2}mv^2 \rangle$
+
+  \vspace{0.5em}
+  \textbf{Explains:} why hydrogen effuses $4\times$ faster than
+  oxygen at the same temperature:
+  \[
+  \langle \tfrac{1}{2}m v^2\rangle \text{ equal for both}
+  \;\Rightarrow\; v \propto m^{-1/2}
+  \;\Rightarrow\; \frac{v_{\mathrm{H}_2}}{v_{\mathrm{O}_2}} =
+  \sqrt{\frac{m_{\mathrm{O}_2}}{m_{\mathrm{H}_2}}} =
+  \sqrt{\frac{32}{2}} = 4
+  \]
+
+  You can \emph{see} why the answer is 4 without computing anything.
+  The billiard-ball picture carries the understanding.
+
+\end{frame}
+
+\begin{frame}{Example 2: Schwarzschild metric and light deflection}
+
+  \textbf{Model:} the unique spherically-symmetric vacuum solution
+  (Birkhoff) to Einstein's equations:
+  \[
+  ds^2 = -\!\left(1-\frac{2GM}{c^2 r}\right)c^2 dt^2
+  + \left(1-\frac{2GM}{c^2 r}\right)^{\!-1}\!\!dr^2
+  + r^2 d\Omega^2
+  \]
+
+  \textbf{Explains:} deflection of light grazing the Sun,
+  $\delta = 4GM/c^2 b \approx 1.75''$ ---
+  \emph{exactly twice} the Newtonian prediction.
+
+  \vspace{0.3em}
+  Once you have internalized the geometry, you can \emph{see} why
+  the factor of 2 arises: spatial curvature (absent in Newton)
+  contributes an equal amount to the deflection as the
+  time-component does. You see it; you do not just calculate it.
+
+\end{frame}
+
+\begin{frame}{Example 3: BCS theory of superconductivity}
+
+  \textbf{Model:} phonon-mediated attraction pairs electrons of
+  opposite momenta/spins into \kw{Cooper pairs}; these condense
+  into a coherent macroscopic state with an energy gap $\Delta$.
+
+  \vspace{0.4em}
+  \textbf{Explains} --- qualitatively, without calculation:
+  \begin{itemize}
+  \item \kw{Zero resistance}: the minimum excitation costs $2\Delta$;
+    for small voltages there are no available scattering states ---
+    current flows without dissipation
+  \item \kw{Meissner effect}: a penetrating magnetic field would
+    disrupt the condensate; the material expels it
+  \item \kw{Breakdown at $T_c$}: thermal fluctuations supply
+    $k_B T \gtrsim \Delta$, breaking the pairs
+  \end{itemize}
+
+  \vspace{0.3em}
+  \small A physicist who has internalized BCS can answer \emph{why}
+  mercury loses resistance at 4.2\,K --- not merely predict
+  that it does.
+
+\end{frame}
+
+\section{Sullivan's Argument}
+
+\begin{frame}{Sullivan's question}
+
+  \begin{quote}
+  ``Are scientists trading understanding for some other epistemic
+  or pragmatic good when they choose an opaque and complex machine
+  learning model?''
+  \end{quote}
+  \hfill\small (Sullivan 2022, p.~110)
+
+  \vspace{0.8em}
+  \textbf{Discuss:} do you think scientists are making such a trade?
+  Is that acceptable?
+
+\end{frame}
+
+\begin{frame}{The double meaning of ``model''}
+
+  One terminological trap in Sullivan's article:
+  the word \kw{model} does double duty.
+
+  \vspace{0.5em}
+  \begin{description}
+  \item[Sense 1 (scientific model)] A representation with
+    \emph{interpretable content}: states a mechanism; has an inside
+    that scientists can inhabit; satisfies CIT. A Sense~1 model
+    \emph{says something about what is going on in the world}.
+    \\\emph{Examples: kinetic theory, Schwarzschild metric, BCS}
+  \item[Sense 2 (ML model)] A parameterized function
+    \emph{fitted to data by optimization}: weights are the output
+    of gradient descent, not designed to represent anything.
+    A Sense~2 model is \emph{the result of a fitting procedure,
+    not of theorizing}.
+    \\\emph{Examples: AlphaFold, GPT, Deep Patient}
+  \end{description}
+
+  \vspace{0.3em}
+  \small The word ``model'' in ML descends from statistics, where
+  it \emph{did} once have interpretable content (a Gaussian model,
+  a linear model). Neural networks inherited the term while
+  quietly abandoning the interpretability.
+
+\end{frame}
+
+\begin{frame}{Sullivan's main claim}
+
+  Sullivan's answer to her own question: it is \emph{not}
+  the complexity or opacity of a DNN that limits the understanding
+  it can provide.
+
+  \vspace{0.5em}
+  The real culprit is \kw{link uncertainty}:
+  \begin{quote}
+  ``It is not implementation black-boxing that gets in the way of
+  understanding, it is link uncertainty.''
+  \end{quote}
+  \hfill\small (Sullivan 2022, p.~116)
+
+  \vspace{0.5em}
+  \begin{itemize}
+  \item Black-boxing implementation details does \emph{not}
+    undermine understanding in general --- this is commonplace
+    in science
+  \item What blocks understanding is the absence of scientific
+    evidence linking the model's outputs to real causal structure
+    in the world
+  \end{itemize}
+
+  \vspace{0.4em}
+  \textbf{Discuss:} do you think Sullivan is right about this?
+  Can you give examples of acceptable and unacceptable black-boxing
+  from physics?
+
+\end{frame}
+
+\begin{frame}{The Schelling analogy}
+
+  Sullivan's central example: Schelling's \kw{checkerboard model}
+  of residential segregation.
+  \begin{itemize}
+  \item Simple simulation: two types of agent, each moves if
+    $>70\%$ of neighbours differ; result: a segregated board
+  \item Provides \emph{how-possibly} understanding when the
+    semantic mapping (coin = agent, move = choice) is read off
+  \item Becomes \emph{how-actually} understanding only when
+    empirical evidence connects the model to real populations
+  \end{itemize}
+
+  \vspace{0.5em}
+  Sullivan's claim: the same structure applies to DNNs.
+  Implementation opacity is not the obstacle --- link uncertainty is.
+
+  \vspace{0.4em}
+  \small \textbf{HH:} But notice the key difference. With Schelling,
+  the semantic mapping was \emph{built in by the modeller from the
+  start}. With Deep Patient, there is no such mapping. The very
+  question of what the nodes and weights \emph{refer to} is
+  unanswered --- and it is not obvious it is even askable.
+
+\end{frame}
+
+\begin{frame}{Sullivan's optimism and a challenge}
+
+  \begin{quote}
+  ``Once the link uncertainty is resolved, the deep patient model
+  is able to explain and enable understanding of disease
+  development.''
+  \end{quote}
+  \hfill\small (Sullivan 2022, p.~125)
+
+  \vspace{0.8em}
+  \textbf{HH:} How would the link uncertainty ever be resolved
+  in this case?
+  \begin{itemize}
+  \item With Schelling: we look for evidence that individual
+    preferences actually drive segregation --- this is a clearly
+    statable empirical question
+  \item With Deep Patient: what physical objects or processes
+    would the learned weights be \emph{linked to}?
+  \item The weights emerged from optimization over medical records.
+    There is no design that maps them onto causal factors in disease.
+    The link question cannot be stated in the same form.
+  \end{itemize}
+
+\end{frame}
+
+\section{A Deeper Challenge}
+
+\begin{frame}{The internal/external distinction (Sullivan's blind spot?)}
+
+  When a physicist derives a result, her brain is --- at the physical
+  level --- just as opaque as a DNN.
+
+  If you traced the neural mechanisms, you would not \emph{see}
+  the reasoning. To understand why she gets the right answers,
+  you have to get inside the \kw{structure of the reasoning itself}.
+
+  \vspace{0.5em}
+  \textbf{Leibniz's mill} (\emph{Monadologie}, \S{}17): even if
+  the brain were enlarged to the size of a mill, and you could
+  walk around inspecting all its machinery, you would never
+  encounter \emph{thought} anywhere in the mechanism.
+
+  \vspace{0.5em}
+  Sullivan asks: how opaque is the implementation?
+
+  But there is a prior question: \kw{is there an internal
+  perspective to be had at all?}
+  \begin{itemize}
+  \item With the physicist: yes --- her reasoning has a logical
+    structure you can inhabit
+  \item With a DNN: \emph{open question}
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Van Fraassen: a model must be a ``way the world could be''}
+
+  Van Fraassen is the arch empiricist: he does not ask that our
+  theories be \emph{true}, only \emph{empirically adequate}.
+
+  \vspace{0.5em}
+  Yet even van Fraassen would not be satisfied with Deep Patient
+  as a final scientific result.
+
+  \vspace{0.5em}
+  His \kw{constructive empiricism} is a \emph{semantic} empiricism,
+  not an eliminativist one. A scientific theory presents models ---
+  structures interpretable as \emph{ways the world might be}.
+  The scientist may be agnostic about truth, but she must be able
+  to say: this is a \emph{possible description of reality}.
+
+  \vspace{0.5em}
+  A DNN does not present a way the world could be. It presents a
+  function from inputs to outputs. The question of truth or
+  falsity about disease mechanisms does not even arise.
+
+\end{frame}
+
+\begin{frame}{For reflection}
+
+  \begin{enumerate}
+
+  \item Should scientists rest content with having something as
+    predictive as Deep Patient? Or does science have a further goal
+    that remains unfulfilled?
+
+  \item Does it matter whether we are talking about \emph{applied}
+    science (predicting disease, protein structure) vs.
+    \emph{fundamental} science (understanding the laws of nature)?
+
+  \item We saw in Part~I that QM proceeds without consensus on
+    what it means. Does this weaken or strengthen the case for
+    demanding understanding from AI?
+
+  \item Intimation: the problem of understanding another human
+    being --- and why that seems different from understanding a DNN
+    --- points toward questions that philosophy has been wrestling
+    with for centuries.
+
+  \end{enumerate}
 
 \end{frame}
 

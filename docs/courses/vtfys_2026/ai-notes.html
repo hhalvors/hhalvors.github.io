@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <!---
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  -->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      ai-notes &middot; Hans Halvorson
+    
+  </title>
+
+  
+    
+      <link rel="canonical" href="https://hanshalvorson.com/courses/vtfys_2026/ai-notes.html">
+    
+  
+
+  <!-- Core site styles -->
+  <link rel="stylesheet" href="../../css/poole.css">
+  <link rel="stylesheet" href="../../css/syntax.css">
+  <link rel="stylesheet" href="../../css/lanyon.css">
+
+  <!-- Icon set -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+
+  <!-- Existing serif / sans families (kept for now in case they’re referenced) -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- ✦ Inter variable font (slant + weight) with optical sizing support -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Math (KaTeX + STIX Two Math) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+
+  <!-- Site-specific overrides (where we’ll tune Inter) -->
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="atom.xml">
+</head>
+
+
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` is for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Personligheden er Sandheden</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="../../index.html">Home</a>
+
+    <!--- Dynamic sidebar nav disabled; links are hardcoded below -->
+
+
+	
+   <!-- Add the new Publications link -->
+	<a class="sidebar-nav-item" href="../../publications.html">Publications</a>
+
+	<a class="sidebar-nav-item" href="../../courses/">Courses</a>
+
+<a class="sidebar-nav-item" href="../../books/">Books</a>
+
+	<a class="sidebar-nav-item" href="../../drafts.html">Drafts</a>
+
+	<a class="sidebar-nav-item" href="../../talks.html">Talks</a>
+
+	<a class="sidebar-nav-item" href="https://www.dropbox.com/scl/fi/xs0ssqnvi6zvstxnehgpd/cv.pdf?rlkey=qgwhhw1tiaspqbrlnkbnwcpt2&dl=0">CV</a>
+
+	<a class="sidebar-nav-item" href="https://github.com/hhalvors">GitHub project</a>
+
+	<a class="sidebar-nav-item" href="../../pages/danish-texts.html">Danish texts</a>
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2025. All rights reserved.
+    </p>
+    <p>
+        <img src="../../images/haskell-logo.png" class="logo" style="display: inline;" />
+        Site created with
+        <a href="https://jaspervdj.be/hakyll">Hakyll</a>.
+        <br>
+        Modified theme
+        <a href="https://github.com/hahey/lanyon-hakyll">lanyon-hakyll</a>
+        based on
+        <a href="https://lanyon.getpoole.com/">Lanyon</a>.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="../../" title="Home">Hans Halvorson</a>
+            <small>Physics, Logic, Philosophy</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+          <div class="page">
+  
+  <h1 class="post-title">ai-notes</h1>
+  
+  <h1 id="notes-for-week-5-ai-section">Notes for Week 5 AI section</h1>
+<p>Hey Claude: when we get to the part where we explain DNNs (based on
+transformer models), please help me create an illustrative Tikz
+picture. I want to clarify the sense in which these ‘models’ are
+opaque to humans.</p>
+<p>Here are my notes for the AI section. The students were assigned to
+read the article “Understanding from Machine Learning Models” by Emily
+Sullivan; so I’ll spend most of the time interacting with that
+article.</p>
+<ul>
+<li><p>Confession: I’m an expert on the foundations of QM, but not on
+AI. So this part of the lecture is “bikset sammen”</p></li>
+<li><p>Two perspectives on AI: theoretical and practical.</p>
+<ol type="1">
+<li><p>Theoretical: Videnskabsteori has traditionally been focused on
+<em>scientists</em> as cognitive agents. These agents have always used
+tools to increase understanding. But now we have tools that seem
+borderline intelligent themselves. Does that change our
+understanding of the task of science?</p></li>
+<li><p>Practical: Science produces (at least) two kinds of goods: (a)
+Intrinsic: The goods it gives back to the scientists and their
+lives in the form of helping them to fulfill their human
+potential. (b) Extrinsic: The goods it produces for our material
+lives and the economy. Use of science in AI threatens to make the
+second kind of good completely enerådig.</p>
+<p>What do we want science to be? It is partly up to us!</p></li>
+</ol></li>
+<li><p>A fact about AI, especially Deep Neural Networks</p>
+<p>Opacity / Black Boxing: Even experts don’t know how they work</p>
+<p>Mismatch between human reasoning and the path that DNNs take from
+inputs to outputs</p></li>
+<li><p>Note for later</p>
+<p>One challenging thing about Sullivan’s article is that the word
+“model” is doing double duty:</p>
+<ol type="1">
+<li><p>Models in the traditional sense used in scientific practice</p></li>
+<li><p>Models in the sense of LLMs</p></li>
+</ol></li>
+</ul>
+<h2 id="the-double-meaning-of-model">The double meaning of “model”</h2>
+<p>One terminological trap in Sullivan’s article (and in the AI-and-science literature
+generally): the word <strong>model</strong> is doing double duty.</p>
+<h3 id="sense-1-scientific-model-philosophy-of-science">Sense 1: scientific model (philosophy of science)</h3>
+<p>A representation of a target system that has <em>interpretable content</em>.</p>
+<ul>
+<li>Picks out certain features of the world, idealizes others away</li>
+<li>States a mechanism, a structure, a reason <em>why</em></li>
+<li>Humanly legible: scientists can inspect it and read off qualitative consequences
+without full calculation (De Regt &amp; Dieks’s CIT)</li>
+<li>Propositional or mathematical in a way that supports inference and explanation</li>
+<li>Examples: kinetic theory of gases, Schwarzschild metric, BCS theory</li>
+</ul>
+<p>Key point: a scientific model <em>says something about what is going on in the world</em>.</p>
+<h3 id="sense-2-ml-model-statistics-machine-learning">Sense 2: ML model (statistics / machine learning)</h3>
+<p>A parameterized mathematical function fitted to data by optimization.</p>
+<ul>
+<li>A very large composition of linear transformations and nonlinearities</li>
+<li>“Knowledge” is distributed across billions of numerical weights — not humanly readable</li>
+<li>Does not represent a target system in any interpretable way</li>
+<li>Maps inputs to outputs; does not say <em>why</em> the mapping is what it is</li>
+<li>Examples: AlphaFold, GPT, neural weather models</li>
+</ul>
+<p>Key point: an ML model is the <em>output of a fitting procedure</em>, not the result of theorizing.</p>
+<h3 id="the-historical-slide">The historical slide</h3>
+<p>The word “model” in ML comes from statistics, where “the model” originally <em>did</em> have
+interpretable content (a linear model, a Gaussian model — both make readable claims
+about a data-generating process). Neural networks inherited the terminology but
+quietly abandoned the interpretability as models grew larger. The slide from Sense 1
+to Sense 2 is itself philosophically significant.</p>
+<h3 id="sullivans-link-uncertainty-restated-with-the-distinction">Sullivan’s link uncertainty — restated with the distinction</h3>
+<p>Sullivan’s concept of <strong>link uncertainty</strong> is essentially asking: is the Sense 2 model
+connected to a Sense 1 model in any identifiable way? If we know <em>which features</em> of
+the training data ground the ML model’s predictions, we can begin to extract a
+scientific model from it. If we don’t — if the link is uncertain — the ML model gives
+us how-possibly understanding at best, never how-actually.</p>
+<h3 id="two-versions-of-the-black-box-problem">Two versions of the black-box problem</h3>
+<ul>
+<li><strong>AlphaFold</strong>: the <em>honest</em> case. Makes no claim to understand; produces a 3D
+structure. No pretense of explanation.</li>
+<li><strong>LLMs</strong>: the <em>deceptive</em> case. Produce output with the surface grammar of
+Sense 1 explanation — chains of reasons, causal language, DN-style inference.
+Have been trained on physics textbooks and can reproduce Mode 1 (propositional)
+explanations. Whether any anskuelig representation underlies the output is
+an open question. The form of understanding is mimicked without its substance
+being obviously present.</li>
+</ul>
+<h3 id="architecture-note-for-accuracy">Architecture note (for accuracy)</h3>
+<p>Both AlphaFold 2 and modern LLMs are largely <strong>transformer-based</strong> (attention
+mechanism, Vaswani et al. 2017). AlphaFold 2 uses a transformer-like Evoformer plus
+a Structure Module; it is a hybrid rather than a pure transformer. The shared
+architecture reinforces that the black-box problem is not a quirk of any particular
+design — it is a general feature of large learned models regardless of domain.</p>
+<h3 id="payoff-for-the-slides">Payoff for the slides</h3>
+<p>The disambiguation matters because students may assume an ML “model” does what a
+scientific model does — provides a window into the mechanism. Making the distinction
+explicit shows that using the same word for both things conceals the very question
+Sullivan is trying to raise: can a Sense 2 model ever do the explanatory work of a
+Sense 1 model?</p>
+<h1 id="what-is-sullivans-question">What is Sullivan’s question?</h1>
+<p>(p 110) “Are scientists trading understanding for some other
+epistemic or pragmatic good when they choose an opaque and complex
+machine learning model?”</p>
+<p>Discuss</p>
+<h1 id="what-is-sullivans-point-and-so-what">What is Sullivan’s point? And so what?</h1>
+<ol type="1">
+<li><p>Black-boxing does not necessarily undermine understanding</p></li>
+<li><p>Link Uncertainty does undermine understanding</p></li>
+</ol>
+<p>“It is not implementation black-boxing that gets in the way of
+understanding, it is link uncertainty.” (p 116)</p>
+<p>“When we focus on the types of explanatory questions we can ask of
+the models, the lingering problems for understanding that remain are
+not foremost due to the implementation black boxes, but because
+there is a certain level of link uncertainty.” (p 122)</p>
+<h1 id="tracing-sullivans-argument">Tracing Sullivan’s argument</h1>
+<p>“Before considering the complex case of DNNs, it is worthwhile to
+first consider a simple case to illustrate the way that models explain
+and provide understanding of phenomenon [sic].” (p 111)</p>
+<h2 id="example-schelling-on-segregation">Example: Schelling on segregation</h2>
+<p>NB: This example is rather different than typical model-based
+explanations in physics. It’s almost more like an Aristotelian
+explanation where the outcome is explained by (a) structural
+constraints, and (b) the “strategies” of the actors.</p>
+<h2 id="black-boxes">Black Boxes</h2>
+<p>“Black box explanations are commonplace in scientific inquiry.” (p
+113)</p>
+<p>Discuss: Do you think Sullivan is right about this? Can you
+distinguish different kinds of black-boxing and which are considered
+acceptable in physics?</p>
+<h2 id="the-internalexternal-distinction-sullivans-blind-spot">The internal/external distinction (Sullivan’s blind spot?)</h2>
+<p>When a physicist derives a result, her brain is — at the physical level — just as opaque as a DNN
+If you traced the neural mechanisms, you would not see the reasoning
+To understand why she gets the right answers, you have to get inside the structure of the reasoning itself</p>
+<p>Leibniz’s mill (Monadology, §17): even if the brain were enlarged to the size of a mill and you could walk around inspecting all its machinery, you would never encounter thought anywhere in the mechanism</p>
+<p>Sullivan focuses on implementation opacity vs. link uncertainty
+But there is a prior question: is there an internal perspective to be had at all?
+With the physicist: yes — her reasoning has a logical structure you can inhabit
+With a DNN: open question</p>
+<p>Does a DNN model have an inside?</p>
+<h2 id="sullivans-optimism">Sullivan’s optimism</h2>
+<p>“So too in the deep patient case, once the link uncertainty is
+resolved, the deep patient model is able to explain and enable
+understanding of disease development.” (p 125)</p>
+<p>HH: How would the link uncertainty ever be resolved in this case? What
+physical objects or processes would the nodes and arrows in the DNN be
+linked to?</p>
+<h2 id="other-examples">Other examples</h2>
+<p>Sullivan mentions to other DNN examples, one that she thinks has less
+link uncertainty. One that she thinks has more link uncertainty.</p>
+<p>(I don’t know if there will be time to mention these examples. This a
+lot of material to cover in 45 minutes!)</p>
+<ol type="1">
+<li><p>Classifying moles as cancerous or not. She says that this model has
+less link uncertainty.</p></li>
+<li><p>Determining sexual orientation based on pictures. She says that
+this model has more link uncertainty.</p></li>
+</ol>
+<h2 id="other-questions">Other questions</h2>
+<h3 id="in-physics-do-we-permit-models-that-have-elements-that-do-not">In physics, do we permit models that have elements that do not</h3>
+<p>refer to something in the world?</p>
+<ul>
+<li><p>Some people think that the quantum wavefunction is “just a
+calculational device”</p></li>
+<li><p>Passage to the complex plane in proving theorems in QFT. (Irving
+Segal worried about this)</p></li>
+</ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="https://hanshalvorson.com/public/js/script.js"></script>
+
+
+  </body>
+
+</html>
