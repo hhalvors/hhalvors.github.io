@@ -411,6 +411,12 @@ James. German version 1903.
 |---------|-------|--------|
 | Selections | | to do |
 
+### "Vort Hjem" (introduction to Emma Gad, *Vort Hjem*, 1903)
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete essay | [transcription](https://hhalvors.github.io/danish-texts/texts/hoeffding/vort-hjem/transcription.pdf) | *in progress* |
+
 ### "Om Begrebet Analogi og dets filosofiske Betydning" (1905), in *Mindre Arbejder* II
 
 Høffding's theory of analogical reasoning, developed from Hertz's

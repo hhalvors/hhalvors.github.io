@@ -1,0 +1,765 @@
+\documentclass[fleql]{beamer}
+
+\usetheme[
+  progressbar=frametitle,
+  numbering=fraction,
+  sectionpage=none,
+  subsectionpage=none
+]{metropolis}
+
+\title{Week 5 \\ Understanding under Threat}
+\subtitle{Quantum Mechanics and Artificial Intelligence}
+\author{Hans Halvorson}
+\date{May 2026}
+
+\usepackage[backend=biber, style=authortitle]{biblatex}
+\addbibresource{refs.bib}
+\setlength{\bibitemsep}{0.5em}
+\AtBeginBibliography{\scriptsize}
+
+\usepackage{amsmath,amssymb}
+\usepackage{soul}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+
+\newcommand{\kw}[1]{\textbf{#1}}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle #1|}
+\newcommand{\ip}[2]{\langle #1|#2\rangle}
+
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamerfont{section in toc}{size=\small}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection,hideallsubsections,part=\thepart]
+  \end{frame}
+}
+
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{part page}{}
+
+\setcounter{secnumdepth}{1}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Today's plan}
+
+  \textbf{Part I: Quantum Mechanics} \hfill \emph{(lectures 1--2)}
+  \begin{itemize}\small
+  \item The framework of QM: states, observables, dynamics
+  \item The measurement problem and the Copenhagen myth
+  \item Interpretations: GRW, Bohm, Everett, \ldots
+  \item Complementarity: Bohr's response to the crisis
+  \item Bell's theorem and the limits of causal understanding
+  \end{itemize}
+
+  \vspace{0.8em}
+  \textbf{Part II: Artificial Intelligence} \hfill \emph{(lecture 3)}
+  \begin{itemize}\small
+  \item AI in science: prediction without understanding?
+  \item Content to be developed from notes
+  \end{itemize}
+
+\end{frame}
+
+%%% ============================================================
+%%% PART I: QUANTUM MECHANICS
+%%% ============================================================
+
+\part{Quantum Mechanics}
+
+\begin{frame}{Group Discussion}
+
+  From last week, quantum mechanics is our recurring example of
+  a theory where prediction and understanding seem to come apart.
+
+  \vspace{0.8em}
+  \begin{enumerate}
+  \item Do you feel that you \textbf{understand} quantum mechanics?
+    What would it even mean to understand it?
+  \item Is ``shut up and calculate'' a satisfying attitude toward a
+    fundamental theory of nature?
+  \end{enumerate}
+
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Two perspectives today}
+
+  \begin{description}
+  \item[First-order] Which interpretation of QM is correct? What is
+    the theory \emph{actually} saying about the world?
+  \item[Second-order] There has been no consensus on the foundations
+    of QM for \emph{100 years}. Should we be concerned? What does
+    this tell us about science as a knowledge-producing enterprise?
+  \end{description}
+
+  \vspace{0.8em}
+  Both questions bear directly on scientific understanding --- which
+  is why De Regt and Dieks chose quantum non-locality as their
+  motivating example.
+
+\end{frame}
+
+\begin{frame}{The foundational crisis: 1900--1927}
+
+  \begin{itemize}
+  \item 1900: Planck introduces the quantum of action $h$
+  \item 1905: Einstein explains the photoelectric effect using photons
+  \item 1913: Bohr's model of the hydrogen atom
+  \item 1925--26: Heisenberg's matrix mechanics; Schr\"{o}dinger's
+    wave mechanics
+  \item 1927: Born's probability interpretation; Heisenberg's
+    uncertainty principle; Bohr's complementarity
+  \end{itemize}
+
+  \vspace{0.5em}
+  \small The early pioneers were acutely aware that they did
+  \emph{not} understand what was going on. Bohr thought our
+  ability to understand the physical world was genuinely up
+  for grabs.
+
+\end{frame}
+
+\begin{frame}{Apparent resolution: the Copenhagen school}
+
+  \begin{itemize}
+  \item By 1927 a working consensus formed around Bohr's school
+  \item Bohr's key insight: the existence of the \kw{quantum of
+    action} calls for a \emph{revision} of what it means to give an
+    objective, unambiguous description of physical phenomena
+    \begin{itemize}
+    \item An unambiguous description must specify the experimental
+      arrangement; the conditions of observation become part of
+      the description itself
+    \item Classical concepts remain indispensable for describing
+      the apparatus, but cannot all be simultaneously applied to
+      the quantum object
+    \end{itemize}
+  \item This leads to \kw{complementarity}: a structural feature of
+    unambiguous description, not a limitation on knowledge
+  \item This is a positive philosophical proposal, not a
+    counsel of despair
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Revival of the crisis}
+
+  \begin{itemize}
+  \item 1952: Bohm publishes a working hidden-variable
+    interpretation --- shattering the apparent consensus
+  \item 1957: Everett proposes the relative-state (many-worlds)
+    interpretation
+  \item 1964: Bell proves his non-locality theorem
+  \item Today: active foundational debate; the cutting edge of
+    physics proceeds without settling the foundations
+  \end{itemize}
+
+  \vspace{0.5em}
+  \textbf{The second-order question:} is 100 years without consensus
+  acceptable? Does it reveal something deep about QM, or is it a
+  sociological failure of physics?
+
+\end{frame}
+
+\section{Framework of Quantum Mechanics}
+
+\begin{frame}{States as vectors}
+
+  \begin{itemize}
+  \item The state of a quantum system is a unit vector $\ket{\psi}$
+    in a complex Hilbert space $\mathcal{H}$
+  \item \kw{Superposition principle}: if $\ket{\psi}$ and $\ket{\phi}$
+    are states, so is $\alpha\ket{\psi} + \beta\ket{\phi}$
+    (after normalization)
+  \item For a \kw{qubit} (two-level system): $\mathcal{H} = \mathbb{C}^2$
+  \item Computational basis: $\ket{0} \equiv \ket{\uparrow}$,\quad
+    $\ket{1} \equiv \ket{\downarrow}$
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{The Bloch sphere}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+  \draw[thick] (0,0) circle (1.5);
+  \draw[gray!50] (1.5,0) arc (0:180:1.5 and 0.45);
+  \draw[gray!50,dashed] (-1.5,0) arc (180:360:1.5 and 0.45);
+  \draw[->,semithick] (0,-1.9) -- (0,2.1) node[above] {\scriptsize$z$};
+  \draw[->,semithick] (-1.9,0) -- (2.2,0) node[right] {\scriptsize$x$};
+  \draw[->,semithick,dashed] (0,0) -- (-0.85,-0.6)
+    node[below left] {\scriptsize$y$};
+  \fill (0,1.5) circle (2pt)
+    node[right,font=\scriptsize] {$\ket{0} = \ket{\uparrow}_z$};
+  \fill (0,-1.5) circle (2pt)
+    node[right,font=\scriptsize] {$\ket{1} = \ket{\downarrow}_z$};
+  \fill (1.5,0) circle (1.5pt)
+    node[above right,font=\scriptsize] {$\ket{+}_x$};
+  \fill (-1.5,0) circle (1.5pt)
+    node[above left,font=\scriptsize] {$\ket{-}_x$};
+  \draw[->,thick,blue!75] (0,0) -- (0.9,1.1)
+    node[right,font=\scriptsize] {$\ket{\psi}$};
+  \fill[blue!75] (0,0) circle (1.5pt);
+\end{tikzpicture}
+\end{center}
+
+\vspace{-0.3em}
+\small Every pure state of a qubit is a point on the sphere.
+Antipodal points are orthogonal.
+
+\end{frame}
+
+\begin{frame}{Observables as operators}
+
+  \begin{itemize}
+  \item Physical quantities: \kw{Hermitian operators} $A = A^\dagger$
+  \item Possible measurement outcomes: eigenvalues $\lambda_i$
+  \item Eigenstates $\ket{a_i}$: states with definite value $\lambda_i$
+  \end{itemize}
+
+  \vspace{0.5em}
+  \textbf{Spin operators (Pauli matrices $\times\,\hbar/2$):}
+  \[
+  S_z = \frac{\hbar}{2}\begin{pmatrix}1&0\\0&-1\end{pmatrix},\quad
+  S_x = \frac{\hbar}{2}\begin{pmatrix}0&1\\1&0\end{pmatrix},\quad
+  S_y = \frac{\hbar}{2}\begin{pmatrix}0&-i\\i&0\end{pmatrix}
+  \]
+
+\end{frame}
+
+\begin{frame}{Superpositions and the puzzle}
+
+  If the system is in $\ket{\psi} = \alpha\ket{a_1}+\beta\ket{a_2}$,
+  observable $A$ has \emph{no definite value} --- yet measurement
+  always yields a definite outcome $\lambda_1$ or $\lambda_2$.
+
+  \vspace{0.5em}
+  \textbf{The puzzle:} what is the system doing between preparation
+  and measurement? Does the question even make sense?
+
+  \vspace{0.5em}
+  This tension is the engine of every interpretation of QM.
+
+\end{frame}
+
+\begin{frame}{Uncertainty relations}
+
+  Non-commuting observables cannot both have definite values:
+  \[
+  [S_y,\,S_z] = i\hbar S_x
+  \quad\Longrightarrow\quad
+  \Delta S_y \cdot \Delta S_z \;\geq\;
+  \tfrac{\hbar}{2}|\langle S_x\rangle|
+  \]
+
+  \textbf{Spin-$z$ eigenstate decomposed in spin-$y$ basis:}
+  \[
+  \ket{\uparrow}_z \;=\;
+  \tfrac{1}{\sqrt{2}}\ket{\uparrow}_y + \tfrac{1}{\sqrt{2}}\ket{\downarrow}_y
+  \]
+  so $\Delta S_y = \hbar/2$ is maximal when $S_z$ is definite.
+
+  \vspace{0.3em}
+  Conceptually: \kw{Fourier analysis} --- narrow in one basis,
+  spread in the conjugate basis.
+
+\end{frame}
+
+\begin{frame}{Composite systems and entanglement}
+
+  Composite systems: $\mathcal{H}_{AB} =
+  \mathcal{H}_A \otimes \mathcal{H}_B$, with
+  $x\otimes(y+z) = (x\otimes y)+(x\otimes z)$.
+
+  \vspace{0.3em}
+  Not all states are product states. The \kw{singlet state}
+  \[
+  \ket{\Psi^-} = \tfrac{1}{\sqrt{2}}
+  \bigl(\ket{\uparrow\downarrow} - \ket{\downarrow\uparrow}\bigr)
+  \]
+  cannot be written $\ket{\psi}_A\otimes\ket{\phi}_B$:
+  it is \kw{entangled}.
+
+  \vspace{0.5em}
+  \textbf{Discussion (2 min):} what features does a system have if
+  it is entangled with another? What does it mean for its ``state''?
+
+\end{frame}
+
+\begin{frame}{Linear dynamics and the Born rule}
+
+  Time evolution:
+  $i\hbar\frac{d}{dt}\ket{\psi} = H\ket{\psi}$,\quad
+  solution $\ket{\psi(t)} = U(t)\ket{\psi(0)}$ (\kw{unitary}).
+
+  \vspace{0.3em}
+  Crucially, $U$ is \kw{linear}:
+  $U(\alpha\ket{\psi}+\beta\ket{\phi}) = \alpha U\ket{\psi}+\beta U\ket{\phi}$.
+  This is exactly what generates the measurement problem.
+
+  \vspace{0.5em}
+  \textbf{Born rule:}
+  \[
+  \mathrm{Pr}_\psi(A=\lambda) =
+  \langle\psi,\,E^A(\lambda)\,\psi\rangle
+  \]
+  For $\ket{\psi}=\sum_i c_i\ket{a_i}$:\quad
+  $\mathrm{Pr}_\psi(A=\lambda_i) = |c_i|^2$
+
+  \vspace{0.4em}
+  \textbf{Discussion:} do we \emph{understand} QM if it is
+  just a recipe for computing these probabilities?
+
+\end{frame}
+
+\section{The Measurement Problem}
+
+\begin{frame}{Definition and derivation}
+
+  \textbf{Ideal measurement of $A$:}
+  $\ket{a_i}\otimes\ket{r} \;\longrightarrow\; \ket{a_i}\otimes\ket{y_i}$
+  (each eigenstate paired with a distinct pointer state --- unitary).
+
+  \vspace{0.5em}
+  Now suppose $\ket{\psi} = \sum_i c_i\ket{a_i}$.
+  By \textbf{linearity}:
+  \[
+  \Bigl(\sum_i c_i\ket{a_i}\Bigr)\otimes\ket{r}
+  \;\longrightarrow\;
+  \sum_i c_i\,\bigl(\ket{a_i}\otimes\ket{y_i}\bigr)
+  \]
+
+  The meter ends in an \textbf{entangled superposition} --- no
+  definite reading. But we \emph{always} observe a definite outcome.
+  \textbf{Contradiction.}
+
+\end{frame}
+
+\begin{frame}{The collapse postulate}
+
+  \textbf{Standard ``solution'':}
+  $\sum_i c_i\ket{a_i} \longrightarrow \ket{a_k}$
+  with probability $|c_k|^2$.
+
+  \vspace{0.5em}
+  \textbf{Problems:}
+  \begin{itemize}
+  \item Violates unitarity and linearity --- the two most fundamental
+    features of the theory
+  \item Creates a two-dynamics theory:
+    Schr\"{o}dinger evolution \emph{and} collapse
+  \item When does collapse occur? Where is the ``Heisenberg cut''?
+  \item The theory gives no definition of ``measurement''
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{The Copenhagen myth}
+
+  \begin{itemize}
+  \item Von Neumann (1932) first axiomatized collapse in
+    \emph{Grundlagen der Quantenmechanik}; by the 1950s it was
+    standard textbook orthodoxy
+  \item The label \kw{Copenhagen interpretation} was applied
+    retroactively --- Bohr never used it
+  \item In reality there was no single Copenhagen view: Bohr,
+    Heisenberg, Born, Pauli all held different positions
+  \item \textbf{HH:} Bohr never claimed the measurement problem is
+    \emph{solved} by collapse --- his actual response is
+    philosophically much deeper, and has been systematically misread
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Decoherence: not a solution}
+
+  \kw{Decoherence}: environmental interaction entangles the system
+  rapidly; the \emph{reduced} state approaches a mixture.
+
+  \vspace{0.5em}
+  \textbf{Why this does not solve the measurement problem:}
+  \begin{enumerate}
+  \item The reduced state is not \emph{uniquely} interpretable as
+    a mixture over definite pointer readings
+  \item The global state (system $+$ environment) is still a
+    superposition --- decoherence is a local approximation,
+    not a collapse
+  \end{enumerate}
+
+  \vspace{0.3em}
+  \small Decoherence explains why interference is hard to observe
+  macroscopically. It does not explain why we observe \emph{one}
+  outcome.
+
+\end{frame}
+
+\section{Interpretations of Quantum Mechanics}
+
+\begin{frame}{Four strategies}
+
+  \begin{enumerate}
+  \item \kw{Reject unitary dynamics}: add stochastic collapse
+    \hfill\emph{(GRW)}
+  \item \kw{Add hidden variables}: supplement QM with additional
+    ontology \hfill\emph{(Bohm)}
+  \item \kw{Reject uniqueness of outcomes}: all branches are real
+    \hfill\emph{(Everett)}
+  \item \kw{Revise the ontological picture}: resist the demand for
+    a classical reality behind QM
+    \hfill\emph{(relational, QBism, pragmatic)}
+  \end{enumerate}
+
+\end{frame}
+
+\begin{frame}{GRW, Bohm, and their problems}
+
+  \textbf{GRW} (Ghirardi, Rimini, Weber 1986): add random
+  spontaneous localization events. Free parameters tuned so
+  macroscopic objects localize (no pointer superpositions) while
+  microscopic systems remain unitary. Open: ontology? Relativistic
+  extension?
+
+  \vspace{0.5em}
+  \textbf{Bohm (1952)}: both wavefunction and particle positions
+  are real; the wave guides particles. Particles always have
+  definite positions.
+  \begin{itemize}\small
+  \item Guidance equation requires a preferred frame ---
+    inconsistent with special relativity
+  \item Violates the spirit of momentum conservation in
+    relativistic interactions
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Everett and less ontological interpretations}
+
+  \textbf{Everett (1957)}: unitary dynamics is complete; all
+  branches of the wavefunction are real.
+  \begin{itemize}\small
+  \item \emph{Probability:} deterministic theory --- where do the
+    Born-rule probabilities come from?
+  \item \emph{Preferred basis:} what selects the ``world'' branches?
+  \item No-hidden-variables theorems imply the branches cannot
+    themselves be classical
+  \end{itemize}
+
+  \vspace{0.5em}
+  \textbf{Less ontological} (Rovelli, Fuchs--Schack, Healey):
+  resist asking ``what is the wavefunction in itself?''
+
+  \vspace{0.3em}
+  \small \textbf{HH:} these approaches are philosophically
+  sophisticated but may relocate rather than dissolve the problem.
+
+\end{frame}
+
+\section{Complementarity}
+
+\begin{frame}{Bohr's single-slit thought experiment}
+
+\begin{columns}
+
+\column{0.49\textwidth}
+\centering
+\textbf{A: bolted screen}
+\begin{center}
+\begin{tikzpicture}[scale=0.63]
+  \fill[gray!55] (0,0.35) rectangle (0.45,2.1);
+  \fill[gray!55] (0,-2.1) rectangle (0.45,-0.35);
+  \draw[ultra thick] (0.22,2.1) -- (0.22,2.45);
+  \draw[ultra thick] (0.22,-2.1) -- (0.22,-2.45);
+  \draw[->,thick] (-1.8,0) -- (0,0);
+  \draw[->,blue!80,thick] (0.45,0) -- (2.3,0.75);
+  \draw[->,blue!50] (0.45,0) -- (2.3,0.15);
+  \draw[->,blue!25] (0.45,0) -- (2.3,-0.35);
+  \fill[gray!25] (2.3,-2.1) rectangle (2.6,2.1);
+  \foreach \y in {0.75,0.15,-0.35} {
+    \fill[blue!50] (2.6,\y-0.09) rectangle (3.05,\y+0.09);
+  }
+\end{tikzpicture}
+\end{center}
+\small position known $\Rightarrow$ wave picture $\Rightarrow$ \textbf{interference}
+
+\column{0.49\textwidth}
+\centering
+\textbf{B: free screen}
+\begin{center}
+\begin{tikzpicture}[scale=0.63]
+  \fill[gray!55] (0,0.35) rectangle (0.45,2.1);
+  \fill[gray!55] (0,-2.1) rectangle (0.45,-0.35);
+  \draw[thick,decorate,
+    decoration={zigzag,segment length=4pt,amplitude=2pt}]
+    (0.22,-2.1) -- (0.22,-2.7);
+  \draw[->,thick] (-1.8,0) -- (0,0);
+  \draw[->,blue!80,thick] (0.45,0) -- (2.3,0.45);
+  \draw[->,red,thick] (0.22,-1.7) -- (0.22,-2.2)
+    node[right,font=\tiny] {recoil};
+  \fill[gray!25] (2.3,-2.1) rectangle (2.6,2.1);
+  \fill[gray!45] (2.6,-0.1) rectangle (3.05,0.55);
+\end{tikzpicture}
+\end{center}
+\small momentum known $\Rightarrow$ particle picture $\Rightarrow$ \textbf{no interference}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Complementarity and visualizability}
+
+  Two arrangements are \kw{complementary} when they are mutually
+  exclusive and each exhaustive within its domain.
+
+  \vspace{0.5em}
+  \begin{description}
+  \item[Spacetime description] position, trajectory, ``which path''
+    --- \kw{visualizable} (anskuelig) picture
+  \item[Causal description] momentum, energy, conservation laws
+    --- dynamical picture
+  \end{description}
+
+  \vspace{0.5em}
+  ``The viewpoint of complementarity presents itself as a rational
+  generalization of the very ideal of causality.'' (Bohr 1948)
+
+  \vspace{0.3em}
+  \small This connects directly to De Regt \& Dieks: Bohr is
+  \emph{not} saying we cannot understand quantum phenomena. He
+  is proposing a new kind of understanding that does not require
+  a single classical picture.
+
+\end{frame}
+
+\begin{frame}{Bohr's deeper point}
+
+  \begin{itemize}
+  \item The quantum of action requires a revision of what counts
+    as an \kw{objective description}:
+    \begin{itemize}
+    \item Objectivity does not disappear --- but it now requires
+      specifying the experimental conditions as part of any
+      unambiguous statement about a quantum phenomenon
+    \item We cannot separate ``how Nature is'' from ``the
+      experimental arrangement in which it is observed''
+    \end{itemize}
+  \item This is not about abandoning objectivity but about
+    \emph{reconceiving} it for a domain where the interaction
+    between object and instrument cannot be neglected or controlled
+  \item The misreading of Bohr as ``shut up and calculate'' has
+    distorted the foundations debate for 70 years
+  \item \textbf{HH:} Bohr is working in a tradition running
+    from Kant through H\o ffding: the conditions of unambiguous
+    description are themselves a philosophical achievement
+  \end{itemize}
+
+\end{frame}
+
+\section{No-Hidden-Variables Theorems}
+
+\begin{frame}{EPR, von Neumann, and Kochen--Specker}
+
+  \textbf{EPR (1935):} QM is incomplete --- quantum correlations
+  must be explained by predetermined hidden variables $\lambda$.
+
+  \vspace{0.5em}
+  \textbf{Von Neumann (1932):} no hidden-variable theory can
+  reproduce QM given additivity $\mathbb{E}_\lambda(A+B) =
+  \mathbb{E}_\lambda(A)+\mathbb{E}_\lambda(B)$ for non-commuting
+  $A,B$. Bell (1966): this assumption is physically unmotivated.
+
+  \vspace{0.5em}
+  \textbf{Kochen--Specker (1967):} no assignment
+  $v(A)\in\mathrm{spec}(A)$ to all observables can satisfy
+  functional consistency $v(f(A))=f(v(A))$ and the sum rule for
+  commuting pairs. \kw{Value definiteness} is impossible.
+
+  \vspace{0.3em}
+  \small Kochen--Specker is more compelling than von Neumann: the
+  assumptions are operationally motivated.
+
+\end{frame}
+
+\section{Bell's Theorem}
+
+\begin{frame}{The CHSH scenario}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.92]
+  \draw[fill=gray!20,thick,rounded corners=3pt]
+    (-0.45,-0.4) rectangle (0.45,0.4);
+  \node[font=\scriptsize] at (0,0) {source};
+  \draw[fill=blue!10,thick,rounded corners=3pt]
+    (-4.2,-0.45) rectangle (-2.3,0.45);
+  \node[font=\scriptsize] at (-3.25,0) {\textbf{Alice}};
+  \node[font=\tiny] at (-3.25,-0.65) {setting: $a$ or $a'$};
+  \node[font=\tiny] at (-3.25,0.65) {outcome: $\pm 1$};
+  \draw[fill=red!10,thick,rounded corners=3pt]
+    (2.3,-0.45) rectangle (4.2,0.45);
+  \node[font=\scriptsize] at (3.25,0) {\textbf{Bob}};
+  \node[font=\tiny] at (3.25,-0.65) {setting: $b$ or $b'$};
+  \node[font=\tiny] at (3.25,0.65) {outcome: $\pm 1$};
+  \draw[->,thick] (-0.45,0) -- (-2.3,0);
+  \draw[->,thick] (0.45,0) -- (2.3,0);
+  \draw[<->,dashed,gray!70] (-2.3,-0.9) -- (2.3,-0.9)
+    node[midway,below,font=\tiny,gray!70] {no communication};
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.3em}
+\small The entangled pair is measured far apart. Each party
+independently chooses a setting and records a $\pm 1$ outcome.
+
+\end{frame}
+
+\begin{frame}{Local hidden variables and the CHSH inequality}
+
+  Suppose outcomes are determined by $\lambda\sim\rho(\lambda)$,
+  with \kw{reality} ($A,B$ definite) and \kw{locality}
+  (Alice independent of Bob's setting):
+  \[
+  E(a,b) = \int A(a,\lambda)\,B(b,\lambda)\,\rho(\lambda)\,d\lambda
+  \]
+
+  Under local hidden variables:
+  \[
+  \bigl|E(a,b) - E(a,b') + E(a',b) + E(a',b')\bigr| \;\leq\; 2
+  \]
+
+  \small \textit{Proof sketch:} for each $\lambda$, the combination
+  $A(a)[B(b)-B(b')] + A(a')[B(b)+B(b')]$ takes values in
+  $\{-2,0,+2\}$.
+
+\end{frame}
+
+\begin{frame}{Quantum violation}
+
+  For $\ket{\Psi^-} = \tfrac{1}{\sqrt{2}}(\ket{\uparrow\downarrow}
+  -\ket{\downarrow\uparrow})$:\quad
+  $E(a,b) = -\cos(\theta_a-\theta_b)$
+
+  \vspace{0.3em}
+  Choose $a=0^\circ$, $a'=90^\circ$, $b=45^\circ$, $b'=135^\circ$:
+
+  \begin{align*}
+  E(a,b)   &= -\cos(-45^\circ)  = -\tfrac{1}{\sqrt{2}} \\[3pt]
+  E(a,b')  &= -\cos(-135^\circ) = +\tfrac{1}{\sqrt{2}} \\[3pt]
+  E(a',b)  &= -\cos(45^\circ)   = -\tfrac{1}{\sqrt{2}} \\[3pt]
+  E(a',b') &= -\cos(-45^\circ)  = -\tfrac{1}{\sqrt{2}}
+  \end{align*}
+
+  \[
+  S = -\tfrac{1}{\sqrt{2}} - \tfrac{1}{\sqrt{2}}
+    - \tfrac{1}{\sqrt{2}} - \tfrac{1}{\sqrt{2}}
+  = -\tfrac{4}{\sqrt{2}} = -2\sqrt{2}
+  \qquad\Rightarrow\qquad
+  \boxed{|S| = 2\sqrt{2} \approx 2.83 > 2}
+  \]
+
+\end{frame}
+
+\begin{frame}{The Jarrett analysis and what Bell means}
+
+  Jarrett (1984): local hidden variables $=$ two conditions:
+  \begin{description}
+  \item[PI (parameter independence)] Alice's outcome does not
+    depend on Bob's \emph{setting}
+  \item[OI (outcome independence)] Alice's outcome does not
+    depend on Bob's \emph{outcome}
+  \end{description}
+
+  Bell violation $\Leftrightarrow$ at least one of PI or OI fails.
+  Bohm/Everett: OI fails. Retrocausal models: PI fails.
+
+  \vspace{0.5em}
+  \textbf{HH's focus:} Bell's theorem shows a fundamental
+  limitation on \kw{local causal explanation} of quantum
+  correlations. Does this mean we \emph{cannot understand} them?
+
+  \vspace{0.3em}
+  \small De Regt \& Dieks: understanding does not require causal
+  explanation. Bohr: we need a new conceptual framework,
+  not a new causal story.
+
+\end{frame}
+
+\section{Conclusion: The QM Crisis}
+
+\begin{frame}{Taking stock}
+
+  \begin{itemize}
+  \item QM works to extraordinary precision (electron $g$-factor:
+    12 significant figures)
+  \item Yet the theory is arguably \emph{inconsistent as stated}
+    (the measurement problem), and there is no consensus on how to
+    resolve it
+  \item Each interpretation pays a significant price: non-locality,
+    many worlds, anti-realism, new fundamental dynamics
+  \item \textbf{HH:} this is a genuine crisis --- not merely a
+    philosophical puzzle we can comfortably set aside
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{From QM to AI}
+
+  \begin{itemize}
+  \item Some physicists say: ``QM works, so who cares if we don't
+    understand it?''
+  \item If we accept this for QM, we have weakened our ground
+    against the parallel argument:
+    \begin{quote}\small
+    ``AlphaFold predicts protein structures better than any human
+    theory --- so who cares if we don't understand it?''
+    \end{quote}
+  \item \textbf{HH:} I do not think we should be content with this.
+    The goal of science is not mere prediction but understanding.
+    QM is one thing; the threat from AI is another.
+  \end{itemize}
+
+\end{frame}
+
+%%% ============================================================
+%%% PART II: AI AND SCIENTIFIC UNDERSTANDING
+%%% ============================================================
+
+\part{AI and Scientific Understanding}
+
+\begin{frame}[plain]
+  \vfill
+  \centering
+  {\usebeamerfont{title}\usebeamercolor[fg]{title} Part II}\\[0.5em]
+  {\large Artificial Intelligence and Scientific Understanding}
+  \vfill
+\end{frame}
+
+\section{AI and Scientific Understanding}
+
+\begin{frame}{[Content to be developed]}
+
+  \emph{Notes and content for this section will be added.}
+
+\end{frame}
+
+\nocite{*}
+
+\begin{frame}[allowframebreaks]{Selected References}
+\printbibliography[heading=none]
+\end{frame}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

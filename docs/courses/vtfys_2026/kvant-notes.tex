@@ -1,0 +1,235 @@
+Week 5: Understanding under threat --- quantum mechanics and AI
+
+%% first part about QM, will take two thirds of the time, i.e. 2 x 45
+%% minute lectures. Second part about AI will be 1 x 45 minute lecture
+
+
+%% First part: Quantum Mechanics %%
+%%%
+
+\section{Introduction}
+
+%% Today we will take two perspectives -- the second of which is not
+%% typical in the way philosophers these days talk about foundations
+%% of QM
+%% 1. First-order perspective: thinking about which approach to QM we
+%% think is the best
+%% 2. Second-order perspective: conflict and consensus in science. Should we be
+%% concerned that there is still no consensus about foundations  of
+%% QM? 
+
+%% I want to explain to the students that there was a foundational
+%% crisis in physics between 1901 (Planck's discovery) and 1927. It
+%% looked to be solved --- consolidation in Copenhagen around Bohr's
+%% school.
+
+%% But the crisis got revived in the 1960s, after the work of David
+%% Bohm, Hugh Everett, and John Bell. Debate is raging now, not so
+%% much at the cutting edges of physics --- where the theory works
+%% well enough --- but among philosophers.
+
+\item The early pioneers were acutely aware that they did \emph{not}
+  understand what was going on
+\item Bohr thought that our ability to understand the physical world
+  was genuinely up for grabs.
+\item His final analysis (circa 1927) was that understanding could be
+  obtained, but changing what it means to ``understand''.
+
+\section{Framework of quantum mechanics}
+
+\begin{frame}
+
+\item States as elements of a (complex) vector space. Illustrate with
+  the Bloch sphere
+  
+\item Quantities as operators 
+
+From the previous two items it follows that there is something a bit
+puzzling going on with \emph{superpositions} of states
+
+\end{frame}
+
+\begin{frame}
+  
+[The uncertainty relation is basically Fourier analysis: the lower the
+dispersion in one quantity, the higher in the other quantity. To
+Claude: Illustrate with spin-$y$ and spin-$z$.]
+
+\end{frame}
+
+\begin{frame}{Composite systems}
+
+  Composite systems are represented with the \textbf{tensor product
+    formalism}, which is characterized by:
+
+  \[ x\otimes (y+z) \: = \: (x\otimes y)+(x\otimes z) \]
+
+  This formalism implies the existence of \textbf{entangled states},
+  i.e.\ states that cannot be represented as a product of pure states
+  for the two subsystems.
+
+  For discussion (2 minutes): What features does a system have if it
+  is entangled with another system?
+  
+
+\end{frame}  
+
+\begin{frame}{Dynamics}
+
+  The dynamics is \textbf{linear}:
+
+  \[ U(x+y) \: = \: Ux + Uy \]
+
+\end{frame}
+
+
+\begin{frame}{Born rule}
+
+  \[ \mathrm{Pr}_{\psi }(A=\lambda ) \: = \: \langle \psi ,E^A(\lambda
+  )\psi \rangle  \]
+
+
+
+\end{frame}
+
+
+
+  QM is often taught as a recipe for computing the probabilities of
+  measurement outcomes. That's a very \emph{antirealist} way of
+  treating the theory. The problem that follows --- the measurement
+  problem --- is supposed to make us worry about the consistency of
+  maintaining such an antirealist position.
+
+  Question for discussion: do we \emph{understand} QM if it's just a
+  recipe for computing measurement outcomes?
+
+\section{The measurement problem}
+
+\item Definition of an ideal measurement of $A$
+  -- states of $A$ are paired with states of the measuring device
+  -- if the object is in state $x_i$ and the measuring device is in
+  the ready state, then the composite object ends in state $x_i\otimes y_i$
+\item Derivation of the problem
+\item Collapse postulate and philosophical objections to it 
+\item Historical aside: what happened between the 1930s and 1950s so
+  that it became textbook QM with the collapse postulate
+\item A little about the myth of the ``Copenhagen interpretation''
+\item Bohr never suggested that the measurement problem is solved by
+  collapse
+
+\begin{frame}{Decoherence}
+
+  But isn't the measurement problem solved by decoherence?
+
+  Long story short: No.
+
+  1. The reduced state is not uniquely interpretable as a mixture over
+  the states of concern
+
+  2. The state is not \emph{really} a mixture
+
+\end{frame}
+ 
+
+\section{Interpretations of QM}
+
+\item Reject unitary dynamics. e.g. Ghirardi-Rimini-Weber
+\item Hidden variables. e.g. Bohmian mechanics
+\item Reject uniqueness of measurement outcomes. e.g. Everett
+\item Interpretations that are ``less ontological'' in nature:
+  relational, QBist, pragmatic (Healey)
+
+\begin{frame}
+
+  %% A slide or two to consider problems with the various
+  %% interpretations
+\item Bohm
+
+  -- Technically inconsistent with STR
+
+  -- Violates the spirit of the principle of conservation of momentum
+  
+
+\item GRW
+
+  -- Unclear whether the wavefunction should be treated as some kind of
+  matter density
+
+  -- Wavefunction lives in high dimensional configuration space 
+
+\item Everett
+
+  -- Since the theory is deterministic, where do the probabilities come from?
+
+  -- Preferred basis problem
+
+  -- The no-hidden variables theorems imply that the worlds (branches) cannot be classical either
+
+  
+
+\end{frame}
+  
+
+
+%% now we shift over to quantum non-locality, passing through
+%% complementarity, EPR, and no hidden variables theorems
+
+\section{Complementarity}
+
+%% here I'll give Bohr's famous picture of the two versions of the
+%% single-slit experiment: one where the screen is bolted down, and
+%% one where the screen freely floats on a infinitely loose spring
+
+%% but I won't leave it there with pictures: I'll explain how he said
+%% there is a complementarity between visualizability (spacetime
+%% coordinatization) and definability (conservation of momentum)
+
+
+\section{No hidden variables theorems}
+
+%% remind them that Bohr didn't rest his argument on the no hidden
+%% variables theorems. He knew about von Neumann's, but he didn't
+%% think it was physically convincing
+
+\item von Neumann's argument in Grundlagen der Quantenmechanik
+\item Bell-Kochen-Specker
+
+
+\section{Bell's theorem}
+
+%% the focus here will be a bit different than the normal discussions
+%% in analytic philosophy of physics. We aren't going to wring our
+%% hands about locality and realism. We are more focused on whether
+%% Bell's theorem shows limitations on our ability to "understand"
+%% what is going on in the quantum world.
+
+\item Derivation of an inequality from assumption of local hidden
+  variables
+\item Jarrett analysis: Realism plus locality implies inequality
+\item Singlet state violates inequality [Hi Claude: choose spin
+  operators at appropriate angles so that we can explicitly show
+  computation of maximal violation of Bell's inequality. I think it
+  achieves the value $2\sqrt{2}$?]
+\item 
+  
+
+  \section{Conclusion}
+
+  What can you do about the QM foundations ``crisis''?
+
+  \item Some people have chosen to defect from mainstream physics
+    because they think this issue is so important
+  \item I don't think we should just tolerate it. QM is one thing ---
+    the threat from AI is another thing. If we think it's OK to use QM
+    without understanding, then why not just let AI do our science?
+
+%% this is my transition to the AI part     
+
+
+%%% Second part: AI     
+  
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
