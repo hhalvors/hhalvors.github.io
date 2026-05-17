@@ -64,7 +64,7 @@
   \vspace{0.8em}
   \textbf{Part II: Artificial Intelligence} \hfill \emph{(lecture 3)}
   \begin{itemize}\small
-  \item What genuine models explain: three examples from physics
+  \item Models and understanding: what philosophy of science says
   \item The double meaning of ``model''
   \item Sullivan's argument: link uncertainty vs.\ implementation opacity
   \item A deeper challenge: is there an inside?
@@ -654,19 +654,18 @@ independently chooses a setting and records a $\pm 1$ outcome.
   Choose $a=0^\circ$, $a'=90^\circ$, $b=45^\circ$, $b'=135^\circ$:
 
   \begin{align*}
-  E(a,b)   &= -\cos(-45^\circ)  = -\tfrac{1}{\sqrt{2}} \\[3pt]
-  E(a,b')  &= -\cos(-135^\circ) = +\tfrac{1}{\sqrt{2}} \\[3pt]
-  E(a',b)  &= -\cos(45^\circ)   = -\tfrac{1}{\sqrt{2}} \\[3pt]
-  E(a',b') &= -\cos(-45^\circ)  = -\tfrac{1}{\sqrt{2}}
+  E(a,b)   &= -\cos(45^\circ)  = -\tfrac{1}{\sqrt{2}} \\[3pt]
+  E(a,b')  &= -\cos(135^\circ) = +\tfrac{1}{\sqrt{2}} \\[3pt]
+  E(a',b)  &= -\cos(45^\circ)  = -\tfrac{1}{\sqrt{2}} \\[3pt]
+  E(a',b') &= -\cos(45^\circ)  = -\tfrac{1}{\sqrt{2}}
   \end{align*}
 
-  \[
-  S = -\tfrac{1}{\sqrt{2}} - \tfrac{1}{\sqrt{2}}
-    - \tfrac{1}{\sqrt{2}} - \tfrac{1}{\sqrt{2}}
-  = -\tfrac{4}{\sqrt{2}} = -2\sqrt{2}
-  \qquad\Rightarrow\qquad
-  \boxed{|S| = 2\sqrt{2} \approx 2.83 > 2}
-  \]
+  \begin{align*}
+  S &= -\tfrac{1}{\sqrt{2}} - \tfrac{1}{\sqrt{2}}
+     - \tfrac{1}{\sqrt{2}} - \tfrac{1}{\sqrt{2}}
+   = -\tfrac{4}{\sqrt{2}} = -2\sqrt{2} \\[6pt]
+  &\Rightarrow\quad \boxed{|S| = 2\sqrt{2} \approx 2.83 > 2}
+  \end{align*}
 
 \end{frame}
 
@@ -695,39 +694,29 @@ independently chooses a setting and records a $\pm 1$ outcome.
 
 \end{frame}
 
-\section{Conclusion: The QM Crisis}
-
-\begin{frame}{Taking stock}
+\begin{frame}{Taking stock --- and a question}
 
   \begin{itemize}
-  \item QM works to extraordinary precision (electron $g$-factor:
-    12 significant figures)
+  \item QM achieves extraordinary predictive precision (electron
+    $g$-factor: 12 significant figures)
   \item Yet the theory is arguably \emph{inconsistent as stated}
-    (the measurement problem), and there is no consensus on how to
-    resolve it
-  \item Each interpretation pays a significant price: non-locality,
+    (the measurement problem), and after 100 years there is still
+    no consensus on how to resolve it
+  \item Each interpretation pays a serious price: non-locality,
     many worlds, anti-realism, new fundamental dynamics
-  \item \textbf{HH:} this is a genuine crisis --- not merely a
-    philosophical puzzle we can comfortably set aside
   \end{itemize}
 
-\end{frame}
+  \vspace{0.5em}
+  Some physicists say: ``QM works, so who cares if we don't
+  understand it?'' If we accept this, we have weakened our ground
+  against:
+  \begin{quote}\small
+  ``AlphaFold predicts protein structures better than any human
+  theory --- so who cares if we don't understand it?''
+  \end{quote}
 
-\begin{frame}{From QM to AI}
-
-  \begin{itemize}
-  \item Some physicists say: ``QM works, so who cares if we don't
-    understand it?''
-  \item If we accept this for QM, we have weakened our ground
-    against the parallel argument:
-    \begin{quote}\small
-    ``AlphaFold predicts protein structures better than any human
-    theory --- so who cares if we don't understand it?''
-    \end{quote}
-  \item \textbf{HH:} I do not think we should be content with this.
-    The goal of science is not mere prediction but understanding.
-    QM is one thing; the threat from AI is another.
-  \end{itemize}
+  \textbf{HH:} The goal of science is not mere prediction but
+  understanding. QM is one thing; AI is another.
 
 \end{frame}
 
@@ -737,12 +726,20 @@ independently chooses a setting and records a $\pm 1$ outcome.
 
 \part{AI and Scientific Understanding}
 
-\begin{frame}[plain]
-  \vfill
-  \centering
-  {\usebeamerfont{title}\usebeamercolor[fg]{title} Part II}\\[0.5em]
-  {\large Artificial Intelligence and Scientific Understanding}
-  \vfill
+\section{AI in Science}
+
+\begin{frame}{}
+
+  \begin{center}
+  \includegraphics[width=0.78\textwidth]{boo.jpg}
+  \end{center}
+
+  \vspace{0.2em}
+  \small\centering
+  Humanities graduates at the University of Central Florida booed
+  their commencement speaker after she called AI ``the next
+  industrial revolution.'' \hfill \textit{New York Times}, May 2025
+
 \end{frame}
 
 \begin{frame}{Group Discussion}
@@ -762,27 +759,20 @@ independently chooses a setting and records a $\pm 1$ outcome.
 
 \end{frame}
 
-\section{AI in Science}
-
 \begin{frame}{Two perspectives on AI in science}
 
-  \begin{description}
-  \item[Theoretical] Videnskabsteori has traditionally been focused
-    on \emph{scientists} as cognitive agents. These agents have always
-    used tools to increase understanding. But now we have tools that
-    seem borderline intelligent themselves. Does that change our
-    understanding of the task of science?
-  \item[Practical] Science produces (at least) two kinds of goods:
-    \begin{itemize}
-    \item \kw{Intrinsic:} The goods it gives back to scientists and
-      their lives --- helping them fulfill their human potential
-    \item \kw{Extrinsic:} The goods it produces for our material
-      lives and the economy
-    \end{itemize}
-    Use of AI threatens to make the extrinsic good completely
-    \emph{en\r{a}dig} (one-sided). What do we want science to be?
-    It is partly up to us.
-  \end{description}
+  \textbf{Theoretical}\enspace
+  Science has always used tools to extend understanding.
+  But AI tools seem borderline \emph{intelligent} themselves.
+  Does that change what the task of science \emph{is}?
+
+  \bigskip
+
+  \textbf{Practical}\enspace Science produces two kinds of good:
+  \textbf{knowledge} about the world, and \textbf{power} over the
+  world. AI threatens to tip the balance away from knowledge.
+
+  \bigskip What kind of science do we want to do? 
 
 \end{frame}
 
@@ -864,94 +854,48 @@ physical mechanism or causal structure.
 
 \section{What Models Explain}
 
-\begin{frame}{What makes a model genuinely explanatory?}
+\begin{frame}{Models and understanding}
 
-  Before turning to Sullivan, let us recall what it looks like when
-  physics provides genuine understanding.
-
-  \vspace{0.5em}
-  A \kw{model} in the philosophy-of-science sense:
-  \begin{itemize}
-  \item Has \emph{interpretable content} --- it says something about
-    what is going on in the world
-  \item States a mechanism, a structure, a \emph{reason why}
-  \item Scientists can read off qualitative consequences without
-    full calculation (De Regt \& Dieks: CIT)
-  \item Transfers understanding across domains
-  \end{itemize}
+  Last week we discussed DN, causal-nomological, and
+  unificationist accounts of explanation. Despite their
+  differences, they share one assumption:
 
   \vspace{0.4em}
-  Three examples.
-
-\end{frame}
-
-\begin{frame}{Example 1: Kinetic theory of gases}
-
-  \textbf{Model:} gas $= N$ molecules of mass $m$ moving randomly;
-  pressure arises from momentum transfer to container walls;
-  temperature $\propto$ mean kinetic energy
-  $\langle \tfrac{1}{2}mv^2 \rangle$
-
-  \vspace{0.5em}
-  \textbf{Explains:} why hydrogen effuses $4\times$ faster than
-  oxygen at the same temperature:
-  \[
-  \langle \tfrac{1}{2}m v^2\rangle \text{ equal for both}
-  \;\Rightarrow\; v \propto m^{-1/2}
-  \;\Rightarrow\; \frac{v_{\mathrm{H}_2}}{v_{\mathrm{O}_2}} =
-  \sqrt{\frac{m_{\mathrm{O}_2}}{m_{\mathrm{H}_2}}} =
-  \sqrt{\frac{32}{2}} = 4
-  \]
-
-  You can \emph{see} why the answer is 4 without computing anything.
-  The billiard-ball picture carries the understanding.
-
-\end{frame}
-
-\begin{frame}{Example 2: Schwarzschild metric and light deflection}
-
-  \textbf{Model:} the unique spherically-symmetric vacuum solution
-  (Birkhoff) to Einstein's equations:
-  \[
-  ds^2 = -\!\left(1-\frac{2GM}{c^2 r}\right)c^2 dt^2
-  + \left(1-\frac{2GM}{c^2 r}\right)^{\!-1}\!\!dr^2
-  + r^2 d\Omega^2
-  \]
-
-  \textbf{Explains:} deflection of light grazing the Sun,
-  $\delta = 4GM/c^2 b \approx 1.75''$ ---
-  \emph{exactly twice} the Newtonian prediction.
-
-  \vspace{0.3em}
-  Once you have internalized the geometry, you can \emph{see} why
-  the factor of 2 arises: spatial curvature (absent in Newton)
-  contributes an equal amount to the deflection as the
-  time-component does. You see it; you do not just calculate it.
-
-\end{frame}
-
-\begin{frame}{Example 3: BCS theory of superconductivity}
-
-  \textbf{Model:} phonon-mediated attraction pairs electrons of
-  opposite momenta/spins into \kw{Cooper pairs}; these condense
-  into a coherent macroscopic state with an energy gap $\Delta$.
+  \begin{center}
+  \emph{A genuine explanation says something about what is
+  going on in the world --- it does not merely predict.}
+  \end{center}
 
   \vspace{0.4em}
-  \textbf{Explains} --- qualitatively, without calculation:
-  \begin{itemize}
-  \item \kw{Zero resistance}: the minimum excitation costs $2\Delta$;
-    for small voltages there are no available scattering states ---
-    current flows without dissipation
-  \item \kw{Meissner effect}: a penetrating magnetic field would
-    disrupt the condensate; the material expels it
-  \item \kw{Breakdown at $T_c$}: thermal fluctuations supply
-    $k_B T \gtrsim \Delta$, breaking the pairs
-  \end{itemize}
+  Contemporary philosophy of science stresses that explanations
+  are typically underwritten by \kw{models}: representations
+  with interpretable content.
 
-  \vspace{0.3em}
-  \small A physicist who has internalized BCS can answer \emph{why}
-  mercury loses resistance at 4.2\,K --- not merely predict
-  that it does.
+  \vspace{0.4em}
+  Such a model is not a black box for computing predictions.
+  It has an \emph{inside} that scientists can inhabit,
+  reason about, and transfer to new situations.
+
+\end{frame}
+
+\begin{frame}{Two examples}
+
+  \textbf{Kinetic theory}\enspace gas $=$ molecules in random
+  motion; explains temperature, pressure, and effusion rates
+  by appealing to real physical processes.
+
+  \bigskip
+
+  \textbf{Schwarzschild metric}\enspace explains why light bends
+  \emph{twice} the Newtonian prediction, because spatial
+  curvature is a genuine feature of the geometry near a mass.
+
+  \bigskip
+
+  \small \textbf{Pointer to the literature:}
+  van Fraassen, \textit{Scientific Representation: Paradoxes of
+  Perspective} (Oxford, 2008) --- the central philosophical
+  study of how models represent their target systems.
 
 \end{frame}
 
@@ -974,29 +918,40 @@ physical mechanism or causal structure.
 
 \begin{frame}{The double meaning of ``model''}
 
-  One terminological trap in Sullivan's article:
-  the word \kw{model} does double duty.
+  One terminological trap: the word \kw{model} does double duty.
+
+  \vspace{0.6em}
+  \textbf{Sense 1 --- scientific model}\par\smallskip
+  Interpretable content: states a mechanism; has an inside that
+  scientists can inhabit; satisfies CIT.
+  \par{\small\emph{Examples: kinetic theory, Schwarzschild, BCS}}
+
+  \vspace{0.6em}
+  \textbf{Sense 2 --- ML model}\par\smallskip
+  A parameterized function \emph{fitted to data by optimization}:
+  weights set by gradient descent, not designed to represent anything.
+  \par{\small\emph{Examples: AlphaFold, GPT, Deep Patient}}
+
+\end{frame}
+
+\begin{frame}{Why the ambiguity matters}
+
+  The word ``model'' in ML descends from statistics, where it
+  \emph{did} once have Sense~1 content (a Gaussian model, a linear
+  model makes readable claims about a data-generating process).
+  Neural networks inherited the term while quietly abandoning
+  the interpretability.
+
+  \vspace{0.8em}
+  Sullivan's article uses ``model'' in both senses without clearly
+  distinguishing them. She asks whether a \textbf{Sense~2} model
+  can provide the understanding we normally expect from a
+  \textbf{Sense~1} model.
 
   \vspace{0.5em}
-  \begin{description}
-  \item[Sense 1 (scientific model)] A representation with
-    \emph{interpretable content}: states a mechanism; has an inside
-    that scientists can inhabit; satisfies CIT. A Sense~1 model
-    \emph{says something about what is going on in the world}.
-    \\\emph{Examples: kinetic theory, Schwarzschild metric, BCS}
-  \item[Sense 2 (ML model)] A parameterized function
-    \emph{fitted to data by optimization}: weights are the output
-    of gradient descent, not designed to represent anything.
-    A Sense~2 model is \emph{the result of a fitting procedure,
-    not of theorizing}.
-    \\\emph{Examples: AlphaFold, GPT, Deep Patient}
-  \end{description}
-
-  \vspace{0.3em}
-  \small The word ``model'' in ML descends from statistics, where
-  it \emph{did} once have interpretable content (a Gaussian model,
-  a linear model). Neural networks inherited the term while
-  quietly abandoning the interpretability.
+  This is the right question --- but answering it requires
+  acknowledging that there is a genuine gap to be bridged,
+  not just a terminological overlap.
 
 \end{frame}
 
@@ -1028,6 +983,50 @@ physical mechanism or causal structure.
   \textbf{Discuss:} do you think Sullivan is right about this?
   Can you give examples of acceptable and unacceptable black-boxing
   from physics?
+
+\end{frame}
+
+\begin{frame}{Black boxes}
+
+  A \kw{black box}: a system whose inputs and outputs are known
+  but whose internal workings are not accessible.
+
+  \vspace{0.5em}
+  \textbf{Implementation black-boxing} is ubiquitous in science
+  --- and usually \emph{unproblematic}:
+  \begin{itemize}
+  \item A climate model's factorial subroutine may be iterative
+    or recursive --- it makes no difference to the climatology
+  \item Schelling's model gives the same result on a computer,
+    a real board, or a Go board
+  \end{itemize}
+
+  \vspace{0.5em}
+  \textbf{A familiar case:} many physicists treat QM itself as a
+  \kw{quantum statistical algorithm} --- preparations go in,
+  measurement statistics come out, do not ask what is happening
+  inside. Part~I has been arguing this attitude is unsatisfactory.
+
+\end{frame}
+
+\begin{frame}{Black boxes in machine learning}
+
+  DNNs are black boxes at a \emph{deeper} level: even the
+  designers cannot identify which features the model has latched onto.
+
+  \vspace{0.5em}
+  The opacity goes beyond implementation details:
+  \begin{itemize}
+  \item Weights are set by optimization, not by design
+  \item The modeller cannot predict which data features
+    will be most salient
+  \item Indirect probing (e.g.\ saliency maps) gives only
+    approximate, high-level information
+  \end{itemize}
+
+  \vspace{0.5em}
+  \textbf{Sullivan's claim:} even this deeper opacity does not
+  block understanding. The real obstacle is something else.
 
 \end{frame}
 
@@ -1084,26 +1083,35 @@ physical mechanism or causal structure.
 
 \section{A Deeper Challenge}
 
-\begin{frame}{The internal/external distinction (Sullivan's blind spot?)}
+\begin{frame}{The internal/external distinction}
 
-  When a physicist derives a result, her brain is --- at the physical
-  level --- just as opaque as a DNN.
+  When a physicist derives a result, her brain is --- at the
+  physical level --- just as opaque as a DNN.
 
   If you traced the neural mechanisms, you would not \emph{see}
   the reasoning. To understand why she gets the right answers,
   you have to get inside the \kw{structure of the reasoning itself}.
 
-  \vspace{0.5em}
+  \vspace{0.6em}
   \textbf{Leibniz's mill} (\emph{Monadologie}, \S{}17): even if
   the brain were enlarged to the size of a mill, and you could
   walk around inspecting all its machinery, you would never
   encounter \emph{thought} anywhere in the mechanism.
 
-  \vspace{0.5em}
+\end{frame}
+
+\begin{frame}{Sullivan's blind spot?}
+
   Sullivan asks: how opaque is the implementation?
 
-  But there is a prior question: \kw{is there an internal
-  perspective to be had at all?}
+  \vspace{0.6em}
+  But there is a prior question:
+
+  \begin{center}
+  \kw{Is there an internal perspective to be had at all?}
+  \end{center}
+
+  \vspace{0.5em}
   \begin{itemize}
   \item With the physicist: yes --- her reasoning has a logical
     structure you can inhabit

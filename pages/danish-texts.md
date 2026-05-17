@@ -16,6 +16,31 @@ domain; scans are drawn from the [Royal Danish Library](https://www.kb.dk/en)
 
 ---
 
+## Søren Kierkegaard (1813--1855)
+
+The essential upstream figure for the entire Nielsen--Brøchner--Høffding
+debate. Nielsen systematized Kierkegaard's insistence on the
+incommensurability of faith and knowledge; Brøchner and Høffding spent
+careers arguing against it. Kierkegaard himself rejected Nielsen's
+systematization as a betrayal of the existential point.
+
+### *Concluding Unscientific Postscript* (1846), excerpt on immortality (pp. 153--158)
+
+The central passage in which Climacus argues that immortality is
+essentially not a learned question but a question of inwardness. Includes
+the explicit reference to Poul Martin Møller and his treatise on proofs of
+immortality, and the key formulation: ``Do I become immortal, or am I
+immmortal?'' The argument that immortality cannot be answered objectively
+because it cannot be put objectively is the direct predecessor of the
+subjective turn Kierkegaard's successors had to come to terms with.
+Translated by David F. Swenson and Walter Lowrie.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| pp. 153--158 | [translation](https://hhalvors.github.io/danish-texts/texts/kierkegaard/postscript-immortality/translation.pdf) | complete |
+
+---
+
 ## Rasmus Nielsen (1809--1884)
 
 Professor of philosophy at the University of Copenhagen 1841--1884. Began as a
