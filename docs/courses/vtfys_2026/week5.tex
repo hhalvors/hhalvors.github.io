@@ -97,24 +97,28 @@
 
 \begin{frame}{Two perspectives today}
 
-  \begin{description}
-  \item[First-order] Which interpretation of QM is correct? What is
-    the theory \emph{actually} saying about the world?
-  \item[Second-order] There has been no consensus on the foundations
-    of QM for \emph{100 years}. Should we be concerned? What does
-    this tell us about science as a knowledge-producing enterprise?
-  \end{description}
+  \textbf{First-order}\enspace Which interpretation of QM is
+  correct? What is the theory \emph{actually} saying about
+  the world?
 
-  \vspace{0.8em}
-  Both questions bear directly on scientific understanding --- which
-  is why De Regt and Dieks chose quantum non-locality as their
-  motivating example.
+  \bigskip
+
+  \textbf{Second-order}\enspace There has been no consensus on
+  the foundations of QM for \emph{100 years}. Should we be
+  concerned? What does this tell us about science as a
+  knowledge-producing enterprise?
+
+  \bigskip
+
+  Both questions bear directly on scientific understanding ---
+  which is why De Regt and Dieks chose quantum non-locality as
+  their motivating example.
 
 \end{frame}
 
-\begin{frame}{The foundational crisis: 1900--1927}
+\begin{frame}{The foundational crisis: 1900--1935}
 
-  \begin{itemize}
+  \begin{itemize}\small
   \item 1900: Planck introduces the quantum of action $h$
   \item 1905: Einstein explains the photoelectric effect using photons
   \item 1913: Bohr's model of the hydrogen atom
@@ -122,9 +126,10 @@
     wave mechanics
   \item 1927: Born's probability interpretation; Heisenberg's
     uncertainty principle; Bohr's complementarity
+  \item 1935: The EPR argument --- QM must be incomplete
   \end{itemize}
 
-  \vspace{0.5em}
+  \vspace{0.4em}
   \small The early pioneers were acutely aware that they did
   \emph{not} understand what was going on. Bohr thought our
   ability to understand the physical world was genuinely up
@@ -203,9 +208,9 @@
   \draw[->,semithick,dashed] (0,0) -- (-0.85,-0.6)
     node[below left] {\scriptsize$y$};
   \fill (0,1.5) circle (2pt)
-    node[right,font=\scriptsize] {$\ket{0} = \ket{\uparrow}_z$};
+    node[above,font=\scriptsize] {$\ket{0} = \ket{\uparrow}_z$};
   \fill (0,-1.5) circle (2pt)
-    node[right,font=\scriptsize] {$\ket{1} = \ket{\downarrow}_z$};
+    node[below,font=\scriptsize] {$\ket{1} = \ket{\downarrow}_z$};
   \fill (1.5,0) circle (1.5pt)
     node[above right,font=\scriptsize] {$\ket{+}_x$};
   \fill (-1.5,0) circle (1.5pt)
@@ -412,14 +417,14 @@ Antipodal points are orthogonal.
 
   \begin{enumerate}
   \item \kw{Reject unitary dynamics}: add stochastic collapse
-    \hfill\emph{(GRW)}
+    \emph{(GRW)}
   \item \kw{Add hidden variables}: supplement QM with additional
-    ontology \hfill\emph{(Bohm)}
+    ontology \emph{(Bohm)}
   \item \kw{Reject uniqueness of outcomes}: all branches are real
-    \hfill\emph{(Everett)}
+    \emph{(Everett)}
   \item \kw{Revise the ontological picture}: resist the demand for
     a classical reality behind QM
-    \hfill\emph{(relational, QBism, pragmatic)}
+    \emph{(relational, QBism, pragmatic)}
   \end{enumerate}
 
 \end{frame}
@@ -445,25 +450,56 @@ Antipodal points are orthogonal.
 
 \end{frame}
 
-\begin{frame}{Everett and less ontological interpretations}
+\begin{frame}{Everett / many worlds}
 
-  \textbf{Everett (1957)}: unitary dynamics is complete; all
-  branches of the wavefunction are real.
+  \textbf{Everett (1957)}: take unitary dynamics completely seriously;
+  no collapse; all branches of the wavefunction are equally real.
+
+  \vspace{0.5em}
+  We observe one branch because we ourselves are part of the
+  wavefunction --- each measurement splits the world.
+
+  \vspace{0.5em}
+  \textbf{Problems:}
   \begin{itemize}\small
-  \item \emph{Probability:} deterministic theory --- where do the
-    Born-rule probabilities come from?
+  \item \emph{Probability:} the theory is deterministic --- where do
+    the Born-rule probabilities come from?
   \item \emph{Preferred basis:} what selects the ``world'' branches?
   \item No-hidden-variables theorems imply the branches cannot
     themselves be classical
   \end{itemize}
 
-  \vspace{0.5em}
-  \textbf{Less ontological} (Rovelli, Fuchs--Schack, Healey):
-  resist asking ``what is the wavefunction in itself?''
-
-  \vspace{0.3em}
+  \vspace{0.4em}
   \small \textbf{HH:} these approaches are philosophically
   sophisticated but may relocate rather than dissolve the problem.
+
+\end{frame}
+
+\begin{frame}{Less ontological interpretations}
+
+  \textbf{Relational QM} (Rovelli 1996): quantum states are always
+  \emph{relative to an observer} --- there is no
+  observer-independent quantum state.
+
+  \vspace{0.3em}
+  \small The inspiration is special relativity: velocity has no
+  absolute value, only values relative to a reference frame.
+  Rovelli proposes the same for quantum states. When Alice measures
+  a particle and gets a definite outcome, that outcome is real
+  \emph{relative to Alice}. The particle may still be in
+  superposition relative to Bob, who has not interacted with it.
+  Both descriptions are equally valid. The measurement problem is
+  \emph{dissolved}: collapse is real, but only relative to an
+  observer, never absolute.
+
+  \vspace{0.4em}
+  \normalsize \textbf{QBism} (Fuchs--Schack): quantum states encode
+  an agent's \emph{beliefs} about future experiences --- the
+  wavefunction is epistemic, not ontic.
+
+  \vspace{0.3em}
+  \textbf{Pragmatic} (Healey): QM provides a tool for updating
+  credences, not a description of a quantum reality.
 
 \end{frame}
 
@@ -524,12 +560,13 @@ Antipodal points are orthogonal.
   exclusive and each exhaustive within its domain.
 
   \vspace{0.5em}
-  \begin{description}
-  \item[Spacetime description] position, trajectory, ``which path''
-    --- \kw{visualizable} (anskuelig) picture
-  \item[Causal description] momentum, energy, conservation laws
-    --- dynamical picture
-  \end{description}
+  \textbf{Spacetime description}\enspace position, trajectory,
+  ``which path'' --- \kw{visualizable} (anskuelig) picture
+
+  \medskip
+
+  \textbf{Causal description}\enspace momentum, energy,
+  conservation laws --- dynamical picture
 
   \vspace{0.5em}
   ``The viewpoint of complementarity presents itself as a rational
@@ -628,10 +665,15 @@ independently chooses a setting and records a $\pm 1$ outcome.
 
   Suppose outcomes are determined by $\lambda\sim\rho(\lambda)$,
   with \kw{reality} ($A,B$ definite) and \kw{locality}
-  (Alice independent of Bob's setting):
+  (Alice independent of Bob's setting). Define the
+  \kw{correlation} between outcomes:
   \[
   E(a,b) = \int A(a,\lambda)\,B(b,\lambda)\,\rho(\lambda)\,d\lambda
   \]
+  i.e.\ the expectation value of the product of Alice's and Bob's
+  outcomes ($\pm 1$ each) for settings $a$ and $b$.
+  Perfect correlation: $E=+1$; perfect anti-correlation: $E=-1$;
+  no correlation: $E=0$.
 
   Under local hidden variables:
   \[
@@ -672,15 +714,27 @@ independently chooses a setting and records a $\pm 1$ outcome.
 \begin{frame}{The Jarrett analysis and what Bell means}
 
   Jarrett (1984): local hidden variables $=$ two conditions:
-  \begin{description}
-  \item[PI (parameter independence)] Alice's outcome does not
-    depend on Bob's \emph{setting}
-  \item[OI (outcome independence)] Alice's outcome does not
-    depend on Bob's \emph{outcome}
-  \end{description}
+  \textbf{PI (parameter independence)}\enspace Alice's outcome
+  does not depend on Bob's \emph{setting}
+
+  \smallskip
+
+  \textbf{OI (outcome independence)}\enspace Alice's outcome
+  does not depend on Bob's \emph{outcome}
 
   Bell violation $\Leftrightarrow$ at least one of PI or OI fails.
-  Bohm/Everett: OI fails. Retrocausal models: PI fails.
+  \begin{itemize}
+  \item \textbf{Orthodox (collapse):} OI fails --- collapse makes
+    Alice's probability depend on Bob's \emph{outcome}
+  \item \textbf{Bohm:} PI fails --- the quantum potential makes
+    Alice's probability depend on Bob's \emph{setting}
+  \item \textbf{Everett:} unclear --- no unique outcomes,
+    so the framework is hard to apply. (Everettians
+    typically \emph{claim} the theory is local --- but
+    making this precise is notoriously difficult.)
+  \item \textbf{Retrocausal models:} PI fails --- future settings
+    influence past outcomes
+  \end{itemize}
 
   \vspace{0.5em}
   \textbf{HH's focus:} Bell's theorem shows a fundamental
@@ -697,8 +751,9 @@ independently chooses a setting and records a $\pm 1$ outcome.
 \begin{frame}{Taking stock --- and a question}
 
   \begin{itemize}
-  \item QM achieves extraordinary predictive precision (electron
-    $g$-factor: 12 significant figures)
+  \item QM achieves extraordinary predictive precision:
+    the anomalous magnetic moment of the electron agrees
+    with experiment to 12 significant figures
   \item Yet the theory is arguably \emph{inconsistent as stated}
     (the measurement problem), and after 100 years there is still
     no consensus on how to resolve it

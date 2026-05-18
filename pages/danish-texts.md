@@ -228,7 +228,7 @@ post-Hegelian who moved toward a naturalistic, humanist position under the
 influence of Feuerbach and Strauss. His critical engagement with Kierkegaard and
 Nielsen makes him a crucial third voice in the mid-century debate. Høffding
 credited Brøchner's lectures as the direct cause of his own conversion away from
-Nielsen's position.
+Nielsen's position. [Biographical note.](/pages/brochner.html)
 
 ### *Problemet om Tro og Viden* (Copenhagen: Philipsen, 1868) [[KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122130352405763)]
 
