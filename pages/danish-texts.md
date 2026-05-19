@@ -307,6 +307,25 @@ Sprog- og Litteraturselskab).
 |---------|-------|--------|
 | Selected passages | [transcription](https://hhalvors.github.io/danish-texts/texts/brandes/levned/transcription.pdf) · translation | *in progress* |
 
+### *Samlede Skrifter*, Trettende Bind (Copenhagen: Gyldendal, 1899)
+
+Volume 13 of Brandes's collected works gathers in one place his principal
+contributions to the *Tro og Viden* controversy of the 1860s. The two main
+pieces are *Striden om Tro og Viden* (pp. 1--42), a collection of polemical
+articles from the controversy, and *Dualismen i vor nyeste Filosofi*
+(pp. 43--84) --- the revised collected-works version of the 1866 monograph.
+Also of direct relevance: *R. Nielsens Lære om Tro og Viden* (p. 106) and
+*Gensvar til Dr. Heegaard* (p. 28), the latter a direct response to a Nielsen
+disciple. A digital copy is being located.
+
+| Section | Pages | Status |
+|---------|-------|--------|
+| *Striden om Tro og Viden* (collected articles) | 1--42 | to do |
+| *Dualismen i vor nyeste Filosofi* | 43--84 | to do |
+| *Om den gode Vilje som Magt i Videnskaben* | 85--92 | to do |
+| *Nielsen og Grundtvig* | 93--97 | to do |
+| *R. Nielsens Lære om Tro og Viden* | 106--109 | to do |
+
 ---
 
 ## Harald Høffding (1843--1931)

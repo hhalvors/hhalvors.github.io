@@ -80,8 +80,8 @@
 
 \begin{frame}{Group Discussion}
 
-  From last week, quantum mechanics is our recurring example of
-  a theory where prediction and understanding seem to come apart.
+  From last week, quantum mechanics is our recurring example of a
+  theory where prediction and understanding have come apart.
 
   \vspace{0.8em}
   \begin{enumerate}
@@ -176,6 +176,11 @@
   \textbf{The second-order question:} is 100 years without consensus
   acceptable? Does it reveal something deep about QM, or is it a
   sociological failure of physics?
+
+  \vspace{0.4em}
+  \small \textbf{Your reading:} Weinberg (2017) --- a Nobel
+  laureate expressing exactly this second-order concern from
+  inside physics.
 
 \end{frame}
 
@@ -299,34 +304,59 @@ Antipodal points are orthogonal.
   it is \kw{entangled}.
 
   \vspace{0.5em}
-  \textbf{Discussion (2 min):} what features does a system have if
-  it is entangled with another? What does it mean for its ``state''?
+  \textbf{Discussion (2 min):} what features does a system have
+  if it is entangled with another? Can we assign a definite
+  state to particle A alone?
 
 \end{frame}
 
-\begin{frame}{Linear dynamics and the Born rule}
+\begin{frame}{Linear dynamics}
 
-  Time evolution:
-  $i\hbar\frac{d}{dt}\ket{\psi} = H\ket{\psi}$,\quad
-  solution $\ket{\psi(t)} = U(t)\ket{\psi(0)}$ (\kw{unitary}).
-
-  \vspace{0.3em}
-  Crucially, $U$ is \kw{linear}:
-  $U(\alpha\ket{\psi}+\beta\ket{\phi}) = \alpha U\ket{\psi}+\beta U\ket{\phi}$.
-  This is exactly what generates the measurement problem.
+  Time evolution is governed by the \kw{Schr\"{o}dinger equation}:
+  \[
+  i\hbar\frac{d}{dt}\ket{\psi} = H\ket{\psi}
+  \]
+  The solution is \kw{unitary}: $\ket{\psi(t)} = U(t)\ket{\psi(0)}$,
+  \quad $U^\dagger U = \mathbf{1}$.
 
   \vspace{0.5em}
-  \textbf{Born rule:}
+  Crucially, $U$ is \kw{linear}:
   \[
-  \mathrm{Pr}_\psi(A=\lambda) =
-  \langle\psi,\,E^A(\lambda)\,\psi\rangle
+  U\bigl(\alpha\ket{\psi}+\beta\ket{\phi}\bigr) =
+  \alpha U\ket{\psi}+\beta U\ket{\phi}
   \]
-  For $\ket{\psi}=\sum_i c_i\ket{a_i}$:\quad
-  $\mathrm{Pr}_\psi(A=\lambda_i) = |c_i|^2$
 
-  \vspace{0.4em}
-  \textbf{Discussion:} do we \emph{understand} QM if it is
-  just a recipe for computing these probabilities?
+  \vspace{0.3em}
+  This linearity is exactly what generates the measurement problem.
+
+\end{frame}
+
+\begin{frame}{Spectral decomposition and the Born rule}
+
+  Every Hermitian operator $A$ has an orthonormal eigenbasis
+  $\{\ket{a_i}\}$ (\kw{spectral theorem}):
+  \[
+  A = \sum_i \lambda_i \ket{a_i}\bra{a_i}
+  \]
+  Any state expands as $\ket{\psi} = \sum_i c_i\ket{a_i}$,
+  \quad $c_i = \ip{a_i}{\psi}$.
+
+  \vspace{0.5em}
+  \textbf{Born rule:} the probability of outcome $\lambda_i$
+  when measuring $A$ on $\ket{\psi}$:
+  \[
+  \mathrm{Pr}_\psi(A = \lambda_i) = |c_i|^2 = |\ip{a_i}{\psi}|^2
+  \]
+
+  \vspace{0.2em}
+  \small The rule extracts the squared component of $\ket{\psi}$
+  along each eigenstate. Sanity check: if $\ket{\psi}=\ket{a_k}$
+  already, then $c_k=1$ and all others vanish --- outcome
+  $\lambda_k$ with certainty.
+
+  \vspace{0.3em}
+  \normalsize\textbf{Discussion:} do we \emph{understand} QM
+  if it is just a recipe for computing these probabilities?
 
 \end{frame}
 
@@ -366,7 +396,7 @@ Antipodal points are orthogonal.
     features of the theory
   \item Creates a two-dynamics theory:
     Schr\"{o}dinger evolution \emph{and} collapse
-  \item When does collapse occur? Where is the ``Heisenberg cut''?
+  \item When does collapse occur? Why does it occur?
   \item The theory gives no definition of ``measurement''
   \end{itemize}
 
@@ -420,8 +450,8 @@ Antipodal points are orthogonal.
     \emph{(GRW)}
   \item \kw{Add hidden variables}: supplement QM with additional
     ontology \emph{(Bohm)}
-  \item \kw{Reject uniqueness of outcomes}: all branches are real
-    \emph{(Everett)}
+  \item \kw{Reject uniqueness of outcomes}: all outcomes occur and the
+    observer splits \emph{(Everett)}
   \item \kw{Revise the ontological picture}: resist the demand for
     a classical reality behind QM
     \emph{(relational, QBism, pragmatic)}
@@ -444,8 +474,8 @@ Antipodal points are orthogonal.
   \begin{itemize}\small
   \item Guidance equation requires a preferred frame ---
     inconsistent with special relativity
-  \item Violates the spirit of momentum conservation in
-    relativistic interactions
+  \item Violates the spirit of momentum conservation (no particle
+    moves inertially)
   \end{itemize}
 
 \end{frame}
@@ -528,7 +558,7 @@ Antipodal points are orthogonal.
   }
 \end{tikzpicture}
 \end{center}
-\small position known $\Rightarrow$ wave picture $\Rightarrow$ \textbf{interference}
+\small position known $\Rightarrow$ spacetime description $\Rightarrow$ \textbf{diffraction pattern}
 
 \column{0.49\textwidth}
 \centering
@@ -548,7 +578,7 @@ Antipodal points are orthogonal.
   \fill[gray!45] (2.6,-0.1) rectangle (3.05,0.55);
 \end{tikzpicture}
 \end{center}
-\small momentum known $\Rightarrow$ particle picture $\Rightarrow$ \textbf{no interference}
+\small recoil \emph{measured} $\Rightarrow$ causal description $\Rightarrow$ \textbf{pattern washed out}
 
 \end{columns}
 
@@ -606,7 +636,7 @@ Antipodal points are orthogonal.
 
 \section{No-Hidden-Variables Theorems}
 
-\begin{frame}{EPR, von Neumann, and Kochen--Specker}
+\begin{frame}{EPR, von Neumann, and Kochen-Specker}
 
   \textbf{EPR (1935):} QM is incomplete --- quantum correlations
   must be explained by predetermined hidden variables $\lambda$.
@@ -628,8 +658,6 @@ Antipodal points are orthogonal.
   assumptions are operationally motivated.
 
 \end{frame}
-
-\section{Bell's Theorem}
 
 \begin{frame}{The CHSH scenario}
 
@@ -797,19 +825,40 @@ independently chooses a setting and records a $\pm 1$ outcome.
 
 \end{frame}
 
+\begin{frame}{AI and the battle for knowledge}
+
+  The AI tools entering universities are not neutral: they serve
+  corporate interests, not the growth of knowledge.
+
+  \vspace{0.5em}
+  \kw{Digital feudalism}: the tools of intellectual work come
+  under the control of a few corporations, creating hard-to-exit
+  dependencies and extracting value from those who depend on them.
+
+  \vspace{0.5em}
+  There is a genuine conflict of interest:
+  \begin{itemize}
+  \item \textbf{Universities} exist to produce and transmit
+    knowledge; they require critical independence
+  \item \textbf{Tech corporations} exist to generate returns
+    on capital; they benefit from opacity and dependency
+  \end{itemize}
+
+  \vspace{0.3em}
+  \small The students who booed were not merely being
+  reactionary. They were intuiting something real.
+
+\end{frame}
+
 \begin{frame}{Group Discussion}
 
-  AlphaFold (2022) predicted the 3D structure of virtually every
-  known protein --- a problem biologists had worked on for 50 years.
-  AlphaFold is a deep neural network trained on known protein
-  structures.
-
-  \vspace{0.8em}
   \begin{enumerate}
-  \item Did AlphaFold help us \textbf{understand} protein folding?
-    Or did it only help us \textbf{predict} protein structures?
-  \item Is there a meaningful difference between a neural network
-    that predicts and a model that explains?
+  \item Has AI helped you \textbf{understand} something you
+    did not understand before? Or has it only helped you
+    \textbf{produce} things more efficiently?
+  \item Do you see a genuine prospect of AI helping science
+    achieve deeper understanding --- or are we being sold
+    a lie?
   \end{enumerate}
 
 \end{frame}
