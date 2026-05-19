@@ -316,7 +316,7 @@ articles from the controversy, and *Dualismen i vor nyeste Filosofi*
 (pp. 43--84) --- the revised collected-works version of the 1866 monograph.
 Also of direct relevance: *R. Nielsens Lære om Tro og Viden* (p. 106) and
 *Gensvar til Dr. Heegaard* (p. 28), the latter a direct response to a Nielsen
-disciple. A digital copy is being located.
+disciple. A digital copy is being located. OCR text available at [Project Runeberg](https://runeberg.org/gbsamskr/13/).
 
 | Section | Pages | Status |
 |---------|-------|--------|
@@ -325,6 +325,8 @@ disciple. A digital copy is being located.
 | *Om den gode Vilje som Magt i Videnskaben* | 85--92 | to do |
 | *Nielsen og Grundtvig* | 93--97 | to do |
 | *R. Nielsens Lære om Tro og Viden* | 106--109 | to do |
+
+[Contents overview](https://hhalvors.github.io/danish-texts/texts/brandes/samlede-skrifter-13/toc.pdf)
 
 ---
 
