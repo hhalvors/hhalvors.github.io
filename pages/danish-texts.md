@@ -16,6 +16,45 @@ domain; scans are drawn from the [Royal Danish Library](https://www.kb.dk/en)
 
 ---
 
+## Poul Martin Møller (1794--1838)
+
+Poet, philosopher, and Professor of Philosophy at the University of Copenhagen
+from 1831 until his death. The most important philosophical figure in the
+generation immediately preceding Kierkegaard, and Kierkegaard's beloved teacher
+--- *The Concept of Anxiety* (1844) is dedicated to his memory. Møller's
+long treatise on proofs of immortality (1837) is the direct occasion for
+Kierkegaard's discussion of immortality in the *Postscript* (already represented
+in this collection), where Climacus contrasts the objective-scholarly approach
+of Møller's treatise with the existential claim that immortality is essentially
+a question of inwardness.
+
+### "Tanker over Muligheden af Beviser for Menneskets Udødelighed, med Hensyn til den nyeste derhen hørende Literatur" (1837)
+
+Published in *Maanedsskrift for Litteratur* 17 (1837), pp. 1--72 and
+422--453. A systematic survey and critical examination of the philosophical
+arguments for human immortality, engaging the contemporary literature.
+The paper Kierkegaard explicitly invokes in the *Postscript* passage
+transcribed here: Climacus cites Møller as the exemplary case of someone
+who treated immortality as a learned question --- a scholarly object ---
+and uses that approach as the foil for his own subjective turn.
+Text after: *Skrifter i Udvalg*, ed. Hans Brix et al., Copenhagen, 1930,
+pp. 168--253 (seven sections).
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete essay (pp. 168--253) | [transcription](https://hhalvors.github.io/danish-texts/texts/moller/udoedelighed/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/moller/udoedelighed/translation.pdf) | *in progress* |
+
+### *En Dansk Students Eventyr* (written c. 1824; published posthumously 1843), selections
+
+Møller's prose novella, the most celebrated Danish prose fiction of the
+pre-Kierkegaard period. Planned selections.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Selections | | to do |
+
+---
+
 ## Søren Kierkegaard (1813--1855)
 
 The essential upstream figure for the entire Nielsen--Brøchner--Høffding
