@@ -49,7 +49,12 @@ pp. 168--253 (seven sections). Translated into English by Jon Stewart in
 ### *En Dansk Students Eventyr* (written c. 1824; published posthumously 1843), selections
 
 Møller's prose novella, the most celebrated Danish prose fiction of the
-pre-Kierkegaard period. Planned selections.
+pre-Kierkegaard period. Notably cited by Niels Bohr as a formative
+influence: Bohr repeatedly invoked the figure of the student who is
+unable to act because he reflects on his own thinking, seeing in it an
+illustration of the epistemological lesson that the act of observation
+alters what is observed --- a literary precursor to complementarity.
+Planned selections.
 
 | Section | Links | Status |
 |---------|-------|--------|
