@@ -70,6 +70,14 @@ incommensurability of faith and knowledge; Brøchner and Høffding spent
 careers arguing against it. Kierkegaard himself rejected Nielsen's
 systematization as a betrayal of the existential point.
 
+Kierkegaard's complete published and unpublished writings have been
+critically edited and published in full. Danish texts are available
+through the Royal Danish Library at [kb.dk](https://www.kb.dk). Standard
+scholarly English translations are published by Princeton University Press
+as the *Kierkegaard's Writings* series (26 vols., ed. Howard V. Hong and
+Edna H. Hong). This collection therefore includes only the specific
+passages most directly relevant to the Nielsen--Brøchner--Høffding debate.
+
 ### *Concluding Unscientific Postscript* (1846), excerpt on immortality (pp. 153--158)
 
 The central passage in which Climacus argues that immortality is
@@ -385,6 +393,19 @@ year --- under the influence of Brøchner's lectures --- changed his mind comple
 He spent the next three decades working out what that conversion implied, arriving
 at the *Religionsfilosofi* (1901) as the systematic outcome.
 
+### Studentnoter fra Rasmus Nielsens kursus om *Grundideernes Logik* (c. 1864--1866), manuscript
+
+Høffding's handwritten notes from Nielsen's university lectures on
+*Grundideernes Logik* --- the very course that precipitated his
+intellectual crisis and eventual break with Nielsen's position. A unique
+primary source for how Nielsen presented the *Objektiveringslov* in the
+classroom, and for the moment of reception that the *Erindringer* account
+describes from the inside. Transcription and translation forthcoming.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete manuscript | | *coming soon* |
+
 ### *Philosophie og Theologie: en historisk-kritisk Afhandling* (1866) [[KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122595894205763)]
 
 Høffding's first book, written at 23 as *Cand. theol.* A comprehensive survey of the philosophy--theology controversy,
@@ -593,6 +614,17 @@ epistemological synthesis.
 | §3b: Den nye Relativitetsteori (pp. 72--77) | [transcription](https://hhalvors.github.io/danish-texts/texts/hoeffding/relation-som-kategori/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/hoeffding/relation-som-kategori/translation.pdf) | *in progress* |
 | Remainder of work | | to do |
 
+### *Relation som Kategori* (1921), Høffding's own annotated copy, manuscript marginalia
+
+Høffding's personal copy of the work, with his handwritten marginal
+notes. A rare opportunity to see the author's own second thoughts,
+corrections, and elaborations alongside the printed text. Transcription
+and translation of the marginalia forthcoming.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Marginalia | | *coming soon* |
+
 ### "Pascal et Kierkegaard" (1923) [[JSTOR](https://www.jstor.org/stable/40895941)]
 
 Article in *Revue de Métaphysique et de Morale* 30, no. 2 (April--June
@@ -666,3 +698,17 @@ National Library scan; OCR not yet proofread). 325 pp.
 | IV. 1883--1894 (pp. 121--174) | [Runeberg](https://runeberg.org/hherind/0125.html) | to do |
 | V. 1894--1904 (pp. 175--223) | [Runeberg](https://runeberg.org/hherind/0179.html) | to do |
 | VI. 1904--1914 (pp. 224--265) | [Runeberg](https://runeberg.org/hherind/0228.html) | to do |
+
+### Brevveksling med Niels Bohr (manuscript correspondence)
+
+Handwritten letters exchanged between Høffding and Niels Bohr. The
+correspondence spans the period of Bohr's intellectual formation and
+beyond, and bears directly on the question of how Høffding's
+epistemological concepts --- complementarity, analogy, the limits of
+objectification --- were received and transformed in the context of
+quantum mechanics. A primary source of the first importance for the
+Høffding--Bohr connection. Transcription and translation forthcoming.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete correspondence | | *coming soon* |
