@@ -38,11 +38,13 @@ transcribed here: Climacus cites Møller as the exemplary case of someone
 who treated immortality as a learned question --- a scholarly object ---
 and uses that approach as the foil for his own subjective turn.
 Text after: *Skrifter i Udvalg*, ed. Hans Brix et al., Copenhagen, 1930,
-pp. 168--253 (seven sections).
+pp. 168--253 (seven sections). Translated into English by Jon Stewart in
+*Poul Martin Møller and the Emergence of Danish Golden Age Philosophy*
+(Leiden: Brill, 2022).
 
 | Section | Links | Status |
 |---------|-------|--------|
-| Complete essay (pp. 168--253) | [transcription](https://hhalvors.github.io/danish-texts/texts/moller/udoedelighed/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/moller/udoedelighed/translation.pdf) | *in progress* |
+| Complete essay (pp. 168--253) | [transcription](https://hhalvors.github.io/danish-texts/texts/moller/udoedelighed/transcription.pdf) · [scan](https://hhalvors.github.io/danish-texts/texts/moller/udoedelighed/moller-udoedelighed-scan.pdf) · [translation (Jon Stewart, 2022)](https://doi.org/10.1163/9789004517912_003) | *in progress* |
 
 ### *En Dansk Students Eventyr* (written c. 1824; published posthumously 1843), selections
 
