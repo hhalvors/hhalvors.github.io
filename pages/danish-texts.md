@@ -104,6 +104,14 @@ central position of the mid-century debate: that faith and knowledge spring from
 other. The target of both Brøchner's philosophical critique and Brandes's cultural
 polemic.
 
+### *Mag. S. Kierkegaards "Johannes Climacus" og Dr. H. Martensens "Christelige Dogmatik": En undersøgende Anmeldelse* (Copenhagen: C.A. Reitzel, 1849)
+
+Nielsen's first sustained public engagement with the *Postscript* --- Kierkegaard's most fully developed epistemological text, published three years earlier under the pseudonym Johannes Climacus. The pairing with Martensen's *Christian Dogmatics* is pointed: where Martensen represented the speculative-theological tradition that sought to integrate faith and philosophical reason, Climacus had systematically dismantled every such synthesis. Nielsen reads the two together as representing opposed epistemological programmes, and the review marks the moment where he first commits to the Kierkegaardian side. It is the textual origin of the *tro og viden er uensartede størrelser* thesis --- the claim that faith and knowledge are absolutely heterogeneous magnitudes --- before Nielsen formalized it into a systematic position.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete work | | to do |
+
 ### *Om Theologiens Naturbegreb, med særligt Hensyn til Malebranche* (Universitetsprogram, 1855)
 
 University program treating the concept of nature in theology, with
@@ -150,6 +158,14 @@ constitutively incommensurable.
 |---------|-------|--------|
 | Selections (vol. I, §§ on the *Objektiveringslov*) | [KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122595827705763) | to do |
 
+### *Om den Gode Vilje som Magt i Videnskaben* (Copenhagen: Gyldendal, 1867)
+
+Nielsen's most direct contribution to the philosophy of science and the key text for understanding how he tried to build a positive epistemology, not merely a defensive dualism. The title --- "On Good Will as a Power in Science" --- signals the argument: scientific cognition is not purely receptive or mechanical, but involves a volitional commitment that is constitutive of the knowing relation. This imports the Kierkegaardian voluntarist epistemology --- where subjective appropriation is essential to genuine knowledge --- into the domain of empirical inquiry itself. The implication is that *uensartede størrelser* is not a claim about two isolated compartments but about two different modes of volitional engagement with reality, both of which involve the will. Published in 1867, at the height of the Brøchner--Brandes controversy, this is Nielsen's constructive answer to the charge that his dualism left science epistemologically groundless.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete work | | to do |
+
 ### *Logik og Psychologie* (Copenhagen: Gyldendal, 1867) [[KB scan](https://www.kb.dk/e-mat/dod/11140802678C-color.pdf)]
 
 Lecture course for the university year 1867--68. Moves from a compact
@@ -185,6 +201,14 @@ principles is possible. He calls it an "inverted science"
 |---------|-------|--------|
 | Introduction (§§ 1--2) | [transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/religionsphilosophie/indledning/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/nielsen/religionsphilosophie/indledning/translation.pdf) | *in progress* |
 | §§ 3 onward | | to do |
+
+### "Ide og Virkelighed" (1869) [[journal](https://tidsskrift.dk/fiv/issue/view/)]
+
+The programmatic opening essay of Nielsen's own journal, *For Ide og Virkelighed* ("For Idea and Reality"), published in the first issue (1869, vol. 1, pp. 1--39). As the founding manifesto of a journal he edited until 1873, this is Nielsen's most public and accessible statement of the mature philosophical program. The title of the journal itself encodes the central duality: *Ide* (idea, spirit, the subjective pole) and *Virkelighed* (reality, the objective world as science investigates it), whose relation is precisely what the *uensartede størrelser* thesis is meant to illuminate. Journal available at [tidsskrift.dk](https://tidsskrift.dk/fiv).
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete essay (pp. 1--39) | [journal](https://tidsskrift.dk/fiv) | to do |
 
 ### "Et Synspunkt for Darwinismen" (1873) [[journal](https://tidsskrift.dk/fiv/issue/view/8741)]
 
@@ -239,17 +263,28 @@ philosophically substantive treatment of the same territory.
 |---------|-------|--------|
 | Selections | | to do |
 
-### *Almindelig Videnskabslære i Grundtræk* (Copenhagen, 1880)
+### *Almindelig Videnskabslære i Grundtræk* (Copenhagen: Gyldendalske Boghandel, 1880)
 
-Nielsen's summary overview of his entire philosophical system, published
-the year before his rectorial address. Contains a mature restatement of the
-*Objektiveringslov* and the different "systems of objectivization," in
-language that strikingly anticipates the concept of frames of reference in
-physics.
+Nielsen's most systematic philosophy-of-science text and the clearest
+statement of his mature epistemology. Organized in three *Dele*: (I)
+*Viden og Videnskab* (§§1--10), treating the nature of knowledge, the
+*Objectiveringsproblemet*, and the classification of sciences; (II)
+*Fagvidenskaber* (§§11--20), working through the individual sciences
+from logic and mathematics through biology and psychology; (III)
+*Aandsvidenskab* (§§21--26), covering history, aesthetics, ethics, and
+religion. The Forord stakes the central claim: the question of whether the
+principle of science ultimately rests on Sandsning alone or also on the
+*uendelige Videns Idee* --- and the text argues for the latter, defending
+the objective validity of teleological categories (Anlæg og Udvikling,
+Midler og Formaal) against purely mechanical reduction. The final §26
+restates the *uensartede størrelser* position: the religious life
+``vedblive at danne sig af sin egen Aand, efter sine egne Forbilleder, og
+gaae sin Gang uafhængigt af Videnskab og videnskabelige Indsigelser.''
+Source: Google Books scan (Andover-Harvard Theological Library copy), 302 pp.
 
 | Section | Links | Status |
 |---------|-------|--------|
-| Selections | | to do |
+| Complete work (§§1--26, 281 pp.) | [transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/videnskabslaere/transcription.pdf) | *skeleton* |
 
 ### *Om det oprindelige Forhold mellem Religion og Videnskab* (Copenhagen: Schultz, 1881) [[KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122595894905763)]
 
@@ -277,86 +312,86 @@ translation by a decade.
 
 Published works, in chronological order.
 
-- 1840. *De speculativa historiæ sacræ tractando metodo*. Fabritius de Tengnagel. (ASKB 697. Danish trans. 1842: *Om den spekulative Methodes Anvendelse paa den hellige Historie*, trans. B.C. Bøggild. H.C. Klein.)
-- 1841. *Pauli Brev til Romerne*. Private publication.
-- 1841--44. *Den speculative Logik i dens Grundtræk: Hefte 1--4*. Private publication.
-- 1843. *Forelæsningsparagrafer til Kirkehistoriens Philosophie*. Private publication.
-- 1845. *Den propædeutiske Logik*. P.G. Philipsen.
-- 1849a. *Evangelietroen og den moderne Bevidsthed: Forelæsninger over Jesu Liv*. C.A. Reitzel.
-- 1849b. *Mag. S. Kierkegaards "Johannes Climacus" og Dr. H. Martensens "Christelige Dogmatik": En undersøgende Anmeldelse*. C.A. Reitzel.
-- 1850a. *Evangelietroen og Theologien: Tolv Forelæsninger holdte ved Universitetet i Kjøbenhavn i Vinteren 1849--50*. C.A. Reitzel.
-- 1850b. *Dr. H. Martensens dogmatiske Oplysninger*. C.A. Reitzel.
-- 1850c. *Et Par Ord i Anledning af Prof. Scharlings Apologie for Dr. Martensens Dogmatik*. C.A. Reitzel.
-- 1853a. *Om Skjæbne og Forsyn*. Otto Schwartz.
-- 1853b. *Et Levnetsløb i Underverdenen* (under pseudonym). Otto Schwartz.
-- 1854. *Om personlig sandhed og sand Personlighed: Tolv forelæsninger for dannede Tilhørere af begge Kjøn, holdte ved Universitetet i Vinteren 1854*. Gyldendal.
-- 1855. *Om Theologiens Naturbegreb med særligt hensyn til Malebranche: De la recherche de la vérité*. Det Schultziske Officin.
-- 1857a. *Philosophisk Propædeutik i Grundtræk*. Gyldendal.
-- 1857b. *Philosophie og Mathematik: En propædeutisk Afhandling*. Gyldendal.
-- 1858a. "Om S. Kierkegaards 'mentale Tilstand'." *Nordisk Universitets-Tidsskrift* 1858 (1): 1--29. A. Ingerslev.
-- 1858b. "Tale ved Reformationsfesten." *Universitetets festskrifter*.
-- 1859. *Mathematik og Dialektik: En philosophisk Afhandling*. Gyldendal.
-- 1860a. *Paa Kierkegaardske "Stadier": et Livsbillede*. Gyldendal.
-- 1860b. *Hr. Professor Steens "Afregning": Hermed en Specificeret Opgjørelse til Revision*. Gyldendal.
-- 1860c. "Om Begrebet Nøiagtighed med særligt Hensyn paa Hr. Prof. Steens 'Bidrag'." Postscript to *Philosophie og Mathematik*.
-- 1862. *Forelæsninger over "Philosophisk Propædautik" fra Universitetsaaret 1860--61*. Gyldendal.
-- 1863a. *Forelæsninger over "Philosophisk Propædautik" fra Universitetsaaret 1861--62*. Gyldendal.
-- 1863b. "De stærkeres Ret. Tale ved Reformationsfesten." *Universitetets festskrifter*.
-- 1864. *Grundideernes Logik I*. Gyldendal.
-- 1866a. *Grundideernes Logik II*. Gyldendal.
-- 1866b. *Propædeutik og Psychologie: Cursus fra Universitetsaaret 1866--67*. Gyldendal.
-- 1867a. *Logik og Propædeutik: Cursus for universitetsaaret 1867--1868*. Gyldendal.
-- 1867b. *Om Holbergs Kirkehistorie og Theologie: Et Bidrag fra Fortiden til at belyse Nutiden*. Gyldendal.
-- 1867c. "Indledning." In *Holbergs Kirke-historie I*. F.L. Liebenberg.
-- 1867d. *Om den Gode Vilje som magt i Videnskaben*. Gyldendal.
-- 1867e. *Logik og Psychologie: Cursus for Universitetsaaret 1867--68*. Gyldendal.
-- 1868a. *Herr Professor Brøchners Philosophiske Kritik*. Gyldendal.
-- 1868b. *Logik og Psychologie: Cursus for Universitetsaaret 1868--69*. Gyldendal.
-- 1868c. *Om Hindringer og Betingelser for det aandelige liv i nutiden: Sexten Forelæsninger holdte ved Universitet i Christiania September--Oktober 1867*. Gyldendal.
-- 1869a. *Logik og Psychologie: Cursus for Universitetsaaret 1869--70*. Gyldendal.
-- 1869b. *Religionsphilosophie*. Gyldendal.
-- 1869c. "Ide og Virkelighed." *For Ide og Virkelighed* 1 (1): 1--39. Chr. Steen & Søns Forlag.
-- 1869d. "To Slags Undervisning I." *For Ide og Virkelighed* 1 (1): 297--323.
-- 1869e. "To Slags Undervisning II." *For Ide og Virkelighed* 1 (1): 409--441.
-- 1869f. "Om Selvforstaaelse i det Onde, med Henblik paa Shakspeares Richard den Trediee." *For Ide og Virkelighed* 1 (1): 521--554.
-- 1869g. "Personlige Grunde." *For Ide og Virkelighed* 1 (1): 585--622.
-- 1869h. "Om Sindsformørkelse, Bidrag til Selvmorderes Psykologi." *For Ide og Virkelighed* 1 (1): 659--706.
-- 1870a. "Brændende Spørgsmaal." *For Ide og Virkelighed* 2 (1): 1--33.
-- 1870b. "Synspunkter for Begrebet: Folkekirke." *For Ide og Virkelighed* 2 (1): 105--135.
-- 1870c. "En literær Overraskelse." *For Ide og Virkelighed* 2 (1): 193--221.
-- 1870d. "En Fortolkning af den hellige Historie." *For Ide og Virkelighed* 2 (1): 289--324.
-- 1870e. "Filosofi og sund Menneskeforstand." *For Ide og Virkelighed* 2 (1): 385--406.
-- 1870f. "En Arbeiderforening." *For Ide og Virkelighed* 3 (2): 1--38.
-- 1870g. "Aandsvirkelighed." *For Ide og Virkelighed* 3 (2): 289--320.
-- 1870h. "Tale ved Festen til Thorvaldsens Minde, den 19de November 1870." *For Ide og Virkelighed* 3 (2): 443--456.
-- 1870i. "Om Betydningen af et nordisk Samfund, efter et Foredrag holdt i 'Nordisk Samfund' d. 8de Decbr 1870." *For Ide og Virkelighed* 3 (2): 465--481.
-- 1870j. *Grundideernes Logik i kort Begreb*. J.H. Schubothe.
-- 1870k. *Om Betydningen af et nordisk samfund*.
-- 1871a. "Udsigter til en ny Præsteskole." *For Ide og Virkelighed* 4 (1): 1--23.
-- 1871b. "Samfundets Naturlove." *For Ide og Virkelighed* 4 (1): 289--315.
-- 1871c. "Videre om Aandsvirkelighed, foranlediget ved Pastor V. Birkedals og Pastor C. Møllers Indlæg." *For Ide og Virkelighed* 5 (2): 1--38.
-- 1871d. "Efter Døden." *For Ide og Virkelighed* 5 (2): 193--223.
-- 1871e. *Logik og Psychologie: Cursus for Universitetsaaret 1871--72*. J.H. Schubothe.
-- 1872a. "Om Universitetets Stilling til den almindelige Folkedannelse." *For Ide og Virkelighed* 6 (1): 1--31.
-- 1872b. "Karakter og Villie." *For Ide og Virkelighed* 6 (1): 489--517.
-- 1872c. "Biskop Absalon." *For Ide og Virkelighed* 7 (2): 215--247.
-- 1873a. "Hvorledes man danner sig en Verdensanskuelse." *For Ide og Virkelighed* 8 (1): 1--18.
-- 1873b. "Et Synspunkt for Darwinismen." *For Ide og Virkelighed* 8 (1): 449--459.
-- 1873. *Natur og Aand: Bidrag til en med Physiken stemmende Naturphilosophie*. J.H. Schubothe.
-- 1874. *Om Betingelserne for en kraftig Vilje: sex forelæsninger*. J.H. Schubothe.
-- 1875a. *Folkelige Foredrag. Seks Forelæsninger*. Gyldendal.
-- 1875b. *Om Liv og Haab. Sex Forelæsninger*. Gyldendal.
-- 1876. *Om Phantasiens Magt. Sex Forelæsninger*. Gyldendal.
-- 1877a. *Om Aandsdannelse med særligt Hensyn paa vort Opdragelsesvæsen. Sex Forelæsninger*. Gyldendal.
-- 1877b. *Om Samfundets Vilkaar. Sex forskellige Foredrag*. F. Hegel & Søn.
-- 1878. *Gamle og nye Profeter*.
-- 1879a. *Adam Oehlenschläger: et Mindeskrift*. Gyldendal.
-- 1879b. "Philosophiske Grundproblemer." In *Festskrift i anledning af Universitets Firehundredaarsfest, Juni 1879*.
-- 1880a. *Om Arbeidets Betydning for det aandelige Liv: Almeenfattelige Foredrag*. Gyldendal.
-- 1880b. *Almindelig Videnskabslære i Grundtræk*. Gyldendal.
-- 1881. *Om det oprindelige Forhold mellem Religion og Videnskab*. J.H. Schultze.
-- 1884. *Om Betingelserne for en kraftig Villie: Seks Forelæsninger*. J.H. Schubothe.
-- 1886. *Svar til Hr. Dr. Phil. Pastor Zeuthen*. Gyldendal.
+- **1840.** *De speculativa historiæ sacræ tractando metodo*. Fabritius de Tengnagel. (ASKB 697. Danish trans. 1842: *Om den spekulative Methodes Anvendelse paa den hellige Historie*, trans. B.C. Bøggild. H.C. Klein.)
+- **1841.** *Pauli Brev til Romerne*. Private publication.
+- **1841--44.** *Den speculative Logik i dens Grundtræk: Hefte 1--4*. Private publication.
+- **1843.** *Forelæsningsparagrafer til Kirkehistoriens Philosophie*. Private publication.
+- **1845.** *Den propædeutiske Logik*. P.G. Philipsen.
+- **1849a.** *Evangelietroen og den moderne Bevidsthed: Forelæsninger over Jesu Liv*. C.A. Reitzel.
+- **1849b.** *Mag. S. Kierkegaards "Johannes Climacus" og Dr. H. Martensens "Christelige Dogmatik": En undersøgende Anmeldelse*. C.A. Reitzel.
+- **1850a.** *Evangelietroen og Theologien: Tolv Forelæsninger holdte ved Universitetet i Kjøbenhavn i Vinteren 1849--50*. C.A. Reitzel.
+- **1850b.** *Dr. H. Martensens dogmatiske Oplysninger*. C.A. Reitzel.
+- **1850c.** *Et Par Ord i Anledning af Prof. Scharlings Apologie for Dr. Martensens Dogmatik*. C.A. Reitzel.
+- **1853a.** *Om Skjæbne og Forsyn*. Otto Schwartz.
+- **1853b.** *Et Levnetsløb i Underverdenen* (under pseudonym). Otto Schwartz.
+- **1854.** *Om personlig sandhed og sand Personlighed: Tolv forelæsninger for dannede Tilhørere af begge Kjøn, holdte ved Universitetet i Vinteren 1854*. Gyldendal.
+- **1855.** *Om Theologiens Naturbegreb med særligt hensyn til Malebranche: De la recherche de la vérité*. Det Schultziske Officin.
+- **1857a.** *Philosophisk Propædeutik i Grundtræk*. Gyldendal.
+- **1857b.** *Philosophie og Mathematik: En propædeutisk Afhandling*. Gyldendal.
+- **1858a.** "Om S. Kierkegaards 'mentale Tilstand'." *Nordisk Universitets-Tidsskrift* 1858 (1): 1--29. A. Ingerslev.
+- **1858b.** "Tale ved Reformationsfesten." *Universitetets festskrifter*.
+- **1859.** *Mathematik og Dialektik: En philosophisk Afhandling*. Gyldendal.
+- **1860a.** *Paa Kierkegaardske "Stadier": et Livsbillede*. Gyldendal.
+- **1860b.** *Hr. Professor Steens "Afregning": Hermed en Specificeret Opgjørelse til Revision*. Gyldendal.
+- **1860c.** "Om Begrebet Nøiagtighed med særligt Hensyn paa Hr. Prof. Steens 'Bidrag'." Postscript to *Philosophie og Mathematik*.
+- **1862.** *Forelæsninger over "Philosophisk Propædautik" fra Universitetsaaret 1860--61*. Gyldendal.
+- **1863a.** *Forelæsninger over "Philosophisk Propædautik" fra Universitetsaaret 1861--62*. Gyldendal.
+- **1863b.** "De stærkeres Ret. Tale ved Reformationsfesten." *Universitetets festskrifter*.
+- **1864.** *Grundideernes Logik I*. Gyldendal.
+- **1866a.** *Grundideernes Logik II*. Gyldendal.
+- **1866b.** *Propædeutik og Psychologie: Cursus fra Universitetsaaret 1866--67*. Gyldendal.
+- **1867a.** *Logik og Propædeutik: Cursus for universitetsaaret 1867--1868*. Gyldendal.
+- **1867b.** *Om Holbergs Kirkehistorie og Theologie: Et Bidrag fra Fortiden til at belyse Nutiden*. Gyldendal.
+- **1867c.** "Indledning." In *Holbergs Kirke-historie I*. F.L. Liebenberg.
+- **1867d.** *Om den Gode Vilje som magt i Videnskaben*. Gyldendal.
+- **1867e.** *Logik og Psychologie: Cursus for Universitetsaaret 1867--68*. Gyldendal.
+- **1868a.** *Herr Professor Brøchners Philosophiske Kritik*. Gyldendal.
+- **1868b.** *Logik og Psychologie: Cursus for Universitetsaaret 1868--69*. Gyldendal.
+- **1868c.** *Om Hindringer og Betingelser for det aandelige liv i nutiden: Sexten Forelæsninger holdte ved Universitet i Christiania September--Oktober 1867*. Gyldendal.
+- **1869a.** *Logik og Psychologie: Cursus for Universitetsaaret 1869--70*. Gyldendal.
+- **1869b.** *Religionsphilosophie*. Gyldendal.
+- **1869c.** "Ide og Virkelighed." *For Ide og Virkelighed* 1 (1): 1--39. Chr. Steen & Søns Forlag.
+- **1869d.** "To Slags Undervisning I." *For Ide og Virkelighed* 1 (1): 297--323.
+- **1869e.** "To Slags Undervisning II." *For Ide og Virkelighed* 1 (1): 409--441.
+- **1869f.** "Om Selvforstaaelse i det Onde, med Henblik paa Shakspeares Richard den Trediee." *For Ide og Virkelighed* 1 (1): 521--554.
+- **1869g.** "Personlige Grunde." *For Ide og Virkelighed* 1 (1): 585--622.
+- **1869h.** "Om Sindsformørkelse, Bidrag til Selvmorderes Psykologi." *For Ide og Virkelighed* 1 (1): 659--706.
+- **1870a.** "Brændende Spørgsmaal." *For Ide og Virkelighed* 2 (1): 1--33.
+- **1870b.** "Synspunkter for Begrebet: Folkekirke." *For Ide og Virkelighed* 2 (1): 105--135.
+- **1870c.** "En literær Overraskelse." *For Ide og Virkelighed* 2 (1): 193--221.
+- **1870d.** "En Fortolkning af den hellige Historie." *For Ide og Virkelighed* 2 (1): 289--324.
+- **1870e.** "Filosofi og sund Menneskeforstand." *For Ide og Virkelighed* 2 (1): 385--406.
+- **1870f.** "En Arbeiderforening." *For Ide og Virkelighed* 3 (2): 1--38.
+- **1870g.** "Aandsvirkelighed." *For Ide og Virkelighed* 3 (2): 289--320.
+- **1870h.** "Tale ved Festen til Thorvaldsens Minde, den 19de November 1870." *For Ide og Virkelighed* 3 (2): 443--456.
+- **1870i.** "Om Betydningen af et nordisk Samfund, efter et Foredrag holdt i 'Nordisk Samfund' d. 8de Decbr 1870." *For Ide og Virkelighed* 3 (2): 465--481.
+- **1870j.** *Grundideernes Logik i kort Begreb*. J.H. Schubothe.
+- **1870k.** *Om Betydningen af et nordisk samfund*.
+- **1871a.** "Udsigter til en ny Præsteskole." *For Ide og Virkelighed* 4 (1): 1--23.
+- **1871b.** "Samfundets Naturlove." *For Ide og Virkelighed* 4 (1): 289--315.
+- **1871c.** "Videre om Aandsvirkelighed, foranlediget ved Pastor V. Birkedals og Pastor C. Møllers Indlæg." *For Ide og Virkelighed* 5 (2): 1--38.
+- **1871d.** "Efter Døden." *For Ide og Virkelighed* 5 (2): 193--223.
+- **1871e.** *Logik og Psychologie: Cursus for Universitetsaaret 1871--72*. J.H. Schubothe.
+- **1872a.** "Om Universitetets Stilling til den almindelige Folkedannelse." *For Ide og Virkelighed* 6 (1): 1--31.
+- **1872b.** "Karakter og Villie." *For Ide og Virkelighed* 6 (1): 489--517.
+- **1872c.** "Biskop Absalon." *For Ide og Virkelighed* 7 (2): 215--247.
+- **1873a.** "Hvorledes man danner sig en Verdensanskuelse." *For Ide og Virkelighed* 8 (1): 1--18.
+- **1873b.** "Et Synspunkt for Darwinismen." *For Ide og Virkelighed* 8 (1): 449--459.
+- **1873.** *Natur og Aand: Bidrag til en med Physiken stemmende Naturphilosophie*. J.H. Schubothe.
+- **1874.** *Om Betingelserne for en kraftig Vilje: sex forelæsninger*. J.H. Schubothe.
+- **1875a.** *Folkelige Foredrag. Seks Forelæsninger*. Gyldendal.
+- **1875b.** *Om Liv og Haab. Sex Forelæsninger*. Gyldendal.
+- **1876.** *Om Phantasiens Magt. Sex Forelæsninger*. Gyldendal.
+- **1877a.** *Om Aandsdannelse med særligt Hensyn paa vort Opdragelsesvæsen. Sex Forelæsninger*. Gyldendal.
+- **1877b.** *Om Samfundets Vilkaar. Sex forskellige Foredrag*. F. Hegel & Søn.
+- **1878.** *Gamle og nye Profeter*.
+- **1879a.** *Adam Oehlenschläger: et Mindeskrift*. Gyldendal.
+- **1879b.** "Philosophiske Grundproblemer." In *Festskrift i anledning af Universitets Firehundredaarsfest, Juni 1879*.
+- **1880a.** *Om Arbeidets Betydning for det aandelige Liv: Almeenfattelige Foredrag*. Gyldendal.
+- **1880b.** *Almindelig Videnskabslære i Grundtræk*. Gyldendal.
+- **1881.** *Om det oprindelige Forhold mellem Religion og Videnskab*. J.H. Schultze.
+- **1884.** *Om Betingelserne for en kraftig Villie: Seks Forelæsninger*. J.H. Schubothe.
+- **1886.** *Svar til Hr. Dr. Phil. Pastor Zeuthen*. Gyldendal.
 
 Unpublished manuscripts at the Royal Library, Copenhagen.
 
