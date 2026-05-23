@@ -426,6 +426,43 @@ Nielsen makes him a crucial third voice in the mid-century debate. Høffding
 credited Brøchner's lectures as the direct cause of his own conversion away from
 Nielsen's position. [Biographical note.](/pages/brochner.html)
 
+### "Om Søren Kierkegaards Virksomhed som religieus Forfatter" (1855)
+
+Published anonymously under the mark “-r” in *Fædrelandet*, 1 December 1855, written
+at the request of J.G. Giødeved. The earliest surviving account of Kierkegaard's authorship
+as a coherent whole: the bio notes it showed "for samtiden sjælden forståelse af
+sigtet med forfatterskabet" --- a rare understanding for the time of the intent
+behind the authorship. Written just weeks after Kierkegaard's death, it predates
+by nearly a decade Nielsen's full systematization of Kierkegaard's epistemology
+in the *Grundideernes Logik* (1864), and represents Brøchner's first public
+statement of a reading of Kierkegaard that would diverge increasingly from
+Nielsen's. Brøchner also published a review with the same mark in *Fædrelandet*
+(20.12.1856) of J.C.M. Ørum's pamphlet *Sandhedsvidnestriden*.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete article | | to do |
+
+### *Benedict Spinoza. En Monographie* (Copenhagen: Gyldendal, 1857)
+
+Brøchner's major scholarly work on Spinoza's philosophy, described in the
+bio as “en fyldig og omhyggeligt udarbejdet fremstilling” (a thorough and
+carefully executed account). Intended as the first of eleven projected
+monographs on major philosophical systems that together would constitute a
+comprehensive history of philosophy; only the Spinoza volume and the later
+*Philosophiens Historie i Grundrids* (1873--74) were completed. The work
+serves as the methodological basis for Brøchner's “ideelrealisme”: his
+reading of Spinoza's double-attribute substance (thought and extension) as
+a proto-synthesis of idealism and realism that anticipates the third phase
+of philosophical development still to come. The preface contains his first
+statement of the philosophy of the history of philosophy that would receive
+its clearest systematic formulation in *Bidrag* (1869). The book qualified
+him for the extraordinary docentship in philosophy in February 1857.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete work | | to do |
+
 ### *Problemet om Tro og Viden* (Copenhagen: Philipsen, 1868) [[KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122130352405763)]
 
 A historical-critical treatise on the relation between faith
@@ -436,6 +473,23 @@ religiously reconciled humane consciousness."
 | Section | Links | Status |
 |---------|-------|--------|
 | Complete work (226 pp.) | [transcription](https://hhalvors.github.io/danish-texts/texts/brochner/problemet-tro-viden/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/brochner/problemet-tro-viden/translation.pdf) · [KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122130352405763) | *in progress* |
+
+### *Et Svar til Professor R. Nielsen* (Copenhagen: Philipsen, 1868)
+
+Brøchner's sharp reply to Nielsen's counter-attack, completing the full
+polemical exchange of 1868: Brøchner (*Problemet om Tro og Viden*) → Nielsen
+(*Herr Prof. Brøchners philosophiske Kritik gjennemset*) → Brøchner (*Et Svar*).
+The immediate success of the response is indicated by the second edition in
+the same year. Where *Problemet om Tro og Viden* was a measured historical
+and philosophical treatise, the *Svar* is polemical in register, pressing
+the three main charges --- performative self-refutation, arbitrariness,
+and the unity-of-consciousness argument --- against Nielsen's attempted
+defence. The text is essential for completing the documentary record of
+the 1868 controversy.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete work | | to do |
 
 ### Georg Brandes, *Levned*, vol. I (Copenhagen: Gyldendal, 1905), pp. 129--132
 
@@ -458,6 +512,51 @@ in which Brøchner develops his own Hegelian alternative: religion understood as
 | Section | Links | Status |
 |---------|-------|--------|
 | Complete work | [KB scan](https://soeg.kb.dk/permalink/45KBDK_KGL/fbp0h3/alma99122130352505763) | to do |
+
+### *Bidrag til Opfattelsen af Philosophiens historiske Udvikling* (Copenhagen: Philipsen, 1869)
+
+Short pamphlet giving the clearest statement of Brøchner's Hegelian
+philosophy of the history of philosophy, sketched earlier in the preface
+to *Spinoza* (1857) and here developed as the theoretical framework for
+the *Philosophiens Historie i Grundrids* (1873--74). Three main phases:
+(I) Greek philosophy, in which spirit stands in immediate unity with
+nature, existence apprehended as a besouled artwork; (II) medieval
+philosophy, in which increasing reflection dissolves the unity into a
+sharp dualism of spirit and nature; (III) modern philosophy, in which
+the task of overcoming dualism is addressed, either by subordinating
+spirit to nature (the Enlightenment) or nature to spirit (Hegelian
+idealism), with a third synthetic phase still to be worked out.
+Four laws of historical development govern the process: a period's
+basic thought can assert itself long before it reaches full unfolding;
+the prevailing perspective of an era can unconsciously act as a
+limiting power on individual thought while simultaneously, by
+hampering it, becoming an incitement to deeper development; and two
+contemporary parallel lines of development can unconsciously influence
+each other even when they stand in apparent opposition.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete work | | to do |
+
+### *Erindringer om Søren Kierkegaard* (written 1871--72; published 1877)
+
+Brøchner's personal recollections of Kierkegaard, written in 1871--72
+and published posthumously by Høffding in *Det nittende Aarhundrede*
+(1877); later in book form edited by Steen Johansen (Copenhagen, 1953).
+Brøchner was among the small circle who knew Kierkegaard personally,
+and his account --- written from a philosophical standpoint formed
+independently of Nielsen's systematization --- gives a distinctive
+picture of Kierkegaard's personality, conversational dialectic, and
+the intent behind his authorship. Particularly valuable as a
+counterweight to Nielsen's appropriation: where Nielsen read in
+Kierkegaard a systematic dualist epistemology, Brøchner's recollections
+emphasize the personal, anti-systematic, and ironic dimensions of
+Kierkegaard's method. The text was the direct occasion for Høffding's
+first major publication on Kierkegaard, who contributed a preface.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete work | | to do |
 
 ---
 
