@@ -953,3 +953,22 @@ Høffding--Bohr connection. Transcription and translation forthcoming.
 | Section | Links | Status |
 |---------|-------|--------|
 | Complete correspondence | | *coming soon* |
+
+### Brevveksling med Émile Meyerson (manuscript correspondence)
+
+Émile Meyerson (1859--1933), Franco-Polish philosopher of science, is best
+known for *Identité et Réalité* (1908), which argues that scientific
+explanation characteristically seeks to identify cause with effect, and that
+the irreversibility of time represents an irrational residue that science
+cannot fully absorb. His work intersects with Høffding's at several points:
+both were centrally concerned with the epistemological significance of
+causality, identity, and relation in modern physics; both engaged seriously
+with the implications of Einstein's relativity; and Meyerson cited Høffding
+in his later work. The correspondence would be a primary source for
+Høffding's late engagement with French philosophy of science and for the
+reception of his epistemological work in the Francophone context. Location
+of manuscripts to be established.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete correspondence | | *placeholder* |
