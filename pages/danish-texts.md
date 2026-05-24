@@ -46,19 +46,34 @@ pp. 168--253 (seven sections). Translated into English by Jon Stewart in
 |---------|-------|--------|
 | Complete essay (pp. 168--253) | [transcription](https://hhalvors.github.io/danish-texts/texts/moller/udoedelighed/transcription.pdf) · [scan](https://hhalvors.github.io/danish-texts/texts/moller/udoedelighed/moller-udoedelighed-scan.pdf) · [translation (Jon Stewart, 2022)](https://doi.org/10.1163/9789004517912_003) | *in progress* |
 
-### *En Dansk Students Eventyr* (written c. 1824; published posthumously 1843), selections
+### *En Dansk Students Eventyr* (written c.\ 1824; published posthumously 1843), selections
 
 Møller's prose novella, the most celebrated Danish prose fiction of the
-pre-Kierkegaard period. Notably cited by Niels Bohr as a formative
-influence: Bohr repeatedly invoked the figure of the student who is
-unable to act because he reflects on his own thinking, seeing in it an
-illustration of the epistemological lesson that the act of observation
-alters what is observed --- a literary precursor to complementarity.
-Planned selections.
+pre-Kierkegaard period and the work most directly cited by Niels Bohr in
+his philosophical self-accounts. The central character of the Licentiate
+--- a man of immense learning and total paralysis of will, unable to act
+because he is perpetually reflecting on his own thinking --- gave Bohr his
+most vivid illustration of the epistemological limits of self-description.
+Bohr invoked the Licentiate's predicament repeatedly from the Como lecture
+(1927) onward: *``jeg tænker over, at jeg tænker derover, og deler mig
+selv i en uendelig tilbageskridende Rad af Jeg'er, der betragte
+hinanden''* --- ``I think about the fact that I think about it, and divide
+myself into an infinitely regressing series of selves that observe one
+another.'' The Licentiate's insight that the observing self cannot be
+included in its own description without generating infinite regress was
+for Bohr the literary anticipation of complementarity: the observer and
+the observed cannot appear simultaneously in a single unambiguous account.
+The second philosophical episode --- the Licentiate's account of why he
+could never leave the inn (a chain of trivial obstacles each providing
+sufficient reason for postponement, together paralyzing action) --- also
+figures in Bohr's accounts of the relationship between deliberation and
+decision. Text after: *Efterladte Skrifter*, bd.\ 3, red.\ F.C.\ Olsen,
+København: C.A.\ Reitzel, 1843.
 
 | Section | Links | Status |
 |---------|-------|--------|
-| Selections | | to do |
+| Licentiaten (the Licentiate episode) | [transcription](https://hhalvors.github.io/danish-texts/texts/moller/students-eventyr/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/moller/students-eventyr/translation.pdf) | complete |
+| Remainder of novella | | to do |
 
 ---
 
