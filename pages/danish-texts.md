@@ -55,11 +55,12 @@ his philosophical self-accounts. The central character of the Licentiate
 because he is perpetually reflecting on his own thinking --- gave Bohr his
 most vivid illustration of the epistemological limits of self-description.
 Bohr invoked the Licentiate's predicament repeatedly from the Como lecture
-(1927) onward: *``jeg tænker over, at jeg tænker derover, og deler mig
-selv i en uendelig tilbageskridende Rad af Jeg'er, der betragte
-hinanden''* --- ``I think about the fact that I think about it, and divide
+(1927) onward: Bohr invoked the Licentiate's predicament repeatedly from the Como lecture
+(1927) onward: »jeg tænker over, at jeg tænker derover, og deler mig
+selv i en uendelig tilbageskridende Rad af Jeg’er, der betragte
+hinanden« --- “I think about the fact that I think about it, and divide
 myself into an infinitely regressing series of selves that observe one
-another.'' The Licentiate's insight that the observing self cannot be
+another.” The Licentiate's insight that the observing self cannot be
 included in its own description without generating infinite regress was
 for Bohr the literary anticipation of complementarity: the observer and
 the observed cannot appear simultaneously in a single unambiguous account.
