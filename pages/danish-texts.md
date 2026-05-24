@@ -74,12 +74,13 @@ constitutively underdetermined by reasons, Høffding's treatment of
 (*Overvejelse*) can approach but never compel, and Bohr's observation
 that the moment of measurement in quantum mechanics stands in the same
 relation to the superposition that precedes it. Text after: *Efterladte Skrifter*, bd.\ 3, red.\ F.C.\ Olsen,
-København: C.A.\ Reitzel, 1843.
+København: C.A.\ Reitzel, 1843. Full text available at
+[Wikisource](https://da.wikisource.org/wiki/En_dansk_Students_Eventyr).
 
 | Section | Links | Status |
 |---------|-------|--------|
 | Licentiaten (the Licentiate episode) | [transcription](https://hhalvors.github.io/danish-texts/texts/moller/students-eventyr/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/moller/students-eventyr/translation.pdf) | complete |
-| Remainder of novella | | to do |
+| Remainder of novella | [Wikisource](https://da.wikisource.org/wiki/En_dansk_Students_Eventyr) | to do |
 
 ---
 
