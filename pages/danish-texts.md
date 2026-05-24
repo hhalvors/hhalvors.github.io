@@ -66,9 +66,14 @@ for Bohr the literary anticipation of complementarity: the observer and
 the observed cannot appear simultaneously in a single unambiguous account.
 The second philosophical episode --- the Licentiate's account of why he
 could never leave the inn (a chain of trivial obstacles each providing
-sufficient reason for postponement, together paralyzing action) --- also
-figures in Bohr's accounts of the relationship between deliberation and
-decision. Text after: *Efterladte Skrifter*, bd.\ 3, red.\ F.C.\ Olsen,
+sufficient reason for postponement, together paralyzing action) ---
+anticipates the asymmetry between deliberation and decision that runs
+through the entire tradition: Kierkegaard's analysis of the leap as
+constitutively underdetermined by reasons, Høffding's treatment of
+*Beslutning* (decision) as a qualitative break that deliberation
+(*Overvejelse*) can approach but never compel, and Bohr's observation
+that the moment of measurement in quantum mechanics stands in the same
+relation to the superposition that precedes it. Text after: *Efterladte Skrifter*, bd.\ 3, red.\ F.C.\ Olsen,
 København: C.A.\ Reitzel, 1843.
 
 | Section | Links | Status |
