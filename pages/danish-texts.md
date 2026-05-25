@@ -16,6 +16,65 @@ domain; scans are drawn from the [Royal Danish Library](https://www.kb.dk/en)
 
 ---
 
+## F.C. Sibbern (1785--1872)
+
+Frederik Christian Sibbern, professor of philosophy at the University of
+Copenhagen 1813--1870 --- one of the longest academic tenures in Danish
+history. Close friend and intellectual companion of Poul Martin Møller;
+Kierkegaard attended his lectures. A transitional figure who absorbed
+German Idealism (especially Schelling) while resisting the Hegelian
+campaign led by J.L. Heiberg in the 1830s, and who in his criticism of
+Hegel anticipated several of Kierkegaard's central arguments. His
+critique of Hegel is rooted in a concern for the concrete existing
+individual and a suspicion that speculative systematic philosophy
+dissolves precisely the personal and existential dimensions of human
+life that philosophy ought to illuminate.
+
+### *Bemærkninger og Undersøgelser, fornemmelig betreffende Hegels Philosophie, betragtet i Forhold til vor Tid* (Copenhagen: C.A. Reitzel, 1838)
+
+The most exhaustive critical analysis of Hegel's philosophy to appear
+in the Danish language, and the text that most directly connects the
+pre-Kierkegaard generation to the post-Kierkegaard faith/knowledge
+debate. It began as a review of the first volume of Heiberg's
+philosophical journal *Perseus* (1837), published in eight installments
+in *Maanedsskrift for Litteratur*; Sibbern collected the first four
+installments as an independent monograph in 1838. The central argument
+follows Møller in holding that Hegel's systematic philosophy leads to a
+form of nihilism by absorbing the concrete individual into the abstract
+movement of the concept. In this critique Sibbern anticipates several
+of Kierkegaard's arguments, and the text forms part of the intellectual
+context in which Nielsen's later attempt to systematize Kierkegaard
+must be read: the *uensartede størrelser* thesis is in part a response
+to the same Hegelian challenge Sibbern addressed.
+English translation: *Sibbern's Remarks and Investigations Primarily
+Concerning Hegel's Philosophy*, ed.\ and trans.\ by Jon Stewart,
+Copenhagen: Museum Tusculanum Press, 2018 (*Texts from Golden Age
+Denmark*, vol.\ 7).
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete work | | to do |
+
+### *Om Erkjendelse og Granskning* (partial title; date to be confirmed)
+
+Epistemological work; to be identified and described.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete work | | to do |
+
+### *Menneskets aandelige Natur og Væsen* (Copenhagen, 1819)
+
+Sibbern's early major work on the spiritual nature of the human being,
+influenced by Schelling. Establishes the philosophical anthropology
+underlying his later epistemological and critical work.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete work | | to do |
+
+---
+
 ## Poul Martin Møller (1794--1838)
 
 Poet, philosopher, and Professor of Philosophy at the University of Copenhagen
@@ -81,6 +140,37 @@ København: C.A.\ Reitzel, 1843. Full text available at
 |---------|-------|--------|
 | Licentiaten (the Licentiate episode) | [transcription](https://hhalvors.github.io/danish-texts/texts/moller/students-eventyr/transcription.pdf) · [translation](https://hhalvors.github.io/danish-texts/texts/moller/students-eventyr/translation.pdf) | complete |
 | Remainder of novella | [Wikisource](https://da.wikisource.org/wiki/En_dansk_Students_Eventyr) | to do |
+
+### *Strøtanker* (posthumously published 1843), selections
+
+Møller's collection of aphorisms and short philosophical reflections,
+published posthumously in *Efterladte Skrifter*, bd. 3, ed. F.C. Olsen
+(C.A. Reitzel, 1843). Thematically heterogeneous but philosophically
+concentrated --- the genre of the aphorism was for Møller a natural
+form: *"Strøtanker, som Frugter af Øieblikkets klarere Anskuelse, ere
+poetiske ved deres aphoristiske Form, ikke videnskabelige. De ere
+Tænkningens Culminationspunkter."* Several clusters are directly
+relevant to the project. The *Problemet Udødelighed* section
+contains the compressed epistemological thesis *"Viljen skal ei
+bestemme, hvad der er sandt"* and an extended comic anecdote about
+a bookkeeper who perpetually postpones reading a treatise on
+immortality --- a structural parallel to the Licentiate episode,
+applied now to the very problem of the immortality essay. The
+*Eksistentialisme* section contains observations about subjective
+truth, the limits of speculative philosophy, and the connection
+between philosophical depth and taciturnity (*"den dybe Indsigt
+gjør ordknap"*). The *Dybdepsykologi* section bears on the
+self-reflection problem dramatized in the Licentiate. Source:
+*Efterladte Skrifter*, bd. 3 (1843); digital text available
+(Lindhardt og Ringhof, 2018; thematic organization by modern editor).
+Hard-copy sources: *Efterladte Skrifter af Poul Møller*, 1855;
+*Filosofiske Essays og Strøtanker*, udvalg ved Børge Madsen.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Problemet »Udødelighed« | | to do |
+| Eksistentialisme | | to do |
+| Dybdepsykologi | | to do |
 
 ---
 
@@ -277,13 +367,21 @@ naturalist voices.
 
 ### *Philosophiske Grundproblemer* (Copenhagen: Gyldendal, 1879)
 
-Popular presentation of core philosophical problems, late Nielsen.
-Immediate predecessor to the *Videnskabslære* (1880) and likely a more
-philosophically substantive treatment of the same territory.
+Nielsen's contribution to the University of Copenhagen's 400th anniversary
+*Festskrift* (1479--1879), 77 pages. A compressed popular presentation of the
+three perennial problems of philosophy --- the problem of knowledge, the problem
+of reality, and the problem of freedom --- concluded by a statement of the faith/
+knowledge thesis. In each case Nielsen sketches the historical dialectic (Kant,
+Fichte, Hegel; Comte vs. Hegel) and then arrives at his own position via
+the *Objektiveringslov*. The concluding section is the most direct popular
+statement of the *uensartede st\o{}rrelser* thesis in Nielsen's work: ``Principerne
+for Tro og Viden ere absolut ueensartede'' (p.\ 72), followed immediately by the
+claim that the dualistic separation is itself the condition for reaching a
+reconciling unity of faith and knowledge.
 
 | Section | Links | Status |
 |---------|-------|--------|
-| Selections | | to do |
+| Complete work (77 pp.) | [transcription](https://hhalvors.github.io/danish-texts/texts/nielsen/philosophiske-grundproblemer/transcription.pdf) | *skeleton* |
 
 ### *Almindelig Videnskabslære i Grundtræk* (Copenhagen: Gyldendalske Boghandel, 1880)
 
