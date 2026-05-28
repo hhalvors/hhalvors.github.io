@@ -219,7 +219,7 @@ udvalg ved Børge Madsen.
 
 | Section | Links | Status |
 |---------|-------|--------|
-| Indledning (pp. 115--118 in Madsen edition) | [transcription](https://hhalvors.github.io/danish-texts/texts/moller/hvad-er-philosophie/transcription.pdf) | complete |
+| Indledning (pp. 115--118 in Madsen edition) | [transcription](https://hhalvors.github.io/danish-texts/texts/moller/hvad-er-philosophie/transcription.pdf) | *in progress* |
 | Remainder of lecture course | | to do |
 
 ### "Qvindelighed" (posthumously published 1843)
