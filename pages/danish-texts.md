@@ -172,6 +172,75 @@ Hard-copy sources: *Efterladte Skrifter af Poul Møller*, 1855;
 | Eksistentialisme | | to do |
 | Dybdepsykologi | | to do |
 
+### "Hvad er Philosophie?" (posthumously published 1843)
+
+Introduction to Møller's lecture course on the history of older
+philosophy, delivered at the University of Copenhagen in 1834--35.
+The text is a composite: Møller's own manuscript (written, in editor
+F.C. Olsen's words, "with a brisk pen, sometimes only in broken
+notes and hints") supplemented from students' lecture notes to fill
+gaps. The notes in the printed text are student additions, not
+Møller's own. Olsen singles out the introductory section for its
+"freer form, freshness, and many striking philosophical
+observations," distinguishing it from the heavier historical
+material that follows.
+
+Søren Kierkegaard almost certainly attended this course: he
+enrolled at the University of Copenhagen in 1830, Møller became
+professor there in 1831, and Kierkegaard is documented as having
+attended Møller's lectures, holding him as his most important
+teacher. The 1834--35 lecture course falls squarely within
+Kierkegaard's student years.
+
+The essay marks Møller's most explicit break with the Hegelian
+paradigm and his attempt to articulate an alternative account of
+what philosophy can be. The opening argument --- that philosophy
+cannot be defined without circularity, since any definition
+presupposes philosophical concepts, and any philosophical concept
+drives dialectically toward its opposite --- is already a quiet
+critique of the Hegelian demand for a presuppositionless beginning.
+Two key distinctions follow: (1) philosophy vs.\ religion ---
+religious teaching may contain deep truth, but so long as it
+appeals to authority or imagery rather than to thought alone as
+its criterion, it falls outside philosophy proper; (2) philosophy
+vs.\ non-philosophical science --- the empirical sciences use
+the *a priori* categories as unconscious instruments without
+coming to awareness of their nature, while philosophical thought
+recognizes that the nature of thought is the nature of reality.
+Both distinctions would remain live issues in the subsequent
+Nielsen--Brøchner debate, where the first reappears as the
+*uensartede størrelser* question and the second as the
+*Objektiveringslov*.
+
+Published posthumously in *Efterladte Skrifter*, bd.~3,
+ed.\ F.C.\ Olsen (C.A.\ Reitzel, 1843).
+Hard-copy source: *Filosofiske Essays og Strøtanker*,
+udvalg ved Børge Madsen.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Indledning (pp. 115--118 in Madsen edition) | [transcription](https://hhalvors.github.io/danish-texts/texts/moller/hvad-er-philosophie/transcription.pdf) | complete |
+| Remainder of lecture course | | to do |
+
+### "Qvindelighed" (posthumously published 1843)
+
+A witty philosophical essay on femininity (*qvindelighed*),
+published posthumously in *Efterladte Skrifter*, bd.~3, ed.\ F.C.\
+Olsen (C.A.\ Reitzel, 1843). Møller belongs to a tradition of
+Danish male thinkers who engaged seriously and progressively with
+gender, a tradition whose most distinguished precursor is
+Ludvig Holberg (1684--1754): Holberg's comedies consistently
+portray women as intellectually superior to the men around them,
+and his *Epistler* contain explicit arguments for women's
+education and equal capacity for reason. Content and argument of
+the essay to be described after transcription.
+Hard-copy source: *Filosofiske Essays og Strøtanker*,
+udvalg ved Børge Madsen.
+
+| Section | Links | Status |
+|---------|-------|--------|
+| Complete essay | [transcription](https://hhalvors.github.io/danish-texts/texts/moller/qvindelighed/transcription.pdf) | to do |
+
 ---
 
 ## Søren Kierkegaard (1813--1855)
