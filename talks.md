@@ -3,6 +3,7 @@ title: "Talks"
 author: Hans Halvorson
 ---
 
+- Er musste das Wissen aufheben — van Fraassen on the priority of the manifest image (Schock Prize Symposium, June 2026) [pdf](talks/schock.pdf) [html](talks/schock.html) [qmd](talks/schock.qmd)
 - Niels Bohr on Causal Explanation [pdf](talks/bohr-causality.pdf)
 - Climacus' two ways of reflection [pdf](talks/climacus.pdf)
 - Brandes against Dualism [pdf](talks/brandes.pdf)
@@ -24,8 +25,7 @@ author: Hans Halvorson
 - The goal of formal analysis [pdf](talks/formal-outline.pdf)
 - The concept of a reference frame [pdf](talks/vienna2023.pdf) 
 
-The TeX files are in Beamer format. Feel free to re-use formatting for
-your own presentations.
+The TeX and QMD files are source files for the slides (Beamer and Quarto/Reveal.js respectively). Feel free to re-use formatting for your own presentations.
 
 For building diagrams: [GitHub repo](https://github.com/hhalvors/diagrams)
 

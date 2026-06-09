@@ -1,0 +1,46 @@
+/* Match Metropolis beamer alert color */
+.alert {
+  color: #eb811b;
+  font-weight: inherit;
+}
+
+/* Tighten blockquote spacing */
+.reveal blockquote {
+  font-style: italic;
+  width: 90%;
+  margin: 0.4em auto;
+  padding: 0.2em 1em;
+  border-left: 3px solid #ccc;
+  background: none;
+  box-shadow: none;
+}
+
+/* Section title slides */
+.reveal .slide-background-content {
+  background-color: #f8f8f8;
+}
+
+/* Smaller attribution lines (replaces \footnotesize) */
+.attribution {
+  font-size: 0.65em;
+  color: #555;
+  margin-top: 0.1em;
+}
+
+/* Tighten paragraph spacing */
+.reveal p {
+  margin: 0.4em 0;
+}
+
+/* Two-column portrait layout: keep image from overflowing */
+.reveal .columns img {
+  max-height: 60vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Math display */
+.reveal .MathJax {
+  font-size: 1em;
+}
