@@ -395,12 +395,14 @@ h2.year-label {
   .parallel > .en { padding-left: 0; }
 }
 
-/* Masthead: same width as content, but shifted right to clear hamburger */
+/* Masthead: same width as content, but shifted right to clear hamburger.
+   --masthead-pad is shared with .container.content below, so body text
+   stays aligned with the "H" in the masthead. */
 .masthead .container {
   max-width: var(--content-max);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 4rem !important;   /* tweak: 3.2rem–4.5rem */
+  padding-left: var(--masthead-pad) !important;
   padding-right: var(--content-pad) !important;
 }
 
@@ -415,7 +417,8 @@ h2.year-label {
 }
 
 :root{
-  --content-pad: 1.25rem;  /* good default side padding */
+  --content-pad: 1.25rem;   /* good default side padding */
+  --masthead-pad: 4rem;     /* clears the hamburger; tweak: 3.2rem–4.5rem */
 }
 
 /* keep your existing container.content rule */
@@ -423,13 +426,15 @@ h2.year-label {
   max-width: var(--content-max);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--content-pad);
+  padding-left: var(--masthead-pad);  /* align body text with masthead "H" */
   padding-right: var(--content-pad);
 }
 
-/* MOBILE: a bit smaller padding */
+/* MOBILE: a bit smaller padding; alignment with the masthead is
+   intentionally given up in favor of usable line length */
 @media (max-width: 700px) {
   :root{ --content-pad: 1rem; }
+  .container.content { padding-left: var(--content-pad); }
 }
 
 
