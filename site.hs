@@ -34,6 +34,7 @@ import           Text.Pandoc.Walk         (walkM)
 
 import           BibTeXParser             (parseBibTeX, generateHTML)
 import           PubList                  (parseBibTeXFile, transformEntry, generateHtml)
+import           EquivBiblio              (generateEquivHTML)
 import           LemmonFilter             (applyLemmonFilter)
 import CoursePages.Course
   ( loadCourseYaml
@@ -565,6 +566,23 @@ main = hakyllWith config $ do
             makeItem htmlBody
               >>= loadAndApplyTemplate "templates/page.html"    (constField "title" "Publications" `mappend` siteCtx)
               >>= loadAndApplyTemplate "templates/default.html" (constField "title" "Publications" `mappend` baseSidebarCtx `mappend` siteCtx)
+              >>= relativizeUrls
+
+    -- Equivalent theories bibliography
+    create ["theories/index.html"] $ do
+      route idRoute
+      compile $ do
+        result <- unsafeCompiler $ parseBibTeXFile "bib/equiv-theories.bib"
+        case result of
+          Left err -> error $ "BibTeX parse error (equiv-theories): " ++ show err
+          Right entries -> do
+            let htmlBody = generateEquivHTML (map transformEntry entries)
+            makeItem htmlBody
+              >>= loadAndApplyTemplate "templates/page.html"
+                    (constField "title" "Equivalent Theories: A Bibliography" `mappend` siteCtx)
+              >>= loadAndApplyTemplate "templates/default.html"
+                    (constField "title" "Equivalent Theories: A Bibliography"
+                      `mappend` baseSidebarCtx `mappend` siteCtx)
               >>= relativizeUrls
 
 -- Rule to process temp.html and output it as publications.html
