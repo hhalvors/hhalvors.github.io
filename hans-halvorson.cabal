@@ -12,7 +12,7 @@ cabal-version:      >= 1.10
 
 executable site
   main-is:          site.hs
-  other-modules:    BibTeXParser, LemmonFilter, FormulaParser, PubList, EquivBiblio, CoursePages.Course
+  other-modules:    BibTeXParser, LemmonFilter, FormulaParser, PubList, EquivBiblio, DanishTexts, CoursePages.Course
   build-depends:    base == 4.*
                   , hakyll == 4.16.*  
                   , containers == 0.6.*

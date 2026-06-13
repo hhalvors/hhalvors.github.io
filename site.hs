@@ -35,6 +35,7 @@ import           Text.Pandoc.Walk         (walkM)
 import           BibTeXParser             (parseBibTeX, generateHTML)
 import           PubList                  (parseBibTeXFile, transformEntry, generateHtml)
 import           EquivBiblio              (generateEquivHTML)
+import           DanishTexts              (generateDanishTextsHTML)
 import           LemmonFilter             (applyLemmonFilter)
 import CoursePages.Course
   ( loadCourseYaml
@@ -428,7 +429,7 @@ main = hakyllWith config $ do
 
     redirect "phi201/index.html" "https://hanshalvorson.com/courses/phi201_f2025/"
 
-    match "pages/*" $ do
+    match ("pages/*" .&&. complement "pages/danish-texts.md") $ do
       route $ setExtension "html"
       compile $ do
         pageName <- takeBaseName . toFilePath <$> getUnderlying
@@ -837,6 +838,39 @@ main = hakyllWith config $ do
       compile $ do
         src <- toFilePath <$> getUnderlying                  -- original path under /courses/...
         makeItem (redirectPage ("/" ++ src))    
+
+    -- Danish texts catalog
+    create ["danish-texts/index.html"] $ do
+      route idRoute
+      compile $ do
+        result <- unsafeCompiler $
+          decodeFileEither "data/danish-texts.yaml"
+        case result of
+          Left err      -> error $ "YAML parse error (danish-texts): " ++ show err
+          Right catalog -> do
+            let htmlBody = generateDanishTextsHTML catalog
+            makeItem htmlBody
+              >>= loadAndApplyTemplate "templates/page.html"
+                    (constField "title" "Danish Philosophical Texts" `mappend` siteCtx)
+              >>= loadAndApplyTemplate "templates/default.html"
+                    (constField "title" "Danish Philosophical Texts"
+                      `mappend` baseSidebarCtx `mappend` siteCtx)
+              >>= relativizeUrls
+
+    -- Danish texts notes (scholarly commentary) — hand-written markdown
+    match "pages/danish-texts-notes.md" $ do
+      route $ constRoute "danish-texts/notes.html"
+      compile $
+        pandocCompiler
+          >>= loadAndApplyTemplate "templates/page.html"
+                (constField "title" "Danish Texts — Notes" `mappend` siteCtx)
+          >>= loadAndApplyTemplate "templates/default.html"
+                (constField "title" "Danish Texts — Notes"
+                  `mappend` baseSidebarCtx `mappend` siteCtx)
+          >>= relativizeUrls
+
+    -- Redirect old URL
+    redirect "pages/danish-texts.html" "/danish-texts/"
 
 -- Rule to generate publications.html
 --    create ["publications.html"] $ do 
