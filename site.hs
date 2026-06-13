@@ -556,6 +556,12 @@ main = hakyllWith config $ do
     match "hh.bib" $ do
       compile getResourceBody
 
+    match "bib/equiv-theories.bib" $ do
+      compile getResourceBody
+
+    match "data/danish-texts.yaml" $ do
+      compile getResourceBody
+
     create ["publications.html"] $ do
       route idRoute
       compile $ do
@@ -573,6 +579,7 @@ main = hakyllWith config $ do
     create ["theories/index.html"] $ do
       route idRoute
       compile $ do
+        _ <- (load (fromFilePath "bib/equiv-theories.bib") :: Compiler (Item String))  -- declare dependency
         result <- unsafeCompiler $ parseBibTeXFile "bib/equiv-theories.bib"
         case result of
           Left err -> error $ "BibTeX parse error (equiv-theories): " ++ show err
@@ -843,6 +850,7 @@ main = hakyllWith config $ do
     create ["danish-texts/index.html"] $ do
       route idRoute
       compile $ do
+        _ <- (load (fromFilePath "data/danish-texts.yaml") :: Compiler (Item String))  -- declare dependency
         result <- unsafeCompiler $
           decodeFileEither "data/danish-texts.yaml"
         case result of
