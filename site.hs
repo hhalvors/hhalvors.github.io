@@ -847,7 +847,7 @@ main = hakyllWith config $ do
         makeItem (redirectPage ("/" ++ src))    
 
     -- Danish texts catalog
-    create ["danish-texts/index.html"] $ do
+    create ["dansk/index.html"] $ do
       route idRoute
       compile $ do
         _ <- (load (fromFilePath "data/danish-texts.yaml") :: Compiler (Item String))  -- declare dependency
@@ -867,7 +867,7 @@ main = hakyllWith config $ do
 
     -- Danish texts notes (scholarly commentary) — hand-written markdown
     match "pages/danish-texts-notes.md" $ do
-      route $ constRoute "danish-texts/notes.html"
+      route $ constRoute "dansk/notes.html"
       compile $
         pandocCompiler
           >>= loadAndApplyTemplate "templates/page.html"
@@ -878,7 +878,7 @@ main = hakyllWith config $ do
           >>= relativizeUrls
 
     -- Redirect old URL
-    redirect "pages/danish-texts.html" "/danish-texts/"
+    redirect "pages/danish-texts.html" "/dansk/"
 
 -- Rule to generate publications.html
 --    create ["publications.html"] $ do 
