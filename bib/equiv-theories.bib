@@ -1,0 +1,1121 @@
+% equiv-theories.bib
+% Bibliography on equivalent theories in logic and philosophy of science.
+%
+% Custom fields used by EquivBiblio.hs:
+%   keywords   = section key: surveys | foundational | criteria | physics
+%   philsci    = full URL to PhilSci Archive record
+%   philpapers = full URL to PhilPapers record
+%   annote     = short orientation note (displayed on the bibliography page)
+%
+% The `url` field holds a freely accessible preprint (arXiv or author page).
+% The `doi` field holds the published DOI.
+
+% ============================================================
+% SURVEYS AND BOOKS
+% ============================================================
+
+@book{halvorson2019logic,
+  author     = {Hans Halvorson},
+  title      = {The Logic in Philosophy of Science},
+  publisher  = {Cambridge University Press},
+  year       = {2019},
+  isbn       = {9781107527744},
+  philpapers = {https://philpapers.org/rec/HALTLI-2},
+  keywords   = {surveys},
+  annote     = {A systematic and accessible treatment of formal criteria for
+                theoretical equivalence---definitional, Morita, and
+                categorical---situated within the broader philosophy of science.
+                The most comprehensive single source on the subject.}
+}
+
+@article{weatherall2019compass1,
+  author     = {James Owen Weatherall},
+  title      = {Part 1: Theoretical Equivalence in Physics},
+  journal    = {Philosophy Compass},
+  volume     = {14},
+  number     = {5},
+  year       = {2019},
+  doi        = {10.1111/phc3.12592},
+  philpapers = {https://philpapers.org/rec/WEAPTO},
+  keywords   = {surveys},
+  annote     = {First part of a two-part survey. Covers empirical equivalence
+                and formal definitional criteria, with applications to
+                classical mechanics and electromagnetism.}
+}
+
+@article{weatherall2019compass2,
+  author     = {James Owen Weatherall},
+  title      = {Part 2: Theoretical Equivalence in Physics},
+  journal    = {Philosophy Compass},
+  volume     = {14},
+  number     = {5},
+  year       = {2019},
+  doi        = {10.1111/phc3.12591},
+  philpapers = {https://philpapers.org/rec/WEAPT},
+  keywords   = {surveys},
+  annote     = {Second part covers categorical equivalence and the relation
+                between equivalence and duality in physics (gauge theory,
+                general relativity).}
+}
+
+@book{dewar2022structure,
+  author    = {Neil Dewar},
+  title     = {Structure and Equivalence},
+  series    = {Cambridge Elements in Philosophy of Physics},
+  publisher = {Cambridge University Press},
+  year      = {2022},
+  doi       = {10.1017/9781108914581},
+  isbn      = {9781108823760},
+  keywords  = {surveys},
+  annote    = {A concise survey of theoretical equivalence, surplus structure,
+               and gauge theory, aimed at philosophers of physics. Connects
+               formal criteria to questions of ontology and representation.
+               An accessible entry point that synthesizes the Barrett--Halvorson
+               and Weatherall lines of work.}
+}
+
+@incollection{butterfield2020dualities,
+  author    = {Jeremy Butterfield},
+  title     = {On Dualities and Equivalences Between Physical Theories},
+  booktitle = {Philosophy Beyond Spacetime},
+  editor    = {Nick Huggett and Keizo Matsubara and Christian W{\"u}thrich},
+  publisher = {Oxford University Press},
+  year      = {2020},
+  url       = {https://arxiv.org/abs/1806.01505},
+  keywords  = {surveys},
+  annote    = {A wide-ranging survey bridging the formal logic and philosophy
+               of physics literatures on equivalence and duality. Covers
+               T-duality, AdS/CFT, and general formal criteria within a
+               unified framework; particularly useful for seeing how
+               physics dualities relate to philosophical notions of equivalence.}
+}
+
+% ============================================================
+% FOUNDATIONAL LOGIC
+% ============================================================
+
+@phdthesis{kemeny1949typetheory,
+  author   = {John George Kemeny},
+  title    = {Type-Theory vs. Set-Theory},
+  school   = {Princeton University},
+  year     = {1949},
+  keywords = {foundational},
+  annote   = {An early systematic comparison of type theory and set theory as
+              logical foundations, establishing conditions under which they
+              can be regarded as equivalent. One of the first rigorous
+              treatments of the question of logical synonymy.}
+}
+
+@article{shulman2019material,
+  author   = {Michael Shulman},
+  title    = {Comparing Material and Structural Set Theories},
+  journal  = {Annals of Pure and Applied Logic},
+  volume   = {170},
+  number   = {4},
+  pages    = {465--504},
+  year     = {2019},
+  doi      = {10.1016/j.apal.2018.11.002},
+  url      = {https://arxiv.org/abs/1808.05204},
+  keywords = {foundational},
+  annote   = {A systematic formal comparison of material set theories (e.g. ZF, where sets have members that are themselves sets) and
+              structural set theories (e.g.\ ETCS, where structure is given
+              by morphisms rather than membership). Establishes precise
+              conditions under which the two approaches are equivalent.}
+}
+
+@article{gajda1987syntactical,
+  author   = {Adam Gajda and Micha{\l} Krynicki and Les{\l}aw Szczerba},
+  title    = {A Note on Syntactical and Semantical Functions},
+  journal  = {Studia Logica},
+  volume   = {46},
+  pages    = {177--185},
+  year     = {1987},
+  doi      = {10.1007/BF00370379},
+  keywords = {foundational},
+  annote   = {Studies the correspondence between syntactical functions (operations
+              on formulas) and semantical functions (operations on model classes
+              / functors between models). Proves that a syntactical function has
+              a correlated semantical function if and only if it preserves
+              propositional connectives up to logical equivalence, and that a
+              semantical function has a syntactical correlate if and only if it
+              is continuous in the model-class topology. Connects functor-based
+              and formula-based perspectives on theory translation.}
+}
+
+@incollection{debouvere1965synonymous,
+  author    = {K. L. de Bouv{\`e}re},
+  title     = {Synonymous Theories},
+  booktitle = {The Theory of Models: Proceedings of the 1963 International
+               Symposium at Berkeley},
+  editor    = {J. W. Addison and Leon Henkin and Alfred Tarski},
+  publisher = {North Holland},
+  year      = {1965},
+  pages     = {402--406},
+  keywords  = {foundational},
+  annote    = {One of the earliest logical treatments of definitional
+               equivalence between theories in different signatures.
+               Introduces synonymous theories and proves a characterization
+               theorem via Beth's theorem.}
+}
+
+@incollection{szczerba1977interpretability,
+  author    = {L. W. Szczerba},
+  title     = {Interpretability of Elementary Theories},
+  booktitle = {Logic, Foundations of Mathematics and Computability Theory},
+  editor    = {Robert Butts and Jaakko Hintikka},
+  publisher = {Reidel},
+  address   = {Dordrecht},
+  year      = {1977},
+  pages     = {129--145},
+  keywords  = {foundational},
+  doi = {10.1007/978-94-010-1138-9_8},
+  annote    = {Studies interpretability between elementary theories with
+               applications to geometry. Includes results on theories
+               formulated with points only versus points and lines,
+               directly relevant to the scope of Morita equivalence.}
+}
+
+@article{andreka2005mutual,
+  author   = {Hajnal Andr{\'e}ka and Judit X. Madar{\'a}sz
+              and Istv{\'a}n N{\'e}meti},
+  title    = {Mutual Definability Does Not Imply Definitional Equivalence:
+              {A} Simple Example},
+  journal  = {Mathematical Logic Quarterly},
+  volume   = {51},
+  number   = {6},
+  pages    = {591--597},
+  year     = {2005},
+  doi      = {10.1002/malq.200410043},
+  keywords = {foundational},
+  annote   = {Provides a concrete counterexample showing that mutual
+              definability does not imply definitional equivalence.
+              Essential for understanding the logical geography between
+              competing criteria.}
+}
+
+@article{tsementzis2017syntactic,
+  author     = {Dimitris Tsementzis},
+  title      = {A Syntactic Characterization of {Morita} Equivalence},
+  journal    = {Journal of Symbolic Logic},
+  volume     = {82},
+  number     = {4},
+  pages      = {1181--1217},
+  year       = {2017},
+  doi        = {10.1017/jsl.2016.30},
+  url        = {https://arxiv.org/abs/1507.02302},
+  keywords   = {foundational},
+  annote     = {Gives a purely syntactic characterization of Morita
+                equivalence via common Morita extensions, bridging the
+                syntactic and categorical approaches.}
+}
+
+@article{vanbenthem1984mathematical,
+  author   = {Johan van Benthem and David Pearce},
+  title    = {A Mathematical Characterization of Interpretation between Theories},
+  journal  = {Studia Logica},
+  volume   = {43},
+  number   = {3},
+  pages    = {295--303},
+  year     = {1984},
+  doi      = {10.1007/BF02429844},
+  keywords = {foundational},
+  annote   = {Gives a clean model-theoretic characterization of interpretation
+              in terms of reduction functions on model classes. Bridges the
+              Tarski-school interpretability results and later philosophical
+              work; clarifies the relationship between interpretability and
+              definitional equivalence.}
+}
+
+@article{pelletier2003synonymous,
+  author   = {Francis Jeffry Pelletier and Alasdair Urquhart},
+  title    = {Synonymous Logics},
+  journal  = {Journal of Philosophical Logic},
+  volume   = {32},
+  number   = {3},
+  pages    = {259--285},
+  year     = {2003},
+  doi      = {10.1023/A:1024122029337},
+  keywords = {foundational},
+  annote   = {Studies when two logical systems are synonymous---when mutual
+              translations compose to the identity on both sides. Connects
+              de Bouv\`{e}re's synonymy to propositional and modal settings,
+              and proves several characterization theorems.}
+}
+
+@article{pelletier2008correction,
+  author   = {Francis Jeffry Pelletier and Alasdair Urquhart},
+  title    = {Synonymous Logics: {A} Correction},
+  journal  = {Journal of Philosophical Logic},
+  volume   = {37},
+  number   = {1},
+  pages    = {95--100},
+  year     = {2008},
+  doi      = {10.1007/s10992-007-9053-y},
+  keywords = {foundational},
+  annote   = {Corrects an error in a lemma from the 2003 paper.
+              Should be read alongside it.}
+}
+
+@article{lefever2019nondisj,
+  author   = {Koen Lefever and Gerg\H{o} Sz{\'e}kely},
+  title    = {On Generalization of Definitional Equivalence to Non-Disjoint Languages},
+  journal  = {Journal of Philosophical Logic},
+  volume   = {48},
+  number   = {4},
+  pages    = {709--729},
+  year     = {2019},
+  doi      = {10.1007/s10992-018-9491-0},
+  keywords = {foundational},
+  annote   = {Extends definitional equivalence---classically defined only for
+              theories with disjoint signatures---to theories sharing vocabulary.
+              Directly relevant to the scope and limitations of Morita equivalence
+              as a philosophical criterion.}
+}
+
+@article{friend2019distances,
+  author   = {Mich\`ele Friend and Mohammad Khaled and Koen Lefever
+              and Gerg\H{o} Sz{\'e}kely},
+  title    = {Distances Between Formal Theories},
+  journal  = {Review of Symbolic Logic},
+  volume   = {12},
+  number   = {4},
+  pages    = {639--660},
+  year     = {2019},
+  url      = {https://arxiv.org/abs/1807.01501},
+  keywords = {foundational},
+  annote   = {Introduces a metric on the space of theories measuring how many
+              additional sorts are needed to reach definitional equivalence.
+              Extends the Andr\'eka--M\'adar\'asz--N\'emeti framework into a
+              quantitative measure of theoretical distance.}
+}
+
+@article{andreka2024testing,
+  author   = {Hajnal Andr{\'e}ka and Judit X. Madar{\'a}sz
+              and Istv{\'a}n N{\'e}meti and Gerg\H{o} Sz{\'e}kely},
+  title    = {Testing Definitional Equivalence of Theories via Automorphism Groups},
+  journal  = {Review of Symbolic Logic},
+  volume   = {17},
+  number   = {4},
+  pages    = {1097--1118},
+  year     = {2024},
+  keywords = {foundational},
+  annote   = {Shows that automorphism groups of models serve as a computable
+              invariant for testing definitional equivalence. The most recent
+              result from the Budapest school; directly extends the 2005 paper
+              in this bibliography.}
+}
+
+@article{friedman2025biinterpretability,
+  author   = {Harvey Friedman and Albert Visser},
+  title    = {When Bi-Interpretability Implies Synonymy},
+  journal  = {Review of Symbolic Logic},
+  year     = {2025},
+  note     = {Published online},
+  keywords = {foundational},
+  annote   = {Identifies conditions under which bi-interpretability---the
+              weaker notion common in proof theory and arithmetic---implies
+              synonymy in the sense of de Bouv\`{e}re. Settles a long-standing
+              question about the logical relationship between these two criteria.}
+}
+
+% ============================================================
+% FORMAL CRITERIA FOR EQUIVALENCE
+% ============================================================
+
+@article{arana2025expansion,
+  author   = {Diego Arana Segura},
+  title    = {Equivalence and Theory Expansion},
+  journal  = {Synthese},
+  volume   = {206},
+  pages    = {147},
+  year     = {2025},
+  doi      = {10.1007/s11229-025-05236-8},
+  keywords = {criteria},
+  annote   = {Examines how theory expansion — adding new vocabulary or axioms —
+              interacts with notions of theoretical equivalence. Explores when
+              expansions preserve or break equivalence, with implications for
+              how equivalence criteria should handle the growth of theories.}
+}
+
+@incollection{sider2020equivalence,
+  author    = {Theodore Sider},
+  title     = {Equivalence},
+  booktitle = {The Tools of Metaphysics and the Metaphysics of Science},
+  publisher = {Oxford University Press},
+  year      = {2020},
+  pages     = {177--209},
+  chapter   = {5},
+  url       = {https://tedsider.org/books/tools.html},
+  keywords  = {criteria},
+  annote    = {A sustained treatment of theoretical equivalence from a
+               metaphysical perspective, arguing that equivalence requires
+               not merely formal or empirical equivalence but sameness of
+               fundamental structure. Engages with and extends the debate
+               between deflationary and inflationary accounts.}
+}
+
+@article{north2025middleway,
+  author   = {Jill North},
+  title    = {Paving the Way for a Middle Way on Theoretical Equivalence},
+  journal  = {Philosophy of Physics},
+  year     = {2025},
+  note     = {Forthcoming},
+  url      = {https://jillnorth.org/North%20-%20Paving%20the%20Way%20for%20a%20Middle%20Way.pdf},
+  keywords = {criteria},
+  annote   = {Argues for a middle way between deflationary and inflationary
+              positions on theoretical equivalence, avoiding both the view
+              that formal equivalence is sufficient and the view that only
+              a rich notion of sameness of content suffices. Prepares the
+              ground for a moderate account that takes seriously both
+              structural and interpretive considerations.}
+}
+
+@unpublished{march2024kinematics,
+  author   = {Eleanor March},
+  title    = {Categorical Equivalence and the Kinematics-Dynamics Distinction},
+  year     = {2024},
+  note     = {Preprint},
+  url      = {https://philsci-archive.pitt.edu/24191/1/KPMs-pitt.pdf},
+  philsci  = {https://philsci-archive.pitt.edu/24191/},
+  keywords = {criteria},
+  annote   = {Extends the categorical equivalence programme to a theory's full
+              space of kinematically possible models, not just its dynamically
+              possible models. Motivates the extension via a first-order logic
+              case where categorical equivalence of dynamical models is too
+              weak, and develops a notion of kinematical categorical equivalence
+              with wide implications for the equivalence literature.}
+}
+
+@article{jacobs2025cosmic,
+  author   = {Caspar Jacobs and Eleanor March},
+  title    = {Kinematical Equivalence and Cosmic Conspiracies},
+  journal  = {British Journal for the Philosophy of Science},
+  year     = {2025},
+  doi      = {10.1086/738831},
+  url      = {https://philsci-archive.pitt.edu/24504/1/Kinematics_and_Cosmic_Conspiracies%20%281%29.pdf},
+  philsci  = {https://philsci-archive.pitt.edu/24504/},
+  keywords = {criteria},
+  annote   = {Applies March's notion of kinematical equivalence to the debate
+              between reduced and sophisticated theories. Argues that Dewar's
+              claim that these are equivalent fails because the two are
+              kinematically inequivalent, and that this inequivalence underlies
+              Jacobs's earlier finding that only sophisticated theories can
+              explain otherwise mysterious 'cosmic conspiracies'.}
+}
+
+@article{meadows2024linguistic,
+  author   = {Toby Meadows},
+  title    = {Beyond Linguistic Interpretation in Theory Comparison},
+  journal  = {Review of Symbolic Logic},
+  volume   = {17},
+  number   = {3},
+  pages    = {819--859},
+  year     = {2024},
+  doi      = {10.1017/S1755020323000321},
+  keywords = {criteria},
+  annote   = {Assembles a unifying categorical framework for comparing theories,
+              organising a table of equivalence relations and the containment
+              relationships among them. Shows that Morita equivalence fits
+              the framework and answers questions left open in Barrett and
+              Halvorson. Includes a topological proof that certain
+              superficially similar theories are not definitionally equivalent.}
+}
+
+@unpublished{meadows2024halvorson,
+  author   = {Toby Meadows},
+  title    = {The Halvorson Examples},
+  year     = {2024},
+  note     = {Preprint},
+  url      = {https://philsci-archive.pitt.edu/26635/1/The_Halvorson_Example.pdf},
+  philsci  = {https://philsci-archive.pitt.edu/26635/},
+  keywords = {criteria},
+  annote   = {Gives a new topological proof that Halvorson's example of a pair
+              of theories with equivalent categories but no definitional
+              equivalence is genuine. The converse of the key theorem
+              reveals a surprising class of superficially similar theories
+              that are definitionally equivalent after all, shedding new
+              light on what makes the original example work.}
+}
+
+@unpublished{meadows2023risk,
+  author   = {Toby Meadows},
+  title    = {Risk and Theoretical Equivalence in Mathematical Foundations},
+  year     = {2023},
+  note     = {Preprint},
+  url      = {https://escholarship.org/uc/item/8b76h619},
+  keywords = {foundational},
+  annote   = {Brings together consistency, interpretability, and probability
+              as instruments for foundational theory comparison, with emphasis
+              on set theory. Addresses counterintuitive results about
+              pointwise interpretability and proposes a novel framework
+              for comparing the epistemic risk profiles of competing
+              foundational theories.}
+}
+
+@article{pinter1978properties,
+  author   = {Charles C. Pinter},
+  title    = {Properties Preserved under Definitional Equivalence and Interpretations},
+  journal  = {Zeitschrift f{\"u}r mathematische Logik und Grundlagen der Mathematik},
+  volume   = {24},
+  pages    = {481--488},
+  year     = {1978},
+  philpapers = {https://philpapers.org/rec/PINPPU-4},
+  keywords = {criteria},
+  annote   = {Characterizes which model-theoretic properties are preserved under
+              definitional equivalence and under interpretations. An early
+              systematic investigation of what is invariant when two theories
+              are related by interpretation, directly relevant to debates about
+              what theoretical equivalence requires.}
+}
+
+@article{quine1975empirically,
+  author   = {W. V. O. Quine},
+  title    = {On Empirically Equivalent Systems of the World},
+  journal  = {Erkenntnis},
+  volume   = {9},
+  pages    = {313--328},
+  year     = {1975},
+  keywords = {criteria},
+  annote   = {Proposes equivalence via reconstrual of predicates. One of
+              the two canonical philosophical proposals (with Glymour)
+              that motivated subsequent formal work.}
+}
+
+@incollection{glymour1971theoretical,
+  author    = {Clark Glymour},
+  title     = {Theoretical Realism and Theoretical Equivalence},
+  booktitle = {{PSA} 1970: Proceedings of the Biennial Meeting of the
+               Philosophy of Science Association},
+  editor    = {Roger Buck and Robert S. Cohen},
+  series    = {Boston Studies in the Philosophy of Science},
+  volume    = {8},
+  publisher = {Reidel},
+  address   = {Dordrecht},
+  year      = {1971},
+  pages     = {275--288},
+  philpapers = {https://philpapers.org/rec/GLYTRA},
+  keywords  = {criteria},
+  annote    = {Introduces definitional equivalence (common definitional
+               extension) into philosophy of science as part of a defense
+               of scientific realism. The founding text for the programme.}
+}
+
+@book{glymour1980theory,
+  author    = {Clark Glymour},
+  title     = {Theory and Evidence},
+  publisher = {Princeton University Press},
+  year      = {1980},
+  keywords  = {criteria},
+  annote    = {Contains the most developed version of the common-definitional-
+               extension criterion for theoretical equivalence; Chapter III
+               is the key reference.}
+}
+
+@article{coffey2014theoretical,
+  author     = {Kevin Coffey},
+  title      = {Theoretical Equivalence as Interpretive Equivalence},
+  journal    = {British Journal for the Philosophy of Science},
+  volume     = {65},
+  number     = {4},
+  pages      = {821--844},
+  year       = {2014},
+  doi        = {10.1093/bjps/axt034},
+  philpapers = {https://philpapers.org/rec/COFTEA},
+  keywords   = {criteria},
+  annote     = {Argues that formal criteria are insufficient: two theories
+                are equivalent only if they share the same interpretation
+                of the world. An important critical voice in the debate.}
+}
+
+@article{barrett2016morita,
+  author     = {Thomas William Barrett and Hans Halvorson},
+  title      = {Morita Equivalence},
+  journal    = {Review of Symbolic Logic},
+  volume     = {9},
+  number     = {3},
+  pages      = {556--582},
+  year       = {2016},
+  doi        = {10.1017/S1755020316000174},
+  url        = {https://arxiv.org/abs/1506.04675},
+  philsci    = {https://philsci-archive.pitt.edu/11511/},
+  philpapers = {https://philpapers.org/rec/BARME-5},
+  keywords   = {criteria},
+  annote     = {Introduces Morita equivalence to philosophy of science as
+                a criterion intermediate between definitional and categorical
+                equivalence. Shows that adding new sorts by explicit
+                definition is theoretically inert.}
+}
+
+@article{barrett2016glymour,
+  author     = {Thomas William Barrett and Hans Halvorson},
+  title      = {Glymour and {Quine} on Theoretical Equivalence},
+  journal    = {Journal of Philosophical Logic},
+  volume     = {45},
+  number     = {5},
+  pages      = {467--483},
+  year       = {2016},
+  doi        = {10.1007/s10992-015-9382-6},
+  philsci    = {https://philsci-archive.pitt.edu/11341/},
+  philpapers = {https://philpapers.org/rec/BARGAQ},
+  keywords   = {criteria},
+  annote     = {Shows that Glymour's and Quine's criteria are not
+                equivalent to each other, and maps the logical relations
+                among four formal criteria for theoretical equivalence.}
+}
+
+@incollection{halvorson2017categories,
+  author    = {Hans Halvorson and Dimitris Tsementzis},
+  title     = {Categories of Scientific Theories},
+  booktitle = {Categories for the Working Philosopher},
+  editor    = {Elaine Landry},
+  publisher = {Oxford University Press},
+  year      = {2018},
+  doi       = {10.1093/oso/9780198748991.003.0017},
+  philsci   = {https://philsci-archive.pitt.edu/11596/},
+  keywords  = {criteria},
+  annote    = {Argues that the category of models (with appropriate
+               morphisms) is the correct invariant for theoretical
+               content, and that categorical equivalence is the
+               appropriate notion of theoretical equivalence.}
+}
+
+@article{barrett2022mutual,
+  author     = {Thomas William Barrett and Hans Halvorson},
+  title      = {Mutual Translatability, Equivalence, and the Structure of Theories},
+  journal    = {Synthese},
+  volume     = {200},
+  number     = {3},
+  year       = {2022},
+  doi        = {10.1007/s11229-022-03733-8},
+  philpapers = {https://philpapers.org/rec/BARTAN},
+  keywords   = {criteria},
+  annote     = {Shows that mutual translatability without compatibility
+                conditions does not imply definitional equivalence, and
+                investigates the structural commitments that survive
+                under weaker notions of intertranslatability.}
+}
+
+@article{hudetz2019definable,
+  author     = {Laurenz Hudetz},
+  title      = {Definable Categorical Equivalence},
+  journal    = {Philosophy of Science},
+  volume     = {86},
+  number     = {1},
+  pages      = {47--75},
+  year       = {2019},
+  doi        = {10.1086/700966},
+  philsci    = {https://philsci-archive.pitt.edu/14297/},
+  philpapers = {https://philpapers.org/rec/HUDDCE},
+  keywords   = {criteria},
+  annote     = {Proposes definable categorical equivalence, requiring
+                that the equivalence functors themselves be definable.
+                Bridges the Morita and categorical approaches while
+                avoiding over-identification of inequivalent theories.}
+}
+
+@unpublished{weatherall2019categorical,
+  author   = {James Owen Weatherall},
+  title    = {Why Not Categorical Equivalence?},
+  year     = {2019},
+  url      = {https://arxiv.org/abs/1812.00943},
+  note     = {Preprint},
+  keywords = {criteria},
+  annote   = {Argues against categorical equivalence as the default
+              standard: two theories can be categorically equivalent
+              yet intuitively inequivalent, because the criterion is
+              insensitive to the choice of morphisms.}
+}
+
+@article{mceldowney2022morita,
+  author     = {Paul Anh McEldowney},
+  title      = {On {Morita} Equivalence and Interpretability},
+  journal    = {Review of Symbolic Logic},
+  volume     = {15},
+  number     = {4},
+  pages      = {1057--1100},
+  year       = {2022},
+  doi        = {10.1017/S1755020321000022},
+  philpapers = {https://philpapers.org/rec/MCEOME-2},
+  keywords   = {criteria},
+  annote     = {Shows Morita equivalence implies mutual faithful
+                interpretability but not vice versa, sharpening the
+                map of logical relations between equivalence criteria.}
+}
+
+@article{barrett2020structure,
+  author     = {Thomas William Barrett},
+  title      = {Structure and Equivalence},
+  journal    = {Philosophy of Science},
+  volume     = {87},
+  number     = {5},
+  pages      = {1184--1196},
+  year       = {2020},
+  doi        = {10.1086/710401},
+  philsci    = {https://philsci-archive.pitt.edu/16454/},
+  philpapers = {https://philpapers.org/rec/BARSAE-8},
+  keywords   = {criteria},
+  annote     = {Argues that theoretical equivalence cannot be settled
+                independently of prior commitments about how to
+                individuate theoretical content: any such commitment
+                entails a corresponding standard of equivalence.}
+}
+
+@article{barrett2022count,
+  author   = {Thomas William Barrett},
+  title    = {How to Count Structure},
+  journal  = {No{\^u}s},
+  volume   = {56},
+  number   = {2},
+  pages    = {295--322},
+  year     = {2022},
+  doi      = {10.1111/nous.12392},
+  keywords = {criteria},
+  annote   = {Develops a framework for comparing the amounts of structure
+              that theories posit, using Beth's and Svenonius' definability
+              theorems. Connects equivalence criteria to questions of
+              ontological parsimony.}
+}
+
+@article{halvorson2012scientific,
+  author   = {Hans Halvorson},
+  title    = {What Scientific Theories Could Not Be},
+  journal  = {Philosophy of Science},
+  volume   = {79},
+  number   = {2},
+  pages    = {183--206},
+  year     = {2012},
+  doi      = {10.1086/664745},
+  keywords = {criteria},
+  annote   = {Argues that the semantic (model-theoretic) view of theories
+              cannot individuate scientific theories correctly: it conflates
+              distinct theories and is insensitive to differences that matter
+              for equivalence. The paper that initiated the main contemporary
+              exchange on formal criteria.}
+}
+
+@article{glymour2013theoretical,
+  author   = {Clark Glymour},
+  title    = {Theoretical Equivalence and the Semantic View of Theories},
+  journal  = {Philosophy of Science},
+  volume   = {80},
+  number   = {2},
+  pages    = {286--297},
+  year     = {2013},
+  doi      = {10.1086/670261},
+  keywords = {criteria},
+  annote   = {Response to Halvorson 2012. Defends a weaker criterion based on
+              isomorphism of model categories and argues it captures the cases
+              that philosophically matter.}
+}
+
+@article{halvorson2013semantic,
+  author   = {Hans Halvorson},
+  title    = {The Semantic View, If Plausible, Is Syntactic},
+  journal  = {Philosophy of Science},
+  volume   = {80},
+  number   = {3},
+  pages    = {475--478},
+  year     = {2013},
+  doi      = {10.1086/671077},
+  keywords = {criteria},
+  annote   = {Brief reply to Glymour 2013. Argues that any workable version
+              of the semantic view implicitly relies on syntactic structure,
+              collapsing the distinction between syntactic and semantic
+              approaches.}
+}
+
+@article{barrett2017quine,
+  author   = {Thomas William Barrett and Hans Halvorson},
+  title    = {Quine's Conjecture on Many-Sorted Logic},
+  journal  = {Synthese},
+  volume   = {194},
+  number   = {9},
+  pages    = {3563--3582},
+  year     = {2017},
+  doi      = {10.1007/s11229-016-1107-z},
+  keywords = {criteria},
+  annote   = {Proves Quine's conjecture that any many-sorted first-order theory
+              is definitionally equivalent to a one-sorted theory. Shows the
+              number of sorts is not a genuine feature of theoretical content
+              under definitional equivalence.}
+}
+
+@article{barrett2017geometry,
+  author   = {Thomas William Barrett and Hans Halvorson},
+  title    = {From Geometry to Conceptual Relativity},
+  journal  = {Erkenntnis},
+  volume   = {82},
+  number   = {5},
+  pages    = {1043--1063},
+  year     = {2017},
+  doi      = {10.1007/s10670-016-9858-y},
+  keywords = {criteria},
+  annote   = {Uses definitional equivalence to sharpen the Poincar\'e
+              conventionalism debate: Euclidean and non-Euclidean geometries
+              supplemented with appropriate universal forces are definitionally
+              equivalent, giving a precise sense in which the choice of geometry
+              is conventional.}
+}
+
+@article{nguyen2017scientific,
+  author   = {James Nguyen},
+  title    = {Scientific Representation and Theoretical Equivalence},
+  journal  = {Philosophy of Science},
+  volume   = {84},
+  number   = {5},
+  pages    = {982--995},
+  year     = {2017},
+  doi      = {10.1086/693988},
+  keywords = {criteria},
+  annote   = {Connects formal criteria for theoretical equivalence to debates
+              about scientific representation. Argues that representational
+              considerations can force inequivalence judgments even when
+              formal criteria are satisfied.}
+}
+
+@article{hudetz2017semantic,
+  author   = {Laurenz Hudetz},
+  title    = {The Semantic View of Theories and Higher-Order Languages},
+  journal  = {Synthese},
+  volume   = {196},
+  number   = {3},
+  pages    = {1131--1149},
+  year     = {2019},
+  doi      = {10.1007/s11229-017-1502-0},
+  keywords = {criteria},
+  annote   = {Shows that formulating the semantic view in higher-order logic
+              dissolves apparent differences between syntactic and semantic
+              approaches. Bears on whether categorical equivalence captures
+              the same notion as definitional equivalence.}
+}
+
+@article{dewar2018translating,
+  author   = {Neil Dewar},
+  title    = {On Translating between Logics},
+  journal  = {Analysis},
+  volume   = {78},
+  number   = {4},
+  pages    = {622--630},
+  year     = {2018},
+  doi      = {10.1093/analys/any001},
+  keywords = {criteria},
+  annote   = {Proposes a criterion for when two logics are theoretically
+              equivalent, based on the existence of faithful translations
+              between them. Shows that syntactic translatability and semantic
+              equivalence come apart in general, and argues that the right
+              criterion must be sensitive to the inferential role of the
+              logical constants.}
+}
+
+@article{dewar2019ramsey,
+  author   = {Neil Dewar},
+  title    = {Ramsey Equivalence},
+  journal  = {Erkenntnis},
+  volume   = {84},
+  number   = {1},
+  pages    = {77--99},
+  year     = {2019},
+  doi      = {10.1007/s10670-017-9948-5},
+  keywords = {criteria},
+  annote   = {Proposes a criterion for theoretical equivalence based on
+              Ramsey sentences: two theories are Ramsey-equivalent when
+              their Ramsey sentences are logically equivalent. Situates
+              this criterion relative to definitional equivalence and
+              explores its connections to structural realism.}
+}
+
+@article{dewar2019supervenience,
+  author   = {Neil Dewar},
+  title    = {Supervenience, Reduction, and Translation},
+  journal  = {Philosophy of Science},
+  volume   = {86},
+  number   = {5},
+  pages    = {942--954},
+  year     = {2019},
+  doi      = {10.1086/705445},
+  keywords = {criteria},
+  annote   = {Clarifies the formal relationships between supervenience,
+              reduction, and translation between theories. Shows that
+              several notions of reduction and supervenience can be
+              explicated in terms of definability, unifying them within
+              a common logical framework.}
+}
+
+@article{dewar2023interpretation,
+  author   = {Neil Dewar},
+  title    = {Interpretation and Equivalence; or, Equivalence and Interpretation},
+  journal  = {Synthese},
+  volume   = {201},
+  number   = {4},
+  year     = {2023},
+  doi      = {10.1007/s11229-023-04102-9},
+  keywords = {criteria},
+  annote   = {Examines the relationship between interpretation and
+              equivalence between theories, arguing the two are more
+              tightly connected than is often supposed. Analyzes several
+              formal accounts and considers their philosophical implications.}
+}
+
+@article{dewar2023internal,
+  author   = {Neil Dewar},
+  title    = {On Internal Structure, Categorical Structure, and Representation},
+  journal  = {Philosophy of Science},
+  volume   = {90},
+  number   = {1},
+  pages    = {188--195},
+  year     = {2023},
+  doi      = {10.1017/psa.2022.10},
+  keywords = {criteria},
+  annote   = {Distinguishes internal structural equivalence from categorical
+              equivalence and argues they come apart in important cases.
+              Bears on whether categorical equivalence can serve as a
+              sufficient criterion for theoretical equivalence.}
+}
+
+@article{dewar2023convention,
+  author   = {Neil Dewar},
+  title    = {Equivalence and Convention},
+  journal  = {Philosophy of Science},
+  volume   = {91},
+  number   = {5},
+  pages    = {1242--1250},
+  year     = {2023},
+  doi      = {10.1017/psa.2023.148},
+  keywords = {criteria},
+  annote   = {Argues that conventional choices---such as which predicates
+              to take as primitive---affect whether two theories count as
+              equivalent. Connects theoretical equivalence to the broader
+              role of convention in scientific language.}
+}
+
+@article{teitel2021theoretical,
+  author   = {Trevor Teitel},
+  title    = {What Theoretical Equivalence Could Not Be},
+  journal  = {Philosophical Studies},
+  volume   = {178},
+  number   = {12},
+  pages    = {4119--4149},
+  year     = {2021},
+  doi      = {10.1007/s11098-021-01639-8},
+  keywords = {criteria},
+  annote   = {Argues that no purely formal criterion can fully capture
+              theoretical equivalence, because equivalence judgments require
+              substantive input about which features of a theory carry
+              representational significance.}
+}
+
+% ============================================================
+% PHILOSOPHY OF PHYSICS
+% ============================================================
+
+@article{rosenstock2016holonomy,
+  author   = {Sarita Rosenstock and James Owen Weatherall},
+  title    = {A Categorical Equivalence between Generalized Holonomy Maps
+              on a Connected Manifold and Principal Connections on Bundles
+              over that Manifold},
+  journal  = {Journal of Mathematical Physics},
+  volume   = {57},
+  number   = {10},
+  pages    = {102902},
+  year     = {2016},
+  doi      = {10.1063/1.4965445},
+  url      = {https://arxiv.org/abs/1504.02401},
+  philsci  = {https://philsci-archive.pitt.edu/11904/},
+  keywords = {physics},
+  annote   = {Establishes a categorical equivalence between generalized
+              holonomy maps on a connected manifold and principal connections
+              on bundles over that manifold. Clarifies the sense in which
+              the holonomy and fiber bundle formulations of gauge theories
+              are equivalent, and bears on debates about how much structure
+              gauge theories genuinely posit.}
+}
+
+@article{north2009structure,
+  author   = {Jill North},
+  title    = {The Structure of Physics: {A} Case Study},
+  journal  = {Journal of Philosophy},
+  volume   = {106},
+  number   = {2},
+  pages    = {57--88},
+  year     = {2009},
+  keywords = {physics},
+  annote   = {Uses Lagrangian versus Hamiltonian mechanics to argue
+              that formally equivalent theories can differ in mathematical
+              structure and thereby in what they reveal about the world.
+              An influential challenge to purely formal criteria.}
+}
+
+@article{rosenstock2015einstein,
+  author     = {Sarita Rosenstock and Thomas William Barrett
+                and James Owen Weatherall},
+  title      = {On {Einstein} Algebras and Relativistic Spacetimes},
+  journal    = {Studies in History and Philosophy of Modern Physics},
+  volume     = {52},
+  pages      = {309--316},
+  year       = {2015},
+  doi        = {10.1016/j.shpsb.2015.09.004},
+  url        = {https://arxiv.org/abs/1506.00124},
+  philsci    = {https://philsci-archive.pitt.edu/11491/},
+  philpapers = {https://philpapers.org/rec/ROSOEA-2},
+  keywords   = {physics},
+  annote     = {Shows that general relativity and Geroch's Einstein-algebra
+                formulation are categorically dual (and hence equivalent
+                in a strong formal sense). A worked application of
+                categorical methods to philosophy of physics.}
+}
+
+@article{weatherall2016newtonian,
+  author     = {James Owen Weatherall},
+  title      = {Are {Newtonian} Gravitation and Geometrized {Newtonian}
+                Gravitation Theoretically Equivalent?},
+  journal    = {Erkenntnis},
+  volume     = {81},
+  pages      = {1073--1091},
+  year       = {2016},
+  doi        = {10.1007/s10670-015-9783-5},
+  url        = {https://arxiv.org/abs/1411.5757},
+  philpapers = {https://philpapers.org/rec/WEAANG},
+  keywords   = {physics},
+  annote     = {Argues that standard and geometrized Newtonian gravitation
+                are theoretically equivalent via a categorical equivalence
+                of their model categories, answering a question left open
+                by earlier work using Glymour's criterion.}
+}
+
+@article{curiel2014classical,
+  author   = {Erik Curiel},
+  title    = {Classical Mechanics Is {Lagrangian}; It Is Not {Hamiltonian}},
+  journal  = {British Journal for the Philosophy of Science},
+  volume   = {65},
+  number   = {2},
+  pages    = {269--321},
+  year     = {2014},
+  doi      = {10.1093/bjps/axs034},
+  keywords = {physics},
+  annote   = {Argues at length that Lagrangian and Hamiltonian mechanics are
+              not theoretically equivalent despite their mathematical
+              relationship, because they have different solution spaces.
+              A careful counterpoint to North 2009 and to naive appeals to
+              formal equivalence in mechanics.}
+}
+
+@article{lebihan2018duality,
+  author   = {Baptiste Le Bihan and James Read},
+  title    = {Duality and Ontology},
+  journal  = {Philosophy Compass},
+  volume   = {13},
+  number   = {12},
+  year     = {2018},
+  doi      = {10.1111/phc3.12555},
+  keywords = {physics},
+  annote   = {A survey of philosophical issues raised by string-theoretic
+              dualities (T-duality, AdS/CFT). Asks whether dual theories are
+              equivalent descriptions of one world, and how to reason about
+              ontology when we lack a duality-invariant formulation.}
+}
+
+@article{weatherall2020equivalence,
+  author   = {James Owen Weatherall},
+  title    = {Equivalence and Duality in Electromagnetism},
+  journal  = {Philosophy of Science},
+  volume   = {87},
+  number   = {5},
+  pages    = {1172--1183},
+  year     = {2020},
+  doi      = {10.1086/710630},
+  keywords = {physics},
+  annote   = {Applies equivalence criteria to the Aharonov--Bohm case:
+              are the vector-potential formulation and the holonomy
+              formulation the same theory? A focused case study in how
+              categorical methods adjudicate physical equivalence questions.}
+}
+
+@article{nguyen2020surplus,
+  author   = {James Nguyen and Nicholas J. Teh and Laura Wells},
+  title    = {Why Surplus Structure Is Not Superfluous},
+  journal  = {British Journal for the Philosophy of Science},
+  volume   = {71},
+  number   = {2},
+  pages    = {665--695},
+  year     = {2020},
+  doi      = {10.1093/bjps/axy026},
+  keywords = {physics},
+  annote   = {Argues against eliminating gauge structure via theoretical
+              equivalence moves. Surplus mathematical structure can carry
+              genuine explanatory and predictive work even when not
+              directly represented in the physical ontology.}
+}
+
+@article{wilhelm2021structure,
+  author   = {Isaac Wilhelm},
+  title    = {Comparing the Structures of Mathematical Objects},
+  journal  = {Synthese},
+  volume   = {199},
+  pages    = {6357--6369},
+  year     = {2021},
+  doi      = {10.1007/s11229-021-03072-0},
+  url      = {https://philsci-archive.pitt.edu/27486/1/Comparing%20the%20Structures%20of%20Mathematical%20Objects.pdf},
+  philsci  = {https://philsci-archive.pitt.edu/27486/},
+  keywords = {criteria},
+  annote   = {Defends a criterion for comparing the amounts of structure
+              of mathematical objects using automorphism groups: object X
+              has at least as much structure as Y just in case X's
+              automorphism group is a subgroup of Y's. Argues this
+              'Subgroup' criterion is superior to the rival SYM* approach.
+              Directly engaged by Barrett, Manchak, and Weatherall (2023).}
+}
+
+@article{barrett2023automorphism,
+  author   = {Thomas William Barrett and John Byron Manchak
+              and James Owen Weatherall},
+  title    = {On Automorphism Criteria for Comparing Amounts of
+              Mathematical Structure},
+  journal  = {Synthese},
+  volume   = {201},
+  number   = {6},
+  pages    = {191},
+  year     = {2023},
+  url      = {https://arxiv.org/abs/2204.11973},
+  keywords = {physics},
+  annote   = {Examines whether the size of an automorphism group is a reliable
+              guide to the amount of structure a theory posits. Finds the
+              criterion fails in general, with implications for Weatherall-style
+              arguments in philosophy of physics.}
+}
+
+@article{dewar2019sophistication,
+  author   = {Neil Dewar},
+  title    = {Sophistication about Symmetries},
+  journal  = {The British Journal for the Philosophy of Science},
+  volume   = {70},
+  number   = {2},
+  pages    = {485--521},
+  year     = {2019},
+  doi      = {10.1093/bjps/axx021},
+  keywords = {physics},
+  annote   = {Defends a ``sophisticated'' attitude toward theories related
+              by a symmetry (such as a gauge symmetry): rather than treating
+              them as two distinct theories with the same empirical content,
+              we should regard them as equivalent formulations of the same
+              theory. Argues this avoids the problems of both naive realism
+              about gauge structure and eliminativist reduction, drawing on
+              the holonomy formulation of electromagnetism.}
+}
+
+@article{weatherall2024teleparallel,
+  author   = {James Owen Weatherall and Insa Meskhidze},
+  title    = {Are General Relativity and Teleparallel Gravity Theoretically Equivalent?},
+  journal  = {Philosophy of Physics},
+  volume   = {2},
+  number   = {1},
+  year     = {2024},
+  doi      = {10.31389/pop.152},
+  url      = {https://arxiv.org/abs/2406.15932},
+  philsci  = {https://philsci-archive.pitt.edu/24593/},
+  keywords = {physics},
+  annote   = {A careful philosophical analysis of whether general relativity
+              and teleparallel gravity---a reformulation using torsion rather
+              than curvature---are theoretically equivalent. Applies standard
+              formal criteria and finds the question is more subtle than it
+              appears.}
+}
