@@ -3,6 +3,7 @@ title: "Talks"
 author: Hans Halvorson
 ---
 
+- Equivalence: A Program (Oslo, June 2026) [pdf](talks/equivalence-oslo.pdf)
 - Er musste das Wissen aufheben — van Fraassen on the priority of the manifest image (Schock Prize Symposium, June 2026) [pdf](talks/schock.pdf) [html](talks/schock.html) [qmd](talks/schock.qmd)
 - Niels Bohr on Causal Explanation [pdf](talks/bohr-causality.pdf)
 - Climacus' two ways of reflection [pdf](talks/climacus.pdf)
