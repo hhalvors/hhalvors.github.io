@@ -36,6 +36,7 @@ import           BibTeXParser             (parseBibTeX, generateHTML)
 import           PubList                  (parseBibTeXFile, transformEntry, generateHtml)
 import           EquivBiblio              (generateEquivHTML)
 import           DanishTexts              (generateDanishTextsHTML)
+import           Syllabus                 (generateSyllabusHTML)
 import           LemmonFilter             (applyLemmonFilter)
 import CoursePages.Course
   ( loadCourseYaml
@@ -395,7 +396,8 @@ main = hakyllWith config $ do
 ---- end of course block
       
 
-    match ("courses/**.md" .&&. complement "courses/phi201_f2025/index.md") $ do
+    match ("courses/**.md" .&&. complement "courses/phi201_f2025/index.md"
+                            .&&. complement "courses/phi367_s2026/index.md") $ do
       route $ setExtension "html"
       compile $
         myPandocBiblioCompiler
@@ -560,6 +562,9 @@ main = hakyllWith config $ do
       compile getResourceBody
 
     match "data/danish-texts.yaml" $ do
+      compile getResourceBody
+
+    match "courses/phi367_s2026/syllabus.yaml" $ do
       compile getResourceBody
 
     create ["publications.html"] $ do
@@ -879,6 +884,28 @@ main = hakyllWith config $ do
 
     -- Redirect old URL
     redirect "pages/danish-texts.html" "/dansk/"
+
+    -- PHI 367 (Summer 2026) — "The Essential Kierkegaard" syllabus
+    -- Data lives in courses/phi367_s2026/syllabus.yaml; rendered by Syllabus.hs.
+    create ["courses/phi367_s2026/index.html"] $ do
+      route idRoute
+      compile $ do
+        _ <- (load (fromFilePath "courses/phi367_s2026/syllabus.yaml") :: Compiler (Item String))  -- declare dependency
+        result <- unsafeCompiler $
+          decodeFileEither "courses/phi367_s2026/syllabus.yaml"
+        case result of
+          Left err  -> error $ "YAML parse error (phi367 syllabus): " ++ show err
+          Right syl -> do
+            let htmlBody = generateSyllabusHTML syl
+            makeItem htmlBody
+              >>= loadAndApplyTemplate "templates/page.html"
+                    (constField "title" "The Essential Kierkegaard"
+                      `mappend` constField "hide_title" "true"
+                      `mappend` siteCtx)
+              >>= loadAndApplyTemplate "templates/default.html"
+                    (constField "title" "The Essential Kierkegaard"
+                      `mappend` baseSidebarCtx `mappend` siteCtx)
+              >>= relativizeUrls
 
 -- Rule to generate publications.html
 --    create ["publications.html"] $ do 
