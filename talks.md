@@ -26,7 +26,10 @@ author: Hans Halvorson
 - The goal of formal analysis [pdf](talks/formal-outline.pdf)
 - The concept of a reference frame [pdf](talks/vienna2023.pdf) 
 
-The TeX and QMD files are source files for the slides (Beamer and Quarto/Reveal.js respectively). Feel free to re-use formatting for your own presentations.
+## Open workshop
 
-For building diagrams: [GitHub repo](https://github.com/hhalvors/diagrams)
+The TeX and QMD files above are the source for the slides (Beamer and Quarto/Reveal.js respectively). Everything I use to build these talks is open — please re-use it for your own presentations:
+
+- [nordisk](https://github.com/hhalvors/nordisk) — write Beamer slide decks in Markdown. You author the *content* of a slide and a Lua filter infers the layout; XeLaTeX renders a PDF in a warm, Scandinavian-minimalist style. Includes Emacs keybindings for one-keystroke compile-and-view.
+- [diagrams](https://github.com/hhalvors/diagrams) — tools for building the commutative and other diagrams in the slides.
 

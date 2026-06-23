@@ -37,6 +37,7 @@ import           PubList                  (parseBibTeXFile, transformEntry, gene
 import           EquivBiblio              (generateEquivHTML)
 import           DanishTexts              (generateDanishTextsHTML)
 import           Syllabus                 (generateSyllabusHTML)
+import           Talks                    (generateTalksHTML)
 import           LemmonFilter             (applyLemmonFilter)
 import CoursePages.Course
   ( loadCourseYaml
@@ -637,14 +638,25 @@ main = hakyllWith config $ do
         route idRoute
         compile copyFileCompiler      
 
-    -- Talks
-    match "talks.md" $ do
-        route $ customRoute (const "talks.html")
+    -- Talks: data-driven page generated from data/talks.yaml (see Talks.hs)
+    match "data/talks.yaml" $ do
+        compile getResourceBody
+
+    create ["talks.html"] $ do
+        route idRoute
         compile $ do
-            pandocCompiler
-                >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Talks" `mappend` siteCtx)
-                >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
-                >>= relativizeUrls
+            _ <- (load (fromFilePath "data/talks.yaml") :: Compiler (Item String))  -- declare dependency
+            result <- unsafeCompiler $ decodeFileEither "data/talks.yaml"
+            case result of
+              Left err  -> error $ "YAML parse error (talks): " ++ show err
+              Right td  -> do
+                let htmlBody = generateTalksHTML td
+                makeItem htmlBody
+                  >>= loadAndApplyTemplate "templates/page.html"
+                        (constField "title" "Talks" `mappend` siteCtx)
+                  >>= loadAndApplyTemplate "templates/default.html"
+                        (constField "title" "Talks" `mappend` baseSidebarCtx `mappend` siteCtx)
+                  >>= relativizeUrls
 
     -- -- Bohr
     -- match "bohr/index.md" $ do
