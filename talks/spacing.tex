@@ -1,0 +1,9 @@
+% spacing.tex — global tweaks included via YAML include-in-header
+% Adds breathing room around block quotations so stacked quotes
+% separate automatically, with no manual \vspace per slide.
+
+\usepackage{etoolbox}
+
+% Add vertical space before and after every quote environment.
+\AtBeginEnvironment{quote}{\vskip0.5\baselineskip}
+\AfterEndEnvironment{quote}{\vskip0.5\baselineskip}
