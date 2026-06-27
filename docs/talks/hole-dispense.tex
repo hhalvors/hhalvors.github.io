@@ -1,0 +1,378 @@
+\documentclass{beamer}
+\author{Hans Halvorson}
+\title{Dispensing with the Hole Argument}
+\date{June 2, 2023}
+\begin{document}
+
+% TO DO: Leibniz equivalence
+
+% TO DO: counting models 
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Lochbetrachtung}
+
+  Einstein gets confused about how differential geometry works
+
+  \bigskip 
+\includegraphics[scale=0.5]{/Users/hhalvors/research/6.jpg}  
+
+ \bigskip  General covariance?
+
+\end{frame}
+
+\begin{frame}{Earman and Norton, What price spacetime
+    substantivalism?}
+
+  \begin{itemize}
+  \item Space substantivalism I (Newton): space is something sui
+    generis that always was and always will be 
+\item Spacetime substantivalism II: spacetime points exist
+\item Spacetime substantivalism III: these two models represent
+  different possible worlds \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{Pulling back a metric}
+
+  \begin{itemize}
+  \item A \textbf{smooth manifold} is a set $M$ with a family of
+    charts $\{ \psi :U\to \mathbb{R}^n | U\subseteq M \}$ satisfying a
+    compatibility requirement.
+  \item A \textbf{diffeomorphism} is a smooth map $\varphi :M\to N$
+    that has a smooth inverse.
+\item A \textbf{spacetime} $(M,g)$ is a smooth manifold equipped with
+  a Lorentzian metric $g$.
+\item If $\varphi :M\to N$ is a diffeomorphism, and $g$ is a
+  Lorentzian metric on $N$, then $\varphi ^\ast g$ is a Lorentzian
+  metric on $M$. 
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{The hole argument down to a point}
+
+  \begin{itemize}
+  \item Given $\varphi :M\to M$ with $\varphi (p)\neq p$ and $g(p)\neq
+    g(\phi (p))$
+  \item In $(M,g)$ we have $p\mapsto g(p)$
+  \item In $(M,\varphi ^*g)$ we have $p\mapsto g(\phi (p))$
+  \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{The hole argument in a nutshell}
+
+  \begin{enumerate}
+  \item Substantivalism: the models $(M,g)$ and $(M,\varphi ^*g)$
+    represent different possible worlds
+  \item Indeterminism: the models $(M,g)$ and $(M,\varphi ^*g)$
+    agree on everything in the past of the hole $O$.
+  \end{enumerate}
+
+
+\end{frame}
+
+
+\begin{frame}{Weatherall's mathematical dissolution}
+
+  \begin{itemize}
+  \item Even a substantivalist should grant that $(M,g)$ and
+    $(M,\varphi ^*g)$ represent the same possible world
+  \item The standard for comparison of $(M,g)$ and $(M,\varphi ^*g)$
+    is the isomorphism $\varphi$, not the identity $1_M$
+    \begin{itemize}
+     \item Compare $p\mapsto g(p)$ with $\varphi (p)\mapsto (\varphi
+       ^*g)(p)=g(\varphi (p))$
+     \item $1_M$ is not an isomorphism between $(M,g)$ and
+       $(M,\varphi ^*g)$
+    \end{itemize}
+  \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{Metaphysics revanche}
+
+  \begin{itemize}
+  \item Read and Pooley: Weatherall is assuming mathematical
+    structuralism
+  \item Teitel: Weatherall mistakenly assumes that mathematics solves
+    the metaphysical question
+  \end{itemize}
+
+
+
+  \end{frame}
+
+
+
+\begin{frame}{A practical/mathematical turn}
+
+  \begin{itemize}
+  \item Shouldn't the interpretation of physical theories be
+    independent of the \textbf{niceties} of the foundations of
+    mathematics?
+  \begin{itemize} \item Axioms about higher cardinal numbers
+  \item Perhaps even the axiom of choice  
+  \end{itemize}
+\item Granted that there \emph{are} substantive metaphysical disputes,
+  it is surely the case that some of our questions are
+  pseudo-questions, especially where difficult mathematics is involved
+\item Goal: clear conceptual reasoning about highly mathematized
+  theories
+\item Goal: understanding how to represent theoretical commitment
+  through the use of mathematical formalism
+\item Goal: deciding whether physical theories and/or the foundations
+  of mathematics need to be reformed
+\end{itemize}
+
+
+\end{frame}
+
+
+
+\begin{frame}{How to reason with models}
+
+  \begin{itemize}
+  \item \textbf{Democracy:} When reasoning with models, there is no
+    default standard of cross-model identity of points.
+  \item Equivalently: A model $M$ can always be replaced by an
+    isomorphic model $M'$.
+  \end{itemize}  
+
+
+\end{frame}
+
+\begin{frame}{How to reason with models}
+
+  \begin{itemize}
+  \item \textbf{Counting:} When reasoning with models, we never need to count
+  how many models are in an isomorphism class
+\item Set-theoretic foundations (i.e.\ model theory based on ZF set
+  theory) invites violations of Monads and Counting
+\item WARNING: Counting does not imply that isomorphic models are identical
+\end{itemize}
+  
+\end{frame}
+
+\begin{frame}{The paradox of symmetry}
+
+  % maybe after univalence
+
+  \begin{enumerate}
+  \item If there is an isomorphism $\varphi :M\to N$ then $M=N$.
+  \item There are true counterfactual statements.
+    \begin{itemize} \item ``$X$ could have had a different velocity
+      than it actually has''
+    \item ``More than one velocity is possible''
+    \item ``If a force were applied to $X$, then it would change
+      velocity''
+   \end{itemize}   
+  \end{enumerate}
+  
+  \bigskip This paradox is especially acute in theories with
+  transitive symmetry group, e.g.\ Galilean relativity, special
+  relativity, quantum mechanics.
+  
+\end{frame}
+
+\begin{frame}{The categorical mindset}
+
+  \begin{itemize}
+  \item A \textbf{category} $C$ consists of objects $C_0$ and arrows $C_1$
+  \item Category of models: take $C_0$ to be models and $C_1$ to be
+    symmetries
+  \item A \textbf{functor} $F:C\to D$ consists of a pair of maps, one
+    on objects and one on arrows
+  \item Categories $C$ and $D$ are \textbf{equivalent} just in case
+    there are functors $F:C\to D$ and $G:D\to C$ that are
+    quasi-inverse
+  \item Fact: An equivalence of categories induces a bijection of
+    isomorphism classes of objects 
+  \item Fact: Equivalent categories can nonetheless have different
+    numbers of objects in the equivalence classes
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Manchak and Halvorson}
+
+  \begin{itemize}
+  \item Claim: There are no non-trivial hole-isometries
+  \item Geroch's Theorem: If $\varphi ,\psi :(M,g)\to (N,h)$ are
+    isometries that agree on an open subset, then they agree
+    everywhere
+  \item Corollary: If $\varphi :(M,g)\to (M,g)$ doesn't change
+    anything outside of $O$, then it doesn't change anything inside
+    $O$
+  \item Is the diffeomorphism $\varphi :M\to M$ that forms the basis
+    for the hole argument trivial or not?
+  \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{Key questions}
+
+  \begin{itemize}
+  \item Are the issues here unique to diffeomorphisms (general
+    covariance), or are we faced with a general issue about to reason
+    with models?
+    \begin{itemize} \item Compare $\langle \{ a,b\} ,\{ a\} \rangle$
+      with $\langle \{ a,b\} ,\{ b\} \rangle$ \end{itemize}
+  \item Diffeomorphism versus isomorphism: are the former even
+    relevant?
+  \item Is Weatherall's response about correct reasoning, or does it
+    assume mathematical structuralism?
+    \begin{itemize} \item Does the hole argument contain tacit
+      premises about mathematical ontology? \end{itemize}
+  \end{itemize}
+
+
+\end{frame}
+
+
+\begin{frame}{Elementary Theory of the Category of Sets (ETCS)}
+
+  \begin{itemize}
+  \item Two sorted first-order theory: Objects and Arrows
+  \item Axioms: initial object, terminal object, Cartesian products,
+    coproducts, natural number object, etc.
+  \item A \textbf{point} of $X$ is a morphism $p:1\to X$
+  \item By definition, two sets $X$ and $Y$ cannot share a point in
+    common. (The equality symbol is not defined across different
+    sets.)
+  \item But each isomorphism $h:X\to Y$ gives a way of identifying
+    points in $X$ with points in $Y$.
+  \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{ETCS as a foundation for mathematical physics?}
+
+\begin{itemize}
+\item Can the reasoning of physicists be reproduced without assuming a
+  default standard of sameness of points across models? i.e.\ do
+  models have to be based on the same ``ur domain''?
+\item Example: There is a model just like $M$, except that the point
+  $a$ is not in the extension of $P$.
+\item Real examples?? 
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Mitchell's Theorem}
+
+  \begin{itemize}
+  \item ETCS is ``equivalent'' to a weak form of ZF set theory
+  \item Open question: what does ``equivalence'' mean here?
+  \begin{itemize}
+  \item If it's merely ``equal logical strength'' then it's too weak
+    to carry interpretive weight (compare G\"odel translation of
+    intuitionistic logic)
+  \item Bi-interpretability? 
+  \item Morita equivalence?
+  \end{itemize}
+\item Open question: does this equivalence support the two
+  model-theoretic principles (opacity and/or vagueness)?
+\item It is independently interesting whether category-theoretic
+  foundations could be \emph{equivalent} in some precise sense to
+  set-theoretic foundations
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{From ETCS to Topos Theory}
+
+Fact: ETCS axioms are a special case of axioms for a Boolean topos
+
+
+
+
+\end{frame}
+
+\begin{frame}{(Homotopy) Type Theory}
+
+  \begin{itemize}
+  \item Background
+  \item Univalence axiom: isomorphic objects are identical
+  \item Idiot-proof
+  \item Philosophers have argued that UF dissolves the hole problem:
+    Dougherty, Ladyman and Presnell
+  \item Once again: Is there a substantive choice between ZF, ETCS
+    (topos theory), UF? Could it make a difference for mathematical
+    physics in practice?
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Summary and Way Forward}
+
+  \begin{itemize}
+  \item The hole argument has gone meta
+    \begin{itemize}
+    \item Most parties are no longer concerned with the tenability of
+      substantivalism
+    \item Is the hole issue just a confusion, or do different
+      philosophical commitments lead to different ways of reasoning
+      with models?
+    \item How does foundations of math figure into all of this?
+    \end{itemize}
+  \item There are open technical questions
+    \begin{itemize}
+    \item Equivalence of ETCS and weak ZF
+    \end{itemize}
+
+
+  \end{itemize}
+
+
+
+\end{frame}
+
+
+\begin{frame}{Bibliography}
+
+\tiny 
+\begin{itemize}
+\item Earman and Norton. What price spacetime substantivalism? The
+  hole story
+\item Weatherall. Regarding the `hole argument'
+\item Read and Pooley. The mathematics and metaphysics of the hole
+  argument
+\item Halvorson and Manchak. Closing the hole argument
+\item Field. \emph{Science without Numbers}
+\item Lawvere. An elementary theory of the category of sets
+\item Mitchell. Boolean topoi and the theory of sets
+\item Osius. Categorical set theory: A characterization of the
+  category of sets
+\item Barrett and Halvorson. Morita equivalence
+\item Halvorson. \textit{The Logic in Philosophy of Science}
+\item Dougherty. The hole argument, take $n$  
+\item Ladyman and Presnell. The hole argument in homotopy type theory
+\item Awodey. From sets to types to categories to sets
+\item Gomes and Butterfield. The hole argument and beyond, part I: The
+  story so far
+\item Gomes and Butterfield. The hole argument and beyond, part II:
+  Treating non-isomorphic spacetimes
+\end{itemize}
+
+    
+
+
+\end{frame}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

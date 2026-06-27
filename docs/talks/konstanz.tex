@@ -1,0 +1,257 @@
+\documentclass[fleqn]{tufte-handout}
+\title{Speaking about Models}
+\author{Hans Halvorson}
+\date{June 30, 2023}
+% \usepackage{fullpage}
+\usepackage{outlines}
+\usepackage{amsmath,amssymb}
+\usepackage{mathrsfs}
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+\item Most scientists and philosophers take set-theoretic foundations
+  of math for granted --- at roughly the level of Halmos' \emph{Naive
+    Set Theory}. They assume that the ``niceties'' of set theory won't
+  make any difference to their research. And they assume that set
+  theory is as safe as anything else we could put in the foundations.
+
+\item Sometimes when we\footnote{especially mathematicians,
+    mathematical physicists, and technically oriented philosophers}
+  get engaged in detailed investigations, set theory becomes relevant
+  --- and we have to decide how far we want to commit to it, and how
+  we understand its consequences.
+
+  \begin{itemize}
+  \item When applicable results depend on choice axioms
+    (e.g. Tarski-Banach, existence of singular distributions)
+  \item Putnam's paradox
+  \item The hole argument
+  \end{itemize}
+  
+% \item There are alternative foundations of mathematics: constructive
+%   foundations, category theory, type theory, HoTT. But if something is
+%   not broken, then why try to fix it (especially since we know that no
+%   adequate system can prove its own consistency)
+  
+\item This talk descends from two papers:
+  \begin{itemize}
+  \item Dimitris Tsementzis and HH, ``Foundations and Philosophy''
+  \item HH and JB Manchak, ``Closing the Hole Argument''
+  \end{itemize} The first paper considers how replacing set theory
+  (ZF) with homotopy type theory (HoTT) might change our philosophical
+  logic. What's relevant for us is that HoTT tries to fix some
+  problems that might result from a too literal reading of ZF. The
+  second paper argues that the hole argument of GTR is based on a
+  misunderstanding about how to reason about models (structures in the
+  set-theoretic universe) that, once again, results from a too literal
+  reading of ZF.
+
+\item The basic puzzle: for models $M$ and $N$ of a theory, how are we
+  to understand the situation where $M$ and $N$ are isomorphic but not
+  identical?
+
+\item The puzzle restated
+
+  Suppose that $M\neq N$ but that $h:M\to N$ is an isomorphism.
+
+  \begin{itemize}
+  \item Defn: $M$ and $N$ are \emph{elementarily equivalent} just in
+    case $M\vDash \phi$ iff $N\vDash \phi$.
+  \item Fact: If $M$ and $N$ are isomorphic, then $M$ and $N$ are
+    elementarily equivalent.
+  \item There is a set-theoretic predicate $\Phi$ such that $\Phi (M)$
+    but $\neg \Phi (N)$.
+  \end{itemize}
+
+\item Example
+  \begin{itemize}
+  \item Let $T$ be the empty theory in the empty language.
+  \item Let $M$ be the model of $T$ with domain $\{ \emptyset \}$.
+  \item Let $N$ be the model of $T$ with domain
+    $\{ \{ \emptyset \} \}$.
+  \item For a $\Sigma$-structure $X$, let $\Phi$ be the set-theoretic
+    predicate $\Phi (X)\equiv (\emptyset \in |X|)$. \end{itemize}
+
+\item Is the availability of non-isomorphism invariant predicates a
+  bug of set-theoretic foundations, or a feature?
+    \begin{itemize}
+    \item This fact seems to drive the hole argument in GTR, as well
+      as Putnam's paradox.
+    \end{itemize}
+  \item If it's a bug, can it (and should it) be fixed by changing
+    foundations?
+    \begin{itemize}
+    \item Hermeneutic structuralism versus revolutionary structuralism
+    \end{itemize}
+
+\item Putnam's trick: Let $M$ be a model of $T$, and let $h:N\to M$ be
+  a bijection of sets. Define $r^N=h^{-1}(r^M)$ for each relation
+  symbol $r$. Then the models $M$ and $N$ are isomorphic. But if $h$
+  is non-trivial, then $M$ and $N$ disagree on the properties of
+  individuals.
+
+  \begin{itemize}
+  \item Hilbert, Burgess, Linnebo (hermeneutic structuralism): Pure
+    mathematicians are trained to ignore the differences between $M$
+    and $N$. It's not the fault of ZF if an untrained person takes $M$
+    and $N$ to represent different situations.
+  \end{itemize}
+
+\item Does Putnam's trick also lie behind the ``hole argument'' of
+  Einstein's general theory of relativity?
+
+  \begin{itemize}
+  \item The hole argument is supposed to derive a bad consequence
+    (pernicious indeterminism) from a reasonable ontological
+    assumption (spacetime is a substance).
+  \item Einstein ``Lochbetrachtung'' 1913; Earman and Norton ``What
+    price spacetime substantivalism?'' 1987
+  \item Simple analogy:
+    \begin{itemize}
+    \item A model $M$ of $T$ consists of two sets $M_0,M_1$, each of
+      which contains two elements, and a functional relation
+      $r\subseteq M_0\times M_1$ whose intended meaning is temporal
+      development. i.e.\ we stipulate that for each $a\in M_0$ there
+      is a unique $a'\in M_1$ such that $\langle a,a'\rangle \in r$.
+    \item Given a bijection $h:M_1\to M_1$, the Putnam trick can be
+      used to crete another model that is isomorphic to
+      $M$.
+    \item The theory $T$ thus fails the Montague-Lewis-Earman
+      definition of determinism. \end{itemize}
+  \end{itemize}
+  
+\item Benacerraf's antinomy: If $0,1,2,3,\dots $ are sets, then there
+  are many facts about them that we have no means of discovering
+
+  \begin{itemize}
+  \item Is $\emptyset\in 1$?
+  \end{itemize}
+  
+\item A middle way?
+
+  \begin{itemize}
+  \item There are too many set-theoretic predicates: they detect
+    differences that are \emph{not} really there
+  \item There are too few $\Sigma$-sentences: they cannot detect real
+    differences
+    \begin{itemize}
+    
+    \item Example: $(\mathbb{R},\leq )$ and $(\mathbb{Q},\leq )$ are
+      elementarily equivalent.
+    \item Recall: In the case of finite structures, elementary
+      equivalence implies isomorphism.
+    \end{itemize}
+  \end{itemize}
+
+\item Open question: Can we explicate mathematicians' talk about
+  ``properties invariant under isomorphism'' in terms of definable
+  properties of models? This would suggest a \emph{preferred language
+    for speaking about models of a theory}.
+  \begin{itemize}
+  \item Topological properties: Hausdorff, compact, metrizable, simply
+    connected, etc.
+  \item Group properties: abelian, number of subgroups, number of
+    normal subgroups, etc.
+  \item Relativistic spacetimes: singular, globally hyperbolic,
+    etc.
+    \begin{itemize}
+    \item The issue is of real importance here. E.g. it is easy to
+      mistake coordinate singularities for genuine singularities. In
+      fact, it's not so easy to check that proposed definitions of
+      ``is singular'' are invariant under
+      isomorphism \end{itemize} \end{itemize}
+
+
+\item Some first ideas
+  \begin{itemize}
+  \item Properties of models that are representable by first-order
+    sentences
+    \begin{itemize}
+    \item Partial orders: has a left endpoint
+    \item Boolean algebras: atomic, atomless
+    \item Groups: abelian, torsion free, divisible, nilpotent,
+      solvable
+    \end{itemize}
+  \item There are invariant properties of models that are not
+    representable by first-order sentences
+    \begin{itemize}
+    \item Partial orders: any two elements are connected by a finite
+      chain
+    \item Peano arithmetic: is an end extension
+    \item Groups: has $n$ distinct normal subgroups, finite, free,
+      simple
+    \end{itemize}
+  \end{itemize}
+
+\item Where can we get more insight about how to describe the
+  invariant properties of a model $M$?
+  \begin{itemize}
+  \item The category $D(M)$ of definable subsets and definable
+    functions.\footnote{see Pillay, ``Model theory'' \emph{Notices of
+        the AMS} 2000}
+    \begin{itemize}
+      \item Fact: If $h:M\to N$ is an isomorphism, then $D(M)$ is
+        isomorphic to $D(N)$.
+      \item Conjecture: If $D(M)$ is isomorphic to $D(N)$, then $M$ is
+        isomorphic to $N$.
+    \end{itemize}
+  \item McGee has results that indicate that all the invariant
+    features of $M$ can be described in $\mathscr{L}_{\infty\infty}$.
+  \item Vaananen has a proposal about how the signature $\Sigma$
+    defines higher order sorts.\footnote{``Sort logic and foundations
+      of mathematics.'' In \emph{Infinity and truth}}
+  \end{itemize}
+
+\item Revolutionary Structuralism I: Elementary theory of the category
+  of sets (ETCS)
+
+  \begin{itemize}
+  \item Key fact: In ETCS, no two sets can share a point in common
+  \item ETCS is a two sorted first-order theory: objects and arrows
+  \item Axioms: initial object, terminal object, Cartesian products,
+    coproducts, natural number object, etc.
+  \item A \textbf{point} of $X$ is a morphism $p:1\to X$
+  \item Each isomorphism $h:X\to Y$ gives a way of identifying points
+    in $X$ with points in $Y$.
+  \end{itemize}
+
+\item Mitchell's Theorem: ETCS is ``equivalent'' to a weak form of ZF
+  set theory
+
+  \begin{itemize}
+  \item Open question: what does ``equivalence'' mean here?
+  \begin{itemize}
+  \item If it's merely ``equal logical strength'' then it's too weak
+    to carry interpretive weight (e.g.\ G\"odel translation of
+    intuitionistic logic)
+  \item Bi-interpretability? Definitional equivalence?
+  \item Morita equivalence?
+  \end{itemize}
+\item Could category-theoretic foundations could be \emph{equivalent}
+  in some precise sense to set-theoretic foundations?
+\end{itemize}
+
+\end{enumerate}
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
+\item Example: Let $T$ be the empty theory in the empty
+  language. There is a family $\{ M_\kappa \}$ of models of $T$ and a
+  family $\Phi _k$ of set-theoretic predicates such that:
+  \begin{enumerate}
+  \item $|M_\kappa |=1$ for all $\kappa$;
+  \item $M_\kappa$ is isomorphic to $M_\lambda$ for all
+    $\kappa ,\lambda$;
+  \item $\Phi _\kappa (M_\lambda )$ iff $\kappa =\lambda$.
+  \end{enumerate}
+
