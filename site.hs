@@ -22,7 +22,9 @@ import Data.Yaml (decodeFileEither)
 import qualified Data.Text                as T
 import qualified Data.Text.IO             as T
 import           GHC.IO.Handle            (hSetBuffering, BufferMode(NoBuffering))
-import           System.Process           (runInteractiveCommand)
+import           System.Process           (runInteractiveCommand, readProcessWithExitCode)
+import           System.Exit              (ExitCode(..))
+import           System.Directory         (createDirectoryIfMissing)
 
 -- Hakyll / Pandoc
 import           Hakyll
@@ -38,6 +40,7 @@ import           EquivBiblio              (generateEquivHTML)
 import           DanishTexts              (generateDanishTextsHTML)
 import           Syllabus                 (generateSyllabusHTML)
 import           Talks                    (generateTalksHTML)
+import           TalksMaster              (MasterData, renderInvited, renderOutreach)
 import           LemmonFilter             (applyLemmonFilter)
 import CoursePages.Course
   ( loadCourseYaml
@@ -53,6 +56,30 @@ config :: Configuration
 config = defaultConfiguration
   { destinationDirectory = "docs"
   }
+
+-- | Regenerate the CV's \input fragments from data/talks-master.yaml and
+-- recompile cv.tex with latexmk. Returns the produced PDF bytes, which the
+-- Hakyll rule below serves as /cv.pdf. Called whenever the talks data (or
+-- cv.tex) changes, so the CV's talk list never drifts from the catalog.
+buildCv :: IO BL.ByteString
+buildCv = do
+  parsed <- decodeFileEither "data/talks-master.yaml"
+  case parsed of
+    Left err -> error ("data/talks-master.yaml parse error: " ++ show err)
+    Right md -> do
+      writeFile "cv-talks.tex"    (renderInvited  (md :: MasterData))
+      writeFile "cv-outreach.tex" (renderOutreach md)
+      createDirectoryIfMissing True ".cvbuild"
+      (code, sout, serr) <- readProcessWithExitCode "latexmk"
+        [ "-pdf", "-interaction=nonstopmode", "-halt-on-error"
+        , "-outdir=.cvbuild", "cv.tex" ] ""
+      case code of
+        ExitSuccess   -> BL.readFile ".cvbuild/cv.pdf"
+        ExitFailure _ -> error $
+          "latexmk failed building cv.tex (see .cvbuild/cv.log):\n"
+          ++ unlines (lastN 25 (lines sout)) ++ unlines (lastN 25 (lines serr))
+  where
+    lastN n xs = drop (length xs - n) xs
 
 myReader :: P.ReaderOptions
 myReader =
@@ -638,15 +665,14 @@ main = hakyllWith config $ do
         route idRoute
         compile copyFileCompiler      
 
-    -- Talks: data-driven page generated from data/talks.yaml (see Talks.hs)
-    match "data/talks.yaml" $ do
-        compile getResourceBody
-
+    -- Talks: slides page generated from data/talks-master.yaml (see Talks.hs).
+    -- The single source of truth; data/talks-master.yaml is matched in the CV
+    -- section below, so we only declare a dependency on it here.
     create ["talks.html"] $ do
         route idRoute
         compile $ do
-            _ <- (load (fromFilePath "data/talks.yaml") :: Compiler (Item String))  -- declare dependency
-            result <- unsafeCompiler $ decodeFileEither "data/talks.yaml"
+            _ <- (load (fromFilePath "data/talks-master.yaml") :: Compiler (Item String))  -- declare dependency
+            result <- unsafeCompiler $ decodeFileEither "data/talks-master.yaml"
             case result of
               Left err  -> error $ "YAML parse error (talks): " ++ show err
               Right td  -> do
@@ -657,6 +683,20 @@ main = hakyllWith config $ do
                   >>= loadAndApplyTemplate "templates/default.html"
                         (constField "title" "Talks" `mappend` baseSidebarCtx `mappend` siteCtx)
                   >>= relativizeUrls
+
+    -- CV: regenerate the \input fragments from the talks data and recompile
+    -- cv.tex into /cv.pdf. Touching data/talks-master.yaml (or cv.tex) makes
+    -- "stack exec site build/rebuild" rebuild the CV with the new talk list.
+    match "data/talks-master.yaml" $ compile getResourceBody
+    match "cv.tex"                 $ compile getResourceBody
+
+    create ["cv.pdf"] $ do
+        route idRoute
+        compile $ do
+            _ <- load (fromFilePath "data/talks-master.yaml") :: Compiler (Item String)
+            _ <- load (fromFilePath "cv.tex")                 :: Compiler (Item String)
+            pdfBytes <- unsafeCompiler buildCv
+            makeItem pdfBytes
 
     -- -- Bohr
     -- match "bohr/index.md" $ do

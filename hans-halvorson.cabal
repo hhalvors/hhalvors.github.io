@@ -12,7 +12,7 @@ cabal-version:      >= 1.10
 
 executable site
   main-is:          site.hs
-  other-modules:    BibTeXParser, LemmonFilter, FormulaParser, PubList, EquivBiblio, DanishTexts, Syllabus, Talks, CoursePages.Course
+  other-modules:    BibTeXParser, LemmonFilter, FormulaParser, PubList, EquivBiblio, DanishTexts, Syllabus, Talks, TalksMaster, CoursePages.Course
   build-depends:    base == 4.*
                   , hakyll == 4.16.*  
                   , containers == 0.6.*
@@ -31,6 +31,19 @@ executable site
                   , regex-tdfa
                   , yaml >= 0.11 && < 0.12
                   , data-default
-  hs-source-dirs:   ., src, src/filters  
+  hs-source-dirs:   ., src, src/filters
   ghc-options:      -threaded
+  default-language: Haskell2010
+
+executable talks
+  main-is:          talks-tool.hs
+  other-modules:    TalksMaster
+  build-depends:    base == 4.*
+                  , aeson >=2.1
+                  , yaml >= 0.11 && < 0.12
+                  , text >= 1.2.4
+                  , containers == 0.6.*
+                  , directory
+                  , filepath
+  hs-source-dirs:   .
   default-language: Haskell2010
