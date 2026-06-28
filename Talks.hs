@@ -55,6 +55,19 @@ fmtDate s = case break (== '-') s of
   _ -> s
 
 ------------------------------------------------------------------------
+-- Light LaTeX -> text cleanup for HTML display (titles/event/location).
+-- The CV keeps the raw LaTeX; only the web page needs this.
+------------------------------------------------------------------------
+
+cleanText :: String -> String
+cleanText s = T.unpack
+  $ T.replace "$" ""        -- drop math delimiters: $2$ -> 2, $C^*$ -> C*
+  $ T.replace "^" ""        -- C^* -> C*
+  $ T.replace "--" "\x2013" -- en-dash
+  $ T.replace "---" "\x2014" -- em-dash (applied before "--")
+  $ T.pack s
+
+------------------------------------------------------------------------
 -- Link badge
 ------------------------------------------------------------------------
 
@@ -71,8 +84,11 @@ linkBadge lnk =
 renderTalk :: MTalk -> H.Html
 renderTalk t =
   H.div H.! A.class_ "talk-item" $ do
-    H.div H.! A.class_ "talk-title" $ H.toHtml (fromMaybe "" (tTitle t))
-    let meta = catMaybes [tEvent t, fmap fmtDate (tDate t)]
+    H.div H.! A.class_ "talk-title" $ H.toHtml (cleanText (fromMaybe "" (tTitle t)))
+    let meta = filter (not . null)
+                 (catMaybes [ fmap cleanText (tEvent t)
+                            , fmap cleanText (tLocation t)
+                            , fmap fmtDate (tDate t) ])
     if null meta
       then return ()
       else H.div H.! A.class_ "talk-meta"
