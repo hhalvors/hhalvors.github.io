@@ -1,0 +1,37 @@
+.stack-work/
+_cache/
+_site/
+stack.yaml.lock
+templates/_cache/
+# Symlink to ~/bibliotek/Brøchner, Hans — points outside the repo, not committed.
+# To set up locally: ln -s "/Users/hhalvors/bibliotek/Brøchner, Hans" brochner
+/brochner/
+# Symlink to ~/bibliotek/Nielsen, Rasmus — points outside the repo, not committed.
+# To set up locally: ln -s "/Users/hhalvors/bibliotek/Nielsen, Rasmus" nielsen
+/nielsen/
+# Symlink to ~/bibliotek/Høffding, Harald — points outside the repo, not committed.
+# To set up locally: ln -s "/Users/hhalvors/bibliotek/Høffding, Harald" hoeffding
+/hoeffding/
+# Slide image directories (build-time dependencies, rendered outputs embed them)
+docs/talks/*-img/
+talks/*-img/
+
+# CV build artifacts (generated from data/talks-master.yaml by the site build)
+/.cvbuild/
+/cv-talks.tex
+/cv-outreach.tex
+
+# Emacs backup files
+*~
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.fls
+*.fdb_latexmk

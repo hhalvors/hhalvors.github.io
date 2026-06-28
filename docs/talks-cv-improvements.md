@@ -34,6 +34,23 @@ Running list of deferred improvements to the talks→CV/website pipeline
 - Outreach list still renders from `cv_raw`; could be enriched + field-rendered
   like the invited talks for full uniformity.
 
+## Wanted: quick lecture-entry command (Emacs Lisp)
+An interactive Emacs command (Hans's preferred editor) to add a new talk to
+`data/talks-master.yaml` without hand-editing YAML.
+- Prompt for: `title`, `announced_title` (optional), `kind`
+  (talk/conference/colloquium/seminar/symposium/keynote/roundtable/…),
+  `event`, `location`, `date` (YYYY-MM or YYYY), `coauthors` (optional),
+  and any `links` (pdf/tex/slides).
+- Auto-generate a stable `id` (slug of title + year; or deck filename stem if a
+  deck exists), and check it's unique.
+- Insert the row into the correct year block (create the block if missing),
+  keeping block order newest-first; emit fields in the canonical order and quote
+  style used elsewhere in the file.
+- Nice-to-haves: completion for `kind` and for previously-used `event`/`location`
+  values; default `cv: true`, set `web: true` only when links are given.
+- Keep it list-of-engagements aware (one row per delivery; re-prompting for a
+  re-given talk should make a new row sharing the title).
+
 ## Notes
 - Website `talks.html` (via `Talks.hs`) shows dates; the CV deliberately does not
   (year is in the margin). Intentional divergence.
