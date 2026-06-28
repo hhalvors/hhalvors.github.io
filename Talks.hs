@@ -7,9 +7,9 @@
 
 module Talks (generateTalksHTML) where
 
-import Data.List                   (intercalate, sortOn)
+import Data.List                   (intercalate, sortOn, sortBy)
 import Data.Maybe                  (catMaybes, fromMaybe)
-import Data.Ord                    (Down(..))
+import Data.Ord                    (Down(..), comparing)
 import qualified Data.Text                   as T
 import qualified Text.Blaze.Html5            as H
 import qualified Text.Blaze.Html5.Attributes as A
@@ -103,9 +103,19 @@ renderTalk t =
 isWeb :: MTalk -> Bool
 isWeb t = tWeb t && not (null (tLinks t))
 
+-- | Month (1–12) from a "YYYY-MM" date; 0 if absent. Used to sort within a year.
+monthOf :: MTalk -> Int
+monthOf t = case tDate t of
+  Just s -> case break (== '-') s of
+              (_, '-':mm) -> case reads mm :: [(Int, String)] of
+                               [(m, _)] -> m
+                               _        -> 0
+              _ -> 0
+  Nothing -> 0
+
 visibleGroups :: MasterData -> [MYearGroup]
 visibleGroups d =
-  [ g { myItems = vis }
+  [ g { myItems = sortBy (comparing (Down . monthOf)) vis }
   | g <- mdTalks d
   , let vis = filter isWeb (myItems g)
   , not (null vis) ]
