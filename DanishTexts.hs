@@ -31,6 +31,22 @@ data Author = Author
   , authorDates :: String
   , authorBio  :: String
   , works      :: [Work]
+  , authorBibliography :: Maybe Bibliography   -- optional full publication list
+  } deriving (Generic, Show)
+
+-- A complete author bibliography (distinct from the curated `works` above):
+-- published works + unpublished manuscripts.
+data Bibliography = Bibliography
+  { bibPublished   :: Maybe [BibEntry]
+  , bibManuscripts :: Maybe [BibEntry]
+  } deriving (Generic, Show)
+
+data BibEntry = BibEntry
+  { entryYear         :: String
+  , entryTitle        :: String
+  , entryVenue        :: Maybe String
+  , entryNote         :: Maybe String
+  , entryIncollection :: Maybe String   -- workId of a matching curated work, if any
   } deriving (Generic, Show)
 
 data Work = Work
@@ -95,6 +111,12 @@ instance FromJSON Section where
 instance FromJSON Link where
   parseJSON = genericParseJSON (opts "link")
 
+instance FromJSON Bibliography where
+  parseJSON = genericParseJSON (opts "bib")
+
+instance FromJSON BibEntry where
+  parseJSON = genericParseJSON (opts "entry")
+
 ------------------------------------------------------------------------
 -- Status badge rendering
 ------------------------------------------------------------------------
@@ -151,9 +173,10 @@ renderSection sec =
 -- Work entry
 ------------------------------------------------------------------------
 
-renderWork :: Work -> H.Html
-renderWork w =
-  H.div H.! A.class_ "dt-work" $ do
+renderWork :: String -> Work -> H.Html
+renderWork aid w =
+  H.div H.! A.class_ "dt-work"
+        H.! A.id (H.toValue $ aid ++ "-" ++ workId w) $ do
     H.div H.! A.class_ "dt-work-title" $ H.toHtml (workTitle w)
     let venue = fromMaybe "" (workVenue w)
         year  = workYear w
@@ -172,6 +195,50 @@ renderWork w =
       mapM_ renderSection (workSections w)
 
 ------------------------------------------------------------------------
+-- Full bibliography (collapsible)
+------------------------------------------------------------------------
+
+renderBibEntry :: String -> BibEntry -> H.Html
+renderBibEntry aid e =
+  H.div H.! A.class_ (H.toValue rowClass) $ do
+    H.span H.! A.class_ "dt-bib-year" $ H.toHtml (entryYear e)
+    H.span H.! A.class_ "dt-bib-cite" $ do
+      H.span H.! A.class_ "dt-bib-title" $ H.toHtml (entryTitle e)
+      case entryVenue e of
+        Just v  -> H.span H.! A.class_ "dt-bib-venue" $ H.toHtml (" · " ++ v)
+        Nothing -> return ()
+      case entryNote e of
+        Just n  -> H.span H.! A.class_ "dt-bib-note" $ H.toHtml (" — " ++ n)
+        Nothing -> return ()
+      case entryIncollection e of
+        Just wid -> H.a H.! A.class_ "dt-bib-incoll"
+                        H.! A.href (H.toValue $ "#" ++ aid ++ "-" ++ wid)
+                        $ "✦ in the collection"
+        Nothing  -> return ()
+  where
+    rowClass = "dt-bib-entry"
+             ++ maybe "" (const " dt-bib-entry-incoll") (entryIncollection e)
+
+renderBibliography :: String -> Bibliography -> H.Html
+renderBibliography aid b =
+  H.details H.! A.class_ "dt-bib" $ do
+    H.summary H.! A.class_ "dt-bib-summary"
+              $ H.toHtml ("Complete bibliography (" ++ show total ++ " items)")
+    H.p H.! A.class_ "dt-bib-intro" $ do
+      "A near-complete list of Nielsen's publications and manuscripts. "
+      H.span H.! A.class_ "dt-bib-key" $ "✦ marks works available in this collection."
+    renderGroup "Published works" pub
+    renderGroup "Unpublished manuscripts" mss
+  where
+    pub   = fromMaybe [] (bibPublished b)
+    mss   = fromMaybe [] (bibManuscripts b)
+    total = length pub + length mss
+    renderGroup _     [] = return ()
+    renderGroup label xs = do
+      H.h3 H.! A.class_ "dt-bib-head" $ H.toHtml (label :: String)
+      H.div H.! A.class_ "dt-bib-list" $ mapM_ (renderBibEntry aid) xs
+
+------------------------------------------------------------------------
 -- Author section
 ------------------------------------------------------------------------
 
@@ -183,7 +250,10 @@ renderAuthor a =
       H.span H.! A.class_ "dt-author-dates"
              $ H.toHtml (" (" ++ authorDates a ++ ")")
     H.p H.! A.class_ "dt-author-bio" $ H.toHtml (authorBio a)
-    mapM_ renderWork (works a)
+    mapM_ (renderWork (authorId a)) (works a)
+    case authorBibliography a of
+      Just b  -> renderBibliography (authorId a) b
+      Nothing -> return ()
 
 ------------------------------------------------------------------------
 -- Top-level generator

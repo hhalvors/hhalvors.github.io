@@ -216,6 +216,89 @@ li { margin-bottom: 0.55rem; }
 .dt-status-soon        { background: #dde8f4; color: #1a3a5c; border: 1px solid #a3bddb; }
 .dt-status-placeholder { background: #f4f4f4; color: #aaa;    border: 1px solid #e0e0e0; }
 
+/* ── Full bibliography (collapsible) ── */
+
+.dt-bib {
+  margin-top: 1.6rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #d8d8d8;
+}
+
+.dt-bib-summary {
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #2d5370;
+  list-style: revert;           /* keep the native disclosure triangle */
+  user-select: none;
+}
+
+.dt-bib-summary:hover { color: #1a3a50; }
+
+.dt-bib-intro {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0.6rem 0 0.9rem;
+  font-style: italic;
+}
+
+.dt-bib-key { white-space: nowrap; }
+
+.dt-bib-head {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #999;
+  margin: 1rem 0 0.5rem;
+}
+
+.dt-bib-list { margin-bottom: 0.4rem; }
+
+.dt-bib-entry {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  padding: 0.18rem 0;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.dt-bib-year {
+  flex-shrink: 0;
+  width: 3.4rem;
+  color: #999;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.dt-bib-cite { color: #333; }
+
+.dt-bib-title { color: #222; }
+
+.dt-bib-venue { color: #888; }
+
+.dt-bib-note { color: #aaa; font-style: italic; }
+
+.dt-bib-entry-incoll .dt-bib-title { font-weight: 600; }
+
+.dt-bib-incoll {
+  display: inline-block;
+  margin-left: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 0.1em 0.45em;
+  border-radius: 3px;
+  background: #d4edda;
+  color: #1a5c2e;
+  border: 1px solid #a3cfb0;
+  text-decoration: none;
+}
+
+.dt-bib-incoll:hover { background: #bfe3c8; text-decoration: none; }
+
 /* ───────────────────────────────────────────────
    TALKS
    ─────────────────────────────────────────────── */
