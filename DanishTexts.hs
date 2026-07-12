@@ -219,13 +219,13 @@ renderBibEntry aid e =
     rowClass = "dt-bib-entry"
              ++ maybe "" (const " dt-bib-entry-incoll") (entryIncollection e)
 
-renderBibliography :: String -> Bibliography -> H.Html
-renderBibliography aid b =
+renderBibliography :: String -> String -> Bibliography -> H.Html
+renderBibliography aid name b =
   H.details H.! A.class_ "dt-bib" $ do
     H.summary H.! A.class_ "dt-bib-summary"
               $ H.toHtml ("Complete bibliography (" ++ show total ++ " items)")
     H.p H.! A.class_ "dt-bib-intro" $ do
-      "A near-complete list of Nielsen's publications and manuscripts. "
+      H.toHtml ("A near-complete list of " ++ name ++ "'s publications and manuscripts. ")
       H.span H.! A.class_ "dt-bib-key" $ "✦ marks works available in this collection."
     renderGroup "Published works" pub
     renderGroup "Unpublished manuscripts" mss
@@ -252,7 +252,7 @@ renderAuthor a =
     H.p H.! A.class_ "dt-author-bio" $ H.toHtml (authorBio a)
     mapM_ (renderWork (authorId a)) (works a)
     case authorBibliography a of
-      Just b  -> renderBibliography (authorId a) b
+      Just b  -> renderBibliography (authorId a) (authorName a) b
       Nothing -> return ()
 
 ------------------------------------------------------------------------
