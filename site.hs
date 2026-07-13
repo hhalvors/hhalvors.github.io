@@ -70,8 +70,13 @@ buildCv = do
       writeFile "cv-talks.tex"    (renderInvited  (md :: MasterData))
       writeFile "cv-outreach.tex" (renderOutreach md)
       createDirectoryIfMissing True ".cvbuild"
+      -- -gg = "super go": clean out generated aux files (incl. cv.bbl / cv.bcf)
+      -- and run every rule from scratch. latexmk auto-detects the biblatex
+      -- backend from the .bcf and runs biber, so this guarantees the
+      -- bibliography (and the Halvorson-stripping sourcemap) is regenerated
+      -- fresh every build rather than served from a stale .cvbuild/cv.bbl.
       (code, sout, serr) <- readProcessWithExitCode "latexmk"
-        [ "-pdf", "-interaction=nonstopmode", "-halt-on-error"
+        [ "-pdf", "-gg", "-bibtex", "-interaction=nonstopmode", "-halt-on-error"
         , "-outdir=.cvbuild", "cv.tex" ] ""
       case code of
         ExitSuccess   -> BL.readFile ".cvbuild/cv.pdf"
@@ -689,12 +694,17 @@ main = hakyllWith config $ do
     -- "stack exec site build/rebuild" rebuild the CV with the new talk list.
     match "data/talks-master.yaml" $ compile getResourceBody
     match "cv.tex"                 $ compile getResourceBody
+    -- NB: "hh.bib" is already matched elsewhere (see the publications.html
+    -- rule), so it is loadable here without an extra `match`.
 
     create ["cv.pdf"] $ do
         route idRoute
         compile $ do
             _ <- load (fromFilePath "data/talks-master.yaml") :: Compiler (Item String)
             _ <- load (fromFilePath "cv.tex")                 :: Compiler (Item String)
+            -- Track the bibliography too, so fixing an author/editor in
+            -- hh.bib (e.g. an "og" -> "and" separator) rebuilds cv.pdf.
+            _ <- load (fromFilePath "hh.bib")                 :: Compiler (Item String)
             pdfBytes <- unsafeCompiler buildCv
             makeItem pdfBytes
 

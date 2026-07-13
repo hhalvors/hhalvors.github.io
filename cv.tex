@@ -31,10 +31,9 @@
             replace={HH}]
       % Then strip "HH": sole-authored works become author-less; co-authored
       % works keep only the co-authors (printed as "(with ...)" by the macro below).
-      \step[fieldsource=author, match=\regexp{\s+and\s+HH\s+and\s+}, replace={ and }]
-      \step[fieldsource=author, match=\regexp{\AHH\s+and\s+},         replace={}]
-      \step[fieldsource=author, match=\regexp{\s+and\s+HH\Z},         replace={}]
-      \step[fieldsource=author, match=\regexp{\AHH\Z},                replace={}]
+      \step[fieldsource=author, match=\regexp{\AHH\s+and\s+}, replace={}]% HH first
+      \step[fieldsource=author, match=\regexp{\s+and\s+HH\b}, replace={}]% HH middle or last
+      \step[fieldsource=author, match=\regexp{\AHH\Z},        replace={}]% HH sole author
     }
   }
 }
