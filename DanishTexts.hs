@@ -31,6 +31,7 @@ data Author = Author
   , authorDates :: String
   , authorBio  :: String
   , works      :: [Work]
+  , authorSecondaryLiterature :: Maybe [SecondaryLit]  -- optional scholarship on the author
   , authorBibliography :: Maybe Bibliography   -- optional full publication list
   } deriving (Generic, Show)
 
@@ -62,6 +63,19 @@ data Section = Section
   { sectionTitle  :: String
   , sectionStatus :: String   -- raw string; rendered via statusBadge
   , sectionLinks  :: [Link]
+  } deriving (Generic, Show)
+
+-- Secondary literature (scholarship) on an author. Distinct from `works`,
+-- which are primary texts by the author. `secAuthor` is the scholar.
+data SecondaryLit = SecondaryLit
+  { secId       :: String
+  , secAuthor   :: String
+  , secTitle    :: String
+  , secYear     :: String
+  , secVenue    :: Maybe String
+  , secDoi      :: Maybe String
+  , secNote     :: Maybe String
+  , secSections :: [Section]
   } deriving (Generic, Show)
 
 data Link = Link
@@ -107,6 +121,9 @@ instance FromJSON Work where
 
 instance FromJSON Section where
   parseJSON = genericParseJSON (opts "section")
+
+instance FromJSON SecondaryLit where
+  parseJSON = genericParseJSON (opts "sec")
 
 instance FromJSON Link where
   parseJSON = genericParseJSON (opts "link")
@@ -195,6 +212,38 @@ renderWork aid w =
       mapM_ renderSection (workSections w)
 
 ------------------------------------------------------------------------
+-- Secondary literature entry
+------------------------------------------------------------------------
+
+renderSecondaryLit :: String -> SecondaryLit -> H.Html
+renderSecondaryLit aid s =
+  H.div H.! A.class_ "dt-work dt-seclit"
+        H.! A.id (H.toValue $ aid ++ "-" ++ secId s) $ do
+    H.div H.! A.class_ "dt-work-title" $ H.toHtml (secTitle s)
+    let venue = fromMaybe "" (secVenue s)
+        year  = secYear s
+        pub   = case (year, venue) of
+                  ("", "")  -> ""
+                  ("", v)   -> v
+                  (y,  "")  -> y
+                  (y,   v)  -> y ++ ". " ++ v
+        meta  = secAuthor s ++ if null pub then "" else ". " ++ pub
+    H.div H.! A.class_ "dt-work-meta" $ H.toHtml meta
+    case secDoi s of
+      Just d  -> H.div H.! A.class_ "dt-work-meta" $ do
+                   "DOI: "
+                   H.a H.! A.href (H.toValue $ "https://doi.org/" ++ d)
+                       H.! A.target "_blank"
+                       H.! A.rel "noopener noreferrer"
+                       $ H.toHtml d
+      Nothing -> return ()
+    case secNote s of
+      Just n  -> H.div H.! A.class_ "dt-work-note" $ H.toHtml n
+      Nothing -> return ()
+    H.div H.! A.class_ "dt-sections" $
+      mapM_ renderSection (secSections s)
+
+------------------------------------------------------------------------
 -- Full bibliography (collapsible)
 ------------------------------------------------------------------------
 
@@ -251,6 +300,11 @@ renderAuthor a =
              $ H.toHtml (" (" ++ authorDates a ++ ")")
     H.p H.! A.class_ "dt-author-bio" $ H.toHtml (authorBio a)
     mapM_ (renderWork (authorId a)) (works a)
+    case authorSecondaryLiterature a of
+      Just ss | not (null ss) -> do
+        H.h3 H.! A.class_ "dt-seclit-head" $ "Secondary literature"
+        mapM_ (renderSecondaryLit (authorId a)) ss
+      _ -> return ()
     case authorBibliography a of
       Just b  -> renderBibliography (authorId a) (authorName a) b
       Nothing -> return ()
