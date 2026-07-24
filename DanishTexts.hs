@@ -145,6 +145,7 @@ statusClass "skeleton"     = "dt-status dt-status-skeleton"
 statusClass "to-do"        = "dt-status dt-status-todo"
 statusClass "coming-soon"  = "dt-status dt-status-soon"
 statusClass "placeholder"  = "dt-status dt-status-placeholder"
+statusClass "reference"    = "dt-status dt-status-reference"
 statusClass _              = "dt-status dt-status-todo"
 
 statusLabel :: String -> String
@@ -154,6 +155,7 @@ statusLabel "skeleton"     = "skeleton"
 statusLabel "to-do"        = "to do"
 statusLabel "coming-soon"  = "coming soon"
 statusLabel "placeholder"  = "placeholder"
+statusLabel "reference"    = "reference"
 statusLabel s              = s
 
 statusBadge :: String -> H.Html
@@ -335,4 +337,5 @@ generateDanishTextsHTML catalog = R.renderHtml $
       statusBadge "skeleton"
       statusBadge "to-do"
       statusBadge "coming-soon"
+      statusBadge "reference"
     mapM_ renderAuthor (authors catalog)

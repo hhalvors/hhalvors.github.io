@@ -215,6 +215,7 @@ li { margin-bottom: 0.55rem; }
 .dt-status-todo        { background: #f4f4f4; color: #666;    border: 1px solid #ddd; }
 .dt-status-soon        { background: #dde8f4; color: #1a3a5c; border: 1px solid #a3bddb; }
 .dt-status-placeholder { background: #f4f4f4; color: #aaa;    border: 1px solid #e0e0e0; }
+.dt-status-reference   { background: #ece8f4; color: #4a3a70; border: 1px solid #c4b8db; }
 
 /* ── Secondary literature ── */
 
