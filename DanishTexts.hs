@@ -22,7 +22,8 @@ import qualified Text.Blaze.Html.Renderer.String as R
 ------------------------------------------------------------------------
 
 data Catalog = Catalog
-  { authors :: [Author]
+  { authors    :: [Author]
+  , references :: Maybe [Reference]   -- optional: catalog-wide reference works
   } deriving (Generic, Show)
 
 data Author = Author
@@ -83,6 +84,20 @@ data Link = Link
   , linkUrl   :: String
   } deriving (Generic, Show)
 
+-- A catalog-wide reference work (history/survey of Danish philosophy as a
+-- whole), not tied to a single author. Rendered in its own section after the
+-- authors. `refVolumes` optionally lists the individual volumes of a series.
+data Reference = Reference
+  { refId      :: String
+  , refTitle   :: String
+  , refAuthors :: String
+  , refYear    :: String
+  , refVenue   :: Maybe String
+  , refNote    :: Maybe String
+  , refVolumes :: Maybe [String]
+  , refLinks   :: Maybe [Link]
+  } deriving (Generic, Show)
+
 ------------------------------------------------------------------------
 -- JSON/YAML field name mapping
 -- YAML uses snake_case (author-id, work-title…); we strip the prefix.
@@ -127,6 +142,9 @@ instance FromJSON SecondaryLit where
 
 instance FromJSON Link where
   parseJSON = genericParseJSON (opts "link")
+
+instance FromJSON Reference where
+  parseJSON = genericParseJSON (opts "ref")
 
 instance FromJSON Bibliography where
   parseJSON = genericParseJSON (opts "bib")
@@ -246,6 +264,35 @@ renderSecondaryLit aid s =
       mapM_ renderSection (secSections s)
 
 ------------------------------------------------------------------------
+-- Reference work entry (catalog-wide surveys)
+------------------------------------------------------------------------
+
+renderReference :: Reference -> H.Html
+renderReference r =
+  H.div H.! A.class_ "dt-work dt-seclit dt-reference"
+        H.! A.id (H.toValue $ "ref-" ++ refId r) $ do
+    H.div H.! A.class_ "dt-work-title" $ H.toHtml (refTitle r)
+    let venue = fromMaybe "" (refVenue r)
+        pub   = case (refYear r, venue) of
+                  ("", "")  -> ""
+                  ("", v)   -> v
+                  (y,  "")  -> y
+                  (y,   v)  -> y ++ ". " ++ v
+        meta  = refAuthors r ++ if null pub then "" else ". " ++ pub
+    H.div H.! A.class_ "dt-work-meta" $ H.toHtml meta
+    case refNote r of
+      Just n  -> H.div H.! A.class_ "dt-work-note" $ H.toHtml n
+      Nothing -> return ()
+    case refVolumes r of
+      Just vs | not (null vs) ->
+        H.ul H.! A.class_ "dt-ref-volumes" $ mapM_ (H.li . H.toHtml) vs
+      _ -> return ()
+    H.div H.! A.class_ "dt-section" $
+      H.span H.! A.class_ "dt-section-links" $ do
+        mapM_ linkBadge (fromMaybe [] (refLinks r))
+        statusBadge "reference"
+
+------------------------------------------------------------------------
 -- Full bibliography (collapsible)
 ------------------------------------------------------------------------
 
@@ -339,3 +386,13 @@ generateDanishTextsHTML catalog = R.renderHtml $
       statusBadge "coming-soon"
       statusBadge "reference"
     mapM_ renderAuthor (authors catalog)
+    case references catalog of
+      Just rs | not (null rs) ->
+        H.section H.! A.class_ "dt-author dt-references" H.! A.id "references" $ do
+          H.h2 H.! A.class_ "dt-author-heading" $ "General reference works"
+          H.p H.! A.class_ "dt-author-bio" $
+            H.toHtml ("Histories and surveys of Danish philosophy as a whole. \
+                      \These are secondary literature, listed for reference; they \
+                      \are not part of the transcription and translation program." :: String)
+          mapM_ renderReference rs
+      _ -> return ()
