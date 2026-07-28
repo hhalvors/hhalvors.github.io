@@ -90,6 +90,15 @@ li { margin-bottom: 0.55rem; }
   margin-bottom: 1rem;
 }
 
+/* Editorial note under the intro (Denmark–Norway before 1814). */
+.dt-note {
+  font-size: 0.82rem;
+  color: #666;
+  border-left: 3px solid #e0e0e0;
+  padding-left: 0.85rem;
+  margin-bottom: 1.4rem;
+}
+
 .dt-legend {
   font-size: 0.8rem;
   margin-bottom: 2rem;
