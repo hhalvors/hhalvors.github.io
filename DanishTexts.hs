@@ -32,6 +32,7 @@ data Author = Author
   , authorDates :: String
   , authorBio  :: String
   , works      :: [Work]
+  , authorModernEditions :: Maybe [Edition]         -- optional modern editions/reprints
   , authorSecondaryLiterature :: Maybe [SecondaryLit]  -- optional scholarship on the author
   , authorBibliography :: Maybe Bibliography   -- optional full publication list
   } deriving (Generic, Show)
@@ -64,6 +65,19 @@ data Section = Section
   { sectionTitle  :: String
   , sectionStatus :: String   -- raw string; rendered via statusBadge
   , sectionLinks  :: [Link]
+  } deriving (Generic, Show)
+
+-- A modern (typically twentieth-century) edition or reprint of one or more of
+-- the author's `works`. Not a source of new text; listed for citation and for
+-- whatever editorial apparatus it carries. `edEditor` is the modern editor.
+data Edition = Edition
+  { edId       :: String
+  , edEditor   :: Maybe String
+  , edTitle    :: String
+  , edYear     :: String
+  , edVenue    :: Maybe String
+  , edNote     :: Maybe String
+  , edSections :: [Section]
   } deriving (Generic, Show)
 
 -- Secondary literature (scholarship) on an author. Distinct from `works`,
@@ -136,6 +150,9 @@ instance FromJSON Work where
 
 instance FromJSON Section where
   parseJSON = genericParseJSON (opts "section")
+
+instance FromJSON Edition where
+  parseJSON = genericParseJSON (opts "ed")
 
 instance FromJSON SecondaryLit where
   parseJSON = genericParseJSON (opts "sec")
@@ -230,6 +247,36 @@ renderWork aid w =
       Nothing -> return ()
     H.div H.! A.class_ "dt-sections" $
       mapM_ renderSection (workSections w)
+
+------------------------------------------------------------------------
+-- Modern edition entry
+------------------------------------------------------------------------
+
+-- Meta line reads "Ed. A. H. Winsnes. 1966. Oslo: Tanum…", with the editor
+-- and venue both optional.
+renderEdition :: String -> Edition -> H.Html
+renderEdition aid e =
+  H.div H.! A.class_ "dt-work dt-edition"
+        H.! A.id (H.toValue $ aid ++ "-" ++ edId e) $ do
+    H.div H.! A.class_ "dt-work-title" $ H.toHtml (edTitle e)
+    let venue = fromMaybe "" (edVenue e)
+        pub   = case (edYear e, venue) of
+                  ("", "")  -> ""
+                  ("", v)   -> v
+                  (y,  "")  -> y
+                  (y,   v)  -> y ++ ". " ++ v
+        meta  = case edEditor e of
+                  Just ed | not (null ed) ->
+                    "Ed. " ++ ed ++ if null pub then "" else ". " ++ pub
+                  _ -> pub
+    if null meta
+      then return ()
+      else H.div H.! A.class_ "dt-work-meta" $ H.toHtml meta
+    case edNote e of
+      Just n  -> H.div H.! A.class_ "dt-work-note" $ H.toHtml n
+      Nothing -> return ()
+    H.div H.! A.class_ "dt-sections" $
+      mapM_ renderSection (edSections e)
 
 ------------------------------------------------------------------------
 -- Secondary literature entry
@@ -349,6 +396,11 @@ renderAuthor a =
              $ H.toHtml (" (" ++ authorDates a ++ ")")
     H.p H.! A.class_ "dt-author-bio" $ H.toHtml (authorBio a)
     mapM_ (renderWork (authorId a)) (works a)
+    case authorModernEditions a of
+      Just es | not (null es) -> do
+        H.h3 H.! A.class_ "dt-seclit-head" $ "Modern editions"
+        mapM_ (renderEdition (authorId a)) es
+      _ -> return ()
     case authorSecondaryLiterature a of
       Just ss | not (null ss) -> do
         H.h3 H.! A.class_ "dt-seclit-head" $ "Secondary literature"

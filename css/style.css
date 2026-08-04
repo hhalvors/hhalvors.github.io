@@ -242,6 +242,13 @@ li { margin-bottom: 0.55rem; }
   padding-left: 0.8rem;
 }
 
+/* ── Modern editions (20th-c. reprints of the primary works) ── */
+
+.dt-edition {
+  border-left: 2px solid #e6e6e6;
+  padding-left: 0.8rem;
+}
+
 /* ── Reference works (catalog-wide surveys) ── */
 
 .dt-references {
