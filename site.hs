@@ -448,6 +448,20 @@ main = hakyllWith config $ do
           >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> indexCtx)
           >>= relativizeUrls
 
+    -- Sits at the site root rather than under /pages/, because it is linked
+    -- from syllabuses and from the book's own pages: a short, stable URL.
+    -- Must come before the generic "pages/*" rule, which would otherwise
+    -- claim it and route it to /pages/logic-tools.html.
+    match "pages/logic-tools.md" $ do
+      route $ constRoute "logic-tools.html"
+      compile $ do
+        let toolsCtx = constField "title" "Logic Tools" `mappend` siteCtx
+        pandocCompiler
+          >>= saveSnapshot "page-content"
+          >>= loadAndApplyTemplate "templates/page.html" siteCtx
+          >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> toolsCtx)
+          >>= relativizeUrls
+
     match "books/*.md" $ do
       route $ setExtension "html"
       compile $

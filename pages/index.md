@@ -14,8 +14,15 @@ hide_title: true
 
 ---
 
-### Upcoming Lectures
+### Logic Tools
+
+Free software for learning symbolic logic, written to accompany *How Logic
+Works*. Check a natural-deduction proof line by line, build a truth table, or
+evaluate a sentence in a finite structure. You can also **photograph a proof
+you wrote by hand** and have it read and checked. No account, nothing to
+install.
 
 <div class="icon-links">
-  <div><span class="icon"><i class="fa-solid fa-scale-balanced"></i></span> <a href="https://cfors.org/workshop-new-perspectives-on-theoretical-equivalence/">Equivalence: A Program &mdash; New Perspectives on Theoretical Equivalence workshop</a></div>
+  <div><span class="icon"><i class="fa-solid fa-list-check"></i></span> <a href="/logic-tools.html">What the tools do</a></div>
+  <div><span class="icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></span> <a href="https://lemmon-checker.onrender.com">Open the tools</a></div>
 </div>
