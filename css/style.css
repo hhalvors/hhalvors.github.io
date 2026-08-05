@@ -110,6 +110,150 @@ li { margin-bottom: 0.55rem; }
 
 .dt-legend-label { color: #888; }
 
+/* ── Browse menu (collapsible index at the head of the page) ───────── */
+
+.dt-menu {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background: #fbfbfa;
+  padding: 1rem 1.1rem 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.dt-menu-head {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.dt-menu-hint {
+  font-size: 0.78rem;
+  color: #888;
+  margin: 0.25rem 0 0.85rem;
+}
+
+.dt-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.15rem 1.4rem;
+  align-items: start;
+}
+
+.dt-menu-author {
+  border-top: 1px solid #ececec;
+}
+
+.dt-menu-author:first-child,
+.dt-menu-grid > .dt-menu-author:nth-child(2) {
+  border-top: none;
+}
+
+.dt-menu-summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  padding: 0.4rem 0.2rem;
+  font-size: 0.88rem;
+  color: #1a3a50;
+}
+
+.dt-menu-summary::-webkit-details-marker { display: none; }
+
+.dt-menu-summary::before {
+  content: "▸";
+  font-size: 0.7rem;
+  color: #aaa;
+  transition: transform 0.12s ease;
+}
+
+.dt-menu-author[open] > .dt-menu-summary::before {
+  content: "▾";
+  color: #666;
+}
+
+.dt-menu-author[open] > .dt-menu-summary { font-weight: 700; }
+
+.dt-menu-summary:hover { background: #f2f1ef; }
+
+.dt-menu-name { font-weight: 600; }
+
+.dt-menu-dates {
+  color: #999;
+  font-size: 0.76rem;
+  font-weight: 400;
+}
+
+.dt-menu-count {
+  margin-left: auto;
+  color: #aaa;
+  font-size: 0.72rem;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.dt-menu-works {
+  list-style: none;
+  margin: 0 0 0.5rem;
+  padding: 0 0 0 1.05rem;
+  border-left: 1px solid #e6e6e6;
+}
+
+.dt-menu-works li { margin: 0; }
+
+.dt-menu-link {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.16rem 0.25rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: #333;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.dt-menu-link:hover {
+  background: #eef3f7;
+  color: #1a3a50;
+  text-decoration: none;
+}
+
+/* Years vary in width ("1744" vs "c. 1864–1866"); reserve a common
+   minimum so the titles line up, but let the long ones spill. */
+.dt-menu-year {
+  flex: 0 0 auto;
+  min-width: 3.1rem;
+  color: #aaa;
+  font-size: 0.72rem;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.dt-menu-title { flex: 1 1 auto; }
+
+.dt-menu-extra .dt-menu-title {
+  color: #6a6a6a;
+  font-style: italic;
+}
+
+/* Back to the menu, at the foot of each philosopher's section. */
+.dt-backtomenu {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-size: 0.72rem;
+  color: #aaa;
+  text-decoration: none;
+}
+
+.dt-backtomenu:hover { color: #1a3a50; }
+
+@media (max-width: 640px) {
+  .dt-menu-grid { grid-template-columns: minmax(0, 1fr); }
+  .dt-menu-grid > .dt-menu-author:nth-child(2) { border-top: 1px solid #ececec; }
+}
+
 .dt-author {
   margin-top: 2.8rem;
   padding-top: 0.2rem;

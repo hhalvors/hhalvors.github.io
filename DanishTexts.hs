@@ -364,9 +364,14 @@ renderBibEntry aid e =
     rowClass = "dt-bib-entry"
              ++ maybe "" (const " dt-bib-entry-incoll") (entryIncollection e)
 
+bibCount :: Bibliography -> Int
+bibCount b = length (fromMaybe [] (bibPublished b))
+           + length (fromMaybe [] (bibManuscripts b))
+
 renderBibliography :: String -> String -> Bibliography -> H.Html
 renderBibliography aid name b =
-  H.details H.! A.class_ "dt-bib" $ do
+  H.details H.! A.class_ "dt-bib"
+            H.! A.id (H.toValue $ aid ++ "-bibliography") $ do
     H.summary H.! A.class_ "dt-bib-summary"
               $ H.toHtml ("Complete bibliography (" ++ show total ++ " items)")
     H.p H.! A.class_ "dt-bib-intro" $ do
@@ -398,17 +403,126 @@ renderAuthor a =
     mapM_ (renderWork (authorId a)) (works a)
     case authorModernEditions a of
       Just es | not (null es) -> do
-        H.h3 H.! A.class_ "dt-seclit-head" $ "Modern editions"
+        H.h3 H.! A.class_ "dt-seclit-head"
+               H.! A.id (H.toValue $ authorId a ++ "-editions")
+               $ "Modern editions"
         mapM_ (renderEdition (authorId a)) es
       _ -> return ()
     case authorSecondaryLiterature a of
       Just ss | not (null ss) -> do
-        H.h3 H.! A.class_ "dt-seclit-head" $ "Secondary literature"
+        H.h3 H.! A.class_ "dt-seclit-head"
+               H.! A.id (H.toValue $ authorId a ++ "-secondary")
+               $ "Secondary literature"
         mapM_ (renderSecondaryLit (authorId a)) ss
       _ -> return ()
     case authorBibliography a of
       Just b  -> renderBibliography (authorId a) (authorName a) b
       Nothing -> return ()
+    H.a H.! A.class_ "dt-backtomenu" H.! A.href "#browse" $ "↑ Browse"
+
+------------------------------------------------------------------------
+-- Browse menu
+--
+-- A collapsible index at the head of the page: one <details> per
+-- philosopher, expanding to the list of that philosopher's works, each
+-- title linking to the corresponding entry further down. Pure HTML/CSS —
+-- no JavaScript.
+------------------------------------------------------------------------
+
+-- Menu titles are shortened to keep the two-column grid tidy; the full
+-- title is kept in the link's title attribute.
+shorten :: Int -> String -> String
+shorten n s
+  | length s <= n = s
+  | otherwise     = trimRight (cutWord (take n s)) ++ "…"
+  where
+    cutWord t = case break (== ' ') (reverse t) of
+                  (_, ' ' : rest) -> reverse rest
+                  _               -> t
+    trimRight = reverse . dropWhile (`elem` (" ,.;:-–—" :: String)) . reverse
+
+-- A single menu row pointing at an anchor, with an optional leading year.
+menuRow :: String -> String -> String -> String -> H.Html
+menuRow anchor cls year title =
+  H.li $ H.a H.! A.class_ (H.toValue cls)
+             H.! A.href  (H.toValue $ "#" ++ anchor)
+             H.! A.title (H.toValue title) $ do
+    H.span H.! A.class_ "dt-menu-year"  $ H.toHtml year
+    H.span H.! A.class_ "dt-menu-title" $ H.toHtml (shorten 52 title)
+
+renderMenuAuthor :: Author -> H.Html
+renderMenuAuthor a =
+  H.details H.! A.class_ "dt-menu-author" $ do
+    H.summary H.! A.class_ "dt-menu-summary" $ do
+      H.span H.! A.class_ "dt-menu-name"  $ H.toHtml (authorName a)
+      H.span H.! A.class_ "dt-menu-dates" $ H.toHtml (authorDates a)
+      H.span H.! A.class_ "dt-menu-count" $ H.toHtml countLabel
+    H.ul H.! A.class_ "dt-menu-works" $ do
+      mapM_ workRow (works a)
+      extraRows
+  where
+    aid = authorId a
+    n   = length (works a)
+    countLabel :: String
+    countLabel
+      | n == 0    = "—"
+      | n == 1    = "1 work"
+      | otherwise = show n ++ " works"
+
+    workRow w = menuRow (aid ++ "-" ++ workId w) "dt-menu-link"
+                        (workYear w) (workTitle w)
+
+    extraRow anchor label = menuRow anchor "dt-menu-link dt-menu-extra" "" label
+
+    extraRows = do
+      case authorModernEditions a of
+        Just es | not (null es) ->
+          extraRow (aid ++ "-editions")
+                   ("Modern editions (" ++ show (length es) ++ ")")
+        _ -> return ()
+      case authorSecondaryLiterature a of
+        Just ss | not (null ss) ->
+          extraRow (aid ++ "-secondary")
+                   ("Secondary literature (" ++ show (length ss) ++ ")")
+        _ -> return ()
+      case authorBibliography a of
+        Just b ->
+          extraRow (aid ++ "-bibliography")
+                   ("Complete bibliography (" ++ show (bibCount b) ++ " items)")
+        Nothing -> return ()
+      extraRow aid ("All " ++ authorName a ++ " entries ↓")
+
+renderMenuReferences :: [Reference] -> H.Html
+renderMenuReferences rs =
+  H.details H.! A.class_ "dt-menu-author" $ do
+    H.summary H.! A.class_ "dt-menu-summary" $ do
+      H.span H.! A.class_ "dt-menu-name"  $ "General reference works"
+      H.span H.! A.class_ "dt-menu-dates" $ "surveys"
+      H.span H.! A.class_ "dt-menu-count" $ H.toHtml refCount
+    H.ul H.! A.class_ "dt-menu-works" $
+      mapM_ (\r -> menuRow ("ref-" ++ refId r) "dt-menu-link"
+                           (refYear r) (refTitle r)) rs
+  where
+    refCount :: String
+    refCount | length rs == 1 = "1 item"
+             | otherwise      = show (length rs) ++ " items"
+
+renderMenu :: Catalog -> H.Html
+renderMenu cat =
+  H.nav H.! A.class_ "dt-menu" H.! A.id "browse" $ do
+    H.h2 H.! A.class_ "dt-menu-head" $ "Browse the collection"
+    H.p H.! A.class_ "dt-menu-hint" $ H.toHtml hint
+    H.div H.! A.class_ "dt-menu-grid" $ do
+      mapM_ renderMenuAuthor (authors cat)
+      case references cat of
+        Just rs | not (null rs) -> renderMenuReferences rs
+        _ -> return ()
+  where
+    nAuthors = length (authors cat)
+    nWorks   = sum (map (length . works) (authors cat))
+    hint :: String
+    hint = show nAuthors ++ " philosophers · " ++ show nWorks
+         ++ " works. Click a name to see the works, then a title to jump to it."
 
 ------------------------------------------------------------------------
 -- Top-level generator
@@ -435,6 +549,7 @@ generateDanishTextsHTML catalog = R.renderHtml $
       ". For scholarly commentary on each text, see the "
       H.a H.! A.href "/dansk/notes.html" $ "notes page"
       "."
+    renderMenu catalog
     H.p H.! A.class_ "dt-intro dt-note" $ do
       "A note on the word “Danish”. Denmark and Norway were joined under a single "
       "crown from 1380 and administered as one state from the sixteenth century "
