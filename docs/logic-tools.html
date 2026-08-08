@@ -183,7 +183,17 @@ against a small server and keep no record of what is checked. You are welcome
 to link to any of these pages from a syllabus.</p>
 <p>The whole suite is open source and written in Haskell. If your course uses a
 different rule set, the checker is small enough to adapt.</p>
+<p>There is also a translator between Lemmon-style and Fitch-style proofs, and a
+short paper on the theory behind it. Translation in one direction turns out to
+be entirely routine and in the other not, and the reason is worth knowing: a
+Lemmon line records exactly what it depends on, while a Fitch line’s
+dependencies are merely bounded by the subproofs around it. If you teach one
+notation and your colleagues teach the other, the paper says precisely what
+survives the crossing.</p>
 <div class="icon-links">
+<div>
+<span class="icon"><i class="fa-solid fa-file-lines"></i></span> <a href="https://lemmon-checker.onrender.com/paper">Dependency and Scope: on translating between Lemmon and Fitch proofs</a> — PDF, draft
+</div>
 <div>
 <span class="icon"><i class="fa-brands fa-github"></i></span> <a href="https://github.com/hhalvors/lemmon-checker">Source on GitHub</a>
 </div>
