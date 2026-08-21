@@ -64,9 +64,10 @@ entryToHTML showBib entry@(Cons entryType entryKey fields) = H.li $ do
     let maybeDOI = entryDOI entry
     let maybeURL = entryURL entry
 
-    case (maybeURL, maybeDOI) of
-        (Just url, _) -> H.a H.! A.href (H.toValue url) $ H.toHtml title
-        (Nothing, Just doi) -> H.a H.! A.href (H.toValue $ "https://doi.org/" ++ doi) $ H.toHtml title
+    -- Prefer the DOI when there is one; fall back to the url field.
+    case (maybeDOI, maybeURL) of
+        (Just doi, _) -> H.a H.! A.href (H.toValue $ "https://doi.org/" ++ doi) $ H.toHtml title
+        (Nothing, Just url) -> H.a H.! A.href (H.toValue url) $ H.toHtml title
         (Nothing, Nothing) -> H.toHtml title
     
     H.span H.! A.class_ "buttonline" $ do
