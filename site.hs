@@ -35,11 +35,12 @@ import           Text.Pandoc.Definition   (Pandoc, Inline(..), MathType(..))
 import           Text.Pandoc.Walk         (walkM)
 
 import           BibTeXParser             (parseBibTeX, generateHTML)
-import           PubList                  (parseBibTeXFile, transformEntry, generateHtml)
+import           PubList                  (parseBibTeXFile, transformEntry, generateHtml,
+                                           generateRecent)
 import           EquivBiblio              (generateEquivHTML)
 import           DanishTexts              (generateDanishTextsHTML)
 import           Syllabus                 (generateSyllabusHTML)
-import           Talks                    (generateTalksHTML)
+import           Talks                    (generateTalksHTML, generateRecentTalksHTML)
 import           TalksMaster              (MasterData, renderInvited, renderOutreach)
 import           LemmonFilter             (applyLemmonFilter)
 import CoursePages.Course
@@ -275,13 +276,38 @@ main = hakyllWith config $ do
             >>= applyAsTemplate siteCtx
             >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
 
+    -- Home page. The "recent publications" and "recent talks" blocks are
+    -- generated from hh.bib and data/talks-master.yaml, so the front page
+    -- refreshes itself whenever either is updated -- no prose to maintain.
+    --
+    -- NB: pages/index.md is run through applyAsTemplate to substitute
+    -- $recent-publications$ and $recent-talks$, so a literal dollar sign in
+    -- that file must be written $$.
     match "pages/index.md" $ do
       route $ constRoute "index.html"
       compile $ do
-        let indexCtx = constField "title" "Home" `mappend` siteCtx
-        pandocCompiler
+        -- Declare the dependencies so the page rebuilds when either changes.
+        _ <- load (fromFilePath "hh.bib")                 :: Compiler (Item String)
+        _ <- load (fromFilePath "data/talks-master.yaml") :: Compiler (Item String)
+        recentPubs <- unsafeCompiler $ do
+          parsed <- parseBibTeXFile "hh.bib"
+          case parsed of
+            Left err      -> error $ "BibTeX parse error (home page): " ++ show err
+            Right entries -> return $ generateRecent 4 (map PubList.transformEntry entries)
+        recentTalks <- unsafeCompiler $ do
+          parsed <- decodeFileEither "data/talks-master.yaml"
+          case parsed of
+            Left err -> error $ "talks-master.yaml parse error (home page): " ++ show err
+            Right md -> return $ generateRecentTalksHTML 4 (md :: MasterData)
+        let indexCtx = constField "recent-publications" recentPubs
+                    <> constField "recent-talks"        recentTalks
+                    <> constField "title" "Home"
+                    <> siteCtx
+        getResourceBody
+          >>= applyAsTemplate indexCtx
+          >>= renderPandoc
           >>= saveSnapshot "page-content"
-          >>= loadAndApplyTemplate "templates/page.html" siteCtx
+          >>= loadAndApplyTemplate "templates/page.html" indexCtx
           >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> indexCtx)
           >>= relativizeUrls
 
@@ -621,7 +647,9 @@ main = hakyllWith config $ do
         case result of
           Left err -> error $ "BibTeX parse error: " ++ show err
           Right entries -> do
-            let htmlBody = generateHtml False (map PubList.transformEntry entries)
+            -- True = offer a copyable BibTeX record on each entry.  The
+            -- feature was always in PubList; it was just switched off.
+            let htmlBody = generateHtml True (map PubList.transformEntry entries)
             makeItem htmlBody
               >>= loadAndApplyTemplate "templates/page.html"    (constField "title" "Publications" `mappend` siteCtx)
               >>= loadAndApplyTemplate "templates/default.html" (constField "title" "Publications" `mappend` baseSidebarCtx `mappend` siteCtx)
@@ -803,7 +831,28 @@ main = hakyllWith config $ do
             pandocCompiler
                 >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Drafts" `mappend` siteCtx)
                 >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
-                >>= relativizeUrls                
+                >>= relativizeUrls
+
+    -- Math notes: a reading guide for students coming to philosophy of
+    -- physics from philosophy. Written years ago and never given a rule, so
+    -- it had never been published.
+    match "math.md" $ do
+        route $ customRoute (const "math.html")
+        compile $ do
+            pandocCompiler
+                >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Math for philosophy" `mappend` siteCtx)
+                >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+                >>= relativizeUrls
+
+    -- Essays: the Edge/Slate/Nautilus/Weekendavisen pieces, which used to
+    -- live only in cv.tex and so appeared nowhere on the site.
+    match "essays.md" $ do
+        route $ customRoute (const "essays.html")
+        compile $ do
+            pandocCompiler
+                >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Essays" `mappend` siteCtx)
+                >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+                >>= relativizeUrls
 
     -- Ad Hoc: phi201_s2021
     match "phi201_s2021.md" $ do

@@ -60,7 +60,12 @@
      styles, `#sidebar-checkbox` is for behavior. -->
 <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
 
-<!-- Toggleable sidebar -->
+<!-- Toggleable sidebar.
+
+     Links are hardcoded (the dynamic nav was disabled long ago).  They are
+     grouped because a flat list of sixteen items is not navigation.  If you
+     add a section to the site, add it here too -- /bohr/ ran for years with
+     sixty-five pages and no way in. -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
     <p>Personligheden er Sandheden</p>
@@ -69,31 +74,28 @@
   <nav class="sidebar-nav">
     <a class="sidebar-nav-item" href="../index.html">Home</a>
 
-    <!--- Dynamic sidebar nav disabled; links are hardcoded below -->
+    <span class="sidebar-nav-heading">Work</span>
+    <a class="sidebar-nav-item" href="../publications.html">Publications</a>
+    <a class="sidebar-nav-item" href="../books/">Books</a>
+    <a class="sidebar-nav-item" href="../essays.html">Essays</a>
+    <a class="sidebar-nav-item" href="../drafts.html">Drafts</a>
+    <a class="sidebar-nav-item" href="../talks.html">Talks</a>
+    <a class="sidebar-nav-item" href="../cv.pdf">CV</a>
 
+    <span class="sidebar-nav-heading">Projects</span>
+    <a class="sidebar-nav-item" href="../bohr/">Niels Bohr</a>
+    <a class="sidebar-nav-item" href="../kierkegaard/">Kierkegaard</a>
+    <a class="sidebar-nav-item" href="../dansk/">Danish Texts</a>
+    <a class="sidebar-nav-item" href="../theories/">Equivalent Theories</a>
+    <a class="sidebar-nav-item" href="../spacetime/">Spacetime</a>
 
-	
-   <!-- Add the new Publications link -->
-	<a class="sidebar-nav-item" href="../publications.html">Publications</a>
+    <span class="sidebar-nav-heading">Teaching</span>
+    <a class="sidebar-nav-item" href="../courses/">Courses</a>
+    <a class="sidebar-nav-item" href="../logic/">Logic</a>
+    <a class="sidebar-nav-item" href="../logic-tools.html">Logic Tools</a>
 
-	<a class="sidebar-nav-item" href="../courses/">Courses</a>
-
-<a class="sidebar-nav-item" href="../books/">Books</a>
-
-	<a class="sidebar-nav-item" href="../logic-tools.html">Logic Tools</a>
-
-	<a class="sidebar-nav-item" href="../drafts.html">Drafts</a>
-
-	<a class="sidebar-nav-item" href="../talks.html">Talks</a>
-
-	<a class="sidebar-nav-item" href="../cv.pdf">CV</a>
-
-	<a class="sidebar-nav-item" href="https://github.com/hhalvors">GitHub project</a>
-
-	<a class="sidebar-nav-item" href="../theories/">Equivalent Theories</a>
-
-	<a class="sidebar-nav-item" href="../dansk/">Danish Texts</a>
-
+    <span class="sidebar-nav-heading">Elsewhere</span>
+    <a class="sidebar-nav-item" href="https://github.com/hhalvors">GitHub project</a>
   </nav>
 
   <div class="sidebar-item">

@@ -64,7 +64,12 @@
      styles, `#sidebar-checkbox` is for behavior. -->
 <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
 
-<!-- Toggleable sidebar -->
+<!-- Toggleable sidebar.
+
+     Links are hardcoded (the dynamic nav was disabled long ago).  They are
+     grouped because a flat list of sixteen items is not navigation.  If you
+     add a section to the site, add it here too -- /bohr/ ran for years with
+     sixty-five pages and no way in. -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
     <p>Personligheden er Sandheden</p>
@@ -73,31 +78,28 @@
   <nav class="sidebar-nav">
     <a class="sidebar-nav-item" href="/index.html">Home</a>
 
-    <!--- Dynamic sidebar nav disabled; links are hardcoded below -->
+    <span class="sidebar-nav-heading">Work</span>
+    <a class="sidebar-nav-item" href="/publications.html">Publications</a>
+    <a class="sidebar-nav-item" href="/books/">Books</a>
+    <a class="sidebar-nav-item" href="/essays.html">Essays</a>
+    <a class="sidebar-nav-item" href="/drafts.html">Drafts</a>
+    <a class="sidebar-nav-item" href="/talks.html">Talks</a>
+    <a class="sidebar-nav-item" href="/cv.pdf">CV</a>
 
+    <span class="sidebar-nav-heading">Projects</span>
+    <a class="sidebar-nav-item" href="/bohr/">Niels Bohr</a>
+    <a class="sidebar-nav-item" href="/kierkegaard/">Kierkegaard</a>
+    <a class="sidebar-nav-item" href="/dansk/">Danish Texts</a>
+    <a class="sidebar-nav-item" href="/theories/">Equivalent Theories</a>
+    <a class="sidebar-nav-item" href="/spacetime/">Spacetime</a>
 
-	
-   <!-- Add the new Publications link -->
-	<a class="sidebar-nav-item" href="/publications.html">Publications</a>
+    <span class="sidebar-nav-heading">Teaching</span>
+    <a class="sidebar-nav-item" href="/courses/">Courses</a>
+    <a class="sidebar-nav-item" href="/logic/">Logic</a>
+    <a class="sidebar-nav-item" href="/logic-tools.html">Logic Tools</a>
 
-	<a class="sidebar-nav-item" href="/courses/">Courses</a>
-
-<a class="sidebar-nav-item" href="/books/">Books</a>
-
-	<a class="sidebar-nav-item" href="/logic-tools.html">Logic Tools</a>
-
-	<a class="sidebar-nav-item" href="/drafts.html">Drafts</a>
-
-	<a class="sidebar-nav-item" href="/talks.html">Talks</a>
-
-	<a class="sidebar-nav-item" href="/cv.pdf">CV</a>
-
-	<a class="sidebar-nav-item" href="https://github.com/hhalvors">GitHub project</a>
-
-	<a class="sidebar-nav-item" href="/theories/">Equivalent Theories</a>
-
-	<a class="sidebar-nav-item" href="/dansk/">Danish Texts</a>
-
+    <span class="sidebar-nav-heading">Elsewhere</span>
+    <a class="sidebar-nav-item" href="https://github.com/hhalvors">GitHub project</a>
   </nav>
 
   <div class="sidebar-item">
@@ -134,27 +136,31 @@
   
   <h1 class="post-title">Logic</h1>
   
-  <h2 id="how-logic-works">How Logic Works</h2>
+  <!-- This page owns the *teaching materials*: solutions, addenda, errata, code.
+     It deliberately carries no buy links or cover images -- /books/ owns the
+     books themselves. Keeping both in both places is what made the sidebar
+     item read "How Logic Works" while pointing at a page about every logic
+     book I have written. -->
+<p>Course materials for my two logic books. For the books themselves — publishers,
+editions, cover copy — see <a href="/books/">Books</a>.</p>
+<h2 id="how-logic-works">How Logic Works</h2>
+<p>An introduction to symbolic logic, built around natural deduction.</p>
 <ul>
-<li><a href="https://press.princeton.edu/books/hardcover/9780691182223/how-logic-works">Princeton University Press</a></li>
-<li><a href="https://www.amazon.com/How-Logic-Works-Users-Guide/dp/0691211957">amazon</a></li>
-<li><a href="solutions.html">solutions</a> to problems</li>
-<li><a href="code.html">code</a></li>
-<li><a href="/logic-tools.html">logic tools</a> — proof checker, truth tables, model
+<li><a href="solutions.html">Solutions to problems</a> — worked chapter by chapter</li>
+<li><a href="/books/hlw-solutions.pdf">Full solutions manual</a> (PDF)</li>
+<li><a href="/books/hlw-key-terms.pdf">Key terms</a> (PDF)</li>
+<li><a href="/books/hlw-errata.html">Errata</a></li>
+<li><a href="code.html">Code</a></li>
+<li><a href="/logic-tools.html">Logic tools</a> — proof checker, truth tables, model
 checker, and a reader for photographs of handwritten proofs</li>
 </ul>
 <h2 id="the-logic-in-philosophy-of-science">The Logic in Philosophy of Science</h2>
 <ul>
-<li><a href="https://doi.org/10.1017/9781316275603">Cambridge University Press</a></li>
-<li><a href="https://www.amazon.com/Logic-Philosophy-Science-Hans-Halvorson/dp/1107527740">amazon</a></li>
-<li><a href="addenda.html">addenda</a></li>
-<li>Github repository with the TeX files for the book:
-<a href="https://github.com/hhalvors/logic-phil-sci">logic-phil-sci</a>.</li>
+<li><a href="addenda.html">Addenda</a></li>
+<li><a href="https://github.com/hhalvors/logic-phil-sci">TeX source on GitHub</a></li>
 </ul>
 <h2 id="philosophical-logic">Philosophical Logic</h2>
-<ul>
-<li>I have some old notes around here somewhere …</li>
-</ul>
+<p>Some older notes, not yet collected here.</p>
 </div>
 
       </div>

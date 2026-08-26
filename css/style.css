@@ -834,14 +834,10 @@ footer {
   overflow-x:auto;
 }
 
-/* Research cards */
-.current-research-content {
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-  justify-content:center;
-  align-items:flex-start;
-}
+/* .current-research-content was the flex row behind the home page's project
+   cards. The cards are gone -- hand-written descriptions of work in progress
+   went stale faster than they were updated -- so the rule went with them.
+   .card below is kept: BibTeXParser still emits "card card-body". */
 
 .card {
   background:#fff;
@@ -1445,4 +1441,156 @@ h2.year-label {
   .syl-week-head { border-color: var(--primary); }
   .syl-glance-table th { border-color: #333; }
   .syl-glance-table td { border-color: #262626; }
+}
+
+/* ── Publications page ─────────────────────────────────────────────
+   Reuses the .bib-* components from the Equivalent Theories page, but
+   scoped to .publications so overrides here cannot affect that page.
+   There, the title is the italic element; here the title is the primary
+   text and the venue is what gets italicised.                        */
+
+.publications .bib-title {
+  font-style: normal;
+  font-weight: 600;
+}
+
+.publications .bib-venue {
+  font-style: italic;
+  color: #555;
+}
+
+.publications .bib-year {
+  color: #555;
+}
+
+.publications .bib-authors {
+  color: #555;
+  font-weight: 400;
+}
+
+/* Entries sit closer together than on the theories page: this is a list
+   to scan, not a list to read. */
+.publications .bib-entry {
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.8rem;
+}
+
+/* Jump bar: shows the shape of the list before you scroll it. */
+.bib-jump {
+  margin: 0 0 2rem 0;
+  line-height: 2;
+}
+
+.bib-jump-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25em 0.7em;
+  margin-right: 0.4rem;
+  border: 1px solid #c4d4df;
+  border-radius: 3px;
+  background: #f7fafc;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.bib-jump-link:hover {
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Anchor targets clear the sticky masthead when jumped to. */
+.publications .bib-section-heading {
+  scroll-margin-top: 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .publications .bib-venue,
+  .publications .bib-year,
+  .publications .bib-authors { color: #9aa7b0; }
+  .publications .bib-entry   { border-color: #262626; }
+  .bib-jump-link {
+    background: #1b2228;
+    border-color: #33424d;
+  }
+}
+
+/* ── Home page: generated "recent" blocks ──────────────────────────
+   Content comes from hh.bib and data/talks-master.yaml at build time.
+   Both are teasers, so they sit tighter than the full pages do.      */
+
+.recent-pubs .bib-entry,
+.recent-talks .talk-item {
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.55rem;
+}
+
+.recent-pubs .bib-links { margin-top: 0.25rem; }
+
+.recent-talks .talk-item {
+  border: 0;
+  border-bottom: 1px solid #f0f0f0;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: none;
+}
+
+.recent-talks .talk-item:last-child { border-bottom: none; }
+
+.more-link {
+  margin: 0.4rem 0 1.8rem;
+  font-size: 0.88rem;
+}
+
+.more-link a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.more-link a:hover { text-decoration: underline; }
+
+@media (prefers-color-scheme: dark) {
+  .recent-talks .talk-item { border-bottom-color: #262626; }
+}
+
+/* ── Home page portrait ────────────────────────────────────────────
+   Photo beside the intro on desktop, stacked above it on narrow
+   screens. width/height are on the <img> so the browser reserves the
+   box before the file loads and the text below does not jump.        */
+
+.intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.intro > p { margin-top: 0; }
+
+.intro-photo {
+  flex: 0 0 auto;
+  width: 200px;
+  height: auto;
+  border-radius: 6px;
+  /* The shelves behind are busy; a hairline keeps the photo from
+     bleeding into the page on light backgrounds. */
+  border: 1px solid #e4e4e4;
+}
+
+@media (max-width: 640px) {
+  .intro {
+    display: block;
+  }
+  .intro-photo {
+    width: 160px;
+    float: right;
+    margin: 0 0 0.8rem 1.1rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .intro-photo { border-color: #303030; }
 }

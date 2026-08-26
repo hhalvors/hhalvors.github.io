@@ -1,39 +1,99 @@
+% ===========================================================================
+%  Hans Halvorson --- curriculum vitae
+%
+%  BUILD.  site.hs (`buildCv`) runs latexmk on this file and serves the result
+%  as /cv.pdf.  The two \input fragments below, cv-talks.tex and
+%  cv-outreach.tex, are GENERATED from data/talks-master.yaml on every build.
+%  Never edit them by hand --- edit the YAML.
+%
+%  PUBLICATIONS.  The list is driven by hh.bib.  Entries route themselves into
+%  the right subsection; only four kinds of entry need a `keywords` tag:
+%
+%      keywords = {book-authored}  -> Books
+%      keywords = {book-edited}    -> Edited volumes
+%      keywords = {review}         -> Book reviews
+%      keywords = {thesis}         -> suppressed (PhD appears under Education)
+%      (untagged)                  -> Articles if @article, else Chapters
+%
+%  So a new article or chapter needs no tag at all.  Numbering runs backwards
+%  within each subsection (newest = highest), which requires knowing each
+%  subsection's size in advance; the \AtDataInput hook below counts them.
+%
+%  SELF-AUTHORSHIP.  The sourcemap strips "Halvorson" from author and editor
+%  lists, so sole-authored work prints bare and joint work prints "(with ...)".
+% ===========================================================================
+
 \documentclass[11pt]{article}
 \usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
-% \usepackage{fullpage}
 
+% --- Bibliography ----------------------------------------------------------
 \usepackage[style=phys,backend=biber,doi=true,sorting=ydnt]{biblatex}
+\addbibresource{/Users/hhalvors/hhalvors.github.io/hh.bib}
 
-\newcounter{totalentries}
-\AtDataInput{\stepcounter{totalentries}}
-% Publications: reverse-numbered (newest = highest), shown as "N." in a
-% right-aligned column with the entry text hanging beside it.
-\DeclareFieldFormat{labelnumber}{%
-  \number\numexpr\value{totalentries}+1-#1\relax.}
+% Per-subsection entry counts, tallied as biber's data is read in.  Order of
+% the tests matters: keyword tests first, then fall back to entry type.
+\newcounter{npubbook}
+\newcounter{npubedited}
+\newcounter{npubarticle}
+\newcounter{npubchapter}
+\newcounter{npubreview}
+\AtDataInput{%
+  \ifkeyword{thesis}
+    {}%
+    {\ifkeyword{review}
+       {\stepcounter{npubreview}}%
+       {\ifkeyword{book-authored}
+          {\stepcounter{npubbook}}%
+          {\ifkeyword{book-edited}
+             {\stepcounter{npubedited}}%
+             {\ifentrytype{article}
+                {\stepcounter{npubarticle}}%
+                {\stepcounter{npubchapter}}}}}}}
+
+% Reverse numbering.  \pubsfrom{<counter>} primes the countdown; each \item
+% decrements it, so the first (newest) entry printed carries the total.
+\newcounter{bibnum}
+\newcommand*{\bibnumlabel}{\number\value{bibnum}.}
+\newcommand*{\pubsfrom}[1]{\setcounter{bibnum}{\numexpr\value{#1}+1\relax}}
+
 \defbibenvironment{bibliography}
   {\list
-     {\printfield{labelnumber}}
+     {\bibnumlabel}
      {\settowidth{\labelwidth}{99.}%       box exactly fits the widest 2-digit number,
       \setlength{\labelsep}{0.5em}%        so double-digit numbers sit flush at the margin
       \setlength{\leftmargin}{\labelwidth}%
       \addtolength{\leftmargin}{\labelsep}%
       \setlength{\itemsep}{\bibitemsep}%
       \setlength{\parsep}{\bibparsep}%
-      \renewcommand*{\makelabel}[1]{\hss##1}}}% \hss = right-align the number (## required inside \defbibenvironment)
+      \renewcommand*{\makelabel}[1]{\hss##1}}}% \hss = right-align (## required here)
   {\endlist}
-  {\item}
+  {\addtocounter{bibnum}{-1}\item}
+
+% biblatex-phys drops the DOI into the volume/pages slot whenever an entry has
+% no page range --- i.e. on every forthcoming article --- and then prints it
+% again at the end of the entry.  Suppress the first, duplicated occurrence.
+\renewbibmacro*{note+pages}{%
+  \printfield{note}%
+  \setunit{\bibpagespunct}%
+  \printfield{pages}}
 
 \DeclareSourcemap{
   \maps[datatype=bibtex]{
     \map{
-      \step[fieldsource=author, 
-            match=\regexp{(\w+\s+Halvorson|Halvorson,\s*\w+|H\.\s+Halvorson|Halvorson,\s*H\.)}, 
+      \step[fieldsource=author,
+            match=\regexp{(\w+\s+Halvorson|Halvorson,\s*\w+|H\.\s+Halvorson|Halvorson,\s*H\.)},
+            replace={HH}]
+      \step[fieldsource=editor,
+            match=\regexp{(\w+\s+Halvorson|Halvorson,\s*\w+|H\.\s+Halvorson|Halvorson,\s*H\.)},
             replace={HH}]
       % Then strip "HH": sole-authored works become author-less; co-authored
       % works keep only the co-authors (printed as "(with ...)" by the macro below).
       \step[fieldsource=author, match=\regexp{\AHH\s+and\s+}, replace={}]% HH first
       \step[fieldsource=author, match=\regexp{\s+and\s+HH\b}, replace={}]% HH middle or last
       \step[fieldsource=author, match=\regexp{\AHH\Z},        replace={}]% HH sole author
+      \step[fieldsource=editor, match=\regexp{\AHH\s+and\s+}, replace={}]
+      \step[fieldsource=editor, match=\regexp{\s+and\s+HH\b}, replace={}]
+      \step[fieldsource=editor, match=\regexp{\AHH\Z},        replace={}]
     }
   }
 }
@@ -46,144 +106,219 @@
   \ifnameundef{author}
     {}%
     {\mkbibparens{with\addspace\printnames[given-family]{author}}}}
+% Same treatment for the byline of a volume HH edited: co-editors print as
+% "(with ...), eds.", a volume he edited alone prints nothing at all.  This is
+% the byline macro only --- `byeditor+others', which sets the "edited by ..."
+% of a volume containing one of HH's chapters, is deliberately left alone.
+\renewbibmacro*{editor+others}{%
+  \ifnameundef{editor}
+    {}%
+    {\mkbibparens{with\addspace\printnames[given-family]{editor}}}%
+  \clearname{editor}}% or phys reprints them as "edited by ..." further along
 
-
-\addbibresource{/Users/hhalvors/hhalvors.github.io/hh.bib}
-
-
-
+% --- Layout ----------------------------------------------------------------
 \usepackage{xurl}
+\usepackage[none]{hyphenat}
+% Hyphenation is off, so TeX has only interword glue to work with.  Without
+% extra stretch, long proper nouns and grant titles push into the margin.
+\setlength{\emergencystretch}{3em}
+\usepackage{microtype}
+\usepackage{xcolor}
+\definecolor{darkblue}{rgb}{0,0,0.5}
 
 \usepackage{enumitem}
-% Uniform style for all itemize lists: small mid-dot marker, tight indent.
-\setlist[itemize]{label=\textperiodcentered, leftmargin=1.1em,
-                  itemsep=0.2\baselineskip, topsep=2pt}
-\usepackage{changepage}
-\usepackage[normalem]{ulem}
-% \sloppy
-\long\def\symbolfootnote[#1]#2{\begingroup%
-\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
-\usepackage[none]{hyphenat}
-\usepackage{lastpage}
-\newenvironment{hangpar}%
-   {\setlength{\parsep}{0pt}%
-    \begin{list}{}{\setlength{\topsep}{0pt}\setlength{\partopsep}{0pt}%
-                   \setlength{\leftmargin}{2\parindent}%
-                   \setlength{\itemindent}{-\leftmargin}}
-                   \item } {\end{list}}
-\setlength{\parindent}{0em}
+% One list style for the whole document: small mid-dot, tight indent.  Nested
+% lists get an en dash.  Everything below uses plain `itemize`.
+\setlist[itemize,1]{label=\textperiodcentered, leftmargin=1.1em,
+                    itemsep=0.15\baselineskip, topsep=3pt, parsep=0pt}
+\setlist[itemize,2]{label=\textendash, leftmargin=1.2em,
+                    itemsep=0.1\baselineskip, topsep=2pt, parsep=0pt}
+
+\usepackage{marginnote}
+\reversemarginpar
+\newcommand{\yearlabel}[1]{\marginnote{\raggedleft\textcolor{gray}{\small\bfseries#1}}}
+
+\usepackage{titlesec}
+\titleformat{\subsection}[block]{\normalfont\large\scshape}{}{0em}{}[\titlerule]
+\titleformat{\subsubsection}[block]{\normalfont\bfseries}{}{0em}{}
+\titlespacing*{\subsubsection}{0pt}{1.1em}{0.35em}
+
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \renewcommand\headrulewidth{0pt}
 \renewcommand\footrulewidth{0pt}
-\newcommand{\journal}[1]{\textit{#1}}
-\usepackage{xcolor}
-\definecolor{darkblue}{rgb}{0,0,0.5}
-\usepackage{microtype}
-\usepackage{marginnote}
-\reversemarginpar
-\newcommand{\yearlabel}[1]{\marginnote{\raggedleft\textcolor{gray}{\small\bfseries#1}}}
-\usepackage{titlesec}
-\titleformat{\subsection}[block]{\normalfont\large\scshape}{}{0em}{}[\titlerule]
-\usepackage{hyperref}
-\hypersetup{colorlinks=true,linkcolor=cyan,urlcolor=darkblue,pdfborderstyle={/S/U/W 1}}
-
-\begin{document}
-
-\lhead{ }
-\rhead{ }
-% \lfoot{\small H.\ Halvorson}
-% \cfoot{ }
+\lhead{}\rhead{}
+\usepackage{lastpage}
 \cfoot{\small p \thepage\ of \pageref*{LastPage}}
 
+\setlength{\parindent}{0em}
+\newcommand{\journal}[1]{\textit{#1}}
+% Dated entries: year in the left column, item in the right.
+\newenvironment{dated}[1][ll]%
+  {\begin{tabular}{@{}#1}}%
+  {\end{tabular}}
+% Sub-heading used inside Publications, Teaching and Service.  Same shape as
+% \subsubsection* but usable where a numbered sectional unit would be wrong.
+\newcommand{\rubric}[1]{\subsubsection*{#1}}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=cyan,urlcolor=darkblue,
+            pdfborderstyle={/S/U/W 1},
+            pdftitle={Hans Halvorson --- Curriculum Vitae},
+            pdfauthor={Hans Halvorson}}
+
+\begin{document}
 \thispagestyle{empty}
 
 \vspace*{-4em}
-\begin{center} {\Large\sc Curriculum Vit\ae} \\ \smallskip {\Large\sc Hans Halvorson} \end{center}
+\begin{center}
+  {\Large\sc Curriculum Vit\ae} \\ \smallskip
+  {\Large\sc Hans Halvorson} \\ \smallskip
+  {\normalsize Stuart Professor of Philosophy, Princeton University}
+\end{center}
 
 \vspace{1em}
-\begin{tabbing}
-  Department of Philosophy \\
-  Princeton University    \\
-  Princeton, NJ 08544     \\
-\href{https://hanshalvorson.com}{hanshalvorson.com}  \end{tabbing}
-
-\subsection*{Permanent positions}
-
-\begin{tabular}{@{}ll}
-  2016-- & Stuart Professor of Philosophy \\
-  2012-- & associated faculty, mathematics \\
-  2010--   & full professor \\
-  2005--10 & associate professor \\
-  2001--05 & assistant professor, Princeton University 
+\begin{tabular}{@{}l}
+  Department of Philosophy, Princeton University \\
+  Princeton, NJ 08544 \\
+  \href{https://hanshalvorson.com}{hanshalvorson.com}
 \end{tabular}
 
-\subsection*{Secondary affiliations}
 
-\begin{tabular}{@{}ll}
-  2021-- & research professor, University of Copenhagen \\
+\subsection*{Appointments}
+
+\begin{dated}
+  2016--   & Stuart Professor of Philosophy, Princeton University \\
+  2012--   & associated faculty, Department of Mathematics, Princeton University \\
+  2010--   & professor of philosophy, Princeton University \\
+  2005--10 & associate professor, Princeton University \\
+  2001--05 & assistant professor, Princeton University
+\end{dated}
+
+\subsection*{Visiting appointments and affiliations}
+
+\begin{dated}
+  2021--   & research professor, University of Copenhagen \\
   2008--09 & visiting researcher, Mathematical Institute, Utrecht \\
   2005--06 & fellow, Perimeter Institute for Theoretical Physics \\
-  2002-- & fellow, Pittsburgh Center for the Philosophy of Science \end{tabular}
+  2002--   & fellow, Pittsburgh Center for the Philosophy of Science
+\end{dated}
 
 \subsection*{Education}
 
-\begin{tabular}{@{}lll}
-  2001 & & PhD philosophy, University of Pittsburgh \\
-  1999 & & visiting student researcher, Oxford University \\
-  1998 & & MA mathematics, Pittsburgh \\
-  1997 & & MA philosophy, Pittsburgh \\
-  1995 & & BA philosophy, with honors, Calvin College
-\end{tabular}
+\begin{dated}
+  2001 & PhD philosophy, University of Pittsburgh \\
+       & \hspace{1em}\emph{Locality, localization, and the particle concept:} \\
+       & \hspace{1em}\emph{topics in the foundations of quantum theory} \\
+  1999 & visiting student researcher, Oxford University \\
+  1998 & MA mathematics, University of Pittsburgh \\
+  1997 & MA philosophy, University of Pittsburgh \\
+  1995 & BA philosophy, with honors, Calvin College
+\end{dated}
 
 
-% \subsubsection*{Research focus}
-% \begin{list}{}{\leftmargin=1em \labelwidth=0pt \itemsep=-\parsep} 
-% \item category theory; logic; philosophy of science; philosophy of
-%   physics; science and religion
-% \end{list}
+\subsection*{Honors and prizes}
 
-\pagestyle{fancy}
+% Reverse chronological.  Fellowships that carried research money are listed
+% under Research funding instead, so nothing is counted twice.
+\begin{itemize}
+\item Behrman Fellow, Princeton Council of the Humanities, 2005--08
+\item \href{https://www3.nd.edu/~cushpriz/}{James Cushing Memorial Prize in
+  the History and Philosophy of Physics}, 2004
+\item ``Ten best articles in philosophy for the year 2002,''
+  \textit{The Philosopher's Annual}
+\item ``Best article by a recent PhD for the year 2001,'' Philosophy of
+  Science Association
+\item ``Ten best articles in philosophy for the year 2001,''
+  \textit{The Philosopher's Annual}
+\item Alan Ross Anderson Fellowship for Philosophical Logic, University of
+  Pittsburgh, 1997
+\item Pew Younger Scholars Graduate Fellow, 1995--98
+\end{itemize}
 
+\subsection*{Research funding}
 
+\begin{itemize}
+\item Princeton Council of the Humanities grant, ``The Modern Breakthrough in
+  Scandinavia: Philosophy, Science, Art'' (co-PI Bridget Alsdorf), 2024--26.
+  \$75,000
+\item John Templeton Foundation research grant, ``Space from entanglement,''
+  2024--26. \$225,000
+\item Templeton World Charity Foundation research grant, ``Experimental tests
+  of quantum reality'' (co-PI Andrew Briggs), 2013--16. \$2,600,000
+\item National Science Foundation research grant, ``Identical particles and
+  statistics in superselection theory'' (co-PI David J.\ Baker), 2011--12.
+  \$100,000
+\item Mellon New Directions in the Humanities Fellowship, 2008--09. \$250,000
+\item John Templeton Foundation research grant, ``Understanding the quantum
+  world through mathematical innovation,'' 2007
+\item Princeton Tuck Grant for International Research Collaboration, 2018--19
+  (Denmark); 2010--11 (Netherlands)
+\item Princeton Center for the Study of Religion grant for developing the
+  course ``Religion and Scientific Objectivity,'' 2017
+\item Princeton 250th Anniversary Fund for Innovation in Undergraduate
+  Education, grant for developing the logic curriculum, 2004
+\end{itemize}
 
 
 \subsection*{Publications}
 
 \nocite{*}
-\renewcommand{\bibsetup}{\setlength{\bibitemsep}{0.5em}\raggedright} % Adjust space
-\printbibliography[heading=none]
+\renewcommand{\bibsetup}{\setlength{\bibitemsep}{0.5em}\raggedright}
 
+\subsubsection*{Books}
+\pubsfrom{npubbook}
+\printbibliography[heading=none,keyword=book-authored]
 
-\subsection*{Unpublished papers and notes}
+\subsubsection*{Edited volumes}
+\pubsfrom{npubedited}
+\printbibliography[heading=none,keyword=book-edited]
+
+\subsubsection*{Articles}
+\pubsfrom{npubarticle}
+\printbibliography[heading=none,type=article,notkeyword=review]
+
+\subsubsection*{Chapters in books}
+\pubsfrom{npubchapter}
+\printbibliography[heading=none,type=incollection]
+
+\subsubsection*{Book reviews}
+\pubsfrom{npubreview}
+\printbibliography[heading=none,keyword=review]
+
+% Keep in step with drafts.md, which drives /drafts.html.
+\subsubsection*{Unpublished papers and notes}
 
 \begin{itemize}
 
-\item Invariance and ontology in relativistic physics
+\item ``Invariance and ontology in relativistic physics''
   \href{https://philpapers.org/rec/HALTIN-3}{philpapers:HALTIN-3}
 
-\item Momentum and context
+\item ``Momentum and context''
   \href{https://philpapers.org/rec/HALMAC-2}{philpapers:HALMAC-2}
 
-\item Quantifier variance without collapse
+\item ``Quantifier variance without collapse''
   \href{https://philpapers.org/rec/HALQVW}{philpapers:HALQVW}
 
-\item Mind independence and invariance
+\item ``Against eliminating sorts''
+  \href{https://philpapers.org/rec/HALAES-4}{philpapers:HALAES-4}
 
-\item (with S. Wolters) ``Independence conditions for nets of local
-  algebras as sheaf conditions''
+\item ``Mind independence and invariance''
+
+\item ``Does quantum theory kill time?''
+  \href{https://philpapers.org/rec/HALDQT}{philpapers:HALDQT}
+
+\item (with S. Wolters) ``Independence conditions for nets of local algebras
+  as sheaf conditions''
   \href{http://arxiv.org/abs/1309.5639}{arxiv:1309.5639}
 
 \item (with N. Swanson) ``Comment on the structure of physics''
   \href{http://philsci-archive.pitt.edu/9314}{philsci-archive:9314}
 
-\item ``Does quantum theory kill time?''
-  \href{https://philpapers.org/rec/HALDQT}{philpapers:HALDQT}
-
 \end{itemize}
 
 
-\subsection*{Articles for broader audiences}
+\subsection*{Writing for wider audiences}
 
 \begin{itemize}
 
@@ -214,11 +349,12 @@
 
 \item ``Meta-thinking'' \href{http://edge.org/response-detail/26188}{Edge Question 2015}
 
-\item ``Quantum envy'' (with Adam Neder)
+\item (with Adam Neder) ``Quantum envy''
   \href{http://www.lutheranforum.org/categories/archive/winter-2007/LF2007-4_55-57_Halvorson-Neder-Quantum_Envy.pdf}{Lutheran
     Forum 2007}
 
-\item ``Comments on Clouser's claims for theistic science'' \href{http://www.asa3.org/ASA/PSCF/2006/PSCF3-06Halvorson.pdf}{PSCF 2006}
+\item ``Comments on Clouser's claims for theistic science''
+  \href{http://www.asa3.org/ASA/PSCF/2006/PSCF3-06Halvorson.pdf}{PSCF 2006}
 
 \end{itemize}
 
@@ -226,88 +362,41 @@
 \subsection*{Invited lectures and conference presentations}
 
 \begin{itemize}
-
 \input{cv-talks.tex}
-
 \end{itemize}
 
-\subsection*{Outreach activities}
+\subsection*{Public lectures and outreach}
 
 \begin{itemize}
-
 \input{cv-outreach.tex}
-
 \end{itemize}
 
-
-
-\subsection*{Prizes, grants, and fellowships}
-
-\begin{itemize}
-\item Princeton Council of Humanities Grant for ``The Modern
-  Breakthrough in Scandinavia: Philosophy, Science, Art'' (co-PI
-  Bridget Alsdorf) 2024--26. \$75k
-\item JTF Research Grant ``Space from entanglement'' 2024--26. \$225k
-\item Princeton Tuck Grant for International Research Collaboration
-  2018--19 (Denmark)
-\item Princeton Center for the Study of Religion grant for developing
-  a course ``Religion and scientific objectivity'' 2017
-\item TWCF Research Grant (co-PI Andrew Briggs) ``Experimental tests
-  of quantum reality'' 2013--2016. \$2.6M \hspace{0.5em}
-%   \url{http://oxfordquantum.org/major-themes/#Foundations}
-\item NSF Research Grant (co-PI David J.\ Baker) ``Identical particles
-  and statistics in superselection theory.''  2011--12. \$100k
-\item Princeton Tuck Grant for International Research Collaboration
-  2010--11 (Netherlands)
-\item Mellon New Directions in the Humanities Fellowship, 2008--09.
-  \$250K
-\item JTF Research Grant: ``Understanding the quantum
-  world through mathematical innovation.''  2007
-\item Behrman Fellow, Princeton Council of the Humanities, 2005--08
-\item Princeton 250th Anniversary Fund for Innovation in Undergraduate
-  Education, grant for developing logic curriculum, 2004
-\item \href{https://www3.nd.edu/~cushpriz/}{James Cushing Memorial
-    Prize in the History and Philosophy of Physics}, 2004
-\item ``Ten best articles in philosophy for the year 2002''
-  \textit{The Philosopher's Annual}
-\item ``Best article by a recent PhD for the year 2001'' Philosophy of
-  Science Association
-\item ``Ten best articles in philosophy for the year 2001''
-  \textit{The Philosopher's Annual}
-\item Alan Ross Anderson Fellowship for Philosophical Logic,
-  Pittsburgh, 1997
-\item Pew Younger Scholars Graduate Fellow, 1995--98
-\end{itemize}
 
 \subsection*{Teaching and advising}
 
-\smallskip \underline{Post-graduate mentoring:} I worked with and
-wrote letters for the following PhD students and postdocs.  An
-asterisk indicates that I was the primary advisor.  Unless indicated
-otherwise, placement in a tenure track position at the listed
-university.
-\begin{list}{\textperiodcentered}{\itemindent=-1em \itemsep=-\parsep
-    \topsep=0.2em \partopsep=0in}
+\rubric{Doctoral and postdoctoral advising}
+
+I have worked with and written letters for the PhD students and postdocs
+listed below --- ten of them as primary dissertation advisor, marked with an
+asterisk. Where a student's PhD is from another university, that university is
+given in parentheses. Unless otherwise indicated, the placement listed is a
+tenure-track position.
+
+\begin{itemize}
 \item Jake Khawaja*
 \item Brendan Kolb*
-\item Alexander Meehan*: postdoc Yale, University of Wisconsin at
-  Madison
-% On the Epistemology of Physical Probability
+\item Alexander Meehan*: postdoc Yale, University of Wisconsin at Madison
 \item David Schroeren*: postdoc Geneva
 \item Daniel Berntson: postdoc Rutgers, postdoc Uppsala
 \item Robbie Hirsch*: postdoc Princeton
 \item Thomas Barrett*: postdoc NYU, UC Santa Barbara
-\item Dimitris Tsementzis*: postdoc Rutgers, Goldman Sachs machine
-  learning quants
+\item Dimitris Tsementzis*: postdoc Rutgers, Goldman Sachs machine learning quants
 \item Laurenz Hudetz (Salzburg): London School of Economics
 \item Neil Dewar (Oxford): postdoc Munich, Cambridge University
 \item Michaela McSweeney: Boston University
-  % \item Sebastian Lutz (Utrecht): Uppsala University
-  % \item Holger Andreas (Leipzig): University of British Columbia
 \item Benjamin Feintzeig (UC Irvine): University of Washington
 \item Noel Swanson*: University of Delaware
 \item Samuel Fletcher (UC Irvine): University of Minnesota
-%   \item Sander Wolters (Nijmegen): postdoc at Nijmegen
 \item Nicholas Teh (Cambridge): University of Notre Dame
 \item Joseph Rachiele*: Chapman University
 \item Joshua Hershey: The King's College NY
@@ -315,225 +404,206 @@ university.
 \item Jim Weatherall (UC Irvine): UC Irvine
 \item Caleb Cohoe: Metropolitan State University, Denver
 \item Jada Strabbing: Fordham University, Wayne State University
-\item Giovanni Valente (Maryland): University of Pittsburgh,
-  Politecnico Milano
+\item Giovanni Valente (Maryland): University of Pittsburgh, Politecnico Milano
 \item Yuichiro Kitajima (Hokkaido): Nihon University
 \item David J.\ Baker*: University of Michigan
 \item Lara Buchak: UC Berkeley, Princeton
 \item Tracy Lupher (Texas): James Madison University
 \item Antony Eagle: Oxford University, University of Adelaide
-\end{list}
+\end{itemize}
 
+Students in Princeton's PhD program earn ``units of credit'' by writing papers
+under the supervision of a member of the faculty. I have advised unit work in
+general philosophy of science, philosophy of physics, philosophy of religion,
+and philosophical logic.
 
-\smallskip \underline{Graduate seminars} 
-\smallskip
-\begin{list}{\textperiodcentered}{\itemindent=-1em \itemsep=-\parsep
-    \topsep=0.2em \partopsep=0in}
-\item Spacetime and objectivity   
+\rubric{Graduate seminars}
+
+\begin{itemize}
+\item Spacetime and objectivity
 \item Kierkegaard's \textit{Concluding Unscientific Postscript}
 \item Philosophy of space and time (with D.\ Hogan)
 \item Logical philosophy of science
 \item Foundations of mathematics: set theory vs.\ category theory (with J.\ Burgess)
 \item Categorical logic and topos theory
-\item Quantum information theory and the foundations of quantum
-  mechanics (with B.\ van Fraassen)
+\item Quantum information theory and the foundations of quantum mechanics
+  (with B.\ van Fraassen)
 \item Metaphysics of physics (with J.\ Butterfield)
 \item Foundations of quantum field theory
 \item Scientific realism and antirealism
 \item From physics to metaphysics (with A.\ Elga)
-\end{list}
+\end{itemize}
 
-\smallskip Students in Princeton's PhD program earn ``units of
-credit'' by writing papers under the supervision of some member of the
-faculty.  I have advised unit work on a number of topics including
-general philosophy of science, philosophy of physics, philosophy of
-religion, and philosophical logic.
+\rubric{Undergraduate courses and seminars}
 
-\bigskip \underline{Senior theses advised:} Since 2001, advised
-between one and five theses per year --- for Philosophy, Math,
-Physics, and ORFE. Besides my areas of expertise, I have also advised
-theses in pragmatism, metaphysics, philosophy of mind, religion,
-biology, and medicine.
-
-\bigskip
-\underline{Undergraduate courses and seminars}
-
-% \begin{list}{\textperiodcentered}{\itemindent=0em \itemsep=-\parsep \topsep=0.5em \partopsep=0in}
-\begin{list}{\textperiodcentered}{\setlength{\leftmargin}{1em} \labelwidth=0pt \itemsep=-\parsep}
+\begin{itemize}
 \item Religion and Scientific Objectivity
 \item Kierkegaard
 \item Philosophy of Science
 \item History of Analytic Philosophy 1900--1950
 \item Philosophy of Mathematics
-\item Category Theory (math-phil)
-\item Advanced Logic (math-phil)
-\item Intermediate Logic 
+\item Category Theory (math--phil)
+\item Advanced Logic (math--phil)
+\item Intermediate Logic
 \item Philosophical Logic
 \item Philosophy of Physics
 \item Philosophy of Religion
 \item Introductory Logic
 \item History of Modern Philosophy
 \item The Modern Breakthrough in Scandinavia
-\end{list}
+\end{itemize}
 
-\subsection*{Administrative experience}
+\rubric{Senior theses}
+
+Since 2001, between one and five theses per year, for Philosophy,
+Mathematics, Physics, and ORFE. Besides my areas of expertise, I have advised
+theses in pragmatism, metaphysics, philosophy of mind, religion, biology, and
+medicine.
 
 
-\begin{list}{\textperiodcentered}{\setlength{\leftmargin}{1em} \labelwidth=0pt \itemsep=-\parsep}
-\item Director of Graduate Studies, Philosophy Department, 2007--08
-\item Princeton University Research Board, 2007--08, 2009-11, 2016--17
-\end{list}
+\subsection*{Academic service}
 
-\subsection*{Service to the university and the profession}
+\rubric{University and departmental administration}
 
-\begin{list}{\textperiodcentered}{\setlength{\leftmargin}{1.2em}\setlength{\labelwidth}{0.8em}\setlength{\labelsep}{0.4em}\setlength{\itemsep}{-\parsep}\setlength{\topsep}{0pt}}
-\item Princeton Committee on Undergraduate Admission and Financial
-  Aid, 2024--27  
-\item Princeton Policy Committee on Athletics and Campus Recreation,
-  2022--25
-\item Associate editor:
-\begin{list}{\textendash}{\setlength{\leftmargin}{1.2em}\setlength{\labelwidth}{0.8em}\setlength{\labelsep}{0.4em}\setlength{\itemsep}{-\parsep}\setlength{\topsep}{2pt}}
-\item \emph{Philosophy of Physics} 2022--
-\item \emph{Review of Symbolic Logic} 2020--
-\item \emph{Science, Religion and Culture} 2017--
-\item \href{http://www.philpapers.org}{PhilPapers.org} 
-  Philosophy of Physical Science 2011-- \end{list}
-\item Scientific Advisory Board of ERC ADV project ``Team semantics
-  and dependence'' (PI: Jouko V{\"a}{\"a}n{\"a}nen) 2021--24
+\begin{itemize}
+\item Princeton Committee on Undergraduate Admission and Financial Aid,
+  2024--27
+\item Princeton Policy Committee on Athletics and Campus Recreation, 2022--25
+\item Princeton University Research Board, 2007--08, 2009--11, 2016--17
+\item Department of Philosophy:
+  \begin{itemize}
+  \item Director of Graduate Studies, 2007--08
+  \item appointments committee, 2018--20
+  \item director of PhD placement, 2009--12, 2016--17, 2022--
+  \item director of colloquium committee, 2010--11, 2016--17
+  \item graduate admissions committee, 2001--02, 2003--06, 2007--08,
+    2009--11, 2013--14
+  \item curriculum committee, 2001--03, 2004--06, 2007--08
+  \item computer committee, 2004--06, 2014--15
+  \item library committee, 2009--10
+  \item graduate language examiner (German), 2001--
+  \end{itemize}
+\end{itemize}
+
+\rubric{Editorial work}
+
+\begin{itemize}
+\item Associate editor, \emph{Philosophy of Physics}, 2022--
+\item Associate editor, \emph{Review of Symbolic Logic}, 2020--
+\item Associate editor, \emph{Science, Religion and Culture}, 2017--
+\item Area editor for philosophy of physical science,
+  \href{http://www.philpapers.org}{PhilPapers.org}, 2011--
+\end{itemize}
+
+\rubric{Conference organization and program committees}
+
+\begin{itemize}
+\item Co-organizer, Oxford--Princeton partnership in philosophy of physics,
+  2001--07
+\item Organizer, Conference on understanding quantum mechanics through
+  mathematical innovation, Princeton, Oct 2007
+\item Co-organizer, Symposium on categorical perspectives in the philosophy of
+  physics, Philosophy of Science Association Meeting, 2010
+\item Co-organizer, Irvine--Pittsburgh--Princeton conference series on the
+  foundations of physics, 2013--15
+\item Organizer, Conference on equivalent theories in science and metaphysics,
+  Princeton, Mar 2015
+\item Co-organizer, Foundations of Quantum Theory Conference, Nagoya, Japan,
+  Mar 2015
+\item Co-organizer, Workshop on Georg Brandes and the Modern Breakthrough,
+  May 2025
+\item Co-organizer, Workshop on Kierkegaard, Objectivity, and Subjectivity,
+  Jul 2025
 \item Program committee:
-  \begin{list}{\textendash}{\setlength{\leftmargin}{1.2em}\setlength{\labelwidth}{0.8em}\setlength{\labelsep}{0.4em}\setlength{\itemsep}{-\parsep}\setlength{\topsep}{2pt}}
-  \item Philosophy of Science Association Meeting 2006
-    \item The semantics of scientific theories 2016. LMU Munich  
-  \item European Philosophy of Science Association Meeting
-    2023
-  \item Foundations of Physics 2026\end{list}
-\item Co-organizer:
-  \begin{list}{\textendash}{\setlength{\leftmargin}{1.2em}\setlength{\labelwidth}{0.8em}\setlength{\labelsep}{0.4em}\setlength{\itemsep}{-\parsep}\setlength{\topsep}{2pt}}
-  \item Oxford-Princeton partnership in Philosophy of Physics
-    2001--2007
-  \item Foundations of Quantum Theory Conference.  Nagoya, Japan.  March 2015
-  \item Irvine-Pittsburgh-Princeton conference series on
-    the foundations of physics, 2013--2015
-\item Symposium on categorical perspectives in the philosophy of
-  physics. Philosophy of Science Association Meeting, 2010
-\item Workshop on Kierkegaard, Objectivity, and Subjectivity. July
-  2025
-\item Workshop on Georg Brandes and the Modern Breakthrough. May 2025
-\end{list}
-\item Organizer: Conference on understanding quantum mechanics through
-  mathematical innovation. Princeton, Oct 2007
-\item Organizer: Conference on equivalent theories in science and
-  metaphysics. Princeton, Mar 2015
-\item External dissertation examiner: University of Geneva; University
-  of Texas; University of Utrecht (foundations of science); Radboud
-  University of Nijmegen (mathematics); Carnegie Mellon University;
-  LMU Munich; University of Aberdeen (theology); Roskilde Universitet;
-  University of Salzburg
-\item External reviewer for faculty hiring and promotions: Boston
-  University, Chicago, Columbia, CUNY, CCNY, Drexel, Georgetown,
-  London School of Economics, National Technical University of Athens,
-  Notre Dame, NYU, Oxford, Radboud University of Nijmegen, Rutgers,
-  St.\ Olaf College, Stanford, UC Irvine, University of Chicago,
-  University of Edinburgh, University of Michigan, Pittsburgh,
-  University of Southern California, University of Vienna, University
-  of Washington, University of Waterloo, Wheaton College, Yale
-\item Academic Advisory Board: National Speech and Debate Association,
-  2015--16.
-% \item Academic Advisory Board: The John Templeton Foundation 2006--09,
-%   2011--2013, 2014--2015. 
-\item Invited participant in Princeton Council of the Humanities,
-  philosophy of time group, 2003--04
-\item Invited participant in New York Institute of Philosophy,
-  cosmology and religion discussion group, 2008
-\item Referee for: \journal{Analysis}, \journal{Annals of Physics},
-  \journal{Annals of Pure and Applied Logic}, \journal{Australasian
-    Journal of Philosophy}, \journal{British Journal for the
-    Philosophy of Science}, \journal{Bulletin of Symbolic Logic},
-  \journal{Canadian Journal of Philosophy}, \journal{Christian
-    Scholars Review}, \journal{Communications in Mathematical
-    Physics}, \journal{Erkenntnis}, \journal{European Journal for
-    Philosophy of Science}, \journal{Foundations of Physics},
-  \journal{International Journal for Philosophy of Religion},
-  \journal{International Studies in the Philosophy of Science},
-  \journal{Journal for General Philosophy of Science},
-  \journal{Journal of Logic \& Analysis}, \journal{Journal of
-    Mathematical Physics}, \journal{Journal of Philosophy},
-  \journal{Journal of Physics A}, \journal{Logic and Logical
-    Philosophy}, \journal{Notre Dame Journal of Formal Logic},
-  \journal{Nous}, \journal{Philosophia Mathematica},
-  \journal{Philosophy Compass}, \journal{Philosopher's Imprint},
-  \journal{Philosophy and Phenomenological Research},
-  \journal{Philosophical Studies}, \journal{Philosophy of Science},
+  \begin{itemize}
+  \item Philosophy of Science Association Meeting, 2006
+  \item The semantics of scientific theories, LMU Munich, 2016
+  \item European Philosophy of Science Association Meeting, 2023
+  \item Foundations of Physics, 2026
+  \end{itemize}
+\end{itemize}
+
+\rubric{External evaluation and advisory work}
+
+\begin{itemize}
+\item Scientific Advisory Board, ERC Advanced Grant project ``Team semantics
+  and dependence'' (PI: Jouko V{\"a}{\"a}n{\"a}nen), 2021--24
+\item External reviewer for faculty hiring and promotion: Boston University,
+  Chicago, Columbia, CUNY, CCNY, Drexel, Georgetown, London School of
+  Economics, National Technical University of Athens, Notre Dame, NYU, Oxford,
+  Radboud University of Nijmegen, Rutgers, St.\ Olaf College, Stanford, UC
+  Irvine, University of Chicago, University of Edinburgh, University of
+  Michigan, Pittsburgh, University of Southern California, University of
+  Vienna, University of Washington, University of Waterloo, Wheaton College,
+  Yale
+\item External dissertation examiner: University of Geneva; University of
+  Texas; University of Utrecht (foundations of science); Radboud University of
+  Nijmegen (mathematics); Carnegie Mellon University; LMU Munich; University
+  of Aberdeen (theology); Roskilde Universitet; University of Salzburg
+\item Academic Advisory Board, National Speech and Debate Association, 2015--16
+\item Invited participant, New York Institute of Philosophy, cosmology and
+  religion discussion group, 2008
+\item Invited participant, Princeton Council of the Humanities, philosophy of
+  time group, 2003--04
+\end{itemize}
+
+\rubric{Refereeing}
+
+\begin{itemize}
+\item Journals and conferences: \journal{Analysis}, \journal{Annals of
+    Physics}, \journal{Annals of Pure and Applied Logic},
+  \journal{Australasian Journal of Philosophy}, \journal{British Journal for
+    the Philosophy of Science}, \journal{Bulletin of Symbolic Logic},
+  \journal{Canadian Journal of Philosophy}, \journal{Christian Scholars
+    Review}, \journal{Communications in Mathematical Physics},
+  \journal{Erkenntnis}, \journal{European Journal for Philosophy of Science},
+  \journal{Foundations of Physics}, \journal{International Journal for
+    Philosophy of Religion}, \journal{International Studies in the Philosophy
+    of Science}, \journal{Journal for General Philosophy of Science},
+  \journal{Journal of Logic \& Analysis}, \journal{Journal of Mathematical
+    Physics}, \journal{Journal of Philosophy}, \journal{Journal of Physics A},
+  \journal{Logic and Logical Philosophy}, \journal{Notre Dame Journal of
+    Formal Logic}, \journal{Nous}, \journal{Philosophia Mathematica},
+  \journal{Philosopher's Imprint}, \journal{Philosophical Studies},
   \journal{Philosophical Transactions of the Royal Society},
-  \journal{Physics Letters~A}, \journal{Physical Review~A},
-  \journal{Physical Review Letters}, \journal{Quantum Studies:
-    Mathematics and Foundations}, \journal{Ratio}, \journal{Religious
-    Studies}, \journal{Reviews of Mathematical Physics},
+  \journal{Philosophy and Phenomenological Research}, \journal{Philosophy
+    Compass}, \journal{Philosophy of Science}, \journal{Physical Review~A},
+  \journal{Physical Review Letters}, \journal{Physics Letters~A},
+  \journal{Quantum Studies: Mathematics and Foundations}, \journal{Ratio},
+  \journal{Religious Studies}, \journal{Reviews of Mathematical Physics},
   \journal{Science and Christian Belief}, \journal{Studia Logica},
-  \journal{Studies in History and Philosophy of Science},
   \journal{Studies in History and Philosophy of Modern Physics},
-  \journal{Theoria}, Quantum Physics and Logic (QPL 2011); National
-  Science Foundation (USA); Engineering and Science Research Council
-  (UK); Israel Science Foundation; Netherlands Organisation for
-  Scientific Research (NWO); Royal Netherlands Academy of Arts and
-  Sciences (KNAW); Social Sciences and Humanities Research Council of
-  Canada; L'Agence Nationale de la Recherche (= National Science
-  Foundation of France); Austrian Science Fund (FWF); The
-  German-Israeli Foundation for Scientific Research and Development;
-  European Research Council; National Research, Development and
-  Innovation Office of Hungary; Foundation for Polish Science; The
-  Leverhulme Trust; Elsevier Scientific Publishers; Hackett
-  Publishing; John Templeton Foundation; Templeton World Charity
-  Foundation; Oxford University Press; Oneworld Publications;
-  Princeton University Press; Springer Verlag; Wiley-Blackwell; Yale
-  University Press.
-\item Service to the Philosophy Department at Princeton:
-\begin{list}{\textendash}{\setlength{\leftmargin}{1.2em}\setlength{\labelwidth}{0.8em}\setlength{\labelsep}{0.4em}\setlength{\itemsep}{-\parsep}\setlength{\topsep}{2pt}}
-\item appointments committee 2018--20
-\item director of PhD placement 2009--12, 2016--17, 2022--
-\item director of colloquium committee 2010--11, 2016--17
-\item graduate language examiner (German) 2001--
-\item computer committee 2004--06, 2014--15
-\item curriculum committee 2001--03, 2004--06, 2007--08
-\item graduate admissions committee 2001--02, 2003--06, 2007--08,
-  2009--11, 2013--14
-\item library committee 2009--10
-\end{list}
-\end{list}
+  \journal{Studies in History and Philosophy of Science}, \journal{Theoria};
+  Quantum Physics and Logic (QPL 2011).
+\item Funding agencies: National Science Foundation (USA); Engineering and
+  Physical Sciences Research Council (UK); Israel Science Foundation;
+  Netherlands Organisation for Scientific Research (NWO); Royal Netherlands
+  Academy of Arts and Sciences (KNAW); Social Sciences and Humanities Research
+  Council of Canada; Agence Nationale de la Recherche (France); Austrian
+  Science Fund (FWF); German-Israeli Foundation for Scientific Research and
+  Development; European Research Council; National Research, Development and
+  Innovation Office of Hungary; Foundation for Polish Science; The Leverhulme
+  Trust; John Templeton Foundation; Templeton World Charity Foundation.
+\item Publishers: Elsevier; Hackett; Oneworld; Oxford University Press;
+  Princeton University Press; Springer; Wiley-Blackwell; Yale University
+  Press.
+\end{itemize}
 
-\subsection*{Languages} 
 
-\begin{list}{\textperiodcentered}{\setlength{\leftmargin}{1em} \labelwidth=0pt \itemsep=-\parsep}  
+\subsection*{Languages}
+
+\begin{itemize}
 \item English, native speaker
 \item Danish, C1 (Studieprøven)
 \item German, C1 (Zentrale Mittelstufenprüfung)
-\item Dutch, B2  
+\item Dutch, B2
 \item French, reading
-\end{list}
+\end{itemize}
 
 
-% \subsubsection*{References}
-
-% \begin{list}{}{\itemindent=-\leftmargin \labelwidth=0pt
-%    \itemsep=-\parsep} 
-% \item Frank Arntzenius (Oxford)
-% \item Jeffrey Bub (Maryland)
-% \item Jeremy Butterfield (Cambridge)
-% \item John Earman (Pittsburgh, emeritus)
-% \item Adrian Heathcote (Sydney)
-% \item Klaas Landsman (Nijmegen)
-% \item David Malament (UC Irvine, emeritus)
-% \item Alvin Plantinga (Notre Dame, emeritus)
-% \item Laura Ruetsche (Michigan)
-% \item Stephen Summers (Florida)
-% \item Bas van Fraassen (Princeton, emeritus)
-% \end{list} 
-
-\bigskip 
-\vspace{2em} \hfill \textit{Last Updated: \today }
+\vspace{2em} \hfill \textit{Last updated: \today}
 
 \end{document}
-
 
 %%% Local Variables:
 %%% mode: latex

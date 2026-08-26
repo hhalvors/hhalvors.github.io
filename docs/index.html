@@ -58,7 +58,12 @@
      styles, `#sidebar-checkbox` is for behavior. -->
 <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
 
-<!-- Toggleable sidebar -->
+<!-- Toggleable sidebar.
+
+     Links are hardcoded (the dynamic nav was disabled long ago).  They are
+     grouped because a flat list of sixteen items is not navigation.  If you
+     add a section to the site, add it here too -- /bohr/ ran for years with
+     sixty-five pages and no way in. -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
     <p>Personligheden er Sandheden</p>
@@ -67,31 +72,28 @@
   <nav class="sidebar-nav">
     <a class="sidebar-nav-item" href="./index.html">Home</a>
 
-    <!--- Dynamic sidebar nav disabled; links are hardcoded below -->
+    <span class="sidebar-nav-heading">Work</span>
+    <a class="sidebar-nav-item" href="./publications.html">Publications</a>
+    <a class="sidebar-nav-item" href="./books/">Books</a>
+    <a class="sidebar-nav-item" href="./essays.html">Essays</a>
+    <a class="sidebar-nav-item" href="./drafts.html">Drafts</a>
+    <a class="sidebar-nav-item" href="./talks.html">Talks</a>
+    <a class="sidebar-nav-item" href="./cv.pdf">CV</a>
 
+    <span class="sidebar-nav-heading">Projects</span>
+    <a class="sidebar-nav-item" href="./bohr/">Niels Bohr</a>
+    <a class="sidebar-nav-item" href="./kierkegaard/">Kierkegaard</a>
+    <a class="sidebar-nav-item" href="./dansk/">Danish Texts</a>
+    <a class="sidebar-nav-item" href="./theories/">Equivalent Theories</a>
+    <a class="sidebar-nav-item" href="./spacetime/">Spacetime</a>
 
-	
-   <!-- Add the new Publications link -->
-	<a class="sidebar-nav-item" href="./publications.html">Publications</a>
+    <span class="sidebar-nav-heading">Teaching</span>
+    <a class="sidebar-nav-item" href="./courses/">Courses</a>
+    <a class="sidebar-nav-item" href="./logic/">Logic</a>
+    <a class="sidebar-nav-item" href="./logic-tools.html">Logic Tools</a>
 
-	<a class="sidebar-nav-item" href="./courses/">Courses</a>
-
-<a class="sidebar-nav-item" href="./books/">Books</a>
-
-	<a class="sidebar-nav-item" href="./logic-tools.html">Logic Tools</a>
-
-	<a class="sidebar-nav-item" href="./drafts.html">Drafts</a>
-
-	<a class="sidebar-nav-item" href="./talks.html">Talks</a>
-
-	<a class="sidebar-nav-item" href="./cv.pdf">CV</a>
-
-	<a class="sidebar-nav-item" href="https://github.com/hhalvors">GitHub project</a>
-
-	<a class="sidebar-nav-item" href="./theories/">Equivalent Theories</a>
-
-	<a class="sidebar-nav-item" href="./dansk/">Danish Texts</a>
-
+    <span class="sidebar-nav-heading">Elsewhere</span>
+    <a class="sidebar-nav-item" href="https://github.com/hhalvors">GitHub project</a>
   </nav>
 
   <div class="sidebar-item">
@@ -127,7 +129,148 @@
           <div class="page">
   
 
-  <div class="icon-links">
+  <!-- Deliberately free of hand-written prose about current projects. Anything
+     describing work in progress goes stale faster than it gets updated, so
+     this page carries only things that stay true: who I am, and where the
+     sections of the site are. Project sections describe themselves. -->
+<div class="intro">
+<p><img class="intro-photo" src="./images/hans-halvorson.jpg" alt="Hans Halvorson" width="471" height="622"></p>
+<p>Stuart Professor of Philosophy at Princeton University, associated faculty in
+mathematics, and research professor at the University of Copenhagen. I work on
+the foundations of physics, logic and the structure of scientific theories, and
+the Scandinavian philosophical tradition behind Niels Bohr.</p>
+</div>
+<div class="icon-links">
+<div>
+<span class="icon"><i class="fa-solid fa-file-lines"></i></span> <a href="./publications.html">Publications</a>
+</div>
+<div>
+<span class="icon"><i class="fa-solid fa-book"></i></span> <a href="./books/">Books</a>
+</div>
+<div>
+<span class="icon"><i class="fa-solid fa-pen-nib"></i></span> <a href="./essays.html">Essays</a>
+</div>
+<div>
+<span class="icon"><i class="fa-solid fa-flask"></i></span> <a href="./drafts.html">Work in progress</a>
+</div>
+<div>
+<span class="icon"><i class="fa-solid fa-microphone"></i></span> <a href="./talks.html">Talks</a>
+</div>
+<div>
+<span class="icon"><i class="fa-solid fa-file-pdf"></i></span> <a href="./cv.pdf">Curriculum vitae</a>
+</div>
+</div>
+<hr />
+<h3 id="recent-publications">Recent publications</h3>
+<div class="publications recent-pubs">
+<ul class="bib-list">
+<li class="bib-entry">
+<span class="bib-title"><a href="https://philpapers.org/rec/HALBEL-2" target="_blank">Bohr's epistemological lesson of quantum physics</a></span>. <em class="bib-venue">In How to Understand Quantum Mechanics: 100 years of Ongoing Interpretations (Springer)</em> (<span class="bib-year">2026</span>).<span class="bib-links"><a href="https://philpapers.org/rec/HALBEL-2" class="bib-badge bib-badge-pre" target="_blank" rel="noopener noreferrer">PhilPapers</a></span>
+</li>
+<li class="bib-entry">
+<span class="bib-title"><a href="https://philpapers.org/rec/HALNBP-2" target="_blank">Niels Bohr: Physicist-Philosopher in Action</a></span>. <em class="bib-venue">In La philosophie des physiciens, XXe-XXIe siècles</em> (<span class="bib-year">2026</span>).<span class="bib-links"><a href="https://philpapers.org/rec/HALNBP-2" class="bib-badge bib-badge-pre" target="_blank" rel="noopener noreferrer">PhilPapers</a></span>
+</li>
+<li class="bib-entry">
+<span class="bib-title">The point of departure: Bohr's ‘The unity of human knowledge (1960)’</span>. <em class="bib-venue">In Can we understand the world? (Ergon Verlag)</em> (<span class="bib-year">2026</span>).<span class="bib-links"></span>
+</li>
+<li class="bib-entry">
+<span class="bib-title"><a href="https://doi.org/10.1111/phpr.70122" target="_blank">Deterministic theories</a></span>. <em class="bib-venue">Philosophy and Phenomenological Research</em> (<span class="bib-year">2026</span>).<span class="bib-authors"> With J.B. Manchak and James Owen Weatherall.</span><span class="bib-links"><a href="https://doi.org/10.1111/phpr.70122" class="bib-badge bib-badge-doi" target="_blank" rel="noopener noreferrer">DOI</a><a href="https://arxiv.org/abs/2503.05681" class="bib-badge bib-badge-pre" target="_blank" rel="noopener noreferrer">arXiv</a></span>
+</li>
+</ul>
+</div>
+<div class="more-link">
+<a href="./publications.html">All publications →</a>
+</div>
+<h3 id="recent-talks">Recent talks</h3>
+<div class="talk-page recent-talks">
+<div class="talk-item">
+<div class="talk-title">
+Er musste das Wissen aufheben: van Fraassen on the priority of the manifest image
+</div>
+<div class="talk-meta">
+Schock Prize Symposium · Stockholm · June 2026
+</div>
+<div class="talk-links">
+<a href="talks/schock.pdf" class="talk-link">pdf</a><a href="talks/schock.html" class="talk-link">html</a><a href="talks/schock.qmd" class="talk-link">qmd</a>
+</div>
+</div>
+<div class="talk-item">
+<div class="talk-title">
+Equivalence: A Program
+</div>
+<div class="talk-meta">
+Conference on theoretical equivalence · Oslo · June 2026
+</div>
+<div class="talk-links">
+<a href="talks/equivalence-oslo.pdf" class="talk-link">pdf</a>
+</div>
+</div>
+<div class="talk-item">
+<div class="talk-title">
+Updating your religion
+</div>
+<div class="talk-meta">
+Reunions · Princeton · May 2026
+</div>
+<div class="talk-links">
+<a href="talks/reunions2026.pdf" class="talk-link">pdf</a><a href="talks/reunions2026.tex" class="talk-link">tex</a>
+</div>
+</div>
+<div class="talk-item">
+<div class="talk-title">
+Niels Bohr on causal explanation
+</div>
+<div class="talk-meta">
+5th International Conference on the History of Quantum Physics · August 2025
+</div>
+<div class="talk-links">
+<a href="talks/bohr-causality.pdf" class="talk-link">pdf</a>
+</div>
+</div>
+</div>
+<div class="more-link">
+<a href="./talks.html">All talks →</a>
+</div>
+<hr />
+<h3 id="projects">Projects</h3>
+<div class="icon-links">
+<div>
+<span class="icon"><i class="fa-solid fa-atom"></i></span> <a href="./bohr/">Niels Bohr: Philosopher in Action</a>
+</div>
+<div>
+<span class="icon"><i class="fa-solid fa-book-open"></i></span> <a href="./kierkegaard/">Kierkegaard</a>
+</div>
+<div>
+<span class="icon"><i class="fa-solid fa-language"></i></span> <a href="./dansk/">Danish Texts</a>
+</div>
+<div>
+<span class="icon"><i class="fa-solid fa-equals"></i></span> <a href="./theories/">Equivalent Theories</a>
+</div>
+<div>
+<span class="icon"><i class="fa-solid fa-clock"></i></span> <a href="./spacetime/">Spacetime</a>
+</div>
+</div>
+<hr />
+<h3 id="logic-tools">Logic Tools</h3>
+<p>Free software for learning symbolic logic, written to accompany <em>How Logic
+Works</em>. Check a natural-deduction proof line by line, build a truth table, or
+evaluate a sentence in a finite structure. You can also <strong>photograph a proof
+you wrote by hand</strong> and have it read and checked. No account, nothing to
+install.</p>
+<div class="icon-links">
+<div>
+<span class="icon"><i class="fa-solid fa-list-check"></i></span> <a href="./logic-tools.html">What the tools do</a>
+</div>
+<div>
+<span class="icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></span> <a href="https://lemmon-checker.onrender.com">Open the tools</a>
+</div>
+<div>
+<span class="icon"><i class="fa-solid fa-graduation-cap"></i></span> <a href="./logic/">Solutions, addenda and code</a>
+</div>
+</div>
+<hr />
+<h3 id="find-me">Find me</h3>
+<div class="icon-links">
 <div>
 <span class="icon"><i class="fa-brands fa-orcid"></i></span> <a href="https://orcid.org/0000-0003-3022-2344">ORCID</a>
 </div>
@@ -145,21 +288,6 @@
 </div>
 <div>
 <span class="icon"><i class="fa-solid fa-globe"></i></span> <a href="https://www.webofscience.com/wos/author/record/A-6937-2010">Web of Science</a>
-</div>
-</div>
-<hr />
-<h3 id="logic-tools">Logic Tools</h3>
-<p>Free software for learning symbolic logic, written to accompany <em>How Logic
-Works</em>. Check a natural-deduction proof line by line, build a truth table, or
-evaluate a sentence in a finite structure. You can also <strong>photograph a proof
-you wrote by hand</strong> and have it read and checked. No account, nothing to
-install.</p>
-<div class="icon-links">
-<div>
-<span class="icon"><i class="fa-solid fa-list-check"></i></span> <a href="./logic-tools.html">What the tools do</a>
-</div>
-<div>
-<span class="icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></span> <a href="https://lemmon-checker.onrender.com">Open the tools</a>
 </div>
 </div>
 </div>

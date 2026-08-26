@@ -5,7 +5,7 @@
 -- unified catalog (data/talks-master.yaml, see TalksMaster). Only talks with
 -- `web: true` and at least one link are shown, grouped by year, newest first.
 
-module Talks (generateTalksHTML) where
+module Talks (generateTalksHTML, generateRecentTalksHTML) where
 
 import Data.List                   (intercalate, sortOn, sortBy)
 import Data.Maybe                  (catMaybes, fromMaybe)
@@ -135,3 +135,25 @@ generateTalksHTML d = R.renderHtml $
   H.div H.! A.class_ "talk-page" $ do
     H.div H.! A.class_ "talk-intro" $ renderMd (mdIntro d)
     mapM_ renderYear (sortOn (Down . myYear) (visibleGroups d))
+
+------------------------------------------------------------------------
+-- Recent talks, for the home page.
+--
+-- Deliberately a weaker filter than the talks page uses: `isWeb` requires a
+-- slide deck to exist, but a talk given last month is worth showing whether
+-- or not the deck is online. The year comes from the enclosing group, so it
+-- is carried alongside each talk for sorting.
+------------------------------------------------------------------------
+
+generateRecentTalksHTML :: Int -> MasterData -> String
+generateRecentTalksHTML n d = R.renderHtml $
+  H.div H.! A.class_ "talk-page recent-talks" $
+    mapM_ renderTalk (take n ordered)
+  where
+    ordered =
+      map snd $
+        sortBy (comparing (Down . fst))
+          [ ((myYear g, monthOf t), t)
+          | g <- mdTalks d
+          , t <- myItems g
+          , tCv t ]
