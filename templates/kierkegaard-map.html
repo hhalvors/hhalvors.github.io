@@ -1,0 +1,144 @@
+<div class="page">
+  <h1 class="post-title">$title$</h1>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    #kierkegaard-map { height: 560px; width: 100%; margin: 1.2em 0; border: 1px solid #ccc; }
+    .kk-biblio { margin-top: 2em; }
+    .kk-biblio h2 { font-size: 1.2em; margin-bottom: 0.6em; }
+    .kk-biblio ul { padding-left: 1.2em; margin: 0; }
+    .kk-biblio li { margin-bottom: 0.7em; line-height: 1.5; }
+    .kk-marker {
+      background: #8b1a1a;
+      color: white;
+      border-radius: 50%;
+      width: 26px; height: 26px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: bold;
+      border: 2px solid #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    }
+    .leaflet-popup-content h3 { margin: 0 0 0.4em; font-size: 1em; }
+    .leaflet-popup-content p  { margin: 0; font-size: 0.88em; line-height: 1.45; }
+    .kk-popup-thumb { margin: 0.4em 0 0.5em; cursor: zoom-in; }
+    .kk-popup-thumb img { width: 100%; max-width: 260px; display: block; border: 1px solid #ccc; }
+    .kk-popup-thumb figcaption { font-size: 0.75em; color: #666; margin-top: 2px; }
+    #kk-lightbox {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,0.85);
+      align-items: center; justify-content: center; flex-direction: column;
+    }
+    #kk-lightbox.open { display: flex; }
+    #kk-lightbox img { max-width: 90vw; max-height: 80vh; box-shadow: 0 4px 24px rgba(0,0,0,0.6); }
+    #kk-lightbox figcaption {
+      color: #ccc; font-size: 0.85em; margin-top: 0.6em; text-align: center;
+    }
+    #kk-lightbox figcaption a { color: #aaa; }
+    #kk-lb-close {
+      position: absolute; top: 1rem; right: 1.4rem;
+      color: white; font-size: 2rem; cursor: pointer; line-height: 1;
+      background: none; border: none; padding: 0;
+    }
+  </style>
+
+  $body$
+
+  <div id="kierkegaard-map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <div id="kk-lightbox">
+    <button id="kk-lb-close" aria-label="Close">&times;</button>
+    <img id="kk-lb-img" src="" alt="" />
+    <figcaption id="kk-lb-cap"></figcaption>
+  </div>
+
+  <div class="kk-biblio">
+    <h2>Further reading</h2>
+    <ul>
+      <li>Peter Tudvad, <em>Kierkegaards K&oslash;benhavn</em> (Politikens Forlag, 2004; reissued Rosinante &amp; Co, 2013). The essential reference: a richly illustrated account of Kierkegaard&rsquo;s life as a Copenhagener, drawing on extensive archival research.</li>
+      <li>George Pattison, &ldquo;Kierkegaard and Copenhagen,&rdquo; in John Lippitt and George Pattison (eds.), <em>The Oxford Handbook of Kierkegaard</em> (Oxford University Press, 2013), pp.&nbsp;44&ndash;61. A scholarly essay on the city as the inescapable context for Kierkegaard&rsquo;s authorship.</li>
+      <li>Kim Leck Fischer, <em>I S&oslash;ren Kierkegaards Fodspor</em> (S&oslash;ren Kierkegaard Fonden, 1996). Traces Kierkegaard&rsquo;s relationship to the natural landscapes of North Zealand &ndash; Gilleleje and the surrounding coast &ndash; rather than Copenhagen itself.</li>
+      <li>Joakim Garff, <em>S&oslash;ren Aabye Kierkegaard: A Biography</em>, trans. Bruce H. Kirmmse (Princeton University Press, 2005). The standard modern biography &ndash; exhaustive in its attention to the Copenhagen milieu, the social world of the Golden Age, and the specific streets and institutions that shaped Kierkegaard&rsquo;s life and authorship.</li>
+      <li>Bruce H. Kirmmse (ed.), <em>Encounters with Kierkegaard: A Life as Seen by His Contemporaries</em> (Princeton University Press, 1996). A rich compilation of first-hand accounts from people who knew or observed Kierkegaard &ndash; in cafés, on the street, in church &ndash; giving an unusually vivid and place-specific sense of the man in his city.</li>
+      <li>Niels Thulstrup, <em>Kierkegaards K&oslash;benhavn</em> (C.A. Reitzel, 1987). A scholarly yet accessible portrait of the city&rsquo;s streets, squares, and inhabitants as the inescapable setting for Kierkegaard&rsquo;s life and thought, by one of the leading Kierkegaard scholars of the twentieth century.</li>
+      <li>Villads Christensen, <em>S&oslash;ren Kierkegaard og Frederiksberg</em> (Rosenkilde og Bagger, 1959). An account of Kierkegaard&rsquo;s relationship to Frederiksberg &ndash; the garden suburb he visited throughout his life &ndash; drawing on local history and biographical sources.</li>
+      <li>Peter Thielst, <em>Kierkegaard in Golden Age Copenhagen: A Concise and Pictorial Introduction</em> (Det lille Forlag). A brief, richly illustrated guide situating Kierkegaard within the cultural and urban life of Copenhagen&rsquo;s Golden Age, aimed at the general reader.</li>
+      <li>A. Egelund M&oslash;ller, <em>S&oslash;ren Kierkegaard om sin kj&aelig;re Hoved- og Residensstad, Kj&oslash;benhavn</em> (Attika, 1983).</li>
+    </ul>
+  </div>
+
+  <script>
+
+  const map = L.map('kierkegaard-map').setView([55.6810, 12.5710], 15);
+
+const modern = L.tileLayer(
+  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  { attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+    maxZoom: 19 }
+);
+
+const historical = L.tileLayer.wms(
+  'https://api.dataforsyningen.dk/topo20_hoeje_maalebordsblade_DAF',
+  { layers: 'dtk_hoeje_maalebordsblade',
+    format: 'image/png',
+    transparent: true,
+    token: 'cd1efbba288eb47dc57e8335d5d601c8',
+    opacity: 0.85,
+    attribution: '© Klimadatastyrelsen',
+    maxZoom: 19 }
+);
+
+historical.addTo(map);
+
+L.control.layers(
+  { 'c. 1850': historical, 'Modern': modern }
+).addTo(map);
+
+function kkOpenLightbox(src, caption, credit, creditUrl) {
+  document.getElementById('kk-lb-img').src = src;
+  document.getElementById('kk-lb-img').alt = caption;
+  document.getElementById('kk-lb-cap').innerHTML =
+    caption + ' &mdash; <a href="' + creditUrl + '" target="_blank" rel="noopener">' + credit + '</a>';
+  document.getElementById('kk-lightbox').classList.add('open');
+}
+document.getElementById('kk-lb-close').addEventListener('click', function() {
+  document.getElementById('kk-lightbox').classList.remove('open');
+  document.getElementById('kk-lb-img').src = '';
+});
+document.getElementById('kk-lightbox').addEventListener('click', function(e) {
+  if (e.target === this) {
+    this.classList.remove('open');
+    document.getElementById('kk-lb-img').src = '';
+  }
+});
+
+fetch('/data/kierkegaard-locations.json')
+  .then(r => r.json())
+  .then(locations => {
+    locations.forEach(loc => {
+      const icon = L.divIcon({
+        className: '',
+        html: '<div class="kk-marker">' + loc.id + '</div>',
+        iconSize: [26, 26],
+        iconAnchor: [13, 13],
+        popupAnchor: [0, -14]
+      });
+      let popup = '<h3>' + loc.name + '</h3>';
+      if (loc.images && loc.images.length > 0) {
+        const img = loc.images[0];
+        const esc = function(s) { return s.replace(/'/g, '&#39;').replace(/"/g, '&quot;'); };
+        popup += '<figure class="kk-popup-thumb" onclick="kkOpenLightbox(\'' + esc(img.src) + '\',\'' + esc(img.caption) + '\',\'' + esc(img.credit) + '\',\'' + esc(img.creditUrl) + '\')">'
+               + '<img src="' + img.src + '?width=280" alt="' + esc(img.caption) + '" loading="lazy" />'
+               + '<figcaption>' + img.caption + '</figcaption>'
+               + '</figure>';
+      }
+      popup += '<p>' + loc.description + '</p>';
+      L.marker([loc.lat, loc.lng], { icon })
+        .bindPopup(popup)
+        .addTo(map);
+    });
+  });
+</script>  
+
+</div>

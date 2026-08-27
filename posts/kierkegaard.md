@@ -1,0 +1,222 @@
+---
+title: "Kierkegaard in Copenhagen — Summer 2026"
+date: 2026-06-01
+description: "A five-week Princeton Philosophy seminar in Copenhagen, following Kierkegaard’s life and thought."
+---
+
+<style>
+/* --- Page-scoped styles (prefixed to avoid clashes) --- */
+.kc-container{
+  --bg-image: url('/images/nyhavn.jpg'); /* ← replace with your JPEG path */
+  --brand: #0f4d92;    /* Princeton-ish deep blue for contrast */
+  --accent: #e94e1b;   /* warm accent for buttons/underline */
+  --paper: #ffef9f;    /* subtle poster-yellow panel */
+  --ink: #1a1a1a;
+
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Athelas", "Iowan Old Style",
+               "Georgia", "Times New Roman", serif;
+  line-height: 1.55;
+}
+
+.kc-hero{
+  position: relative;
+  background-image: var(--bg-image);
+  background-position: center;
+  background-size: cover;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 46vh;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+  margin: 0 0 1.5rem 0;
+}
+
+/* readable overlay */
+.kc-hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.25) 50%, rgba(0,0,0,.45) 100%);
+}
+
+.kc-hero-inner{
+  position: relative;
+  padding: clamp(1rem, 3vw, 2rem);
+  display: grid;
+  align-content: end;
+  height: 100%;
+  color: white;
+}
+
+.kc-eyebrow{
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: .875rem;
+  opacity: .9;
+}
+
+.kc-title{
+  margin: .25rem 0 .35rem 0;
+  font-size: clamp(2rem, 5.2vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.kc-subtitle{
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  opacity: .95;
+}
+
+.kc-panel{
+  background: var(--paper);
+  border: 3px solid #f6c85f;
+  border-radius: 14px;
+  padding: clamp(1rem, 3vw, 1.25rem);
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  margin: 1rem 0 2rem 0;
+}
+
+.kc-columns{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 900px){
+  .kc-columns{ grid-template-columns: 2fr 1fr; gap: 1.25rem; }
+}
+
+.kc-callout{
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.kc-kicker{
+  font-weight: 700;
+  color: var(--brand);
+  margin-bottom: .25rem;
+}
+
+.kc-list{
+  margin: .2rem 0 0 1rem;
+}
+.kc-list li{ margin: .2rem 0; }
+
+.kc-btns{ display:flex; gap:.6rem; flex-wrap:wrap; margin:.75rem 0 0 0; }
+.kc-btn{
+  background: var(--accent);
+  color: #fff !important;
+  padding: .6rem .9rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(0,0,0,.12);
+}
+.kc-btn--light{
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.6);
+  color: #fff !important;
+}
+
+.kc-meta{
+  font-size: .95rem;
+  color: #333;
+  margin-top: .6rem;
+}
+.kc-meta strong{ color: #000; }
+
+.kc-muted{ opacity:.9; }
+
+.kc-footer{
+  margin-top: 2rem;
+  font-size: .95rem;
+  color: #444;
+}
+
+/* Optional drop cap for first paragraph */
+.kc-dropcap p:first-of-type::first-letter{
+  float:left; font-size: 3.2rem; line-height: .9;
+  padding-right: .2rem; padding-top: .1rem; font-weight: 600;
+}
+</style>
+
+<div class="kc-container">
+
+<div class="kc-hero" role="img" aria-label="Nyhavn waterfront houses and boats in Copenhagen at sunset.">
+  <div class="kc-hero-inner">
+    <div class="kc-eyebrow">The Department of Philosophy</div>
+    <h1 class="kc-title">Kierkegaard in <span style="text-decoration:underline wavy #ffd166 2px;">Copenhagen</span></h1>
+    <div class="kc-subtitle">Five-week summer seminar · June&nbsp;29 – July&nbsp;31, 2026</div>
+    <div class="kc-btns" style="margin-top:.8rem;">
+      <a class="kc-btn" href="https://gps.princeton.edu" target="_blank" rel="noopener">Apply (opens Nov&nbsp;3)</a>
+      <a class="kc-btn kc-btn--light" href="#details">Course details</a>
+    </div>
+  </div>
+</div>
+
+<div class="kc-panel kc-dropcap">
+  <p>
+  Taught by Professor Halvorson, this five-week seminar studies the life and work of the
+  “father of existentialism,” Søren Kierkegaard (1813–1855). We will follow in Kierkegaard’s
+  footsteps—both literally and figuratively—walking his favorite Copenhagen streets and
+  asking, “What is the meaning of it all?”
+  </p>
+</div>
+
+<div class="kc-columns" id="details">
+  <div>
+    ### About the seminar
+
+    Kierkegaard sought a higher purpose for his life: fighting for the importance of the individual
+    person—their values, choices, and happiness—in a world that was becoming increasingly mechanized,
+    objectified, and depersonalized. We will see how Kierkegaard’s defense of personhood translates into a
+    prophetic critique (and call for reform) of institutional religion, philosophy, and science.
+
+    **Primary texts** include *Concluding Unscientific Postscript* and *The Concept of Anxiety*.
+
+    ### Highlights
+    - Daily seminar meetings in central Copenhagen  
+    - Guided walks in Kierkegaard’s neighborhoods  
+    - Close reading and discussion of primary texts  
+    - Optional museum/library visits and guest sessions
+
+    ### Logistics
+    - **Dates:** June 29 – July 31, 2026 *(exact start/end dates still tentative)*  
+    - **Location:** Copenhagen, Denmark  
+    - **Instructor:** Prof. Hans Halvorson  
+    - **Credits:** Princeton Philosophy (details on GPS site)
+
+    <div class="kc-callout">
+      <div class="kc-kicker">Financial assistance</div>
+      Financial assistance is available. Danish language skills are **not** required.
+    </div>
+  </div>
+
+  <div>
+    <div class="kc-callout">
+      <div class="kc-kicker">Apply</div>
+      Applications open **November 3** on Princeton’s Global Programs System (GPS).
+      <div class="kc-btns">
+        <a class="kc-btn" href="https://gps.princeton.edu" target="_blank" rel="noopener">Go to GPS</a>
+      </div>
+      <div class="kc-meta">
+        Questions? Contact Philosophy Undergraduate Administrator  
+        <a href="mailto:corinned@princeton.edu">Corinne Dodel</a>.
+      </div>
+    </div>
+
+    <div class="kc-callout" style="margin-top:1rem;">
+      <div class="kc-kicker">Primary texts</div>
+      <ul class="kc-list">
+        <li>Kierkegaard, <em>Concluding Unscientific Postscript</em></li>
+        <li>Kierkegaard, <em>The Concept of Anxiety</em></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="kc-footer kc-muted">
+  Department of Philosophy · Princeton University · 212 1879 Hall · Princeton, NJ 08544
+</div>
+
+</div>

@@ -35,3 +35,36 @@ talks/*-img/
 *.run.xml
 *.fls
 *.fdb_latexmk
+# Beamer and minted leave these behind too
+*.nav
+*.snm
+*.toc
+*.vrb
+*.minted
+_minted/
+_minted-*/
+
+# Haskell build output
+dist-newstyle/
+*.hi
+*.o
+# Compiled executable of the standalone lemmon-filter project (57 MB).
+# The module the site actually builds against is src/filters/lemmonFilter.hs.
+lemmon-filter/src/lemmonFilter
+
+# Emacs auto-save (#file#) and lock files; *~ backups are covered above
+\#*\#
+.\#*
+
+# macOS, and the stubs a FUSE mount leaves when a file is deleted while open
+.DS_Store
+.fuse_hidden*
+
+# Ad-hoc backups
+*.backup
+
+# Working notes for AI sessions. This repository is PUBLIC (it is the source
+# of hanshalvorson.com), and these notes carry editorial judgments, unverified
+# claims, and third-party names that must not be published. Same convention as
+# the danish-texts repo: the file lives on disk, never in git.
+CLAUDE.md

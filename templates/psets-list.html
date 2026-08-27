@@ -1,0 +1,59 @@
+<div class="course-container">
+  <h1 class="course-page-title">$title$</h1>
+  $if(note)$<p class="course-note"><em>$note$</em></p>$endif$
+
+  $for(units)$
+    <div class="pset-module">
+      <div class="pset-module-header">
+        <h3 class="pset-module-title">$unitTitle$</h3>
+        $if(readingOverview)$
+          <div class="pset-module-meta">$readingOverview$</div>
+        $endif$
+        $if(unitInfo)$
+          <div class="pset-module-meta">$unitInfo$</div>
+        $endif$
+      </div>
+
+      <div class="psets-list">
+        $for(psets)$
+          <div class="pset-row">
+            <div class="pset-due">
+              <div class="pset-due-badge $if(due)$$else$pset-due-empty$endif$">
+                <span class="pset-due-label">Due</span>
+                <span class="pset-due-date">$if(due)$$due$$else$TBA$endif$</span>
+              </div>
+            </div>
+
+            <div class="pset-main">
+              <div class="pset-title">
+                Problem Set $number$
+              </div>
+
+              $if(info)$
+                <div class="pset-meta">$info$</div>
+              $endif$
+
+             
+            </div>
+
+            <div class="pset-actions">
+              $if(hasHandout)$
+                <a class="pset-link" href="$handoutHref$">Problem Set</a>
+              $else$
+                <span class="pset-link pset-link-disabled">Problem Set</span>
+              $endif$
+
+              $if(hasSolutions)$
+                <a class="pset-link" href="$solutionsHref$">Solutions</a>
+              $else$
+                <span class="pset-link pset-link-disabled">Solutions</span>
+              $endif$
+            </div>
+          </div>
+        $endfor$
+      </div>
+    </div>
+  $endfor$
+
+</div>
+

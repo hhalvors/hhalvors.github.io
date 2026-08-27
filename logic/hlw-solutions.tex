@@ -1,0 +1,142 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+
+\title{How Logic Works: Solutions to Problems}
+\author{Hans Halvorson}
+
+\begin{document}
+\maketitle
+
+\section*{Chapter 3}
+
+\subsection*{Exercise 3.1}
+
+\begin{enumerate}
+
+\item $P \vdash Q \to (P \wedge Q)$
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1   & (1) & $P$              & A \\
+2   & (2) & $Q$              & A \\
+1,2 & (3) & $P \wedge Q$     & 1,2 $\wedge$I \\
+1   & (4) & $Q \to (P \wedge Q)$ & 2,3 CP \\
+\end{tabular}
+
+\item $(P \to Q) \wedge (P \to R) \vdash P \to (Q \wedge R)$
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1   & (1) & $(P \to Q) \wedge (P \to R)$ & A \\
+2   & (2) & $P$              & A \\
+1   & (3) & $P \to Q$        & 1 $\wedge$E \\
+1   & (4) & $P \to R$        & 1 $\wedge$E \\
+1,2 & (5) & $Q$              & 3,2 MP \\
+1,2 & (6) & $R$              & 4,2 MP \\
+1,2 & (7) & $Q \wedge R$     & 5,6 $\wedge$I \\
+1   & (8) & $P \to (Q \wedge R)$ & 2,7 CP \\
+\end{tabular}
+
+\item $P \to (Q \to R) \vdash Q \to (P \to R)$
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1     & (1) & $P \to (Q \to R)$ & A \\
+2     & (2) & $Q$               & A \\
+3     & (3) & $P$               & A \\
+1,3   & (4) & $Q \to R$         & 3,1 MP \\
+1,2,3 & (5) & $R$               & 4,2 MP \\
+1,2   & (6) & $P \to R$         & 3,5 CP \\
+1     & (7) & $Q \to (P \to R)$ & 2,6 CP \\
+\end{tabular}
+
+\item $P \to Q \vdash (Q \to R) \to (P \to R)$
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1     & (1) & $P \to Q$        & A \\
+2     & (2) & $Q \to R$        & A \\
+3     & (3) & $P$              & A \\
+1,3   & (4) & $Q$              & 1,3 MP \\
+1,2,3 & (5) & $R$              & 2,4 MP \\
+1,2   & (6) & $P \to R$        & 3,5 CP \\
+1     & (7) & $(Q \to R) \to (P \to R)$ & 2,6 CP \\
+\end{tabular}
+
+\item $P \to (P \to Q) \vdash P \to Q$
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1   & (1) & $P \to (P \to Q)$ & A \\
+2   & (2) & $P$               & A \\
+1,2 & (3) & $P \to Q$         & 1,2 MP \\
+1,2 & (4) & $Q$               & 3,2 MP \\
+1   & (5) & $P \to Q$         & 2,4 CP \\
+\end{tabular}
+
+\item $P \to (Q \to R) \vdash (P \wedge Q) \to R$
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1   & (1) & $P \to (Q \to R)$ & A \\
+2   & (2) & $P \wedge Q$      & A \\
+2   & (3) & $P$               & 2 $\wedge$E \\
+2   & (4) & $Q$               & 2 $\wedge$E \\
+1,2 & (5) & $Q \to R$         & 1,3 MP \\
+1,2 & (6) & $R$               & 5,4 MP \\
+1   & (7) & $(P \wedge Q) \to R$ & 2,6 CP \\
+\end{tabular}
+
+\item $(P \vee Q) \to R \vdash P \to R$
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1   & (1) & $(P \vee Q) \to R$ & A \\
+2   & (2) & $P$                & A \\
+2   & (3) & $P \vee Q$         & 2 $\vee$I \\
+1,2 & (4) & $R$                & 1,3 MP \\
+1   & (5) & $P \to R$          & 2,4 CP \\
+\end{tabular}
+
+\item $\neg P \vdash \neg (P \wedge Q)$
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\neg P$       & A \\
+2 & (2) & $P \wedge Q$   & A \\
+2 & (3) & $P$            & 2 $\wedge$E \\
+  & (4) & $(P \wedge Q) \to P$ & 2,3 CP \\
+1 & (5) & $\neg (P \wedge Q)$ & 4,1 MT \\
+\end{tabular}
+
+\item $\neg (P \vee Q) \vdash \neg P \wedge \neg Q$
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\neg (P \vee Q)$ & A \\
+2 & (2) & $P$               & A \\
+2 & (3) & $P \vee Q$        & 2 $\vee$I \\
+  & (4) & $P \to (P \vee Q)$ & 2,3 CP \\
+1 & (5) & $\neg P$          & 4,1 MT \\
+6 & (6) & $Q$               & A \\
+6 & (7) & $P \vee Q$        & 6 $\vee$I \\
+  & (8) & $Q \to (P \vee Q)$ & 6,7 CP \\
+1 & (9) & $\neg Q$          & 8,1 MT \\
+1 & (10) & $\neg P \wedge \neg Q$ & 5,9 $\wedge$I \\
+\end{tabular}
+
+\item $P \to \neg P \vdash \neg P$
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1   & (1) & $P$           & A \\
+2   & (2) & $P \to \neg P$ & A \\
+1,2 & (3) & $\neg P$      & 2,1 MP \\
+1   & (4) & $(P \to \neg P) \to \neg P$ & 2,3 CP \\
+1   & (5) & $\neg \neg P$ & 1 DN \\
+1   & (6) & $\neg (P \to \neg P)$ & 4,5 MT \\
+    & (7) & $P \to \neg (P \to \neg P)$ & 1,6 CP \\
+2   & (8) & $\neg \neg (P \to \neg P)$ & 2 DN \\
+2   & (9) & $\neg P$      & 7,8 MT \\
+\end{tabular}
+
+\end{enumerate}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

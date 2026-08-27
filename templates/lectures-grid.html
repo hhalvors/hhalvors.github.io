@@ -1,0 +1,51 @@
+<div class="course-container">
+  <h1 class="course-page-title">$title$</h1>
+  $if(note)$<p class="course-note"><em>$note$</em></p>$endif$
+
+  $for(units)$
+    <div class="lecture-module">
+      <div class="module-header">
+        <h3>$unitTitle$</h3>
+        $if(unitInfo)$<div class="schedule-meta">$unitInfo$</div>$endif$
+      </div>
+
+      <div class="schedule-list">
+      $for(lectures)$
+        <div class="schedule-row">
+          <div class="schedule-left">
+            <div class="schedule-label">Lecture</div>
+            <div class="schedule-date">$date$</div>
+          </div>
+
+	  <div class="schedule-main">
+  <div class="schedule-title">$title$</div>
+
+  $if(reading)$
+    <div class="schedule-meta"><strong>Reading:</strong> $reading$</div>
+  $endif$
+
+  $if(info)$
+    <div class="schedule-meta">$info$</div>
+  $endif$
+
+  $if(skills)$
+    <div class="schedule-meta"><strong>Skills:</strong> $skills$</div>
+  $endif$
+</div>
+
+<div class="schedule-actions">
+  $if(slidesHref)$
+    <a class="schedule-link" href="$slidesHref$">Slides</a>
+  $endif$
+  $if(handoutHref)$
+    <a class="schedule-link" href="$handoutHref$">Handout</a>
+  $endif$
+</div>
+
+ 
+        </div>
+      $endfor$
+      </div>
+    </div>
+  $endfor$
+</div>

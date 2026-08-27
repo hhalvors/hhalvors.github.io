@@ -1,0 +1,85 @@
+<div class="course-home">
+
+  $if(courseDescription)$
+  <div class="course-home-lead">
+    <div class="course-home-rule"></div>
+    <div class="course-home-desc">
+      $courseDescription$
+    </div>
+  </div>
+  $endif$
+
+  $if(hasLectureSchedule)$
+  <section class="course-home-section">
+    <h2 class="course-home-h2">Lecture Times</h2>
+
+    <div class="course-home-kv">
+      $if(lectureDays)$
+      <div class="course-home-kv-row">
+        <div class="course-home-kv-key">Days</div>
+        <div class="course-home-kv-val">$lectureDays$</div>
+      </div>
+      $endif$
+
+      $if(lectureTime)$
+      <div class="course-home-kv-row">
+        <div class="course-home-kv-key">Time</div>
+        <div class="course-home-kv-val">$lectureTime$</div>
+      </div>
+      $endif$
+
+      $if(lectureLocation)$
+      <div class="course-home-kv-row">
+        <div class="course-home-kv-key">Location</div>
+        <div class="course-home-kv-val">$lectureLocation$</div>
+      </div>
+      $endif$
+    </div>
+  </section>
+  $endif$
+
+  $if(instructors)$
+  <section class="course-home-section">
+    <h2 class="course-home-h2">Course Instructors</h2>
+
+    <div class="course-home-cards">
+      $for(instructors)$
+      <div class="course-home-card">
+        <div class="course-home-name">$name$</div>
+        $if(role)$<div class="course-home-role">$role$</div>$endif$
+        $if(email)$
+          <div class="course-home-email">
+            <a href="mailto:$email$">$email$</a>
+          </div>
+        $endif$
+      </div>
+      $endfor$
+    </div>
+  </section>
+  $endif$
+
+  $if(preceptors)$
+  <section class="course-home-section">
+    <h2 class="course-home-h2">Teaching Assistants</h2>
+
+    <div class="course-home-cards">
+      $for(preceptors)$
+      <div class="course-home-card">
+        <div class="course-home-name">$name$</div>
+        $if(role)$<div class="course-home-role">$role$</div>$endif$
+        $if(email)$
+          <div class="course-home-email">
+            <a href="mailto:$email$">$email$</a>
+          </div>
+        $endif$
+      </div>
+      $endfor$
+    </div>
+  </section>
+  $endif$
+
+  <div class="course-home-body">
+    $body$
+  </div>
+
+</div>

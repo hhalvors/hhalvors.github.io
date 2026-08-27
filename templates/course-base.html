@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>$courseCode$ – $courseTitle$</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Your site CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/course.css">
+</head>
+
+<body>
+   <div class="course-shell">
+
+<header class="course-header">
+  <div class="course-top">
+    <div class="course-top-inner">
+      <a class="course-brand" href="./index.html">
+        <div class="course-brand-code">$courseCode$</div>
+        <div class="course-brand-title">$courseTitle$</div>
+      </a>
+
+      <div class="course-termblock">$courseTerm$</div>
+
+      <nav class="course-nav">
+        $for(nav)$
+          <a class="course-nav-link $activeClass$" href="$path$">$label$</a>
+        $endfor$
+      </nav>
+    </div>
+  </div>
+  <div class="course-rule"></div>
+</header>
+
+<main class="course-main">
+  <div class="course-container">
+    <div class="course-card">
+      $body$
+    </div>
+  </div>
+</main>
+
+</div>
+</body>
+</html>
+
+
