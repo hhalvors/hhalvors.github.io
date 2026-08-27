@@ -1,0 +1,56 @@
+\documentclass[fleqn,12pt]{article}
+\usepackage{amsmath}
+\usepackage[colorlinks]{hyperref}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+\begin{document}
+\thispagestyle{empty}
+
+\section*{Logic pset 6}
+
+Resources: HLW \href{https://doi.org/10.2307/j.ctvxrpz0q.10}{Ch 7} pp
+116-127
+
+\begin{enumerate}
+\item Represent the form of the following sentences in predicate logic
+  using the $=$ symbol where necessary.
+  \begin{enumerate}
+  \item There is one and only one Princeton University. (Use $Px$ for
+    ``$x$ is a Princeton University'')
+  \item There is at most one Ivy League university in New Jersey. (Use
+    $Ix$ for ``$x$ is an Ivy League university'', and use $Nx$ for
+    ``$x$ is in New Jersey.'')
+  \item There is a smallest prime number. ($Px,Sxy$, variables are
+    restricted to numbers.)
+ \end{enumerate}
+
+\item Prove the following sequents using any of the rules, including
+  $=$E and $=$I.
+  \begin{enumerate}
+  \item $\exists x(Px\wedge \forall y(Py\to x=y))\: \vdash \: \forall
+    x\forall y((Px\wedge Py)\to x=y)$
+  \item $\vdash\: \forall x\forall y((x=y)\to (y=x))$
+  \end{enumerate}
+
+\item Let $Rxy$ be a binary relation symbol that satisfies the
+  transitivity axiom (page 126). Suppose that $Rxy$ satisfies two
+  other axioms: serial $\forall x\exists yRxy$ and irreflexive
+  $\forall x\neg Rxx$. Show that there are at least three distinct
+  things, i.e.,
+  \[ \exists x\exists y\exists z((x\neq y\wedge x\neq z)\wedge y\neq
+    z) .\] It would also suffice to show that the claim ``there are at
+  most two things'' contradicts the assumptions. You may write your
+  proof in English prose (not our formal system), but you need to
+  convince the reader that you would be able to write a full formal
+  proof.
+\end{enumerate}
+
+
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

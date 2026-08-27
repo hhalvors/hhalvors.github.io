@@ -1,0 +1,269 @@
+\documentclass[12pt]{article}
+\title{The Phenomena}
+\author{Hans Halvorson}
+\date{\today}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{tikz-3dplot}
+
+\begin{document}
+
+\maketitle
+
+\section{Historical introduction}
+
+In retrospect, there was evidence for quantum theory all the way back
+in the time of Newton, when physicists started to understand that
+light displays both wave-like and particle-like features.  But the
+story really gets started in the late 19th century with four puzzling
+phenomena.
+
+\subsection{Spectral lines}
+
+\subsection{Blackbody radiation}
+
+\subsection{Stability of the atom}
+
+\subsection{Quantum two-valuedness}
+
+\section{Two slit experiments}
+
+\subsection{Single slit}
+
+
+
+
+\subsection{Two slit}
+
+
+
+\subsection{Two slit with monitoring}
+
+\section{Stern-Gerlach}
+
+(Note: The experiments described in this section do \emph{not}
+explicitly involve tensor products.)
+
+In the following diagrams, the letters $X$ and $Z$ indicate
+Stern-Gerlach magnets oriented, respectively along the $x$ and $z$
+axes.  The arrows between nodes indicate the paths that the neutrons
+can follow.  A path going to the right is ``up'' and a path going down
+is ``down''.  The letter $E$ indicates a eraser that wipes out
+neutrons.  The letter $D$ indicates a detector that counts the number
+of incoming neutrons.  The letter $R$ indicates a reflector that
+redirects that path of neutrons.
+
+\subsection*{First experiment}
+
+Two magnets, perpendicular orientation.  i.e.\ send ``up'' from
+spin-$z$ to a spin-$x$ magnet
+
+\begin{tikzcd}   \\
+Z  \arrow[d] \arrow[r] & X \arrow{d} \arrow{r} & D \\
+E  &  D & 
+\end{tikzcd}
+
+\bigskip \noindent Phenomena: the detectors click individually (not at
+the same time), and in general there is a $50\%$ chance of each
+detector clicking.  
+
+% \begin{tikzcd}
+% & & &  \\ 
+% & A  \arrow[ru] \arrow[rd] & \\ 
+% B \arrow[ru] \arrow[rd] &  & \\ \end{tikzcd}
+
+\subsection*{Second experiment}
+
+Two magnets, same orientation.  i.e.\ send ``up'' from spin-$z$ to a
+spin-$z$ magnet
+
+\begin{tikzcd}   \\
+Z \arrow[d] \arrow[r] & Z  \arrow{d} \arrow{r} & D \\
+E  &  D & 
+\end{tikzcd}
+
+\bigskip \noindent Phenomena: the top detector always clicks, and the
+bottom detector never clicks.
+
+
+\subsection*{Third experiment}
+
+Two magnets, $45^\circ$ orientation
+
+\subsection*{Fourth experiment}
+
+Three magnets: spin-$z$, spin-$x$, spin-$z$
+
+\begin{tikzcd}   \\
+Z \arrow[d] \arrow[r] & X \arrow{d} \arrow{r} &  Z \arrow{r}\arrow{d} & D  \\
+E  &  E  & D & 
+\end{tikzcd}
+
+\bigskip \noindent Phenomena: equal chance of detection for the top
+and bottom detectors.
+
+\subsection*{Fifth experiment (recombination)}
+
+\begin{tikzcd}   \\
+Z \arrow[d] \arrow[r] & X \arrow{d} \arrow{r} &  R  \arrow{d} &   \\
+E  &  R \arrow[r]   & Z \arrow{r} \arrow{d} & D \\
+   &      & D 
+ \end{tikzcd}
+
+ \bigskip \noindent Phenomena: top detector always clicks, bottom
+ detector never clicks.
+
+\begin{tikzcd}   \\
+Z \arrow[d] \arrow[r] & X \arrow{d} \arrow{r} &  R  \arrow{d} &   \\
+E  &  E     & Z \arrow{r} \arrow{d} & D \\
+   &      & D 
+ \end{tikzcd}
+
+\bigskip \noindent Phenomena: equal chance of detection, both
+detectors.
+
+
+\bigskip \noindent Things to add?
+\begin{enumerate}
+\item Changing path lengths
+\item Polarization
+\end{enumerate}
+
+
+\section{Nonlocality}
+
+\begin{tikzcd}   
+  S \arrow[rr] \arrow[dd] & & Z \arrow[r] \arrow[d] & A^+ \\
+  & & A^- \\
+  Z \arrow[r] \arrow[d] & B^+ \\
+  B^- 
+\end{tikzcd}
+
+\bigskip \noindent Phenomenon: the detectors on the two sides are
+perfectly anti-correlated.  $A^+$ clicks iff $B^-$ clicks, and $A^-$
+clicks iff $B^+$ clicks. 
+
+\bigskip \noindent 
+\begin{tikzcd}   
+  S \arrow[rr] \arrow[dd] & & X \arrow[r] \arrow[d] & A^+ \\
+  & & A^- \\
+  X \arrow[r] \arrow[d] & B^+ \\
+  B^- 
+\end{tikzcd}
+
+\bigskip \noindent Phenomenon: the detectors on the two sides are
+perfectly anti-correlated.  $A^+$ clicks iff $B^-$ clicks, and $A^-$
+clicks iff $B^+$ clicks.
+
+\bigskip\noindent \begin{tikzcd}   
+  S \arrow[rr] \arrow[dd] & & Z \arrow[r] \arrow[d] & A^+ \\
+  & & A^- \\
+  X \arrow[r] \arrow[d] & B^+ \\
+  B^- 
+\end{tikzcd}
+
+\bigskip \noindent Phenomenon: the detectors on the two sides are
+uncorrelated.  For any pair, the probability of a joint detection is
+$0.25$.
+
+\subsection{EPR argument}
+
+\noindent \textbf{Reality criterion:} If, without disturbing an
+electron, we can predict with certainty what it would do, then it has
+a feature (i.e.\ there is an \textbf{element of reality}) that
+determines that it would do that.
+
+\bigskip\noindent \textbf{Concluson:} The electron has a feature that
+determines whether it would go up or down for $X$, and it has a
+feature that determines whether it would go up or down for $Z$.
+
+
+
+
+
+
+
+
+\end{document}
+
+
+ \tdplotsetmaincoords{75}{140}
+
+ \begin{figure}[htp]
+ \centering
+ \begin{tikzpicture}[tdplot_main_coords,scale=0.7]
+  \newcommand{\nodin}[1]{coordinate(#1)node{#1}}%draw nodes on coordinates, I alter           
+                                                   %this later to hide the nodes
+
+
+  \draw[vlak,rand](0,-2,0)--(0,2,0)\nodin{A}--(0,2,2)\nodin{B}--(0,1,2)\nodin{C}--(0,1,1)\nodin{Q}--(0,-1,1)\nodin{D}--(0,-1,2)\nodin{E}--(0,-2,2)\nodin{F}--cycle;
+
+  \draw[vlak,rand](F)++(-6,0,0)--(F)--(E)--++(-6,0,0)--cycle;
+  \draw[vlak,rand](D)++(-6,0,0)--(D)--(E)--++(-6,0,0)--cycle;
+
+  \draw[vlak,rand](0,-1,3)--(0,0,2)\nodin{G}--(0,1,3)\nodin{H}--(0,1,4)\nodin{I}--(0,-1,4)\nodin{J}--cycle;
+  \draw[vlak,rand](G)++(-6,0,0)--(G)--(H)--++(-6,0,0)--cycle;
+  \draw[vlak,rand](H)++(-6,0,0)--(H)--(I)--++(-6,0,0)--cycle;
+  \draw[vlak,rand](J)++(-6,0,0)--(J)--(I)--++(-6,0,0)--cycle;
+  \draw[vlak,rand](Q)++(-6,0,0)--(Q)--(D)--++(-6,0,0)--cycle;
+
+  \foreach \x in{0,2,4,6}{
+   \draw[vector,->] (-\x,0,2)--(-\x,1,1);
+   \draw[vector,->] (-\x,0,2)--(-\x,0.5,1);
+   \draw[vector,->] (-\x,0,2)--(-\x,0,1);
+   \draw[vector,->] (-\x,0,2)--(-\x,-0.5,1);
+   \draw[vector,->] (-\x,0,2)--(-\x,-1,1);
+   }
+
+
+  \draw[vlak,rand](0,-2,0)--(0,2,0)\nodin{A}--(0,2,2)\nodin{B}--(0,1,2)\nodin{C}--(0,1,1)\nodin{Q}--(0,-1,1)\nodin{D}--(0,-1,2)\nodin{E}--(0,-2,2)\nodin{F}--cycle;
+
+  \draw(-9,0,1.8)\nodin{R};
+
+
+  \draw[vlak,rand](R)++(0,-0.5,-0.5)--++(0,0,1)\nodin{R3}--++(0,1,0)\nodin{R2}--++(0,0,-1)\nodin{R1}--cycle;
+  \draw[vlak,rand](R1)++(-1,0,0)--(R1)--(R2)--++(-1,0,0)--cycle;
+  \draw[vlak,rand](R3)++(-1,0,0)--(R3)--(R2)--++(-1,0,0)--cycle;
+
+  \tdplotsetrotatedcoords{0}{90}{0}
+  \tdplotdrawarc[tdplot_rotated_coords,fill=black,rand]{(R)}{0.1}{0}{360}{}{}
+  \draw[thick](R)--(-5,0,1.8)\nodin{M};
+
+  \draw[thick](M)--(5,0,2)\nodin{M1};
+  \draw[thick](M)--(5,0,1.6)\nodin{M2};
+
+  \draw[vlak,rand](C)++(-6,0,0)--(C)--(B)--++(-6,0,0)--cycle;
+  \draw[vlak,rand](A)++(-6,0,0)--(A)--(B)--++(-6,0,0)--cycle;
+
+
+  \draw(5,0,0)\nodin{S};
+  \draw[opp,rand](S)--++(0,2,0)--++(0,0,3.6)--++(0,-4,0)--++(0,0,-3.6)--cycle;
+
+  \draw(5,0,1.8)\nodin{K};
+
+  \foreach \x in{0.025,0.05,...,1}{
+   \tdplotdrawarc[tdplot_rotated_coords,fill=black!80,opacity=0.15*\x,draw=none]{(K)}{1-     \x}{0}{360}{}{}
+   }
+
+  \tdplotdrawarc[tdplot_rotated_coords,fill=black]{(M1)}{0.03}{0}{360}{}{}
+  \tdplotdrawarc[tdplot_rotated_coords,fill=black]{(M2)}{0.03}{0}{360}{}{}
+  \draw[->](S)++(3,0,4)node[left]{classical}to[out=0,in=130](5,-0.6,2.4);
+
+  \draw[->,shorten >=0.8pt](S)++(3,0,2)node[left]{quantum}to[out=0,in=150](M1);
+  \draw[->,shorten >=0.8pt](S)++(3,0,2)to[out=0,in=220](M2);
+
+  \draw(R1)++(-1,0,2.5)\nodin{R4};
+  \draw(S)++(2,0,0)\nodin{S1};
+
+  \pgfresetboundingbox 
+
+  \draw[use as bounding box](S1)rectangle(R4);
+
+ \end{tikzpicture}\caption{The Stern-Gerlach Experiment}\label{}\end{figure}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

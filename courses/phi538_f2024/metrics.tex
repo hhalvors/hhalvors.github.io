@@ -1,0 +1,85 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage{amsthm,amsmath,amsfonts}
+\newtheorem*{prop}{Proposition}
+\begin{document}
+
+\section*{Metrics on Smooth Manifolds}
+
+When talking about classical spacetimes, we built from the bottom up
+--- gradually adding more structure. We began with a smooth manifold
+$M$ which we assumed to be foliated into spacelike hypersurfaces. Then
+we added a metric on those spacelike hypersurfaces. Then we added a
+temporal metric. Then we added an equivalence class of derivative
+operators (connections). Then we chose a preferred derivative
+operator. Etc.
+
+A \textbf{relativistic spacetime} is a smooth manifold $M$ with a metric
+$g$. In fact, $g$ is a Lorentzian metric (as we'll describe below),
+but most of the following claims follow for metrics more generally.
+
+\begin{itemize}
+\item A metric $g$ on $M$ is actually a tensor \emph{field}, i.e.\ a
+  smooth assignment of tensors to points of $M$.
+\item A metric $g$ is a $(0,2)$ tensor. So in abstract index notation,
+  we would write $g_{ab}$. Speaking functionally, $g$ is a map that
+  takes a pair of vectors and returns a real number.
+\item We assume that a metric is symmetric, i.e.\ $g(u,v)=g(v,u)$ for
+  any vectors $u,v$. So a metric is just like an \emph{inner product}
+  on the tangent spaces --- except that we have not assumed that $g$
+  is positive definite. In particular, $g(v,v)$ could be negative or
+  zero, even when $v\neq 0$.
+\item The invertibility condition. Malament writes
+  $g_{ab}h^{bc}=\delta _a^c$. This is the same as saying that $g$ is
+  non-degenerate. i.e.\ if $g(v,w)=0$ for all $w$, then $v=0$. [Check
+  it.]
+\end{itemize}
+
+\begin{prop} If a metric $g$ on $V$ is non-degenerate, then $g$
+  induces an isomorphism $v\mapsto g(v,-)$ between $V$ and its dual
+  space $V^*$. \end{prop}
+
+\begin{proof} Suppose that $g$ is non-degenerate. For $v\in V$, let
+  $f(v)$ be a function from $V$ into $\mathbb{R}$ defined by:
+  \[ f(v)(w) \: = \: g(v,w) .\] Since $g$ is linear in the second
+  argument, $f(v)$ is a linear map. Because $g$ is linear in the first
+  argument, $f$ is a linear map of $V$ into $V^*$.
+
+  To see that $f$ is one-to-one, suppose that $f(v)=0$. In this case,
+  $g(v,w)=0$ for all $w\in V$. Since $g$ is non-degenerate,
+  $v=0$. Hence, $f$ is one-to-one. Since $V$ and $V^*$ have the same
+  dimension, it automatically follows that $f$ is onto, hence a linear
+  isomorphism.
+\end{proof}
+
+\subsection*{From metric to connection}
+
+For every metric $g$, there is a unique connection $\nabla$ that
+satisfies a certain compatibility connection. The connection is
+sometimes called the \textbf{Levi-Civita connection} for $g$.
+
+\begin{prop} The following are equivalent. 
+\begin{enumerate}
+\item $\nabla _Xg = 0$ for all vector fields $X$ on $M$.
+\item For any smooth curve $\gamma$ and for any vector field $Y$
+  defined along $\gamma$, if $\nabla _{\dot{\gamma}}Y =0$ then
+  $\dot{\gamma}(g(Y,Y))=0$.
+\item For any vector fields $X,Y,Z$ on $M$,
+  \[ X(g(Y,Z)) = g(\nabla _XY,Z)+g(Y,\nabla _X Z) .\]
+\end{enumerate}
+\end{prop}
+
+\begin{proof} The equivalence of (1) and (2) is Malament's Lemma
+  1.9.1. Using the definition of $\nabla$ on tensors, and the fact
+  that $Y$ is constant along $\dot{\gamma}$, we get: 
+  \[ \begin{array}{ll} \nabla _{\dot{\gamma}}(g(Y,Y)) \: =\: g(Y,\nabla
+      _{\dot{\gamma}}Y)+g(\nabla _{\dot{\gamma}}Y,Y)+(\nabla
+      _{\dot{\gamma}}g)(Y,Y) \: = \: (\nabla _{\dot{\gamma}}g)(Y,Y).
+       \end{array} \]
+
+\end{proof}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

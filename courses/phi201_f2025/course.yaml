@@ -1,0 +1,312 @@
+course:
+  code: "PHI 201"
+  title: "Introductory Logic"
+  term: "Fall 2025"
+  university: "Princeton University"
+
+  description: >
+    An introduction to formal logic, covering propositional and predicate logic,
+    natural deduction, truth tables, models, and metatheory, with applications to
+    philosophical reasoning.
+
+  navigation:
+    - id: home
+      label: Home
+      path: index.html
+    - id: lectures
+      label: Lectures
+      path: lectures.html
+    - id: psets
+      label: Psets
+      path: psets.html
+    - id: precepts
+      label: Precepts
+      path: precepts.html
+    - id: exams
+      label: Exams
+      path: exams.html
+    - id: resources
+      label: Resources
+      path: resources.html
+
+schedule:
+  lectures:
+    days: ["Monday"]
+    time: "1:20-2:40"
+    location: "Frick B01"
+
+  precepts:
+    days: ["Wednesday"]
+
+  psets:
+    due:
+      day: "Friday"
+      time: "17:00"
+
+staff:
+  instructors:
+    - name: "Hans Halvorson"
+      role: "Course Instructor"
+      email: "hhalvors@princeton.edu"
+
+  preceptors:
+    - name: "Junyan Jiang"
+      role: "Preceptor"
+      email: "jj6292@princeton.edu"
+    - name: "Jake Khawaja"
+      role: "Preceptor"
+      email: "jk5220@princeton.edu"
+    - name: "Jaehyun Hong"
+      role: "Preceptor"
+      email: "jh3046@princeton.edu"
+    - name: "Christopher Hughes"
+      role: "Preceptor"
+      email: "ch5012@princeton.edu"
+    - name: "Quanzhi Liang"
+      role: "Preceptor"
+      email: "qliang@princeton.edu"
+    - name: "Pacy Yan"
+      role: "Preceptor"
+      email: "py5535@princeton.edu"
+
+# Units are the primary organizational unit.
+# Each unit has its own lectures/precepts/psets/exams/etc.
+
+units:
+
+  - id: propositional
+    title: "Propositional Logic"
+    # Optional: you can later replace this with a structured "book:" list.
+    reading_overview: "How Logic Works, Chapters 1–5"
+
+    lectures:
+      - date: "2025-09-08"
+        title: "Basic concepts, translation, simple proofs"
+        reading: "Chapters 1–2"
+        files:
+          slides: "lectures/lecture1.pdf"
+
+      - date: "2025-09-15"
+        title: "Conditional proof and ∨-elimination (dependency numbers)"
+        reading: "Chapter 3"
+        files:
+          slides: "lectures/lecture-week2.pdf"
+
+      - date: "2025-09-22"
+        title: "RAA and truth tables for validity"
+        reading: "Chapters 3 and 5 (skipping Ch 4 for now)"
+        files:
+          slides: "lectures/lecture-week3.pdf"
+
+      - date: "2025-09-29"
+        title: "Review for midterm"
+        reading: "Chapter 4"
+        files:
+          slides: "lectures/lecture4.pdf"
+
+    precepts:
+      - date: "2025-09-10"
+        title: "Natural deduction basics"
+        kind: "Precept"
+        skills:
+          - translating English to formulas
+          - using →E and →I
+          - managing assumptions
+        files:
+          handout: precepts/precept1.pdf
+      - date: "2025-09-17"
+        title: "Disjunction and RAA"
+        skills:
+          - ∨-elimination
+          - reductio ad absurdum
+          - dependency tracking
+        files:
+          handout: precepts/precept2.pdf
+      - date: "2025-09-24"
+        title: "Truth tables and countermodels"
+        skills:
+          - truth tables
+          - validity vs satisfiability
+          - finding counterexamples
+        files:
+          handout: precepts/precept3.pdf
+      - date: "2025-10-01"
+        title: "Midterm preparation"
+        skills:
+          - proof strategy
+          - error diagnosis
+          - mixed techniques
+        files:
+          handout: precepts/precept4.pdf      
+
+    psets:
+      - id: 1
+        due_date: "2025-09-12"
+        due_time: "17:00"
+        files:
+          handout: "psets/pset1.pdf"
+
+      - id: 2
+        due_date: "2025-09-19"
+        due_time: "17:00"
+        files:
+          handout: "psets/pset2.pdf"
+
+      - id: 3
+        due_date: "2025-09-26"
+        due_time: "17:00"
+        files:
+          handout: "psets/pset3.pdf"
+          solutions: "psets/pset3-solutions.pdf"
+
+    exams:
+      - id: "midterm"
+        date: "2025-10-06"
+        title: "Midterm Exam"
+        info: "In class"
+
+  - id: predicate
+    title: "Predicate Logic"
+    reading_overview: "How Logic Works, Chapters 6–8"
+
+    lectures:
+      - date: "2025-10-20"
+        title: "Predicate logic syntax; ∀ intro/elim"
+        reading: "Chapter 6 (pp. 84–99)"
+        files:
+          slides: "lectures/predlogic1.pdf"
+
+      - date: "2025-10-27"
+        title: "∃ intro/elim"
+        reading: "Chapter 6 (pp. 99–113)"
+        files:
+          slides: "lectures/predlogic2.pdf"
+
+      - date: "2025-11-03"
+        title: "Theories: equality, order, sets"
+        reading: "Chapter 7 (pp. 116–131, 141–149)"
+        files:
+          slides: "lectures/predlogic3.pdf"
+
+      - date: "2025-11-10"
+        title: "Models"
+        reading: "Chapter 8 (pp. 156–175)"
+        files:
+          slides: "lectures/predlogic4.pdf"
+
+      - date: "2025-11-17"
+        title: "Proofs in predicate logic + quiz prep"
+        reading: "No new reading; start next week’s longer reading"
+        files:
+          slides: "lectures/predlogic5.pdf"
+
+    precepts:
+      - date: "2025-10-22"
+        title: "Quantifier syntax and basic derivations"
+        skills:
+          - Parsing formulas with ∀ and ∃
+          - Identifying free vs. bound variables
+          - Applying ∀-elimination correctly
+          - Translating simple English sentences into predicate logic
+
+      - date: "2025-10-29"
+        title: "Existential rules and witness constants"
+        skills:
+          - Applying ∃-introduction
+          - Applying ∃-elimination with fresh constants
+          - Tracking dependency conditions in quantified proofs
+          - Diagnosing common mistakes with existential reasoning
+
+      - date: "2025-11-05"
+        title: "Identity and relational reasoning"
+        skills:
+          - Using identity (=) in formal proofs
+          - Substitution of identicals
+          - Reasoning about relations (order, parent, membership, etc.)
+          - Formalizing simple theories with predicates
+    
+      - date: "2025-11-12"
+        title: "Models and countermodels"
+        skills:
+          - Constructing first-order structures
+          - Evaluating truth in a model
+          - Finding countermodels to invalid arguments
+          - Connecting semantic failure to proof-theoretic limitations
+          
+      - date: "2025-11-19"
+        title: "Integrated proof practice and exam preparation"
+        skills:
+          - Combining quantifier rules in longer derivations
+          - Checking freshness and dependency constraints
+          - Moving between informal arguments and formal proofs
+          - Preparing for the in-precept quiz    
+
+    quizzes:
+      - date: "2025-11-19"
+        title: "In-precept quiz"
+        files:
+          handout: "quiz/quiz.pdf"
+
+    psets:
+      - id: 4
+        due_date: "2025-10-24"
+        due_time: "17:00"
+        files:
+          handout: "psets/pset4.pdf"
+
+      - id: 5
+        due_date: "2025-10-31"
+        due_time: "17:00"
+        files:
+          handout: "psets/pset5.pdf"
+
+      - id: 6
+        due_date: "2025-11-07"
+        due_time: "17:00"
+        files:
+          handout: "psets/pset6.pdf"
+
+      - id: 7
+        due_date: "2025-11-14"
+        due_time: "17:00"
+        files:
+          handout: "psets/pset7.pdf"
+
+  - id: metatheory
+    title: "Metatheory"
+    reading_overview: "How Logic Works, Chapters 9–11"
+
+    unit_info: "No precepts during Thanksgiving week."
+
+    lectures:
+      - date: "2025-11-24"
+        title: "Metatheory for propositional logic (part 1)"
+        reading: "Chapter 9 (pp. 176–190)"
+        info: "No precepts (Thanksgiving)"
+        files:
+          slides: "lectures/meta1.pdf"
+
+      - date: "2025-12-01"
+        title: "Metatheory for propositional logic (part 2)"
+        reading: "Chapter 9 (pp. 191–205)"
+        files:
+          slides: "lectures/meta2.pdf"
+
+    precepts:
+      - date: "2025-12-03"
+
+    psets:
+      - id: 8
+        due_date: "2025-12-05"
+        due_time: "17:00"
+        files:
+          handout: "psets/pset8.pdf"
+
+    exams:
+      - id: "final"
+        date: "2025-12-14"
+        title: "Final Exam"
+        info: "Sun 08:30–11:30"
+        files:
+          practice: "exams/final-practice.pdf"
+

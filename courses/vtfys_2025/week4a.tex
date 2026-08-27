@@ -1,0 +1,558 @@
+\documentclass[fleqn]{beamer}
+
+\usetheme[
+  progressbar=frametitle,    % or try: 'none', 'foot'
+  numbering=fraction,        % frame number / total
+  sectionpage=none,
+  subsectionpage=none
+]{metropolis}
+
+\title{Week 4 \\ Part A \\ Scientific Understanding}
+\author{Hans Halvorson}
+\date{May 19, 2025}
+
+\usepackage[backend=biber, style=authortitle]{biblatex}
+\addbibresource{refs.bib}
+\setlength{\bibitemsep}{0.5em}
+\AtBeginBibliography{\scriptsize}
+
+% Load math packages
+\usepackage{amsmath,amssymb}
+
+% Highlighting commands
+\usepackage{soul}
+
+% Optional: custom keyword formatting
+\newcommand{\kw}[1]{\textbf{#1}}
+
+% Only show section numbers in TOC
+\setbeamertemplate{section in toc}[sections numbered]
+
+% Section title slide at each new section
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+% Minimalist footer and navigation
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{}
+
+% Ensure numbered sections (useful with TOC)
+\setcounter{secnumdepth}{1}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Table of Contents}
+\tableofcontents
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{De Regt and Dieks on Quantum Non-Locality}
+
+\begin{columns}
+% Left column: text
+\column{0.6\textwidth}
+\small
+\begin{itemize}
+\item Henk de Regt (Nijmegen) and Dennis Dieks (Utrecht) are
+  philosophers of science from the Netherlands. They have made central
+  contributions to discussions about the foundations of quantum
+  mechanics.
+  \item De Regt and Dieks have wrestled with the apparent unintelligibility of quantum non-locality.
+  \begin{itemize}
+    \item Some interpretations of QM try to make non-locality intelligible by appeal to superluminal causation.
+  \end{itemize}
+\end{itemize}
+
+% Right column: images
+\column{0.4\textwidth}
+\centering
+\includegraphics[width=0.5\linewidth]{deregt.jpg} \\
+{\scriptsize Henk de Regt}
+
+\vspace{1em}
+
+\includegraphics[width=0.5\linewidth]{dieks.jpg} \\
+{\scriptsize Dennis Dieks}
+
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}
+
+  \begin{itemize}
+  \item De Regt and Dieks offer us a ``theory'' of what scientific
+    understanding is --- or, at least, what its characteristic signs
+    are
+  \item Their account of understanding is a successor to several
+    competing accounts of scientific explanation that were offered
+    between 1960 and 2000
+  \item Their account is intended to show that understanding is
+    \textbf{epistemically relevant}
+  \end{itemize}
+
+\end{frame}
+
+\section{What drives science?}
+
+\begin{frame}{What Drives Science?}
+
+\begin{columns}
+% Left column: text
+\column{0.6\textwidth}
+\small
+\textbf{Empiricism:} The goal of science is to predict the results of experiments.
+
+\vspace{0.5em}
+\begin{quote}
+  “According to empiricists such as Hempel and van Fraassen, the
+  epistemic aim of science is (roughly stated) the production of
+  factual knowledge about natural phenomena.” (p. 141)
+\end{quote}
+
+\vspace{0.5em}
+\begin{itemize}
+  \item 1870–1950: Ernst Mach, Logical Positivism
+  \item 1960– : Carl Hempel, Bas van Fraassen, Brad Wray
+\end{itemize}
+
+% Right column: image
+\column{0.4\textwidth}
+\centering
+\includegraphics[width=0.9\linewidth]{image.jpg} \\
+\vspace{0.5em}
+{\scriptsize Bas van Fraassen,\\ \textit{The Scientific Image} (1980)}
+
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}{What drives science?}
+
+  \begin{itemize}
+  \item \textbf{Scientific Realism:} Science aims to \textbf{explain}
+    phenomena.
+    \begin{itemize}
+    \item The realist reaction to logical positivism has been dominant
+      among philosophers in the anglo-american tradition since the
+      1960s
+    \end{itemize}
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+  \begin{itemize}
+  \item Empiricists see the aim of science as knowing \textbf{that}
+    while realists see the aim of science as knowing \textbf{why}
+  \item Is understanding needed?
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{What drives science?}
+
+  \begin{itemize}
+  \item De Regt and Dieks: ``We will argue that achieving
+    understanding is among the general (macro-level) aims of science''
+    (p 140)
+  \item ``Understanding is an inextricable element of the aims of
+    science'' (p 142)
+  \end{itemize}
+
+\end{frame}
+
+
+\section{Philosophy of science background}
+
+\begin{frame}{Origins of logical positivism}
+
+  \begin{columns}
+  \begin{column}{0.55\textwidth}
+    Gottlob Frege (1848--1925) was a German mathematician who argued
+    for a strict separation of the (objective) logical from the
+    (subjective) psychological
+    \begin{itemize}
+    \item He was a key player in formalizing the logical foundations
+      of mathematics
+    \item The validity of a ``inference'' is an objective fact,
+      independent of any person who is thinking about it
+    \end{itemize}
+  \end{column}
+
+\begin{column}{0.45\textwidth}
+  \includegraphics[scale=0.15]{frege}
+\end{column}
+\end{columns}  
+
+\end{frame}
+
+\begin{frame}{Origins of logical positivism}
+ \begin{columns}
+  \begin{column}{0.55\textwidth}
+    \begin{itemize}
+    \item Rudolf Carnap (1891--1970) was a student of Frege, also
+      trained in physics and philosophy
+    \item Carnap's idea: apply Fregean logical rigor to the empirical
+      sciences --- \textbf{logic of science program}  
+    \end{itemize}
+    \end{column}
+    \begin{column}{0.35\textwidth}
+      \includegraphics[scale=0.3]{carnap.pdf}
+    \end{column}
+   \end{columns}
+
+\end{frame}
+
+\begin{frame}{A scientific theory of science?}
+
+  \begin{itemize}
+  \item Carnap was concerned with talking \emph{about} science in a
+    scientifically rigorous fashion
+  \item Mathematical rigor: definable in some well-understood formal
+    system
+  \item At first, Carnap thought that not even ``truth'' qualified as
+    a scientifically legitimate concept
+  \item He never recognized ``explains'' as a scientifically
+    legitimate concept
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{The post-war realist turn}
+
+  ``To explain the phenomena in the world of our experience, to answer
+  the question `why?' rather than only the question `what?', is one of
+  the foremost objectives of all rational inquiry; and especially,
+  scientific research in its various branches strives to go beyond a
+  mere description of its subject matter by providing an explanation
+  of the phenomena it investigates.'' (Hempel and Oppenheim 1948)
+
+\end{frame}
+
+\begin{frame}{Carl Hempel}
+
+  \begin{columns}
+    \begin{column}{0.6\textwidth}
+  \begin{itemize}
+  \item Carl Hempel (1905--1997) was a member of the Berlin Circle,
+    and immigrated to the US in 1937
+  \item Hempel: ``explains'' is a worldly relation that holds between
+    facts, quite independent of the person (or group) of people
+    considering them
+  \item The goal of science is to find the (objective) explanation for
+    the phenomena
+  \end{itemize}
+\end{column}
+
+      \begin{column}{0.35\textwidth}
+        \includegraphics[scale=0.4]{hempel}
+      \end{column}
+\end{columns}
+  
+\end{frame}
+
+
+\begin{frame}
+
+  \begin{columns}
+  \begin{column}{0.6\textwidth}
+    ``Such expressions as `realm of understanding' and
+    `comprehensible' do not belong to the vocabulary of logic, for
+    they refer to the psychological and pragmatic aspects of
+    explanation.'' (Carl Hempel)
+  \end{column}
+
+  \begin{column}{0.4\textwidth}
+    \includegraphics[scale=2.5]{aspects}
+  \end{column}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame} 
+
+  ``Carl Hempel \dots argued that `understanding' is subjective and
+  merely a psychological by-product of scientific activity and is,
+  therefore, not relevant for the philosophy of science.''  (Krenn et
+  al., p 762)
+
+\end{frame}
+
+\section{Theories of scientific explanation}
+
+\begin{frame}{Major Accounts of Scientific Explanation (Historical Overview)}
+
+\scriptsize
+\begin{itemize}
+  \item \textbf{Hempel (1940s–60s)}: Deductive-Nomological Model
+    \begin{itemize}
+      \item Explanation = logical deduction from laws + initial conditions
+      \item Criticized for overgenerating (irrelevance) and symmetry
+    \end{itemize}
+
+  \item \textbf{Salmon (1970s–80s)}: Causal Models
+    \begin{itemize}
+      \item Statistical relevance $\Rightarrow$ causal relevance
+      \item Explanation = tracing causal/mechanical processes
+    \end{itemize}
+
+  \item \textbf{Friedman \& Kitcher (1970s–80s)}: Unificationist Accounts
+    \begin{itemize}
+      \item Explanation = increased understanding via unification
+      \item Fewer independent assumptions; general argument patterns
+    \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+
+
+\begin{frame}{Deductive nomological account}
+
+  Nomos = law
+
+  \medskip Hempel proposed a general schema according to which a fact
+  $E$ (the explanandum) is explained by being deduced logically from a
+  covering law $L$ and an initial condition $C$ (the explanans).
+
+  \vfill \begin{tabular}{ll}
+  Initial condition \\
+  Law \\ \hline
+  Explanandum (to be explained)
+  \end{tabular}
+
+\end{frame}
+
+\begin{frame}{DN both over- and undergenerates}
+
+  \begin{itemize}
+  \item DN undergenerates: There are legitimate scientific
+    explanations that do not match the strict, DN format
+  \item Hempel nuanced the DN account to include statistical
+    explanations
+  \item DN overgenerates: There are pseudo-explanations that match the
+    strict DN format
+    \begin{itemize}
+    \item Asymmetry: Flagpole
+    \item Relevance: Birth control pills
+    \end{itemize}
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Flagpole and Shadow: A Problem for Hempel}
+
+\begin{columns}
+\column{0.55\textwidth}
+
+\scriptsize
+\vspace{-0.5em}
+\textbf{D-N Explanation (Hempel):}
+\begin{itemize}
+  \item Given: flagpole height $h$, sun angle $\theta$
+  \item Law: $\tan(\theta) = \frac{h}{s}$
+  \item Deduce: shadow length $s$
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{But also:}
+\begin{itemize}
+  \item Given $s$ and $\theta$, deduce $h$
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{What's wrong?}
+\begin{itemize}
+  \item Both directions are deductive...
+  \item ...but only one feels explanatory.
+\end{itemize}
+
+\column{0.45\textwidth}
+
+\begin{tikzpicture}[scale=1.2, every node/.style={font=\scriptsize}]
+  % Ground
+  \draw[thick] (0,0) -- (3.5,0);
+
+  % Flagpole
+  \draw[very thick] (0,0) -- (0,3);
+  \node[left] at (0,1.5) {$h$};
+
+  % Shadow
+  \draw[thick] (0,0) -- (3,0);
+  \node[below] at (1.5,0) {$s$};
+
+  % Sun rays and triangle
+  \draw[dashed] (0,3) -- (3,0);
+  \node at (2.6,1.6) {$\theta$};
+
+  % Right angle box
+  \draw (0,0) rectangle +(0.2,0.2);
+\end{tikzpicture}
+
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}{Hempel's D-N Model Overgenerates}
+
+\vspace{-0.5em}
+\textbf{Premises (Laws + Initial Conditions):}
+\begin{itemize}
+  \item[(L)] All males who take birth control pills regularly fail to get pregnant.
+  \item[(C)] John Jones is a male who has been taking birth control pills regularly.
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Conclusion (E):}
+\begin{itemize}
+  \item[(E)] John Jones fails to get pregnant.
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Problem:}
+\begin{itemize}
+  \item The derivation is logically valid under the D-N model.
+  \item But it fails to identify a genuine \textit{explanatory} relation.
+  \item Taking birth control pills is irrelevant to John's failure to become pregnant.
+\end{itemize}
+
+\vspace{0.5em} \textbf{Conclusion:} D-N explanation captures logical
+derivability, but not explanatory relevance.
+
+\end{frame}
+
+
+
+\begin{frame}
+
+  \begin{columns}
+    \begin{column}{0.6\textwidth}
+      \begin{itemize}
+      \item For more than forty years, philosophers debated about the
+        ``right'' account of scientific explanation.
+      \item ``Newton-Smith (2000) observes that fifty years of
+        discussion have not led to consensus, but, on the contrary, to
+        many rival models of explanation.''
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \includegraphics[scale=0.15]{decades}
+    \end{column}
+  \end{columns}
+
+
+\end{frame}
+
+\begin{frame}{Causal-mechanical account}
+
+  \begin{itemize}
+  \item A natural addendum to the DN account of explanation would be
+    to require that the explanans is \textbf{causally relevant} to the
+    explanandum.
+  \item Wesley Salmon developed the idea that a scientific explanation
+    is a description of the causal mechanism that results in the
+    production of the phenomenon.  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Causal-mechanical account}
+
+  \begin{itemize}
+  \item The causal-mechanical account taps into the old tradition of
+    mechanistic explanation (and visualizability)
+  \end{itemize}
+
+
+
+\end{frame}
+
+\begin{frame}{Unificationist account}
+
+  ``Science advances our understanding of nature by showing us how to
+  derive descriptions of many phenomena, using the same patterns of
+  derivation again and again, and, in demonstrating this, it teaches
+  us how to reduce the number of types of facts we have to accept as
+  ultimate (or brute).'' (Philip Kitcher)
+
+\end{frame}
+
+\begin{frame}{Stalemate}
+
+  \begin{itemize}
+  \item Proved beyond difficult to isolate the core idea of
+    \textbf{explanation} that holds throughout all the different
+    sciences
+  \item The methodology of ``whatever examples I can remember from
+    when I was a physics student'' was recognized as unacceptable
+  \end{itemize}
+
+\end{frame}
+
+\section{Resurrecting ``understanding''}
+
+\begin{frame}{Against the old critique of understanding}
+
+  \begin{itemize}
+  \item ``The present paper argues, \emph{pace} Newton-Smith, that
+    understanding can play the desired unifying role.'' (p 137)
+  \item ``Should we rely on the view of practicing scientists...?'' (p
+    138)
+  \end{itemize}
+
+\end{frame}
+\begin{frame}
+
+  \begin{itemize}    
+  \item De Regt and Dieks argue that understanding is an
+    \textbf{epistemically relevant} concept.  \newline ``We will argue
+    that understanding ... is epistemically relevant'' (p 138)
+  \item De Regt and Dieks argue that understanding transcends
+    individual psychology \newline ``We will argue that understanding
+    ...  transcends the domain of individual psychology.'' (p. 138)
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Understanding is contextual}
+
+  \begin{itemize}
+  \item HH: A phenomenon can be \ul{contextual} and yet be
+    second-order objective
+  \item For example, it is second-order objective that ``Oslo is less
+    than 500km from us''
+  \item HH: de Regt and Dieks have not yet shown the sense in which
+    understanding or intelligibility is second-order objective
+  \end{itemize}
+
+\end{frame}
+
+\nocite{*}
+
+\begin{frame}[allowframebreaks]{Selected References}
+\printbibliography[heading=none, keyword=scientific-explanation]
+\end{frame}
+
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

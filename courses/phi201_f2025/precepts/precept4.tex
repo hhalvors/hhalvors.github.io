@@ -1,0 +1,218 @@
+\section{Key Concepts}\label{key-concepts}
+
+\begin{itemize}
+\item
+  arguments: valid, invalid
+\item
+  counterexample
+\item
+  truth-value
+\item
+  main connective
+\item
+  sentences (syntactic): atomic, conjunction, negation, disjunction,
+  conditional, biconditional
+\item
+  sentences (semantic): tautology, inconsistency, contingency
+\item
+  two sentences: equivalent, inconsistent, independent
+\end{itemize}
+
+\section{Sentence classification
+(syntactic)}\label{sentence-classification-syntactic}
+
+\textbf{Exercise.} What is the \textbf{main connective} of each of the
+following formulas?
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(\neg (P\to Q)\)
+\item
+  \(\neg P\to Q\)
+\item
+  \(\neg (P\to \neg Q)\)
+\item
+  \((P\wedge Q)\vee \neg (P\to Q)\)
+\item
+  \(((P\to Q)\to P)\to P\)
+\end{enumerate}
+
+\section{Sentence classification
+(semantic)}\label{sentence-classification-semantic}
+
+\textbf{Exercise.} Classify each of the following sentences as
+tautology, inconsistency, or contingency.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \((P\to \neg P)\to \neg P\)
+\item
+  \((P\wedge Q)\vee (\neg P\wedge \neg Q)\)
+\item
+  \((P\wedge (Q\wedge \neg R))\vee (\neg P\wedge (\neg Q\wedge R))\)
+\item
+  \((P\leftrightarrow Q)\leftrightarrow R\)
+\item
+  \((P\wedge Q)\vee \neg (P\to Q)\)
+\item
+  \(((P\to Q)\to R)\to Q\)
+\end{enumerate}
+
+\textbf{Exercise.} Show that if \(B\) is a tautology, then \(A\wedge B\)
+is logically equivalent to \(A\).
+
+\textbf{Exercise.} Show that if \(B\) is an inconsistency, then
+\(A\vee B\) is logically equivalent to \(A\).
+
+\subsection{\texorpdfstring{For \(n>1\)
+sentences}{For n\textgreater1 sentences}}\label{for-n1-sentences}
+
+\textbf{Exercise:} What is the semantic relationship between
+\((P\wedge Q)\) and \(\neg (P\to Q)\)?
+
+\textbf{Exercise:} If \(\phi\wedge\psi\) is a contingency, then what are
+the possibilities for \(\phi\) and \(\psi\)?
+
+\textbf{Exercise:} If \(\phi\) is a tautology, then what are the
+possibilities for \(\phi\wedge\psi\)? What are the possibilities for
+\(\phi\vee\psi\)?
+
+\subsection{For arguments}\label{for-arguments}
+
+\textbf{Exercises.} Determine whether the following arguments are valid
+or not. Explain your answer by showing the existence of a row of a truth
+table, or by pointing to a full truth table, or something of the sort.
+Your answer should be articulated in English prose so that it can
+convince anyone else who is familiar with truth tables.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(P\to (Q\to R)\:\vdash \: (P\wedge Q)\to R\)
+\item
+  \(P\to R\:\vdash (P\vee Q)\to R\)
+\item
+  \((P\leftrightarrow Q)\leftrightarrow R \:\vdash\: P\vee R\)
+\item
+  \(\vdash\: (P\to Q)\vee (Q\to R)\)
+\end{enumerate}
+
+\section{Philosophical issues}\label{philosophical-issues}
+
+Our target in this course is the notion of logical validity. But we now
+have \emph{two} different explications of this concept: one in terms of
+provability, and one in terms of semantics (truth tables). Is one of
+these two notions more basic than the other? What does it \emph{really}
+smean to say that an argument is valid?
+
+\section{Challenge problems}\label{challenge-problems}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Is the sentence \((P\wedge Q)\vee (P\wedge \neg Q)\) logically
+  equivalent to some sentence that contains only \(P\)? Is there a
+  general test for when a sentence with \(P\) and \(Q\) is equivalent to
+  a sentence with just \(P\)?
+\item
+  How many possible truth tables are there for sentences that contain
+  only the atomic sentence \(P\)?
+\item
+  For sentences with just the atomic sentence \(P\), show that every
+  truth table is represented by a sentence whose only connectives are
+  \(\wedge\) and \(\neg\).
+\end{enumerate}
+
+\section{Aside for programmers}\label{aside-for-programmers}
+
+A truth table for a sentence is a completely explicit representation of
+the values of the set of all truth functions as applied to that
+sentence. Given a list \(\Sigma\) of propositional constants, a truth
+function on \(\Sigma\) is just an assignment of T and F to all the
+elements in \(\Sigma\). Such an assignment then extends naturally to all
+sentences built out of the propositional constants in \(\Sigma\).
+
+We could tighten up this definition by first defining the type
+\texttt{WFF} of well-formed formulas of propositional logic. Here's what
+the definition of such a type might look like in the Haskell programming
+language:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{data} \DataTypeTok{WFF}
+    \OtherTok{=} \DataTypeTok{Var} \DataTypeTok{String}         \CommentTok{{-}{-} A propositional variable}
+    \OperatorTok{|} \DataTypeTok{Not} \DataTypeTok{WFF}            \CommentTok{{-}{-} Negation}
+    \OperatorTok{|} \DataTypeTok{And} \DataTypeTok{WFF} \DataTypeTok{WFF}        \CommentTok{{-}{-} Conjunction}
+    \OperatorTok{|} \DataTypeTok{Or} \DataTypeTok{WFF} \DataTypeTok{WFF}         \CommentTok{{-}{-} Disjunction}
+    \OperatorTok{|} \DataTypeTok{Imply} \DataTypeTok{WFF} \DataTypeTok{WFF}      \CommentTok{{-}{-} Implication}
+    \OperatorTok{|} \DataTypeTok{Iff} \DataTypeTok{WFF} \DataTypeTok{WFF}        \CommentTok{{-}{-} Biconditional (if and only if)}
+\end{Highlighting}
+\end{Shaded}
+
+Here's an example of a WFF.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{exampleWFF ::} \DataTypeTok{WFF}
+\NormalTok{exampleWFF }\OtherTok{=} \DataTypeTok{Imply}\NormalTok{ (}\DataTypeTok{And}\NormalTok{ (}\DataTypeTok{Var} \StringTok{"p"}\NormalTok{) (}\DataTypeTok{Not}\NormalTok{ (}\DataTypeTok{Var} \StringTok{"q"}\NormalTok{))) (}\DataTypeTok{Or}\NormalTok{ (}\DataTypeTok{Var} \StringTok{"r"}\NormalTok{) (}\DataTypeTok{Var} \StringTok{"s"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+This example is clear for a computer, but less clear to a human eye. We
+prefer to see something like \((p\wedge\neg q)\to (r\vee s)\).
+
+With the type \texttt{WFF} defined, we can then define a type
+\texttt{TruthFunction}, which uses a type \texttt{Env} as an auxiliary.
+(An Environment is essentially a truth-valuation, i.e.~an assignment of
+truth values to atomic sentences.)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{type} \DataTypeTok{Env} \OtherTok{=}\NormalTok{ [(}\DataTypeTok{String}\NormalTok{, }\DataTypeTok{Bool}\NormalTok{)]}
+\KeywordTok{type} \DataTypeTok{TruthFunction} \OtherTok{=} \DataTypeTok{Env} \OtherTok{{-}\textgreater{}} \DataTypeTok{WFF} \OtherTok{{-}\textgreater{}} \DataTypeTok{Bool}
+
+\OtherTok{eval ::} \DataTypeTok{TruthFunction}
+\NormalTok{eval env (}\DataTypeTok{Var}\NormalTok{ x) }\OtherTok{=} \KeywordTok{case} \FunctionTok{lookup}\NormalTok{ x env }\KeywordTok{of}
+                    \DataTypeTok{Just}\NormalTok{ val }\OtherTok{{-}\textgreater{}}\NormalTok{ val}
+                    \DataTypeTok{Nothing} \OtherTok{{-}\textgreater{}} \FunctionTok{error} \StringTok{"Variable not found"}
+\NormalTok{eval env (}\DataTypeTok{Not}\NormalTok{ wff) }\OtherTok{=} \FunctionTok{not}\NormalTok{ (eval env wff)}
+\NormalTok{eval env (}\DataTypeTok{And}\NormalTok{ wff1 wff2) }\OtherTok{=}\NormalTok{ (eval env wff1) }\OperatorTok{\&\&}\NormalTok{ (eval env wff2)}
+\NormalTok{eval env (}\DataTypeTok{Or}\NormalTok{ wff1 wff2) }\OtherTok{=}\NormalTok{ (eval env wff1) }\OperatorTok{||}\NormalTok{ (eval env wff2)}
+\NormalTok{eval env (}\DataTypeTok{Imply}\NormalTok{ wff1 wff2) }\OtherTok{=}\NormalTok{ (}\FunctionTok{not}\NormalTok{ (eval env wff1)) }\OperatorTok{||}\NormalTok{ (eval env wff2)}
+\end{Highlighting}
+\end{Shaded}
+
+Here \texttt{eval} is defined recursively. For example, to determine the
+truth value of \texttt{(And\ wff1\ wff2)} it gets the truth value of
+\texttt{wff1} and the truth value of \texttt{wff2} and applies the
+\texttt{\&\&} operation to those Boolean values.
+
+While we're at it, we can define a function that takes a WFF as input
+and returns its \textbf{main connective}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{mainConnective ::} \DataTypeTok{WFF} \OtherTok{{-}\textgreater{}} \DataTypeTok{String}
+\NormalTok{mainConnective (}\DataTypeTok{Var}\NormalTok{ \_) }\OtherTok{=} \StringTok{"Variable (no connective)"}
+\NormalTok{mainConnective (}\DataTypeTok{Not}\NormalTok{ \_) }\OtherTok{=} \StringTok{"Not"}
+\NormalTok{mainConnective (}\DataTypeTok{And}\NormalTok{ \_ \_) }\OtherTok{=} \StringTok{"And"}
+\NormalTok{mainConnective (}\DataTypeTok{Or}\NormalTok{ \_ \_) }\OtherTok{=} \StringTok{"Or"}
+\NormalTok{mainConnective (}\DataTypeTok{Imply}\NormalTok{ \_ \_) }\OtherTok{=} \StringTok{"Imply"}
+\end{Highlighting}
+\end{Shaded}
+
+The way that WFFs are defined in Haskell makes it easy to read off the
+main connective, since it's simply that last constructor that is applied
+in the definition of the relevant WFF. For us human beings, we read
+strings of symbols, and we somehow -- with practice -- develop the
+ability to transform this string into a data structure in our minds. (We
+are ``parsing'' the string.) From this data structure in our minds, we
+then ``see'' what the main connective is.
+
+One can define an algorithm that takes as input a string, and returns
+the main connective (if that string represents a wff). However, this
+kind of algorithm is usually pretty ugly, and it's certainly not
+something that one recommends students to explicitly follow to find the
+main connective of a wff.

@@ -1,0 +1,56 @@
+\glsdefs@newdocentry{derivation}%
+{%
+name={Derivation},%
+sort={Derivation},%
+type={main},%
+first={Derivation},%
+firstplural={Derivations},%
+text={Derivation},%
+plural={Derivations},%
+description={For $p\in M$, let $\2S (p)$ be the algebra of all smooth functions on neighborhoods of $p$. A derivation at the point $p$ is a linear map \[ D : C^\infty (U) \to \mathbb {R} \] where \( U \) is a neighborhood of \( p \) in \( M \), satisfying the Leibniz rule \[ D(fg) = D(f) g(p) + f(p) D(g) \] for functions $f,g\in C^\infty (U)$},%
+descriptionplural={For $p\in M$, let $\2S (p)$ be the algebra of all smooth functions on neighborhoods of $p$. A derivation at the point $p$ is a linear map \[ D : C^\infty (U) \to \mathbb {R} \] where \( U \) is a neighborhood of \( p \) in \( M \), satisfying the Leibniz rule \[ D(fg) = D(f) g(p) + f(p) D(g) \] for functions $f,g\in C^\infty (U)$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{geodesic}%
+{%
+name={Geodesic},%
+sort={Geodesic},%
+type={main},%
+first={Geodesic},%
+firstplural={Geodesics},%
+text={Geodesic},%
+plural={Geodesics},%
+description={Let $\gamma $ be a smooth curve in $M$. We say that $\gamma $ is a geodesic just in case ... },%
+descriptionplural={Let $\gamma $ be a smooth curve in $M$. We say that $\gamma $ is a geodesic just in case ... },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+

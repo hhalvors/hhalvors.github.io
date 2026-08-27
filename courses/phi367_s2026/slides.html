@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PHI 367 — Seminar 1 images</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #111; color: #eee;
+    font-family: Georgia, "Times New Roman", serif; }
+  #stage { position: fixed; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; cursor: pointer; }
+  img { max-width: 94vw; max-height: 84vh; object-fit: contain;
+    box-shadow: 0 0 40px rgba(0,0,0,.6); background: #fff; }
+  #caption { margin-top: 18px; font-size: clamp(15px, 2.2vw, 24px);
+    text-align: center; max-width: 90vw; line-height: 1.4; }
+  #caption .sub { display: block; font-size: .72em; color: #aaa; margin-top: 4px; }
+  #counter { position: fixed; bottom: 14px; right: 20px; font-size: 14px; color: #888; }
+  #hint { position: fixed; bottom: 14px; left: 20px; font-size: 13px; color: #666; }
+</style>
+</head>
+<body>
+  <div id="stage" onclick="next()">
+    <img id="pic" alt="">
+    <div id="caption"></div>
+  </div>
+  <div id="counter"></div>
+  <div id="hint">← → or click &nbsp;·&nbsp; F11 for full screen</div>
+
+<script>
+const slides = [
+  { src: "img/kierkegaard.png",
+    title: "Søren Aabye Kierkegaard (1813–1855)",
+    sub: "Sketch by his cousin Niels Christian Kierkegaard, c. 1840 · Royal Danish Library" },
+  { src: "img/regine_olsen.jpg",
+    title: "Regine Olsen (1822–1904)",
+    sub: "Portrait by Emil Bærentzen, c. 1840 · Kierkegaard's fiancée" },
+  { src: "img/denmark_1827.jpg",
+    title: "The Kingdom of Denmark, 1827",
+    sub: "Kongeriget Danmark, T. Gliemann (C.C. Lose) · Royal Danish Library. Copenhagen sits on Sjælland, east across the islands from Jutland — the realm of Kierkegaard's lifetime, still including the duchies" },
+  { src: "img/copenhagen_1846.jpg",
+    title: "Copenhagen, 1846 — the fortified city",
+    sub: "Orienteringskaart over Kjøbenhavn · Royal Danish Library. Note the ramparts and the four gates: Øster-, Nørre-, Vester-, Amagerport" },
+  { src: "img/copenhagen_1856.jpg",
+    title: "Copenhagen, 1856 — the last year as a fortress",
+    sub: "Copperplate engraving · Royal Danish Library. Below the plan: elevations of the four rampart gates" },
+];
+
+let i = 0;
+const pic = document.getElementById("pic");
+const cap = document.getElementById("caption");
+const counter = document.getElementById("counter");
+
+function show() {
+  const s = slides[i];
+  pic.src = s.src;
+  pic.alt = s.title;
+  cap.innerHTML = s.title + '<span class="sub">' + s.sub + '</span>';
+  counter.textContent = (i + 1) + " / " + slides.length;
+}
+function next() { i = (i + 1) % slides.length; show(); }
+function prev() { i = (i - 1 + slides.length) % slides.length; show(); }
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight" || e.key === " " || e.key === "PageDown") { next(); e.preventDefault(); }
+  else if (e.key === "ArrowLeft" || e.key === "PageUp") { prev(); }
+  else if (e.key === "Home") { i = 0; show(); }
+  else if (e.key === "End") { i = slides.length - 1; show(); }
+});
+show();
+</script>
+</body>
+</html>

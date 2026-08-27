@@ -1,0 +1,364 @@
+\documentclass[aspectratio=169,17pt,fleqn]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{dolphin}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+\usepackage{amsmath,amssymb,array}
+% \setmathfont{Latin Modern Math}
+
+\usepackage{fontspec}      % text fonts (beamer uses sans by default)
+\usepackage{unicode-math}  % modern math
+
+\AtBeginSection[]{
+  \begin{frame}
+    \centering
+    \vfill
+    \Large\insertsectionhead
+    \vfill
+  \end{frame}
+}
+
+
+\title{Theories}
+\author{PHI~201 — Introductory Logic}
+\date{November 3, 2025}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{The utopian vision of symbolic logic}
+
+  \begin{itemize}
+  \item Two original hopes for symbolic logic.
+    \begin{enumerate}
+    \item It provides a universal language for science.
+    \item It dissolves philosophical pseudo-problems.
+    \end{enumerate}
+  \item While this doesn't work out so easily in practice, there is a
+    sense in which all ``theories'' in mathematics can be formalized
+    in predicate/relational logic.
+  \end{itemize}
+  
+\end{frame}
+
+\section{Equality}
+
+\begin{frame}{Equality is a special relation}
+
+  \begin{itemize}
+  \item Equality is a binary relation which we write as an infix
+    rather than as a prefix
+    \[ c=d ,\: \exists x(x=d) ,\: \forall y\exists x(x=y) \]
+  \item Using ``$=$'' allows us to express many new things.
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{At least $n$}
+
+  \[ \exists x\exists y(x\neq y) \]
+
+  \[ \exists x\exists y\exists z((x\neq y\wedge x\neq z)\wedge y\neq
+    z) \]
+
+
+
+\end{frame}
+
+\begin{frame}{At most $n$}
+
+  \[ \forall x\forall y (x=y) \]
+
+  \[ \forall x\forall y\forall z((x=y\vee x=z)\vee y=z) \]
+
+
+\end{frame}
+
+\begin{frame}{Exactly $n$}
+
+  \[ \exists x\exists y(x\neq y\wedge \forall z(z=x\vee z=y)) \]
+
+  \[
+\begin{aligned}
+\exists x\,\exists y\,\exists z \big(&((x \neq y \wedge x \neq z)\wedge y \neq z) \\
+ &\wedge \forall w\,((w=x \vee w=y) \vee w=z)\big)
+\end{aligned}
+\]
+
+  
+
+
+\end{frame}
+
+
+\begin{frame}{There is a unique $P$}
+
+  \[ \exists x(Px\wedge \forall y(Py\to x=y)) \]
+
+
+\end{frame}
+
+\begin{frame}{Definite descriptions}
+
+  
+
+
+\end{frame}
+
+\begin{frame}{Superlatives}
+
+  ``There is a tallest student.''
+  \[ \exists x\forall y(x\neq y\to Txy) \]
+
+  This sentence entails uniqueness only because we implicitly assume
+  that ``taller than'' is asymmetric.
+  \[ \forall x\forall y(Txy\to \neg Tyx) \]
+
+\end{frame}
+
+\begin{frame}
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{6cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\exists x \forall y (x\neq y\to Txy)$ & A \\
+2 & (2) & $\forall y (a\neq y\to Tay)$ & A \\
+3 & (3) & $\forall y (b\neq y\to Tby)$ & A \\
+4 & (4) & $a\neq b$ & A \\
+2 & (5) & $a\neq b \to Tab$ & 2 UE \\
+3 & (6) & $b\neq a \to Tba$ & 3 UE \\
+\end{tabular}
+
+
+\end{frame}
+
+
+
+\begin{frame}{Inference rules for equality}
+
+  \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{6cm} >{\raggedright\arraybackslash}p{3.5cm}}
+    $\Gamma$ & (m) & $\varphi (a)$ \\[0.5em]
+    $\Delta$ & (n) & $a=b$ \\[0.5em]
+    $\Gamma ,\Delta$ & (o) & $\varphi (b)$ & m,n $=$E \end{tabular}
+  
+
+\end{frame}
+
+   \begin{frame}
+     To show: $a=b,b=c\:\vdash\: a=c$
+
+     \bigskip \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm}
+      >{\centering\arraybackslash}p{1.0cm} p{6cm}
+        >{\raggedright\arraybackslash}p{3.5cm}}
+        1 & (1) & $a=b$ & A \\
+        2 & (2) & $b=c$ & A \\
+        1,2 & (3) & $a=c$ & 2,1 $=$E \end{tabular}
+
+ \end{frame}     
+
+\begin{frame}{Inference rules for equality}
+
+    \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm}
+      >{\centering\arraybackslash}p{1.0cm} p{6cm}
+      >{\raggedright\arraybackslash}p{3.5cm}}
+       & (m) & $a=a$ & $=$I \end{tabular}
+
+   \end{frame}
+
+   \begin{frame}
+
+     To show: $a=b\:\vdash\: b=a$
+
+     \bigskip
+        \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm}
+      >{\centering\arraybackslash}p{1.0cm} p{6cm}
+          >{\raggedright\arraybackslash}p{3.5cm}}
+          1 & (1) & $a=b$ & A \\
+            & (2) & $a=a$ & $=$I \\
+          1 & (3) & $b=a$ & 2,1 $=$E \end{tabular}
+
+      \end{frame}
+
+
+                   
+
+  %% The only \dots
+
+\begin{frame}{Nobody but}
+
+  Alice respects nobody but Bob.
+
+  \[ Rab\wedge \forall x(Rax\to x=b) \]
+  \[ \forall x(Rax\leftrightarrow x=b ) \]
+
+
+\end{frame}
+
+\begin{frame}{Everybody loves my baby}
+
+  \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\forall x Lxb$ & A \\
+2 & (2) & $\forall y (Lby \to y = a)$ & A \\
+1 & (3) & $Lbb$ & 1 UE \\
+2 & (4) & $Lbb \to b = a$ & 2 UE \\
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}
+
+  \begin{itemize}
+  \item The theory of equality is peculiar, because we build its
+    axioms in as new inference rules.
+  \item Now we look at theories whose axioms are
+    sentences. 
+  \end{itemize}
+
+\end{frame}
+
+\section{Theory of partial order}
+
+\begin{frame}
+transitive:
+\[ \forall x\forall y\forall z((x\leq y\wedge y\leq z)\to x\leq z) \]
+
+reflexive:
+\[ \forall x(x\leq x) \]
+
+antisymmetric:
+\[ \forall x\forall y((x\leq y\wedge y\leq x)\to x=y) \]
+
+
+\end{frame}
+
+\begin{frame}{A cornucopia of partially ordered sets}
+
+
+\vspace{6em}
+  linear:
+\[ \forall x\forall y((x\leq y)\vee (y\leq x)) \]
+
+
+
+
+\end{frame}
+
+\begin{frame}
+
+  \begin{itemize}
+  \item What's a sentence that is true of the natural numbers
+    $1,2,3,\dots$ but false of the integers
+    $\dots ,-2,-1,0,1,2,\dots $?
+  \item What's a sentence that is true of the integers but false of
+    the rational numbers?
+  \end{itemize}
+
+
+
+\end{frame}
+
+\section{Set theory}
+
+\begin{frame}
+
+  extensionality
+  \[ \forall x\forall y(x=y\leftrightarrow \forall z(z\in
+    x\leftrightarrow z\in y)) \]
+
+  existence of an emptyset
+  \[ \exists z\forall x(x\not\in z) \]
+
+
+\end{frame}
+
+\begin{frame}{Uniqueness of the emptyset}
+
+  \bigskip
+    \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm}
+      >{\centering\arraybackslash}p{1.0cm} p{6cm}
+      >{\raggedright\arraybackslash}p{3.5cm}}
+      1 & (1) & $\forall x(x\not\in a)$ & A \\
+      2 & (2) & $\forall x(x\not\in b)$ & A \\
+      1 & (3) & $c\not\in a$ & 1 UE \\
+      1 & (4) & $c\in a\to c\in b$ & 3 neg par \\
+    \end{tabular}
+
+  \end{frame}
+
+  \begin{frame}{Naive set theory}
+
+    comprehension
+    \[ \exists x\forall y(y\in x\leftrightarrow \varphi (y)) \]
+
+
+  \end{frame}
+
+  \begin{frame}{Consistent theories}
+
+    We say that a theory $T$ is \textbf{consistent} if there is no
+    sentence $\varphi$ such that both $T\vdash \varphi$ and
+    $T\vdash \neg \varphi$.
+
+
+
+  \end{frame}
+
+  \begin{frame}{Naive set theory is inconsistent}
+
+    Use comprehension with the predicate ``$y\not\in y$''
+
+    \bigskip \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm}
+        >{\centering\arraybackslash}p{1.0cm} p{7cm}
+        >{\raggedright\arraybackslash}p{3.5cm}}
+    1 & (1) & $\exists x \forall y (y\in x\leftrightarrow y\not\in y)$ & A \\
+    2 & (2) & $\forall y (y\in a \leftrightarrow y\not\in y)$ & A \\
+    2 & (3) & $a\in a \leftrightarrow a\not\in a$ & 2 UE \\
+\end{tabular}
+  
+
+
+
+  \end{frame}  
+
+
+ \begin{frame}{Sophisticating set theory}
+
+   pairing
+   \[ \forall x\forall y\exists z\forall w(w\in z\leftrightarrow
+     (w=x\vee w=y)) \]
+
+   separation: For every formula $\varphi(x, b_1, \dots, b_n)$,
+   \[ \forall y \exists z\forall x \Bigl( x \in z
+     \;\leftrightarrow\; (x \in y \wedge\ \varphi(x, b_1, \dots, b_n))
+     \Bigr).
+\]
+
+\end{frame}
+
+\begin{frame}{Existence and uniqueness of intersections}
+
+  \bigskip \small
+  \noindent \begin{tabular}{>{\raggedleft\arraybackslash}p{0.5cm}
+      >{\centering\arraybackslash}p{0.75cm} p{9.7cm}
+      >{\raggedright\arraybackslash}p{3cm}}
+              & (1) & $\exists z\forall x\bigl(x\in z \leftrightarrow (x\in a \wedge x\in b)\bigr)$ & sep \\
+              2 & (2) & $\forall x(x\in c \leftrightarrow (x\in a \wedge x\in b))$ & A \\
+              & (3) & $\forall y\forall y'(\forall x(x\in y\leftrightarrow x\in y')\to y=y')$ & ext \\
+              4 & (4) & $\forall x(x\in d \leftrightarrow (x\in a \wedge x\in b))$ & A \\
+              2,4  & (5) & $\forall x(x\in c \leftrightarrow x\in d)$
+                                                                                                    & 2,4   \\
+              & (6) & $\forall x(\in c\leftrightarrow x\in d)\to c=d$ &
+                                                                       3
+                                                                        UE \\
+              2,4 & (8) & $c=d$ & 6,5 MP 
+\end{tabular}
+
+\end{frame}
+
+\end{document}  
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

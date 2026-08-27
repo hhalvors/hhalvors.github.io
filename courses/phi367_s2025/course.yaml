@@ -1,0 +1,212 @@
+course:
+  code: "PHI 367"
+  title: "Kierkegaard in Copenhagen"
+  term: "Summer 2025"
+  university: "Princeton University"
+
+  description: >
+    Five-week summer program in Copenhagen for Princeton students,
+    centered on the life, writings, and intellectual context of Søren
+    Kierkegaard, combining seminars, site visits, and cultural activities.
+
+  navigation:
+    - id: home
+      label: Home
+      path: index.html
+
+    - id: lectures
+      label: Lectures
+      path: lectures.html
+
+    - id: assignments
+      label: Assignments
+      path: psets.html
+
+    - id: places
+      label: Places to Visit
+      path: places.html
+
+    - id: logistics
+      label: Logistics
+      path: logistics.html
+
+    - id: resources
+      label: Resources
+      path: resources.html
+
+
+schedule:
+  lectures:
+    days: ["Monday", "Wednesday"]
+    time: "10:00–12:00"
+    location: "University of Copenhagen"
+
+  psets:
+    due:
+      day: "Friday"
+      time: "17:00"
+
+
+staff:
+  instructors:
+    - name: "Hans Halvorson"
+      role: "Course Instructor"
+      email: "hhalvors@princeton.edu"
+
+  preceptors: []
+
+
+units: []
+
+places:
+
+  - id: rundetaarn
+    name: "Rundetaarn (Round Tower)"
+    type: viewpoint
+    location:
+      city: "Copenhagen"
+
+    significance: >
+      Iconic 17th-century tower in central Copenhagen. Often used as a symbol
+      of observation, detachment, and reflective distance — themes closely
+      connected to Kierkegaard’s account of subjectivity.
+
+    kierkegaard_connections:
+      - "Mentioned in journals and letters"
+      - "Associated with reflective observation of the city"
+
+    themes:
+      - subjectivity
+      - reflection
+      - modern life
+
+    visit:
+      priority: high
+      estimated_time: "45 minutes"
+      guided: false
+
+
+  - id: christiansborg_ruins
+    name: "Christiansborg Palace Ruins Museum"
+    type: museum
+    location:
+      city: "Copenhagen"
+
+    significance: >
+      Archaeological remains beneath Christiansborg showing layers of Danish
+      political history. Useful for situating Kierkegaard within the historical
+      continuity of the Danish state and Copenhagen as a political capital.
+
+    themes:
+      - history
+      - state
+      - continuity
+
+    visit:
+      priority: medium
+      estimated_time: "1 hour"
+
+
+  - id: assistens
+    name: "Assistens Cemetery"
+    type: historical_site
+    location:
+      city: "Copenhagen"
+
+    significance: >
+      Burial place of Søren Kierkegaard, Hans Christian Andersen, and other
+      major Danish figures. Central site for discussing death, individuality,
+      and remembrance.
+
+    kierkegaard_connections:
+      - "Grave site of Søren Kierkegaard (1813–1855)"
+
+    themes:
+      - death
+      - individuality
+      - legacy
+
+    visit:
+      priority: high
+      estimated_time: "1 hour"
+
+
+  - id: gilleleje
+    name: "Gilleleje"
+    type: town
+    location:
+      city: "Gilleleje"
+
+    significance: >
+      Coastal fishing town in North Zealand. Represents rural Denmark and
+      contrasts with Copenhagen’s urban modernity.
+
+    themes:
+      - city_vs_country
+      - modernity
+      - Danish identity
+
+    visit:
+      priority: medium
+      estimated_time: "half day"
+
+
+  - id: helsingor
+    name: "Helsingør (Elsinore)"
+    type: city
+    location:
+      city: "Helsingør"
+
+    significance: >
+      Shakespeare’s Elsinore and site of Kronborg Castle. Useful for discussion
+      of tragedy, inwardness, and European literary context.
+
+    themes:
+      - tragedy
+      - literature
+      - existential anxiety
+
+    visit:
+      priority: high
+      estimated_time: "half day"
+
+
+  - id: roskilde
+    name: "Roskilde"
+    type: city
+    location:
+      city: "Roskilde"
+
+    significance: >
+      Former capital of Denmark and location of Roskilde Cathedral, burial site
+      of Danish monarchs. Important for understanding Danish religious and
+      political history.
+
+    themes:
+      - religion
+      - monarchy
+      - history
+
+    visit:
+      priority: medium
+      estimated_time: "half day"
+
+
+  - id: lejre
+    name: "Lejre"
+    type: landscape
+    location:
+      city: "Lejre"
+
+    significance: >
+      Archaeological and mythological center of early Danish history. Provides
+      a deep historical counterpoint to Kierkegaard’s modern Christian thought.
+
+    themes:
+      - myth
+      - history
+      - paganism_vs_christianity
+
+    visit:
+      priority: optional
+      estimated_time: "half day"

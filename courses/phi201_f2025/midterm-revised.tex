@@ -1,0 +1,124 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{array}
+\renewcommand{\thesubsection}{\Alph{subsection}.}
+\usepackage{enumitem}
+\setlength{\parindent}{0em}
+\usepackage{amssymb,amsmath}
+\begin{document}
+
+\section*{Intro logic: midterm exam 2025}
+
+Version 2 -- for makeup exam
+
+\bigskip \textbf{INSTRUCTIONS:} (1) Please note that there are exam
+questions on the front and the back of this sheet. (2) You have 80
+minutes to complete the exam. (3) Please write your \textbf{name} and
+\textbf{preceptor's name} and \textbf{honor pledge} on the front of
+the exam booklet. (4) The only resource you may consult is your
+prepared page of notes. (5) You may use additional exam booklets to
+write scratch work.
+
+\subsection{Translation}
+
+Translate the following sentences into propositional logic. In each
+case, clearly indicate what letters you are assigning to atomic
+sentences.  (2 points each)
+
+\begin{enumerate}[leftmargin=*]
+\item Either Bob gets a front-row seat, or if Bob does not go with
+  friends then Bob will not enjoy the concert.
+\item If David does not exercise regularly or does not eat healthy
+  meals, then David will not maintain good health.
+\item Carla will increase her chances of admission only if Carla
+  submits her application early and asks for strong recommendation
+  letters.
+
+\end{enumerate}
+
+\subsection{Semantics (truth tables)}
+
+\begin{enumerate}[leftmargin=*]
+
+\item For each of the following sentences, state whether it is a
+  tautology, contingency, or inconsistency, and justify your claim in
+  terms of truth tables. (3 points each)
+  \begin{enumerate}
+  \item $P\to (Q\to (R\to (S\to P)))$
+  \item $(P\wedge Q)\vee (\neg P\wedge \neg Q)$
+  \end{enumerate}
+  
+\item For each of the following arguments, state whether it is valid
+  or invalid, and justify your claim in terms of truth tables. (3
+  points each)
+  \begin{enumerate}
+  \item $P\to Q\:\vdash \: P\to (Q\wedge R)$
+  \item $Q\to R\:\vdash \: (P\vee Q)\to (P\vee R)$
+\end{enumerate}
+
+
+\end{enumerate}
+
+\newpage
+
+\subsection{Proofs}
+
+Prove the following. Besides the basic rules, you may also use cut and
+replacement, but only if you include a proof of the relevant ``lemma''
+in your exam booklet. (4 points each)
+
+\begin{enumerate}[leftmargin=*]
+
+\item $P,\neg P\: \vdash \: Q$ 
+
+\item $P\vee Q,\neg P\:\vdash \: Q$
+
+\item $\neg P\to Q\:\vdash\: P\vee Q$  
+
+\item $(\neg P\vee Q)\to (P\vee Q)\: \vdash\: P\vee Q$
+
+\end{enumerate}
+
+
+\subsection{Conceptual}
+
+\begin{enumerate}[leftmargin=*]
+  
+\item Is there a correctly written proof with the following line
+  fragment? Justify your answer by showing that the relevant argument
+  is valid or invalid, and by invoking soundness or completeness. The
+  symbol ``$\varnothing$'' means no dependency numbers. (4 points)
+  \[ \begin{array}{lc>{$}p{5cm}<{$}p{3cm}l}
+       \varnothing & (n) & ((P\to Q)\to \neg P)\to \neg P  & \end{array}
+   \]
+   
+\item Suppose that $\varphi$ and $\psi$ are contingencies. Can
+  $\varphi \to \psi$ be a tautology, contingency, or inconsistency?
+  Justify your answers. (4 points)
+\end{enumerate}
+  
+
+\bigskip
+
+\noindent
+\rule{0.45\textwidth}{0.4pt} {\large\bf END} 
+\rule{0.45\textwidth}{0.4pt}
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

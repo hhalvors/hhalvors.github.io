@@ -1,0 +1,108 @@
+course:
+  code: "PHI 338"
+  title: "History of Analytic Philosophy 1900-50"
+  term: "Fall 2014"
+  university: "Princeton University"
+  description: >
+    ...
+
+  navigation:
+    - id: home
+      label: Home
+      path: index.html
+    - id: lectures
+      label: Lectures
+      path: lectures.html
+    - id: resources
+      label: Resources
+      path: resources.html
+
+
+units:
+  - id: "lectures"
+    title: "Lectures"
+    lectures:
+      - date: ""
+        title: "Lecture 1"
+        files:
+          handout: "lectures/lecture1-handout.pdf"
+      - date: ""
+        title: "Lecture 2"
+        files:
+          handout: "lectures/lecture2-handout.pdf"
+      - date: ""
+        title: "Lecture 3"
+        files:
+          handout: "lectures/lecture3-handout.pdf"
+      - date: ""
+        title: "Lecture 4"
+        files:
+          handout: "lectures/lecture4-handout.pdf"
+      - date: ""
+        title: "Lecture 6"
+        files:
+          handout: "lectures/lecture6-handout.pdf"
+      - date: ""
+        title: "Lecture 8"
+        files:
+          handout: "lectures/lecture8-handout.pdf"
+      - date: ""
+        title: "Lecture 9"
+        files:
+          handout: "lectures/lecture9-handout.pdf"
+      - date: ""
+        title: "Lecture 10"
+        files:
+          handout: "lectures/lecture10-handout.pdf"
+      - date: ""
+        title: "Lecture 11"
+        files:
+          handout: "lectures/lecture11-handout.pdf"
+      - date: ""
+        title: "Lecture 13"
+        files:
+          handout: "lectures/lecture13-handout.pdf"
+      - date: ""
+        title: "Lecture 14"
+        files:
+          handout: "lectures/lecture14-handout.pdf"
+      - date: ""
+        title: "Lecture 15"
+        files:
+          handout: "lectures/lecture15-handout.pdf"
+      - date: ""
+        title: "Lecture 16"
+        files:
+          handout: "lectures/lecture16-handout.pdf"
+      - date: ""
+        title: "Lecture 17"
+        files:
+          handout: "lectures/lecture17-handout.pdf"
+      - date: ""
+        title: "Lecture 18"
+        files:
+          handout: "lectures/lecture18-handout.pdf"
+      - date: ""
+        title: "Lecture 19"
+        files:
+          handout: "lectures/lecture19-handout.pdf"
+      - date: ""
+        title: "Lecture 20"
+        files:
+          handout: "lectures/lecture20-handout.pdf"
+      - date: ""
+        title: "Lecture 21"
+        files:
+          handout: "lectures/lecture21-handout.pdf"
+      - date: ""
+        title: "Lecture 22"
+        files:
+          handout: "lectures/lecture22-handout.pdf"
+      - date: ""
+        title: "Lecture 23"
+        files:
+          handout: "lectures/lecture23-handout.pdf"
+      - date: ""
+        title: "Lecture 24"
+        files:
+          handout: "lectures/lecture24-handout.pdf"

@@ -1,0 +1,510 @@
+\documentclass[fleqn]{beamer}
+
+\usetheme[
+  progressbar=frametitle,    % or try: 'none', 'foot'
+  numbering=fraction,        % frame number / total
+  sectionpage=none,
+  subsectionpage=none
+]{metropolis}
+
+\title{Week 4 \\ Part C \\ The AI as Scientist}
+\author{Hans Halvorson}
+\date{May 19, 2025}
+
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{ai.bib}
+
+
+% Load math packages
+\usepackage{amsmath,amssymb}
+
+% Highlighting commands
+\usepackage{soul}
+
+% Optional: custom keyword formatting
+\newcommand{\kw}[1]{\textbf{#1}}
+
+% Only show section numbers in TOC
+\setbeamertemplate{section in toc}[sections numbered]
+
+% Section title slide at each new section
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+% Minimalist footer and navigation
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{}
+
+% Ensure numbered sections (useful with TOC)
+\setcounter{secnumdepth}{1}
+
+\begin{document}
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Table of Contents}
+\tableofcontents
+\end{frame}
+
+\section{Does ML change the scientific method?}
+
+\begin{frame}{Foundations of scientific inference}
+
+  \begin{itemize}
+  \item In the early modern period (17th century and forward),
+    philosophers reflected on the foundations of scientific inference
+    --- i.e.\ how empirical data might justify our belief/acceptance
+    of theoretical hypotheses
+  \item This investigation was especially prominent among English,
+    Scottish, and Irish philosophers --- the so-called \textbf{British
+      empiricists}
+  \item The earliest model was \textbf{straight induction}: a
+    generalization $T$ is abstracted from many repeated instances
+    $E_1,E_2,\dots $ of a phenomenon.
+    \begin{itemize}
+      \item Since the first 1,000 ravens were black, we are justified
+        in believing that the next raven will be black.
+      \end{itemize}
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Hume's problem of induction}
+
+  \begin{itemize}
+  \item David Hume (1711--1776) asked: what is the justification for
+    the inductive method? Why believe that this method is rational?
+  \item The link between past instances $E_1,E_2,\dots $ and future
+    projection $T$ seems to be mediated by an assumption:
+    \begin{itemize}
+      \item \textbf{Uniformity of Nature:} The future will resemble
+        the past.
+      \end{itemize}
+    \item But what is the justification for UN?
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+  \begin{itemize}
+  \item Many philosophers conclude that theorizing requires more
+    creative input from the scientist.
+    \begin{itemize}
+    \item Karl Popper: hypothetico-deductive method
+    \end{itemize}
+  \item Many philosophers conclude that scientific inference can only
+    proceed against a backdrop of assumptions that are \emph{not}
+    justified by scientific inference.
+   \begin{itemize}   
+   \item Some (e.g.\ Bayesians) are hopeful that ``inductive
+     learners'' would converge in the long run.
+    \end{itemize}
+  \end{itemize}
+
+\end{frame}
+
+%% Book covers: Howson and Urbach, Earman, Norton
+
+\begin{frame}{Does Big Data change our understanding of science?} 
+
+\includegraphics[scale=0.25]{theory}
+
+\end{frame}
+
+\begin{frame}
+
+  \includegraphics[scale=0.25]{kitchin}
+
+
+\end{frame}
+
+\begin{frame}
+
+  ``\ul{Generative modelling} offers a way to discern the most
+  credible theory from various explanations for observational
+  data. This is achieved solely through the data, without any
+  predetermined understanding of the potential physical mechanisms
+  operating within the studied system.'' (Rodrigues, ``Machine
+  learning in physics'', referring to Schawinski, Turp, and Zhang,
+  ``Exploring galaxy evolution with generative models'' 2018)
+
+\end{frame}
+
+\begin{frame}{A new empiricism?} 
+
+  ``Our approach of using generative models like the Fader network to
+  forward model physical processes and test hypotheses in a
+  data-driven way has significant potential in astrophysics and other
+  fields. Its central advantage is its data-driven nature which makes
+  no assumptions on the underlying physics.'' (Schawinski et al. 2018)
+
+\end{frame}
+
+\begin{frame}{A new empiricism?}
+
+  ``Deep learning leverages deep neural networks to automatically
+  learn representations from the data.'' (Rodrigues, p 5)
+
+\end{frame}
+
+
+\section{Conceptual engineering}
+
+\begin{frame}
+
+  \begin{itemize}
+  \item ``Surprising and creative ideas are the foundation of advances
+    in science'' (p 764)
+  \item What kind of thing is a ``new idea''?
+    \begin{itemize}
+    \item A new conjecture \newline Ex. ``Perhaps injecting some of
+      this virus will prevent the person from getting a worse case?''
+    \item An expansion of the conceptual framework
+    \end{itemize}
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+  ``Ved forskellige lejligheder har jeg forsøgt at vise, at den
+  belæring, som fysikkens nyere udvikling har givet os med hensyn til
+  nødvendigheden af en stadig udvidelse af begrebsrammerne for
+  indordningen af nye erfaringer, fører os til en almindelig
+  erkendelsesteoretisk indstilling, der turde være egnet til at undgå
+  tilsyneladende begrebsvanskeligheder, også på andre af videnskabens
+  områder.'' (Niels Bohr, Causality and Complementarity 1936)
+
+\end{frame}
+
+\begin{frame}
+
+  ``\dots at ingen erfaring er definerbar uden en logisk ramme, og at
+  enhver mangel på harmoni synligt i et sådant forhold, kun kan
+  fjernes ved en behørig udvidelse af den begrebslige ramme.'' (Niels
+  Bohr, Fysisk videnskab og studiet af religioner 1953)
+
+\end{frame}
+
+\begin{frame}{Theoretical concepts}
+
+  \begin{itemize}
+  \item Modern science is characterized by the introduction of
+    \textbf{novel concepts} that enable new levels of understanding to
+    be achieved
+   \item Examples:
+  \begin{itemize}
+  \item Genes
+  \item Forces   
+  \item Electromagnetic fields
+  \item The quantum of action
+  \item Spin (quantum two-valuedness)
+  \item Pauli exclusion principle
+  \item Lorentz transformation
+  \item Geometric phases   
+  \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+  \begin{itemize}
+  \item ``It would be truly exciting to see an AI uncover hidden
+    patterns or irregularities in scientific data previously
+    overlooked by humans, which could lead to \ul{new ideas} and,
+    ultimately, to \ul{new conceptual understanding}. As of now, we
+    are not aware of such cases.'' (p 765)
+  \item ``The concepts rediscovered in all of those works were not new
+    and, thus, the most important challenge for the future is to learn
+    how to extract \ul{previously unknown concepts}.'' (p 766)
+  \end{itemize}
+
+
+\end{frame}
+
+
+\begin{frame}{Rational novelty?}
+  
+\begin{columns}[T] \begin{column}{0.55\textwidth}  
+    \begin{itemize}
+    \item 20th century philosophers of science: novel scientific
+      concepts must have some rational connection to
+      already-understood concepts
+  \begin{itemize}
+  \item Something is needed for these new concepts to be
+    \textbf{intelligible}.
+  \item If I simply introduced a phrase ``slithy toves'', you would
+    have no idea what I meant
+  \end{itemize}
+\end{itemize}
+
+\end{column}
+
+\begin{column}{0.35\textwidth}
+
+  \includegraphics[scale=0.15]{aufbau}
+
+\end{column}
+\end{columns}
+
+\begin{itemize}
+\item Rudolf Carnap (1891--1970) originally proposed that the new
+  concepts should all be \kw{logical constructions} from better
+  understood concepts
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+  \includegraphics[scale=0.4]{begriff}
+
+\end{frame}
+
+\begin{frame}
+
+  \begin{itemize}
+  \item Even with a more advanced understanding of ``logical
+    construction'', the criterion of logical constructability seems
+    far too strict
+  \item Even according to more advanced accounts of ``logical
+    construction'', no genuine novelty arises (and that is the point
+    of the relation being logical)
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+  \begin{itemize}
+  \item A novel concept is similar to a \textbf{theoretical posit},
+    i.e. something whose existence is conjectured to explain the
+    phenomena.
+  \begin{itemize}
+  \item Le Verrier's (1846) prediction of the existence of Neptune
+  \item Gell-Mann's prediction of ...
+  \item Prediction of the Higgs boson 
+  \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Can AI Perform Scientific Inference?}
+
+\small
+\textbf{Bayesian conditionalizing:} Yes, AI systems can update beliefs using Bayes’ rule.  
+\begin{itemize}
+  \item Widely implemented in machine learning and probabilistic modeling.
+  \item But: relies on well-specified prior probabilities and likelihoods.
+\end{itemize}
+
+\vspace{0.5em} \textbf{Inference to the Best Explanation (IBE):}
+Partially
+\begin{itemize}
+  \item AI can rank hypotheses based on fit, simplicity, etc.
+  \item But: IBE involves theory choice, explanatory power, and background knowledge — often context-sensitive and informal.
+  \item Current AI lacks deep semantic understanding or explanatory intuition.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Can LLMs Perform Scientific Inference?}
+
+\small
+\textbf{LLMs (e.g., GPT-4, Claude):} Predict text based on patterns in large datasets.
+
+\vspace{0.5em} \textbf{Bayesian Updating:} Not natively
+\begin{itemize}
+  \item LLMs are not probabilistic reasoners in the Bayesian sense.
+  \item They can talk about Bayes’ rule, but don’t maintain internal probabilistic belief states.
+\end{itemize}
+
+\vspace{0.5em} \textbf{Inference to the Best Explanation (IBE):}
+Superficial imitation
+\begin{itemize}
+  \item Can generate plausible-sounding explanations.
+  \item Can rank hypotheses based on heuristics (e.g., coherence, simplicity) — if prompted.
+  \item But lacks grounding in actual theory choice, background understanding, or causal modeling.
+\end{itemize}
+
+\vspace{0.5em} \textbf{Bottom line:} LLMs simulate explanatory
+language — but do not \emph{genuinely} infer, explain, or understand.
+
+\end{frame}
+
+\begin{frame}{Toward an Intelligent Scientific Agent}
+
+\small
+\textbf{Comparison of AI Systems for Scientific Inference}
+
+\vspace{0.5em}
+\begin{tabular}{@{}lcc@{}}
+\textbf{Capability} & \textbf{LLMs} & \textbf{Probabilistic Models} \\
+\hline
+Natural language fluency       & Yes & No \\
+Bayesian updating              & No  & Yes \\
+Causal explanation             & Partial (imitated) & Yes (if built-in) \\
+Theory generation              & Partial (pattern-based) & Limited (depends on priors) \\
+Hypothesis revision            & No  & Yes \\
+Scientific judgment            & No  & Partial (domain-specific) \\
+\end{tabular}
+
+\vspace{1em}
+\textbf{Hybrid efforts:}  
+Ongoing research aims to combine LLMs with Bayesian, causal, and symbolic reasoning models.
+
+\end{frame}
+
+\begin{frame}{Can AGI Do Science Like a Human?}
+
+\small
+\textbf{Current AI systems (e.g., LLMs):}
+\begin{itemize}
+  \item Simulate scientific discourse and generate plausible hypotheses.
+  \item Summarize theories, analyze data, complete analogies.
+  \item Lack genuine belief representation, explanatory goals, and epistemic norms.
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{What human-like scientific reasoning requires:}
+\begin{itemize}
+  \item Formulating and revising hypotheses in light of evidence.
+  \item Understanding causal mechanisms, not just correlations.
+  \item Distinguishing relevance and explanatory depth.
+  \item Participating in social and normative dimensions of inquiry.
+\end{itemize}
+
+\vspace{0.5em} \textbf{Conclusion:} Simulating science $\neq$ doing
+science. AGI would need more than language fluency --- it must
+integrate causal reasoning, epistemic goals, and reflective judgment.
+
+\end{frame}
+
+
+
+
+\begin{frame}
+
+  \begin{itemize}
+  \item A simpler case: automated theorem proving
+    \begin{itemize}
+    \item Even in pure mathematics (i.e.\ deductive logic), humans
+      rely on intuitions about which proof strategies to pursue
+    \end{itemize}   
+  \item What about the role of scientists in making value judgments?
+    \begin{itemize}
+    \item When should an experiment be re-run?
+    \item Inductive risk
+    \end{itemize}
+  \end{itemize}
+  
+\end{frame}
+  
+\begin{frame}
+
+  \begin{itemize}
+  \item After Carnap realized that logical reduction was too strict,
+    he tried various other more liberal relationships (between new
+    concepts and old)
+    \begin{itemize}
+    \item Partial reduction
+    \item Implicit definition
+    \item Ramsey sentences
+    \end{itemize}
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+  \begin{itemize}
+  \item Both camps (realist and antirealist) of late 20th century
+    philosophers of science gave up on the project of understanding
+    conceptual novelty
+    \begin{itemize}
+    \item Realists: new concepts are good when they latch onto the
+      joints of reality
+    \item van Fraassen: the aim is simply to build models that are
+      empirically adequate
+    \item Kuhn: the concepts of the new paradigm are often
+      \ul{incommensurable} with those of the old paradigm
+    \end{itemize}
+  \item As a result, we have few plausible models of what conceptual
+    innovation/growth might amount to
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Conceptual engineering and mathematization}
+
+  \begin{itemize}
+  \item Conceptual advances in modern physics have often followed the
+    development of new mathematical frameworks
+    \begin{itemize}
+    \item Einstein was able to treat gravity as a field by using the
+      resources of Riemannian geometry
+    \item Heisenberg was (apparently) able to overcome the
+      contradictions of the old quantum theory by employing
+      non-commutative matrix algebra
+    \item The classification of fundamental particles was enabled by
+      the theory of representations of Lie groups
+    \end{itemize}
+  \end{itemize}
+
+
+
+\end{frame}
+
+\begin{frame}{Extending concepts to new domains}
+
+  \begin{itemize}
+  \item Einstein: the concept of two events being simultaneous breaks
+    down when velocities are high compared to the speed of light
+
+  \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}
+
+  
+
+  \begin{itemize} 
+  \item With genuinely novel concepts, the framework for inquiry is
+    changed --- and it is difficult to imagine how AI could do that
+  \item Can AI only do ``normal science''? Or could AI make a
+    revolutionary advance? What would that look like?
+    \begin{itemize}
+    \item Compare to description of how AI might try to explain
+      something that is ``above our heads'' \end{itemize}
+  \item Krenn et al.\: AI is good at ``rediscovery tasks'', but not
+    much evidence yet that it can drive discoveries. \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]{References}
+\nocite{*}
+\scriptsize
+\printbibliography
+\end{frame}
+
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

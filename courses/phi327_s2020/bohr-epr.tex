@@ -1,0 +1,278 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage{amsfonts,amssymb,amsthm,amsmath}
+\title{Bohr's Answer to EPR}
+\author{Hans Halvorson}
+\date{\today}
+\usepackage{tikz}
+\usepackage{url}
+\usepackage{natbib}
+
+\newcommand{\bh}{\mathbf{B}(\mathcal{H})}
+\newcommand{\bk}{\mathbf{B}(\mathcal{K})}
+
+\newcommand{\2}{\mathcal}      
+
+\renewcommand{\emph}{\textbf}
+
+\newcommand{\vp}{\varphi}
+
+\newcommand{\7}[1]{\mathbb{#1}}
+
+\swapnumbers
+
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}[prop]{Theorem}
+\newtheorem{lemma}[prop]{Lemma}
+\newtheorem*{bellthm}{Bell's Theorem}
+\theoremstyle{definition}
+\newtheorem*{fact}{Fact}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{question}{Question}
+\newtheorem{exercise}{Exercise}
+\newtheorem*{disc}{Discussion}
+
+\newcommand{\ke}[1]{|#1\rangle}
+ \newcommand{\ket}[1]{|#1\rangle}
+
+\begin{document}
+
+\maketitle
+
+You'll recall that the EPR argument is supposed to be a reductio ad
+absurdum of the idea that QM is complete.  The key step in their
+argument is their ``proof'' that the reality condition implies that
+two conjugate quantities (in particular, position and momentum) can
+simultaneously have values.  Let's call this part of the argument the
+\emph{EPR lemma}:
+\bigskip 
+
+\framebox[29em][c]{\begin{minipage}{27em} Given the reality criterion (and locality), it is
+  possible for both {\it position} and {\it momentum} to have sharp
+  values simultaneously.\end{minipage}}
+
+\bigskip Already by 1927, Niels Bohr had come to the conclusion that
+position and momentum cannot simultaneously have values.  He calls
+this the \emph{complementarity principle}.  In this chapter, we'll
+look more closely at {\it why} Bohr is convinced of complementarity.
+As a preview, his reasons are {\it not} primarily mathematical.  In
+particular, when asked to justify complementarity, Bohr doesn't
+typically invoke von Neumann's NHV theorem.
+
+So, Bohr does not accept the conclusion of the EPR lemma.  If the EPR
+lemma is a valid argument, then either Bohr rejects one of its
+premises, or (more radically) he rejects the framework in which the
+argument is formulated.  In order to come to a fair assessment of what
+Bohr's objection amounts to, let's first gather two sets of data.  The
+first set of data consists of some general remarks about Bohr's
+outlook.  The second set of data consists of specific citations from
+the Bohr paper, to which I'll add some commentary.
+
+\subsection*{Bohr's outlook}
+
+\begin{itemize}
+\item Bohr thinks that there is no fixed boundary between ``self'' and
+  ``world'', or between ``subject'' and ``object.''  He illustrated
+  that point with the example of a walking stick.  He says that the
+  walking stick can be treated as an extension of a person's own body,
+  or it can be treated as something {\it other}, i.e.\ an object of
+  investigation.
+
+  Other examples Bohr might have availed himself of: prostheses,
+  eyeglasses, smartphones.
+
+  Bohr thinks that this general point should be applied when talking
+  about measuring devices.  i.e.\ a measuring device can be considered
+  as an extension of one's own self.
+  
+\item Bohr thinks nothing can be the same after the discovery of the
+  \emph{quantum of action}, i.e.\ the discovery that the physical
+  quantity ``action'' has a basic unit (Planck's constant) that cannot
+  be further subdivided.  In particular, Bohr claims that this fact
+  implies a limit to the ``analysis'' of position and momentum
+  relations between any two objects.  In any interaction between two
+  physical objects, if the second object serves a reference frame,
+  then the law of conservation momentum no longer applies to it.
+
+  See: ``\ldots the finite and uncontrollable interaction between the
+  objects and the measuring instruments in the field of quantum
+  theory.'' (p 700) I think Bohr means to say that a person/subject is
+  also a measuring instrument, but the quantum of action implies that
+  she cannot possible keep track of her own state/condition when she
+  performs a measurement.  e.g.\ if you perform a position
+  measurement, then you can't keep track of how much your own momentum
+  changed (``the transfer of momentum'') in the process of the
+  measurement.
+
+  See: ``\ldots the renunciation \dots of one or the other of two
+  aspects of the description of physical phenomena \dots depends
+  essentially on the impossibility of accurately controlling the
+  reaction of the object on the measuring instruments.'' (p 699)
+
+\item Bohr thinks that the complementarity between position and
+  momentum is a relation between concepts, not between things out in
+  the world.  He thinks that when position can be defined, momentum
+  cannot be defined.  It's not that momentum is fuzzy (when position
+  is sharp), it's that the momentum concept is inapplicable.
+
+  Question: when is the momentum concept applicable?
+\end{itemize}
+
+\subsection*{Citations}
+
+\begin{itemize}
+\item The reality criterion ``contains an essential ambiguity when it
+  is applied to quantum phenomena.''  (p 696, abstract)
+
+  ``\ldots a criterion of reality like that proposed by the named
+  authors contains \dots an essential ambiguity.'' (p 697)
+
+  ``\dots essentially different experimental arrangements and
+  procedures which are suited either for an unambiguous use of the
+  idea of space location, or for a legitimate application of the
+  conservation theorem of momentum.'' (p 699)
+
+  ``\dots the impossibility of defining these quantities in an
+  unambiguous way.'' (p 699)
+
+  These sentences refer to one of Bohr's favorite concepts:
+  ``ambiguity''.  He doesn't just mean that EPR have failed to express
+  the reality criterion clearly.  Instead, he intends to point to a
+  deeper problem that an intented description of reality can fail to
+  make sense if conditions aren't right \dots or, more accurately, if
+  one doesn't hold fixed certain presuppositions about one's own
+  condition.
+
+  
+\item ``\dots lost our only basis for an unambiguous application of
+  the idea of momentum \dots '' (p 700)
+
+  Ambiguity again!  Here's how I'm reading Bohr: imagine that you see
+  a ship off in the distance, and you want to tell another person
+  where it is.  But imagine that you've become disoriented, so you
+  don't know which direction is north, which is east, etc.  Then
+  you've lost your basis for an unambiguous application of the idea of
+  direction.  If you say that ``the ship is at two o'clock'' then your
+  description is ambiguous.
+
+  Similarly, imagine that you have no idea about how fast you're
+  moving or in which direction.  Then reporting to another person that
+  something is moving at $10$ mph is ambiguous, because they don't
+  know which reference frame you are reporting from.
+
+\item ``\ldots such measurements of momentum require only an
+  unambiguous application of the classical law of conservation of
+  momentum.'' (p 698)
+
+  For example, to describe something as having momentum, one needs to
+  be in a condition where one can apply the law of conservation of
+  momentum unambiguously.  (I'm not totally sure what those conditions
+  are, but I suspect it has something to do with not supposing one's
+  own spacetime location to be fixed.)
+
+\item ``From our point of view we now see that the wording of the
+  above-mentioned criterion of reality proposed by Einstein, Podolsky
+  and Rosen contains an ambiguity as regards the meaning of the
+  expression `without in any way disturbing a system'.''  (p 700)
+
+  Here I think Bohr is using ``ambiguity'' in a less technical sense.
+  I think he just means that there are various things we can
+  understand by ``disturbing a system.''  He himself distinguishes
+  between ``mechanical disturbance'' (which he says doesn't happen)
+  and ``an influence on the very conditions which define the possible
+  types of predictions regarding the future behavior of the system.''
+
+  This last sentence is a doozy.  To be honest, I think Bohr is
+  struggling here with what to say about the issue.  By ``very
+  conditions which define the possible types of predictions'' he might
+  just be thinking of wavefunction collapse as an epistemic process,
+  i.e.\ a sort of statistical updating (like Bayesian updating).  But
+  if we put emphasis on ``types'', then it's not about changing one's
+  predictions, it's about changing the the types of predictions.  That
+  doesn't sound like simple updating.
+
+  So, Bohr seems to accept that a measurement by Alice {\it can}
+  disturb Bob's distant system in this second sense of ``disturb.''
+
+\item Looking at that last sentence again: ``\ldots an influence on
+  the very conditions \dots '' and the subsequent sentence ``Since
+  these conditions constitute an inherent element of the description
+  of any phenomenon to which the term `physical reality' can be
+  properly attached.''  (p 700)
+
+  What do you think Bohr means here by ``conditions''?
+
+  If Bohr is equating ``conditions'' with ``physical state of
+  affairs'', then it's not clear at all how his kind of disturbance
+  would differ from mechanical disturbance.  So, I think he isn't
+  equating these two.
+
+  Why would ``conditions'' make up part of any description to which
+  the term `physical reality' can be properly attached?
+
+  There's also a clue here about what Bohr means by ``conditions,''
+  because they make up a part of a ``description.''  So,
+  ``conditions'' isn't a physical state of affairs, it's a kind of
+  semantic thing.  Compare, for example, with the notion of a
+  ``context'' that is in use among linguists and philosophers of
+  language.
+
+\item ``Of course there is in a case like that just considered no
+  question of a \textbf{mechanical disturbance} of the system under
+  investigation.'' (p 700)
+  
+
+
+
+\end{itemize}
+
+
+
+
+
+
+\bibliographystyle{chicago}
+
+\bibliography{/Users/hhalvors/teaching/phi327_s2020/qbib}
+
+
+
+\end{document}
+
+\section*{Appendix: Classical dynamical systems}
+
+For finite state spaces, the mathematical representation of dynamical
+evolution is not very interesting.  It's much more interesting for an
+infinite space $X$ that might have further structure --- such as a
+topology, or a metric, or a symplectic form.  In any case, whether $X$
+is finite or infinite, one might assume that dynamical evolution is a
+``flow'' on $X$, which we can represent by a parameterized family
+$u_t:X\to X$, $t\in\7R$ of automorphisms of $X$.  Furthermore, it
+would be natural to require that $u_{t+s}=u_tu_s$ and
+$u_{-t}=u_t^{-1}$.  Notice, however, that this representation presumes
+\emph{determinism}, i.e.\ that the state of a system at one time fixes
+the state of the system of future times.  In other words, a family
+such as $\{ u_t\mid t\in \mathbb{R} \}$ is a \emph{deterministic
+  dynamical law}.
+
+In contrast, a \emph{stochastic dynamical law} would specify a
+probability distribution over future states.  For example, $p_t(x,-)$
+could define a probability distribution on $X$.  We would then want to
+specify some further properties of the map $t,x\mapsto p_t(x,-)$, but
+we will not pursue that here.
+
+There is another way that one can specify a stochastic dynamical law,
+and that is as one-parameter family of morphisms on the space $M(X)$
+of states (i.e.\ probability distributions) on $X$.  If a pure state
+$p_y$ is mapped to a mixed state $q$, then that could naturally be
+interpreted as a stochastic process, where the transition probability
+from $p_y$ to $p_x$ is given by $q(x)$.
+
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

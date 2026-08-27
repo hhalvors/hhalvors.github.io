@@ -1,0 +1,165 @@
+% Options for packages loaded elsewhere
+\documentclass[12pt]{article}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+\usepackage{fullpage,amssymb,array}
+
+\title{logic pset3}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\thispagestyle{empty}
+
+\vspace*{-3em}
+
+Resources: Lecture 3 and Chapters 3 and 5 of \emph{How Logic
+  Works}. (Note that we are skipping over Chapter 4 for now.)
+
+\section*{A. Proofs}
+
+Use any of the rules of inference, including reductio ad absurdum, to
+prove the following sequents.
+
+\begin{enumerate}
+\item $\neg (P\to Q)\:\vdash\: Q\to R$
+
+  \medskip \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm}
+      >{\centering\arraybackslash}p{1.0cm} p{6cm}
+      >{\raggedright\arraybackslash}p{3.5cm}}
+             1 & (1) & $\lnot (\mathit{P} \to \mathit{Q})$ & A \\
+             2 & (2) & $\mathit{Q}$ & A \\
+             3 & (3) & $\lnot \mathit{R}$ & A \\
+             4 & (4) & $\mathit{P}$ & A \\
+             2 & (5) & $\mathit{P} \to \mathit{Q}$ & 4,2 CP \\
+             1,2 & (6) & $(\mathit{P} \to \mathit{Q}) \land \lnot (\mathit{P} \to \mathit{Q})$ & 5,1 $\wedge$I \\
+             1,2 & (7) & $\lnot \lnot \mathit{R}$ & 3,6 RA \\
+             1,2 & (8) & $\mathit{R}$ & 7 DN \\
+             1 & (9) & $\mathit{Q} \to \mathit{R}$ & 2,8 CP \\
+\end{tabular}
+
+
+  
+\item $P\to Q\:\vdash\:\neg P\vee Q$
+
+ \medskip \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{6cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\mathit{P} \to \mathit{Q}$ & A \\
+2 & (2) & $\neg (\neg \mathit{P} \vee \mathit{Q})$ & A \\
+3 & (3) & $\mathit{Q}$ & A \\
+3 & (4) & $\neg \mathit{P} \vee \mathit{Q}$ & 3 $\vee$I \\
+2,3 & (5) & $(\neg \mathit{P} \vee \mathit{Q}) \wedge \neg (\neg \mathit{P} \vee \mathit{Q})$ & 4,2 $\wedge$I \\
+2 & (6) & $\neg \mathit{Q}$ & 3,5 RA \\
+1,2 & (7) & $\neg \mathit{P}$ & 1,6 MT \\
+1,2 & (8) & $\neg \mathit{P} \vee \mathit{Q}$ & 7 $\vee$I \\
+1,2 & (9) & $(\neg \mathit{P} \vee \mathit{Q}) \wedge \neg (\neg \mathit{P} \vee \mathit{Q})$ & 8,2 $\wedge$I \\
+1 & (10) & $\neg \neg (\neg \mathit{P} \vee \mathit{Q})$ & 2,9 RA \\
+1 & (11) & $\neg \mathit{P} \vee \mathit{Q}$ & 10 DN \\
+\end{tabular}
+ 
+
+  
+\item $P\to (Q\vee R)\:\vdash\: (P\to Q)\vee R$
+
+  My strategy here is to assume the negation of the conclusion for
+  reductio ad absurdum. Following the same pattern as DeMorgan's, we
+  get $\neg (P\to Q)$ and $\neg R$. The former implies
+  $P\wedge \neg Q$. So we have $P,P\to (Q\vee R),\neg Q$ and $\neg
+  R$. These form an inconsistent set.
+
+  There are other strategies that might be more intelligible. For
+  example, $P\to (Q\vee R)$ implies $\neg P\vee (Q\vee R)$, which
+  implies $(\neg P\vee Q)\vee R$, which implies $(P\to Q)\vee
+  R$. Similarly, we could first prove $P\vee \neg P$. The former plus
+  the premise gives $Q\vee R$ which gives $(P\to Q)\vee R$. The latter
+  gives $P\to Q$, which gives $(P\to Q)\vee R$.
+
+\begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{1.0cm} p{6cm} >{\raggedright\arraybackslash}p{3.5cm}}
+  1 & (1) & $\mathit{P} \to (\mathit{Q} \lor \mathit{R})$ & A \\
+  2 & (2) & $\lnot ((\mathit{P} \to \mathit{Q}) \lor \mathit{R})$ & A \\
+  3 & (3) & $\lnot \mathit{P}$ & A \\
+  4 & (4) & $\mathit{P}$ & A \\
+  3,4 & (5) & $\mathit{P} \land \lnot \mathit{P}$ & 3,4 $\wedge$I \\
+  6 & (6) & $\lnot \mathit{Q}$ & A \\
+  3,4 & (7) & $\lnot \lnot \mathit{Q}$ & 6,5 RA \\
+  3,4 & (8) & $\mathit{Q}$ & 7 DN \\
+  3 & (9) & $\mathit{P} \to \mathit{Q}$ & 4,8 CP \\
+  3 & (10) & $(\mathit{P} \to \mathit{Q}) \lor \mathit{R}$ & 9 $\vee$I \\
+  2,3 & (11) & $((\mathit{P} \to \mathit{Q}) \lor \mathit{R}) \land \lnot ((\mathit{P} \to \mathit{Q}) \lor \mathit{R})$ & 10,2 $\wedge$I \\
+  2 & (12) & $\lnot \lnot \mathit{P}$ & 3,11 RA \\
+  2 & (13) & $\mathit{P}$ & 12 DN \\
+  1,2 & (14) & $\mathit{Q} \lor \mathit{R}$ & 1,13 MP \\
+  15 & (15) & $\mathit{Q}$ & A \\
+  15 & (16) & $\mathit{P} \to \mathit{Q}$ & 4,15 CP \\
+  15 & (17) & $(\mathit{P} \to \mathit{Q}) \lor \mathit{R}$ & 16 $\vee$I \\
+  18 & (18) & $\mathit{R}$ & A \\
+  18 & (19) & $(\mathit{P} \to \mathit{Q}) \lor \mathit{R}$ & 18 $\vee$I \\
+  1,2 & (20) & $(\mathit{P} \to \mathit{Q}) \lor \mathit{R}$ & 14,15,17,18,19 $\vee$E \\
+  1,2 & (21) & $((\mathit{P} \to \mathit{Q}) \lor \mathit{R}) \land \lnot ((\mathit{P} \to \mathit{Q}) \lor \mathit{R})$ & 20,2 $\wedge$I \\
+  1 & (22) & $\lnot \lnot ((\mathit{P} \to \mathit{Q}) \lor \mathit{R})$ & 2,21 RA \\
+  1 & (23) & $(\mathit{P} \to \mathit{Q}) \lor \mathit{R}$ & 22 DN \\
+\end{tabular}
+
+
+  
+\end{enumerate}
+
+\section*{B. Truth tables}
+
+\begin{enumerate}
+\item Use truth table reasoning to show that
+  $P\vee (Q\wedge R)\:\vDash\: P\vee Q$. You don't have to display a
+  full truth table, but if you do, explain how the table demonstrates
+  the result.
+
+  \medskip Consider a line $L$ of the truth table on which
+  $P\vee (Q\wedge R)$ is true. In this case either $P$ is true on $L$,
+  or $Q\wedge R$ is true on $L$. In the former case, $P\vee Q$ is true
+  on $L$. In the latter case, $Q$ is also true on $L$ and hence
+  $P\vee Q$ is true on $L$. In either case, $P\vee Q$ is true on
+  $L$. Since $L$ was an arbitrary line of a truth table, whenever
+  $P\vee (Q\wedge R)$ is true, $P\vee Q$ is also true.
+  
+\item Use truth table reasoning to show that
+  $P\to (Q\vee R)\:\not\vDash \:P\to Q$.
+
+  \medskip Consider the line $L$ where $P$ and $R$ are true, but $Q$
+  is false. In that case $Q\vee R$ is true, and hence $P\to (Q\vee R)$
+  is true. But since $P$ is true while $Q$ is false, $P\to Q$ is
+  false. Thus, there is a scenario in which $P\to (Q\vee R)$ is true
+  while $P\to Q$ is false.
+  
+\item Use truth table reasoning to show that the following ``proof''
+  must have a mistake.
+
+  \medskip \begin{tabular}{>{\raggedleft\arraybackslash}p{1.5cm}
+      >{\centering\arraybackslash}p{1cm} p{4cm}
+      >{\raggedright\arraybackslash}p{3.5cm}}
+                1   & (1) & $P\vee Q$  &    A \\
+           2   & (2) & $P$    &   A \\
+           3   & (3) & $Q$    &   A \\
+           2,3 & (4) & $P\wedge Q$  & 2,3 $\wedge$I \\
+           2,3 & (5) & $P$    &    4 $\wedge$E \\
+           1 & (6) & $P$ & 1,2,2,3,5 $\vee$E
+           \end{tabular}
+
+           \medskip Consider line (6), which asserts that
+           $P\vee Q\vdash P$. It is clear that $P\vee Q\not\vDash P$
+           since $Q$ could be true while $P$ is false. By the
+           \emph{soundness} of our proof system,
+           $P\vee Q\not\vdash P$. Therefore line (6) cannot be part of
+           any correctly written proof. (In fact, line (6) does not
+           calculate dependency numbers correctly. An application of
+           $\vee$E to lines $1,2,2,3,5$ should result in dependencies
+           $1,2$.)
+           
+\end{enumerate}
+  
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

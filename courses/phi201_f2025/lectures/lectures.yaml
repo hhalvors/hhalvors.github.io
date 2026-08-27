@@ -1,0 +1,141 @@
+title: "Lectures"
+note: "Note that the lecture topics are subject to change."
+
+items:
+  - kind: week
+    number: 1
+    dateLabel: "Sep 8"
+    title: "Basic concepts, translation, simple proofs"
+    reading: "Chapters 1–2"
+    primary:
+      label: "Lecture notes"
+      href: "lecture-week2.pdf"   # change
+    materials:
+      - label: "Pset 1"
+        href: "pset1.html"
+
+  - kind: week
+    number: 2
+    dateLabel: "Sep 15"
+    title: "Conditional proof and ∨-elimination (dependency numbers)"
+    reading: "Chapter 3"
+    primary:
+      label: "Lecture notes"
+      href: "lecture-week2.pdf"
+    materials:
+      - label: "Pset 2"
+        href: "pset2.pdf"
+
+  - kind: week
+    number: 3
+    dateLabel: "Sep 22"
+    title: "RAA and truth tables for validity"
+    reading: "Chapters 3 and 5 (skipping Ch 4 for now)"
+    primary:
+      label: "Lecture notes"
+      href: "lecture3.pdf"
+    materials:
+      - label: "Pset 3"
+        href: "pset3.pdf"
+
+  - kind: week
+    number: 4
+    dateLabel: "Sep 29"
+    title: "Review for midterm"
+    reading: "Chapter 4"
+    primary:
+      label: "Lecture notes"
+      href: "lecture-week4.pdf"
+
+  - kind: exam
+    dateLabel: "Oct 6"
+    title: "Midterm Exam"
+    info: "In class"
+
+  - kind: week
+    number: 6
+    dateLabel: "Oct 20"
+    title: "Predicate logic syntax; ∀ intro/elim"
+    reading: "Chapter 6 (pp. 84–99)"
+    primary:
+      label: "Lecture notes"
+      href: "lecture-week6.pdf"
+    materials:
+      - label: "Pset 4"
+        href: "pset4.pdf"
+
+  - kind: week
+    number: 7
+    dateLabel: "Oct 27"
+    title: "∃ intro/elim"
+    reading: "Chapter 6 (pp. 99–113)"
+    primary:
+      label: "Lecture notes"
+      href: "lecture-week7.pdf"
+    materials:
+      - label: "Pset 5"
+        href: "pset5.pdf"
+
+  - kind: week
+    number: 8
+    dateLabel: "Nov 3"
+    title: "Theories: equality, order, sets"
+    reading: "Chapter 7 (pp. 116–131, 141–149)"
+    primary:
+      label: "Lecture notes"
+      href: "lecture-week8.pdf"
+    materials:
+      - label: "Pset 6"
+        href: "pset6.pdf"
+
+  - kind: week
+    number: 9
+    dateLabel: "Nov 10"
+    title: "Models"
+    reading: "Chapter 8 (pp. 156–175)"
+    primary:
+      label: "Lecture notes"
+      href: "lecture-week9.pdf"
+    materials:
+      - label: "Pset 7"
+        href: "pset7.pdf"
+
+  - kind: week
+    number: 10
+    dateLabel: "Nov 17"
+    title: "Proofs in predicate logic + in-precept quiz"
+    reading: "No new reading; start next week’s longer reading"
+    materials:
+      - label: "Quiz"
+        href: "quiz.pdf"
+
+  - kind: week
+    number: 11
+    dateLabel: "Nov 24"
+    title: "Metatheory for propositional logic (part 1)"
+    reading: "Chapter 9 (pp. 176–190)"
+    primary:
+      label: "Lecture notes"
+      href: "lecture-week11.pdf"
+    info: "No precepts (Thanksgiving)"
+
+  - kind: week
+    number: 12
+    dateLabel: "Dec 1"
+    title: "Metatheory for propositional logic (part 2)"
+    reading: "Chapter 9 (pp. 191–205)"
+    primary:
+      label: "Lecture notes"
+      href: "lecture-week12.pdf"
+    materials:
+      - label: "Pset 8"
+        href: "pset8.pdf"
+
+  - kind: exam
+    dateLabel: "Dec 14"
+    title: "Final Exam"
+    info: "Sun, Dec 14 08:30–11:30am"
+    materials:
+      - label: "Practice exam"
+        href: "final-exam-practice.pdf"
+

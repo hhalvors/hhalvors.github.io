@@ -1,0 +1,87 @@
+course:
+  code: "PHI 327"
+  title: "Philosophy of Physics"
+  term: "Spring 2020"
+  university: "Princeton University"
+
+  description: >
+    An introduction to philosophical issues arising in classical and quantum physics,
+    including space and time, causality, realism, measurement, and the interpretation
+    of quantum mechanics.
+
+  navigation:
+    - id: home
+      label: Home
+      path: index.html
+    - id: lectures
+      label: Lectures
+      path: lectures.html
+    - id: assignments
+      label: Assignments
+      path: assignments.html
+    - id: resources
+      label: Resources
+      path: resources.html
+
+units:
+
+  - id: "lectures"
+    title: "Lectures"
+    lectures:
+      - title: "Lecture 1"
+        date: ""
+        files:
+          handout: "lectures/lecture1-handout.pdf"
+
+      - title: "Lecture 2"
+        date: ""
+        files:
+          handout: "lectures/lecture2-handout.pdf"
+
+      - title: "Lecture 3"
+        date: ""
+        files:
+          handout: "lectures/lecture3-handout.pdf"
+
+      - title: "Lecture (March 30)"
+        date: ""
+        files:
+          slides: "lectures/lecture0330.pdf"
+
+      - title: "Week 2 handout"
+        date: ""
+        files:
+          handout: "lectures/week2-handout-4halv.pdf"
+
+      - title: "Week 3 handout"
+        date: ""
+        files:
+          handout: "lectures/week3-handout-4halv.pdf"
+
+      - title: "Week 3 notes"
+        date: ""
+        files:
+          handout: "lectures/week3.pdf"
+
+      - title: "Week 5 notes"
+        date: ""
+        files:
+          handout: "lectures/week5.pdf"
+
+  - id: "assignments"
+    title: "Assignments"
+    assignments:
+      - title: "Problem Set 2"
+        files:
+          pdf: "assignments/pset2.pdf"
+
+      - title: "Project 1"
+        files:
+          pdf: "assignments/project1.pdf"
+
+  - id: "resources"
+    title: "Resources"
+    resources:
+      - title: "Syllabus"
+        files:
+          pdf: "resources/syllabus.pdf"

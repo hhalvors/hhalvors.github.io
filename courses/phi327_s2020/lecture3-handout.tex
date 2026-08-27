@@ -1,0 +1,421 @@
+\documentclass[12pt,fleqn]{article}
+\sloppy
+% \usepackage{fullpage}
+\usepackage{outlines}
+\usepackage{soul}
+\usepackage{enumitem} 
+% \setlength{\parskip}{1em}
+% \setlength{\parindent}{0em}
+% \usepackage{setspace}
+% \spacing{2}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{tikz-3dplot}
+
+\usepackage{amsthm,amsmath,amsfonts}
+\theoremstyle{definition}
+\newtheorem*{exercise}{Exercise}
+\title{Phil Physics: Week 2}
+\date{}
+
+\renewcommand{\emph}{\textbf}
+
+\begin{document}
+\maketitle
+
+\section*{Maudlin: intro to book}
+
+\begin{enumerate}
+\item Warm up (easy question): who are the bad guys in Maudlin's
+  story?  Who are the good guys?
+\item When you're going through the text, note words with strong
+  positive or negative connotations.  (e.g.\ in application to a
+  statement or theory, ``clear'' has a strong positive connotation.)
+  For each such word, write down --- in a sentence or two --- what you
+  think Maudlin means by it.
+\item What does Maudlin mean by saying that quantum mechanics is not a
+  theory?  What does he think it takes to be a theory?
+\end{enumerate}
+
+\section*{Stern-Gerlach experiments}
+
+We will begin now to look at the sort of phenomena that are explained
+by quantum mechanics.  We start with a kind of experiment that was
+conceived by Otto Stern in 1921, and carrier out by Walther Gerlach in
+1922.  This experiment was supposed to be a crucial test of the new
+quantum theory, because it predicted something different than
+classical physics.  In particular, QM says that electrons have a
+quantity called ``spin'' that has only two possible values ``up'' and
+``down.''
+
+Here's the setup of the experiment.  First of all, we have a source
+$S$ that is emitting some stuff.  The nature of this stuff is not
+``plain to sight'': it's so small that we cannot see whether we have a
+bunch of particles, or a continuous field.  But we do have control
+over the direction that this stuff travels, and we can see how it
+interacts with certain measuring devices.
+
+The original Stern-Gerlach experiment involved warming up silver in an
+oven, which was thought to result in the emission of individual silver
+atoms, and which were then collimated into a single ray.  The
+important thing about silver atoms is that they have 47 electrons, so
+the magnetic moments of the first 46 of them cancel each other out.
+The net magnetic moment of the atom is the same as a single electron.
+So from now on, we'll speak as the source is emitting a stream of
+individual electrons.  That interpretation is supported by the fact
+that if the stream is directed to a detector (e.g.\ a screen), then
+that detector lights up at discrete moments, and not continuously.
+
+The second thing we have is a pair of magnets that create an
+inhomogeneous magnetic field between them.  When the electron passes
+through this field, it's motion is expected to be altered by the
+interaction of its magnetic moment with this magnetic field.  
+
+The third thing we have is a screen behind the pair of magnets.  When
+an electron hits this screen, it makes a flash.  
+
+The prediction of classical physics was that, because the electrons
+coming out of the oven have randomly distributed magnetic moments, the
+flashes on the screen should be uniformly distributed throughout the
+possible range.  The prediction of quantum mechanics was that ...
+
+\subsection*{First experiment}
+
+\begin{figure}[h]
+\begin{tikzcd}   \\
+  & & D_u \\
+S \arrow[r] & Z \arrow{ru} \arrow{rd}  \\
+&  & D_d  
+\end{tikzcd} \end{figure}
+
+As stated, the result of this first experiment is that $D_u$ registers
+$50\%$ of the hits, and $D_d$ registers $50\%$ of the hits.  While
+that result was not expected by classical physics, it's not as if it
+cannot be explained by classical physics.
+
+\begin{exercise} Construct a ``deterministic hidden variable model''
+  of this experiment.  \end{exercise}
+
+\begin{proof}[Solution] Suppose that of the particles emitted by $S$,
+  $50\%$ are in state $Z_+$ and $50\%$ are in state $Z_{-}$.  To
+  elaborate, we suppose that the state space of the system is
+  $\{ Z_+,Z_{-}\}$, and that the quantity $Z$ takes value $i$ in state
+  $Z_i$.  \end{proof}
+
+\begin{exercise} Suppose that we ``look inside'' the particles coming
+  out of $S$, and we can see nothing that explains why some go up and
+  others go down.  In other words, we can find no labels like
+  ``$Z_+$'' or ``$Z_{-}$''.  What kinds of theories could we use to
+  explain the phenomena?  \end{exercise}
+
+
+
+\subsection*{Second experiment}
+
+For the second experiment, we replace the detector $D_u$ with an
+eraser $E$, and we replace the detector $D_d$ with another $Z$ magnet.
+
+\bigskip \begin{tikzcd}
+                        &                &  E     &  \\
+            S \arrow[r] & Z \arrow{ru} \arrow{rd} & & D_u \\
+                        &                & Z \arrow{ru} \arrow{rd}
+            \\
+                        &                &       & D_d  
+\end{tikzcd}
+
+
+\bigskip \begin{exercise} What do you predict for the relative number of clicks
+  in $D_u$ and $D_d$? \end{exercise}
+
+If you predicted that $D_u$ and $D_d$ would each get $50\%$ of the
+clicks, then that goes to show that the results of experiments can be
+surprising.  For, in fact, $D_d$ now clicks $100\%$ of the time.
+
+\begin{exercise} Consider the various explanations we gave for the
+  first experiment.  Do any of them fail to explain this second
+  experiment?  Does this second experiment give a more clear
+  indication of what electron spin states are like? \end{exercise}
+
+\begin{exercise} Consider the hypothesis:
+  \begin{quote} (ND) The state of an electron is not disturbed by its
+    passage through $Z$. \end{quote}
+Does this experiment give any positive or negative evidence for
+ND?  \end{exercise}
+
+\subsection*{Third experiment}
+
+We now consider what happens if we rotate the magnet through $90$
+degrees.  If the previous magnet was called $Z$, this new one will be
+called $X$.  In real life, we would now have to think of the
+experiment as occurring in three-dimensions; but the schematic below
+projects onto a two-dimensional plane.
+
+\bigskip \begin{tikzcd}
+                        &                &  E     &  \\
+            S \arrow[r] & Z \arrow{ru} \arrow{rd} & & D_u \\
+                        &                & X \arrow{ru} \arrow{rd}
+            \\
+                        &                &       & D_d  
+\end{tikzcd}
+
+\bigskip The result of this experiment is that $D_u$ and $D_d$ each
+register $50\%$ of the hits.
+
+\begin{exercise} Provide a ``deterministic hidden variable model'' for
+  this experiment.  \end{exercise}
+
+\subsection*{Fourth experiment}
+
+This is where things start getting weird.  What we know want to know
+is what happens if we determine that the electron is $Z_{-}$, then we
+determine that it's $X_{-}$, and then we measure $Z$ again.  What do
+you expect the result to be?
+
+\bigskip \begin{tikzcd}
+                        &                &  E     &  \\
+            S \arrow[r] & Z \arrow{ru} \arrow{rd} & & E  \\
+                        &                & X \arrow{ru} \arrow{rd} & &
+                        D_u            \\
+                        &                &       & Z \arrow{ru}
+                        \arrow{rd} \\
+                        & & & & D_d 
+                      \end{tikzcd}
+
+
+\bigskip\noindent The outcome of this  experiment is $50\%$ of clicks
+for both $D_u$ and $D_d$.  
+
+\begin{exercise} What does this experiment say about the
+  non-disturbance (ND) hypothesis? \end{exercise}
+
+\begin{exercise} Consider the hypothesis of determinism:
+  \begin{quote} (D) Each electron has hidden variables $X_i$ and $Z_j$
+    that determine whether it will go up or down through the various
+    magnets. \end{quote} Does this experiment rule out D?  What about
+  the combination of D and ND? \end{exercise}
+
+
+\subsection*{Fifth experiment}
+
+\begin{tikzcd}
+              &                         & E     \\
+S \arrow[r] & Z \arrow{ru} \arrow{rd} &                  &  R
+\arrow{rd} & & D_u \\
+            &                         & X  \arrow{ru} \arrow{rd} & & Z
+            \arrow{ru} \arrow{rd}
+            \\
+            &  &  & R \arrow{ru} & & D_d  \end{tikzcd}
+
+\bigskip\noindent In this more complicated experiment, we have two
+reflectors labelled with $R$.  When turned on, these reflectors don't
+do anything besides changing the electron's path.  When turned off,
+these reflectors act like erasers.  Here, then, are the results of the experiment: 
+\begin{enumerate}
+\item Top reflector off: $D_u$ and $D_d$ register $50\%$.
+\item Bottom reflector off: $D_u$ and $D_d$ register $50\%$.
+\item Both reflectors on: $D_d$ registers $100\%$.
+\end{enumerate}
+It seems like something strange is going on here.  However, we can
+modify the experiment to make sure that our $Z$ and $X$
+measuring devices are functioning properly.  For example, if we
+replace the reflectors with detectors, then we again get $50\%$ up and
+$50\%$ down.  
+
+\begin{exercise} Consider the hypothesis:
+  \begin{quote} (EO) Just after the electron goes through the
+    $X$ magnet, it is either $100\%$ on the up path, or $100\%$ on the
+    down path. \end{quote}
+  What evidence is there that EO is true? 
+ \end{exercise}
+
+\begin{exercise} Suppose that we begin the experiment without having
+  decided whether to turn one of the reflectors off, and suppose that
+  the electron has just gone through the $X$ magnet.  What do you
+  think is the best hypothesis about the location of the
+  electron?  \end{exercise}
+
+\begin{exercise} Consider the following argument:
+  \begin{quote}
+    After passing through the $X$ magnet, an electron is either on the
+    top path, or on the bottom path.  If it's on the bottom path, then
+    we could turn off the top reflector (without disturbing the
+    electron's state), and then it might end up at $D_u$.  Ditto for
+    the top path.  In either case, the electron might end up at
+    $D_u$. \end{quote} Do you think this argument is good or bad, and
+  why?  \end{exercise}
+
+\begin{exercise} Give a single deterministic hidden variable model
+  that explains both the experiment with the top reflector off, and
+  the experiment with both reflectors on. \end{exercise}
+
+\begin{proof}[Solution] Suppose that $X$ magnets cause a particle to
+  spawn a ``ghost twin'' that goes the opposite direction.  (This
+  ghost twin is itself undetectable.)  If a particle doesn't meet its
+  twin again, then it behaves no differently than before.  If a
+  particle does meet its twin, then it kills him, and changes its own
+  state to $Z_{-}$.
+\end{proof}
+
+\section*{Quantum models of Stern-Gerlach}
+
+It's time to see how to use the quantum formalism in order to predict
+the results of these kinds of experiments.
+
+We assume that each electron has a state $v$, which is represented by
+an element of a two-dimensional vector space.  For now, it will
+suffice to think of the most familiar such vector space: the plane
+$\mathbb{R}^2$ of real numbers.
+
+The following table is an assignment of properties to vectors in
+$\mathbb{R}^2$.
+
+\[ \begin{array}{r c l c r c l}
+     z_0 & = & \begin{pmatrix} 1 \\ 0 \end{pmatrix} & & z_1 & = & \begin{pmatrix} 0 \\ 1 \end{pmatrix} \\ \\
+     x_1 & = & \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix}
+         & & x_0 & = & \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\
+       -1 \end{pmatrix} \end{array} \]
+
+ \noindent The way we've set things up here, the electron cannot have
+ any of the properties $z_i$ and $x_j$ simultaneously.  That's even
+ stronger than the \emph{uncertainty relations}, which would say that
+ you cannot \ul{know} the values of $Z$ and $X$ simultaneously.  So we
+ might do better to talk about the \emph{indeterminacy relations},
+ since $Z$ and $X$ cannot simultaneously have determinate values.
+
+ But what happens if we measure $X$ when the particle is in state
+ $z_1$ or $z_0$?  First a short answer, then a more elaborate answer.
+ The short answer is that we should think of $X$ as associated with
+ the two states $x_0$ and $x_1$; and if we measure $X$ when the system
+ is in state $z$, then we should:
+\begin{itemize}
+\item Expect $0$ with probability $|\langle x_0,z\rangle |^2$, and in
+  this case, change the state to $z_0$.
+\item Expect $1$ with probability $|\langle x_1,z\rangle |^2$, and in
+  this case, change the state to $z_1$. 
+\end{itemize}
+(What we've just written is called \emph{Born's rule}.)  Here
+$\langle x_i,z\rangle$ is the \emph{inner product} of the two vectors
+$x_i$ and $z$.  In the case at hand, it's none other than
+$\cos ^2(\theta )$, where $\theta$ is the angle between $x_i$ and $z$.
+
+This formalism already predicts the result of the second experiment:
+after the first measurement of $Z$, the electrons that go down are in
+state $z_0$, and so in the second measurement of $Z$, they will
+definitely go down again.
+
+The formalism also predicts the results of the third experiment: after
+the measurement of $Z$, the electrons that go down are in state $z_0$.
+Hence, a measurement of $X$ should give probability $0.5$ for going
+up, and probability $0.5$ for going down.
+
+The fifth experiment is a bit more tricky, and forces us to think
+harder about what happens at the Stern-Gerlach magnet.  Does a $X$
+magnet itself cause an electron to ``collapse'' into either state
+$x_0$ or $x_1$?  If that were the case, then we would expect a
+subsequent measurement of $Z$ to assign equal probabilities to $0$ and
+$1$, whereas we know that we will always get $0$.
+
+The ``orthodox'' answer from physics is that a $X$ magnet does not
+itself cause the state to collapse to $x_0$ or $x_1$.  What does that
+is the detectors placed in the two paths after the magnet.  Instead,
+when the electron passes through the $X$ magnet, its spin degree of
+freedom becomes ``entangled'' with its spatial location.  For
+simplicity, let's write this as follows:
+\[ \begin{array}{r c l }
+     x_0\otimes m  & \Longrightarrow & x_0\otimes d \\
+     x_1\otimes m  & \Longrightarrow & x_1\otimes u \end{array} \]
+(Don't worry if you don't understand the symbols yet; they will be
+explained.)  Then if both reflectors are on, the $d$ and $u$ states transform back
+to $m$, which means that the states $x_0$ and $x_1$ can again be
+``superposed'' to yield the state $z_0$.
+
+\subsection*{Superposition}
+
+As you know, vectors can be added.  The math is straightforward.  The
+physics is also straightforward, if we're talking about \emph{waves}.
+Just think of two waves approaching the shore from slightly different
+directions.  When they come together, they superpose --- at some
+points, their peaks meet and form a higher wavecrest, and at other
+points their troughs meet and form a lower depression.  Of course,
+there can also be points where they interfere, or cancel each other
+out.
+
+We have already represented the state of an electron by a vector.
+Mathematically, these vectors can be superposed, i.e.\ added together.
+But what does that mean physically?  Suppose we take the state $z_0$
+where the electron has the property of ``down'' for $Z$, and the state
+$z_1$ where the electron has the property of ``up'' for $Z$, and then
+we add them together.  Does the resulting vector define a physical
+state, and what is that state like?  
+
+Since we have 
+\[ z_0 = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \qquad
+  z_1=\begin{pmatrix} 0 \\ 1 \end{pmatrix} , \]
+it follows that
+\[ x_0 =\frac{1}{\sqrt{2}}(z_0+z_1) ,\qquad
+  x_1=\frac{1}{\sqrt{2}}(z_0-z_1) .\] Hence, $x_0$ is a superposition
+of $z_0$ and $z_1$, and $x_1$ is a different superposition of $z_0$
+and $z_1$.  That is curious for several different reasons.  First,
+what in the world does $Z$ have to do with $X$?  Aren't these supposed
+to be independent axes?  How could summing a state with one apple and
+a state with two apples yield a state with one orange?  Second, how
+can summing together states where $Z$ is sharp give rise to states
+where $Z$ is fuzzy?  That's especially puzzling because electrons
+can't remain ambivalent about which way they'll go through a $Z$
+magnet: they have to go up or down.
+
+To get the feel for superposition, it might help to look at another
+kind of experiment: the famous two-slit interference experiment.
+Suppose that there's a stream of particles directed toward a screen
+with two slits, and behind the screen there is another detector
+screen.  Suppose also that there are little doors on the slits that we
+can open and close.
+
+In the first experiment, we close the bottom door so that the stream
+only goes through the top door, and we see a pattern of detections on
+the back screen like this:
+
+\begin{figure}
+
+  [Figure to be supplied in lecture]
+
+\end{figure}
+
+That's not surprising: we expect that the particles emerge from the
+slit with fairly random momentum.  What's surprising is what happens
+when we open the second door.  If the source were producing discrete
+particles, then the prediction of classical physics would be two lumps
+on the back screen, like this:
+
+
+In contrast, if the source were producing waves, then classical
+physics would predict that the waves coming out of the two slits would
+interfere with each other, producing an interference pattern on the
+back screen.
+
+
+Quantum mechanics also predicts the interference pattern, and the
+explanation goes like this: if only the top slit is open, then it
+prepares particles in the state $z_0$.  If only the bottom slit is
+open, then it prepares particles in the state $z_1$.  However, if both
+slits are open, then the state is $\frac{1}{\sqrt{2}}(z_0+z_1)$.  This
+latter state is {\it not} a state in which the particle definitely
+goes through the top or bottom slit.  Instead, it's more like a wave
+that goes through {\it both} the top and bottom slits, and then
+interferes with itself on the other side.
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

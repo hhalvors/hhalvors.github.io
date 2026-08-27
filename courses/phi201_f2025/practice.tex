@@ -1,0 +1,218 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage{amsmath,amssymb}
+\usepackage[letterpaper,left=1.25in,right=1.25in,top=1.2in,bottom=1.2in]{geometry}
+\usepackage{array,enumitem}
+
+\begin{document}
+
+\vspace*{-4em}
+
+\section*{Practice Problems: Predicate Logic}
+
+\thispagestyle{empty}
+
+\subsection*{A. Proofs}
+
+\begin{enumerate}[leftmargin=*]
+
+\item $Fa\:\vdash \: \forall x((a=x)\to Fx)$
+
+  \begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{6cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $Fa$ & A \\
+2 & (2) & $a = b$ & A \\
+1,2 & (3) & $Fb$ & 1,2 =E \\
+1 & (4) & $a = b \to Fb$ & 2,3 CP \\
+1 & (5) & $\forall x (a = x \to Fx)$ & 4 UI \\
+\end{tabular}
+
+  
+  
+
+  \item $\vdash \:\forall x\forall y\bigl((Fx \wedge \neg Fy)
+    \rightarrow x \neq y\bigr)$
+
+  \begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{7cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $Fa \wedge \neg Fb$ & A \\
+2 & (2) & $a = b$ & A \\
+1 & (3) & $Fa$ & 1 $\wedge$E \\
+1 & (4) & $\neg Fb$ & 1 $\wedge$E \\
+1,2 & (5) & $Fb$ & 3,2 =E \\
+1,2 & (6) & $Fb \wedge \neg Fb$ & 5,4 $\wedge$I \\
+1 & (7) & $a\neq b$ & 2,6 RA \\
+$\varnothing$ & (8) & $(Fa \wedge \neg Fb) \to a\neq b$ & 1,7 CP \\
+$\varnothing$ & (9) & $\forall y ((Fa \wedge \neg Fy) \to a\neq y)$ & 8 UI \\
+$\varnothing$ & (10) & $\forall x \forall y ((Fx \wedge \neg Fy) \to
+                       x\neq y)$ & 9 UI \\
+\end{tabular}
+  
+
+\item $\forall x(Fx \rightarrow \exists y(Gy \wedge (y=x)) \:\vdash\: \forall x(Fx \rightarrow Gx)$
+
+\begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{7cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\forall x (Fx \to \exists y (Gy \wedge (y=x)))$ & A \\
+2 & (2) & $Fa$ & A \\
+1 & (3) & $Fa \to \exists y (Gy \wedge (y=a))$ & 1 UE \\
+1,2 & (4) & $\exists y (Gy \wedge (y=a))$ & 3,2 MP \\
+5 & (5) & $Gb \wedge (b=a)$ & A \\
+5 & (6) & $Gb$ & 5 $\wedge$E \\
+5 & (7) & $b=a$ & 5 $\wedge$E \\
+5 & (8) & $Ga$ & 6,7 =E \\
+1,2 & (9) & $Ga$ & 4,5,8 EE \\
+1 & (10) & $Fa \to Ga$ & 2,9 CP \\
+1 & (11) & $\forall x (Fx \to Gx)$ & 10 UI \\
+\end{tabular}
+  
+
+  \item $\forall y(Ray \rightarrow y = b) \:\vdash\: \exists y(Ray \wedge Gy) \rightarrow Gb$
+
+  \item $\forall x\forall y\forall z(Rxy \rightarrow \neg Ryz) \:\vdash\: \exists y\forall x\neg Rxy$
+
+    First strategy: Assume the negation of the conclusion for RA and
+    use QN. Notice that we use multi-UE, which is shorthand for UE
+    applied multiple times.
+
+ \begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{7cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\forall x \forall y \forall z (Rxy \to \neg Ryz)$ & A \\
+2 & (2) & $\neg \exists y \forall x \neg Rxy$ & A \\
+2 & (3) & $\forall y \neg \forall x \neg Rxy$ & 2 QN \\
+2 & (4) & $\neg \forall x \neg Rxb$ & 3 UE \\
+2 & (5) & $\exists x \neg \neg Rxb$ & 4 QN \\
+6 & (6) & $\neg \neg Rab$ & A \\
+6 & (7) & $Rab$ & 6 DN \\
+1 & (8) & $Rab \to \neg Rbc$ & 1 UE \\
+1,6 & (9) & $\neg Rbc$ & 8,7 MP \\
+1,2 & (10) & $\neg Rbc$ & 5,6,9 EE \\
+1,2 & (11) & $\forall x \neg Rxc$ & 10 UI \\
+1,2 & (12) & $\exists y \forall x \neg Rxy$ & 11 EI \\
+1,2 & (13) & $\exists y \forall x \neg Rxy \wedge \neg \exists y \forall x \neg Rxy$ & 12,2 $\wedge$I \\
+1 & (14) & $\neg \neg \exists y \forall x \neg Rxy$ & 2,13 RA \\
+1 & (15) & $\exists y \forall x \neg Rxy$ & 14 DN \\
+\end{tabular}
+   
+Second strategy: Either there is a pair of elements with an arrow
+between them or not. In the first case, there cannot be an arrow
+into the first element. In the second case, pick anything in the
+domain, and there is no arrow into it. In either case, there is
+something that has no arrow into it.
+
+\begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{7cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\forall x \forall y \forall z (Rxy \to \neg Ryz)$ & A \\
+$\varnothing$ & (2) & $\exists y \exists x Rxy \vee \neg \exists y \exists x Rxy$ & prop taut \\
+3 & (3) & $\exists y \exists x Rxy$ & A \\
+4 & (4) & $\exists x Rxb$ & A \\
+5 & (5) & $Rab$ & A \\
+6 & (6) & $Rca$ & A \\
+1 & (7) & $\forall y \forall z (Rcy \to \neg Ryz)$ & 1 UE \\
+1 & (8) & $\forall z (Rca \to \neg Raz)$ & 7 UE \\
+1 & (9) & $Rca \to \neg Rab$ & 8 UE \\
+5 & (10) & $\neg \neg Rab$ & 5 DN \\
+1,5 & (11) & $\neg Rca$ & 9,10 MT \\
+1,5 & (12) & $\forall x \neg Rxa$ & 11 UI \\
+1,5 & (13) & $\exists y \forall x \neg Rxy$ & 12 EI \\
+1,4 & (14) & $\exists y \forall x \neg Rxy$ & 4,5,13 EE \\
+1,3 & (15) & $\exists y \forall x \neg Rxy$ & 3,4,14 EE \\
+16 & (16) & $\neg \exists y \exists x Rxy$ & A \\
+16 & (17) & $\forall y \neg \exists x Rxy$ & 16 QN \\
+16 & (18) & $\neg \exists x Rxa$ & 17 UE \\
+16 & (19) & $\forall x \neg Rxa$ & 18 QN \\
+16 & (20) & $\exists y \forall x \neg Rxy$ & 19 EI \\
+1 & (21) & $\exists y \forall x \neg Rxy$ & 2,3,15,16,20 $\vee$E \\
+\end{tabular}
+
+    
+  
+
+  \item $\forall xFx \leftrightarrow \neg \exists x\exists y Rxy
+    \:\vdash\: \exists x\forall y\forall z (Fx \rightarrow \neg Ryz)$
+
+    First strategy: Either $\forall xFx$ or $\exists x\neg Fx$. In the
+    former case, the premise gives $\neg\exists x\exists yRxy$, and QN
+    gives $\forall y\forall z\neg Ryz$. In the latter case,
+    $Fa\to \neg Rbc$ by negative paradox.
+
+  \item $\vdash\: \forall x\exists y\forall z (\exists uTxyu
+    \rightarrow \exists vTxzv )$
+
+    We show how to derive the instance
+    $\exists y\forall z(\exists uTayu\to \exists vTazv)$.  Up to
+    $\alpha$-equivalence, the embedded conditional is of the form
+    $\varphi (y)\to \varphi (z)$. So it's enough to prove that
+    $\exists y\forall z(\varphi (y)\to \varphi (z))$. We have seen
+    this before: it's a substitution instance of
+    $\exists x\forall y(Fx\to Fy)$.
+    
+
+  \item Show that the sentence
+    $\forall x\exists y\forall z(Rxy\wedge \neg Ryz)$ is inconsistent.
+
+\begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{7cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\forall x \exists y \forall z (Rxy \wedge \neg Ryz)$ & A \\
+1 & (2) & $\exists y \forall z (Ray \wedge \neg Ryz)$ & 1 UE \\
+3 & (3) & $\forall z (Rab \wedge \neg Rbz)$ & A \\
+1 & (4) & $\exists y \forall z (Rby \wedge \neg Ryz)$ & 1 UE \\
+5 & (5) & $\forall z (Rbc \wedge \neg Rcz)$ & A \\
+3 & (6) & $Rab \wedge \neg Rbc$ & 3 UE \\
+5 & (7) & $Rbc \wedge \neg Rcd$ & 5 UE \\
+3 & (8) & $\neg Rbc$ & 6 $\wedge$E \\
+5 & (9) & $Rbc$ & 7 $\wedge$E \\
+3,5 & (10) & $Rbc \wedge \neg Rbc$ & 9,8 $\wedge$I \\
+3,5 & (11) & $P \wedge \neg P$ & 10 prop taut \\
+1,3 & (12) & $P \wedge \neg P$ & 4,5,11 EE \\
+1 & (13) & $P \wedge \neg P$ & 2,3,12 EE \\
+\end{tabular}
+
+
+\item
+  $\exists x\exists y(Fx\leftrightarrow \neg Fy)\:\vdash\: \forall
+  x\exists y(Fx\leftrightarrow \neg Fy)$
+
+  \begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{7cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\exists x \exists y (Fx \leftrightarrow \neg Fy)$ & A \\
+2 & (2) & $\neg \exists y (Fa \leftrightarrow \neg Fy)$ & A \\
+2 & (3) & $\forall y \neg (Fa \leftrightarrow \neg Fy)$ & 2 QN \\
+2 & (4) & $\neg (Fa \leftrightarrow \neg Fb)$ & 3 UE \\
+2 & (5) & $Fa \leftrightarrow Fb$ & 4 prop taut \\
+2 & (6) & $\forall z (Fa \leftrightarrow Fz)$ & 5 UI \\
+7 & (7) & $Fc \leftrightarrow \neg Fd$ & A \\
+2 & (8) & $Fa \leftrightarrow Fc$ & 6 UE \\
+2 & (9) & $Fa \leftrightarrow Fd$ & 6 UE \\
+2,7 & (10) & $P \wedge \neg P$ & 7,8,9 prop taut \\
+7 & (11) & $\neg \neg \exists y (Fa \leftrightarrow \neg Fy)$ & 2,10 RA \\
+7 & (12) & $\exists y (Fa \leftrightarrow \neg Fy)$ & 11 DN \\
+1 & (13) & $\exists y (Fa \leftrightarrow \neg Fy)$ & 1,7,12 EE \\
+1 & (14) & $\forall x \exists y (Fx \leftrightarrow \neg Fy)$ & 13 UI \\
+\end{tabular}
+
+
+
+
+\item
+  $\exists x\exists y(Fx\leftrightarrow \neg Fy)\:\vdash\: \exists
+  x\exists y(Fx\wedge\neg Fy)$
+
+  \begin{tabular}{r >{\centering\arraybackslash}p{1.0cm} p{7cm} >{\raggedright\arraybackslash}p{3.5cm}}
+1 & (1) & $\exists x \exists y (Fx \leftrightarrow \neg Fy)$ & A \\
+2 & (2) & $Fa \leftrightarrow \neg Fb$ & A \\
+2 & (3) & $(Fa \wedge \neg Fb) \vee (Fb \wedge \neg Fa)$ & 2 prop taut \\
+4 & (4) & $Fa \wedge \neg Fb$ & A \\
+4 & (5) & $\exists x \exists y (Fx \wedge \neg Fy)$ & 4 EI \\
+6 & (6) & $Fb \wedge \neg Fa$ & A \\
+6 & (7) & $\exists x \exists y (Fx \wedge \neg Fy)$ & 6 EI \\
+2 & (8) & $\exists x \exists y (Fx \wedge \neg Fy)$ & 3,4,5,6,7 $\vee$E \\
+1 & (9) & $\exists x \exists y (Fx \wedge \neg Fy)$ & 1,2,9 EE \\
+\end{tabular}
+
+  
+
+  
+  
+
+
+
+\end{enumerate}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

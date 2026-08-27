@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\title{Logic precept: Week 7}
+\date{}
+\begin{document}
+
+\maketitle
+
+\vspace*{-4em}
+
+\section*{Review}
+
+\begin{enumerate}
+  \item What kinds of sentences are there in predicate logic?
+  \item What is the difference between a \textbf{formula} and a \textbf{sentence}?
+  \item What is an \textbf{instance} of a universal sentence?
+  \item What is the restriction on UI?
+\end{enumerate}
+
+\section*{Proofs}
+
+\subsection*{Warmup Problems}
+
+\begin{enumerate}
+\item
+  $\forall x (F x \rightarrow G x) \ \vdash \ \forall x F x
+  \rightarrow \forall x G x$
+\item
+  $\forall x (P x \rightarrow Q x), \ \forall x (Q x \rightarrow R x)
+  \ \vdash \ \forall x (P x \rightarrow R x)$
+\item
+  $P \rightarrow \forall x F x \ \vdash \ \forall x (P \rightarrow F
+  x)$
+\item $\forall x \forall y R x y \ \vdash \ \forall y \forall x R x y$
+  
+\end{enumerate}
+
+\subsection*{Pset Problems}
+
+\begin{enumerate}
+\item
+  $\forall x (F x \rightarrow \forall y G y) \ \vdash \ \forall x
+  \forall y (F x \rightarrow G y)$
+\item
+  $\forall x \forall y (F x \rightarrow G y) \ \vdash \ \forall x (F x
+  \rightarrow \forall y G y)$
+\item $\vdash \ \forall x (\forall y R x y \rightarrow R x x)$
+\end{enumerate}
+
+\section*{Translation}
+
+\subsection*{Exercise}
+
+How do you symbolize the following?
+
+\begin{enumerate}
+  \item All $F$ are $G$.
+  \item No $F$ are $G$.
+  \item Some $F$ are $G$.
+  \item Some $F$ are not $G$.
+  \end{enumerate}
+
+\subsection*{Exercise}
+
+Use $F$ for ``is French'', $G$ for ``is German'', $C$ for ``is
+Canadian'', $L x y$ for ``$x$ likes $y$'', $a$ for Alice, and $b$ for
+Bob. How would you symbolize:
+
+\begin{enumerate}
+\item Alice likes Canadians.
+\item Alice likes Bob only if Bob likes Canadians.
+\item Alice likes Bob only if he likes her.
+\item Alice is a German who likes Canadians.
+\item Alice is French only if she doesn't like Canadians.
+\item Alice likes only those people who don't like Canadians.
+\item Someone likes only those people who like Canadians.
+\item French people only like Canadians who don't like Germans.
+\item Some French people like only those Germans who don't like
+  themselves.
+\end{enumerate}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

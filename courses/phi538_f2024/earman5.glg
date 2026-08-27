@@ -1,0 +1,7 @@
+This is makeindex, version 2.16 [TeX Live 2022] (kpathsea + Thai support).
+Scanning style file ./earman5.ist.............................done (29 attributes redefined, 0 ignored).
+Scanning input file earman5.glo....done (2 entries accepted, 0 rejected).
+Sorting entries....done (2 comparisons).
+Generating output file earman5.gls....done (9 lines written, 0 warnings).
+Output written in earman5.gls.
+Transcript written in earman5.glg.

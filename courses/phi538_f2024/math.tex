@@ -1,0 +1,209 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pdflscape}
+
+\usepackage{graphicx}
+
+\usepackage{tensor}
+
+% Theorem and Definition environments
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{note}{Note}
+
+
+\title{Concepts in Differential Geometry}
+\author{Hans Halvorson}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Preliminaries}
+
+In this document, I present definitions of fundamental concepts in
+differential geometry: connections, parallel transport, and Riemann
+curvature. I then explore the relationships between these concepts,
+which are fundamental to understanding the geometry of smooth
+manifolds.
+
+\begin{definition} If $M$ is a smooth manifold, we let $TM$ denote its
+  tangent bundle, and we let $\Gamma (TM)$ denote the set of sections
+  of $TM$, i.e.\ smooth vector fields on $M$. \end{definition}
+
+\section*{Connection on a Smooth Manifold}
+
+\begin{definition}[Connection] Let $M$ be a smooth manifold. A
+  \emph{connection}, or \emph{covariant derivative operator}, on $M$
+  is a bilinear map
+  \[ \nabla: \Gamma(TM) \times \Gamma(TM) \to \Gamma(TM)
+\]
+such that for any vector fields \( X, Y, Z \in \Gamma(TM) \) and any
+smooth function $f\in C^\infty(M)$, the following conditions hold:
+\begin{itemize}
+    \item \textbf{Linearity in the first argument:}
+    \[
+    \nabla_{X+Y} Z = \nabla_X Z + \nabla_Y Z,
+    \]
+    \item \textbf{Leibniz rule in the first argument:}
+    \[
+    \nabla_{fX} Y = f \nabla_X Y,
+    \]
+  \item \textbf{Leibniz rule in the second argument:}
+    \[ \nabla_X (fY) = (Xf)Y + f \nabla_X Y.  \]
+\end{itemize}
+\end{definition}
+
+\section*{Parallel Transport}
+
+\begin{definition}[Parallel Transport]
+  Let \( M \) be a smooth manifold with a connection \( \nabla \), and
+  let \( \gamma: [0,1] \to M \) be a smooth path from
+  \( p = \gamma(0) \) to \( q = \gamma(1) \). The \emph{parallel
+    transport map} along \( \gamma \), denoted by
+  \[ \tau_{\gamma}: T_pM \to T_qM, \] is a linear isomorphism defined
+  as follows: for any vector \( v \in T_pM \),
+  \( \tau_{\gamma}(v) \in T_qM \) is the unique vector such that the
+  vector field \( V(t) \) along \( \gamma(t) \), satisfying the
+  initial condition \( V(0) = v \), is parallel with respect to the
+  connection \( \nabla \), i.e.,
+  \[ \nabla_{\dot{\gamma}(t)} V(t) = 0 \quad \text{for all } t \in
+    [0,1]. \]
+\end{definition}
+
+\section*{Riemann Curvature Tensor}
+
+In abstract index notation, the Riemann curvature tensor $R$ is
+typically defined by setting its value on an arbitrary vector $\xi$:
+\[ \tensor{R}{^{a}_{b c d}} \tensor{\xi}{^b} \: = \: -2\nabla
+  _{[c}\nabla _{d]}\xi ^a . \] If we look at the index structure,
+there is another way to think of $R$, i.e.\ as a map that takes two
+vectors $\lambda ^c,\rho ^d$ and returns a tensor
+$\tensor{R}{^a_{b c d}}\lambda ^c\rho ^d$. The resulting tensor has
+form $\tensor{\theta}{^a_b}$, which can be thought of as a map from a
+vector $\xi ^b$ to a vector $\tensor{\theta}{^a_b}\xi ^b$. Thinking of
+$R$ this way leads to an intuitive picture: given two directions
+$\lambda ,\rho$ out of $p$, $\tensor{R}{^a_{b c d}}\lambda ^c,\rho ^d$
+measures the deviation from identity for transport around an
+infinitesimal parallelogram.
+
+Let's rewrite the definition without abstract indices: $R$ is a map
+that takes two input vectors $X,Y\in T_p$ and returns a linear map
+$R(X,Y):T_p\to T_p$. To be more precise, $R$ maps vector fields to a
+tensor field.
+
+\begin{definition}[Riemann Curvature Tensor]
+  Given a smooth manifold $M$ with a connection $\nabla$, the
+  \emph{Riemann curvature tensor} is the map
+  \[ R: \Gamma(TM) \times \Gamma(TM) \times \Gamma(TM) \to
+    \Gamma(TM), \] defined by
+  \[ R(X,Y) \: = \: \nabla_X \nabla_Y - \nabla_Y \nabla_X -
+    \nabla_{[X,Y]} , \] for vector fields $X, Y\in \Gamma(TM)$.
+\end{definition}
+
+It is straightforward, if a bit tedious, to check that $R$ is a
+tensor field. 
+
+\newpage
+
+  \rotatebox{90}{
+
+\begin{tabular}{l|l|l}
+  structure & definable & not definable  \\ \hline \hline
+  manifold + Lorentzian metric & \\  \hline
+  manifold + connection & parallel transport, geodesics, curvature & \\ \hline
+  manifold & smooth curves, tangent vectors & 
+\end{tabular}
+
+}
+
+
+\newpage
+
+
+\section*{Relationships Between Connection, Parallel Transport, and
+  Curvature}
+
+
+\subsection*{From Connection to Parallel Transport}
+
+A covariant derivative operator \( \nabla \) naturally defines
+parallel transport along any smooth path \( \gamma \). Given a vector
+field \( V(t) \) along \( \gamma(t) \), the condition
+\( \nabla_{\dot{\gamma}(t)} V(t) = 0 \) (i.e., that \( V(t) \) is
+parallel along \( \gamma \)) uniquely determines how to transport any
+vector \( v \in T_pM \) to \( T_qM \). This process is called
+\emph{parallel transport}.
+
+In this sense, the connection defines how vectors (and more generally,
+tensors) are propagated along curves in a manner consistent with the
+geometry defined by \( \nabla \).
+
+\begin{definition}
+  Let $M$ be a smooth manifold, and let $\nabla$ be a connection on
+  $M$. The \emph{holonomy group} \( \text{Hol}(p, \nabla) \) is the
+  set of all linear maps \( \tau_{\gamma}: T_p M \to T_p M \), called
+  \emph{holonomies}, obtained by parallel transporting vectors along
+  smooth closed loops \( \gamma \) based at \( p \), with respect to
+  the connection \( \nabla \). That is,
+\[
+\text{Hol}(p, \nabla) = \left\{ \tau_{\gamma} \in \text{GL}(T_p M) \mid \gamma: [0,1] \to M \text{ is a smooth loop with } \gamma(0) = \gamma(1) = p \right\}.
+\]
+\end{definition}
+
+\subsection*{From Parallel Transport to Connection}
+
+Conversely, the notion of parallel transport can also define a
+derivative operator. If we know how vectors are transported along all
+possible curves in a smooth manifold, we can recover the
+connection. Specifically, the connection $\nabla_X Y$ at a point can
+be defined by considering the infinitesimal limit of parallel
+transport along the flow generated by \( X \). Thus, parallel
+transport and covariant derivatives are two perspectives on the same
+underlying geometric structure.
+
+\subsection*{From Connection to Curvature}
+
+The Riemann curvature tensor \( R \) is derived directly from the
+covariant derivative operator \( \nabla \). It measures the
+noncommutativity of the covariant derivative, that is, how much the
+result of taking two successive derivatives depends on the order in
+which they are taken. If the connection \( \nabla \) were to commute
+in all directions, the curvature would vanish, meaning the manifold is
+\emph{flat}.
+
+\subsection*{Key Relations Between Curvature and Parallel Transport}
+
+One of the most important relations in differential geometry is the
+equivalence between curvature and the path-dependence of parallel
+transport.
+
+\begin{theorem}
+  Parallel transport along a curve \( \gamma \) is independent of the
+  path taken between two points \( p \) and \( q \) if and only if the
+  curvature of the connection is zero along \( \gamma \).
+\end{theorem}
+
+\begin{proof}[Sketch of Proof]
+The independence of parallel transport from the path is equivalent to the holonomy group of the connection being trivial, which occurs precisely when the curvature tensor \( R \) vanishes. If \( R(X,Y)Z = 0 \) for all vector fields \( X, Y, Z \), then the connection is flat, meaning that parallel transport around any closed loop returns the vector unchanged, and transport between any two points is independent of the path.
+\end{proof}
+
+\subsection*{Flatness and Commutativity of the Covariant Derivative}
+
+The curvature tensor \( R \) vanishes if and only if the covariant derivative operator \( \nabla \) commutes, i.e.,
+\[
+\nabla_X \nabla_Y Z = \nabla_Y \nabla_X Z
+\]
+for all vector fields \( X, Y, Z \in \Gamma(TM) \). This commutativity implies that the manifold is locally flat, meaning that in small neighborhoods, the geometry resembles that of Euclidean space.
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

@@ -1,0 +1,64 @@
+#+TITLE: Kierkegaard — Class Notes
+#+AUTHOR: Hans Halvorson
+#+STARTUP: indent
+#+OPTIONS: H:1 num:nil toc:nil
+#+LATEX_HEADER: \usepackage[margin=0.75in]{geometry}
+#+LATEX_HEADER: \usepackage{enumitem}\setlistdepth{9}
+
+* Overview: What is Kierkegaard best known for?
+** Leap of faith
+*** Evidentialism versus fideism
+**** The British tradition
+Natural theology
+**** Kant: Religion within the bounds of reason
+**** Hegel: Christianity as true baby talk
+** Existentialism
+*** Existence preceeds essence (N.B. the slogan is Sartre's, read back onto K.)
+** Truth is subjectivity
+*** Not objective correctness but how a truth is held
+*** Inwardness, passion, commitment
+*** The engine under the leap of faith
+** The stages (or spheres) of existence
+*** Aesthetic — the life of immediacy, fleeing boredom
+*** Ethical — choice, commitment, the self that takes responsibility
+*** Religious — the leap beyond the ethical
+** The single individual and the critique of Christendom
+*** /den Enkelte/ — the single individual before God
+*** "The crowd is untruth"
+*** Attack on bourgeois, established Christianity
+** How to read him: indirect communication
+*** The pseudonyms (Johannes de Silentio, Climacus, Anti-Climacus, ...)
+*** Why indirect? Subjective truth cannot be handed over directly
+*** "What Kierkegaard says" vs. what a pseudonym says
+
+* Text: Selected early entries from K's journals and papers
+** "Those who get to experience the real meaning of Hegelian dialectics in their lives are greater in number"
+** What does K not like about a career in natural science?
+*** What does he mean by "nature may also be observed from another side"?
+** Worries about theology
+** "...it takes a long time for a child to learn to distinguish itself from objects"
+** "Philosophy is perfectly right in saying that life must be understood backwards"
+
+* Text: From the papers of one still living
+** "Andersen totally lacks a /livs-anskuelse/"
+** What two traps do authors tend to fall into if they don't have a life-view?
+** What does K mean by "speculation"?
+** "I have never maintained that an idea as such is to be regarded as a life-view"
+*** How does K's notion of a life-view interact with what he said earlier about the inadequacy of knowing a bunch of disconnected facts?
+*** Based on what we've read so far, what do you think K's goal for himself is?
+** What role does "personality" play in this piece?
+*** What's the contrast to a "finite" and "incorrect" relation to the author's personality?
+
+* Text: The concept of irony
+** actuality/ideality and Heraclitus/Zeno
+** In what sense is Socrates supposed to be an ironist?
+** What is the relationship between irony, actuality, and ideality?
+
+
+* Text: Either/Or B
+** 
+
+
+
+
+

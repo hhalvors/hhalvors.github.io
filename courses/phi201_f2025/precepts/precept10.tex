@@ -1,0 +1,145 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage[margin=1in]{geometry}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+\title{Precept exercises: Week 9}
+\date{}
+
+\usepackage{amsmath,amssymb}
+
+\usepackage{enumitem}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage{tikz-cd}
+
+\begin{document}
+
+\maketitle
+
+\vspace*{-4em}
+
+
+\begin{enumerate}[leftmargin=*]
+\item What does it mean for a predicate logic sentence to be
+  \emph{consistent}?
+
+\item Suppose that we had an algorithm that determined whether
+  sentences are consistent. Explain how we could use this algorithm to
+  determine if arguments are valid.
+  
+\item Consider the following English sentences, along with the two
+  possible translations into predicate logic. Are the two PL sentences
+  logically equivalent? Does one imply the other? How does this
+  information bear on your judgment about which is the best
+  translation?
+
+\begin{enumerate}
+\item Only students who do the homework will learn logic. ($Sx,Hx,Lx$)
+  \[ \forall x(Lx\to (Sx\wedge Hx)) \]
+  \[ \forall x((Sx\wedge Lx)\to Hx) \]
+  
+\item There is some student who respects only those professors who
+  respect all students. ($Sx,Px,Rxy$)
+\[ \exists x(Sx\wedge \forall y(Rxy\to (Py\wedge \forall z(Sz\to
+  Ryz)))) \]
+\[ \exists x(Sx\wedge \forall y((Py\wedge Rxy)\to \forall z(Sz\to
+  Ryz))) \]  
+
+\end{enumerate}
+
+\item Explain why the sentence $\exists x(Mx\to Dx)$ is \emph{not} a
+  good translation of ``There is a melancholy Dane.''
+
+\item Provide models to show that the following sequents are invalid:
+\begin{enumerate}
+\item $\forall x(Fx\vee Gx)\:\vdash \:\forall xFx\vee \forall xGx$
+\item $\forall xFx\to \forall xGx\:\vdash \: \forall x(Fx\to Gx)$
+\item $\exists x(Fx\to P)\:\vdash \: \exists xFx\to P$
+\end{enumerate}
+
+\item The EE rule requires that the arbitrary name that is used
+in the instance of the existential formula does \emph{not} appear in
+(a) the existential formula, (b) the auxiliary assumptions used to
+derive the conclusion, and (c) the conclusion itself. Explain why
+dropping any one of these three restrictions would lead to an unsound
+rule.
+
+\end{enumerate}
+
+\newpage
+
+\begin{enumerate}[resume]
+
+\item Which of the following sentences are true in which of the
+diagrams below.
+
+\begin{enumerate}
+  \item $\forall x \forall y (Rxy \rightarrow Ryy)$
+  \item $\forall x \exists y (Rxy \wedge Ryx)$
+  \item $\exists x \forall y (Rxy \rightarrow \exists z Ryz)$
+  \item $\forall x \exists y (Rxy \wedge \forall z (Ryz \rightarrow Rxz))$
+  \item $\exists x \exists y (Rxy \wedge \neg Ryx)$
+\end{enumerate}
+
+\begin{tikzpicture}[>=Stealth,thick]
+  % nodes
+  \node (a) at (0,1.5) {$a$};
+  \node (b) at (-1,-1) {$b$};
+  \node (c) at (1,-1) {$c$};
+
+  % arrows
+  \draw[->] (b) -- (a);
+  \draw[->] (c) -- (a);
+  \draw[->, looseness=15, out=60, in=120] (a) to (a); % loop on a
+
+\begin{scope}[xshift=4cm]
+    \node (a2) at (0,1.5) {$a$};
+    \node (b2) at (-1,-1) {$b$};
+    \node (c2) at (1,-1) {$c$};
+
+    \draw[->] (b2) -- (a2);
+    \draw[->] (a2) -- (c2);
+    \draw[->] (c2) -- (a2);
+    \draw[->, looseness=15, out=-120, in=-60] (b2) to (b2);
+  \end{scope}
+
+ \begin{scope}[xshift=8cm]
+    \node (a) at (0,1.5) {$a$};
+    \node (b) at (-1,-1) {$b$};
+    \node (c) at (1,-1) {$c$};
+
+    \draw[->] (a) -- (b);
+    \draw[->] (b) -- (c);
+    \draw[->] (c) -- (a);
+  \end{scope}
+
+   \begin{scope}[xshift=12cm]
+    \node (a) at (0,1.5) {$a$};
+    \node (b) at (-1,-1) {$b$};
+    \node (c) at (1,-1) {$c$};
+
+    % Single arrows
+    \draw[->] (a) -- (b);
+    \draw[->] (c) -- (a);
+
+    % Parallel arrows between b and c
+    \draw[->,transform canvas={yshift=3pt}] (b) -- (c);
+    \draw[->,transform canvas={yshift=-3pt}] (c) -- (b);
+  \end{scope}
+
+
+  
+\end{tikzpicture}
+
+\end{enumerate}
+
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
