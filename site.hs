@@ -844,6 +844,14 @@ main = hakyllWith config $ do
                 >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
                 >>= relativizeUrls
 
+    match "natives.md" $ do
+        route $ customRoute (const "natives.html")
+        compile $ do
+            pandocCompiler
+                >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Native plantings" `mappend` siteCtx)
+                >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+                >>= relativizeUrls
+
     -- Essays: the Edge/Slate/Nautilus/Weekendavisen pieces, which used to
     -- live only in cv.tex and so appeared nowhere on the site.
     match "essays.md" $ do

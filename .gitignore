@@ -16,6 +16,30 @@ templates/_cache/
 docs/talks/*-img/
 talks/*-img/
 
+# Illustrations used to build slides and lecture notes: book jackets, author
+# portraits, archival scans. Not my work, so they are not mine to redistribute
+# in a public repository. The rendered PDF/HTML embeds them and is published;
+# the source images stay on my disk.
+talks/**/*.jpg
+talks/**/*.jpeg
+talks/**/*.png
+talks/**/*.gif
+talks/**/*.wmf
+talks/**/*.emf
+talks/**/*.tif
+talks/**/*.tiff
+talks/**/*.zip
+courses/**/*.jpg
+courses/**/*.jpeg
+courses/**/*.png
+courses/**/*.gif
+courses/**/*.wmf
+courses/**/*.emf
+# Archival map scans from Det Kongelige Bibliotek; nothing references them.
+kierkegaard-copenhagen/
+# Screenshots of my own pages, used while designing. Not content.
+previews/
+
 # CV build artifacts (generated from data/talks-master.yaml by the site build)
 /.cvbuild/
 /cv-talks.tex
@@ -62,6 +86,38 @@ lemmon-filter/src/lemmonFilter
 
 # Ad-hoc backups
 *.backup
+
+# Scratch. This repository is public and people browse it; a root full of
+# temp-new.html and Test2.hs misrepresents the project. These stay on disk.
+/temp.html
+/temp-new.html
+/temp-backup.html
+/template.html
+/hh-template.html
+/output.html
+/wip.html
+/wip.md
+/courses-new.html
+/courses-temp.html
+/publications-new.html
+/bohr-causality-quotes.html
+/test.md
+/test.txt
+/dummy.md
+/empty.md
+/Test.hs
+/Test2.hs
+/testFormulaParser.hs
+/old-pubList.hs
+/ParseBibTeX2.hs
+/sorted_teaching.yaml
+
+# Jekyll-era leftovers, superseded by the Hakyll build
+/Gemfile
+/Gemfile.lock
+/_layouts/
+/_data/
+/main.min.*.css
 
 # Working notes for AI sessions. This repository is PUBLIC (it is the source
 # of hanshalvorson.com), and these notes carry editorial judgments, unverified
