@@ -258,6 +258,15 @@ main = hakyllWith config $ do
         route   idRoute
         compile copyFileCompiler
 
+    -- Course illustrations that published pages reference. Deliberately
+    -- narrow: most images under courses/ and talks/ are third-party slide
+    -- material, excluded from the repo in .gitignore. These are the ones a
+    -- page actually links -- the PHI367 map scans and the PHI538 QR code --
+    -- and without this rule they 404, which they had been doing.
+    match ("courses/**/img/*" .||. "courses/phi538_f2024/qr-code.jpeg") $ do
+        route   idRoute
+        compile copyFileCompiler
+
     match "css/*" $ do
         route   idRoute
         compile compressCssCompiler

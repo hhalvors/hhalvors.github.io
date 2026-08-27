@@ -35,6 +35,12 @@ courses/**/*.png
 courses/**/*.gif
 courses/**/*.wmf
 courses/**/*.emf
+# Exceptions: images that published course pages actually reference, and that
+# are either my own or archival scans forming the substance of the page rather
+# than decoration. Keep this list short — if it grows, the rule above is wrong.
+!courses/phi367_s2026/img/*
+!courses/phi538_f2024/qr-code.jpeg
+
 # Archival map scans from Det Kongelige Bibliotek; nothing references them.
 kierkegaard-copenhagen/
 # Screenshots of my own pages, used while designing. Not content.
