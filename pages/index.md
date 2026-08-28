@@ -14,8 +14,9 @@ hide_title: true
 
 Stuart Professor of Philosophy at Princeton University, associated faculty in
 mathematics, and research professor at the University of Copenhagen. I work on
-the foundations of physics, logic and the structure of scientific theories, and
-the Scandinavian philosophical tradition behind Niels Bohr.
+the foundations of physics, logic and [the structure of scientific
+theories](/theories/), and the [Scandinavian philosophical
+tradition](/dansk/) behind [Niels Bohr](/bohr/).
 
 </div>
 
