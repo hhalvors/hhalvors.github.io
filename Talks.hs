@@ -71,11 +71,16 @@ cleanText s = T.unpack
 -- Link badge
 ------------------------------------------------------------------------
 
+-- | A recording is a different kind of thing from a slide deck, so it gets its
+-- own colour and a visitor can scan the page for them.
 linkBadge :: MLink -> H.Html
 linkBadge lnk =
   H.a H.! A.href   (H.toValue $ lUrl lnk)
-      H.! A.class_ "talk-link"
+      H.! A.class_ (H.toValue cls)
       $ H.toHtml (lLabel lnk)
+  where
+    cls | lLabel lnk `elem` ["video", "audio"] = "talk-link talk-link-video"
+        | otherwise                            = "talk-link" :: String
 
 ------------------------------------------------------------------------
 -- A single talk
@@ -93,6 +98,11 @@ renderTalk t =
       then return ()
       else H.div H.! A.class_ "talk-meta"
                  $ H.toHtml (intercalate " · " meta)
+    -- One line on what the talk argues. Worth having wherever a recording is
+    -- linked: it is what lets someone decide whether to spend the hour.
+    case tNote t of
+      Just n | not (null n) -> H.div H.! A.class_ "talk-note" $ renderMd n
+      _                     -> return ()
     H.div H.! A.class_ "talk-links" $
       mapM_ linkBadge (tLinks t)
 

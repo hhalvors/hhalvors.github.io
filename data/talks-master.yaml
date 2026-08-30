@@ -771,9 +771,13 @@ talks:
     title: 'Does the universe need God?'
     kind: series
     date: '2014-03'
-    event: Ian Ramsey Centre Lecture Series
+    event: Ian Ramsey Centre for Science and Religion
     location: Oxford University
     cv: true
+    web: true
+    note: 'A sceptical look at natural theology, and at the fine-tuning argument in particular.'
+    links:
+    - {label: 'video', url: 'https://www.youtube.com/watch?v=SDwpTcSEjak'}
     cv_raw: |
       ``Does the universe need God?'' Ian Ramsey Centre Lecture Series. Oxford University. Mar 2014
 

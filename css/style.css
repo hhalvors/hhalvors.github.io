@@ -1594,3 +1594,31 @@ h2.year-label {
 @media (prefers-color-scheme: dark) {
   .intro-photo { border-color: #303030; }
 }
+
+/* Recordings are a different kind of link from a slide deck: give them their
+   own colour so the talks page can be scanned for them. */
+.talk-link-video {
+  background: #7a2f2f;
+  border-color: #7a2f2f;
+  color: #fff;
+}
+
+.talk-link-video:hover {
+  background: #612424;
+  color: #fff;
+}
+
+/* One line on what a talk argues, between the venue and the links. */
+.talk-note {
+  font-size: 0.88rem;
+  color: #555;
+  margin: 0.35rem 0 0.15rem;
+  line-height: 1.5;
+}
+
+.talk-note p { margin: 0; }
+
+@media (prefers-color-scheme: dark) {
+  .talk-note { color: #9aa7b0; }
+  .talk-link-video { background: #8a3a3a; border-color: #8a3a3a; }
+}
