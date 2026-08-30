@@ -5,7 +5,7 @@
 -- Generates the HTML catalog page for the Danish Philosophical Texts collection.
 -- Data is read from data/danish-texts.yaml (symlinked from ~/danish-texts/catalog.yaml).
 
-module DanishTexts (generateDanishTextsHTML) where
+module DanishTexts (generateDanishTextsHTML, catalogFacts) where
 
 import GHC.Generics               (Generic)
 import Data.Aeson                  (FromJSON(..), Options, genericParseJSON,
@@ -13,9 +13,13 @@ import Data.Aeson                  (FromJSON(..), Options, genericParseJSON,
 import Data.Char                   (toLower, isUpper)
 import Data.List                   (intercalate, isPrefixOf)
 import Data.Maybe                  (fromMaybe)
+import qualified Data.Map.Strict             as M
 import qualified Text.Blaze.Html5            as H
 import qualified Text.Blaze.Html5.Attributes as A
 import qualified Text.Blaze.Html.Renderer.String as R
+
+import DanishNotes (NoteIndex, CatalogFacts(..), Target(..),
+                    notesForWork, renderNoteLinks)
 
 ------------------------------------------------------------------------
 -- Data types
@@ -227,8 +231,8 @@ renderSection sec =
 -- Work entry
 ------------------------------------------------------------------------
 
-renderWork :: String -> Work -> H.Html
-renderWork aid w =
+renderWork :: NoteIndex -> String -> Work -> H.Html
+renderWork idx aid w =
   H.div H.! A.class_ "dt-work"
         H.! A.id (H.toValue $ aid ++ "-" ++ workId w) $ do
     H.div H.! A.class_ "dt-work-title" $ H.toHtml (workTitle w)
@@ -247,6 +251,9 @@ renderWork aid w =
       Nothing -> return ()
     H.div H.! A.class_ "dt-sections" $
       mapM_ renderSection (workSections w)
+    -- Notes and essays are discovered from the danish-texts tree, not
+    -- declared here: catalog.yaml has no field for them. See DanishNotes.hs.
+    renderNoteLinks (notesForWork aid (workId w) idx)
 
 ------------------------------------------------------------------------
 -- Modern edition entry
@@ -392,15 +399,15 @@ renderBibliography aid name b =
 -- Author section
 ------------------------------------------------------------------------
 
-renderAuthor :: Author -> H.Html
-renderAuthor a =
+renderAuthor :: NoteIndex -> Author -> H.Html
+renderAuthor idx a =
   H.section H.! A.class_ "dt-author" H.! A.id (H.toValue $ authorId a) $ do
     H.h2 H.! A.class_ "dt-author-heading" $ do
       H.toHtml (authorName a)
       H.span H.! A.class_ "dt-author-dates"
              $ H.toHtml (" (" ++ authorDates a ++ ")")
     H.p H.! A.class_ "dt-author-bio" $ H.toHtml (authorBio a)
-    mapM_ (renderWork (authorId a)) (works a)
+    mapM_ (renderWork idx (authorId a)) (works a)
     case authorModernEditions a of
       Just es | not (null es) -> do
         H.h3 H.! A.class_ "dt-seclit-head"
@@ -528,8 +535,18 @@ renderMenu cat =
 -- Top-level generator
 ------------------------------------------------------------------------
 
-generateDanishTextsHTML :: Catalog -> String
-generateDanishTextsHTML catalog = R.renderHtml $
+-- | The author names and work titles the notes machinery needs, so that
+-- DanishNotes can render its index without knowing the catalog's types.
+catalogFacts :: Catalog -> CatalogFacts
+catalogFacts cat = CatalogFacts
+  { cfAuthorNames = [ (authorId a, authorName a) | a <- authors cat ]
+  , cfWorkTitles  = M.fromList
+      [ (Target (authorId a) (workId w), workTitle w)
+      | a <- authors cat, w <- works a ]
+  }
+
+generateDanishTextsHTML :: NoteIndex -> Catalog -> String
+generateDanishTextsHTML idx catalog = R.renderHtml $
   H.div H.! A.class_ "dt-catalog" $ do
     H.p H.! A.class_ "dt-intro" $ do
       "Transcriptions and English translations of Danish philosophical works, "
@@ -572,7 +589,7 @@ generateDanishTextsHTML catalog = R.renderHtml $
       statusBadge "to-do"
       statusBadge "coming-soon"
       statusBadge "reference"
-    mapM_ renderAuthor (authors catalog)
+    mapM_ (renderAuthor idx) (authors catalog)
     case references catalog of
       Just rs | not (null rs) ->
         H.section H.! A.class_ "dt-author dt-references" H.! A.id "references" $ do

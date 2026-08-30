@@ -6,7 +6,8 @@ module Main where
 -- Core / utils
 import           Control.Applicative      ((<|>))
 import           Control.Monad            (forM_, when, liftM, (<=<))
-import           Data.Aeson               (FromJSON(..), withObject, (.:), (.:?), eitherDecode)
+import           Data.Aeson               (FromJSON(..), withObject, (.:), (.:?), eitherDecode,
+                                           fromJSON, Result(..), Value(Object))
 import qualified Data.ByteString.Lazy     as BL
 import           Data.Function            (on)
 import           Data.List                (groupBy, sortOn, sortBy)
@@ -38,7 +39,10 @@ import           BibTeXParser             (parseBibTeX, generateHTML)
 import           PubList                  (parseBibTeXFile, transformEntry, generateHtml,
                                            generateRecent)
 import           EquivBiblio              (generateEquivHTML)
-import           DanishTexts              (generateDanishTextsHTML)
+import           DanishTexts              (generateDanishTextsHTML, catalogFacts)
+import           DanishNotes              (NoteIndex, FrontMatter, mkNoteIndex,
+                                           mkNoteRef, validateNoteIndex,
+                                           generateNotesIndexHTML)
 import           Syllabus                 (generateSyllabusHTML)
 import           Talks                    (generateTalksHTML, generateRecentTalksHTML)
 import           TalksMaster              (MasterData, renderInvited, renderOutreach)
@@ -1003,24 +1007,67 @@ main = hakyllWith config $ do
         case result of
           Left err      -> error $ "YAML parse error (danish-texts): " ++ show err
           Right catalog -> do
-            let htmlBody = generateDanishTextsHTML catalog
-            makeItem htmlBody
+            idx <- loadNoteIndex
+            let facts    = catalogFacts catalog
+                bad      = validateNoteIndex facts idx
+                htmlBody = generateDanishTextsHTML idx catalog
+            if not (null bad)
+              then error $ unlines
+                     ("Danish notes: front matter names catalog entries that do not exist:"
+                      : map ("  " ++) bad)
+              else makeItem htmlBody
+                     >>= loadAndApplyTemplate "templates/page.html"
+                           (constField "title" "Danish Philosophical Texts" `mappend` siteCtx)
+                     >>= loadAndApplyTemplate "templates/default.html"
+                           (constField "title" "Danish Philosophical Texts"
+                             `mappend` baseSidebarCtx `mappend` siteCtx)
+                     >>= relativizeUrls
+
+    -- Per-work notes: texts/<author>/<slug>/note.md in the danish-texts repo,
+    -- reached through the dansk-src symlink. Routed to /dansk/<author>/<slug>.html.
+    match danskNotePattern $ do
+      route danskNoteRoute
+      compile $ danskCommentaryCompiler
+
+    -- Cross-work essays: essays/<slug>.md in the danish-texts repo, reached
+    -- through the dansk-essays symlink. Routed to /dansk/essays/<slug>.html.
+    match danskEssayPattern $ do
+      route danskEssayRoute
+      compile $ danskCommentaryCompiler
+
+    -- Danish texts notes index — GENERATED from the note and essay front
+    -- matter, not hand-written. Replaces pages/danish-texts-notes.md, which
+    -- duplicated the catalog's structure and drifted from it.
+    create ["dansk/notes.html"] $ do
+      route idRoute
+      compile $ do
+        _ <- (load (fromFilePath "data/danish-texts.yaml") :: Compiler (Item String))
+        result <- unsafeCompiler $
+          decodeFileEither "data/danish-texts.yaml"
+        case result of
+          Left err      -> error $ "YAML parse error (danish-texts): " ++ show err
+          Right catalog -> do
+            idx <- loadNoteIndex
+            makeItem (generateNotesIndexHTML (catalogFacts catalog) idx)
               >>= loadAndApplyTemplate "templates/page.html"
-                    (constField "title" "Danish Philosophical Texts" `mappend` siteCtx)
+                    (constField "title" "Danish Texts — Notes and Essays" `mappend` siteCtx)
               >>= loadAndApplyTemplate "templates/default.html"
-                    (constField "title" "Danish Philosophical Texts"
+                    (constField "title" "Danish Texts — Notes and Essays"
                       `mappend` baseSidebarCtx `mappend` siteCtx)
               >>= relativizeUrls
 
-    -- Danish texts notes (scholarly commentary) — hand-written markdown
+    -- TEMPORARY: the old hand-written notes page, kept at a second URL while
+    -- its 536 lines are migrated into per-work note.md files. The generated
+    -- index links to it. Delete this rule, and pages/danish-texts-notes.md,
+    -- when the last author has been migrated.
     match "pages/danish-texts-notes.md" $ do
-      route $ constRoute "dansk/notes.html"
+      route $ constRoute "dansk/notes-archive.html"
       compile $
         pandocCompiler
           >>= loadAndApplyTemplate "templates/page.html"
-                (constField "title" "Danish Texts — Notes" `mappend` siteCtx)
+                (constField "title" "Danish Texts — Notes (archive)" `mappend` siteCtx)
           >>= loadAndApplyTemplate "templates/default.html"
-                (constField "title" "Danish Texts — Notes"
+                (constField "title" "Danish Texts — Notes (archive)"
                   `mappend` baseSidebarCtx `mappend` siteCtx)
           >>= relativizeUrls
 
@@ -1090,6 +1137,74 @@ myPandocBiblioCompiler = do
         let p1 = applyLemmonFilter (itemBody processed)
         hlKaTeX p1
     )
+
+--------------------------------------------------------------------------------
+-- Danish texts: scholarly commentary
+--
+-- Notes and essays are written and kept in the danish-texts repo, beside the
+-- texts they discuss, and reached from here through two symlinks:
+--
+--     dansk-src    -> ~/danish-texts/texts
+--     dansk-essays -> ~/danish-texts/essays
+--
+-- catalog.yaml carries no record of which works have commentary. The index is
+-- built by looking, and every author/work id in the front matter is resolved
+-- against the catalog, so the two cannot drift. See ~/danish-texts/NOTES-PLAYBOOK.md.
+--------------------------------------------------------------------------------
+
+danskNotePattern, danskEssayPattern :: Pattern
+danskNotePattern  = "dansk-src/*/*/note.md"
+danskEssayPattern = "dansk-essays/*.md"
+
+-- dansk-src/nielsen/evangelietroen-bevidsthed/note.md
+--   -> dansk/nielsen/evangelietroen-bevidsthed.html
+danskNoteRoute :: Routes
+danskNoteRoute = customRoute $ \ident ->
+  case splitDirectories (toFilePath ident) of
+    (_ : author : slug : _) -> joinPath ["dansk", author, slug ++ ".html"]
+    _                       -> toFilePath ident
+
+-- dansk-essays/nielsen-heterogeneity-1849.md
+--   -> dansk/essays/nielsen-heterogeneity-1849.html
+danskEssayRoute :: Routes
+danskEssayRoute = customRoute $ \ident ->
+  joinPath ["dansk", "essays", takeBaseName (toFilePath ident) ++ ".html"]
+
+danskCommentaryCompiler :: Compiler (Item String)
+danskCommentaryCompiler =
+  fmap (fmap wrapCommentary) (pandocCompilerWith myReader myWriter)
+    >>= loadAndApplyTemplate "templates/page.html" (defaultContext <> siteCtx)
+    >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+    >>= relativizeUrls
+  where
+    wrapCommentary body = concat
+      [ "<div class=\"dn-page\">", body
+      , "<p class=\"dn-backlink\">"
+      , "<a href=\"/dansk/notes.html\">All notes and essays</a>"
+      , " · <a href=\"/dansk/\">Catalog</a>"
+      , "</p></div>"
+      ]
+
+-- Reads the front matter of every note and essay and resolves each to a route.
+-- getMatches records a pattern dependency, so adding or removing a note
+-- rebuilds the catalog page and the index without a full rebuild.
+loadNoteIndex :: Compiler NoteIndex
+loadNoteIndex = do
+  idents <- getMatches (danskNotePattern .||. danskEssayPattern)
+  mkNoteIndex <$> mapM toRef idents
+  where
+    toRef ident = do
+      let src = toFilePath ident
+      md  <- getMetadata ident
+      mbr <- getRoute ident
+      let url = case mbr of
+                  Just r  -> "/" ++ r
+                  Nothing -> error (src ++ ": matched no route")
+      case fromJSON (Object md) of
+        Error e    -> error (src ++ ": cannot read front matter: " ++ e)
+        Success fm -> case mkNoteRef src url (fm :: FrontMatter) of
+          Left e  -> error e
+          Right r -> return r
 
 -- myPandocBiblioCompiler :: Compiler (Item String)
 -- myPandocBiblioCompiler = do
