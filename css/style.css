@@ -988,6 +988,14 @@ h2.year-label {
 }
 .book-subtitle { font-size: 0.95rem; color: #555; margin: 0 0 0.4rem; }
 .book-publisher { font-size: 0.875rem; color: #777; margin: 0 0 1rem; }
+.book-blurb {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: #555;
+  margin: 0 0 1rem;
+  padding-left: 0.6rem;
+  border-left: 2px solid #c4d4df;
+}
 
 .book-links { display: flex; flex-direction: column; gap: 0.35rem; }
 
