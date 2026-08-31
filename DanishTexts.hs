@@ -197,7 +197,12 @@ statusLabel "placeholder"  = "placeholder"
 statusLabel "reference"    = "reference"
 statusLabel s              = s
 
+-- "none" suppresses the badge entirely. The YAML parser requires every section
+-- to carry a `status` key, so a section that should show no badge says
+-- `status: none` rather than omitting it. Used by the Bohr edition, where all
+-- 89 sections are in the same state and 89 identical badges are only clutter.
 statusBadge :: String -> H.Html
+statusBadge "none" = return ()
 statusBadge s =
   H.span H.! A.class_ (H.toValue $ statusClass s)
          $ H.toHtml (statusLabel s)
