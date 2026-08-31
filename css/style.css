@@ -309,26 +309,25 @@ li { margin-bottom: 0.55rem; }
 
 .dt-sections { margin-top: 0.4rem; }
 
+/* Ordinary inline flow: title, an em space, then the badges, wrapping like
+   words. This was flexbox with min-width:14rem on the title, which padded short
+   titles out to a 14rem column edge that long titles simply overran — so the gap
+   before the first badge varied from wide to none down a single list. Inline
+   flow has no column to miss, needs no breakpoint, and narrows by itself. */
 .dt-section {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin-bottom: 0.25rem;
+  display: block;
+  margin-bottom: 0.35rem;
+  line-height: 1.9;   /* badges are padded inline-blocks; 1.5 lets wrapped rows collide */
   font-size: 0.82rem;
 }
 
 .dt-section-title {
   color: #444;
-  min-width: 14rem;
-  flex-shrink: 0;
+  margin-right: 1em;
 }
 
 .dt-section-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  align-items: center;
+  display: inline;
 }
 
 .dt-link {
@@ -344,6 +343,9 @@ li { margin-bottom: 0.55rem; }
   text-decoration: none;
   vertical-align: middle;
 }
+
+/* the gap flexbox used to provide via `gap` */
+.dt-link + .dt-link { margin-left: 0.3rem; }
 
 .dt-link:hover {
   background: #d0dde6;
