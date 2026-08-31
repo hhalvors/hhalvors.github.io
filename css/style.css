@@ -344,8 +344,10 @@ li { margin-bottom: 0.55rem; }
   vertical-align: middle;
 }
 
-/* the gap flexbox used to provide via `gap` */
-.dt-link + .dt-link { margin-left: 0.3rem; }
+/* The gap flexbox used to provide via `gap`. Must cover every badge, not just
+   .dt-link — a row can end with a .dt-status, and blaze emits no whitespace
+   between elements, so without this the last link and the status badge touch. */
+.dt-section-links > * + * { margin-left: 0.3rem; }
 
 .dt-link:hover {
   background: #d0dde6;
