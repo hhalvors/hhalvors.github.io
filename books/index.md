@@ -16,15 +16,13 @@ author: Hans Halvorson
 <div class="book-link-group"><span class="book-link-label">Buy</span> <a href="https://press.princeton.edu/books/hardcover/9780691182223/how-logic-works">PUP</a> <a href="https://www.jstor.org/stable/j.ctvxrpz0q">JSTOR</a> <a href="https://www.amazon.com/How-Logic-Works-Users-Guide/dp/0691211957">Amazon</a> <a href="https://www.google.com/books/edition/_/e_DeDwAAQBAJ">Google Books</a></div>
 <div class="book-link-group"><span class="book-link-label">Adopt</span> <a href="https://press.princeton.edu/exam-desk-copies">Request exam copy</a></div>
 <div class="book-link-group"><span class="book-link-label">Resources</span> <a href="hlw-solutions.pdf">Solutions</a> <a href="hlw-key-terms.pdf">Key terms</a> <a href="hlw-errata.html">Errata</a> <a href="/logic-tools.html">Logic tools</a></div>
-<div class="book-link-group"><span class="book-link-label">Source</span> <a href="https://github.com/hhalvors/logic-works">GitHub</a></div>
-<div class="book-link-group"><span class="book-link-label">Money</span> <a href="money.html">Where does it go?</a></div>
-</div>
+<div class="book-link-group"><span class="book-link-label">Source</span> <a href="https://github.com/hhalvors/logic-works">GitHub</a></div></div>
 </div>
 </div>
 
 <div class="book-card">
 <div class="book-cover">
-<a href="https://doi.org/10.1017/9781316275603"><img src="https://assets.cambridge.org/97811071/10991/cover/9781107110991.jpg" alt="The Logic in Philosophy of Science cover"></a>
+<a href="https://doi.org/10.1017/9781316275603"><img src="https://books.google.com/books/content?id=mzCdDwAAQBAJ&printsec=frontcover&img=1&zoom=3" alt="The Logic in Philosophy of Science cover"></a>
 </div>
 <div class="book-info">
 <div class="book-title">The Logic in Philosophy of Science</div>
