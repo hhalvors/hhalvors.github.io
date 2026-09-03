@@ -1607,6 +1607,18 @@ h2.year-label {
   .intro-photo { border-color: #303030; }
 }
 
+/* A practical detail, not part of the intro's argument: sits just below it,
+   set small so it reads as a notice rather than a claim about the author. */
+.office-hours {
+  margin: 0.2rem 0 0;
+  font-size: 0.88rem;
+  color: #555;
+}
+
+@media (prefers-color-scheme: dark) {
+  .office-hours { color: #a0a0a0; }
+}
+
 /* Recordings are a different kind of link from a slide deck: give them their
    own colour so the talks page can be scanned for them. */
 .talk-link-video {

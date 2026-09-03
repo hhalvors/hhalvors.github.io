@@ -20,6 +20,11 @@ tradition](/dansk/) behind [Niels Bohr](/bohr/).
 
 </div>
 
+<!-- Dated on purpose. Office hours are the one thing on this page that
+     misleads rather than merely ages: an undated line sends a student to an
+     empty office. With the term named, a stale line is visibly stale. -->
+<p class="office-hours">Fall 2026 office hours: Wednesdays, 1:30–2:20 pm.</p>
+
 <div class="icon-links">
   <div><span class="icon"><i class="fa-solid fa-file-lines"></i></span> <a href="/publications.html">Publications</a></div>
   <div><span class="icon"><i class="fa-solid fa-book"></i></span> <a href="/books/">Books</a></div>
