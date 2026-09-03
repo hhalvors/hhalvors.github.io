@@ -392,16 +392,33 @@ main = hakyllWith config $ do
           >>= loadAndApplyTemplate "templates/course-base.html" ctx
           >>= relativizeUrls
 
--- phi 220
+-- ============================================================
+-- PHI 221 (Fall 2026) -- co-taught with Adam Elga
+-- ============================================================
 
-    match "courses/phi221_f2026/index.md" $ do
-      route $ setExtension "html"
-      compile $ do
-        ctx <- courseBaseCtx "courses/phi221_f2026" "home"
-        pandocCompiler
-          >>= loadAndApplyTemplate "templates/course-home.html" ctx
-          >>= loadAndApplyTemplate "templates/course-base.html" ctx
-          >>= relativizeUrls
+-- The syllabus lives in a Google Doc (owner adame@, shared read-to-anyone).
+-- The link Adam posted for students has the course number wrong -- phi220,
+-- not phi221 -- but it is already out, so that is the path that has to work.
+-- Keep this stub until the posted link is retired.
+    redirect "courses/phi220_f2026/index.html"
+      "https://docs.google.com/document/d/1wdZA4grfE7RSujaOHqF33q30R6AGFHb9W0OVFQjgPVo/edit"
+
+-- The same stub under the real course number, for anyone who types that.
+    redirect "courses/phi221_f2026/index.html"
+      "https://docs.google.com/document/d/1wdZA4grfE7RSujaOHqF33q30R6AGFHb9W0OVFQjgPVo/edit"
+
+-- Commented out because it collided with the phi221 redirect above: both
+-- route to courses/phi221_f2026/index.html. If a real course home page is
+-- ever added here, delete that redirect first, then restore this.
+--
+--  match "courses/phi221_f2026/index.md" $ do
+--    route $ setExtension "html"
+--    compile $ do
+--      ctx <- courseBaseCtx "courses/phi221_f2026" "home"
+--      pandocCompiler
+--        >>= loadAndApplyTemplate "templates/course-home.html" ctx
+--        >>= loadAndApplyTemplate "templates/course-base.html" ctx
+--        >>= relativizeUrls
 
     -- ============================================================
 -- PHI 338 (Fall 2014) — legacy course: syllabus + lecture handouts
