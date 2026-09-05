@@ -280,6 +280,103 @@ Einstein visited Copenhagen, and the year after Eddington — Danish physicists
 appear simply to have accepted the theory.</p>
 <p>Item 1 is now the only gap: Google’s run of the journal skips vols 10–12, so
 Hansen’s 1912 lecture has to be ordered from KB. Everything else is in hand.</p>
+<h2 id="the-edition">The edition</h2>
+<p><strong>Five of the seven items now stand in both languages.</strong> Danish transcriptions
+were made from the images in September 2026; the English translations followed
+on 2026-09-05, made from <code>transcription.tex</code> and not from the scan.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Item</th>
+<th>Danish</th>
+<th>English</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Hansen 1912, pp. 251–281</td>
+<td>— not digitised</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Kroman 1915, pp. 1–30</td>
+<td>complete</td>
+<td>complete</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Holst, »Tidsproblemet«, pp. 1–13</td>
+<td>complete</td>
+<td>complete</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Walsøe, pp. 13–17</td>
+<td>complete</td>
+<td>complete</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Hansen 1916, pp. 18–29</td>
+<td>complete, <strong>embargoed</strong></td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Holst 1917, pp. 165–168</td>
+<td>complete</td>
+<td>complete</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Kroman 1917, pp. 192–205</td>
+<td>complete</td>
+<td>complete</td>
+</tr>
+</tbody>
+</table>
+<p>Each translation mirrors its transcription one-to-one: the same paragraphing,
+page breaks marked at the same joints, and the same number of emphasis runs and
+footnotes — 146, 14, 30, 8 and 42 runs respectively, matching the Danish
+exactly. Both redrawn figures (Michelson’s apparatus on Kroman’s p. 5, Fizeau’s
+on Holst’s p. 8) are carried over unchanged, their lettering being
+language-independent.</p>
+<p>The translations are diplomatic in the same sense the transcriptions are.
+Printer’s defects that survive translation are reproduced rather than repaired,
+and marked in a comment at the spot: Kroman’s comma-for-full-stop at 1915 p. 4,
+Walsøe’s doubled full stop after »(Kroman)« and his quotation on p. 13 that the
+printing never closes, Holst’s unpunctuated parenthetical at 1917 p. 166 and the
+»at« for »af« on his p. 167 that leaves the sentence without a subject, Kroman’s
+»sikkert!,« at 1917 p. 203. Defects that are purely orthographic — »maaa« for
+»maa«, the doubled e in »Atomeeksplosionerne« — cannot be carried into English
+and are noted instead.</p>
+<p>Three decisions worth recording, because they recur:</p>
+<ul>
+<li><strong>Letterspacing on proper names is not uniform across the debate, and the
+English follows the printing rather than regularising it.</strong> Kroman’s compositor
+spaces names; Holst’s does not, in either of his articles; Walsøe’s is
+inconsistent within a single page. So Einstein carries emphasis in Kroman and
+none in Holst, and that is the printing, not an oversight.</li>
+<li>Where a Danish adjectival suffix falls outside the spaced run
+(»’ske«) the English attaches its own suffix outside the run
+(»ian«); where the printing swallows the suffix into the run
+(»«, »«) the whole English form goes inside
+it.</li>
+<li>Holst quotes Maxwell’s <em>Matter and Motion</em> <strong>in Danish</strong> (»Tidsproblemet«
+p. 7). The English there is a rendering back from Holst’s Danish, not
+Maxwell’s own sentence, and is marked as such so that it is not quoted onward
+as Maxwell.</li>
+</ul>
+<p>One question the translation raised and could not settle: at 1917 p. 192 the
+body of <code>transcription.tex</code> sets »det ’ske Relativitetsprincip«
+while its own comment three lines below says the word is <em>not</em> letterspaced,
+and the file’s header note agrees with the comment. The translation follows the
+body, transcription.tex being the source of truth, and flags the disagreement
+in place. <strong>Only the page image settles it</strong>; if the image shows ordinary roman,
+the run should come out of both files.</p>
 <h2 id="høffdings-reply">Høffding’s reply</h2>
 <p><em>Relation som Kategori</em> (1921), §3d.δ »Den nye Relativitetsteori«, pp. 72–77,
 answers Kroman by name — the only place in this collection where two of its
@@ -371,13 +468,23 @@ Kroman offprints, Hansen’s 1912 offprint has a real call number: KB record
 Lægevidenskabelige Bibliotek, »Særtr. af Fys. Tidskr. 10. 6. Hefte«. That one
 can simply be ordered. (A second copy sits in the Særtrykssamlingen as
 <code>alma99122564603005763</code>, S. 251–281 — do not order that one.)</p>
-<p>Two practical notes for whoever starts. The scan is <strong>Antiqua, not Fraktur</strong>, so
-the Fraktur model is the wrong tool and the Google text layer will be better
-than usual — but still re-OCR per TRANSCRIPTION-PLAYBOOK.md §2. And this is the
-first material in the collection with real <strong>mathematics</strong> in it: Lorentz
-transformations, coordinate systems, and Kroman’s own algebra. The existing
-harness has never had to carry display formulas, so budget for that rather than
-discovering it at batch three.</p>
+<p>Two practical notes, written before the work began and both borne out. The scan
+is <strong>Antiqua, not Fraktur</strong>, so the Fraktur model is the wrong tool and the
+Google text layer is better than usual — but still re-OCR per
+TRANSCRIPTION-PLAYBOOK.md §2. And this is the first material in the collection
+with real <strong>mathematics</strong> in it: Lorentz transformations, coordinate systems,
+and Kroman’s own algebra. The 1915 article turned out to need built-up
+fractions inline, ten flush-right bare equation numbers set with <code>\tag*{}</code>
+rather than <code>\tag{}</code>, two braced two-column arrays, and — on p. 25 — Greek ν
+and italic <em>v</em> side by side in one formula, where the distinction carries the
+argument. Budget for that rather than discovering it at batch three.</p>
+<p>A caution that cost real time and will again: this scan’s <strong>JBIG2 compression
+drops hairlines</strong>. The rules of the inline fractions on Holst’s p. 8 are simply
+absent from the image, and had to be confirmed from a parallel »1/n« on the next
+page. Check any thin rule at a second resolution before concluding it is not
+there. The same face’s superscript 2 has a looped top and reads as a 3 at low
+resolution; it was checked arithmetically as well as at 600 dpi in both Kroman
+articles.</p>
 <h3 id="copyright-not-all-of-this-can-be-published-yet">Copyright — not all of this can be published yet</h3>
 <p>The collection’s usual assumption, that anything 19th-century is long out of
 copyright, does not hold here. Danish term is life plus seventy.</p>
@@ -412,9 +519,18 @@ copyright, does not hold here. Danish term is life plus seventy.</p>
 </tr>
 </tbody>
 </table>
-<p>So items 2, 3, 4, 6 and 7 can be transcribed and published now. Only items 1
-and 5, Hansen’s two contributions, are still in copyright, and only until the
-end of this year.</p>
+<p>So items 2, 3, 4, 6 and 7 can be transcribed and published now, and all five now
+are, in both languages. Only items 1 and 5, Hansen’s two contributions, are
+still in copyright, and only until the end of this year. Item 5 is transcribed
+and held: <code>\embargotrue</code> in its preamble prints a “READING COPY — NOT FOR
+CIRCULATION” box, and a line under <strong>EMBARGOED TEXTS</strong> in the root <code>.gitignore</code>
+keeps it off git. It has deliberately <em>not</em> been translated, since a translation
+would only be a second file to hold. Transcribing them now is fine; publishing
+them is not, and the debate can go up complete at the new year — at which point
+the two things to undo are the <code>\embargotrue</code> and the <code>.gitignore</code> block, and
+the thing to add is a translation of item 5.</p>
+<p>This is worth deciding deliberately, since it is also the first time this
+collection would carry a 20th-century text whose author’s term has not run.</p>
 <p>Walsøe took some finding, because the article is a dead end: the byline is bare
 »Af / C. E. Walsøe.«, with no title, affiliation, town or dateline anywhere, and
 the *) on its title turns out to be the Redaktion’s own disclaimer that the
@@ -429,12 +545,13 @@ gamle Kristentro. Et Forsøg paa en principiel Orientering« (1938) and »De tre
 Planer. Legeme, Sjæl, Aand.« (1947). A polytechnically trained engineer writing
 on the boundary between the new physics and religious conviction is exactly the
 author of a 1916 piece called »Omkring Videnskabens Grænse«, and exactly the
-contributor a physics journal’s editors would disclaim. Transcribing them now is fine; publishing them is not, and
-the debate can go up complete at the new year. Worth deciding deliberately,
-since it is also the first time this collection would carry a 20th-century text
-whose author’s term has not run.</p>
+contributor a physics journal’s editors would disclaim.</p>
 <h2 id="open-questions">Open questions</h2>
 <ul>
+<li><strong>One emphasis run at 1917 p. 192</strong>, where <code>transcription.tex</code>’s body and its
+own comment disagree about whether »Einstein’ske« is letterspaced. Settled
+only by the image; see The edition above. Everything else in the five
+translated articles is image-verified.</li>
 <li><strong>Does Kroman answer Høffding?</strong> Høffding’s reply is 1921 and Kroman lived to
 1925, but the <em>Fysisk Tidsskrift</em> debate had closed in 1917. Whether he
 responded anywhere — the 1920 <em>Matematikken og Erkendelseslæren</em> is the
