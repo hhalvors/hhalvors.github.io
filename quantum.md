@@ -6,9 +6,41 @@ author: "Hans Halvorson"
 Students ask me a few times a year what to read on the foundations of
 quantum mechanics. This is the answer I give, written out.
 
-A warning about it. The reading list that most philosophers of physics
-carry around was fixed in the 1990s, and I am one of the people
-carrying it. It is very good on some things --- it is the reason any of
+Two problems have organized the subject, and a great deal is gained by
+keeping them apart.
+
+The **measurement problem** is that the dynamics of the theory is
+linear, so it assigns superpositions to everything it is applied to ---
+including measuring devices, and including the people who read them ---
+while experiments have single definite outcomes. Something in the
+standard presentation has to give, and the interesting question is
+what. Maudlin's trilemma, below, is the sharpest statement of the
+options.
+
+**Nonlocality** is the second, and it is a different kind of problem.
+Bell proved in 1964 that no theory assigning each system its own local
+properties can reproduce the correlations quantum mechanics predicts,
+and the experiments have since been done. This is not something an
+interpretation solves; it is a constraint every interpretation has to
+live with. Bohm's theory answers the measurement problem completely and
+is flagrantly nonlocal, which is the quickest way to see that the two
+questions come apart. Running them together is the most common mistake
+in the popular literature and not unknown in the professional
+literature.
+
+Underneath the second sits **entanglement**, which is the phenomenon
+rather than the problem. Bell nonlocality is something we have learned
+about entangled states; it is not the same thing as entanglement, and
+most of what is philosophically interesting about entanglement survives
+whether or not a given state violates a Bell inequality. It gets a
+section of its own, and it comes first, because it does so both
+historically and conceptually.
+
+Nearly everything below is a response to one or the other.
+
+A warning about all of it. The reading list that most philosophers of
+physics carry around was fixed in the 1990s, and I am one of the
+people carrying it. It is very good on some things --- it is the reason any of
 us take the measurement problem seriously --- and it has a distortion
 built into its foundations, which is that it treats the physicists who
 actually created quantum mechanics as having had nothing to say. That
@@ -16,25 +48,25 @@ is false, and the books that say it are the ones students read first.
 So this guide is organized by question rather than by author, and where
 a standard book is unreliable I say so and say why.
 
-Each entry is tagged with what it assumes. *No physics* means no
-physics. *Some QM* means one undergraduate course. *Serious QM* means
-you have solved problems. *Mathematical* means functional analysis, or
-the willingness to acquire it.
-
-## If you read three things
-
-Read Albert for the problem, Howard for the history, and one good
-survey of where the field is now --- Barrett if you are a philosopher,
-Norsen or Tumulka if you are a physicist. That is enough to write a
-thesis around. Everything below is elaboration.
+Each entry is tagged with what it assumes. *No physics* means none is
+needed and none is smuggled in. *No prior QM* is different and worth
+distinguishing: the book starts from nothing but still builds the
+formalism, so you will be manipulating vectors and operators whether or
+not you have ever taken a physics course. *Some QM* means one
+undergraduate course. *Serious QM* means you have solved problems.
+*Mathematical* means functional analysis, or the willingness to acquire
+it.
 
 ## The measurement problem
 
 **David Albert, *Quantum Mechanics and Experience*** (Harvard,
-1992) --- *no physics.* Still the book that puts the measurement
+1992) --- *no prior QM.* Still the book that puts the measurement
 problem at the center and refuses to let you look away from it, and
 still the best short treatment of Bohm and of GRW in print. Read it
-first. Then read it critically: it is unreliable as history, it is
+first --- but do not mistake "assumes no physics" for "easy." Albert
+builds the Hilbert space formalism from nothing, and in my experience
+readers who have never manipulated a vector do not get through it.
+Then read it critically: it is unreliable as history, it is
 fully committed to a picture of "the Copenhagen interpretation" that
 historians have since dismantled (see the next section), its chapter on
 many worlds gives Albert's own reading of a view that has been
@@ -106,6 +138,401 @@ treating non-relativistic QM as the whole story, which is a real defect
 of the philosophical literature. Snoke argues for a collapse variant;
 discount accordingly.
 
+## Entanglement
+
+**Read Schrödinger, who named it.** "Discussion of probability
+relations between separated systems," *Proceedings of the Cambridge
+Philosophical Society* 31 (1935): 555--563 --- *some QM.* Freely
+available, and the opening pages are readable by an undergraduate. This
+is where the word enters English, and where the verdict is delivered
+that entanglement is "not *one* but rather *the* characteristic trait
+of quantum mechanics, the one that enforces its entire departure from
+classical lines of thought." The 1936 sequel, in volume 32 at 446--452,
+proves the steering theorem: a distant experimenter can steer the
+remote system into any ensemble compatible with its reduced state. That
+is the sharpest early statement of what is strange about entanglement
+*independent of any locality argument*, and it is thirty years before
+Bell. The cat paper of the same year is "Die gegenwärtige Situation in
+der Quantenmechanik"; the standard English translation is John
+Trimmer's, in *Proceedings of the American Philosophical Society* 124
+(1980): 323--338, also free. The cat occupies one paragraph of it and
+entanglement occupies the serious part.
+
+**Entanglement is not Bell nonlocality.** Students almost always
+conflate these, and most introductory treatments let them. The
+technical fact that separates them is Reinhard Werner's construction in
+*Physical Review A* 40 (1989): 4277--4281, of mixed states that are
+provably not separable --- they cannot be written as a mixture of
+product states, so they are entangled on the only principled definition
+--- and yet whose statistics for projective measurements are reproduced
+by an explicit local hidden-variable model, so that they violate no
+Bell inequality. Entanglement is a structural property of the state;
+Bell nonlocality is an operational property of a correlation table. The
+metaphysics is therefore logically prior to, and survives the failure
+of, any argument from Bell violation. Worth knowing that the *Stanford
+Encyclopedia* article on entanglement does not draw this distinction.
+
+### Holism and nonseparability
+
+The oldest philosophical question about entanglement, and still the
+best one: does the whole have properties that fail to supervene on the
+properties of its parts?
+
+**Paul Teller, "Relational holism and quantum mechanics,"** *British
+Journal for the Philosophy of Science* 37 (1986): 71--81 --- *some QM.*
+Where the question starts. Teller's proposal is that there are inherent
+relations between particles that do not supervene on the non-relational
+properties of the relata.
+
+**Richard Healey, "Holism and nonseparability,"** *Journal of
+Philosophy* 88 (1991): 393--421 --- *some QM.* Establishes the
+vocabulary everyone now uses, and shows that property holism and
+spatiotemporal nonseparability come apart.
+
+**Healey and Henrique Gomes, "Holism and nonseparability in physics,"**
+*Stanford Encyclopedia of Philosophy* --- *no physics.* Free, and the
+best entry point on this whole question. Unlike the entanglement
+article, it keeps holism, nonseparability and Bell violation distinct.
+
+**Don Howard, "Holism, separability, and the metaphysical implications
+of the Bell experiments,"** in Cushing and McMullin, eds.,
+*Philosophical Consequences of Quantum Theory* (Notre Dame, 1989),
+224--253 --- *some QM.* The companion to his Einstein paper in the next
+section. Despite the title, this is a paper about separability.
+
+**Michael Esfeld, "Quantum entanglement and a metaphysics of
+relations,"** *Studies in History and Philosophy of Modern Physics* 35
+(2004): 601--617 --- *some QM.* Argues that entangled systems have
+their state-dependent properties only *as* relations, with no
+underlying intrinsic properties needed to ground them. The book-length
+version is *Holism in Philosophy of Mind and Philosophy of Physics*
+(Kluwer, 2001).
+
+**Michael Seevinck, "Holism, physical theories and quantum
+mechanics,"** *Studies in History and Philosophy of Modern Physics* 35
+(2004): 693--712 --- *some QM.* Free on the arXiv. Proposes an
+epistemological criterion for holism --- a theory is holistic if global
+properties cannot in principle be inferred from local operations plus
+classical communication --- and shows quantum mechanics comes out
+holistic even for unentangled states. A useful shock.
+
+**Elizabeth Miller, "Quantum holism,"** *Philosophy Compass* 11 (2016):
+507--514, and **"Two notions of holism,"** *Synthese* 197 (2020):
+4187--4206 --- *some QM.* The first is the best short orientation. The
+second is the sceptical foil: the quick argument from entangled states
+to non-supervenient whole-level properties equivocates, and the dispute
+is better recast as the general reductive-versus-non-reductive dispute
+in metaphysics. Read it before you commit to a holist thesis.
+
+### The recent metaphysics
+
+There has been a good deal of activity here, and much of it is
+accessible to a student with no physics beyond the formalism of the
+two-particle singlet state.
+
+**The *Synthese* special issue on the metaphysics of entanglement,**
+volume 197, issue 10 (2020), edited by George Darby, is the single best
+place to start. Eight papers, and they talk to each other. The lead
+article is **Jenann Ismael and Jonathan Schaffer, "Quantum holism:
+nonseparability as common ground"** (4131--4160), which is free on
+Schaffer's website and unusually well written: nonseparability is
+explained on the model of common-cause explanation, with entangled
+entities as scattered reflections of a more unified underlying reality.
+Also in the issue: Healey on a pragmatist view of the metaphysics of
+entanglement, Wallace on what realistic physics should teach
+metaphysicians, Miller's "Two notions" above, and Ney on the
+macro-object problem.
+
+**What kind of relation is entanglement?** This is the liveliest
+current dispute and it is genuinely three-sided. Claudio Calosi and
+Matteo Morganti, "Interpreting quantum entanglement: steps towards
+coherentist quantum mechanics," *British Journal for the Philosophy of
+Science* 72 (2021): 865--891, propose *coherentism*: entangled systems
+stand in symmetric relations of ontological dependence, which is
+neither whole-before-parts holism nor relations-without-relata
+structuralism. Enrico Cinti, Alberto Corti and Marco Sanchioni, "On
+entanglement as a relation," *European Journal for Philosophy of
+Science* 12 (2022): 10, argue it is an *external* relation among
+degrees of freedom, fully determined by mutual information --- so the
+metaphysics should be read off a quantitative entanglement measure.
+Matías Pasqualini, "Quantum entanglement, internality and dependence,"
+*European Journal for Philosophy of Science* 16 (2026): 30, replies
+that it is *internal*, on a Finean essence-based analysis rather than a
+supervenience-on-intrinsics one, and that the internal reading stays
+neutral between the metaphysical options. Three papers, one argument,
+all recent: a very good thesis topic.
+
+**Isaac Wilhelm, "Intrinsicality and entanglement,"** *Mind* 131
+(2022): 35--58 --- *some QM.* Free preprint on PhilSci-Archive.
+Valuable partly because Wilhelm is not a philosopher of physics: he
+shows that the Langton--Lewis account of intrinsicality classifies
+certain properties of entangled particles as intrinsic, while plausible
+duplication principles reclassify them as extrinsic. A dilemma for
+Lewis's program generated from quantum mechanics.
+
+**What counts as a part?** Matías Pasqualini and Sebastian Fortin,
+"Towards a tensor product structure-grounded mereology," *Entropy* 28
+(2026): 627 --- *mathematical*, open access. Whether a state is
+entangled depends on a choice of tensor factorization, and the space of
+such factorizations has no canonical meet, so quantum parthood turns
+out non-extensional and decomposition-relative. This is a problem for
+anyone who wants entanglement to be a mind-independent relation between
+antecedently fixed relata, and it has not been absorbed by the
+metaphysics literature above.
+
+**Humeanism.** Entanglement is standard-issue evidence against Humean
+supervenience. Harjit Bhogal and Zee Perry, "What the Humean should say
+about entanglement," *Noûs* 51 (2017): 74--94, is the reply the later
+debate presupposes; Eddy Keming Chen, "From time asymmetry to quantum
+entanglement: the Humean unification," *Noûs* 56 (2022): 227--255, free
+on the arXiv, folds the Past Hypothesis and the quantum state into the
+best system together.
+
+**Alyssa Ney, *The World in the Wave Function: A Metaphysics for
+Quantum Physics*** (Oxford, 2021) --- *some QM.* The fullest recent
+statement of wave function realism, and entanglement is what drives it:
+Ney's argument is that moving to a field on a high-dimensional space
+lets you recover separability and locality, which she treats as
+theoretical virtues that the primitive-ontology and structuralist
+rivals must surrender. David Wallace's review in *Philosophical Review*
+131 (2022): 528--532, free on his website, is the sharpest response.
+Ney's own "Three arguments for wave function realism," *European
+Journal for Philosophy of Science* 13 (2023): 50, is open access,
+concessive about which arguments actually work, and the better
+assignment if you want one article rather than a book.
+
+### Entanglement entropy, and spacetime
+
+Two recent papers, both open access in *Philosophy of Physics*, on what
+is probably the most-hyped and least-examined claim in the area.
+
+**Emily Adlam, "How are entanglement entropies related to entropy
+bounds?"** *Philosophy of Physics* 2 (2024): 9 --- *serious QM.* The
+only serious philosophical treatment of entanglement entropy I know.
+Asks whether a universal entropy bound is epistemic or ontological in
+origin, and argues that area laws favour the epistemic reading.
+
+**Rasmus Jaksland, "Spacetime from entanglement: the emergence of
+metric, gravity, or topology,"** *Philosophy of Physics* 3 (2025): 16
+--- *serious QM.* A corrective to the slogan, by someone who had
+previously argued for a strong version of it. The claim that spacetime
+emerges from entanglement conflates three different claims --- about
+the bulk metric, about gravitational dynamics, and about topological
+connectivity --- and determination fails for all three, while novelty
+holds only for the second. A metric emerging from a metric is not
+emergence. His earlier "Entanglement as the world-making relation,"
+*Synthese* 198 (2020): 9661--9693, is the strong version being
+retracted, and the two make an instructive pair.
+
+There is, as far as I know, no book-length philosophical treatment of
+entanglement as such --- as distinct from books on Bell's theorem. The
+nearest is Bokulich and Jaeger, eds., *Philosophy of Quantum
+Information and Entanglement* (Cambridge, 2010). That gap is itself
+worth noticing.
+
+## Nonlocality
+
+Quantum nonlocality as a precise, quantifiable property of models was
+born with Bell's theorem in 1964. The underlying phenomenon of
+entanglement had been identified thirty years earlier by Schrödinger
+and by Bohr, and was what Einstein, Podolsky and Rosen were exploiting.
+More has been established here than anywhere else in the subject: this
+is the one place where a philosophical dispute produced a theorem, the
+theorem produced experiments, and the experiments were decisive.
+
+**Read Bell himself first.** *Speakable and Unspeakable in Quantum
+Mechanics*, 2nd ed. (Cambridge, 2004), with an introduction by Alain
+Aspect --- *some QM.* Bell writes better than almost anyone in the
+field and the papers are short. Two in particular. "Bertlmann's socks
+and the nature of reality" (1981) is his own entirely non-technical
+explanation of why the correlations cannot be explained the way
+Bertlmann's mismatched socks can; it is freely available, and it is the
+best single thing to hand a student. "La nouvelle cuisine" (1990) is
+his last and most careful statement, where he defines *local beables*
+and gives the light-cone formulation of local causality. If you are
+going to argue about what Bell proved, argue about that paper and not
+about a textbook paraphrase of it. Travis Norsen, "John S. Bell's
+concept of local causality," *American Journal of Physics* 79 (2011):
+1261--1275, is a line-by-line reconstruction of it pitched at physics
+undergraduates.
+
+### What the theorem actually shows
+
+You will constantly read that Bell refuted "local realism," and that we
+may therefore keep locality by giving up realism. A large part of the
+literature holds that this is a mistake, and the argument is worth
+following closely, because it is a case where getting the logic of a
+theorem right changes the metaphysics.
+
+The case against the phrase: Bell's theorem is the second half of a
+two-part argument whose first half is EPR. Given the perfect
+anticorrelations, locality *entails* the determinate values --- so
+those values are a conclusion, not a premise, and there is no separate
+"realism" assumption available to jettison. What is refuted is
+locality, full stop.
+
+**Travis Norsen, "Against 'realism',"** *Foundations of Physics* 37
+(2007): 311--340 --- *some QM.* Free on the arXiv. Goes through every
+candidate meaning of "realism" in the phrase --- naive realism,
+scientific realism, counterfactual definiteness, hidden variables,
+determinism --- and shows each fails as a reading of the second
+premise. Concludes that the phrase should be retired.
+
+**Tim Maudlin, "What Bell did,"** *Journal of Physics A* 47 (2014):
+424010 --- *some QM.* Free on the arXiv. The sharpest statement of the
+two-part argument, from the special issue marking fifty years of the
+theorem.
+
+**The other side, in the same issue.** Reinhard Werner's "Comment on
+'What Bell did'" (424011) and Maudlin's reply (424012); and Marek
+Żukowski and Časlav Brukner, "Quantum non-locality --- it ain't
+necessarily so" (424009). Werner and Żukowski--Brukner both hold that
+every derivation smuggles in a second premise, so that one may keep
+locality and drop classicality instead; on Werner's operational
+definition of locality --- local operations do not disturb distant
+states, only an observer's conditional probabilities --- quantum
+mechanics comes out perfectly local. Read the exchange rather than
+either side alone. Much of the disagreement is about whether the EPR
+step is sound, and much of the rest is about whether "local" should be
+defined causally, as Bell defined it, or operationally as no-signalling
+--- with each side convinced the other has quietly changed the subject.
+
+**Howard Wiseman, "The two Bell's theorems of John Bell,"** *J. Phys.
+A* 47 (2014): 424001 --- *some QM.* Free on the arXiv. Distinguishes
+Bell's 1964 theorem, which assumes determinism plus parameter
+independence, from his 1976 theorem, which assumes local causality
+alone, and argues the two license different conclusions. The most
+useful diagnosis of why the parties talk past each other.
+
+### Parameter independence and outcome independence
+
+Bell's factorizability condition is the conjunction of two logically
+independent conditions, and a student who does not have this
+distinction will misread most of the literature. **Parameter
+independence** says the probability of an outcome on one wing does not
+depend on the setting chosen on the far wing. **Outcome independence**
+says that, given the settings and the hidden state, the two outcomes
+are probabilistically independent of each other.
+
+The distinction is diagnostic. Bohm's theory violates parameter
+independence; GRW-type collapse theories, and orthodox quantum
+mechanics as usually read, violate outcome independence. The two sit
+quite differently with respect to relativity, which is the origin of
+Shimony's phrase "peaceful coexistence." The decomposition is due to
+Jon Jarrett, "On the physical significance of the locality conditions
+in the Bell arguments," *Noûs* 18 (1984): 569--589, with the now-standard
+terminology from Abner Shimony. One caveat specialists insist on:
+parameter independence is *not* equivalent to no-signalling. Bohmian
+mechanics violates it and still cannot signal, because the hidden state
+is not controllable. For the argument that reading Bell through
+Jarrett's decomposition distorts him, see Travis Norsen, "Local
+causality and completeness: Bell vs. Jarrett," *Foundations of Physics*
+39 (2009): 273--294.
+
+### What Einstein actually argued
+
+Not that quantum mechanics was spooky. "Spooky action at a distance" is
+a phrase from a 1947 letter to Born, not a summary of an argument, and
+Einstein disliked the EPR paper itself --- Podolsky drafted it, and
+Einstein complained to Schrödinger that the main point had been buried
+by the erudition.
+
+**Don Howard, "Einstein on locality and separability,"** *Studies in
+History and Philosophy of Science* 16 (1985): 171--201 --- *no
+physics.* Freely available. Separates two principles the popular story
+fuses. *Separability*: spatially separated systems each have their own
+real state, and the joint state is fixed by them --- which is what
+makes it possible to individuate systems at all, and which Einstein
+took to be a precondition of any field theory. *Locality*: those states
+change only through effects propagating subluminally. Howard's case is
+that Einstein's fundamental objection was to giving up separability,
+and that his later and cleaner versions of the argument make this
+visible. The dilemma Einstein posed was: either quantum mechanics is
+incomplete, or separability fails.
+
+### Does it conflict with relativity?
+
+**Tim Maudlin, *Quantum Non-Locality and Relativity*** 3rd ed.
+(Wiley-Blackwell, 2011) --- *some QM.* The standard book on the
+question, and the best thing Maudlin has written. He argues that Bell
+establishes genuine superluminal causal dependence, then asks with
+unusual care what relativity actually forbids, taking the candidate
+prohibitions one at a time: superluminal signalling, superluminal
+information, superluminal causation, Lorentz invariance of the
+dynamics. The conclusion is that nonlocality and relativity are in
+tension but not in contradiction, since what is strictly forbidden is
+signalling, and quantum correlations deliver none. The third edition
+adds a chapter on Tumulka's relativistic flash model, which violates
+Bell's inequality without a preferred foliation, and on the
+Conway--Kochen free will theorem. It teaches the relativity it needs
+from scratch.
+
+### The experiments
+
+Aspect, Dalibard and Roger, "Experimental test of Bell's inequalities
+using time-varying analyzers," *Physical Review Letters* 49 (1982):
+1804--1807, is the one everybody cites. The loopholes it left were
+closed in 2015 by three independent experiments --- Hensen et al. in
+*Nature* 526: 682--686, using electron spins in diamond separated by
+1.3 km, and Giustina et al. and Shalm et al., both in *Physical Review
+Letters* 115 (250401 and 250402). The 2022 Nobel Prize went to Aspect,
+Clauser and Zeilinger for this work. Since then, Storz et al., *Nature*
+617 (2023): 265--270, have done a loophole-free test with
+superconducting circuits, which matters because the systems are
+massive. The freedom-of-choice loophole has been attacked from the
+other direction by the cosmic Bell tests, which take their measurement
+settings from starlight and from high-redshift quasars.
+
+### Nonlocality or non-classical probability?
+
+Bell's inequality is a consequence of classical probability theory, so
+one might conclude that what its violation shows is that classical
+probability is false, and that locality survives. Arthur Fine and
+Itamar Pitowsky pursued this. Fine's theorem --- "Hidden variables,
+joint probability, and the Bell inequalities," *Physical Review
+Letters* 48 (1982): 291--295 --- establishes that a deterministic
+hidden-variable model exists, a joint distribution over the four
+observables exists, and the inequalities hold, are all equivalent
+conditions. Pitowsky, in *Quantum Probability --- Quantum Logic*
+(Springer, 1989) and more accessibly in "George Boole's 'conditions of
+possible experience' and the quantum puzzle," *British Journal for the
+Philosophy of Science* 45 (1994): 95--125, showed that Bell-type
+inequalities are instances of Boole's conditions of possible
+experience, which makes the geometry of the situation vivid.
+
+The line is still contested. For the best recent argument against it,
+see Márton Gömöri and Carl Hoefer, "Classicality and Bell's theorem,"
+*European Journal for Philosophy of Science* 13 (2023): 45 --- open
+access --- who argue that probabilistic classicality is not an
+independent premise of the theorem but a corollary of locality together
+with the standard auxiliary assumptions, so that it cannot be isolated
+as the culprit in order to rescue locality. Read with Fine, this makes
+a self-contained unit.
+
+### One thing to stop saying
+
+It is often said that a particle can be in two places at once. Quantum
+mechanics does not say this. It says that two systems can behave in
+ways that are hard to explain by treating them as separate individuals,
+which is a different and more interesting claim.
+
+### Surveys
+
+Myrvold, Genovese and Shimony, "Bell's theorem," in the *Stanford
+Encyclopedia of Philosophy*, is free, current and much more careful
+about all of the above than the older literature --- it is explicit
+that calling Bell violations a refutation of "local realism" is "true
+but misleading." Mary Bell and Shan Gao, eds., *Quantum Nonlocality and
+Reality* (Cambridge, 2016), is the best place to watch specialists
+disagree in one volume. Nicolas Gisin, *Quantum Chance* (Springer,
+2014), is about 120 pages by a leading experimentalist and is the most
+accessible thing here. For the physics, Brunner, Cavalcanti, Pironio,
+Scarani and Wehner, "Bell nonlocality," *Reviews of Modern Physics* 86
+(2014): 419--478, free on the arXiv, is the standard review, organized
+around nonlocality as a resource rather than around the conceptual
+disputes; Scarani's book, in the mathematical section below, is the
+gentler route into the same material.
+
 ## What Bohr actually said
 
 This is the section the standard reading list does not have, and the
@@ -175,6 +602,24 @@ Modern Physics* 49 (2015): 73--83 --- *some QM.* Freely available.
 Answers the standard objection that decoherence refutes Bohr's doctrine
 of classical concepts, by showing the doctrine was epistemological
 rather than dynamical all along.
+
+**Jeffrey Bub, "There is no quantum world"** (arXiv 2512.18400) ---
+*some QM.* Fifteen pages, free, and the most interesting recent attempt
+to state Bohr's position in terms a modern reader can actually
+evaluate. Bub takes Bohr's notorious remark as a thesis rather than an
+embarrassment, and reads "classical" as meaning *Boolean*: the move to
+quantum mechanics replaces a single Boolean algebra of propositions
+with a family of intertwined Boolean frames that cannot be embedded in
+any one of them --- which is exactly what Gleason and Kochen and
+Specker establish. So "there is no quantum world" becomes a structural
+claim about the impossibility of a global assignment of truth values,
+rather than instrumentalism or an appeal to observers, and the
+Heisenberg cut comes out movable: nothing is permanently divided into a
+classical part and a quantum part. The measurement problem is then not
+solved but deflated, as a consequence of non-Booleanity rather than a
+defect to be repaired. Bub also retracts a position he held for thirty
+years, which is worth watching someone do. Forthcoming in Faye and
+Johansson, eds., *How to Understand Quantum Mechanics*.
 
 **Guido Bacciagaluppi and Antony Valentini, *Quantum Theory at the
 Crossroads: Reconsidering the 1927 Solvay Conference*** (Cambridge,
@@ -333,9 +778,11 @@ with QBism, and is more carefully argued than any of them.
 
 **Wavefunction realism.** The wavefunction is a real thing, living in a
 very high-dimensional space. Developed by Alyssa Ney and defended by
-Carroll; see Ney and Albert, eds., *The Wave Function* (Oxford, 2013).
-I have argued against it in print, in "To be a realist about quantum
-theory" --- see [publications](/publications.html).
+Carroll; the anthology is Ney and Albert, eds., *The Wave Function*
+(Oxford, 2013), and Ney's own book is discussed in the entanglement
+section above, since entanglement is what motivates the view. I have
+argued against it in print, in "To be a realist about quantum theory"
+--- see [publications](/publications.html).
 
 **Wigner's friend, revived.** Daniela Frauchiger and Renato Renner,
 "Quantum theory cannot consistently describe the use of itself,"
@@ -384,12 +831,20 @@ locality conditions that the subsequent literature runs on was
 substantially fixed here.
 
 **Jeffrey Bub, *Interpreting the Quantum World*** (Cambridge, 1997) ---
-*mathematical.* Classifies no-collapse interpretations by which
-observable they take to be determinate, and proves a uniqueness result
-about the options. The right way to see that the interpretations form a
-structured space rather than a list. *Bananaworld* (Oxford, 2016) is
-the same author making the information-theoretic case with the algebra
-quarantined in marked sections.
+*mathematical.* Underrated, and the book I would most like students to
+know about. Bub proves a uniqueness theorem: subject to the constraints
+the no-go theorems impose, every no-collapse interpretation can be
+constructed by a single recipe with one free parameter --- the choice
+of which observable is taken to be determinate. Bohm's theory, the
+modal interpretations and Bohr's complementarity then fall out as
+values of that parameter. This is far better than the usual list of
+rival positions, because it shows the interpretations to form a
+structured space, and it tells you what you are choosing when you
+choose one. Worth noticing that Bohr is already inside the theorem in
+1997, so the recent reconsideration above is a change of register
+rather than a conversion. *Bananaworld* (Oxford, 2016) is the same
+author making the information-theoretic case, with the algebra
+quarantined in marked sections at the ends of chapters.
 
 **Budroni, Cabello, Gühne, Kleinmann and Larsson, "Kochen--Specker
 contextuality,"** *Reviews of Modern Physics* 94 (2022): 045007 ---
@@ -442,28 +897,6 @@ relevance logic, and whether the frequently noticed parallels between
 quantum mechanics and intuitionistic logic can be made into a rigorous
 correspondence.
 
-## Nonlocality, and what it is not
-
-Quantum nonlocality as a quantifiable property of models was born with
-Bell's theorem in 1964. The underlying phenomenon of entanglement had
-been identified thirty years earlier by Schrödinger and by Bohr, and
-was what Einstein, Podolsky and Rosen were exploiting.
-
-**John Bell, *Speakable and Unspeakable in Quantum Mechanics*** 2nd ed.
-(Cambridge, 2004) --- *some QM.* Read the papers themselves. They are
-short, and Bell writes better than almost anyone in the field.
-
-Two things to be careful about. First, it is often said that a particle
-can be in two places at once. Quantum mechanics does not say this. It
-says that two systems can behave in ways that are hard to explain by
-treating them as separate individuals, which is a different and more
-interesting claim. Second, Bell's inequality is a consequence of
-classical probability theory, so one might conclude that its violation
-shows classical probability to be false --- a line pursued by Fine and
-by Pitowsky in the 1970s and 80s. Others insist the result is about
-locality and not about probability at all. The dispute is not settled,
-and is worth more attention than it gets.
-
 ## Decoherence
 
 Physics students will meet decoherence and be told it solves the
@@ -500,6 +933,12 @@ fair hearing.
 **Philip Ball, *Beyond Weird*** (Chicago, 2018). The best prose, and
 historically careful, though the information-theoretic framing is a
 thesis rather than a neutral frame.
+
+**Tanya Bub and Jeffrey Bub, *Totally Random*** (Princeton, 2018). An
+actual comic --- hand-drawn, 250-odd pages --- and it contains the
+clearest proof of Bell's theorem I have seen given without mathematics.
+The main narrative sits below the level of a thesis student, but the
+endnotes carry real content and are where the value is.
 
 **Jim Baggott and John Heilbron, *Quantum Drama*** (Oxford, 2024). The
 history done by people who read the sources. The corrective to Becker.
