@@ -1664,7 +1664,22 @@ h2.year-label {
   gap: 0.35rem;
 }
 
-.dt-work-notes-label {
+/* Badge row beside an author's bio — essays reached via about-authors:
+   rather than any one work's about:. Same badges, placed a beat earlier.
+   Sits close under the bio it belongs to (small top margin) and is capped
+   by its own rule before the works list, so it doesn't read as attached to
+   whichever work happens to come first. */
+.dt-author-notes {
+  margin: 0.15rem 0 1.4rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.dt-notes-label {
   font-size: 0.72rem;
   color: #999;
   letter-spacing: 0.02em;

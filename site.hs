@@ -874,6 +874,19 @@ main = hakyllWith config $ do
                 >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
                 >>= relativizeUrls
 
+    -- Quantum foundations: the reading guide students actually ask for.
+    -- Plain pandocCompiler on purpose -- it used to carry a
+    -- bibliography: irrational.bib front-matter field, but
+    -- myPandocBiblioCompiler hardcodes bib/bibliography.bib, and a
+    -- reading list reads better with the citations in the prose anyway.
+    match "quantum.md" $ do
+        route $ customRoute (const "quantum.html")
+        compile $ do
+            pandocCompiler
+                >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Foundations of quantum mechanics" `mappend` siteCtx)
+                >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+                >>= relativizeUrls
+
     match "natives.md" $ do
         route $ customRoute (const "natives.html")
         compile $ do

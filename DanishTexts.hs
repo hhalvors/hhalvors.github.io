@@ -19,7 +19,8 @@ import qualified Text.Blaze.Html5.Attributes as A
 import qualified Text.Blaze.Html.Renderer.String as R
 
 import DanishNotes (NoteIndex, CatalogFacts(..), Target(..),
-                    notesForWork, renderNoteLinks)
+                    notesForWork, renderNoteLinks,
+                    notesForAuthor, renderAuthorNoteLinks)
 
 ------------------------------------------------------------------------
 -- Data types
@@ -412,6 +413,7 @@ renderAuthor idx a =
       H.span H.! A.class_ "dt-author-dates"
              $ H.toHtml (" (" ++ authorDates a ++ ")")
     H.p H.! A.class_ "dt-author-bio" $ H.toHtml (authorBio a)
+    renderAuthorNoteLinks (notesForAuthor (authorId a) idx)
     mapM_ (renderWork idx (authorId a)) (works a)
     case authorModernEditions a of
       Just es | not (null es) -> do
