@@ -885,11 +885,30 @@ argued against it but that Putnam eventually decided it was misguided.
 My own view is that the current consensus is right: nothing in quantum
 mechanics bears directly on the laws of classical logic. But the
 consensus has not always been that, and the question has recently
-reopened --- see Tim Maudlin, "The tale of quantum logic" (2005), Saul
-Kripke, "The question of logic," *Mind* 133 (2023), and Timothy
-Williamson, "Alternative logics and applied mathematics,"
-*Philosophical Issues* 28 (2018). For the formal subject without the
-drama, Peter Gibbins, *Particles and Paradoxes* (Cambridge, 1987).
+reopened --- see Saul Kripke, "The question of logic," *Mind* 133
+(2023), and Timothy Williamson, "Alternative logics and applied
+mathematics," *Philosophical Issues* 28 (2018).
+
+**Tim Maudlin has written on this twice, and the later piece is the
+better one.** "The tale of quantum logic" (2005) is the well-known
+polemic. "The labyrinth of quantum logic," in Conant and Chakraborty,
+eds., *Engaging Putnam* (De Gruyter, 2022), 183--206, follows Putnam's
+whole forty-year trajectory --- from holding that a revision of
+classical logic would dissolve both the measurement problem and the
+two-slit phenomena, to abandoning quantum logic altogether in favour of
+theories using ordinary logic and probability. The moral Maudlin draws
+is general, and is the reason to assign it: trying to solve a physical
+problem by revising the mathematics or the logic is a strategy that
+tends not to work, and Putnam's own change of mind is the best evidence
+for that.
+
+**Peter Gibbins, *Particles and Paradoxes: The Limits of Quantum
+Logic*** (Cambridge, 1987) --- *mathematical.* The formal subject
+without the drama, and much the best book on quantum logic for a
+philosopher: 181 pages, scrupulous about which claims are theorems and
+which are interpretation, and unusual in taking the technical
+literature and the philosophical dispute equally seriously. Long out of
+print and not much cited any more, which is a pity.
 
 There are genuine technical questions here that nobody has answered:
 how quantum logic relates to substructural logics such as linear and
