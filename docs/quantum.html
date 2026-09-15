@@ -547,29 +547,112 @@ superconducting circuits, which matters because the systems are
 massive. The freedom-of-choice loophole has been attacked from the
 other direction by the cosmic Bell tests, which take their measurement
 settings from starlight and from high-redshift quasars.</p>
-<h3 id="nonlocality-or-non-classical-probability">Nonlocality or non-classical probability?</h3>
+<h3 id="nonlocality-or-non-classical-probability">Nonlocality, or non-classical probability?</h3>
 <p>Bell’s inequality is a consequence of classical probability theory, so
 one might conclude that what its violation shows is that classical
-probability is false, and that locality survives. Arthur Fine and
-Itamar Pitowsky pursued this. Fine’s theorem — “Hidden variables,
-joint probability, and the Bell inequalities,” <em>Physical Review
-Letters</em> 48 (1982): 291–295 — establishes that a deterministic
-hidden-variable model exists, a joint distribution over the four
-observables exists, and the inequalities hold, are all equivalent
-conditions. Pitowsky, in <em>Quantum Probability — Quantum Logic</em>
-(Springer, 1989) and more accessibly in “George Boole’s ‘conditions of
-possible experience’ and the quantum puzzle,” <em>British Journal for the
-Philosophy of Science</em> 45 (1994): 95–125, showed that Bell-type
-inequalities are instances of Boole’s conditions of possible
-experience, which makes the geometry of the situation vivid.</p>
-<p>The line is still contested. For the best recent argument against it,
-see Márton Gömöri and Carl Hoefer, “Classicality and Bell’s theorem,”
-<em>European Journal for Philosophy of Science</em> 13 (2023): 45 — open
-access — who argue that probabilistic classicality is not an
+probability is false, and that locality survives. This reading is older
+and better than its current reputation, and I think there is still
+something in it.</p>
+<p><strong>Arthur Fine</strong> is the name to know. His “Hidden variables, joint
+probability, and the Bell inequalities,” <em>Physical Review Letters</em> 48
+(1982): 291–295 — <em>some QM</em> — proves that five conditions on a
+correlation experiment are equivalent: there is a deterministic
+hidden-variable model; there is a factorizable stochastic model; there
+is a single joint distribution over all four observables returning the
+experimental probabilities; there are compatible joint distributions
+for all pairs and triples, commuting and non-commuting alike; and the
+Bell inequalities hold. Fine’s own gloss is the provocative part —
+that hidden variables and the Bell inequalities are “all about” forcing
+the existence of exactly those joint distributions for non-commuting
+observables “whose rejection is the very essence of quantum mechanics.”
+The mathematical companion is “Joint distributions, quantum
+correlations, and commuting observables,” <em>Journal of Mathematical
+Physics</em> 23 (1982): 1306–1310, which links the failure of joint
+distributions to failure of commutativity directly.</p>
+<p>This was not a sudden thought. Fine had argued as far back as “Logic,
+probability, and quantum theory,” <em>Philosophy of Science</em> 35 (1968):
+101–111, that quantum mechanics needs neither a non-classical logic
+nor a non-classical probability theory, only the recognition that its
+quantities are statistical variables lacking joint distributions — and
+that the condition for a joint distribution to exist reproduces the
+standard compatibility conditions. Nor was he alone in 1981–82:
+Patrick Suppes and Mario Zanotti, “When are probabilistic explanations
+possible?”, <em>Synthese</em> 48 (1981): 191–199, freely available, prove the
+three-variable version and the common-cause theorem behind it; and
+Luigi Accardi and A. Fedullo, “On the statistical meaning of complex
+numbers in quantum mechanics,” <em>Lettere al Nuovo Cimento</em> 34 (1982):
+161–172, also free, give necessary and sufficient conditions for a
+Kolmogorovian model and point out that their result needs no locality
+assumption at all, since it applies to a single spin.</p>
+<p><strong>The algebraic version, which is where this gets sharp.</strong> If Fine is
+right that non-commutativity is what does the work, one would expect a
+theorem saying so, with no reference to locality or hidden variables.
+There is one. Consider two algebras of observables, and ask when some
+state is Bell-correlated across them. The answer is: exactly when
+neither algebra is commutative.</p>
+<p>John Baez, “Bell’s inequality for C*-algebras,” <em>Letters in
+Mathematical Physics</em> 13 (1987): 135–136 — two pages, and free from
+his website — proves the easy half: if either algebra is abelian then
+every state is a limit of convex combinations of product states, and
+the CHSH inequality holds in every state. He noted the converse as open
+beyond type I, which is the case quantum field theory needs. G. A.
+Raggio, “A remark on Bell’s inequality and decomposable normal states,”
+<em>Letters in Mathematical Physics</em> 15 (1988): 27–29, supplied it: for a
+tensor product of von Neumann algebras, the inequality holds in all
+normal states if and only if one of the factors is commutative, if and
+only if every normal state is decomposable into product states.
+Guido Bacciagaluppi later gave the C*-algebra version (arXiv
+2306.01909), and it is the cleanest statement to hand a student.</p>
+<p>For commuting subalgebras of a common algebra rather than a tensor
+product, the corresponding result is L. J. Landau, “On the violation of
+Bell’s inequality in quantum theory,” <em>Physics Letters A</em> 120 (1987):
+54–56, obtained independently by Stephen Summers and Reinhard Werner:
+two commuting non-abelian von Neumann algebras admit a state violating
+Bell’s inequality <em>maximally</em>, at the Tsirelson value. One caution
+worth passing on, because the literature is not consistent about it:
+this direction needs a mild independence hypothesis on the pair — the
+Schlieder property, which says a nonzero element of one algebra times a
+nonzero element of the other is nonzero. Without it there are
+counterexamples. In quantum field theory the hypothesis is free, since
+it holds for strictly spacelike separated regions.</p>
+<p>The moral is the one Fine was reaching for, and it is worth making a
+student prove for themselves: Bell violation is not fundamentally about
+distance, or signalling, or even about two systems. It is about a pair
+of algebras neither of which is commutative. Where to read further:
+Summers, “Bell’s inequalities and algebraic structure” (arXiv
+funct-an/9701003) is fourteen free pages and the best compact account;
+his “Yet more ado about nothing: the remarkable relativistic vacuum
+state” (arXiv 0802.1854) is the readable one. The striking downstream
+fact is that in essentially any quantum field theory the vacuum is Bell
+correlated across <em>every</em> pair of spacelike separated regions, with the
+correlation decaying exponentially in mass times separation, and
+maximally correlated across complementary wedges.</p>
+<p><strong>On quantum probability generally.</strong> Guido Bacciagaluppi, “Quantum
+probability: an introduction,” in Hájek and Hitchcock, eds., <em>The Oxford
+Handbook of Probability and Philosophy</em> (Oxford, 2016) — <em>some QM</em> —
+is the survey to start from, and a fuller version is free on
+PhilSci-Archive; it is organized around precisely the non-existence of
+joint distributions for incompatible observables. Itamar Pitowsky,
+“Quantum mechanics as a theory of probability” (2006), free on the
+arXiv, is the manifesto version of the thesis; his <em>Quantum Probability
+— Quantum Logic</em> (Springer, 1989) and, more accessibly, “George
+Boole’s ‘conditions of possible experience’ and the quantum puzzle,”
+<em>British Journal for the Philosophy of Science</em> 45 (1994): 95–125, show
+that Bell-type inequalities are instances of Boole’s conditions of
+possible experience, which makes the geometry vivid. For the
+operator-algebraic background, Miklós Rédei and Stephen Summers,
+“Quantum probability theory,” <em>Studies in History and Philosophy of
+Modern Physics</em> 38 (2007): 390–417, free on the arXiv — demanding,
+but it supplies exactly what the theorems above presuppose.</p>
+<p><strong>The case against.</strong> Márton Gömöri and Carl Hoefer, “Classicality and
+Bell’s theorem,” <em>European Journal for Philosophy of Science</em> 13 (2023):
+45 — open access — argue that probabilistic classicality is not an
 independent premise of the theorem but a corollary of locality together
 with the standard auxiliary assumptions, so that it cannot be isolated
 as the culprit in order to rescue locality. Read with Fine, this makes
-a self-contained unit.</p>
+a self-contained unit, and a good one: two defensible readings of the
+same theorem, and a student who can say why they differ has understood
+Bell.</p>
 <h3 id="one-thing-to-stop-saying">One thing to stop saying</h3>
 <p>It is often said that a particle can be in two places at once. Quantum
 mechanics does not say this. It says that two systems can behave in
