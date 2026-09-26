@@ -11,7 +11,7 @@ import           Data.Aeson               (FromJSON(..), withObject, (.:), (.:?)
 import qualified Data.ByteString.Lazy     as BL
 import           Data.Function            (on)
 import           Data.List                (groupBy, sortOn, sortBy)
-import           Data.Maybe               (fromMaybe)
+import           Data.Maybe               (fromMaybe, isJust)
 import           Data.Monoid              (mappend)
 import           Data.Ord                 (Down(..), comparing)
 import System.FilePath (splitDirectories, joinPath, takeExtension, takeBaseName, takeFileName)
@@ -26,6 +26,7 @@ import           GHC.IO.Handle            (hSetBuffering, BufferMode(NoBuffering
 import           System.Process           (runInteractiveCommand, readProcessWithExitCode)
 import           System.Exit              (ExitCode(..))
 import           System.Directory         (createDirectoryIfMissing)
+import           System.Environment       (lookupEnv)
 
 -- Hakyll / Pandoc
 import           Hakyll
@@ -61,6 +62,32 @@ config :: Configuration
 config = defaultConfiguration
   { destinationDirectory = "docs"
   }
+
+-- | The private build: SITE_PRIVATE=1 builds the whole public site PLUS the
+-- private/ folder, into _private-site/ (never docs/), with its own cache.
+-- private/ and _private-site/ are gitignored, so nothing private is committed
+-- or published. publish-danish.sh runs it on every publish; open
+-- _private-site/private/index.html. See private/README.md.
+privateConfig :: Configuration
+privateConfig = config
+  { destinationDirectory = "_private-site"
+  , storeDirectory       = "_cache-private"
+  , tmpDirectory         = "_cache-private/tmp"
+  }
+
+-- | Rules for private/: Markdown pages get the site's templates; everything
+-- else (PDFs, and symlinks to PDFs kept elsewhere, e.g. ~/research) is copied.
+privateRules :: Rules ()
+privateRules = do
+    match ("private/**" .&&. complement "private/**.md") $ do
+        route   idRoute
+        compile copyFileCompiler
+    match "private/**.md" $ do
+        route $ setExtension "html"
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/page.html" siteCtx
+            >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+            >>= relativizeUrls
 
 -- | Regenerate the CV's \input fragments from data/talks-master.yaml and
 -- recompile cv.tex with latexmk. Returns the produced PDF bytes, which the
@@ -257,7 +284,12 @@ buildCoursesPage =
 
 
 main :: IO ()
-main = hakyllWith config $ do
+main = do
+    privateMode <- isJust <$> lookupEnv "SITE_PRIVATE"
+    hakyllWith (if privateMode then privateConfig else config) (siteRules privateMode)
+
+siteRules :: Bool -> Rules ()
+siteRules privateMode = do
     match ("images/*" .||. "js/*") $ do
         route   idRoute
         compile copyFileCompiler
@@ -1151,6 +1183,8 @@ main = hakyllWith config $ do
         renderAtom feedConfig feedCtx posts
 
     buildCoursesPage
+
+    when privateMode privateRules
 
 -----
 

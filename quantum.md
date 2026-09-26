@@ -802,6 +802,15 @@ Philosophy*** (Springer, 2012) --- *mathematical.* The rigorous
 statements, including the quantum equilibrium argument that answers the
 question of where the Born rule comes from.
 
+**Daumer, Dürr, Goldstein and Zanghì, "Naive realism about
+operators,"** *Erkenntnis* 45 (1996): 379--397 --- *some QM*, free on
+the arXiv. Read this early, because it corrects the thing most students
+believe about Bohm's theory: that it supplies hidden values for every
+quantity. It supplies one, position, and treats the operators as
+bookkeeping for what apparatus interactions produce. The mathematical
+section below says why the usual gloss on Kochen--Specker encourages
+the error.
+
 Worth noticing about this school: their task is scientific rather than
 philosophical. The interesting question is whether Bohmian mechanics
 extends to the physics we actually have --- to quantum field theory,
@@ -835,6 +844,121 @@ technical review. For current experimental status see Carlesso et al.,
 
 Albert and Maudlin between them leave out most of what is actually
 being argued about now.
+
+**Modal interpretations, and why they matter more than their current
+reputation suggests.** Before 1995 "the modal interpretation" meant one
+of two things. Bas van Fraassen, who originated the approach and gave
+it its name, split the state description in two: a *dynamical state*
+that evolves unitarily and says only what may be the case, and a *value
+state* saying what actually is the case, with no rule taking you from
+the first to the second (*Quantum Mechanics: An Empiricist View*,
+Oxford, 1991, chapter 9 --- *some QM*). Simon Kochen in 1985 and Dennis
+Dieks shortly after supplied the missing rule: take the biorthogonal
+decomposition of the state of a composite system, which is generically
+unique, and let the terms appearing in it fix which properties are
+definite --- equivalently, diagonalize the reduced density matrix. No
+collapse, no observer, and the definite properties are a function of
+the state alone. Rob Clifton, "Independently motivating the
+Kochen--Dieks modal interpretation," *British Journal for the
+Philosophy of Science* 46 (1995): 33--57, is the best statement of the
+case for it.
+
+Then Jeffrey Bub and Rob Clifton showed that Kochen--Dieks is one
+species in a whole genus. "A uniqueness theorem for 'no collapse'
+interpretations of quantum mechanics," *Studies in History and
+Philosophy of Modern Physics* 27 (1996): 181--219 --- *mathematical* ---
+proves that given a state and a choice of **preferred observable**,
+there is a unique maximal sublattice of propositions that can be
+assigned determinate truth values consistently with the Born
+probabilities. One free parameter, and everything else is forced. The
+simplified proof, with Sheldon Goldstein, is "Revised proof of the
+uniqueness theorem," same journal, 31 (2000): 95--98, free on the
+arXiv; Goldstein had noticed that an auxiliary assumption in the
+original could simply be dropped, so the theorem is more general than
+first advertised. Read the 2000 paper first --- it is four pages.
+
+What makes this worth a student's time is what the parameter does. Fix
+the preferred observable once and for all at the fundamental level and
+you get Bohm's theory, with position in configuration space as the
+choice. Let the state fix it and you get Kochen--Dieks. And let it be
+fixed **by the experimental context** --- by which classically
+described apparatus happens to be in place --- and you get something
+that looks a great deal like Bohr. That last case is the interesting
+one: complementarity stops being a slogan and becomes a value of a
+parameter in a theorem, with the shifting of the preferred observable
+from one experimental arrangement to the next doing exactly the work
+Bohr wanted contexts to do. Bub develops the reading at length in
+*Interpreting the Quantum World*, in the mathematical section below.
+For the Bohr case specifically, Hans Halvorson and Rob Clifton,
+"Reconsidering Bohr's reply to EPR," in Placek and Butterfield, eds.,
+*Non-locality and Modality* (Kluwer, 2002), 3--18, free on the arXiv
+and PhilSci-Archive, reconstructs the reply so that the elements of
+reality are the properties invariant under the symmetries preserving a
+measurement context. Fair warning: the *Stanford Encyclopedia* treats
+Bohr-as-modal-interpretation as Bub's reconstruction rather than as
+straight exegesis, and van Fraassen's review of Bub (*Foundations of
+Physics* 28, 1998, free on his website) argues the uniqueness is
+relative to the program rather than absolute. Both are worth reading
+against the claim.
+
+**Why the program stalled, which is instructive.** The specific
+Kochen--Dieks rule ran into theorems, not merely objections. Guido
+Bacciagaluppi, "A Kochen--Specker theorem in the modal interpretation,"
+*International Journal of Theoretical Physics* 34 (1995): 1205--1216,
+shows that applying the rule to every factorization of the Hilbert
+space and demanding consistency yields a contradiction, so a preferred
+factorization has to be posited. Clifton's own "The properties of modal
+interpretations," *BJPS* 47 (1996): 371--398, presses the failure of
+property composition --- the value assigned to a property of a
+subsystem need not match the value assigned to the corresponding
+property of the whole. And Wayne Myrvold, "Modal interpretations and
+relativity," *Foundations of Physics* 32 (2002): 1773--1784, proves in
+considerable generality that no modal interpretation can be seriously
+Lorentz invariant at the fundamental level. The book-length assessment
+is Pieter Vermaas, *A Philosopher's Understanding of Quantum Mechanics:
+Possibilities and Impossibilities of a Modal Interpretation*
+(Cambridge, 1999) --- *mathematical*, and the "Impossibilities" in the
+title is not decoration. A research program with a clean formal
+statement, a beautiful uniqueness theorem, and a documented set of
+reasons for its decline is an unusually good thing for a student to
+study.
+
+**And what became of it.** The relativity problem above is the hinge.
+If definite properties cannot be assigned absolutely across a
+foliation, relativize them to a perspective --- which is what Joseph
+Berkovitz and Meir Hemmo proposed in "A new modal interpretation in
+terms of relational properties," in Demopoulos and Pitowsky, eds.,
+*Physical Theory and its Interpretation* (Springer, 2006), and what
+Gyula Bene and Dennis Dieks had already built in "A perspectival
+version of the modal interpretation of quantum mechanics and the origin
+of macroscopic behavior," *Foundations of Physics* 32 (2002): 645--671.
+So the relational turn described next has a forgotten ancestor, and in
+part it is a *repair strategy* for the modal program rather than an
+independent invention. Dieks makes the claim himself, and in the open,
+in "Perspectival quantum realism," *Foundations of Physics* 52 (2022):
+95 --- open access, and the best single thing to assign here: every
+single-world no-collapse interpretation that uses decoherence or
+diagonalization to pick out definite quantities, he argues, leads
+naturally to a relational picture. Mauro Dorato, "Bohr meets Rovelli,"
+*Quantum Studies* 7 (2020): 233--245, free on the arXiv, runs the other
+connection, from Bohr through dispositions to Rovelli. Olimpia Lombardi
+and Juan Sebastián Ardenghi, "How different interpretations of quantum
+mechanics can enrich each other," *Foundations of Physics* 52 (2022):
+64, is devoted to the relation between the two programs. And Bas van
+Fraassen, "Rovelli's world," *Foundations of Physics* 40 (2010):
+390--417, is the originator of the modal interpretation assessing
+relational quantum mechanics at length, which is as good a way into the
+comparison as exists.
+
+The survey is Olimpia Lombardi and Dennis Dieks, "Modal interpretations
+of quantum mechanics," *Stanford Encyclopedia of Philosophy*, free and
+substantially revised in 2025 --- though note that Dieks is both an
+author of the entry and the originator of one of the interpretations it
+surveys, so its optimism about the program's health is not a neutral
+verdict. Much of the primary material is collected in one place in
+*Quantum Entanglements: Selected Papers of Rob Clifton* (Oxford, 2004),
+whose first part is the modal papers and whose chapter 12 is the Bohr
+reply.
 
 **Relational quantum mechanics.** Rovelli's proposal is that quantum
 states are relative to systems, not absolute --- there are no facts
@@ -883,6 +1007,131 @@ pressure on any view that makes facts observer-relative, which is why
 the relational and QBist literature has spent the last several years
 responding to them. Currently the liveliest corner of the subject.
 
+## Is the world itself indeterminate?
+
+An electron not in an eigenstate of spin-x has no determinate spin-x
+value. Everyone agrees on that much; it follows from the
+eigenstate--eigenvalue link. The question is what it means. Does the
+world contain an object that has a *determinable* property without any
+of its determinates --- genuine indeterminacy out in the world, not in
+us --- or does the electron simply lack the property altogether, the way
+the British Museum lacks a house number? Analytic metaphysicians have
+been arguing about this hard since 2019, mostly in metaphysics journals
+rather than philosophy-of-physics ones, which is why a student working
+from the standard reading list will never hear of it.
+
+**Where it starts.** George Darby, "Quantum mechanics and metaphysical
+indeterminacy," *Australasian Journal of Philosophy* 88 (2010):
+227--245, and Bradford Skow, "Deep metaphysical indeterminacy,"
+*Philosophical Quarterly* 60 (2010): 851--858 --- *some QM*, and Skow is
+free from his MIT page. Both argue that the then-standard account of
+metaphysical indeterminacy cannot handle quantum cases. On that account
+--- due to Barnes and Williams --- indeterminacy is not a feature of any
+first-order state of affairs; it consists in its being unsettled which
+of several fully precise ways the world might be is the actual one. The
+trouble is Kochen--Specker: contextuality means there is no suitable
+space of global precisifications to be unsettled between. Skow's name
+for quantum cases, "deep" indeterminacy, has stuck. Note that this is
+the Kochen--Specker theorem doing metaphysical work, which is a good
+advertisement for the mathematical section below.
+
+**The proposal that revived the debate.** Jessica Wilson's
+determinable-based account locates indeterminacy at the object level
+instead: a state of affairs is indeterminate when an object has a
+determinable property without having any unique determinate of it
+("A determinable-based account of metaphysical indeterminacy,"
+*Inquiry* 56 (2013): 359--385). No precisifications are needed, so the
+Darby--Skow objection does not arise, and classical logic and bivalence
+survive intact. Claudio Calosi and Wilson applied it to quantum
+mechanics in "Quantum metaphysical indeterminacy," *Philosophical
+Studies* 176 (2019): 2599--2627 --- *some QM* --- distinguishing three
+sources of indeterminacy: superposition, incompatible observables, and
+entanglement. The sequel, "Quantum indeterminacy and the double-slit
+experiment," *Philosophical Studies* 178 (2021): 3291--3317, is freely
+available and is the one to read first: a superposition of position
+states *is* a position state, determinable without a unique
+determinate, and the interference pattern follows without anything
+going through both slits and without revising logic.
+
+**The opposition.** David Glick, "Against quantum indeterminacy,"
+*Thought* 6 (2017): 204--213 --- free --- presses the sparse view: a
+system with no eigenvalue lacks the determinable too, not just the
+determinate. He also argues that superpositions cannot play the
+determinable role, since their amplitudes give them weightings foreign
+to the determinable--determinate relation. Maria Nørgaard, "Quantum
+indeterminacy: a matter of degree?", *European Journal for Philosophy
+of Science* 15 (2025): 13, open access, separates gradedness from
+indeterminacy and argues that treating quantum properties as
+intrinsically graded gets you out without committing to worldly
+indeterminacy. Tushar Menon, "On algebraic naturalism and metaphysical
+indeterminacy in quantum mechanics," *Studies in History and Philosophy
+of Science* 105 (2024): 1--16, deflates from the algebraic side.
+
+**Where it has got to.** Cristian Mariani, "The determinacy problem in
+quantum mechanics," *Foundations of Physics* 54 (2024): 73 --- open
+access --- does the most useful thing anyone has done here, which is to
+separate the determinacy problem from the measurement problem and state
+it as three jointly inconsistent claims:
+
+1. the quantum state is a complete description of a system;
+2. systems in superposition have determinate values for the
+   superposed observable;
+3. the eigenstate--eigenvalue link holds.
+
+Each way of rejecting one maps onto a research programme --- high
+dimensional realism, primitive ontology, and quantum indeterminacy
+respectively. This is the Maudlin trilemma's counterpart for
+indeterminacy, and it does the same work of turning a muddle into a
+choice.
+
+The rest of the recent wave sorts by interpretation, and all of it is
+free. David Glick and Baptiste Le Bihan, "Metaphysical indeterminacy in
+Everettian quantum mechanics," *European Journal for Philosophy of
+Science* 14 (2024): 3, argues that none of the proposed Everettian
+sources of indeterminacy delivers it without extra metaphysical
+assumptions. Andrea Oldofredi, "Unexpected quantum indeterminacy,"
+same journal, 14 (2024): 15, has the best result in the group: pilot
+wave theories, supposedly the clean-ontology escape route, generate a
+distinctive modal indeterminacy of their own, so ontological clarity
+and indeterminacy turn out not to be exclusive. Patrick Fraser and
+Michael Miller, "From classical to quantum indeterminacy, and back,"
+*Philosophy of Science* 92 (2025): 1245--1255, is ten pages and teaches
+the crucial distinction: classical indeterminacy is *shallow*, since
+hidden variables resolve it, while Kochen--Specker makes the quantum
+case *deep*.
+
+Two items connect this section to the two before it. Claudio Calosi and
+Cristian Mariani, "Quantum relational indeterminacy," *Studies in
+History and Philosophy of Modern Physics* 71 (2020): 158--169, open
+access, argues that relational quantum mechanics and metaphysical
+indeterminacy support each other, and that relational quantum mechanics
+delivers indeterminacy that is fundamental rather than derivative.
+Calosi's "Quantum modal indeterminacy," *Studies in History and
+Philosophy of Science* 95 (2022): 177--184, also open access, runs the
+account inside a modal interpretation, where the split between
+dynamical state and value state is exactly a split between what is
+determinable and what is determinate. If the modal interpretation
+section above interested you, read that one.
+
+**Where to start, and what is missing.** Claudio Calosi and Cristian
+Mariani, "Quantum indeterminacy," *Philosophy Compass* 16 (2021):
+e12731, is the survey, it is free, and it is organized the way a
+student needs --- is there quantum indeterminacy, what would it be, and
+how does it interact with each interpretation. Wilson's *Stanford
+Encyclopedia* entry on determinables and determinates has a section on
+the quantum application, though she is a principal in the debate rather
+than a neutral surveyor. There is no encyclopedia entry on the topic
+itself. Alessandro Torza, *Indeterminacy in the World* (Cambridge
+Elements, 2023), is the nearest thing to a book.
+
+And a gap worth pointing out to anyone looking for a thesis topic:
+none of this literature engages Bohr. The connection is sitting there
+unmade --- complementarity enters the debate through the
+incompatible-observables source of indeterminacy, but never under
+Bohr's name, and a framework in which a preferred observable fixes what
+is determinate is precisely what the Bohr reading of the uniqueness
+theorem provides. Someone should write that paper.
+
 ## The mathematical side
 
 None of the introductory books above will tell you about the
@@ -922,24 +1171,56 @@ substantially fixed here.
 
 **Jeffrey Bub, *Interpreting the Quantum World*** (Cambridge, 1997) ---
 *mathematical.* Underrated, and the book I would most like students to
-know about. Bub proves a uniqueness theorem: subject to the constraints
-the no-go theorems impose, every no-collapse interpretation can be
-constructed by a single recipe with one free parameter --- the choice
-of which observable is taken to be determinate. Bohm's theory, the
-modal interpretations and Bohr's complementarity then fall out as
-values of that parameter. This is far better than the usual list of
-rival positions, because it shows the interpretations to form a
-structured space, and it tells you what you are choosing when you
-choose one. Worth noticing that Bohr is already inside the theorem in
-1997, so the recent reconsideration above is a change of register
-rather than a conversion. *Bananaworld* (Oxford, 2016) is the same
-author making the information-theoretic case, with the algebra
-quarantined in marked sections at the ends of chapters.
+know about. It is the book-length development of the uniqueness theorem
+discussed under modal interpretations above: one free parameter, and
+Bohm, Kochen--Dieks and Bohr all fall out as values of it. What the
+book adds to the theorem is the argument, worked out at length, that
+the interpretations form a structured space rather than a list, and
+that choosing one is choosing a determinate observable and nothing
+else. Worth noticing that Bohr is already inside the theorem in 1997,
+so the recent reconsideration above is a change of register rather than
+a conversion. *Bananaworld* (Oxford, 2016) is the same author making
+the information-theoretic case, with the algebra quarantined in marked
+sections at the ends of chapters.
 
 **Budroni, Cabello, Gühne, Kleinmann and Larsson, "Kochen--Specker
 contextuality,"** *Reviews of Modern Physics* 94 (2022): 045007 ---
 *serious QM.* Free on the arXiv (2102.13036). There is no monograph on
 contextuality; this is it.
+
+**A warning about how that theorem gets stated.** You will constantly
+read that Kochen--Specker rules out *non-contextual* hidden variables.
+The phrase is accurate and its implicature is false. It suggests that
+contextual hidden variables are a going concern --- that there is a
+theory over there which does assign values to all the quantities, only
+contextually. There is not, and there cannot be, because that is what
+the theorem forbids. Notice what a context is: a maximal set of
+compatible observables. So a contextual assignment gives an observable
+a value only relative to a context that contains it, and an observable
+incompatible with the context gets no value at all. Measure position,
+and momentum is not assigned some other, context-relative value. It is
+assigned nothing. There is no such thing as the value of momentum in a
+position measurement, and a theory that assigns values this way is
+therefore not a hidden-variable theory for all the quantities. It is a
+hidden-variable theory for some of them, and silent about the rest.
+
+So what is a contextual hidden-variable theory? The best sense I can
+make of the notion is that it is a selection of beable subalgebras in
+Bub and Clifton's sense: you choose which quantities are determinate,
+and the rest do not have values at all. That is not a hedged version of
+a hidden-variable theory. It is a different thing wearing the name, and
+the modal interpretation section above is where it actually belongs.
+
+The mistake does real damage in the case of Bohm's theory, which is
+described almost universally as a hidden-variable theory in the sense
+of supplying values for every quantity. It does not. It treats position
+as real and everything else --- momentum included --- as fictional: an
+artefact of an interaction with an apparatus, not a pre-existing
+property being revealed. See **Daumer, Dürr, Goldstein and Zanghì,
+"Naive realism about operators,"** *Erkenntnis* 45 (1996): 379--397 ---
+*some QM*, free on the arXiv (quant-ph/9601013). Short, and the best
+cure there is for the habit of treating self-adjoint operators as
+though they named properties.
 
 **Valerio Scarani, *Bell Nonlocality*** (Oxford, 2019) ---
 *mathematical.* Open access, with exercises. Bell's theorem done

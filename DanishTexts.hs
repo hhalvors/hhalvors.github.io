@@ -29,6 +29,8 @@ import DanishNotes (NoteIndex, CatalogFacts(..), Target(..),
 data Catalog = Catalog
   { authors    :: [Author]
   , references :: Maybe [Reference]   -- optional: catalog-wide reference works
+  , dossiers   :: Maybe [Reference]   -- optional: cross-author source dossiers;
+                                      -- how they are made: ~/danish-texts/texts/dossiers/README.md
   } deriving (Generic, Show)
 
 data Author = Author
@@ -328,9 +330,17 @@ renderSecondaryLit aid s =
 ------------------------------------------------------------------------
 
 renderReference :: Reference -> H.Html
-renderReference r =
+renderReference = renderRefEntry "ref-" True
+
+-- A dossier is a Reference record under its own anchor prefix, and without the
+-- "reference" badge: it is primary text, not secondary literature.
+renderDossier :: Reference -> H.Html
+renderDossier = renderRefEntry "dossier-" False
+
+renderRefEntry :: String -> Bool -> Reference -> H.Html
+renderRefEntry anchorPrefix badge r =
   H.div H.! A.class_ "dt-work dt-seclit dt-reference"
-        H.! A.id (H.toValue $ "ref-" ++ refId r) $ do
+        H.! A.id (H.toValue $ anchorPrefix ++ refId r) $ do
     H.div H.! A.class_ "dt-work-title" $ H.toHtml (refTitle r)
     let venue = fromMaybe "" (refVenue r)
         pub   = case (refYear r, venue) of
@@ -350,7 +360,7 @@ renderReference r =
     H.div H.! A.class_ "dt-section" $
       H.span H.! A.class_ "dt-section-links" $ do
         mapM_ linkBadge (fromMaybe [] (refLinks r))
-        statusBadge "reference"
+        if badge then statusBadge "reference" else return ()
 
 ------------------------------------------------------------------------
 -- Full bibliography (collapsible)
@@ -507,14 +517,20 @@ renderMenuAuthor a =
       extraRow aid ("All " ++ authorName a ++ " entries ↓")
 
 renderMenuReferences :: [Reference] -> H.Html
-renderMenuReferences rs =
+renderMenuReferences = renderMenuRefList "General reference works" "surveys" "ref-"
+
+renderMenuDossiers :: [Reference] -> H.Html
+renderMenuDossiers = renderMenuRefList "Source dossiers" "one word, many authors" "dossier-"
+
+renderMenuRefList :: String -> String -> String -> [Reference] -> H.Html
+renderMenuRefList heading sub anchorPrefix rs =
   H.details H.! A.class_ "dt-menu-author" $ do
     H.summary H.! A.class_ "dt-menu-summary" $ do
-      H.span H.! A.class_ "dt-menu-name"  $ "General reference works"
-      H.span H.! A.class_ "dt-menu-dates" $ "surveys"
+      H.span H.! A.class_ "dt-menu-name"  $ H.toHtml heading
+      H.span H.! A.class_ "dt-menu-dates" $ H.toHtml sub
       H.span H.! A.class_ "dt-menu-count" $ H.toHtml refCount
     H.ul H.! A.class_ "dt-menu-works" $
-      mapM_ (\r -> menuRow ("ref-" ++ refId r) "dt-menu-link"
+      mapM_ (\r -> menuRow (anchorPrefix ++ refId r) "dt-menu-link"
                            (refYear r) (refTitle r)) rs
   where
     refCount :: String
@@ -528,6 +544,9 @@ renderMenu cat =
     H.p H.! A.class_ "dt-menu-hint" $ H.toHtml hint
     H.div H.! A.class_ "dt-menu-grid" $ do
       mapM_ renderMenuAuthor (authors cat)
+      case dossiers cat of
+        Just ds | not (null ds) -> renderMenuDossiers ds
+        _ -> return ()
       case references cat of
         Just rs | not (null rs) -> renderMenuReferences rs
         _ -> return ()
@@ -588,6 +607,24 @@ generateDanishTextsHTML idx catalog = R.renderHtml $
       "in Christiania, and saw the union dissolved by the Treaty of Kiel in January "
       "1814. “Danish” here therefore means the philosophy of that shared realm and "
       "its shared written language, rather than of the post-1814 nation-state."
+    H.p H.! A.class_ "dt-intro dt-note" $ do
+      "A note on the absence of women. Until 1875 women could not matriculate at the "
+      "University of Copenhagen, and so could neither hold a chair nor take a degree "
+      "in philosophy. They entered the conversation nonetheless, in the forms open to "
+      "them: the novel, the letter, the pamphlet, and, once the university admitted "
+      "them, the prize essay. Thomasine Gyllembourg's »To Tidsaldre« (1845) is the "
+      "book through which Kierkegaard works out his diagnosis of the present age in "
+      "»En literair Anmeldelse« (1846). Mathilde Fibiger's »Clara Raphael« (1851), "
+      "published with Heiberg's preface, set off a public quarrel over the spiritual "
+      "equality of the sexes in which Grundtvig and Goldschmidt took sides and women "
+      "wrote in her defense. Magdalene Thoresen argued the faith-and-knowledge "
+      "controversy against the young Georg Brandes in their correspondence of 1867. "
+      "Kirstine Frederiksen studied under Høffding and in 1891 won the university's "
+      "gold medal for a treatise on education drawn from the new psychology and "
+      "ethics. Hans Brøchner's letters to his cousin Julie Thomsen, listed under "
+      "Brøchner, preserve one side of his correspondence with the woman his "
+      "contemporaries reckoned the most gifted of the Kierkegaard family. Each of "
+      "these women is entered below in her chronological place."
     H.div H.! A.class_ "dt-legend" $ do
       H.span H.! A.class_ "dt-legend-label" $ "Status: "
       statusBadge "complete"
@@ -597,6 +634,17 @@ generateDanishTextsHTML idx catalog = R.renderHtml $
       statusBadge "coming-soon"
       statusBadge "reference"
     mapM_ (renderAuthor idx) (authors catalog)
+    case dossiers catalog of
+      Just ds | not (null ds) ->
+        H.section H.! A.class_ "dt-author dt-references" H.! A.id "dossiers" $ do
+          H.h2 H.! A.class_ "dt-author-heading" $ "Source dossiers"
+          H.p H.! A.class_ "dt-author-bio" $
+            H.toHtml ("Every passage in which one word occurs, gathered across \
+                      \authors from the transcriptions above and from Søren \
+                      \Kierkegaards Skrifter. Generated from the texts, not \
+                      \selected." :: String)
+          mapM_ renderDossier ds
+      _ -> return ()
     case references catalog of
       Just rs | not (null rs) ->
         H.section H.! A.class_ "dt-author dt-references" H.! A.id "references" $ do

@@ -130,3 +130,9 @@ lemmon-filter/src/lemmonFilter
 # claims, and third-party names that must not be published. Same convention as
 # the danish-texts repo: the file lives on disk, never in git.
 CLAUDE.md
+
+# Private working materials: built only by ./private-preview.sh into
+# _private-site/, never into docs/. See private/README.md.
+/private/
+/_private-site/
+/_cache-private/
