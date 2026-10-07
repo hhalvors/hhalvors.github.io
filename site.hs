@@ -25,7 +25,8 @@ import qualified Data.Text.IO             as T
 import           GHC.IO.Handle            (hSetBuffering, BufferMode(NoBuffering))
 import           System.Process           (runInteractiveCommand, readProcessWithExitCode)
 import           System.Exit              (ExitCode(..))
-import           System.Directory         (createDirectoryIfMissing)
+import           System.Directory         (createDirectoryIfMissing, doesFileExist)
+import           Data.Time                (getCurrentTime, utctDay, toGregorian)
 import           System.Environment       (lookupEnv)
 
 -- Hakyll / Pandoc
@@ -45,7 +46,7 @@ import           DanishNotes              (NoteIndex, FrontMatter, mkNoteIndex,
                                            mkNoteRef, validateNoteIndex,
                                            generateNotesIndexHTML)
 import           Syllabus                 (generateSyllabusHTML)
-import           Talks                    (generateTalksHTML, generateRecentTalksHTML)
+import           Talks                    (generateTalksHTML, generateHomeTalksHTML)
 import           TalksMaster              (MasterData, renderInvited, renderOutreach)
 import           LemmonFilter             (applyLemmonFilter)
 import CoursePages.Course
@@ -286,7 +287,32 @@ buildCoursesPage =
 main :: IO ()
 main = do
     privateMode <- isJust <$> lookupEnv "SITE_PRIVATE"
+    writeBuildMonth
     hakyllWith (if privateMode then privateConfig else config) (siteRules privateMode)
+
+-- | The month of the build, as "YYYY-MM" (gitignored; written by `main`).
+-- The home page and /talks.html split talks into upcoming and past at this
+-- month and declare this file as a dependency, so an incremental `site build` re-splits
+-- them once the month rolls over, even if nothing else has changed. Without
+-- it, a talk would go on being listed as upcoming after it had been given.
+-- The file is rewritten only when the month changes, so it does not force a
+-- rebuild of those pages on every run.
+buildMonthFile :: FilePath
+buildMonthFile = "data/build-month"
+
+writeBuildMonth :: IO ()
+writeBuildMonth = do
+  (y, m, _) <- toGregorian . utctDay <$> getCurrentTime
+  let stamp = T.pack (show y ++ "-" ++ (if m < 10 then "0" else "") ++ show m ++ "\n")
+  exists <- doesFileExist buildMonthFile
+  old    <- if exists then T.readFile buildMonthFile else return T.empty
+  when (old /= stamp) $ T.writeFile buildMonthFile stamp
+
+-- | "2026-10" -> (2026, 10)
+parseBuildMonth :: String -> (Int, Int)
+parseBuildMonth s = case break (== '-') (filter (/= '\n') s) of
+  (y, '-':m) | Just y' <- readMaybe y, Just m' <- readMaybe m -> (y', m')
+  _ -> error ("malformed " ++ buildMonthFile ++ ": " ++ show s)
 
 siteRules :: Bool -> Rules ()
 siteRules privateMode = do
@@ -334,17 +360,24 @@ siteRules privateMode = do
         -- Declare the dependencies so the page rebuilds when either changes.
         _ <- load (fromFilePath "hh.bib")                 :: Compiler (Item String)
         _ <- load (fromFilePath "data/talks-master.yaml") :: Compiler (Item String)
+        month <- load (fromFilePath buildMonthFile)       :: Compiler (Item String)
+        let today = parseBuildMonth (itemBody month)
         recentPubs <- unsafeCompiler $ do
           parsed <- parseBibTeXFile "hh.bib"
           case parsed of
             Left err      -> error $ "BibTeX parse error (home page): " ++ show err
             Right entries -> return $ generateRecent 4 (map PubList.transformEntry entries)
-        recentTalks <- unsafeCompiler $ do
+        (upcomingTalks, recentTalks) <- unsafeCompiler $ do
           parsed <- decodeFileEither "data/talks-master.yaml"
           case parsed of
             Left err -> error $ "talks-master.yaml parse error (home page): " ++ show err
-            Right md -> return $ generateRecentTalksHTML 4 (md :: MasterData)
-        let indexCtx = constField "recent-publications" recentPubs
+            Right md -> return $ generateHomeTalksHTML today 4 (md :: MasterData)
+        -- Upcoming talks get a field only when there are some, so that
+        -- $if(upcoming-talks)$ in pages/index.md drops the empty heading.
+        let upcomingField | null upcomingTalks = mempty
+                          | otherwise          = constField "upcoming-talks" upcomingTalks
+            indexCtx = constField "recent-publications" recentPubs
+                    <> upcomingField
                     <> constField "recent-talks"        recentTalks
                     <> constField "title" "Home"
                     <> siteCtx
@@ -781,11 +814,15 @@ siteRules privateMode = do
         route idRoute
         compile $ do
             _ <- (load (fromFilePath "data/talks-master.yaml") :: Compiler (Item String))  -- declare dependency
+            -- The build month splits upcoming from past talks; depending on it
+            -- re-splits them once a month rolls over (see buildMonthFile).
+            month <- load (fromFilePath buildMonthFile) :: Compiler (Item String)
+            let today = parseBuildMonth (itemBody month)
             result <- unsafeCompiler $ decodeFileEither "data/talks-master.yaml"
             case result of
               Left err  -> error $ "YAML parse error (talks): " ++ show err
               Right td  -> do
-                let htmlBody = generateTalksHTML td
+                let htmlBody = generateTalksHTML today td
                 makeItem htmlBody
                   >>= loadAndApplyTemplate "templates/page.html"
                         (constField "title" "Talks" `mappend` siteCtx)
@@ -797,6 +834,7 @@ siteRules privateMode = do
     -- cv.tex into /cv.pdf. Touching data/talks-master.yaml (or cv.tex) makes
     -- "stack exec site build/rebuild" rebuild the CV with the new talk list.
     match "data/talks-master.yaml" $ compile getResourceBody
+    match (fromGlob buildMonthFile) $ compile getResourceBody
     match "cv.tex"                 $ compile getResourceBody
     -- NB: "hh.bib" is already matched elsewhere (see the publications.html
     -- rule), so it is loadable here without an extra `match`.

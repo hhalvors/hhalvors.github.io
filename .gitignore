@@ -136,3 +136,6 @@ CLAUDE.md
 /private/
 /_private-site/
 /_cache-private/
+
+# Build month stamp, written by site.hs on every run (see buildMonthFile).
+/data/build-month

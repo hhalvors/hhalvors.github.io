@@ -42,6 +42,12 @@ $recent-publications$
 
 <div class="more-link"><a href="/publications.html">All publications →</a></div>
 
+$if(upcoming-talks)$
+### Upcoming talks
+
+$upcoming-talks$
+
+$endif$
 ### Recent talks
 
 $recent-talks$

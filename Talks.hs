@@ -2,10 +2,12 @@
 
 -- | Talks.hs
 -- Generates the HTML page for the Talks (slide decks) collection from the
--- unified catalog (data/talks-master.yaml, see TalksMaster). Only talks with
--- `web: true` and at least one link are shown, grouped by year, newest first.
+-- unified catalog (data/talks-master.yaml, see TalksMaster). An "Upcoming"
+-- section lists every future talk, with or without slides. Below it, past
+-- talks are shown only if they have `web: true` and at least one link,
+-- grouped by year, newest first.
 
-module Talks (generateTalksHTML, generateRecentTalksHTML) where
+module Talks (generateTalksHTML, generateHomeTalksHTML) where
 
 import Data.List                   (intercalate, sortOn, sortBy)
 import Data.Maybe                  (catMaybes, fromMaybe)
@@ -123,12 +125,32 @@ monthOf t = case tDate t of
               _ -> 0
   Nothing -> 0
 
-visibleGroups :: MasterData -> [MYearGroup]
-visibleGroups d =
+-- | Is the talk in or after the build month `today` (year, month)? The
+-- catalog records months, not days, so a talk in the current month counts as
+-- upcoming. A year-only date ("2025") has month 0, so it is upcoming only if
+-- its year lies in the future. Shared by the talks page and the home page.
+isUpcoming :: (Int, Int) -> Int -> MTalk -> Bool
+isUpcoming today year t = (year, monthOf t) >= today
+
+-- | Past talks with slides online, by year. Upcoming talks are left out
+-- here, since they are listed in their own section.
+visibleGroups :: (Int, Int) -> MasterData -> [MYearGroup]
+visibleGroups today d =
   [ g { myItems = sortBy (comparing (Down . monthOf)) vis }
   | g <- mdTalks d
-  , let vis = filter isWeb (myItems g)
+  , let vis = [ t | t <- myItems g, isWeb t
+                  , not (isUpcoming today (myYear g) t) ]
   , not (null vis) ]
+
+-- | Every upcoming talk on the CV, soonest first, slides or not.
+upcomingTalks :: (Int, Int) -> MasterData -> [MTalk]
+upcomingTalks today d =
+  map snd (sortBy (comparing fst)
+             [ ((myYear g, monthOf t), t)
+             | g <- mdTalks d
+             , t <- myItems g
+             , tCv t
+             , isUpcoming today (myYear g) t ])
 
 renderYear :: MYearGroup -> H.Html
 renderYear g =
@@ -140,30 +162,43 @@ renderYear g =
 -- Top-level generator
 ------------------------------------------------------------------------
 
-generateTalksHTML :: MasterData -> String
-generateTalksHTML d = R.renderHtml $
+-- | `today` is the build month as (year, month); see `buildMonthFile` in
+-- site.hs.
+generateTalksHTML :: (Int, Int) -> MasterData -> String
+generateTalksHTML today d = R.renderHtml $
   H.div H.! A.class_ "talk-page" $ do
     H.div H.! A.class_ "talk-intro" $ renderMd (mdIntro d)
-    mapM_ renderYear (sortOn (Down . myYear) (visibleGroups d))
+    case upcomingTalks today d of
+      [] -> return ()
+      ts -> H.section H.! A.class_ "talk-year" $ do
+              H.h2 H.! A.class_ "talk-year-heading" $ "Upcoming"
+              mapM_ renderTalk ts
+    mapM_ renderYear (sortOn (Down . myYear) (visibleGroups today d))
 
 ------------------------------------------------------------------------
--- Recent talks, for the home page.
+-- Upcoming and recent talks, for the home page.
 --
 -- Deliberately a weaker filter than the talks page uses: `isWeb` requires a
--- slide deck to exist, but a talk given last month is worth showing whether
--- or not the deck is online. The year comes from the enclosing group, so it
--- is carried alongside each talk for sorting.
+-- slide deck to exist, but a talk given last month (or next month) is worth
+-- showing whether or not the deck is online. The year comes from the
+-- enclosing group, so it is carried alongside each talk for sorting.
+--
+-- `today` is the build month as (year, month); see `isUpcoming`.
+--
+-- Returns (upcoming, recent): every upcoming talk, soonest first, and the n
+-- most recent past talks, newest first. A part with no talks is "", which
+-- lets the home page leave out its heading.
 ------------------------------------------------------------------------
 
-generateRecentTalksHTML :: Int -> MasterData -> String
-generateRecentTalksHTML n d = R.renderHtml $
-  H.div H.! A.class_ "talk-page recent-talks" $
-    mapM_ renderTalk (take n ordered)
+generateHomeTalksHTML :: (Int, Int) -> Int -> MasterData -> (String, String)
+generateHomeTalksHTML today n d = (render (upcomingTalks today d), render recent)
   where
-    ordered =
-      map snd $
-        sortBy (comparing (Down . fst))
-          [ ((myYear g, monthOf t), t)
-          | g <- mdTalks d
-          , t <- myItems g
-          , tCv t ]
+    recent = take n (map snd (sortBy (comparing (Down . fst))
+               [ ((myYear g, monthOf t), t)
+               | g <- mdTalks d
+               , t <- myItems g
+               , tCv t
+               , not (isUpcoming today (myYear g) t) ]))
+    render [] = ""
+    render ts = R.renderHtml $
+      H.div H.! A.class_ "talk-page recent-talks" $ mapM_ renderTalk ts
