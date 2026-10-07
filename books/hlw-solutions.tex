@@ -1674,6 +1674,118 @@ $e\circ x = x$. Since $x$ was arbitrary, $\forall x(e\circ x=x)$.
 
 
 
+% --------------------------------------------------
+\exercise{7.17}
+
+\begin{enumerate}
+
+\item[\(2.\)] \emph{Transitivity of $\subseteq$.}
+
+Assume $A\subseteq B$ and $B\subseteq C$, and let $x$ be arbitrary. Suppose
+$x\in A$. By the definition of subset applied to $A\subseteq B$, $x\in B$;
+applying it again to $B\subseteq C$, $x\in C$. Discharging the supposition,
+$x\in A\to x\in C$. Since $x$ was arbitrary, $\forall x(x\in A\to x\in C)$,
+that is, $A\subseteq C$.
+
+\item[\(3.\)] \emph{Antisymmetry of $\subseteq$.}
+
+Assume $A\subseteq B$ and $B\subseteq A$, and let $x$ be arbitrary. From
+$A\subseteq B$ we have $x\in A\to x\in B$, and from $B\subseteq A$ we have
+$x\in B\to x\in A$. Hence $x\in A\leftrightarrow x\in B$. Since $x$ was
+arbitrary, $\forall x(x\in A\leftrightarrow x\in B)$, and so $A=B$ by
+Extensionality. The two subset claims deliver the two directions of the
+biconditional separately; Extensionality is what converts the biconditional
+into an identity.
+
+\end{enumerate}
+
+% --------------------------------------------------
+\exercise{7.18}
+
+\begin{enumerate}
+
+\item[\(2.\)] \emph{$A\cap\emptyset=\emptyset$.}
+
+By Extensionality it suffices to show
+$\forall x(x\in A\cap\emptyset\leftrightarrow x\in\emptyset)$. Let $x$ be
+arbitrary. If $x\in A\cap\emptyset$ then $x\in A$ and $x\in\emptyset$ by the
+definition of intersection, and the second conjunct is what is wanted.
+Conversely, suppose $x\in\emptyset$. Nothing belongs to $\emptyset$, so the
+supposition is contradictory and $x\in A\cap\emptyset$ follows. The second
+direction holds vacuously, its antecedent never being satisfied; any claim of
+the form $\emptyset\subseteq B$ goes through the same way.
+
+\end{enumerate}
+
+% --------------------------------------------------
+\exercise{7.19}
+
+\begin{enumerate}
+
+\item[\(2.\)] \emph{$A\cup\emptyset=A$.}
+
+Let $x$ be arbitrary. Suppose $x\in A\cup\emptyset$, so that $x\in A$ or
+$x\in\emptyset$ by the definition of union. In the first case $x\in A$
+directly; in the second case the supposition is contradictory, since nothing
+belongs to $\emptyset$, so $x\in A$ follows from that case as well. Conversely,
+if $x\in A$ then $x\in A$ or $x\in\emptyset$, so $x\in A\cup\emptyset$. By
+Extensionality, $A\cup\emptyset=A$.
+
+\item[\(3.\)] \emph{If $A\subseteq B$ then $A\cup B=B$.}
+
+Assume $A\subseteq B$ and let $x$ be arbitrary. Suppose $x\in A\cup B$, so that
+$x\in A$ or $x\in B$. In the first case $x\in B$ by the definition of subset;
+in the second case $x\in B$ already. Either way $x\in B$. Conversely, if
+$x\in B$ then $x\in A$ or $x\in B$, so $x\in A\cup B$. By Extensionality,
+$A\cup B=B$.
+
+\end{enumerate}
+
+% --------------------------------------------------
+\exercise{7.20}
+
+Throughout, $A^c=X\setminus A$ for a fixed set $X$.
+
+\begin{enumerate}
+
+\item[\(1.\)] \emph{$(A\cup B)^c=A^c\cap B^c$.}
+
+Let $x$ be arbitrary. Unwinding the definitions of relative complement and of
+union,
+\[
+x\in (A\cup B)^c \;\leftrightarrow\; x\in X \wedge \neg(x\in A\vee x\in B).
+\]
+By De Morgan the right-hand side is equivalent to
+$x\in X\wedge(x\notin A\wedge x\notin B)$, and since $x\in X$ may be repeated,
+to
+\[
+(x\in X\wedge x\notin A)\wedge(x\in X\wedge x\notin B),
+\]
+which is $x\in A^c\wedge x\in B^c$, that is, $x\in A^c\cap B^c$. Since $x$ was
+arbitrary, Extensionality gives $(A\cup B)^c=A^c\cap B^c$.
+
+\item[\(2.\)] \emph{$(A\cap B)^c=A^c\cup B^c$.}
+
+Let $x$ be arbitrary. As before,
+\[
+x\in (A\cap B)^c \;\leftrightarrow\; x\in X \wedge \neg(x\in A\wedge x\in B),
+\]
+which by De Morgan is equivalent to
+$x\in X\wedge(x\notin A\vee x\notin B)$, and by distributing $\wedge$ over
+$\vee$ to
+\[
+(x\in X\wedge x\notin A)\vee(x\in X\wedge x\notin B),
+\]
+that is, to $x\in A^c\vee x\in B^c$, that is, to $x\in A^c\cup B^c$.
+Extensionality gives $(A\cap B)^c=A^c\cup B^c$.
+
+Both parts are De Morgan's laws with the set-theoretic definitions wrapped
+around them. The only extra step in the second is the distribution of $\wedge$
+over $\vee$, needed to move the shared conjunct $x\in X$ inside the
+disjunction.
+
+\end{enumerate}
+
 \chaptersection{8}
 
 \exercise{8.1}

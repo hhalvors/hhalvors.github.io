@@ -21,8 +21,26 @@ intro: |
 
 
 talks:
+- year: 2027
+  items:
+  - id: 2027-tba
+    title: 'TBA'
+    kind: workshop
+    event: 'Physical and Philosophical Perspectives on von Neumann Algebras in Quantum Gravity'
+    location: 'Amsterdam'
+    date: '2027-06'
+    cv: true
+
 - year: 2026
   items:
+  - id: pittsburgh2026
+    title: 'TBA'
+    kind: workshop
+    event: 'Naturalized Metaphysics of Physics'
+    location: 'Pittsburgh'
+    date: '2026-10'
+    cv: true
+
   - id: schock
     title: 'Er musste das Wissen aufheben: van Fraassen on the priority of the manifest image'
     kind: conference
