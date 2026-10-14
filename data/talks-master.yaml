@@ -31,8 +31,26 @@ talks:
     date: '2027-06'
     cv: true
 
+  - id: 2027-comments-wallace-sider
+    title: 'Comments on David Wallace and Ted Sider'
+    kind: comments
+    event: 'Eastern APA, symposium on Math-First Approaches to Physics and Metaphysics'
+    location: 'Boston'
+    date: '2027-01'
+    cv: true
+    cv_raw: |
+      Comments on D. Wallace and T. Sider, symposium on ``Math-First Approaches to Physics and Metaphysics''. Eastern APA, Boston, January 2027
+
 - year: 2026
   items:
+  - id: psa2026
+    title: 'TBA'
+    kind: conference
+    event: 'PSA 2026 symposium, New Perspectives on the Foundations of Quantum Field Theory'
+    location: 'San Diego'
+    date: '2026-11'
+    cv: true
+
   - id: pittsburgh2026
     title: 'TBA'
     kind: workshop
