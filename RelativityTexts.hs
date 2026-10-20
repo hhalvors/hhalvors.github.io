@@ -133,22 +133,20 @@ linkBadge lnk =
       $ H.toHtml (linkLabel lnk)
 
 ------------------------------------------------------------------------
--- A paper: author and dates, original title, English title, citation,
--- note, then the links and status badge.
+-- A paper: the original title first (it carries the focus), then the English
+-- title, then one grey line "Author (dates). Citation", the note, and the
+-- links and status badge.
 ------------------------------------------------------------------------
 
 renderPaper :: String -> Paper -> H.Html
 renderPaper tid p =
   H.div H.! A.class_ "dt-work"
         H.! A.id (H.toValue $ tid ++ "-" ++ paperId p) $ do
-    H.div H.! A.class_ "dt-work-meta" $ H.toHtml byline
     H.div H.! A.class_ "dt-work-title" $ H.toHtml (paperTitle p)
     case paperTitleEn p of
       Just t | not (null t) -> H.div H.! A.class_ "dt-work-meta" $ H.em (H.toHtml t)
       _ -> return ()
-    case paperSource p of
-      Just s | not (null s) -> H.div H.! A.class_ "dt-work-meta" $ H.toHtml s
-      _ -> return ()
+    H.div H.! A.class_ "dt-work-meta" $ H.toHtml meta
     case paperNote p of
       Just n  -> H.div H.! A.class_ "dt-work-note" $ H.toHtml n
       Nothing -> return ()
@@ -158,8 +156,10 @@ renderPaper tid p =
           mapM_ linkBadge (paperLinks p)
           statusBadge (paperStatus p)
   where
-    byline = paperAuthor p
-          ++ maybe "" (\d -> " (" ++ d ++ ")") (paperDates p)
+    author = paperAuthor p ++ maybe "" (\d -> " (" ++ d ++ ")") (paperDates p)
+    meta   = case paperSource p of
+               Just s | not (null s) -> author ++ ". " ++ s
+               _                     -> author ++ ", " ++ paperYear p
 
 renderTopic :: Topic -> H.Html
 renderTopic t =

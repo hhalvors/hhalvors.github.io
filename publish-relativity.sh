@@ -38,8 +38,15 @@ echo "==> [2/4] Rebuilding Hakyll site (site build)..."
 cd "$SITE"
 stack build
 stack exec -- site build
-# If the /relativity/ page ever looks stale, force a clean pass:
-#   stack exec -- site rebuild
+# `site build` reruns a rule only when its inputs change, and it does not
+# notice a change to the Haskell that renders the page, nor (on 2026-10-20,
+# through the symlink) to catalog.yaml. So if the generator or the catalog is
+# newer than the page it should have produced, force a clean pass.
+PAGE="$SITE/docs/relativity/index.html"
+if [ ! -f "$PAGE" ] || [ "$SITE/RelativityTexts.hs" -nt "$PAGE" ] || [ "$REL/catalog.yaml" -nt "$PAGE" ]; then
+  echo "    /relativity/ is stale -> site rebuild"
+  stack exec -- site rebuild
+fi
 
 if [ -z "$MSG" ]; then
   echo
