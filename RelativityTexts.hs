@@ -5,29 +5,23 @@
 -- Generates the catalog page /relativity/ for the Relativity Texts collection
 -- (transcriptions and translations of early papers on relativity theory).
 -- Data is read from data/relativity-texts.yaml, a symlink to
--- ~/relativity-texts/catalog.yaml. Trimmed from DanishTexts.hs (2026-10-20):
--- same schema and the same dt-* CSS classes (css/style.css), without the notes
--- machinery, modern editions, secondary literature, bibliographies, references,
--- dossiers and browse menu, none of which this collection has.
+-- ~/relativity-texts/catalog.yaml, whose header documents the fields.
 --
--- Fields beyond the danish-texts schema:
---   title-en  English title, shown under the original title
---   source    full citation of the printing transcribed; shown instead of
---             "year. venue" when present
---   publish   false leaves the work off the page (its PDFs are kept out of the
---             public build by PRIVATE in ~/relativity-texts/Makefile)
---   phase     1 = the papers being edited now; 2 = listed under "Planned"
+-- The collection is arranged by TOPIC, not by author (Hans, 2026-10-20): each
+-- topic is a section, its papers listed in catalog order (chronological), the
+-- papers of phase 2 under a "Planned" heading within the topic. A paper with
+-- `publish: false` is left off the page. Uses the dt-* classes of the Danish
+-- Texts page (css/style.css), so it needs no CSS of its own.
 -- ~/relativity-texts/validate-catalog.py checks the file against these types.
 
 module RelativityTexts (generateRelativityTextsHTML) where
 
 import GHC.Generics               (Generic)
-import Control.Monad               (forM_, unless)
+import Control.Monad               (unless)
 import Data.Aeson                  (FromJSON(..), Options, genericParseJSON,
                                     defaultOptions, fieldLabelModifier)
 import Data.Char                   (toLower, isUpper)
 import Data.List                   (isPrefixOf)
-import Data.Maybe                  (fromMaybe)
 import qualified Text.Blaze.Html5            as H
 import qualified Text.Blaze.Html5.Attributes as A
 import qualified Text.Blaze.Html.Renderer.String as R
@@ -37,34 +31,29 @@ import qualified Text.Blaze.Html.Renderer.String as R
 ------------------------------------------------------------------------
 
 data Catalog = Catalog
-  { authors :: [Author]
+  { topics :: [Topic]
   } deriving (Generic, Show)
 
-data Author = Author
-  { authorId    :: String
-  , authorName  :: String
-  , authorDates :: String
-  , authorBio   :: String
-  , works       :: [Work]
+data Topic = Topic
+  { topicId     :: String
+  , topicTitle  :: String
+  , topicNote   :: Maybe String
+  , topicPapers :: [Paper]
   } deriving (Generic, Show)
 
-data Work = Work
-  { workId       :: String
-  , workTitle    :: String
-  , workTitleEn  :: Maybe String
-  , workYear     :: String
-  , workVenue    :: Maybe String
-  , workSource   :: Maybe String
-  , workNote     :: Maybe String
-  , workPublish  :: Maybe Bool
-  , workPhase    :: Maybe Int
-  , workSections :: [Section]
-  } deriving (Generic, Show)
-
-data Section = Section
-  { sectionTitle  :: String
-  , sectionStatus :: String
-  , sectionLinks  :: [Link]
+data Paper = Paper
+  { paperId      :: String
+  , paperAuthor  :: String
+  , paperDates   :: Maybe String
+  , paperTitle   :: String
+  , paperTitleEn :: Maybe String
+  , paperYear    :: String
+  , paperSource  :: Maybe String
+  , paperNote    :: Maybe String
+  , paperStatus  :: String
+  , paperLinks   :: [Link]
+  , paperPublish :: Maybe Bool
+  , paperPhase   :: Maybe Int
   } deriving (Generic, Show)
 
 data Link = Link
@@ -74,7 +63,7 @@ data Link = Link
 
 ------------------------------------------------------------------------
 -- YAML field names: strip the type prefix, then camelCase -> kebab-case
--- (workTitleEn -> title-en), as in DanishTexts.hs.
+-- (paperTitleEn -> title-en), as in DanishTexts.hs.
 ------------------------------------------------------------------------
 
 camelToKebab :: String -> String
@@ -99,32 +88,22 @@ opts pfx = defaultOptions
 instance FromJSON Catalog where
   parseJSON = genericParseJSON defaultOptions
 
-instance FromJSON Author where
-  parseJSON = genericParseJSON (opts "author")
+instance FromJSON Topic where
+  parseJSON = genericParseJSON (opts "topic")
 
-instance FromJSON Work where
-  parseJSON = genericParseJSON (opts "work")
-
-instance FromJSON Section where
-  parseJSON = genericParseJSON (opts "section")
+instance FromJSON Paper where
+  parseJSON = genericParseJSON (opts "paper")
 
 instance FromJSON Link where
   parseJSON = genericParseJSON (opts "link")
 
 ------------------------------------------------------------------------
--- Which works are shown, and where
+-- Which papers are shown, and where
 ------------------------------------------------------------------------
 
-published :: Work -> Bool
-published w = workPublish w /= Just False
-
-planned :: Work -> Bool
-planned w = workPhase w == Just 2
-
--- Works of the current phase, per author; authors with none are not shown
--- in the main list (their planned works appear under "Planned").
-current :: Author -> [Work]
-current a = [ w | w <- works a, published w, not (planned w) ]
+published, planned :: Paper -> Bool
+published p = paperPublish p /= Just False
+planned   p = paperPhase p == Just 2
 
 ------------------------------------------------------------------------
 -- Badges and links (same classes as the Danish Texts page)
@@ -142,7 +121,6 @@ statusLabel "to-do"       = "to do"
 statusLabel s             = s
 
 statusBadge :: String -> H.Html
-statusBadge "none" = return ()
 statusBadge s =
   H.span H.! A.class_ (H.toValue $ statusClass s) $ H.toHtml (statusLabel s)
 
@@ -154,52 +132,51 @@ linkBadge lnk =
       H.! A.rel    "noopener noreferrer"
       $ H.toHtml (linkLabel lnk)
 
-renderSection :: Section -> H.Html
-renderSection sec =
-  H.div H.! A.class_ "dt-section" $ do
-    H.span H.! A.class_ "dt-section-title" $ H.toHtml (sectionTitle sec)
-    H.span H.! A.class_ "dt-section-links" $ do
-      mapM_ linkBadge (sectionLinks sec)
-      statusBadge (sectionStatus sec)
-
 ------------------------------------------------------------------------
--- Work entry. `byline` is the author's name, given only in the Planned list.
+-- A paper: author and dates, original title, English title, citation,
+-- note, then the links and status badge.
 ------------------------------------------------------------------------
 
-workMeta :: Work -> String
-workMeta w = case workSource w of
-  Just s | not (null s) -> s
-  _ -> case (workYear w, fromMaybe "" (workVenue w)) of
-         ("", "") -> ""
-         ("", v)  -> v
-         (y,  "") -> y
-         (y,  v)  -> y ++ ". " ++ v
-
-renderWork :: Maybe String -> String -> Work -> H.Html
-renderWork byline aid w =
+renderPaper :: String -> Paper -> H.Html
+renderPaper tid p =
   H.div H.! A.class_ "dt-work"
-        H.! A.id (H.toValue $ aid ++ "-" ++ workId w) $ do
-    H.div H.! A.class_ "dt-work-title" $ H.toHtml (workTitle w)
-    case workTitleEn w of
+        H.! A.id (H.toValue $ tid ++ "-" ++ paperId p) $ do
+    H.div H.! A.class_ "dt-work-meta" $ H.toHtml byline
+    H.div H.! A.class_ "dt-work-title" $ H.toHtml (paperTitle p)
+    case paperTitleEn p of
       Just t | not (null t) -> H.div H.! A.class_ "dt-work-meta" $ H.em (H.toHtml t)
       _ -> return ()
-    let meta = case byline of
-                 Just n  -> n ++ (if null (workMeta w) then "" else ". " ++ workMeta w)
-                 Nothing -> workMeta w
-    unless (null meta) $ H.div H.! A.class_ "dt-work-meta" $ H.toHtml meta
-    case workNote w of
+    case paperSource p of
+      Just s | not (null s) -> H.div H.! A.class_ "dt-work-meta" $ H.toHtml s
+      _ -> return ()
+    case paperNote p of
       Just n  -> H.div H.! A.class_ "dt-work-note" $ H.toHtml n
       Nothing -> return ()
-    H.div H.! A.class_ "dt-sections" $ mapM_ renderSection (workSections w)
+    H.div H.! A.class_ "dt-sections" $
+      H.div H.! A.class_ "dt-section" $
+        H.span H.! A.class_ "dt-section-links" $ do
+          mapM_ linkBadge (paperLinks p)
+          statusBadge (paperStatus p)
+  where
+    byline = paperAuthor p
+          ++ maybe "" (\d -> " (" ++ d ++ ")") (paperDates p)
 
-renderAuthor :: Author -> H.Html
-renderAuthor a =
-  H.section H.! A.class_ "dt-author" H.! A.id (H.toValue $ authorId a) $ do
-    H.h2 H.! A.class_ "dt-author-heading" $ do
-      H.toHtml (authorName a)
-      H.span H.! A.class_ "dt-author-dates" $ H.toHtml (" (" ++ authorDates a ++ ")")
-    H.p H.! A.class_ "dt-author-bio" $ H.toHtml (authorBio a)
-    mapM_ (renderWork Nothing (authorId a)) (current a)
+renderTopic :: Topic -> H.Html
+renderTopic t =
+  H.section H.! A.class_ "dt-author" H.! A.id (H.toValue $ topicId t) $ do
+    H.h2 H.! A.class_ "dt-author-heading" $ H.toHtml (topicTitle t)
+    case topicNote t of
+      Just n  -> H.p H.! A.class_ "dt-author-bio" $ H.toHtml n
+      Nothing -> return ()
+    mapM_ (renderPaper (topicId t)) now
+    unless (null later) $ do
+      H.h3 H.! A.class_ "dt-seclit-head"
+           H.! A.id (H.toValue $ topicId t ++ "-planned") $ "Planned"
+      mapM_ (renderPaper (topicId t)) later
+  where
+    shown = filter published (topicPapers t)
+    now   = filter (not . planned) shown
+    later = filter planned shown
 
 ------------------------------------------------------------------------
 -- Top-level generator
@@ -210,8 +187,7 @@ generateRelativityTextsHTML catalog = R.renderHtml $
   H.div H.! A.class_ "dt-catalog" $ do
     H.p H.! A.class_ "dt-intro" $ do
       "Transcriptions and English translations of early papers on the theory of "
-      "relativity, beginning with the debate of 1909–1911 over what a rigid body "
-      "can be in special relativity. Each transcription follows the printed text, "
+      "relativity, arranged by topic. Each transcription follows the printed text, "
       "with the journal's page numbers in the margin and the printed equation "
       "numbers. Scans are from the "
       H.a H.! A.href "https://archive.org/" H.! A.target "_blank" $ "Internet Archive"
@@ -224,11 +200,4 @@ generateRelativityTextsHTML catalog = R.renderHtml $
       statusBadge "complete"
       statusBadge "in-progress"
       statusBadge "to-do"
-    mapM_ renderAuthor [ a | a <- authors catalog, not (null (current a)) ]
-    let later = [ (a, w) | a <- authors catalog, w <- works a, published w, planned w ]
-    unless (null later) $
-      H.section H.! A.class_ "dt-author dt-references" H.! A.id "planned" $ do
-        H.h2 H.! A.class_ "dt-author-heading" $ "Planned"
-        H.p H.! A.class_ "dt-author-bio" $
-          "Related papers, to be transcribed and translated later."
-        forM_ later $ \(a, w) -> renderWork (Just (authorName a)) (authorId a) w
+    mapM_ renderTopic (topics catalog)
