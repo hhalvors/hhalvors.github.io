@@ -14,7 +14,8 @@
 #                            re-runs RelativityTexts.hs whenever the catalog changes.
 #
 # What this script does, in order:
-#   1. make, make check -> rebuild out-of-date PDFs in ~/relativity-texts;
+#   1. make mirror      -> copy the editions listed in MIRROR.tsv from ~/danish-texts
+#      make, make check -> rebuild out-of-date PDFs in ~/relativity-texts;
 #                          validate catalog.yaml and the scans' hashes
 #   2. site build       -> regenerate the Hakyll site (incl. /relativity/)
 #   3. push relativity-texts -> publishes catalog.yaml, the sources and PDFs
@@ -30,7 +31,8 @@ REL="$HOME/relativity-texts"
 SITE="$HOME/hhalvors.github.io"
 MSG="${1:-}"
 
-echo "==> [1/4] Building PDFs in relativity-texts (make, make check)..."
+echo "==> [1/4] Mirroring from danish-texts, building PDFs in relativity-texts (make mirror, make, make check)..."
+make -C "$REL" mirror
 make -C "$REL"
 make -C "$REL" check
 
