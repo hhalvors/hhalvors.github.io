@@ -31,6 +31,14 @@ talks:
     date: '2027-06'
     cv: true
 
+  - id: hopkins2027
+    title: 'TBA'
+    kind: conference
+    event: 'Second Natural Philosophy Symposium, Johns Hopkins University'
+    location: 'Baltimore'
+    date: '2027-05'
+    cv: true
+
   - id: 2027-comments-wallace-sider
     title: 'Comments on David Wallace and Ted Sider'
     kind: comments

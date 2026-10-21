@@ -42,6 +42,7 @@ import           PubList                  (parseBibTeXFile, transformEntry, gene
                                            generateRecent)
 import           EquivBiblio              (generateEquivHTML)
 import           DanishTexts              (generateDanishTextsHTML, catalogFacts)
+import           RelativityTexts          (generateRelativityTextsHTML)
 import           DanishNotes              (NoteIndex, FrontMatter, mkNoteIndex,
                                            mkNoteRef, validateNoteIndex,
                                            generateNotesIndexHTML)
@@ -732,6 +733,9 @@ siteRules privateMode = do
     match "data/danish-texts.yaml" $ do
       compile getResourceBody
 
+    match "data/relativity-texts.yaml" $ do
+      compile getResourceBody
+
     match "courses/phi367_s2026/syllabus.yaml" $ do
       compile getResourceBody
 
@@ -1173,6 +1177,27 @@ siteRules privateMode = do
 
     -- Redirect old URL
     redirect "pages/danish-texts.html" "/dansk/"
+
+    -- Relativity texts catalog. data/relativity-texts.yaml is a symlink to
+    -- ~/relativity-texts/catalog.yaml; RelativityTexts.hs renders it, and
+    -- publish-relativity.sh builds and pushes both repos. Same pattern as
+    -- dansk/index.html above, without the notes machinery.
+    create ["relativity/index.html"] $ do
+      route idRoute
+      compile $ do
+        _ <- (load (fromFilePath "data/relativity-texts.yaml") :: Compiler (Item String))  -- declare dependency
+        result <- unsafeCompiler $
+          decodeFileEither "data/relativity-texts.yaml"
+        case result of
+          Left err      -> error $ "YAML parse error (relativity-texts): " ++ show err
+          Right catalog ->
+            makeItem (generateRelativityTextsHTML catalog)
+              >>= loadAndApplyTemplate "templates/page.html"
+                    (constField "title" "Relativity Texts" `mappend` siteCtx)
+              >>= loadAndApplyTemplate "templates/default.html"
+                    (constField "title" "Relativity Texts"
+                      `mappend` baseSidebarCtx `mappend` siteCtx)
+              >>= relativizeUrls
 
     -- PHI 367 (Summer 2026) — "The Essential Kierkegaard" syllabus
     -- Data lives in courses/phi367_s2026/syllabus.yaml; rendered by Syllabus.hs.

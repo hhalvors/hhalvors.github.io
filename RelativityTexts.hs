@@ -10,7 +10,8 @@
 -- The collection is arranged by TOPIC, not by author (Hans, 2026-10-20): each
 -- topic is a section, its papers listed in catalog order (chronological), the
 -- papers of phase 2 under a "Planned" heading within the topic. A paper with
--- `publish: false` is left off the page. Uses the dt-* classes of the Danish
+-- `publish: false` is left off the page. A paper with `status: in-copyright`
+-- is listed with a link to an online copy and an "in copyright" badge. Uses the dt-* classes of the Danish
 -- Texts page (css/style.css), so it needs no CSS of its own.
 -- ~/relativity-texts/validate-catalog.py checks the file against these types.
 
@@ -112,12 +113,14 @@ planned   p = paperPhase p == Just 2
 statusClass :: String -> String
 statusClass "complete"    = "dt-status dt-status-complete"
 statusClass "in-progress" = "dt-status dt-status-inprogress"
+statusClass "in-copyright" = "dt-status dt-status-reference"
 statusClass _             = "dt-status dt-status-todo"
 
 statusLabel :: String -> String
 statusLabel "complete"    = "complete"
 statusLabel "in-progress" = "in progress"
 statusLabel "to-do"       = "to do"
+statusLabel "in-copyright" = "in copyright"
 statusLabel s             = s
 
 statusBadge :: String -> H.Html
