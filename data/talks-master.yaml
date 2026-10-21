@@ -76,7 +76,25 @@ talks:
     cv: true
 
   - id: pittsburgh2026
-    title: 'TBA'
+    title: 'Operator algebras and quantum gravity: lessons for naturalized metaphysics'
+    abstract: >
+      Recent work by Witten and collaborators has returned to the
+      operator-algebraic methods of algebraic quantum field theory to ask what
+      happens when quantum fields are coupled to gravity. Several familiar
+      features of quantum field theory on a fixed spacetime do not survive.
+      Observables can no longer be assigned to sharp regions of spacetime, and
+      the observer, with a physical clock, becomes part of the description.
+      The type III local algebras of quantum field theory become type II, and
+      empty de Sitter space turns out to be a state of maximum entropy. What
+      metaphysical lessons can we draw from results like these when no final
+      theory is in sight? A familiar realist picture, shared by some recent
+      structural realists, values present theories as approximations to a
+      final theory we do not yet have. I follow Bohr instead, for whom
+      progress in physics comes through "an appropriate widening of the
+      conceptual framework." Exact results from idealized frameworks are
+      valuable on this view, not because they will survive, but because they
+      show precisely which presuppositions our concepts of particle, region
+      and observer rest on, and where those presuppositions give way.
     kind: workshop
     event: 'Naturalized Metaphysics of Physics'
     location: 'Pittsburgh'
