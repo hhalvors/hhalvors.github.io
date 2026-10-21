@@ -39,6 +39,22 @@ talks:
     date: '2027-05'
     cv: true
 
+  - id: venice2027
+    title: 'TBA'
+    kind: conference
+    event: 'Conference on theoretical equivalence'
+    location: 'Venice'
+    date: '2027-04'
+    cv: true
+
+  - id: lugano2027
+    title: 'TBA'
+    kind: conference
+    event: 'Conference on material objects'
+    location: 'Lugano'
+    date: '2027-04'
+    cv: true
+
   - id: 2027-comments-wallace-sider
     title: 'Comments on David Wallace and Ted Sider'
     kind: comments
