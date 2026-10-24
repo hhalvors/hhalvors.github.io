@@ -100,6 +100,10 @@ talks:
     location: 'Pittsburgh'
     date: '2026-10'
     cv: true
+    web: true
+    links:
+    - {label: 'pdf', url: 'talks/pittsburgh2026.pdf'}
+    - {label: 'md', url: 'talks/pittsburgh2026.md'}
 
   - id: schock
     title: 'Er musste das Wissen aufheben: van Fraassen on the priority of the manifest image'
