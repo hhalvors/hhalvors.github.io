@@ -99,6 +99,7 @@ talks:
     event: 'Naturalized Metaphysics of Physics'
     location: 'Pittsburgh'
     date: '2026-10'
+    given: true
     cv: true
     web: true
     links:

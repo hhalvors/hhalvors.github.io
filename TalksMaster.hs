@@ -51,6 +51,7 @@ data MTalk = MTalk
   , tLinks          :: [MLink]
   , tNote           :: Maybe String
   , tCvRaw          :: Maybe String    -- verbatim CV LaTeX (ground truth)
+  , tGiven          :: Bool            -- already delivered: never "upcoming"
   } deriving Show
 
 data MLink = MLink
@@ -88,6 +89,7 @@ instance FromJSON MTalk where
           <*> o .:? "links"         .!= []
           <*> o .:? "note"
           <*> o .:? "cv_raw"
+          <*> o .:? "given"         .!= False
 
 instance FromJSON MLink where
   parseJSON = withObject "MLink" $ \o ->

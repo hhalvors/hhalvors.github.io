@@ -129,8 +129,10 @@ monthOf t = case tDate t of
 -- catalog records months, not days, so a talk in the current month counts as
 -- upcoming. A year-only date ("2025") has month 0, so it is upcoming only if
 -- its year lies in the future. Shared by the talks page and the home page.
+-- `given: true` in the catalog overrides this for a talk already delivered
+-- earlier in the current month.
 isUpcoming :: (Int, Int) -> Int -> MTalk -> Bool
-isUpcoming today year t = (year, monthOf t) >= today
+isUpcoming today year t = not (tGiven t) && (year, monthOf t) >= today
 
 -- | Past talks with slides online, by year. Upcoming talks are left out
 -- here, since they are listed in their own section.
