@@ -289,6 +289,8 @@ talks:
     web: true
     links:
     - {label: 'pdf', url: 'https://hanshalvorson.com/talks/bohr-potsdam/bohr-potsdam.pdf'}
+    - {label: 'slides', url: 'https://hanshalvorson.com/talks/bohr-potsdam/bohr-unity.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/bohr-potsdam/bohr-unity.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/bohr-potsdam'}
     cv_raw: |
       ``On the unity of science'' Forum Religionen im Kontext. Potsdam, Dec 2024
@@ -518,13 +520,18 @@ talks:
 
 - year: 2022
   items:
-  - id: 2022-niels-bohrs-og-den-danske
+  - id: copenhagen2022
     title: 'Niels Bohrs og den danske filosofiske tradition'
     kind: conference
     date: '2022-09'
     event: 'Symposium: Niels Bohr: Scientist, Philosopher, and Diplomat'
     location: Copenhagen
     cv: true
+    web: true
+    links:
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/copenhagen2022/bohrs-plads.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/copenhagen2022/bohrs-plads.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/copenhagen2022'}
     cv_raw: |
       ``Niels Bohrs og den danske filosofiske tradition'', Symposium: Niels Bohr: Scientist, Philosopher, and Diplomat. Danish Academy for Science and Letters. Sep 2022
 
@@ -591,12 +598,17 @@ talks:
 
 - year: 2020
   items:
-  - id: 2020-author-meets-critics-logic-philosophy
+  - id: apa2020
     kind: author-meets-critics
     date: '2020-02'
     event: Central APA
     location: Chicago
     cv: true
+    web: true
+    links:
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/apa2020/apa2020-slides.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/apa2020/apa2020-slides.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/apa2020'}
     cv_raw: |
       Author meets critics, {\it The Logic in Philosophy of Science}. Central APA, Chicago, Feb 2020
 
@@ -700,23 +712,33 @@ talks:
 
 - year: 2017
   items:
-  - id: 2017-wavefunction-itself
+  - id: buenos2017
     title: 'The wave-function in itself'
     kind: conference
     date: '2017-06'
     event: 'Conference: Identity, indistinguishability and non-locality in quantum physics'
     location: Buenos Aires
     cv: true
+    web: true
+    links:
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/buenos2017/buenos-slides.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/buenos2017/buenos-slides.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/buenos2017'}
     cv_raw: |
       ``The wave-function in itself'' Conference: Identity, indistinguishability and non-locality in quantum physics. Buenos Aires. Jun 2017
 
-  - id: 2017-invariant-content-equivalent-theories
+  - id: stanford2017
     title: 'The invariant content of equivalent theories'
     kind: conference
     date: '2017-06'
     event: CSLI Workshop on Logic, Rationality, and Intelligent Interaction
     location: Stanford University
     cv: true
+    web: true
+    links:
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/stanford2017/stanford2.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/stanford2017/stanford2.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/stanford2017'}
     cv_raw: |
       ``The invariant content of equivalent theories'' CSLI Workshop on Logic, Rationality, and Intelligent Interaction. Stanford University. Jun 2017
 
@@ -740,13 +762,18 @@ talks:
 
 - year: 2016
   items:
-  - id: 2016-invariant-content-equivalent-theories
+  - id: munich2016
     title: 'The invariant content of equivalent theories'
     kind: conference
     date: '2016-06'
     event: Semantics of Scientific Theories Conference
     location: LMU Munich
     cv: true
+    web: true
+    links:
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/munich2016/munich-slides.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/munich2016/munich-slides.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/munich2016'}
     cv_raw: |
       ``The invariant content of equivalent theories'' Semantics of Scientific Theories Conference, LMU Munich. Jun 2016
 
@@ -837,13 +864,18 @@ talks:
     cv_raw: |
       ``The invariant structure of equivalent theories'' Rutgers University Philosophy Colloquium. Apr 2015
 
-  - id: 2015-reality-equivalence-algebraic-quantum-theory
+  - id: nagoya2015
     title: 'Reality and equivalence in algebraic quantum theory'
     kind: conference
     date: '2015-03'
     event: 'Nagoya Winter Workshop 2015: Reality and Measurement in Algebraic Quantum Theory'
     location: University of Nagoya, Japan
     cv: true
+    web: true
+    links:
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/nagoya2015/nagoya.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/nagoya2015/nagoya.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/nagoya2015'}
     cv_raw: |
       ``Reality and equivalence in algebraic quantum theory'' \href{https://sites.google.com/site/sixthnww2015/}{Nagoya Winter Workshop 2015: Reality and Measurement in Algebraic Quantum Theory.} University of Nagoya, Japan. Mar 2015
 
@@ -860,13 +892,18 @@ talks:
     cv_raw: |
       ``Univalent foundations: structuralist foundations?'' (with D.\ Tsementzis). Association of Symbolic Logic Meeting. Philadelphia, Dec 2014
 
-  - id: 2014-categories-scientific-theories
+  - id: psa2014
     title: 'Categories of scientific theories'
     kind: conference
     date: '2014-11'
     event: Philosophy of Science Association Meeting
     location: Chicago
     cv: true
+    web: true
+    links:
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/psa2014/psa2014-hh.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/psa2014/psa2014-hh.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/psa2014'}
     cv_raw: |
       ``Categories of scientific theories.'' Philosophy of Science Association Meeting. Chicago, Nov 2014
 
@@ -880,17 +917,22 @@ talks:
     cv_raw: |
       ``Equivalent theories and invariant content.'' University of Southern California Philosophy Colloquium. Oct 2014
 
-  - id: 2014-explanation-via-surplus-structure
+  - id: lse2014
     title: 'Explanation via surplus structure'
     kind: talk
     date: '2014-03'
     event: Sigma Club
     location: 'London School of Economics'
     cv: true
+    web: true
+    links:
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/lse2014/surplus.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/lse2014/surplus.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/lse2014'}
     cv_raw: |
       ``Explanation via surplus structure'' Sigma Club, London School of Economics. Mar 2014
 
-  - id: 2014-does-universe-need-god
+  - id: oxford2014
     title: 'Does the universe need God?'
     kind: series
     date: '2014-03'
@@ -901,16 +943,24 @@ talks:
     note: 'A sceptical look at natural theology, and at the fine-tuning argument in particular.'
     links:
     - {label: 'video', url: 'https://www.youtube.com/watch?v=SDwpTcSEjak'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/oxford2014/dung-ox.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/oxford2014/dung-ox.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/oxford2014'}
     cv_raw: |
       ``Does the universe need God?'' Ian Ramsey Centre Lecture Series. Oxford University. Mar 2014
 
-  - id: 2014-does-universe-need-god-2
+  - id: cambridge2014
     title: 'Does the universe need God?'
     kind: series
     date: '2014-01'
     event: Faraday Institute Lecture Series
     location: Cambridge University
     cv: true
+    web: true
+    links:
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/cambridge2014/dung-slides.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/cambridge2014/dung-slides.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/cambridge2014'}
     cv_raw: |
       ``Does the universe need God?'' Faraday Institute Lecture Series. Cambridge University. Jan 2014
 
@@ -938,7 +988,7 @@ talks:
 
 - year: 2013
   items:
-  - id: 2013-quantum-theory-infinite-systems-from
+  - id: madrid2013
     title: 'Quantum theory of infinite systems: from fields to information'
     kind: series
     date: '2013-11'
@@ -946,10 +996,19 @@ talks:
     location: Madrid
     series_count: 3
     cv: true
+    web: true
+    links:
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/madrid2013/madrid.pdf'}
+    - {label: 'aqft', url: 'https://hanshalvorson.com/talks/madrid2013/madrid-aqft.pdf'}
+    - {label: 'cbh', url: 'https://hanshalvorson.com/talks/madrid2013/madrid-cbh.pdf'}
+    - {label: 'particles', url: 'https://hanshalvorson.com/talks/madrid2013/madrid-particles.pdf'}
+    - {label: 'rindler', url: 'https://hanshalvorson.com/talks/madrid2013/madrid-rindler.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/madrid2013/madrid.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/madrid2013'}
     cv_raw: |
       ``Quantum theory of infinite systems: from fields to information'' (three lecture series). Instituto de F{\'i}sica Fundamental. Madrid, Nov 2013
 
-  - id: 2013-what-scientific-theory
+  - id: cmu2013
     title: 'What is a scientific theory?'
     kind: series
     date: '2013-09'
@@ -958,6 +1017,11 @@ talks:
     coauthors: ['J. Weatherall']
     series_count: 2
     cv: true
+    web: true
+    links:
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/cmu2013/theories.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/cmu2013/theories.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/cmu2013'}
     cv_raw: |
       HH and J. Weatherall, ``What is a scientific theory?'' (two lecture series) Carnegie Mellon University. Sep 2013
 
@@ -972,17 +1036,22 @@ talks:
     cv_raw: |
       ``The conventionality of parastatistics'' (with D.\ Baker and N.\ Swanson) Foundations of Physics, Munich. Jul 2013
 
-  - id: 2013-invariant-structure-equivalent-theories
+  - id: uwo2013
     title: 'The invariant structure of equivalent theories'
     kind: keynote
     date: '2013-05'
     event: keynote lecture at LMP graduate conference, University of Western Ontario
     location: ''
     cv: true
+    web: true
+    links:
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/uwo2013/uwo-slides.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/uwo2013/uwo-slides.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/uwo2013'}
     cv_raw: |
       ``The invariant structure of equivalent theories'' keynote lecture at LMP graduate conference, University of Western Ontario. May~2013
 
-  - id: 2013-structuralist-foundations-abstract-mathematics
+  - id: irvine2013
     title: 'Structuralist foundations for abstract mathematics'
     kind: conference
     date: '2013-05'
@@ -990,16 +1059,26 @@ talks:
     location: UC Irvine
     coauthors: ['D. Tsementzis']
     cv: true
+    web: true
+    links:
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/irvine2013/structural-foundations.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/irvine2013/structural-foundations.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/irvine2013'}
     cv_raw: |
       ``Structuralist foundations for abstract mathematics'' (with D.\ Tsementzis) Category-theoretic foundations of mathematics workshop, UC Irvine. May~2013
 
-  - id: 2013-relativity-wrong-redux
+  - id: cuny2013
     title: 'The relativity of wrong, redux'
     kind: talk
     date: '2013-05'
     event: Philosophy, Science and Religion Forum
     location: CUNY, Laguardia Community College
     cv: true
+    web: true
+    links:
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/cuny2013/cuny-slides.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/cuny2013/cuny-slides.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/cuny2013'}
     cv_raw: |
       ``The relativity of wrong, redux'' Philosophy, Science and Religion Forum. CUNY, Laguardia Community College. May~2013
 
@@ -1178,13 +1257,18 @@ talks:
 
 - year: 2007
   items:
-  - id: 2007-antimatter-metaphysics-opposites
+  - id: texas2007
     title: 'Antimatter and the metaphysics of opposites'
     kind: talk
     date: '2007-11'
     event: ''
     location: 'University of Texas at Austin'
     cv: true
+    web: true
+    links:
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/texas2007/texas.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/texas2007/texas.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/texas2007'}
     cv_raw: |
       ``Antimatter and the metaphysics of opposites'' University of Texas at Austin, Nov 2007
 
