@@ -2,13 +2,15 @@
 #
 # publish-all.sh — build, commit and push the site and all its satellite repos
 # in one go. Written 2026-10-25; combines publish-danish.sh and
-# publish-relativity.sh (both still work on their own) and adds ~/talks.
+# publish-relativity.sh (both still work on their own) and adds ~/talks and
+# ~/nordisk.
 #
 # The repos, and the order they are published in:
 #   1. ~/danish-texts      PDFs + catalog.yaml   (GitHub Pages: /danish-texts/)
 #   2. ~/relativity-texts  PDFs + catalog.yaml   (GitHub Pages: /relativity-texts/)
 #   3. ~/talks             slides + sources      (GitHub Pages: /talks/)
-#   4. ~/hhalvors.github.io  this Hakyll site    (docs/ is the published site)
+#   4. ~/nordisk           the slide tool        (github.com/hhalvors/nordisk)
+#   5. ~/hhalvors.github.io  this Hakyll site    (docs/ is the published site)
 # The satellites go first, so that every link the new site makes already
 # resolves when the site goes live.
 #
@@ -26,6 +28,7 @@
 #   relativity-texts  everything (git add -A); .gitignore keeps out the rest
 #   talks             everything (git add -A); .gitignore keeps out images,
 #                     PowerPoint/Keynote, LaTeX clutter, *.with-notes
+#   nordisk           everything (git add -A); nothing to build
 #   site              docs/ plus changes to files git already tracks
 #                     (site.hs, data/talks-master.yaml, ...). NEW files outside
 #                     docs/ are never swept in: they are listed at the end, and
@@ -39,6 +42,8 @@ SITE="$HOME/hhalvors.github.io"
 DANISH="$HOME/danish-texts"
 REL="$HOME/relativity-texts"
 TALKS="$HOME/talks"
+NORDISK="$HOME/nordisk"
+[ -d "$NORDISK" ] || NORDISK="$HOME/.config/nordisk"   # its old home
 
 BUILD=1
 if [ "${1:-}" = "-n" ] || [ "${1:-}" = "--no-build" ]; then BUILD=0; shift; fi
@@ -91,7 +96,8 @@ show() {  # name dir
 if [ -z "$MSG" ]; then
   say "Dry run: nothing committed. What would be published:"
   show danish-texts "$DANISH"; show relativity-texts "$REL"
-  show talks "$TALKS";         show site "$SITE"
+  show talks "$TALKS";         show nordisk "$NORDISK"
+  show site "$SITE"
   echo
   echo "Details: git -C ~/<repo> status --short"
   echo "To publish:  ./publish-all.sh \"your message\""
@@ -119,6 +125,7 @@ publish() {  # name dir  [paths to stage...]   (no paths = git add -A)
 publish danish-texts     "$DANISH" catalog.yaml texts/ essays/ dossier.py Makefile
 publish relativity-texts "$REL"
 publish talks            "$TALKS"
+publish nordisk          "$NORDISK"
 git -C "$SITE" add -u            # tracked source files: site.hs, data/*.yaml, ...
 publish site             "$SITE" docs/
 
