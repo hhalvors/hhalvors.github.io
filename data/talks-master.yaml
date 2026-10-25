@@ -103,8 +103,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/pittsburgh2026.pdf'}
-    - {label: 'md', url: 'talks/pittsburgh2026.md'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/pittsburgh2026/pittsburgh2026.pdf'}
+    - {label: 'md', url: 'https://github.com/hhalvors/talks/blob/main/pittsburgh2026/pittsburgh2026.md'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/pittsburgh2026'}
 
   - id: schock
     title: 'Er musste das Wissen aufheben: van Fraassen on the priority of the manifest image'
@@ -115,9 +116,10 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/schock.pdf'}
-    - {label: 'html', url: 'talks/schock.html'}
-    - {label: 'qmd', url: 'talks/schock.qmd'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/schock/schock.pdf'}
+    - {label: 'qmd', url: 'https://github.com/hhalvors/talks/blob/main/schock/schock.qmd'}
+    - {label: 'html', url: 'https://github.com/hhalvors/talks/blob/main/schock/schock.html'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/schock'}
     cv_raw: |
       ``Er musste das Wissen aufheben: van Fraassen on the priority of the manifest image'' Schock Prize conference. June 2026
 
@@ -130,7 +132,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/equivalence-oslo.pdf'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/equivalence-oslo/equivalence-oslo.pdf'}
+    - {label: 'md', url: 'https://github.com/hhalvors/talks/blob/main/equivalence-oslo/equivalence-oslo.md'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/equivalence-oslo'}
     cv_raw: |
       TBA. Conference on theoretical equivalence. Oslo, June 2026
 
@@ -143,8 +147,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/reunions2026.pdf'}
-    - {label: 'tex', url: 'talks/reunions2026.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/reunions2026/reunions2026.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/reunions2026/reunions2026.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/reunions2026'}
     cv_raw: |
       ``Updating your religion'' Princeton alumni lecture. Princeton, May 2026
 
@@ -159,7 +164,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/bohr-causality.pdf'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/bohr-causality/bohr-causality.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/bohr-causality/bohr-causality.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/bohr-causality'}
     cv_raw: |
       ``Niels Bohr on causal explanation'' 5th International Conference on the History of Quantum Physics, August 2025
 
@@ -173,7 +180,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/climacus.pdf'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/climacus/climacus.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/climacus/climacus.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/climacus'}
     cv_raw: |
       ``Theory acceptance is not (yet) belief''. The epistemological significance of Kierkegaard's Climacus works. University of Southampton, May 2025
 
@@ -187,8 +196,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/b4bohr.pdf'}
-    - {label: 'tex', url: 'talks/b4bohr.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/b4bohr/b4bohr.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/b4bohr/b4bohr.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/b4bohr'}
     cv_raw: |
       ``Niels Bohr's philosophy of applied mathematics'' Videnskabshistorisk Selskab. Copenhagen, Apr 2025.
 
@@ -201,8 +211,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/venice-determinism.pdf'}
-    - {label: 'tex', url: 'talks/venice-determinism.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/venice-determinism/venice-determinism.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/venice-determinism/venice-determinism.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/venice-determinism'}
     cv_raw: |
       TBA. Workshop: The Logic in Science. Venice, Apr 2025.
 
@@ -215,8 +226,10 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/equivalence.pdf'}
-    - {label: 'tex', url: 'talks/equivalence.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/equivalence/equivalence.pdf'}
+    - {label: 'md', url: 'https://github.com/hhalvors/talks/blob/main/equivalence/equivalence.md'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/equivalence/equivalence.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/equivalence'}
     cv_raw: |
       ``Equivalence -- state of play'' Workshop: Università della Svizzera italiana
 
@@ -229,8 +242,10 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/reduction.pdf'}
-    - {label: 'tex', url: 'talks/reduction.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/reduction/reduction.pdf'}
+    - {label: 'md', url: 'https://github.com/hhalvors/talks/blob/main/reduction/reduction.md'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/reduction/reduction.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/reduction'}
     cv_raw: |
       ``Reduction redux'' Department Colloquium: Università della Svizzera italiana
 
@@ -244,7 +259,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/determinism.pdf'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/determinism/nijmegen2025-slides.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/determinism/nijmegen2025-slides.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/determinism'}
     cv_raw: |
       ``When is a theory deterministic?'' Radboud Center for Natural Philosophy. Nijmegen, Jan 2025
 
@@ -257,7 +274,8 @@ talks:
     cv: true              # real talk, was missing from cv.tex — add it there too
     web: true
     links:
-    - {label: 'pdf', url: 'talks/brandes.pdf'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/brandes/brandes.pdf'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/brandes'}
 
 - year: 2024
   items:
@@ -270,7 +288,8 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/bohr-potsdam.pdf'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/bohr-potsdam/bohr-potsdam.pdf'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/bohr-potsdam'}
     cv_raw: |
       ``On the unity of science'' Forum Religionen im Kontext. Potsdam, Dec 2024
 
@@ -283,8 +302,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/math-lang.pdf'}
-    - {label: 'tex', url: 'talks/math-lang.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/math-lang/math-lang.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/math-lang/math-lang.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/math-lang'}
     cv_raw: |
       ``Mathematics is just more language'' Meaning and Equivalence of Formal Theories. Vienna, Dec 2024
 
@@ -306,8 +326,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/equivalence-foundations.pdf'}
-    - {label: 'tex', url: 'talks/equivalence-foundations.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/equivalence-foundations/equivalence-foundations.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/equivalence-foundations/equivalence-foundations.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/equivalence-foundations'}
     cv_raw: |
       ``Equivalence in foundations'' ASL Logic Colloquium. G{\"o}teborg, June 2024
 
@@ -320,8 +341,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/shifty.pdf'}
-    - {label: 'tex', url: 'talks/shifty.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/shifty/shifty.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/shifty/shifty.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/shifty'}
     cv_raw: |
       ``Niels Bohr on the knowing subject'' BOHR21 Workshop. Copenhagen, June 2024
 
@@ -334,7 +356,8 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/bohr-roots.pdf'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/bohr-roots/bohr-roots.pdf'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/bohr-roots'}
     cv_raw: |
       ``The roots of Niels Bohr's thought'' Workshop on Literature, Philosophy, and Science (Transformative Transmissions: German-Scandinavian Intellectual Communities 1790--1860). Copenhagen, June 2024
 
@@ -350,8 +373,10 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/windbag.pdf'}
-    - {label: 'tex', url: 'talks/windbag.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/windbag/windbag.pdf'}
+    - {label: 'md', url: 'https://github.com/hhalvors/talks/blob/main/windbag/windbag.md'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/windbag/windbag.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/windbag'}
     cv_raw: |
       ``Was Rasmus Nielsen a windbag (as Kierkegaard claimed)?'' Søren Kierkegaard Research Center. Copenhagen, Nov 2023
 
@@ -365,8 +390,10 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/irvine2023.pdf'}
-    - {label: 'tex', url: 'talks/irvine2023.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/irvine2023/irvine2023.pdf'}
+    - {label: 'md', url: 'https://github.com/hhalvors/talks/blob/main/irvine2023/irvine2023.md'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/irvine2023/irvine2023.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/irvine2023'}
     cv_raw: |
       ``What do models say?'' UC Irvine, Oct 2023
 
@@ -379,8 +406,10 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/stockholm2023.pdf'}
-    - {label: 'tex', url: 'talks/stockholm2023.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/stockholm2023/stockholm2023.pdf'}
+    - {label: 'md', url: 'https://github.com/hhalvors/talks/blob/main/stockholm2023/stockholm2023.md'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/stockholm2023/stockholm2023.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/stockholm2023'}
     cv_raw: |
       ``Contextualism in relativity and quantum theories'' University of Stockholm, Oct 2023
 
@@ -403,8 +432,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/konstanz.pdf'}
-    - {label: 'tex', url: 'talks/konstanz.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/konstanz/konstanz.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/konstanz/konstanz.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/konstanz'}
     cv_raw: |
       ``Speaking about models'' University of Konstanz, June 2023
 
@@ -417,7 +447,8 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/bohr-values.pdf'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/bohr-values/bohr-values.pdf'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/bohr-values'}
     cv_raw: |
       ``Niels Bohr's values'' University of Copenhagen, June 2023
 
@@ -430,8 +461,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/hole-dispense.pdf'}
-    - {label: 'tex', url: 'talks/hole-dispense.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/hole-dispense/hole-dispense.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/hole-dispense/hole-dispense.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/hole-dispense'}
     cv_raw: |
       ``Dispensing with the hole argument'' \emph{Mathematics in Physics}. Oslo, June 2023
 
@@ -454,7 +486,8 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/formal-outline.pdf'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/formal-outline/formal-outline.pdf'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/formal-outline'}
     cv_raw: |
       ``The goal of formal analysis'' \textit{The Formal Turn in Twentieth Century Thought}. Vienna, Feb 2023
 
@@ -468,7 +501,8 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/vienna2023.pdf'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/vienna2023/vienna2023.pdf'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/vienna2023'}
     cv_raw: |
       ``The concept of a frame of reference'' \textit{Physics meets Philosophy}. Vienna, Feb 2023
 
@@ -587,8 +621,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/illinois2019.pdf'}
-    - {label: 'tex', url: 'talks/illinois2019.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/illinois2019/illinois2019.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/illinois2019/illinois2019.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/illinois2019'}
     cv_raw: |
       ``Physics and the absolute conception'' University of Illinois, Sep 2019
 
@@ -601,8 +636,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/prague2019.pdf'}
-    - {label: 'tex', url: 'talks/prague2019.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/prague2019/prague2019.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/prague2019/prague2019.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/prague2019'}
     cv_raw: |
       ``Objective description in physics'' The International Congress of Logic, Methodology and Philosophy of Science and Technology. Prague. July 2019
 
@@ -626,8 +662,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/munich2018-2cat.pdf'}
-    - {label: 'tex', url: 'talks/munich2018-2cat.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/munich2018-2cat/munich2018-2cat.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/munich2018-2cat/munich2018-2cat.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/munich2018-2cat'}
     cv_raw: |
       ``$2$-categories of theories'' Conference on Category Theory in Philosophy of Science. LMU Munich, July 2018
 
@@ -640,8 +677,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/salzburg2018.pdf'}
-    - {label: 'tex', url: 'talks/salzburg2018.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/salzburg2018/salzburg2018.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/salzburg2018/salzburg2018.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/salzburg2018'}
     cv_raw: |
       ``Semantics and the god's eye view.'' Conference on Semantics of Science. University of Salzburg, June 2018
 
@@ -654,8 +692,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/munich2018.pdf'}
-    - {label: 'tex', url: 'talks/munich2018.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/munich2018/munich2018.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/munich2018/munich2018.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/munich2018'}
     cv_raw: |
       ``Wissenschaftslogik erneuert'' LMU Munich, June 2018
 
@@ -792,8 +831,9 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'talks/rutgers2015.pdf'}
-    - {label: 'tex', url: 'talks/rutgers2015.tex'}
+    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/rutgers2015/rutgers2015.pdf'}
+    - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/rutgers2015/rutgers2015.tex'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/rutgers2015'}
     cv_raw: |
       ``The invariant structure of equivalent theories'' Rutgers University Philosophy Colloquium. Apr 2015
 
