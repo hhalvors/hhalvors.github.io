@@ -806,10 +806,8 @@ siteRules privateMode = do
       route idRoute
       compile getResourceBody      
 
-    -- Talks
-    match "talks/**" $ do
-        route idRoute
-        compile copyFileCompiler      
+    -- Talk PDFs and sources live in the separate talks repo (GitHub Pages,
+    -- served at /talks/); the site no longer copies a talks/ folder.
 
     -- Talks: slides page generated from data/talks-master.yaml (see Talks.hs).
     -- The single source of truth; data/talks-master.yaml is matched in the CV

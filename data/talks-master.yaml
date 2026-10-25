@@ -103,7 +103,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/pittsburgh2026/pittsburgh2026.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/pittsburgh2026/pittsburgh2026.pdf'}
     - {label: 'md', url: 'https://github.com/hhalvors/talks/blob/main/pittsburgh2026/pittsburgh2026.md'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/pittsburgh2026'}
 
@@ -116,7 +116,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/schock/schock.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/schock/schock.pdf'}
     - {label: 'qmd', url: 'https://github.com/hhalvors/talks/blob/main/schock/schock.qmd'}
     - {label: 'html', url: 'https://github.com/hhalvors/talks/blob/main/schock/schock.html'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/schock'}
@@ -132,7 +132,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/equivalence-oslo/equivalence-oslo.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/equivalence-oslo/equivalence-oslo.pdf'}
     - {label: 'md', url: 'https://github.com/hhalvors/talks/blob/main/equivalence-oslo/equivalence-oslo.md'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/equivalence-oslo'}
     cv_raw: |
@@ -147,7 +147,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/reunions2026/reunions2026.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/reunions2026/reunions2026.pdf'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/reunions2026/reunions2026.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/reunions2026'}
     cv_raw: |
@@ -164,7 +164,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/bohr-causality/bohr-causality.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/bohr-causality/bohr-causality.pdf'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/bohr-causality/bohr-causality.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/bohr-causality'}
     cv_raw: |
@@ -180,7 +180,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/climacus/climacus.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/climacus/climacus.pdf'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/climacus/climacus.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/climacus'}
     cv_raw: |
@@ -196,7 +196,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/b4bohr/b4bohr.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/b4bohr/b4bohr.pdf'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/b4bohr/b4bohr.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/b4bohr'}
     cv_raw: |
@@ -211,7 +211,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/venice-determinism/venice-determinism.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/venice-determinism/venice-determinism.pdf'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/venice-determinism/venice-determinism.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/venice-determinism'}
     cv_raw: |
@@ -226,7 +226,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/equivalence/equivalence.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/equivalence/equivalence.pdf'}
     - {label: 'md', url: 'https://github.com/hhalvors/talks/blob/main/equivalence/equivalence.md'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/equivalence/equivalence.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/equivalence'}
@@ -242,7 +242,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/reduction/reduction.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/reduction/reduction.pdf'}
     - {label: 'md', url: 'https://github.com/hhalvors/talks/blob/main/reduction/reduction.md'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/reduction/reduction.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/reduction'}
@@ -259,7 +259,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/determinism/nijmegen2025-slides.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/determinism/nijmegen2025-slides.pdf'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/determinism/nijmegen2025-slides.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/determinism'}
     cv_raw: |
@@ -274,7 +274,7 @@ talks:
     cv: true              # real talk, was missing from cv.tex — add it there too
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/brandes/brandes.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/brandes/brandes.pdf'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/brandes'}
 
 - year: 2024
@@ -288,7 +288,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/bohr-potsdam/bohr-potsdam.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/bohr-potsdam/bohr-potsdam.pdf'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/bohr-potsdam'}
     cv_raw: |
       ``On the unity of science'' Forum Religionen im Kontext. Potsdam, Dec 2024
@@ -302,7 +302,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/math-lang/math-lang.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/math-lang/math-lang.pdf'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/math-lang/math-lang.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/math-lang'}
     cv_raw: |
@@ -326,7 +326,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/equivalence-foundations/equivalence-foundations.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/equivalence-foundations/equivalence-foundations.pdf'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/equivalence-foundations/equivalence-foundations.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/equivalence-foundations'}
     cv_raw: |
@@ -341,7 +341,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/shifty/shifty.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/shifty/shifty.pdf'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/shifty/shifty.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/shifty'}
     cv_raw: |
@@ -356,7 +356,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/bohr-roots/bohr-roots.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/bohr-roots/bohr-roots.pdf'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/bohr-roots'}
     cv_raw: |
       ``The roots of Niels Bohr's thought'' Workshop on Literature, Philosophy, and Science (Transformative Transmissions: German-Scandinavian Intellectual Communities 1790--1860). Copenhagen, June 2024
@@ -373,7 +373,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/windbag/windbag.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/windbag/windbag.pdf'}
     - {label: 'md', url: 'https://github.com/hhalvors/talks/blob/main/windbag/windbag.md'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/windbag/windbag.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/windbag'}
@@ -390,7 +390,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/irvine2023/irvine2023.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/irvine2023/irvine2023.pdf'}
     - {label: 'md', url: 'https://github.com/hhalvors/talks/blob/main/irvine2023/irvine2023.md'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/irvine2023/irvine2023.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/irvine2023'}
@@ -406,7 +406,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/stockholm2023/stockholm2023.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/stockholm2023/stockholm2023.pdf'}
     - {label: 'md', url: 'https://github.com/hhalvors/talks/blob/main/stockholm2023/stockholm2023.md'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/stockholm2023/stockholm2023.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/stockholm2023'}
@@ -432,7 +432,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/konstanz/konstanz.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/konstanz/konstanz.pdf'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/konstanz/konstanz.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/konstanz'}
     cv_raw: |
@@ -447,7 +447,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/bohr-values/bohr-values.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/bohr-values/bohr-values.pdf'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/bohr-values'}
     cv_raw: |
       ``Niels Bohr's values'' University of Copenhagen, June 2023
@@ -461,7 +461,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/hole-dispense/hole-dispense.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/hole-dispense/hole-dispense.pdf'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/hole-dispense/hole-dispense.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/hole-dispense'}
     cv_raw: |
@@ -486,7 +486,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/formal-outline/formal-outline.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/formal-outline/formal-outline.pdf'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/formal-outline'}
     cv_raw: |
       ``The goal of formal analysis'' \textit{The Formal Turn in Twentieth Century Thought}. Vienna, Feb 2023
@@ -501,7 +501,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/vienna2023/vienna2023.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/vienna2023/vienna2023.pdf'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/vienna2023'}
     cv_raw: |
       ``The concept of a frame of reference'' \textit{Physics meets Philosophy}. Vienna, Feb 2023
@@ -621,7 +621,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/illinois2019/illinois2019.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/illinois2019/illinois2019.pdf'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/illinois2019/illinois2019.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/illinois2019'}
     cv_raw: |
@@ -636,7 +636,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/prague2019/prague2019.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/prague2019/prague2019.pdf'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/prague2019/prague2019.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/prague2019'}
     cv_raw: |
@@ -662,7 +662,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/munich2018-2cat/munich2018-2cat.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/munich2018-2cat/munich2018-2cat.pdf'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/munich2018-2cat/munich2018-2cat.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/munich2018-2cat'}
     cv_raw: |
@@ -677,7 +677,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/salzburg2018/salzburg2018.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/salzburg2018/salzburg2018.pdf'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/salzburg2018/salzburg2018.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/salzburg2018'}
     cv_raw: |
@@ -692,7 +692,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/munich2018/munich2018.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/munich2018/munich2018.pdf'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/munich2018/munich2018.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/munich2018'}
     cv_raw: |
@@ -831,7 +831,7 @@ talks:
     cv: true
     web: true
     links:
-    - {label: 'pdf', url: 'https://github.com/hhalvors/talks/blob/main/rutgers2015/rutgers2015.pdf'}
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/rutgers2015/rutgers2015.pdf'}
     - {label: 'tex', url: 'https://github.com/hhalvors/talks/blob/main/rutgers2015/rutgers2015.tex'}
     - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/rutgers2015'}
     cv_raw: |
