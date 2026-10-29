@@ -56,14 +56,11 @@ $recent-talks$
 
 ---
 
-### Projects
+### Text editions
 
 <div class="icon-links">
-  <div><span class="icon"><i class="fa-solid fa-atom"></i></span> <a href="/bohr/">Niels Bohr: Philosopher in Action</a></div>
-  <div><span class="icon"><i class="fa-solid fa-book-open"></i></span> <a href="/kierkegaard/">Kierkegaard</a></div>
   <div><span class="icon"><i class="fa-solid fa-language"></i></span> <a href="/dansk/">Danish Texts</a></div>
-  <div><span class="icon"><i class="fa-solid fa-equals"></i></span> <a href="/theories/">Equivalent Theories</a></div>
-  <div><span class="icon"><i class="fa-solid fa-clock"></i></span> <a href="/spacetime/">Spacetime</a></div>
+  <div><span class="icon"><i class="fa-solid fa-clock"></i></span> <a href="/relativity/">Relativity Texts</a></div>
 </div>
 
 ---
