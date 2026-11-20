@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <!---
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  -->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Algebraic quantum theory: what to read &middot; Hans Halvorson
+    
+  </title>
+
+  
+    
+      <link rel="canonical" href="https://hanshalvorson.com/algebraic.html">
+    
+  
+
+  <!-- Core site styles -->
+  <link rel="stylesheet" href="./css/poole.css">
+  <link rel="stylesheet" href="./css/syntax.css">
+  <link rel="stylesheet" href="./css/lanyon.css">
+
+  <!-- Icon set -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+
+  <!-- Existing serif / sans families (kept for now in case they’re referenced) -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- ✦ Inter variable font (slant + weight) with optical sizing support -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
+
+  
+
+  <!-- Math (KaTeX + STIX Two Math) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap">
+
+  <!-- Site-specific overrides (where we’ll tune Inter) -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="atom.xml">
+</head>
+
+
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` is for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar.
+
+     Links are hardcoded (the dynamic nav was disabled long ago).  They are
+     grouped because a flat list of sixteen items is not navigation.  Only
+     finished, widely useful sections belong here; research sections that
+     are public but not advertised (/bohr/, /kierkegaard/, /spacetime/,
+     /theories/) are listed on the unlisted hub pages/workbench.md instead.
+     Every section needs a way in from one place or the other -- /bohr/ ran
+     for years with sixty-five pages and no way in. -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Personligheden er Sandheden</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="./index.html">Home</a>
+
+    <span class="sidebar-nav-heading">Work</span>
+    <a class="sidebar-nav-item" href="./publications.html">Publications</a>
+    <a class="sidebar-nav-item" href="./books/">Books</a>
+    <a class="sidebar-nav-item" href="./essays.html">Essays</a>
+    <a class="sidebar-nav-item" href="./drafts.html">Drafts</a>
+    <a class="sidebar-nav-item" href="./talks.html">Talks</a>
+    <a class="sidebar-nav-item" href="./cv.pdf">CV</a>
+
+    <span class="sidebar-nav-heading">Text editions</span>
+    <a class="sidebar-nav-item" href="./dansk/">Danish Texts</a>
+    <a class="sidebar-nav-item" href="./relativity/">Relativity Texts</a>
+
+    <span class="sidebar-nav-heading">Teaching</span>
+    <a class="sidebar-nav-item" href="./courses/">Courses</a>
+    <a class="sidebar-nav-item" href="./logic/">Logic</a>
+    <a class="sidebar-nav-item" href="./logic-tools.html">Logic Tools</a>
+    <a class="sidebar-nav-item" href="./quantum.html">Quantum foundations</a>
+    <a class="sidebar-nav-item" href="./algebraic.html">Algebraic quantum theory</a>
+
+    <span class="sidebar-nav-heading">Elsewhere</span>
+    <a class="sidebar-nav-item" href="https://github.com/hhalvors">GitHub project</a>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2025. All rights reserved.
+    </p>
+    <p>
+        <img src="./images/haskell-logo.png" class="logo" style="display: inline;" />
+        Site created with
+        <a href="https://jaspervdj.be/hakyll">Hakyll</a>.
+        <br>
+        Modified theme
+        <a href="https://github.com/hahey/lanyon-hakyll">lanyon-hakyll</a>
+        based on
+        <a href="https://lanyon.getpoole.com/">Lanyon</a>.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="./" title="Home">Hans Halvorson</a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+          <div class="page">
+  
+  <h1 class="post-title">Algebraic quantum theory</h1>
+  
+  <!-- Drafted by Claude, November 2026. The annotations are descriptive
+     only: what each item covers, what it assumes, where it is free.
+     Verdicts are left for Hans to add. Every publication detail was
+     checked against the publisher or arXiv record at drafting time.
+     Companion to quantum.md; that page's "mathematical side" section
+     ends roughly where this one begins. -->
+<p>This page collects resources on operator algebras and their use in
+quantum theory: the mathematics of C*-algebras and von Neumann
+algebras, the algebraic formulation of quantum mechanics, quantum
+statistical mechanics and quantum field theory, and the use of von
+Neumann algebras in quantum gravity since about 2021. It continues the
+<a href="./quantum.html#the-mathematical-side">mathematical side</a> of the guide
+to the foundations of quantum mechanics.</p>
+<p>Each entry is tagged. <em>Survey</em> means article length, read in a
+sitting or two. <em>Textbook</em> means written to be learned from in order.
+<em>Reference</em> means a treatise to be consulted. <em>Free</em> means legally
+available online.</p>
+<h2 id="where-to-start">Where to start</h2>
+<p><strong>Jonathan Sorce, “Notes on the type classification of von Neumann
+algebras,”</strong> <em>Reviews in Mathematical Physics</em> 36 (2024): 2430002
+(<a href="https://doi.org/10.1142/S0129055X24300024">doi</a>) — <em>survey, free</em>
+(<a href="https://arxiv.org/abs/2302.01958">arXiv:2302.01958</a>). Why factors
+are the basic case; the types I, II and III explained by whether the
+algebra has pure states, a trace, or neither, and by what it takes to
+renormalize an unnormalizable trace; standard forms; and the
+connection with modular theory, including the argument that local
+algebras in quantum field theory are type III<sub>1</sub>. Written for
+physicists reading the recent quantum-gravity papers listed below; it
+aims at intuition rather than precise definitions.</p>
+<p><strong>Edward Witten, “Notes on some entanglement properties of quantum
+field theory,”</strong> <em>Reviews of Modern Physics</em> 90 (2018): 045003
+(<a href="https://doi.org/10.1103/RevModPhys.90.045003">doi</a>) — <em>survey,
+free</em> (<a href="https://arxiv.org/abs/1803.04993">arXiv:1803.04993</a>). The
+Reeh–Schlieder theorem, the modular operator, relative entropy and
+its monotonicity, all motivated by the finite-dimensional case. Its
+stated aim is to explain entanglement when it is a property of the
+algebra of observables and not just of the state.</p>
+<p><strong>Christopher Fewster and Kasia Rejzner, “Algebraic quantum field
+theory — an introduction,”</strong> in Finster, Giulini, Kleiner and
+Tolksdorf (eds.), <em>Progress and Visions in Quantum Theory in View of
+Gravity</em> (Birkhäuser, 2020) — <em>survey, free</em>
+(<a href="https://arxiv.org/abs/1904.04051">arXiv:1904.04051</a>). The GNS
+construction, unitarily inequivalent representations (worked through
+the van Hove model), the axioms, the spectrum condition,
+Reeh–Schlieder, the split property, the universal type of local
+algebras and superselection sectors, with exercises.</p>
+<p><strong>Detlev Buchholz and Klaus Fredenhagen, “Algebraic quantum field
+theory: objectives, methods, and results”</strong> — <em>survey, free</em>
+(<a href="https://arxiv.org/abs/2305.12923">arXiv:2305.12923</a>). Written for
+the <em>Encyclopedia of Mathematical Physics</em>. An
+overview of the whole program by two of the people who built it.</p>
+<p><strong>Hans Halvorson and Michael Müger, “Algebraic quantum field
+theory,”</strong> in Butterfield and Earman (eds.), <em>Philosophy of Physics</em>
+(North-Holland, 2007): 731–864
+(<a href="https://doi.org/10.1016/B978-044451560-5/50011-7">doi</a>) —
+<em>survey, free</em> (<a href="https://arxiv.org/abs/math-ph/0602036">arXiv:math-ph/0602036</a>).
+Nonlocality, the particle and field concepts, and inequivalent
+representations, followed by a detailed account of
+Doplicher–Haag–Roberts superselection theory; Müger’s appendix gives
+the categorical background for the Doplicher–Roberts reconstruction
+of the field algebra and gauge group.</p>
+<p><strong>Vaughan Jones, <em>Von Neumann Algebras</em></strong> (lecture notes, Berkeley,
+2009) — <em>textbook, free</em>
+(<a href="https://math.berkeley.edu/~vfr/VonNeumann2009.pdf">pdf</a>). The
+fastest way into the mathematics. Built from semester courses; the
+exercises carry part of the exposition, and the notes get to examples
+and live topics with as little technical apparatus as possible.</p>
+<h2 id="the-mathematics">The mathematics</h2>
+<h3 id="first-books">First books</h3>
+<p><strong>V. S. Sunder, <em>An Invitation to von Neumann Algebras</em></strong> (Springer,
+Universitext, 1987) — <em>textbook.</em> A short book that gets to the
+modular theory quickly: the Murray–von Neumann classification, then
+Tomita–Takesaki theory and KMS states, crossed products, and Connes’s
+classification of type III factors.</p>
+<p><strong>William Arveson, <em>An Invitation to C*-Algebras</em></strong> (Springer,
+Graduate Texts in Mathematics 39, 1976) — <em>textbook.</em> The basic ideas
+of C*-algebras and their representations, presented as simply and
+concretely as possible: Hilbert spaces are separable and algebras GCR
+wherever that helps, and a general theorem is often proved only in a
+special case that shows the idea, with the generalization left to the
+exercises.</p>
+<p><strong>Kehe Zhu, <em>An Introduction to Operator Algebras</em></strong> (CRC Press, 1993)
+— <em>textbook.</em> A concise introduction to C*-algebras and von Neumann
+algebras, used as a course text.</p>
+<p><strong>Gerard J. Murphy, <em>C*-Algebras and Operator Theory</em></strong> (Academic
+Press, 1990) — <em>textbook.</em> A first- or second-year graduate course,
+assuming basic functional analysis but no operator theory: spectral
+theory, C*-algebras and their representations, von Neumann algebras,
+tensor products, and an introduction to K-theory.</p>
+<p><strong>Kenneth R. Davidson, <em>C*-Algebras by Example</em></strong> (AMS and Fields
+Institute, Fields Institute Monographs 6, 1996) — <em>textbook.</em> The
+theory taught through its examples: AF algebras, the Toeplitz algebra,
+Cuntz and Bunce–Deddens algebras, irrational rotation algebras, group
+C*-algebras and discrete crossed products. Many exercises.</p>
+<p><strong>Li Bing-Ren, <em>Introduction to Operator Algebras</em></strong> (World
+Scientific, 1992) — <em>textbook.</em> Self-contained, and further-reaching
+than most introductions: Tomita–Takesaki theory, the classification
+of type III factors, reduction and decomposition theory, AF algebras,
+crossed products and Jones index theory.</p>
+<p><strong>Kenneth R. Davidson, <em>Functional Analysis and Operator Algebras</em></strong>
+(Springer, CMS/CAIMS Books in Mathematics, 2025) — <em>textbook.</em> About
+800 pages. Part I is a one-semester course in functional analysis;
+part II, Banach algebras and C*-algebras, then C*- and von Neumann
+algebras at a more advanced level; part III, topics in operator theory.</p>
+<h3 id="textbooks-and-treatises">Textbooks and treatises</h3>
+<p><strong>Richard Kadison and John Ringrose, <em>Fundamentals of the Theory of
+Operator Algebras</em></strong> (4 vols., Academic Press, 1983–1992; vols. I–II
+reprinted by the AMS, 1997) — <em>textbook.</em> Volumes I and II are the
+course; volumes III and IV work every exercise.</p>
+<p><strong>Şerban Strătilă and László Zsidó, <em>Lectures on von Neumann
+Algebras</em></strong> (2nd ed., Cambridge–IISc, 2019) — <em>textbook.</em> The
+first edition appeared in 1979 and went out of print quickly. The
+second adds the factors of ICC groups, the Murray–von Neumann proof
+that a type II<sub>1</sub> factor has a trace, the first examples of type II<sub>1</sub>
+and type III factors, and the theorems on algebras with a cyclic and
+separating vector. Its sequel is <strong>Şerban Strătilă, <em>Modular Theory in
+Operator Algebras</em></strong> (2nd ed., Cambridge, 2020) — <em>reference.</em>
+First published in 1981, and until Takesaki’s second volume the only
+comprehensive monograph on the subject.</p>
+<p><strong>Masamichi Takesaki, <em>Theory of Operator Algebras I–III</em></strong> (Springer,
+Encyclopaedia of Mathematical Sciences 124, 125, 127; 2002–2003) —
+<em>reference.</em> Volume I reissues the 1979 book. Volume II is modular
+theory, weights and crossed products; volume III, injective factors and
+their classification.</p>
+<p><strong>Bruce Blackadar, <em>Operator Algebras: Theory of C*-Algebras and von
+Neumann Algebras</em></strong> (Springer, Encyclopaedia of Mathematical Sciences
+122, 2006) — <em>reference.</em> One volume covering operators on Hilbert
+space, C*-algebras, von Neumann algebras, further structure, and
+K-theory, with proofs often sketched rather than given. The quickest
+place to look something up.</p>
+<p><strong>Gert K. Pedersen, <em>C*-Algebras and Their Automorphism Groups</em></strong>
+(2nd ed., ed. Søren Eilers and Dorte Olesen, Academic Press, 2018) —
+<em>reference.</em> The 1979 classic, which develops C*-algebras as far as
+possible without Hilbert space representations, extended with
+commentary and a bibliography of the forty years since. The last two
+chapters treat automorphism groups and their spectral theory: the
+mathematics of dynamical systems on C*-algebras.</p>
+<p><strong>Jacques Dixmier, <em>C*-Algebras</em></strong> (North-Holland, 1977) and <strong><em>Von
+Neumann Algebras</em></strong> (North-Holland, 1981) — <em>reference.</em> English
+translations of the French originals of 1964 and 1957 (2nd ed. 1969).</p>
+<p><strong>Karen Strung, <em>An Introduction to C*-Algebras and the
+Classification Program</em></strong> (Birkhäuser, 2021) — <em>textbook.</em> Starts
+from Banach algebras and ends at the Elliott invariant, the Jiang–Su
+algebra, the Cuntz semigroup and the classification theorem for simple
+nuclear C*-algebras.</p>
+<p><strong>Nathanial Brown and Narutaka Ozawa, <em>C*-Algebras and
+Finite-Dimensional Approximations</em></strong> (AMS, Graduate Studies in
+Mathematics 88, 2008) — <em>textbook.</em> Nuclearity, exactness, tensor
+products of C*-algebras and approximation properties: the background
+for the Connes embedding problem below.</p>
+<p><strong>Claire Anantharaman and Sorin Popa, <em>An Introduction to II<sub>1</sub>
+Factors</em></strong> (book draft) — <em>textbook, free</em>
+(<a href="https://www.math.ucla.edu/~popa/Books/IIunV15.pdf">pdf</a>). Type II<sub>1</sub>
+factors from the first examples onward, including Popa’s
+deformation/rigidity techniques.</p>
+<h3 id="modular-theory-and-crossed-products">Modular theory and crossed products</h3>
+<p><strong>Fumio Hiai, <em>Lectures on Selected Topics in von Neumann Algebras</em></strong>
+(EMS Press, 2021) (<a href="https://doi.org/10.4171/ELM/32">doi</a>) —
+<em>textbook, free</em> as an earlier version
+(<a href="https://arxiv.org/abs/2004.02383">arXiv:2004.02383</a>). A fast track
+through the theory as Araki, Connes, Haagerup and Takesaki left it in
+the 1970s: Tomita–Takesaki theory, the standard form, Connes cocycle
+derivatives, operator-valued weights, Takesaki duality, Haagerup’s
+L<sup>p</sup>-spaces and spatial derivatives. The machinery behind relative
+entropy in quantum field theory.</p>
+<p><strong>Stephen J. Summers, “Tomita–Takesaki modular theory”</strong> —
+<em>survey, free</em> (<a href="https://arxiv.org/abs/math-ph/0511034">arXiv:math-ph/0511034</a>).
+Written for the first edition of the <em>Encyclopedia of Mathematical
+Physics</em> (Elsevier, 2006). The theorem, the KMS condition, and the
+applications to physics, in a few pages.</p>
+<p><strong>Hans-Jürgen Borchers, “On revolutionizing quantum field theory with
+Tomita’s modular theory,”</strong> <em>Journal of Mathematical Physics</em> 41
+(2000): 3604–3673 (<a href="https://doi.org/10.1063/1.533323">doi</a>) —
+<em>survey.</em> Half-sided modular inclusions, the Bisognano–Wichmann
+theorem and the geometric action of modular groups, by one of its
+main contributors.</p>
+<p><strong>Dana P. Williams, <em>Crossed Products of C*-Algebras</em></strong> (AMS,
+Mathematical Surveys and Monographs 134, 2007) — <em>textbook.</em> The
+standard text on C*-crossed products by locally compact groups:
+covariant representations, imprimitivity theorems, induced
+representations and ideal structure, Takai duality, and the reduced
+crossed product. Assumes some familiarity with C*-algebras and Morita
+equivalence.</p>
+<p><strong>Alfons van Daele, <em>Continuous Crossed Products and Type III von
+Neumann Algebras</em></strong> (Cambridge, London Mathematical Society Lecture
+Note Series 31, 1978) — <em>textbook.</em> Sixty-eight pages. Part I is
+crossed products of von Neumann algebras, the commutation theorem and
+duality; part II shows that the crossed product of a type III algebra
+by its modular automorphism group is semifinite, and derives the
+structure of type III algebras from that. The construction Witten uses
+in “Gravity and the crossed product,” below.</p>
+<h3 id="what-has-changed-since-the-1990s">What has changed since the 1990s</h3>
+<ol type="1">
+<li><strong>Classification of C*-algebras.</strong> The Elliott program for simple
+nuclear C*-algebras reached its main classification theorem in the
+2010s. Strung’s book above is the introduction.</li>
+<li><strong>The Connes embedding problem was refuted, by way of Tsirelson’s
+problem.</strong> Zhengfeng Ji, Anand Natarajan, Thomas Vidick, John Wright
+and Henry Yuen, “MIP* = RE,” <em>Communications of the ACM</em> 64 (2021),
+no. 11; full version
+<a href="https://arxiv.org/abs/2001.04383">arXiv:2001.04383</a>. The set of
+quantum correlations obtainable from tensor products of Hilbert
+spaces is strictly smaller, even after closure, than the set
+obtainable from commuting operators on a single Hilbert space. That
+is, the two standard ways of formalizing independent subsystems
+come apart — a question about the Bell correlations treated in
+the <a href="./quantum.html#nonlocality">nonlocality section</a> of the
+quantum-foundations guide.</li>
+<li><strong>Rigidity for type II<sub>1</sub> factors.</strong> Popa’s deformation/rigidity
+theory has produced classification results for the factors of
+groups and group actions. Anantharaman and Popa above is the
+introduction.</li>
+<li><strong>Modular theory in high-energy physics.</strong> Since Witten’s 2018
+review, Tomita–Takesaki theory and the type classification have
+become working tools in quantum gravity. See the last section.</li>
+</ol>
+<h2 id="algebraic-quantum-theory">Algebraic quantum theory</h2>
+<p><strong>Ola Bratteli and Derek W. Robinson, <em>Operator Algebras and Quantum
+Statistical Mechanics</em></strong> (2 vols., 2nd ed., Springer, 1987 and 1997)
+— <em>reference.</em> Volume 1 is C*- and von Neumann algebras, modular
+theory and decomposition theory; volume 2 is KMS states, quantum spin
+systems, and the CCR and CAR algebras.</p>
+<p><strong>Rudolf Haag, <em>Local Quantum Physics</em></strong> (2nd ed., Springer, 1996) —
+<em>textbook.</em> The program set out by its founder.</p>
+<p><strong>Huzihiro Araki, <em>Mathematical Theory of Quantum Fields</em></strong> (Oxford,
+1999) — <em>textbook.</em> Translated from the Japanese edition of 1993.</p>
+<p><strong>Gérard Emch, <em>Algebraic Methods in Statistical Mechanics and Quantum
+Field Theory</em></strong> (Wiley, 1972; Dover reprint, 2009) — <em>textbook.</em></p>
+<p><strong>Klaas Landsman, <em>Foundations of Quantum Theory: From Classical
+Concepts to Operator Algebras</em></strong> (Springer, 2017) — <em>reference,
+free</em> (<a href="https://doi.org/10.1007/978-3-319-51777-3">open access</a>).
+Appendix C is an introduction to operator algebras. See the
+<a href="./quantum.html#the-mathematical-side">entry in the quantum-foundations guide</a>.</p>
+<p><strong>Franco Strocchi, <em>An Introduction to the Mathematical Structure of
+Quantum Mechanics: A Short Course for Mathematicians</em></strong> (2nd ed., World
+Scientific, Advanced Series in Mathematical Physics 28, 2008) —
+<em>textbook.</em> About 200 pages. Quantum mechanics formulated from the
+start in terms of the C*-algebra of observables, motivated by the
+operational definition of measurement and the duality of states and
+observables. Schrödinger quantum mechanics then follows from the
+Heisenberg relations by von Neumann’s uniqueness theorem; the dynamics
+is treated through self-adjointness of the Hamiltonian, and a final
+chapter covers the functional-integral approach.</p>
+<p><strong>N. P. Landsman, “Lecture notes on C*-algebras, Hilbert C*-modules,
+and quantum mechanics”</strong> (1998) — <em>textbook, free</em>
+(<a href="https://arxiv.org/abs/math-ph/9807030">arXiv:math-ph/9807030</a>).
+C*-algebras, Hilbert C*-modules, Morita equivalence, induced
+representations and crossed products, applied to quantization and
+localization. Assumes elementary functional analysis and quantum
+mechanics.</p>
+<p><strong>Valter Moretti, <em>Fundamental Mathematical Structures of Quantum
+Theory</em></strong> (Springer, 2019)
+(<a href="https://doi.org/10.1007/978-3-030-18346-2">doi</a>) — <em>textbook.</em>
+Lattices of propositions, quantum probability, spectral theory,
+symmetries, and the basic theory of von Neumann algebras and of the
+algebraic formulation, with examples and solved exercises; written for
+physicists and mathematicians alike.</p>
+<p><strong>Gabriele Nunzio Tornetta, <em>Mathematical Quantum Physics: A
+Foundational Introduction</em></strong> (Springer, 2022)
+(<a href="https://doi.org/10.1007/978-3-031-14812-5">doi</a>) — <em>textbook.</em>
+About 180 pages. Quantum systems with finitely and infinitely many
+degrees of freedom, second quantization and scattering, all in
+operator-algebraic terms, with an account of how algebraic quantum
+field theory developed.</p>
+<p><strong>Miklós Rédei and Stephen J. Summers, “Quantum probability
+theory,”</strong> <em>Studies in History and Philosophy of Modern Physics</em> 38
+(2007): 390–417 — <em>survey, free</em>
+(<a href="https://arxiv.org/abs/quant-ph/0601158">arXiv:quant-ph/0601158</a>).
+Projection lattices of von Neumann algebras as non-commutative
+probability spaces, and the Murray–von Neumann type classification
+read as a classification of probability theories.</p>
+<p><strong>Laura Ruetsche, <em>Interpreting Quantum Theories</em></strong> (Oxford, 2011) —
+<em>textbook.</em> Inequivalent representations in quantum field theory and
+quantum statistical mechanics, and what they do to the question of
+what a theory says.</p>
+<p><strong>Stefan Hollands and Ko Sanders, <em>Entanglement Measures and Their
+Properties in Quantum Field Theory</em></strong> (Springer, SpringerBriefs in
+Mathematical Physics 34, 2018)
+(<a href="https://doi.org/10.1007/978-3-319-94902-4">doi</a>) — <em>textbook.</em>
+Entanglement measures for local algebras, with upper and lower bounds,
+and the mathematics introduced as needed.</p>
+<p><strong>Kasia Rejzner, <em>Perturbative Algebraic Quantum Field Theory</em></strong>
+(Springer, Mathematical Physics Studies, 2016) — <em>textbook.</em>
+Perturbative quantum field theory done rigorously in the algebraic
+framework, without divergent quantities.</p>
+<p><strong>Romeo Brunetti, Claudio Dappiaggi, Klaus Fredenhagen and Jakob
+Yngvason (eds.), <em>Advances in Algebraic Quantum Field Theory</em></strong>
+(Springer, Mathematical Physics Studies, 2015) — <em>reference.</em></p>
+<h3 id="measurement">Measurement</h3>
+<p><strong>Christopher Fewster and Rainer Verch, “Quantum fields and local
+measurements,”</strong> <em>Communications in Mathematical Physics</em> 378 (2020):
+851–889 (<a href="https://doi.org/10.1007/s00220-020-03800-6">doi</a>) —
+<em>free.</em> One quantum field, the probe, measures another, the system;
+everything local and covariant, on curved spacetimes. The authors
+present it as closing a long-open gap between quantum measurement
+theory and algebraic quantum field theory.</p>
+<p><strong>Christopher Fewster, “Lectures on measurement in quantum field
+theory”</strong> (<a href="https://arxiv.org/abs/2504.17437">arXiv:2504.17437</a>) and
+<strong>Rainer Verch, “Lecture notes on operator algebras and quantum field
+theory”</strong> (<a href="https://arxiv.org/abs/2507.00900">arXiv:2507.00900</a>) —
+<em>survey, free.</em> Companion courses from the 2025 EMS–IAMP spring
+school. Verch covers modular theory, the Bisognano–Wichmann and
+Borchers theorems, locally covariant quantum field theory, and
+temperature and entropy near black holes.</p>
+<h2 id="quantum-gravity-and-the-type-of-the-algebra">Quantum gravity and the type of the algebra</h2>
+<p><strong>Edward Witten, “Gravity and the crossed product,”</strong> <em>Journal of High
+Energy Physics</em> 2022, no. 10: 008
+(<a href="https://doi.org/10.1007/JHEP10(2022)008">open access</a>). Leutheusser
+and Liu found an emergent type III<sub>1</sub> algebra in large-N gauge theory;
+Witten shows that 1/N corrections make it type II<sub>∞</sub>, the crossed
+product of the type III<sub>1</sub> algebra by its modular automorphism group,
+and that black-hole entropy is then defined up to an additive
+constant.</p>
+<p><strong>Venkatesa Chandrasekaran, Roberto Longo, Geoff Penington and Edward
+Witten, “An algebra of observables for de Sitter space,”</strong> <em>Journal of
+High Energy Physics</em> 2023, no. 2: 082
+(<a href="https://doi.org/10.1007/JHEP02(2023)082">open access</a>). Operators in
+a static patch, dressed to an observer’s worldline, form a type II<sub>1</sub>
+algebra; empty de Sitter space is its state of maximum entropy.</p>
+<p><strong>Edward Witten, “A background-independent algebra in quantum
+gravity,”</strong> <em>Journal of High Energy Physics</em> 2024, no. 3: 077
+(<a href="https://doi.org/10.1007/JHEP03(2024)077">open access</a>). The
+algebra of operators along an observer’s worldline, proposed as an
+algebra that does not presuppose a background spacetime.</p>
+<p><strong>Hong Liu, “Lectures on entanglement, von Neumann algebras, and
+emergence of spacetime”</strong> — <em>survey, free</em>
+(<a href="https://arxiv.org/abs/2510.07017">arXiv:2510.07017</a>). Expanded from
+lectures at TASI 2023 and elsewhere. The first half is von Neumann
+algebras and their classification as a theory of entanglement; the
+second, the algebraic formulation of AdS/CFT at large N,
+subregion–subalgebra duality, and gravitational entropy.</p>
+<h2 id="free-resources">Free resources</h2>
+<ul>
+<li><a href="https://www.lqp2.org/">Local Quantum Physics Crossroads</a>, the
+preprint server for algebraic quantum field theory.</li>
+<li>Jesse Peterson’s <a href="https://math.vanderbilt.edu/peters10/students.html">resources for students of operator
+algebras</a>, with
+links to his course notes and recorded lectures.</li>
+<li><a href="https://arxiv.org/list/math.OA/recent">arXiv math.OA</a> for operator
+algebras and <a href="https://arxiv.org/list/math-ph/recent">math-ph</a> for
+mathematical physics.</li>
+</ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script src="https://hanshalvorson.com/public/js/script.js"></script>
+
+
+  </body>
+
+</html>

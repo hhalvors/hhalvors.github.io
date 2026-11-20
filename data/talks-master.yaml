@@ -68,12 +68,18 @@ talks:
 - year: 2026
   items:
   - id: psa2026
-    title: 'TBA'
+    title: 'Interpreting quantum field theory'
     kind: conference
     event: 'PSA 2026 symposium, New Perspectives on the Foundations of Quantum Field Theory'
     location: 'San Diego'
     date: '2026-11'
+    given: true
     cv: true
+    web: true
+    links:
+    - {label: 'pdf', url: 'https://hanshalvorson.com/talks/psa2026/psa2026.pdf'}
+    - {label: 'md', url: 'https://github.com/hhalvors/talks/blob/main/psa2026/psa2026.md'}
+    - {label: 'files', url: 'https://github.com/hhalvors/talks/tree/main/psa2026'}
 
   - id: pittsburgh2026
     title: 'Operator algebras and quantum gravity: lessons for naturalized metaphysics'

@@ -82,6 +82,50 @@ and live topics with as little technical apparatus as possible.
 
 ## The mathematics
 
+### First books
+
+**V. S. Sunder, *An Invitation to von Neumann Algebras*** (Springer,
+Universitext, 1987) --- *textbook.* A short book that gets to the
+modular theory quickly: the Murray--von Neumann classification, then
+Tomita--Takesaki theory and KMS states, crossed products, and Connes's
+classification of type III factors.
+
+**William Arveson, *An Invitation to C\*-Algebras*** (Springer,
+Graduate Texts in Mathematics 39, 1976) --- *textbook.* The basic ideas
+of C\*-algebras and their representations, presented as simply and
+concretely as possible: Hilbert spaces are separable and algebras GCR
+wherever that helps, and a general theorem is often proved only in a
+special case that shows the idea, with the generalization left to the
+exercises.
+
+**Kehe Zhu, *An Introduction to Operator Algebras*** (CRC Press, 1993)
+--- *textbook.* A concise introduction to C\*-algebras and von Neumann
+algebras, used as a course text.
+
+**Gerard J. Murphy, *C\*-Algebras and Operator Theory*** (Academic
+Press, 1990) --- *textbook.* A first- or second-year graduate course,
+assuming basic functional analysis but no operator theory: spectral
+theory, C\*-algebras and their representations, von Neumann algebras,
+tensor products, and an introduction to K-theory.
+
+**Kenneth R. Davidson, *C\*-Algebras by Example*** (AMS and Fields
+Institute, Fields Institute Monographs 6, 1996) --- *textbook.* The
+theory taught through its examples: AF algebras, the Toeplitz algebra,
+Cuntz and Bunce--Deddens algebras, irrational rotation algebras, group
+C\*-algebras and discrete crossed products. Many exercises.
+
+**Li Bing-Ren, *Introduction to Operator Algebras*** (World
+Scientific, 1992) --- *textbook.* Self-contained, and further-reaching
+than most introductions: Tomita--Takesaki theory, the classification
+of type III factors, reduction and decomposition theory, AF algebras,
+crossed products and Jones index theory.
+
+**Kenneth R. Davidson, *Functional Analysis and Operator Algebras***
+(Springer, CMS/CAIMS Books in Mathematics, 2025) --- *textbook.* About
+800 pages. Part I is a one-semester course in functional analysis;
+part II, Banach algebras and C\*-algebras, then C\*- and von Neumann
+algebras at a more advanced level; part III, topics in operator theory.
+
 ### Textbooks and treatises
 
 **Richard Kadison and John Ringrose, *Fundamentals of the Theory of
@@ -233,6 +277,41 @@ free* ([open access](https://doi.org/10.1007/978-3-319-51777-3)).
 Appendix C is an introduction to operator algebras. See the
 [entry in the quantum-foundations guide](/quantum.html#the-mathematical-side).
 
+**Franco Strocchi, *An Introduction to the Mathematical Structure of
+Quantum Mechanics: A Short Course for Mathematicians*** (2nd ed., World
+Scientific, Advanced Series in Mathematical Physics 28, 2008) ---
+*textbook.* About 200 pages. Quantum mechanics formulated from the
+start in terms of the C\*-algebra of observables, motivated by the
+operational definition of measurement and the duality of states and
+observables. Schrödinger quantum mechanics then follows from the
+Heisenberg relations by von Neumann's uniqueness theorem; the dynamics
+is treated through self-adjointness of the Hamiltonian, and a final
+chapter covers the functional-integral approach.
+
+**N. P. Landsman, "Lecture notes on C\*-algebras, Hilbert C\*-modules,
+and quantum mechanics"** (1998) --- *textbook, free*
+([arXiv:math-ph/9807030](https://arxiv.org/abs/math-ph/9807030)).
+C\*-algebras, Hilbert C\*-modules, Morita equivalence, induced
+representations and crossed products, applied to quantization and
+localization. Assumes elementary functional analysis and quantum
+mechanics.
+
+**Valter Moretti, *Fundamental Mathematical Structures of Quantum
+Theory*** (Springer, 2019)
+([doi](https://doi.org/10.1007/978-3-030-18346-2)) --- *textbook.*
+Lattices of propositions, quantum probability, spectral theory,
+symmetries, and the basic theory of von Neumann algebras and of the
+algebraic formulation, with examples and solved exercises; written for
+physicists and mathematicians alike.
+
+**Gabriele Nunzio Tornetta, *Mathematical Quantum Physics: A
+Foundational Introduction*** (Springer, 2022)
+([doi](https://doi.org/10.1007/978-3-031-14812-5)) --- *textbook.*
+About 180 pages. Quantum systems with finitely and infinitely many
+degrees of freedom, second quantization and scattering, all in
+operator-algebraic terms, with an account of how algebraic quantum
+field theory developed.
+
 **Miklós Rédei and Stephen J. Summers, "Quantum probability
 theory,"** *Studies in History and Philosophy of Modern Physics* 38
 (2007): 390--417 --- *survey, free*
@@ -317,6 +396,9 @@ subregion--subalgebra duality, and gravitational entropy.
 
 - [Local Quantum Physics Crossroads](https://www.lqp2.org/), the
   preprint server for algebraic quantum field theory.
+- Jesse Peterson's [resources for students of operator
+  algebras](https://math.vanderbilt.edu/peters10/students.html), with
+  links to his course notes and recorded lectures.
 - [arXiv math.OA](https://arxiv.org/list/math.OA/recent) for operator
   algebras and [math-ph](https://arxiv.org/list/math-ph/recent) for
   mathematical physics.
