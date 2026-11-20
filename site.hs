@@ -959,6 +959,16 @@ siteRules privateMode = do
                 >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
                 >>= relativizeUrls
 
+    -- Companion to quantum.md: operator algebras and algebraic quantum
+    -- theory. Same plain compiler, same reasons.
+    match "algebraic.md" $ do
+        route $ customRoute (const "algebraic.html")
+        compile $ do
+            pandocCompiler
+                >>= loadAndApplyTemplate "templates/page.html" (constField "title" "Algebraic quantum theory" `mappend` siteCtx)
+                >>= loadAndApplyTemplate "templates/default.html" (baseSidebarCtx <> siteCtx)
+                >>= relativizeUrls
+
     match "natives.md" $ do
         route $ customRoute (const "natives.html")
         compile $ do

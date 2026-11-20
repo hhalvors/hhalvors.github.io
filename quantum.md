@@ -1243,6 +1243,10 @@ Varadarajan, *Geometry of Quantum Theory* (2nd ed., Springer, 1985)
 proves Gleason's theorem and treats Wigner's, and is graduate
 mathematics.
 
+For operator algebras and their use in quantum field theory and
+quantum gravity, see the companion guide to
+[algebraic quantum theory](/algebraic.html).
+
 If your mathematics is not yet up to this, see the separate note on
 [mathematics for philosophy](/math.html).
 
